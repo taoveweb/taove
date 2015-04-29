@@ -80,7 +80,7 @@ exports.photographer=Photographer;
 
 
 
-//相册
+//相册就是这样子的
 var albumsSchema=new Schema({
     projectName:{type:String,trim:true,required: true},//相册主题
     photographer:{type:Schema.Types.Mixed,trim:true,required: true},//{name:'摄影师名称',id:photographer_id}

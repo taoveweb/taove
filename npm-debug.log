@@ -1,0 +1,53 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\nodejs\\\\node.exe',
+1 verbose cli   'D:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'forever' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose node symlink D:\nodejs\\node.exe
+5 silly cache add args [ 'forever', null ]
+6 verbose cache add spec forever
+7 silly cache add parsed spec { raw: 'forever',
+7 silly cache add   scope: null,
+7 silly cache add   name: 'forever',
+7 silly cache add   rawSpec: '',
+7 silly cache add   spec: '*',
+7 silly cache add   type: 'range' }
+8 verbose addNamed forever@*
+9 silly addNamed semver.valid null
+10 silly addNamed semver.validRange *
+11 silly addNameRange { name: 'forever', range: '*', hasData: false }
+12 silly mapToRegistry name forever
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/forever
+16 verbose addNameRange registry:https://registry.npmjs.org/forever not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/forever
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 07:44:09
+20 verbose request id bde7d3e95019bb0c
+21 http request GET https://registry.npmjs.org/forever
+22 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN
+23 info attempt registry request try #2 at 07:44:19
+24 http request GET https://registry.npmjs.org/forever
+25 info retry will retry, error on last attempt: Error: getaddrinfo EAI_AGAIN
+26 info attempt registry request try #3 at 07:45:19
+27 http request GET https://registry.npmjs.org/forever
+28 verbose stack Error: getaddrinfo EAI_AGAIN
+28 verbose stack     at Object.exports._errnoException (util.js:746:11)
+28 verbose stack     at errnoException (dns.js:49:15)
+28 verbose stack     at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:94:26)
+29 verbose cwd D:\Expess
+30 error Windows_NT 6.1.7601
+31 error argv "D:\\nodejs\\\\node.exe" "D:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "-g" "forever"
+32 error node v0.12.2
+33 error npm  v2.7.4
+34 error code EAI_AGAIN
+35 error errno EAI_AGAIN
+36 error syscall getaddrinfo
+37 error getaddrinfo EAI_AGAIN
+38 error If you need help, you may report this error at:
+38 error     <https://github.com/npm/npm/issues>
+39 verbose exit [ 1, true ]

@@ -87,7 +87,7 @@ var albumsSchema=new Schema({
     package:{type:String,trim:true,required: true},//套餐
     description:{type:String,trim:true,required: true},//描述
     area:{type:String,trim:true,required: true},//地区
-    island:{type: Boolean,default: false},//海岛屿风格
+    //island:{type: Boolean,default: false},//海岛屿风格
     style:{type:String,trim:true,required: true},//风格
     img:{type:Schema.Types.Mixed,trim:true,required: true},/*相片[
                                                 {

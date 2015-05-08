@@ -7,6 +7,7 @@ var mongoose=require('mongoose');
 var dbURI='mongodb://localhost/test';
 var dbOptions = {'user':'db_username','pass':'db_password'};
 var Schema=mongoose.Schema;
+var ObjectId=mongoose.Types.ObjectId;
 mongoose.connect(dbURI);
 
 mongoose.connection.on('error',function(err){
@@ -104,12 +105,13 @@ var albumsSchema=new Schema({
     createdBy:String,//
     createOn:{type:Date,default:Date.now()}, //
     modifiedOn:Date,//
-    photoOn:String//
+    photoOn:Date//
 
 });
 
 var Albums=mongoose.model('Albums',albumsSchema);
 exports.albums=Albums;
+module.exports.ObjectId=ObjectId;
 
 
 

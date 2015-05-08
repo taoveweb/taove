@@ -87,9 +87,9 @@ var albumsSchema=new Schema({
     package:{type:String,trim:true,required: true},//套餐
     description:{type:String,trim:true,required: true},//描述
     area:{type:String,trim:true,required: true},//地区
-    //island:{type: Boolean,default: false},//海岛屿风格
+    island:{type: Boolean,default: false},//海岛屿风格
     style:{type:String,trim:true,required: true},//风格
-    img:{type:Schema.Types.Mixed,trim:true,required: true},/*相片[
+    img:{type:Schema.Types.Mixed,required: true},/*相片[
                                                 {
                                                     id:objectId,
                                                     path:'photo/ymd/',
@@ -100,11 +100,12 @@ var albumsSchema=new Schema({
                                                }
                                              ]
                                */
-    createOn:{type:Date,default:Date().now},//
-    modifiedOn:Date,//
+    customer:{type:String,trim:true,required: true},// {user:user_id}
     createdBy:String,//
-    photoOn:Date,//
-    customer:{type:String,trim:true,required: true}// {user:user_id}
+    createOn:{type:Date,default:Date.now()}, //
+    modifiedOn:Date,//
+    photoOn:String//
+
 });
 
 var Albums=mongoose.model('Albums',albumsSchema);

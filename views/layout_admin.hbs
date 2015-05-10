@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{{title}}</title>
     <meta charset="utf-8">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-      <link rel="stylesheet" href="/stylesheets/admin.css"/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <link rel="stylesheet" href="/stylesheets/admin.css"/>
+
     {{{block "adminStyle"}}}
-  </head>
-  <body>
-  <div class="leftMenu">
-      <a class="admin" href="/admin">相册</a>
-      <a class="user" href="/admin/user">用户</a>
-      <a class="photographer" href="/admin/photographer">摄影师</a>
-  </div>
-  <div class="main">
+</head>
+<body>
+<div class="leftMenu">
+    <a class="admin" href="/admin">相册</a>
+    <a class="user" href="/admin/user">用户</a>
+    <a class="photographer" href="/admin/photographer">摄影师</a>
+</div>
+<div class="main">
     {{{body}}}
-  </div>
-    {{{block "adminScripts"}}}
-  </body>
+</div>
+{{{block "adminScripts"}}}
+
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/admin.js"></script>
+</body>
 </html>

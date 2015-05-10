@@ -9,14 +9,12 @@
     {{err}}
 {{/if}}
 <div class="search clearfix">
-    <div><input type="text" placeholder="相册名称"><input type="submit" value="查询"><input type="button" value="增加"></div>
+    <div><input  id="searchVal" type="text" placeholder="相册名称"><input id="searchBtn" type="submit" ><input type="button" value="增加"></div>
 </div>
 <form method="post" action="/admin/album" enctype="multipart/form-data">
-    <table>
+    <table id="tableform">
         <tbody>
         {{#each list}}
-        {{a}}
-
         <tr>
             <td>
                 <span>摄影师</span>
@@ -40,7 +38,7 @@
             <td><input type="text" name="photoOn" value="{{photoOn}}" placeholder="拍摄时间"></td>
             <td>
                 <input type="button" value="修改">
-                <input type="button" value="删除">
+                <input class="delBtn" type="button" _id="{{_id}}" value="删除">
             </td>
         </tr>
         {{/each}}

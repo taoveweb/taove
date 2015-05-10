@@ -11,37 +11,56 @@ var albums = db.albums;
 var ObjectId = db.ObjectId;
 
 router.get('/', getAlbum);
-router.get('/:projectTitle', getAlbum);
+router.get('/:projectTitle', getAlbum);//查
+router.delete('/', deleteAlbum);//册
+router.post('/', postAlbum);
+
 router.get('/user', getUser);
 router.get('/photographer', getPhotographer);
-router.post('/', postAlbum);
+
 
 /*相册------------------------------------------------*/
 function getAlbum(req, res, next) {
     console.log('getAlbum------------------------------');
-    var query={};
-    if(!!req.params.projectTitle){
-        query={projectTitle:req.params.projectTitle};
+    var query = {};
+    if (!!req.params.projectTitle) {
+        query = {projectTitle: req.params.projectTitle};
     }
-    albums.find(query,null, function (err, list) {
+    albums.find(query, null, {skip: 10}, function (err, list) {
         if (err) {
             console.log(err);
             res.render('admin/album', {
                 getSucess: false,
-                title:"相册",
-                err:err
+                title: "相册",
+                err: err
             })
         }
-            console.log('getAlbum成功');
+        console.log('getAlbum成功');
         res.render('admin/album', {
             layout: "layout_admin",
-            title:"相册",
+            title: "相册",
             list: list
         });
     });
 
 };
 
+function deleteAlbum(req, res, next) {
+    console.log('deleteAlbum------------');
+    albums.remove({_id: req.body._id}, function (err, list) {
+        if (err) {
+            res.json({
+                state: 0
+            })
+        }
+
+        res.json({
+            state: 1,
+            _id: req.body._id
+        })
+    });
+
+}
 function postAlbum(req, res, next) {
 
     var form = new formidable.IncomingForm();
@@ -73,7 +92,6 @@ function postAlbum(req, res, next) {
             photoOn: param.photoOn
 
         }, function (err, list) {
-            console.log(list);
             if (err)   res.send('失败了');
             res.send('成功了')
         });

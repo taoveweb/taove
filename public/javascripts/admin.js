@@ -9,21 +9,38 @@ $(function () {
     })
 
     //删除
-    $(function () {
 
-        $('#tableform').on('click', '.delBtn', function () {
-            console.log('delBtn-click');
-            var data = $(this).attr("_id");
-            var that=$(this);
-            $.ajax({
-                url: '/admin',
-                data: {_id:data},
-                type: "DELETE"
-            }).done(function (d) {
-                if(d.state===1){
-                    that.parent().parent().remove();
-                }
-            })
-        });
-    })
+
+    $('#tableform').on('click', '.delBtn', function () {
+        console.log('delBtn-click');
+        var data = $(this).attr("_id");
+        var that = $(this);
+        $.ajax({
+            url: '/admin',
+            data: {_id: data},
+            type: "DELETE"
+        }).done(function (d) {
+            if (d.state === 1) {
+                that.parent().parent().remove();
+            }
+        })
+    });
+
+
+
+    $('#tableform').on('click', '.delete-imgBtn', function () {
+        console.log('delBtn-click');
+        var data = $(this).attr("imgId");
+        var that = $(this);
+        $.ajax({
+            url: '/admin',
+            data: {imgId: data},
+            type: "DELETE"
+        }).done(function (d) {
+            if (d.state === 1) {
+                that.parent().parent().remove();
+            }
+        })
+    });
+
 });

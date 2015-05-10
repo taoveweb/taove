@@ -113,7 +113,7 @@ var albumsSchema=new Schema({
 
 
 var Albums=mongoose.model('Albums',albumsSchema);
-exports.albums=Albums;
+exports.Albums=Albums;
 module.exports.ObjectId=ObjectId;
 
 

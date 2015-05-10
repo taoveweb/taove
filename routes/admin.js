@@ -7,7 +7,7 @@ var formidable = require('formidable');
 var util = require('util');
 var URL = require('url');
 var db = require('../models/db');
-var albums = db.albums;
+var Albums = db.Albums;
 var ObjectId = db.ObjectId;
 
 router.get('/', getAlbum);
@@ -28,7 +28,7 @@ function getAlbum(req, res, next) {
         query = {projectTitle: req.params.projectTitle};
     }
     console.log(query);
-    albums.find(query, null, function (err, list) {
+    Albums.find(query, null, function (err, list) {
         if (err) {
             console.log(err);
             res.render('admin/album', {
@@ -49,22 +49,42 @@ function getAlbum(req, res, next) {
 
 function deleteAlbum(req, res, next) {
     console.log('deleteAlbum------------');
-    albums.remove({_id: req.body._id}, function (err, list) {
-        if (err) {
-            res.json({
-                state: 0
-            })
-        }
+    console.log(req.body.imgId);
+    var albums = new Albums;
+    if (req.body._id) {
+        Albums.remove({_id: req.body._id}, function (err, list) {
+            if (err) {
+                res.json({
+                    state: 0
+                })
+            }
 
+            res.json({
+                state: 1,
+                _id: req.body._id
+            })
+        });
+    }else{
+        console.log(albums.img.id(req.body.imgId+'---------------------------'));
+        console.log(doc=albums.img.id(req.body.imgId));
         res.json({
             state: 1,
             _id: req.body._id
+        });
+        Albums.find({},null,function(err,list){
+
+            res.json({
+                state: 1,
+                _id: req.body._id
+            })
         })
-    });
+
+    }
+
 
 }
 
-function putAlbum(req,res,next){
+function putAlbum(req, res, next) {
     console.log('putAlbum------------');
     res.send('修改');
 }
@@ -74,17 +94,17 @@ function postAlbum(req, res, next) {
     form.uploadDir = "./uploads/images/";
     form.encoding = 'utf-8';
     form.keepExtensions = true;
-    form.multiples=true;
+    form.multiples = true;
     form.parse(req, function (err, fields, files) {
 
 
         var param = fields;
         var img = files.img;
-        var imgS=[];
+        var imgS = [];
 
-        if(files.img.length){
-            for(var i=0;i<files.img.length;i++){
-                var imgItem=img[i];
+        if (files.img.length) {
+            for (var i = 0; i < files.img.length; i++) {
+                var imgItem = img[i];
                 imgS.push({
                     path: imgItem.path.replace("uploads\\", ""),
                     name: imgItem.path.replace("uploads\\", ""),
@@ -92,7 +112,7 @@ function postAlbum(req, res, next) {
                     comment: []
                 })
             }
-        }else{
+        } else {
             imgS.push({
                 path: img.path.replace("uploads\\", ""),
                 name: img.path.replace("uploads\\", ""),
@@ -101,7 +121,7 @@ function postAlbum(req, res, next) {
             })
         }
 
-        albums.create({
+        Albums.create({
             projectTitle: param.projectTitle,
             photographer: param.photographer,
             package: param.package,
@@ -112,10 +132,10 @@ function postAlbum(req, res, next) {
             customer: param.customer,
             createdBy: param.createdBy,
             modifiedOn: new Date().getTime(),
-            photoOn:  new Date().getTime()
+            photoOn: new Date().getTime()
 
         }, function (err, list) {
-            if (err)   res.send('失败了'+err);
+            if (err)   res.send('失败了' + err);
             res.send('成功了')
         });
         //res.end(util.inspect({fields: fields, files: files}));

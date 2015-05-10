@@ -98,3 +98,13 @@ input[type=button]:hover{
     background: #777777;
     color: #fff;
 }
+
+.imgList li img{
+    height: 30px;
+    float: left;
+}
+
+.imgList li input{
+    float: right;
+    margin-left: 8px;
+}

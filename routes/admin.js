@@ -65,19 +65,23 @@ function deleteAlbum(req, res, next) {
             })
         });
     }else{
-        console.log(albums.img.id(req.body.imgId+'---------------------------'));
-        console.log(doc=albums.img.id(req.body.imgId));
-        res.json({
-            state: 1,
-            _id: req.body._id
-        });
-        Albums.find({},null,function(err,list){
+        console.log('-albums.img.id(req.body.imgId+--------------------------');
+        Albums.findById("554f710e82af483c312c6f09",null,function(err,list){
+            list.img.id("554f710e82af483c312c6f0a").remove();
+            list.save();
+
+            if (err) {
+                res.json({
+                    state: 0
+                })
+            }
 
             res.json({
                 state: 1,
                 _id: req.body._id
             })
         })
+
 
     }
 
@@ -106,7 +110,7 @@ function postAlbum(req, res, next) {
             for (var i = 0; i < files.img.length; i++) {
                 var imgItem = img[i];
                 imgS.push({
-                    path: imgItem.path.replace("uploads\\", ""),
+                    path: imgItem.path.replace("uploads\\images\\", ""),
                     name: imgItem.path.replace("uploads\\", ""),
                     collectUser: [],
                     comment: []
@@ -114,7 +118,7 @@ function postAlbum(req, res, next) {
             }
         } else {
             imgS.push({
-                path: img.path.replace("uploads\\", ""),
+                path: img.path.replace("uploads\\images\\", ""),
                 name: img.path.replace("uploads\\", ""),
                 collectUser: [],
                 comment: []

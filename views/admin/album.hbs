@@ -80,6 +80,7 @@
             <td>
                 <ul class="imgList">
                     {{#each img}}
+                        {{parent._id}}
                         <li class="clearfix"><img   src="/{{name}}"><input class="delete-imgBtn" imgId="{{_id}}"  type="button" value="删除"></li>
                     {{/each}}
                 </ul>

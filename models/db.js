@@ -82,6 +82,18 @@ exports.photographer=Photographer;
 
 
 //相册就是这样子的
+var commentSchema=new Schema({
+    user:{type:String,trim:true,required: true},
+    name:{type:String,trim:true,required: true},
+    time:{type:Date,default:Date.now()}, //
+    content:String
+});
+var imgSchema=new Schema({
+    path:{type:String,trim:true,required: true},
+    name:{type:String,trim:true,required: true},
+    comment:[commentSchema],
+    collectUser:[Schema.Types.ObjectId]
+});
 var albumsSchema=new Schema({
     projectTitle:{type:String,trim:true,required: true},//相册主题
     photographer:{type:Schema.Types.Mixed,trim:true,required: true},//{name:'摄影师名称',id:photographer_id}
@@ -89,17 +101,7 @@ var albumsSchema=new Schema({
     description:{type:String,trim:true,required: true},//描述
     area:{type:String,trim:true,required: true},//地区
     style:{type:String,trim:true,required: true},//风格
-    img:{type:Schema.Types.Mixed,required: true},/*相片[
-                                                {
-                                                    id:objectId,
-                                                    path:'photo/ymd/',
-                                                    name:'name.png',
-                                                    collect:collect_id,
-                                                    comment:[{user:user_id,name:user_name,time:comment_time,content:comment_content}],
-                                                    collectUser:[user_id]
-                                               }
-                                             ]
-                               */
+    img:[imgSchema],
     customer:{type:String,trim:true,required: true},// {user:user_id}
     createdBy:String,//
     createOn:{type:Date,default:Date.now()}, //

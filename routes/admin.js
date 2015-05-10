@@ -69,28 +69,38 @@ function putAlbum(req,res,next){
     res.send('修改');
 }
 function postAlbum(req, res, next) {
-
+    console.log('postAlbum------------');
     var form = new formidable.IncomingForm();
     form.uploadDir = "./uploads/images/";
     form.encoding = 'utf-8';
     form.keepExtensions = true;
     form.multiples=true;
     form.parse(req, function (err, fields, files) {
-        console.log(files.img.length);
+
 
         var param = fields;
         var img = files.img;
         var imgS=[];
-        for(var i=0;i<files.img.length;i++){
-            var imgItem=img[i];
+
+        if(files.img.length){
+            for(var i=0;i<files.img.length;i++){
+                var imgItem=img[i];
+                imgS.push({
+                    path: imgItem.path.replace("uploads\\", ""),
+                    name: imgItem.path.replace("uploads\\", ""),
+                    collectUser: [],
+                    comment: []
+                })
+            }
+        }else{
             imgS.push({
-                img_id: new ObjectId,
-                path: imgItem.path.replace("uploads\\", ""),
-                name: imgItem.path.replace("uploads\\", ""),
+                path: img.path.replace("uploads\\", ""),
+                name: img.path.replace("uploads\\", ""),
                 collectUser: [],
                 comment: []
             })
         }
+
         albums.create({
             projectTitle: param.projectTitle,
             photographer: param.photographer,

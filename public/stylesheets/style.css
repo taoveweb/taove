@@ -4,6 +4,28 @@ blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr
   padding: 0
 }
 
+.clearfix:after, .clearfix:before, .br:after, .br:before {
+  content: "\0020";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  position: relative;
+  z-index: -1;
+  line-height: 0
+}
+
+.clearfix:after, .br:after {
+  clear: both
+}
+
+.clearfix, .br {
+  *zoom: 1
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important
+}
 body, button, input, select, textarea {
   font: 12px/1.5 tahoma, arial, 'Hiragino Sans GB', \5b8b\4f53, sans-serif
 }

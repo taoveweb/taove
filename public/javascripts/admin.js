@@ -43,4 +43,19 @@ $(function () {
         })
     });
 
+    $('#tableform').on('click', '.putBtn', function () {
+        console.log('putBtn');
+        var data = $(this).attr("imgId");
+        var that = $(this);
+        $.ajax({
+            url: '/admin',
+            data: {imgId: data,_id:that.attr("_id")},
+            type: "DELETE"
+        }).done(function (d) {
+            if (d.state === 1) {
+                that.parent().remove();
+            }
+        })
+    });
+
 });

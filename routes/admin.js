@@ -132,6 +132,7 @@ function postAlbum(req, res, next) {
                 }
                 list.save(function(err){
                     if (err)   res.send('失败了' + err);
+                    res.redirect("/admin");
                     res.send('成功了')
                 })
 
@@ -153,7 +154,7 @@ function postAlbum(req, res, next) {
 
             }, function (err, list) {
                 if (err)   res.send('失败了' + err);
-                res.redirect("/admin");
+                res.location("/admin");
                 res.send('成功了')
             });
 

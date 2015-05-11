@@ -94,14 +94,13 @@ function putAlbum(req, res, next) {
 }
 function postAlbum(req, res, next) {
     console.log('postAlbum------------');
+
     var form = new formidable.IncomingForm();
     form.uploadDir = "./uploads/images/";
     form.encoding = 'utf-8';
     form.keepExtensions = true;
     form.multiples = true;
     form.parse(req, function (err, fields, files) {
-
-
         var param = fields;
         var img = files.img;
         var imgS = [];
@@ -125,24 +124,40 @@ function postAlbum(req, res, next) {
             })
         }
 
-        Albums.create({
-            projectTitle: param.projectTitle,
-            photographer: param.photographer,
-            package: param.package,
-            description: param.description,
-            area: param.area,
-            style: param.style,
-            img: imgS,
-            customer: param.customer,
-            createdBy: param.createdBy,
-            modifiedOn: new Date().getTime(),
-            photoOn: new Date().getTime()
+        if (param._id) {
+            //只上传图处
+            Albums.findById(param._id,function(err,list){
+                for(var i=0;i<imgS.length;i++){
+                    list.img.push(imgS[i]);
+                }
+                list.save(function(err){
+                    if (err)   res.send('失败了' + err);
+                    res.send('成功了')
+                })
 
-        }, function (err, list) {
-            if (err)   res.send('失败了' + err);
-            res.redirect("/admin");
-            res.send('成功了')
-        });
+            });
+        } else {
+            //增加一条相册记录
+            Albums.create({
+                projectTitle: param.projectTitle,
+                photographer: param.photographer,
+                package: param.package,
+                description: param.description,
+                area: param.area,
+                style: param.style,
+                img: imgS,
+                customer: param.customer,
+                createdBy: param.createdBy,
+                modifiedOn: new Date().getTime(),
+                photoOn: new Date().getTime()
+
+            }, function (err, list) {
+                if (err)   res.send('失败了' + err);
+                res.redirect("/admin");
+                res.send('成功了')
+            });
+
+        }
         //res.end(util.inspect({fields: fields, files: files}));
     });
 

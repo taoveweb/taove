@@ -11,30 +11,30 @@
 <div class="search clearfix">
 
 
-            <table>
-                <tbody>
-                <tr>
-                    <td colspan="11">
-                        <input id="searchVal" type="text" placeholder="相册名称"><input id="searchBtn" type="submit" value="查询">
-                    </td>
-                </tr>
-                <form method="post" action="/admin" enctype="multipart/form-data">
-                <tr>
-                    <td ><input type="text" name="projectTitle" placeholder="相册名称"></td>
+    <table>
+        <tbody>
+        <tr>
+            <td colspan="11">
+                <input id="searchVal" type="text" placeholder="相册名称"><input id="searchBtn" type="submit" value="查询">
+            </td>
+        </tr>
+        <form method="post" action="/admin" enctype="multipart/form-data">
+            <tr>
+                <td><input type="text" name="projectTitle" placeholder="相册名称"></td>
 
-                    <td>
-                        <span>摄影师</span>
-                        <select name="photographer" placeholder="摄影师">
-                            <option value="黄家金">黄家金</option>
-                        </select>
-                    </td>
-                    <td><span>套餐</span>
-                        <select name="package" placeholder="套餐">
-                            <option value="A">A套餐</option>
-                            <option value="B">B套餐</option>
-                            <option value="C">C套餐</option>
-                        </select>
-                    </td>
+                <td>
+                    <span>摄影师</span>
+                    <select name="photographer" placeholder="摄影师">
+                        <option value="黄家金">黄家金</option>
+                    </select>
+                </td>
+                <td><span>套餐</span>
+                    <select name="package" placeholder="套餐">
+                        <option value="A">A套餐</option>
+                        <option value="B">B套餐</option>
+                        <option value="C">C套餐</option>
+                    </select>
+                </td>
 
                 <td><input type="text" name="description" placeholder="描述"></td>
                 <td><input type="text" name="area" placeholder="地区"></td>
@@ -49,10 +49,10 @@
                 <td>
                     <input type="submit" value="增加">
                 </td>
-                </tr>
-                </form>
-                </tbody>
-            </table>
+            </tr>
+        </form>
+        </tbody>
+    </table>
 
 
 </div>
@@ -78,10 +78,21 @@
             <td><input type="text" name="area" value="{{area}}" placeholder="地区"></td>
             <td><input type="text" name="style" value="{{style}}" placeholder="风格"></td>
             <td>
-                <ul class="imgList" _id="{{_id}}" >
+                <ul class="imgList">
                     {{#each img}}
                         {{parent._id}}
-                        <li class="clearfix"><img   src="/{{name}}"><input class="delete-imgBtn" imgId="{{_id}}"  type="button" value="删除"></li>
+                        <li class="clearfix"><img src="/{{name}}"><input class="delete-imgBtn" _id="{{../_id}}"
+                                                                         imgId="{{_id}}" type="button" value="删除"></li>
+                        {{#if @last}}
+                            <form method="post" action="/admin" enctype="multipart/form-data">
+
+                                <li>
+                                    <input type="hidden" value="{{../../_id}}" name="_id">
+                                    <input type="file" name="img" multiple>
+                                    <input class="add_img" type="submit" value="增加图片"/>
+                                </li>
+                            </form>
+                        {{/if}}
                     {{/each}}
                 </ul>
             </td>

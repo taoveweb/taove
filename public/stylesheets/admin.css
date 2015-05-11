@@ -98,7 +98,9 @@ input[type=button]:hover{
     background: #777777;
     color: #fff;
 }
-
+.imgList li{
+    padding: 3px 0;
+}
 .imgList li img{
     height: 30px;
     float: left;
@@ -107,4 +109,12 @@ input[type=button]:hover{
 .imgList li input{
     float: right;
     margin-left: 8px;
+}
+.imgList li .add_img{
+    display: block;
+    margin: 0 auto;
+    clear: both;
+    float: none;
+    width: 90%;
+    float: left;
 }

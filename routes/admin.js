@@ -88,7 +88,7 @@ function deleteAlbum(req, res, next) {
 
 function putAlbum(req, res, next) {
     console.log('putAlbum------------');
-     var  _id=req.body._id
+     var  _id=req.body._id;
      delete req.body._id;
 
     Albums.update({_id: _id}, req.body, function (err, list) {

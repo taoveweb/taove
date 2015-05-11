@@ -47,13 +47,15 @@ $(function () {
         console.log('putBtn');
         var data = $(this).attr("imgId");
         var that = $(this);
+        var arr=$(this).parent().parent().find(":input").serializeArray();
+        console.log(arr);
         $.ajax({
             url: '/admin',
-            data: {imgId: data,_id:that.attr("_id")},
-            type: "DELETE"
+            data: arr,
+            type: "PUT"
         }).done(function (d) {
             if (d.state === 1) {
-                that.parent().remove();
+                console.log("成功了");
             }
         })
     });

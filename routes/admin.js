@@ -84,14 +84,19 @@ function deleteAlbum(req, res, next) {
 
 
     }
-
-
 }
 
 function putAlbum(req, res, next) {
     console.log('putAlbum------------');
-    res.send('修改');
+     var  _id=req.body._id
+     delete req.body._id;
+
+    Albums.update({_id: _id}, req.body, function (err, list) {
+        if (err) return res.send("更新数据失败了");
+        res.send('修改');
+    });
 }
+
 function postAlbum(req, res, next) {
     console.log('postAlbum------------');
 
@@ -126,11 +131,11 @@ function postAlbum(req, res, next) {
 
         if (param._id) {
             //只上传图处
-            Albums.findById(param._id,function(err,list){
-                for(var i=0;i<imgS.length;i++){
+            Albums.findById(param._id, function (err, list) {
+                for (var i = 0; i < imgS.length; i++) {
                     list.img.push(imgS[i]);
                 }
-                list.save(function(err){
+                list.save(function (err) {
                     if (err)   res.send('失败了' + err);
                     res.redirect("/admin");
                     res.send('成功了')

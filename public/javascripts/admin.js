@@ -34,11 +34,11 @@ $(function () {
         var that = $(this);
         $.ajax({
             url: '/admin',
-            data: {imgId: data},
+            data: {imgId: data,_id:that.parent().parent().attr("_id")},
             type: "DELETE"
         }).done(function (d) {
             if (d.state === 1) {
-                that.parent().parent().remove();
+                that.parent().remove();
             }
         })
     });

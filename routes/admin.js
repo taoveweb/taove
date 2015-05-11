@@ -49,9 +49,9 @@ function getAlbum(req, res, next) {
 
 function deleteAlbum(req, res, next) {
     console.log('deleteAlbum------------');
-    console.log(req.body.imgId);
     var albums = new Albums;
-    if (req.body._id) {
+    var imgid = req.body.imgId;
+    if (!imgid) {
         Albums.remove({_id: req.body._id}, function (err, list) {
             if (err) {
                 res.json({
@@ -64,22 +64,22 @@ function deleteAlbum(req, res, next) {
                 _id: req.body._id
             })
         });
-    }else{
+    } else {
         console.log('-albums.img.id(req.body.imgId+--------------------------');
-        Albums.findById("554f710e82af483c312c6f09",null,function(err,list){
-            list.img.id("554f710e82af483c312c6f0a").remove();
-            list.save();
+        Albums.findById(req.body._id, null, function (err, list) {
+            list.img.id(imgid).remove();
+            list.save(function (err) {
+                if (err) {
+                    res.json({
+                        state: 0
+                    })
+                }
 
-            if (err) {
                 res.json({
-                    state: 0
+                    state: 1,
+                    _id: req.body._id
                 })
-            }
-
-            res.json({
-                state: 1,
-                _id: req.body._id
-            })
+            });
         })
 
 
@@ -140,6 +140,7 @@ function postAlbum(req, res, next) {
 
         }, function (err, list) {
             if (err)   res.send('失败了' + err);
+            res.redirect("/admin");
             res.send('成功了')
         });
         //res.end(util.inspect({fields: fields, files: files}));

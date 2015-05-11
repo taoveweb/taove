@@ -78,7 +78,7 @@
             <td><input type="text" name="area" value="{{area}}" placeholder="地区"></td>
             <td><input type="text" name="style" value="{{style}}" placeholder="风格"></td>
             <td>
-                <ul class="imgList">
+                <ul class="imgList" _id="{{_id}}" >
                     {{#each img}}
                         {{parent._id}}
                         <li class="clearfix"><img   src="/{{name}}"><input class="delete-imgBtn" imgId="{{_id}}"  type="button" value="删除"></li>

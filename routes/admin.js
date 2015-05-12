@@ -71,6 +71,7 @@ function deleteAlbum(req, res, next) {
 function putAlbum(req, res, next) {
     console.log('putAlbum------------');
     var _id = req.body._id;
+    req.body.modifiedOn=new Date().getTime();
     delete req.body._id;
 
     Albums.update({_id: _id}, req.body, function (err, list) {
@@ -118,9 +119,10 @@ function postAlbum(req, res, next) {
                     list.img.push(imgS[i]);
                 }
                 list.save(function (err) {
+
                     if (err)   res.send('失败了' + err);
+                    Albums.update({_id:param._id},{$set:{modifiedOn:new Date().getTime()}});
                     res.redirect("/admin");
-                    res.send('成功了')
                 })
 
             });

@@ -38,17 +38,20 @@ mongoose.connection.on('SIGINT', function() {
 //用户
 var userSchema=new Schema({
     name:{type:String,trim:true,required: true},//
+    phone:{type:Number,trim:true,required: true},//13621214703
     password:{type: String,required: true,trim: true},//
-    email:{type: String,required: true,trim: true},//taoveweb@gmail.com
-    userPicture:{type: String,required: true,trim: true},
+    email:{type: String,trim: true},//taoveweb@gmail.com
+    userPicture:{type: String,trim: true},
     photos:[Schema.Types.Mixed],//[{id:img_id,src:'photo/ymd/name.png',collect:Number,comment:Number}]
     message:String,//
     collect:[Schema.Types.Mixed],//[{id:img_id,src:'photo/ymd/name.png',collect:collect_id,comment:comment_id,createdOn:Date.now()}]
     intention:Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
     isPhotographer:{type: Boolean,default: false},//photographer_id
-    phone:Number,//13621214703
     createdOn:{type:Date,default :Date.now()},
     modifiedOn:Date,
+    approved:{type:Boolean,default:false},
+    banned: {type: Boolean,default: false},
+    admin: { type: Boolean,default: false },
     lastLogin:Date
 });
 var User=mongoose.model('User',userSchema);
@@ -104,10 +107,9 @@ var albumsSchema=new Schema({
     img:[imgSchema],
     customer:{type:String,trim:true,required: true},// {user:user_id}
     createdBy:String,//
-    createOn:{type:Date,default:Date.now()}, //
-    modifiedOn:Date,//
-    photoOn:Date//
-
+    createOn:{type:Date,default:Date.now()},//
+    modifiedOn:Date,
+    approved:{type:Boolean,default:false}
 });
 
 

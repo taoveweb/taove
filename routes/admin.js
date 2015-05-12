@@ -10,6 +10,7 @@ var db = require('../models/db');
 var Albums = db.Albums;
 var ObjectId = db.ObjectId;
 
+router.get('/', getAlbum);
 router.get('/albums', getAlbum);
 router.get('/albums/:projectTitle', getAlbum);//查
 router.post('/albums', postAlbum);
@@ -53,32 +54,16 @@ function deleteAlbum(req, res, next) {
     var imgid = req.body.imgId;
     if (!imgid) {
         Albums.remove({_id: req.body._id}, function (err, list) {
-            if (err) {
-                res.json({
-                    state: 0
-                })
-            }
-
-            res.json({
-                state: 1,
-                _id: req.body._id
-            })
+            if (err) res.json({state: 0});
+            res.json({state: 1});
         });
     } else {
         console.log('-albums.img.id(req.body.imgId+--------------------------');
         Albums.findById(req.body._id, null, function (err, list) {
             list.img.id(imgid).remove();
             list.save(function (err) {
-                if (err) {
-                    res.json({
-                        state: 0
-                    })
-                }
-
-                res.json({
-                    state: 1,
-                    _id: req.body._id
-                })
+                if (err)  res.json({state: 0});
+                res.json({state: 1});
             });
         })
 
@@ -88,8 +73,8 @@ function deleteAlbum(req, res, next) {
 
 function putAlbum(req, res, next) {
     console.log('putAlbum------------');
-     var  _id=req.body._id;
-     delete req.body._id;
+    var _id = req.body._id;
+    delete req.body._id;
 
     Albums.update({_id: _id}, req.body, function (err, list) {
         if (err) return res.send("更新数据失败了");
@@ -164,7 +149,6 @@ function postAlbum(req, res, next) {
             });
 
         }
-        //res.end(util.inspect({fields: fields, files: files}));
     });
 
 

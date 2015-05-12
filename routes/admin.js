@@ -28,17 +28,14 @@ function getAlbum(req, res, next) {
     if (!!req.params.projectTitle) {
         query = {projectTitle: req.params.projectTitle};
     }
-    console.log(query);
-    Albums.find(query, null, function (err, list) {
+    Albums.find(query, null,{sort: { createOn: -1 }}, function (err, list) {
         if (err) {
-            console.log(err);
             res.render('admin/album', {
                 getSucess: false,
                 title: "相册",
                 err: err
-            })
+            });
         }
-        console.log('getAlbum成功');
         res.render('admin/album', {
             layout: "layout_admin",
             title: "相册",

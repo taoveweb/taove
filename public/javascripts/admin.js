@@ -16,7 +16,7 @@ $(function () {
         var data = $(this).attr("_id");
         var that = $(this);
         $.ajax({
-            url: '/admin',
+            url: '/admin/albums',
             data: {_id: data},
             type: "DELETE"
         }).done(function (d) {
@@ -33,7 +33,7 @@ $(function () {
         var data = $(this).attr("imgId");
         var that = $(this);
         $.ajax({
-            url: '/admin',
+            url: '/admin/albums',
             data: {imgId: data,_id:that.attr("_id")},
             type: "DELETE"
         }).done(function (d) {
@@ -50,7 +50,7 @@ $(function () {
         var arr=$(this).parent().parent().find(":input").serializeArray();
         console.log(arr);
         $.ajax({
-            url: '/admin',
+            url: '/admin/albums',
             data: arr,
             type: "PUT"
         }).done(function (d) {

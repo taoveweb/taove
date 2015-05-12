@@ -10,11 +10,11 @@ var db = require('../models/db');
 var Albums = db.Albums;
 var ObjectId = db.ObjectId;
 
-router.get('/', getAlbum);
-router.get('/:projectTitle', getAlbum);//查
-router.post('/', postAlbum);
-router.put('/', putAlbum);//册
-router.delete('/', deleteAlbum);//册
+router.get('/albums', getAlbum);
+router.get('/albums/:projectTitle', getAlbum);//查
+router.post('/albums', postAlbum);
+router.put('/albums', putAlbum);//册
+router.delete('/albums', deleteAlbum);//册
 
 router.get('/user', getUser);
 router.get('/photographer', getPhotographer);

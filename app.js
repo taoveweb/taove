@@ -7,6 +7,14 @@ var bodyParser = require('body-parser');
 var hbs=require('hbs');
 global.__baseDir=__dirname;
 var blocks = {};
+
+var routes = require('./routes/index');
+var users = require('./routes/admin/users');
+var admin = require('./routes/admin/albums');
+
+var app = express();
+
+
 hbs.registerHelper('extend', function(name, context) {
   var block = blocks[name];
   if (!block) {
@@ -20,13 +28,6 @@ hbs.registerHelper('block', function(name) {
   blocks[name] = [];
   return val;
 });
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var admin = require('./routes/admin');
-
-var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -42,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/admin/users', users);
 app.use('/admin', admin);
 
 // catch 404 and forward to error handler

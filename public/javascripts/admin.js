@@ -54,7 +54,9 @@ $(function () {
             data: arr,
             type: "PUT"
         }).done(function (d) {
+            console.log(d);
             if (d.state === 1) {
+                document.location.reload();
                 console.log("成功了");
             }
         })

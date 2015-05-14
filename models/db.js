@@ -48,7 +48,7 @@ var userSchema=new Schema({
     intention:Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
     isPhotographer:{type: Boolean,default: false},//photographer_id
     createdOn:{type:Date,default :Date.now()},
-    modifiedOn:Date,
+    updated:Date,
     approved:{type:Boolean,default:false},
     banned: {type: Boolean,default: false},
     admin: { type: Boolean,default: false },
@@ -76,7 +76,7 @@ var photographerSchema=new Schema({
 /*    promise:Boolean,//*/
 /*    collect:[Schema.Types.Mixed],//[{albumsId:albums_id,imgId:img_id,createdOn:Date.now()}]*/
     createdOn:{type:Date,default :Date.now()},
-    modifiedOn:Date,
+    updated:Date,
     lastLogin:Date
 });
 var Photographer=mongoose.model('Photographer',photographerSchema);
@@ -98,7 +98,7 @@ var imgSchema=new Schema({
     collectUser:[Schema.Types.ObjectId]
 });
 var albumsSchema=new Schema({
-    projectTitle:{type:String,trim:true,required: true},//相册主题
+    albumsTitle:{type:String,trim:true,required: true},//相册主题
     photographer:{type:Schema.Types.Mixed,trim:true,required: true},//{name:'摄影师名称',id:photographer_id}
     package:{type:String,trim:true,required: true},//套餐
     description:{type:String,trim:true,required: true},//描述
@@ -108,11 +108,16 @@ var albumsSchema=new Schema({
     customer:{type:String,trim:true,required: true},// {user:user_id}
     createdBy:String,//
     createOn:{type:Date,default:Date.now()},//
-    modifiedOn:Date,
+    updated:Date,
     approved:{type:Boolean,default:false}
 });
 
-
+albumsSchema.pre("save",function(next){
+    if(!this.isModified('updated')) this.updated=new Date;
+    console.log("updated-----------------------");
+    console.log(this.updated);
+    next();
+});
 
 var Albums=mongoose.model('Albums',albumsSchema);
 exports.Albums=Albums;

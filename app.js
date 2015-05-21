@@ -9,8 +9,9 @@ global.__baseDir=__dirname;
 var blocks = {};
 
 var routes = require('./routes/index');
-var users = require('./routes/admin/users');
-var admin = require('./routes/admin/albums');
+var users = require('./routes/api/users');
+var admin = require('./routes/api/albums');
+var photographer = require('./routes/api/photographer');
 
 var app = express();
 
@@ -43,8 +44,9 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 
 
 app.use('/', routes);
-app.use('/admin/users', users);
-app.use('/admin', admin);
+app.use('/api', admin);
+app.use('/api/users', users);
+app.use('/api/photographer', photographer);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

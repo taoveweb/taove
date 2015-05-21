@@ -5,7 +5,7 @@ $(function () {
     //查询
     var baseUrl = document.location.href;
     $('#searchBtn').on('click', function () {
-        document.location.href = "http://" + document.location.hostname + ":3000/admin/" + $('#searchVal').val();
+        document.location.href = "http://" + document.location.hostname + ":3000/api/" + $('#searchVal').val();
     })
 
     //删除
@@ -16,7 +16,7 @@ $(function () {
         var data = $(this).attr("_id");
         var that = $(this);
         $.ajax({
-            url: '/admin/albums',
+            url: '/api/albums',
             data: {_id: data},
             type: "DELETE"
         }).done(function (d) {
@@ -33,7 +33,7 @@ $(function () {
         var data = $(this).attr("imgId");
         var that = $(this);
         $.ajax({
-            url: '/admin/albums',
+            url: '/api/albums',
             data: {imgId: data,_id:that.attr("_id")},
             type: "DELETE"
         }).done(function (d) {
@@ -50,7 +50,7 @@ $(function () {
         var arr=$(this).parent().parent().find(":input").serializeArray();
         console.log(arr);
         $.ajax({
-            url: '/admin/albums',
+            url: '/api/albums',
             data: arr,
             type: "PUT"
         }).done(function (d) {

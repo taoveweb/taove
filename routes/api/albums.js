@@ -84,7 +84,7 @@ function postAlbum(req, res, next) {
     console.log('postAlbum------------');
 
     var form = new formidable.IncomingForm();
-    form.uploadDir = "./uploads/images/";
+    form.uploadDir = "./uploads/img/";
     form.encoding = 'utf-8';
     form.keepExtensions = true;
     form.multiples = true;
@@ -97,7 +97,7 @@ function postAlbum(req, res, next) {
             for (var i = 0; i < files.img.length; i++) {
                 var imgItem = img[i];
                 imgS.push({
-                    path: imgItem.path.replace("uploads\\images\\", ""),
+                    path: imgItem.path.replace("uploads\\img\\", ""),
                     name: imgItem.path.replace("uploads\\", ""),
                     collectUser: [],
                     comment: []
@@ -105,7 +105,7 @@ function postAlbum(req, res, next) {
             }
         } else {
             imgS.push({
-                path: img.path.replace("uploads\\images\\", ""),
+                path: img.path.replace("uploads\\img\\", ""),
                 name: img.path.replace("uploads\\", ""),
                 collectUser: [],
                 comment: []

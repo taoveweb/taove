@@ -49,7 +49,7 @@ h1{
 }
 .search{
     border-bottom: 3px solid #dedede;
-   padding-bottom: 8px;
+    padding-bottom: 8px;
 
 }
 .search input{
@@ -117,4 +117,19 @@ input[type=button]:hover{
     float: none;
     width: 90%;
     float: left;
+}
+
+.users{
+    width: 100%;
+    border-left: 1px solid #ddd;
+}
+
+.users td{
+    height: 30px;padding:  4px 5px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: center;
+}
+.users thead td{
+    background: #dedede;
 }

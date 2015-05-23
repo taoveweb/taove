@@ -1,5 +1,5 @@
 var express = require('express');
-var db=require('../../models/db');
+var User=require('../../models/db').User;
 var router = express.Router();
 
 /* GET users listing. */
@@ -25,6 +25,7 @@ function index  (req,res){
 };
 
 function create(req,res,next){
+  console.log(create)
   res.send('create');
 };
 

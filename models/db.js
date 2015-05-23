@@ -58,7 +58,7 @@ var userSchema = new Schema({
     lastLogin: Date
 });
 var User = mongoose.model('User', userSchema);
-exports.user = User;
+exports.User = User;
 
 
 //摄影师

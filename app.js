@@ -8,7 +8,7 @@ var hbs=require('hbs');
 global.__baseDir=__dirname;
 var blocks = {};
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var users = require('./routes/api/users');
 var admin = require('./routes/api/albums');
 var photographer = require('./routes/api/photographer');
@@ -43,7 +43,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 
-app.use('/', routes);
+app.use('/', index);
 app.use('/api', admin);
 app.use('/api/users', users);
 app.use('/api/photographer', photographer);

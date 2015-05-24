@@ -34,7 +34,8 @@
     overflow: scroll;
 }
 
-input[type=text]{
+input[type=text],
+input[type=password]{
     display: inline-block;
     height: 30px;
     width: 100px;

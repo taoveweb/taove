@@ -3,12 +3,19 @@
   <head>
     <title>{{title}}</title>
     <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <link rel='stylesheet' href='/css/style.css' />
     {{{block "adminStyle"}}}
   </head>
   <body>
+  <header><span class="local">全部</span><span class="title">{{title}}</span></header>
     {{{body}}}
-
+  <footer>
+      <span>精选</span>
+      <span>分类</span>
+      <span>摄影师</span>
+      <span>我的</span>
+  </footer>
     {{{block "adminScripts"}}}
   </body>
 </html>

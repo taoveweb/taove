@@ -27,7 +27,7 @@ blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr
   visibility: hidden !important
 }
 body, button, input, select, textarea {
-  font: 12px/1.5 tahoma, arial, 'Hiragino Sans GB', \5b8b\4f53, sans-serif
+  font: 14px/1.5 tahoma, arial, 'Hiragino Sans GB', \5b8b\4f53, sans-serif
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -83,9 +83,44 @@ table {
   border-spacing: 0
 }
 
+header{
+  position: relative;
+  height: 52px;
+  line-height: 52px;
+  background: #fe555a;
+  text-align: center;
 
+}
+header .title{
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  color: #fff;
+}
 
-
-
+header .local{
+  position: absolute;
+  left: 20px;
+  color: #fff;
+}
+footer{
+  height: 52px;
+  position: absolute;
+  bottom: 0px;
+  background: #ededf0;
+  border-top: 1px solid #b2b2b2;
+  color: #929292;
+  left: 0;
+  width: 100%;
+  
+}
+footer span{
+  display: block;
+  float: left;
+  width: 25%;
+  height: 42px;
+  text-align: center;
+  line-height: 52px;
+}
 /*api--------------------------------------------*/
 

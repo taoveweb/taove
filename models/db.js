@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 var dbURI = 'mongodb://localhost/test';
 var dbOptions = {'user': 'db_username', 'pass': 'db_password'};
 var Schema = mongoose.Schema;
-var ObjectId = mongoose.Types.ObjectId;
+var ObjectId = Schema.Types.ObjectId;
 mongoose.connect(dbURI);
 
 mongoose.connection.on('error', function (err) {
@@ -44,7 +44,7 @@ var userSchema = new Schema({
     pohotoUrl: {type: String, trim: true},
     message: String,//
     intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
-    Photographer: {type: Schema.Types.ObjectId,ref: 'photographerSchema' },//photographer_id
+    Photographer: {type: ObjectId,ref: 'photographerSchema' },//photographer_id
     createdOn: {type: Date, default: Date.now()},
     posts:{
         likes:[Schema.Types.Mixed],
@@ -74,7 +74,7 @@ var photographerSchema = new Schema({
     city: String,//
     makeuperIntroduction: String,//化妆师
     hot: Number,//
-    albums: [{type: Schema.Types.ObjectId, ref: 'albumsSchema'}],
+    albums: [{type: ObjectId, ref: 'albumsSchema'}],
     createdOn: {type: Date, default: Date.now()},
     updated: Date
 });
@@ -86,12 +86,12 @@ exports.photographer = Photographer;
 var imgSchema = new Schema({
     path: {type: String, trim: true, required: true},
     name: {type: String, trim: true, required: true},
-    likes: [{type: Schema.Types.ObjectId,ref: 'User' }],
-    watches: [{type: Schema.Types.ObjectId, ref: 'User' }],
+    likes: [{type: ObjectId,ref: 'User' }],
+    watches: [{type: ObjectId, ref: 'User' }],
     comment: [{
         user: {
             id: {
-                type: Schema.Types.ObjectId,
+                type: ObjectId,
                 ref: 'User'
             },
             name: String
@@ -108,7 +108,7 @@ var albumsSchema = new Schema({
     area: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
     img: [imgSchema],
-    watches: [{type: Schema.Types.ObjectId,ref: 'User'}],
+    watches: [{type: ObjectId,ref: 'User'}],
     customer: {type: String, trim: true, required: true},// {user:user_id}
     createdBy: String,//
     createOn: {type: Date, default: Date.now()},//
@@ -125,7 +125,7 @@ albumsSchema.pre("save", function (next) {
 
 var Albums = mongoose.model('Albums', albumsSchema);
 exports.Albums = Albums;
-module.exports.ObjectId = ObjectId;
+module.exports.ObjectId = mongoose.Types.ObjectId;
 
 
 

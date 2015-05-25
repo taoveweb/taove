@@ -8,13 +8,9 @@ var hbs=require('hbs');
 global.__baseDir=__dirname;
 var blocks = {};
 
-var index = require('./routes/index');
-var users = require('./routes/api/users');
-var admin = require('./routes/api/albums');
-var photographer = require('./routes/api/photographer');
-
 var app = express();
 
+require('./routes/route')(app);
 
 hbs.registerHelper('extend', function(name, context) {
   var block = blocks[name];
@@ -23,7 +19,6 @@ hbs.registerHelper('extend', function(name, context) {
   }
   block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
 });
-
 hbs.registerHelper('block', function(name) {
   var val = (blocks[name] || []).join('\n');
   blocks[name] = [];
@@ -43,10 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 
-app.use('/', index);
-app.use('/api', admin);
-app.use('/api/users', users);
-app.use('/api/photographer', photographer);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

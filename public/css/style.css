@@ -114,13 +114,16 @@ footer{
   width: 100%;
   
 }
-footer span{
+footer a{
   display: block;
   float: left;
   width: 25%;
-  height: 42px;
+  height: 52px;
   text-align: center;
   line-height: 52px;
+  cursor: pointer;
+  color: #929292;
 }
+
 /*api--------------------------------------------*/
 

@@ -28,7 +28,7 @@ module.exports = function (app) {
     app.use('/api/photographer', apiPhotographer);
 
     //admin
-    app.use('/admin/', admin);
+    app.use('/admin', admin);
     app.use('/admin/login', login);
     app.use('/admin/register', register);
     app.use('/admin/intention', intention);

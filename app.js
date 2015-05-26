@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var fs=require('fs');
 var hbs=require('hbs');
 global.__baseDir=__dirname;
 var blocks = {};
@@ -12,6 +13,10 @@ var app = express();
 
 require('./routes/route')(app);
 
+/*
+hbs.registerPartial('partial', fs.readFileSync(__dirname + '/views/admin/admincss.hbs', 'utf8'));
+*/
+hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('extend', function(name, context) {
   var block = blocks[name];
   if (!block) {

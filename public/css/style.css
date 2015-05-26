@@ -3,7 +3,10 @@ blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr
   margin: 0;
   padding: 0
 }
-
+html,body{
+  min-height: 100%;
+  background: #efeff4;
+}
 .clearfix:after, .clearfix:before, .br:after, .br:before {
   content: "\0020";
   display: block;
@@ -93,7 +96,7 @@ header{
 }
 header .title{
   text-align: center;
-  font-size: 25px;
+  font-size: 22px;
   font-weight: normal;
   color: #fff;
 }
@@ -102,10 +105,11 @@ header .local{
   position: absolute;
   left: 20px;
   color: #fff;
+  font-size: 16px;
 }
 footer{
   height: 52px;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   background: #ededf0;
   border-top: 1px solid #b2b2b2;

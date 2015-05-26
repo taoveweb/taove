@@ -18,8 +18,9 @@ router.post('/login', doLogin); // Login action
 router.get('/logout', doLogout); // Logout current user
 
 function index  (req,res){
-    console.log('intention');
     res.render('admin/intention',{
+
+        title:"意向单"
     });
 };
 

@@ -46,21 +46,31 @@
           <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/admin/index.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+                <state vertical-scroll-proportion="-6.571429">
+                  <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
                   <folding>
                     <element signature="e#1#106#0#Handlebars" expanded="false" />
-                    <element signature="e#556#622#0#Handlebars" expanded="false" />
+                    <element signature="e#903#969#0#Handlebars" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="layout.hbs" pinned="false" current-in-tab="true">
+          <file leaf-file-name="login.hbs" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/admin/login.hbs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.84821427">
+                  <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="layout.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/layout.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.0357143">
-                  <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+                <state vertical-scroll-proportion="-8.357142">
+                  <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -105,18 +115,32 @@
           <file leaf-file-name="admin.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/css/admin.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+                <state vertical-scroll-proportion="0.6328502">
+                  <caret line="217" column="21" selection-start-line="217" selection-start-column="21" selection-end-line="217" selection-end-column="21" />
                   <folding>
+                    <element signature="e#4#140#0" expanded="false" />
                     <element signature="e#149#352#0" expanded="false" />
+                    <element signature="e#359#466#0" expanded="false" />
                     <element signature="e#476#562#0" expanded="false" />
                     <element signature="e#570#670#0" expanded="false" />
+                    <element signature="e#676#701#0" expanded="false" />
                     <element signature="e#712#901#0" expanded="false" />
                     <element signature="e#914#961#0" expanded="false" />
                     <element signature="e#970#1046#0" expanded="false" />
                     <element signature="e#1053#1155#0" expanded="false" />
-                    <element signature="e#1166#1525#0" expanded="false" />
-                    <element signature="e#1846#1962#0" expanded="false" />
+                    <element signature="e#1569#1658#0" expanded="false" />
+                    <element signature="e#1674#1703#0" expanded="false" />
+                    <element signature="e#1713#1855#0" expanded="false" />
+                    <element signature="e#1871#1987#0" expanded="false" />
+                    <element signature="e#2010#2106#0" expanded="false" />
+                    <element signature="e#2130#2178#0" expanded="false" />
+                    <element signature="e#2188#2212#0" expanded="false" />
+                    <element signature="e#2230#2471#0" expanded="false" />
+                    <element signature="e#2492#2515#0" expanded="false" />
+                    <element signature="e#2526#2757#0" expanded="false" />
+                    <element signature="e#2768#2844#0" expanded="false" />
+                    <element signature="e#2862#2907#0" expanded="false" />
+                    <element signature="e#2926#3183#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -189,15 +213,15 @@
         <option value="$PROJECT_DIR$/views/photographer.hbs" />
         <option value="$PROJECT_DIR$/views/admin/csspartials.hbs" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/views/admin/login.hbs" />
         <option value="$PROJECT_DIR$/views/admin/register.hbs" />
         <option value="$PROJECT_DIR$/views/partials/admincss.hbs" />
         <option value="$PROJECT_DIR$/routes/admin/intention.js" />
         <option value="$PROJECT_DIR$/views/admin/intention.hbs" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/views/admin/index.hbs" />
-        <option value="$PROJECT_DIR$/public/css/admin.css" />
         <option value="$PROJECT_DIR$/views/layout.hbs" />
+        <option value="$PROJECT_DIR$/views/admin/index.hbs" />
+        <option value="$PROJECT_DIR$/views/admin/login.hbs" />
+        <option value="$PROJECT_DIR$/public/css/admin.css" />
       </list>
     </option>
   </component>
@@ -363,42 +387,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="img" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Expess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="express" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Expess" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="express" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -492,7 +480,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="825" y="0" width="1099" height="1040" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3053723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -500,7 +488,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496329" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26593408" sideWeight="0.49789253" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26622662" sideWeight="0.49789253" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -694,6 +682,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36186185">
           <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -844,13 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/login.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04822335">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45023698">
@@ -908,40 +890,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/layout.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.357142">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/admin/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        <state vertical-scroll-proportion="-6.571429">
+          <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
           <folding>
             <element signature="e#1#106#0#Handlebars" expanded="false" />
-            <element signature="e#556#622#0#Handlebars" expanded="false" />
+            <element signature="e#903#969#0#Handlebars" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/login.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.84821427">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.6328502">
+          <caret line="217" column="21" selection-start-line="217" selection-start-column="21" selection-end-line="217" selection-end-column="21" />
           <folding>
+            <element signature="e#4#140#0" expanded="false" />
             <element signature="e#149#352#0" expanded="false" />
+            <element signature="e#359#466#0" expanded="false" />
             <element signature="e#476#562#0" expanded="false" />
             <element signature="e#570#670#0" expanded="false" />
+            <element signature="e#676#701#0" expanded="false" />
             <element signature="e#712#901#0" expanded="false" />
             <element signature="e#914#961#0" expanded="false" />
             <element signature="e#970#1046#0" expanded="false" />
             <element signature="e#1053#1155#0" expanded="false" />
-            <element signature="e#1166#1525#0" expanded="false" />
-            <element signature="e#1846#1962#0" expanded="false" />
+            <element signature="e#1569#1658#0" expanded="false" />
+            <element signature="e#1674#1703#0" expanded="false" />
+            <element signature="e#1713#1855#0" expanded="false" />
+            <element signature="e#1871#1987#0" expanded="false" />
+            <element signature="e#2010#2106#0" expanded="false" />
+            <element signature="e#2130#2178#0" expanded="false" />
+            <element signature="e#2188#2212#0" expanded="false" />
+            <element signature="e#2230#2471#0" expanded="false" />
+            <element signature="e#2492#2515#0" expanded="false" />
+            <element signature="e#2526#2757#0" expanded="false" />
+            <element signature="e#2768#2844#0" expanded="false" />
+            <element signature="e#2862#2907#0" expanded="false" />
+            <element signature="e#2926#3183#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/layout.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0357143">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>

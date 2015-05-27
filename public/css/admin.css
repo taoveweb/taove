@@ -83,6 +83,7 @@
     border:1px solid #f84e4e;
     font-size: 18px;
     color: #f84e4e;
+    background: #efeff4;
 }
 
 .intention-main p{
@@ -178,4 +179,100 @@
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
     border-radius: 8px;
+}
+
+.intention-list .item{
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.intention-list .item h2{
+    position: relative;
+    padding-bottom: 10px;
+    color: #666;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.intention-list .item h2 a{
+    position: absolute;
+    right: 15px;
+    font-size: 14px;
+    color: #666;
+}
+
+.intention-list .item p{
+    color: #666;
+}
+.intention-list .item p span em{
+    color: #333;
+}
+.intention-list .item p span.l em{
+    color: #f84e4e;
+}
+.login-main{
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+.login-main input[type=text]{
+    width: 92%;
+    display: block;
+    height: 40px;
+    border:none;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    margin: 0 auto 5px;
+    text-indent: 30px;
+    background: transparent;
+}
+
+.login-main button{
+    width: 92%;
+    display: block;
+    height: 50px;
+    border:1px solid #ddd;
+    border-bottom: 2px solid #ddd;
+    color: #333;
+    font-size: 16px;
+    background: #fff;
+    margin: 20px auto 0px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.l-register{
+    height: 30px;
+    margin: 25px auto 0;
+    display: block;
+    width: 92%;
+    color: #1494e6;
+    text-align: center;
+}
+
+.l-select{
+    width: 92%;
+    margin: 20px auto ;
+    color: #ccc;
+}
+.l-select div{
+    padding-top: 20px;
+    margin-top: 5px;
+    border-top: 1px solid #ddd;
+}
+
+.l-select a{
+    display: block;
+    float: right;
+    width: 20%;
+    margin: 0 10px;
+    text-align: center;
+    color: #000;
+}
+
+.l-select a img{
+    width: 100%;
 }

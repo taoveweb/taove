@@ -38,6 +38,14 @@
 			.mui-slider{
 				margin-bottom: 2px;
 			}
+			.mui-slider-indicator .mui-indicator{
+				box-shadow: none;
+				opacity: 0.6;
+				margin: 1px 1px;
+			}
+			.mui-slider-indicator{
+				bottom: 4px;
+			}
 		</style>
 	</head>
 
@@ -49,33 +57,33 @@
 						<!--支持循环，需要重复图片节点-->
 						<div class="mui-slider-item mui-slider-item-duplicate">
 							<a href="#">
-								<img src="img/yuantiao.jpg" />
+								<img src="img/yuantiao.png" />
 							</a>
 						</div>
 						<div class="mui-slider-item">
 							<a href="#">
-								<img src="img/cbd.jpg" />
+								<img src="img/cbd.png" />
 							</a>
 						</div>
 						<div class="mui-slider-item">
 							<a href="#">
-								<img src="img/muwu.jpg" />
+								<img src="img/muwu.png" />
 							</a>
 						</div>
 						<div class="mui-slider-item">
 							<a href="#">
-								<img src="img/shuijiao.jpg" />
+								<img src="img/shuijiao.png" />
 							</a>
 						</div>
 						<div class="mui-slider-item">
 							<a href="#">
-								<img src="img/yuantiao.jpg" />
+								<img src="img/yuantiao.png" />
 							</a>
 						</div>
 						<!--支持循环，需要重复图片节点-->
 						<div class="mui-slider-item mui-slider-item-duplicate">
 							<a href="#">
-								<img src="img/cbd.jpg" />
+								<img src="img/cbd.png" />
 							</a>
 						</div>
 					</div>
@@ -104,6 +112,7 @@
 		</div>
 		<script src="js/mui.min.js"></script>
 		<script>
+			var count = 0;
 			mui.init({
 				swipeBack: false,
 				pullRefresh: {
@@ -131,17 +140,16 @@
 						//下拉刷新，新纪录插到最前面；
 						table.insertBefore(li, table.firstChild);
 					}
-					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(count > 2); //refresh completed
 				}, 1000);
 			}
-			var count = 0;
+
 			/**
 			 * 上拉加载具体业务实现
 			 */
 			function pullupRefresh() {
 				setTimeout(function() {
 					++count;
-					console.log(count)
 					mui('#pullrefresh').pullRefresh().endPullupToRefresh((count > 2)); //参数为true代表没有更多数据了。
 					var table = document.body.querySelector('.mui-table-view');
 					var cells = document.body.querySelectorAll('.mui-table-view-cell');
@@ -155,7 +163,8 @@
 			}
 			var gallery = mui('.mui-slider');
 			gallery.slider({
-				interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
+				bounceTime:500,
+				interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
 			});
 		</script>
 	</body>

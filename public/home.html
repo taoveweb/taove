@@ -13,15 +13,62 @@
 			body {
 				background-color: #efeff4;
 			}
+			
 			#pullrefresh .mui-table-view-cell{
+				position: relative;
 				padding: 0;
 				border: none;
 			}
+			#pullrefresh .mui-table-view-cell h2{
+				position: absolute;
+				left: 10px;
+				top: 5px;
+				color: #ffffff;
+				font-size: 16px;
+				text-shadow: 0 1px 0 #000;
+				opacity: 0.8;
+				font-weight: normal;
+				line-height: 16px;
+			}
+
+			#pullrefresh .mui-table-view-cell p{
+				position: absolute;
+				top: 30px;
+				left: 10px;
+				color: #ffffff;
+				font-size: 14px;
+				line-height: 14px;
+				text-shadow: 0 1px 0 #000;
+				opacity: 0.6;
+			}
 			#pullrefresh .mui-table-view-cell a{
 				margin: 2px 4px;
-
 				padding: 0;
 				border: none;
+			}
+			#pullrefresh .mui-table-view-cell a:nth-of-type(2) {
+				position: absolute;
+				display: inline-block;
+				bottom: 20px;
+				left: 10px;
+				color: #fff;
+				font-size: 14px;
+				text-shadow: 0 1px 0 #000;
+				opacity: 0.6;
+				height: 30px;
+				line-height: 30px;
+				overflow: visible;
+			}
+			#pullrefresh .mui-table-view-cell a:nth-of-type(2) img{
+				position: relative;
+				top: 11px;
+				margin-right: 5px;
+				display: inline-block;
+				height: 30px;
+				width: 30px;
+				-webkit-border-radius: 30px;
+				-moz-border-radius: 30px;
+				border-radius: 30px;
 			}
 			#pullrefresh .mui-table-view-cell img{
 				display: block;
@@ -95,21 +142,41 @@
 					</div>
 				</div>
 				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell"><a><img src="images/1.png"></a>
+					<li class="mui-table-view-cell">
+						<a><img src="images/1.png"></a>
+						<h2>中国姑娘</h2>
+						<p>1套外景17张婚纱照</p>
+						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
 					</li>
 					<li class="mui-table-view-cell"><a><img src="images/2.png"></a>
+						<h2>中国姑娘</h2>
+						<p>1套外景17张婚纱照</p>
+						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
 					</li>
 					<li class="mui-table-view-cell"><a><img src="images/3.png"></a>
+						<h2>中国姑娘</h2>
+						<p>1套外景17张婚纱照</p>
+						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
 					</li>
 					<li class="mui-table-view-cell"><a><img src="images/4.png"></a>
+						<h2>中国姑娘</h2>
+						<p>1套外景17张婚纱照</p>
+						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
 					</li>
 					<li class="mui-table-view-cell"><a><img src="images/5.png"></a>
+						<h2>中国姑娘</h2>
+						<p>1套外景17张婚纱照</p>
+						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
 					</li>
 					<li class="mui-table-view-cell"><a><img src="images/6.png"></a>
+						<h2>中国姑娘</h2>
+						<p>1套外景17张婚纱照</p>
+						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
 					</li>
 				</ul>
 			</div>
 		</div>
+
 		<script src="js/mui.min.js"></script>
 		<script>
 			var count = 0;
@@ -136,7 +203,9 @@
 					for (var i = 1, len =6; i < len; i++) {
 						var li = document.createElement('li');
 						li.className = 'mui-table-view-cell';
-						li.innerHTML = '<a><img src="images/' +i+ '.png\" /></a>';
+
+						li.innerHTML = '<a><img src="images/' +i+ '.png\" /></a>' +'<h2>中国姑娘</h2><p>1套外景17张婚纱照</p>'+
+						'<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>';
 						//下拉刷新，新纪录插到最前面；
 						table.insertBefore(li, table.firstChild);
 					}
@@ -156,7 +225,8 @@
 					for (var i =1, len =6; i < len; i++) {
 						var li = document.createElement('li');
 						li.className = 'mui-table-view-cell';
-						li.innerHTML = '<a><img src="images/' +i+ '.png\" /></a>';
+						li.innerHTML = '<a><img src="images/' +i+ '.png\" /></a>' +'<h2>中国姑娘</h2><p>1套外景17张婚纱照</p>'+
+						'<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>';
 						table.appendChild(li);
 					}
 				}, 1000);

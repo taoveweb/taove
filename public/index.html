@@ -27,17 +27,17 @@
 				color: #6d6d72;
 				font-size: 15px;
 			}
-			
+
 			.oa-contact-cell.mui-table .mui-table-cell {
 				padding: 11px 0;
 				vertical-align: middle;
 			}
-			
+
 			.oa-contact-cell {
 				position: relative;
 				margin: -11px 0;
 			}
-	
+
 			.oa-contact-avatar {
 				width: 75px;
 			}
@@ -92,7 +92,7 @@
 				top: '46px',
 				bottom: '50px'
 			};
-			
+
 			//创建子页面，首个选项卡页面显示，其它均隐藏；
 			mui.plusReady(function(){
 				plus.navigator.setStatusBarBackground("#fe555a");
@@ -106,7 +106,7 @@
 					self.append(sub);
 				}
 			});
-			
+
 			//当前激活选项
 			var activeTab = subpages[0];
 			var title = document.getElementById("title");
@@ -133,7 +133,7 @@
 				//更改当前活跃的选项卡
 				activeTab = targetTab;
 			});
-			
+
 			//自定义事件，模拟点击“首页选项卡”
 			document.addEventListener('gohome',function () {
 				var defaultTab = document.getElementById("defaultTab");
@@ -142,12 +142,12 @@
 				//切换选项卡高亮
 				var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
 				if(defaultTab!==current){
-					
+
 					current.classList.remove('mui-active');
 					defaultTab.classList.add('mui-active');
 				}
 			});
-			
+
 		</script>
 </body>
 </html>

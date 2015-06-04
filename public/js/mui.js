@@ -3832,10 +3832,10 @@ var mui = (function(document, undefined) {
 					this.progressBarStyle = this.progressBar.style;
 				}
 				//忘记这个代码是干什么的了？
-				//				this.x = this._getScroll();
-				//				if (this.options.startX === false) {
-				//					this.options.startX = this.x;
-				//				}
+								this.x = this._getScroll();
+								if (this.options.startX === false) {
+									this.options.startX = this.x;
+								}
 				//根据active修正startX
 
 				this._super();

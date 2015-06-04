@@ -2,9 +2,150 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<meta name="viewport"
+			  content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>分类</title>
+		<link href="css/mui.min.css" rel="stylesheet"/>
 	</head>
+	<style>
+		.mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-progress-bar{
+			background-color: #fe555a;
+			position: fixed;
+			top: 38px;
+		}
+		.mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active{
+			color: #fe555a;
+		}
+		#sliderSegmentedControl{
+			position: fixed;
+			top: 0;z-index: 2;
+			background: #fff;
+		}
+		.mui-slider-group{
+			padding-top: 40px;
+			margin-left: 0;
+			-webkit-transform: translate3d(0px, 0px, 0px);
+			-moz-transform: translate3d(0px, 0px, 0px);
+			-ms-transform: translate3d(0px, 0px, 0px);
+			-o-transform: translate3d(0px, 0px, 0px);
+			transform: translate3d(0px, 0px, 0px);
+		}
+
+		.clearfix:after, .clearfix:before, .li:after, .li:before {
+			content: "\0020";
+			display: block;
+			height: 0;
+			visibility: hidden;
+			position: relative;
+			z-index: -1;
+			line-height: 0
+		}
+
+		.clearfix:after, .li:after {
+			clear: both
+		}
+
+		.clearfix, .li {
+			*zoom: 1
+		}
+
+		.item1mobile a{
+			display: block;
+			float: left;
+			width: 40%;
+			margin: 5%;;
+		}
+		.mui-table-view-cell:after{
+			background: none;
+		}
+		.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item{
+			border: none;
+		}
+		.mui-table-view-cell>a:not(.mui-btn).mui-active{
+			background: none;
+		}
+	</style>
 	<body>
-	再给我一个小进就开发完了。。
+
+	<div id="slider" class="mui-slider">
+		<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			<a class="mui-control-item mui-active" href="#item1mobile ">
+				本地
+			</a>
+			<a class="mui-control-item" href="#item2mobile">
+				海岛
+			</a>
+			<a class="mui-control-item" href="#item3mobile">
+				风格
+			</a>
+		</div>
+		<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+		<div class="mui-slider-group">
+
+			<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+				<ul id="muiList" class="mui-table-view">
+
+				</ul>
+			</div>
+			<div id="item2mobile" class="mui-slider-item mui-control-content">
+				<ul id="muiList1" class="mui-table-view">
+
+				</ul>
+			</div>
+			<div id="item3mobile" class="mui-slider-item mui-control-content">
+				<ul id="muiList2" class="mui-table-view">
+
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="js/mui.js"></script>
+	<script src="js/mui.lazyload.js"></script>
+	<script src="js/mui.lazyload.img.js"></script>
+	<script>
+		mui.init();
+		var createFragment = function(count) {
+			var fragment = document.createDocumentFragment();
+			var li;
+			for (var i = 0; i < count; i++) {
+				li = document.createElement('li');
+				li.className = 'mui-table-view-cell mui-media';
+				li.innerHTML = '<a>' +
+				'<img class="mui-media-object" data-lazyload="http://www.dcloud.io/hellomui/images/'+(i%5+1)+'.jpg?version='+Math.random()*1000+'">' +
+				'<div class="mui-media-body">主标题<p class="mui-ellipsis">列表二级标题</p></div></a>'+
+				'<a>' +
+				'<img class="mui-media-object" data-lazyload="http://www.dcloud.io/hellomui/images/'+(i%5+1)+'.jpg?version='+Math.random()*1000+'">' +
+				'<div class="mui-media-body">主标题<p class="mui-ellipsis">列表二级标题</p></div></a>';
+
+				fragment.appendChild(li);
+			}
+			return fragment;
+		};
+		(function($) {
+			var list = document.getElementById("muiList");
+			list.appendChild(createFragment(50));
+			$(document).imageLazyload({
+				placeholder: 'images/60x60.gif'
+			});
+		})(mui);
+
+		(function($) {
+			var list = document.getElementById("muiList1");
+			list.appendChild(createFragment(50));
+			$(list).imageLazyload({
+				placeholder: 'images/60x60.gif'
+			});
+		})(mui);
+
+		(function($) {
+			var list = document.getElementById("muiList2");
+			list.appendChild(createFragment(50));
+			$(list).imageLazyload({
+				placeholder: 'images/60x60.gif'
+			});
+		})(mui);
+	</script>
 	</body>
 </html>

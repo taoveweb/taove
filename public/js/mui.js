@@ -2969,8 +2969,11 @@ var mui = (function(document, undefined) {
 				this.wrapper.addEventListener('swiperight', this);
 			}
 			var segmentedControl = this.wrapper.querySelector('.mui-segmented-control');
+			var controlContent = this.wrapper.querySelector('.mui-control-content');
 			if (segmentedControl) { //靠，这个bug排查了一下午，阻止hash跳转，一旦hash跳转会导致可拖拽选项卡的tab不见
 				mui(segmentedControl).on('click', 'a', $.preventDefault);
+				mui(controlContent).on('click', 'a', $.preventDefault);
+
 			}
 		},
 		handleEvent: function(e) {

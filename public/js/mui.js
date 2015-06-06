@@ -3699,7 +3699,7 @@ var mui = (function(document, undefined) {
 			var callback = this.options.down.callback;
 			callback && callback.call(this);
 		},
-		endPulldownToRefresh: function() {
+		endPulldownToRefresh: function(finished) {
 			var self = this;
 			if (self.topPocket && self.loading && this.pulldown) {
 				self.scrollTo(0, 0, self.options.bounceTime, self.options.bounceEasing);
@@ -3818,6 +3818,7 @@ var mui = (function(document, undefined) {
 			if (this.options.startX) {
 				//				$.trigger(this.wrapper, 'scrollend', this);
 			}
+			this._init();
 		},
 		_init: function() {
 			var groups = this.wrapper.querySelectorAll('.' + CLASS_SLIDER_GROUP);
@@ -4133,6 +4134,7 @@ var mui = (function(document, undefined) {
 				}
 			}
 		});
+
 		return slider;
 	};
 	$.ready(function() {

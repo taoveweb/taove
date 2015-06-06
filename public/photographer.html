@@ -1,10 +1,334 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
-		<title></title>
+		<title>摄影师I</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.css">
+		<style>
+			html,
+			body {
+				background-color: #efeff4;
+			}
+			.mui-content{
+				background: #f5f6f5;
+			}
+			#pullrefresh .mui-table-view-cell{
+				position: relative;
+				padding: 0;
+				border: none;
+			}
+			#pullrefresh .mui-table-view-cell h2{
+				position: relative;
+				color: #585c5e;
+				font-size: 16px;
+				opacity: 1;
+				font-weight: normal;
+				line-height: 16px;
+				padding-bottom: 5px;
+			}
+			#pullrefresh .mui-table-view-cell h2 b{
+				position: relative;
+				display: inline-block;
+				font-size: 14px;
+				letter-spacing: 4px;
+				color: #f9cdad;
+			}
+			#pullrefresh .mui-table-view-cell h2 b:before{
+				position: absolute;
+				left: 0;
+				display: inline-block;
+				font-size: 14px;
+				height: 16px;
+				left: 0;
+				letter-spacing: 4px;
+				content: "\e61d \e61d \e61d \e61d \e61d";
+			}
+			#pullrefresh .mui-table-view-cell h2 em{
+				position: absolute;
+				font-size: 12px;
+				color: #fc525b;
+				right: 8px;
+				top: 2px;
+				font-style: normal;
+
+			}
+
+			#pullrefresh .mui-table-view-cell p{
+				color: #82898d;
+				font-size: 12px;
+				line-height: 12px;
+			}
+			#pullrefresh .mui-table-view-cell a{
+				padding: 0;
+				border: none;
+			}
+			#pullrefresh .mui-table-view-cell a:nth-of-type(2) {
+				position: absolute;
+				display: inline-block;
+				bottom: 20px;
+				left: 10px;
+				color: #fff;
+				font-size: 14px;
+				text-shadow: 0 1px 0 #000;
+				opacity: 0.6;
+				height: 30px;
+				line-height: 30px;
+				overflow: visible;
+			}
+			#pullrefresh .mui-table-view-cell a:nth-of-type(2) img{
+				position: relative;
+				top: 11px;
+				margin-right: 5px;
+				display: inline-block;
+				height: 30px;
+				width: 30px;
+				-webkit-border-radius: 30px;
+				-moz-border-radius: 30px;
+				border-radius: 30px;
+			}
+			#pullrefresh .mui-table-view-cell img{
+				display: block;
+				width: 100%;
+				border: none;
+			}
+
+			#pullrefresh  .mui-table-view-cell:after{
+				background: none;
+			}
+			.mui-slider{
+				margin-bottom: 2px;
+			}
+			.mui-slider-indicator .mui-indicator{
+				box-shadow: none;
+				opacity: 1;
+				margin: 1px 1px;
+			}
+			.mui-slider-indicator{
+				bottom: 4px;
+				z-index: 10;
+			}
+			#pullrefresh .mui-table-view-cell section{
+				position: relative;
+				z-index: 9999;
+				background-color: #fff;
+				border-bottom: 1px solid #e3e3e8;
+				margin:0px 0px 8px;
+				padding: 8px 0 8px 70px;
+			}
+			#pullrefresh .mui-table-view-cell section img{
+				position: absolute;
+				z-index: 99;
+				left: 8px;
+				top: -25px;
+				width: 50px;
+				height: 50px;
+				-webkit-border-radius: 50px;
+				-moz-border-radius: 50px;
+				border-radius: 50px;
+				border: 2px solid #fff;
+			}
+			section h2{
+				font-size: 16px;
+			}
+			.mui-table-view{
+				background: #f5f6f5;
+				border-bottom: none;
+			}
+			.mui-table-view:after{
+				background: none;
+			}
+			
+			.template{
+				display: none;
+			}
+		</style>
 	</head>
+
 	<body>
-	再给我一个小进就开发完了。。
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell">
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate">
+									<a href="#">
+										<img src="img/yuantiao.png" />
+									</a>
+								</div>
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="img/cbd.png" />
+									</a>
+								</div>
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="img/yuantiao.png" />
+									</a>
+								</div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate">
+									<a href="#">
+										<img src="img/cbd.png" />
+									</a>
+								</div>
+							</div>
+							<div class="mui-slider-indicator">
+								<div class="mui-indicator mui-active"></div>
+								<div class="mui-indicator"></div>
+							</div>
+						</div>
+						<section>
+							<img src="img/myphoto.png" alt=""/>
+							<h2>摄影师-郭 <b class="iconfont icon-wuxing">&#xe625;&#xe625;&#xe625;&#xe625;</b><em>￥1999起</em></h2>
+							<p>热爱一切点亮生活的玩意儿</p>
+						</section>
+					</li>
+					<li class="mui-table-view-cell">
+						<div class="mui-slider">
+							<div class="mui-slider-group mui-slider-loop">
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate">
+									<a href="#">
+										<img src="img/yuantiao.png" />
+									</a>
+								</div>
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="img/cbd.png" />
+									</a>
+								</div>
+								<div class="mui-slider-item">
+									<a href="#">
+										<img src="img/yuantiao.png" />
+									</a>
+								</div>
+								<!--支持循环，需要重复图片节点-->
+								<div class="mui-slider-item mui-slider-item-duplicate">
+									<a href="#">
+										<img src="img/cbd.png" />
+									</a>
+								</div>
+							</div>
+							<div class="mui-slider-indicator">
+								<div class="mui-indicator mui-active"></div>
+								<div class="mui-indicator"></div>
+							</div>
+						</div>
+						<section>
+							<img src="img/myphoto.png" alt=""/>
+							<h2>摄影师-郭 <b class="iconfont icon-wuxing">&#xe625;&#xe625;&#xe625;&#xe625;</b><em>￥1999起</em></h2>
+							<p>热爱一切点亮生活的玩意儿</p>
+						</section>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<script src="js/mui.js"></script>
+		<script>
+			var count = 0;
+			var option={
+				swipeBack: false,
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			};
+			mui.init(option);
+
+
+			function pulldownRefresh() {
+				setTimeout(function() {
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for (var i = 1, len =6; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = li.innerHTML = document.querySelector('.template').innerHTML;
+						//下拉刷新，新纪录插到最前面；
+						li.querySelector('.mui-slider-tmp').className='mui-slider';
+						table.insertBefore(li, table.firstChild);
+
+					}
+					mui('.mui-slider').slider();
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(true); //refresh completed
+				}, 1000);
+			}
+
+			/**
+			 * 上拉加载具体业务实现
+			 */
+			function pullupRefresh() {
+				setTimeout(function() {
+					++count;
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh((count > 2)); //参数为true代表没有更多数据了。
+					var table = document.body.querySelector('.mui-table-view');
+					var cells = document.body.querySelectorAll('.mui-table-view-cell');
+					for (var i =1, len =6; i < len; i++) {
+						var li = document.createElement('li');
+						li.className = 'mui-table-view-cell';
+						li.innerHTML = document.querySelector('.template').innerHTML;
+						li.querySelector('.mui-slider-tmp').className='mui-slider';
+						table.appendChild(li);
+					}
+					mui('.mui-slider').slider();
+				}, 1000);
+			}
+
+		</script>
+
+
+		<div class="template">
+			<div class="mui-slider-tmp">
+				<div class="mui-slider-group mui-slider-loop">
+					<!--支持循环，需要重复图片节点-->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="img/yuantiao.png" />
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="img/cbd.png" />
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="img/yuantiao.png" />
+						</a>
+					</div>
+					<!--支持循环，需要重复图片节点-->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="img/cbd.png" />
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<section style="-webkit-transform: translate3d(0px, 0px, 0px) translateZ(0px); -webkit-transition-duration: 0ms; transition-duration: 0ms;">
+				<img src="img/myphoto.png" alt=""/>
+				<h2>摄影师-郭 <b class="iconfont icon-wuxing">&#xe625;&#xe625;&#xe625;&#xe625;</b><em>￥1999起</em></h2>
+				<p>热爱一切点亮生活的玩意儿</p>
+			</section>
+		</div>
 	</body>
+
 </html>

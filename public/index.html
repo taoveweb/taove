@@ -137,6 +137,11 @@
         popover_local();
         plus.navigator.setStatusBarBackground("#fe555a");
         plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackTranslucent");
+
+
+        for(bb in plus.navigator){
+            console.log(bb)
+        }
         var self = plus.webview.currentWebview();
         for (var i = 0; i < 4; i++) {
             var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);

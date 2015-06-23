@@ -10,7 +10,6 @@
 
     <!--标准mui.css-->
     <link rel="stylesheet" href="css/mui.css">
-    <!--App自定义的css-->
     <link rel="stylesheet" type="text/css" href="css/app.css"/>
     <style>
         .mui-card .mui-control-content {
@@ -67,7 +66,7 @@
             height: 24px;
             position: absolute;
             right: 10px;
-            color: #dadee5;
+            color: #999;
             top: 28px;
             line-height: 24px;
             font-size: 24px;
@@ -127,7 +126,7 @@
         }
         .mui-control-item span{
             display: block;
-            color: #040404;
+            color: #999;
             font-size: 17px;
         }
         .mui-segmented-control .mui-control-item{
@@ -143,20 +142,20 @@
 <div class="mui-content">
     <div class="top">
         <img src="img/pic.png">
-        <a href="/admin/login">未登录  <span>登录后享用更多功能</span><em>〉</em></a>
+        <a href="login.html">未登录  <span>登录后享用更多功能</span><em>〉</em></a>
     </div>
     <div id="segmentedControl" class="mui-segmented-control">
         <a class="mui-control-item iconfont mui-active" href="#item1">
-            <span>0</span>
-            &#xe662; 婚纱照
+            <span>&#xe662;</span>
+             0 婚纱照
         </a>
         <a class="mui-control-item iconfont" href="#item2">
-            <span>0</span>
-            &#xe625; 收藏
+            <span> &#xe625;</span>
+            0 收藏
         </a>
         <a class="mui-control-item iconfont" href="#item3">
-            <span>0</span>
-            &#xe601; 消息
+            <span>&#xe601;</span>
+             0 消息
         </a>
     </div>
 
@@ -185,6 +184,18 @@
 </div>
 <script src="js/mui.min.js"></script>
 <script>
+    var aniShow = "pop-in";
+    //只有ios支持的功能需要在Android平台隐藏；
+    if (mui.os.android) {
+        var list = document.querySelectorAll('.ios-only');
+        if (list) {
+            for (var i = 0; i < list.length; i++) {
+                list[i].style.display = 'none';
+            }
+        }
+        //Android平台暂时使用slide-in-right动画
+        aniShow = "slide-in-right"
+    }
     mui.init({
         swipeBack: true //启用右滑关闭功能
     });
@@ -193,6 +204,24 @@
             indicators: true //是否显示滚动条
         });
     })(mui);
+
+
+    mui('body').on('tap', 'a', function() {
+        var id = this.getAttribute('href');
+        mui.openWindow({
+            id: id,
+            url: this.href,
+            styles: {
+                popGesture: 'close'
+            },
+            show: {
+                aniShow: aniShow
+            },
+            waiting: {
+                autoShow: false
+            }
+        });
+    });
 </script>
 
 </body>

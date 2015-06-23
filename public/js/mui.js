@@ -2969,11 +2969,8 @@ var mui = (function(document, undefined) {
 				this.wrapper.addEventListener('swiperight', this);
 			}
 			var segmentedControl = this.wrapper.querySelector('.mui-segmented-control');
-			var controlContent = this.wrapper.querySelector('.mui-control-content');
 			if (segmentedControl) { //靠，这个bug排查了一下午，阻止hash跳转，一旦hash跳转会导致可拖拽选项卡的tab不见
 				mui(segmentedControl).on('click', 'a', $.preventDefault);
-				mui(controlContent).on('click', 'a', $.preventDefault);
-
 			}
 		},
 		handleEvent: function(e) {
@@ -3699,7 +3696,7 @@ var mui = (function(document, undefined) {
 			var callback = this.options.down.callback;
 			callback && callback.call(this);
 		},
-		endPulldownToRefresh: function(finished) {
+		endPulldownToRefresh: function() {
 			var self = this;
 			if (self.topPocket && self.loading && this.pulldown) {
 				self.scrollTo(0, 0, self.options.bounceTime, self.options.bounceEasing);
@@ -3818,7 +3815,6 @@ var mui = (function(document, undefined) {
 			if (this.options.startX) {
 				//				$.trigger(this.wrapper, 'scrollend', this);
 			}
-			this._init();
 		},
 		_init: function() {
 			var groups = this.wrapper.querySelectorAll('.' + CLASS_SLIDER_GROUP);
@@ -3836,10 +3832,10 @@ var mui = (function(document, undefined) {
 					this.progressBarStyle = this.progressBar.style;
 				}
 				//忘记这个代码是干什么的了？
-								this.x = this._getScroll();
-								if (this.options.startX === false) {
-									this.options.startX = this.x;
-								}
+				//				this.x = this._getScroll();
+				//				if (this.options.startX === false) {
+				//					this.options.startX = this.x;
+				//				}
 				//根据active修正startX
 
 				this._super();
@@ -4134,7 +4130,6 @@ var mui = (function(document, undefined) {
 				}
 			}
 		});
-
 		return slider;
 	};
 	$.ready(function() {

@@ -9,6 +9,7 @@
     <title>这是一个标题</title>
 
     <link href="css/mui.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
     <style>
         html, body {
             background: transparent;
@@ -94,6 +95,7 @@
     </ul>
 </div>
 <script src="js/mui.min.js"></script>
+<script src="js/app.js"></script>
 <script type="text/javascript">
     var nw = null;
     mui.init({});
@@ -116,7 +118,9 @@
         if(this.innerHTML=="" || this.innerHTML=="其它城市还未开通") return;
         parent.evalJS('document.getElementById("local").innerHTML="'+this.innerHTML+'"');
         webview.close();
-    })
+    });
+
+
 
 </script>
 </body>

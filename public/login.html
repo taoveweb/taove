@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="css/mui.css">
+    <link rel="stylesheet" href="css/app.css">
+    <style>
+        html, body {
+            background: transparent;
+        }
+
+        .mui-bar-nav {
+            background: #fe555a;
+        }
+
+        .mui-bar-nav h1 {
+            color: #fff;
+        }
+
+        .mui-bar-nav.mui-bar .mui-icon {
+            color: #fff;;
+        }
+
+        .mui-bar .mui-title {
+            font-size: 18px
+        }
+        .mui-bar-nav~.mui-content {
+            padding-top: 44px;
+        }
+        .mui-table-view-cell-noactive.mui-active ,
+        .mui-table-view-cell-noactive{
+            background-color: #fff;
+            color: #000;
+        }
+        .mui-table-view-cell{
+            min-height: 39px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .mui-content > .mui-table-view:first-child{
+            margin-top: 0;
+        }
+        .mui-icon-back:before, .mui-icon-left-nav:before{
+            font-size: 20px;
+        }
+        .mui-bar .mui-icon{
+            font-size: 16px;
+            height: 46px;
+            line-height: 46px;
+            padding: 0;
+        }
+        .mui-bar-nav.mui-bar .mui-icon{
+            padding: 0 0 0 5px;
+        }
+        .iconfont{
+            color: #888888;
+            text-align: center;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .QQ{
+            margin-right: 30px;
+        }
+        .iconfont em{
+            display: block;
+            font-style: normal;
+            color: #fe555a;
+            font-size: 50px;
+            padding-bottom:8px;
+            color: #4edb56;
+        }
+        .QQ em{
+            color: #45abec;
+        }
+        .bottom-box{
+            text-align: right;
+        }
+        .bottom-box p{
+            position: relative;
+            text-align: left;
+            color: #cccccc;
+            padding: 5px 0;
+            margin-bottom: 20px;
+        }
+        .bottom-box p:after{
+            background-color: rgb(200, 199, 204);
+            bottom: -10px;
+            box-sizing: border-box;
+            display: block;
+            height:1px;
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            right: 0px;
+            left: 0;
+            content: '';
+            position: absolute;
+        }
+        .mui-content-padded{
+            padding-top: 48px;
+        }
+        .mui-input-row{
+            position: relative;
+        }
+
+        .mui-input-row:after{
+            background-color: rgb(200, 199, 204);
+            bottom: 0px;
+            box-sizing: border-box;
+            display: block;
+            height:1px;
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            right: 0px;
+            left: 0;
+            content: '';
+            position: absolute;
+        }
+        .mui-btn-block{
+            padding: 10px 0;
+            margin: 15px auto;
+            background: #fff;
+        }
+        .sjzh{
+            display: block;
+            text-align: center;
+            margin: 20px auto 30px;
+        }
+        body{
+            background: #f6f6f6;
+        }
+        .mui-input-row label{
+            width: 20%;
+        }
+        .mui-input-row input[type="text"],
+        .mui-input-row input[type="password"]{
+            background: transparent;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">我的</a>
+
+    <h1 class="mui-title">登录</h1>
+</header>
+<div class="mui-content-padded">
+
+    <div class="mui-input-row">
+        <label></label>
+        <input type="text" class="mui-input-clear" placeholder="手机账号登录">
+    </div>
+    <div class="mui-input-row">
+        <label>Input</label>
+        <input type="password" class="mui-input-clear" placeholder="密码">
+    </div>
+    <button class="mui-btn mui-btn-block">登录</button>
+    <a class="sjzh" href="">没有账号？手机号快速注册</a>
+
+    <div class="bottom-box">
+        <p>还可以选择以下方式登录</p>
+        <div>
+            <a class="iconfont QQ" href=""><em>&#xe603;</em>QQ</a>
+            <a class="iconfont" href=""><em>&#xe636;</em>微信</a>
+        </div>
+    </div>
+</div>
+<script src="js/mui.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+    mui.init({
+        swipeBack:true //启用右滑关闭功能
+    });
+</script>
+</body>
+</html>

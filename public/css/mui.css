@@ -3139,7 +3139,7 @@ select:focus {
 	font-family: Muiicons;
 	font-style: normal;
 	font-weight: normal;
-	src: url("../fonts/mui.ttf") format("truetype");
+	src: url("../fonts/mui.ttf") format("truetype") ;
 }
 @font-face {
 	font-family: "iconfont";

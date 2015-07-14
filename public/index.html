@@ -14,10 +14,6 @@
             background-color: #efeff4;
         }
 
-        .mui-bar-nav {
-            background: #fe555a;
-        }
-
         .mui-bar-nav h1 {
             color: #fff;
         }
@@ -58,7 +54,7 @@
             margin-right: 20px;
         }
 
-        .oa-contact-name, oa-contact-position {
+        .oa-contact-name, .oa-contact-position {
             float: left;
         }
 
@@ -97,6 +93,19 @@
             margin-right: 56px;
             margin-left: 56px
         }
+
+        #setting {
+            position: absolute;
+            right: 0px;
+            top: 18px;
+            width: 46px;
+            text-align: center;
+            font-size: 20px;
+            height: 46px;
+            line-height: 46px;
+            color: #fff;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -104,6 +113,7 @@
     <a id="local" class="iconfont icon-bendi">福州</a>
 
     <h1 id="title" class="mui-title mui-tab-label-b">桃微</h1>
+    <a id="setting" class="iconfont setting" href="">&#xe870;</a>
 </header>
 <nav class="mui-bar mui-bar-tab">
     <a id="defaultTab" class="mui-tab-item mui-active" href="home.html">
@@ -123,12 +133,23 @@
         <span class="mui-tab-label">我的</span>
     </a>
 </nav>
+<script>
+    var n = '3244sdfasf34223safsafasf543543';
+    function show(n) {
+        var str = n + "";
+      return  str.replace(/\d+/g,function($0,$1){
+          console.log($0);
+      });
+    }
+
+    console.log(show(n));
+</script>
 <script src="js/mui.min.js"></script>
 <script src="js/app.js"></script>
 <script type="text/javascript" charset="utf-8">
     var subpages = ['home.html', 'sort.html', 'photographer.html', 'my.html'];
     var subpage_style = {
-        top: '46px',
+        top: '66px',
         bottom: '50px'
     };
 
@@ -148,13 +169,11 @@
     //创建子页面，首个选项卡页面显示，其它均隐藏；
     mui.plusReady(function () {
         popover_local();
+        setting();
         plus.navigator.setStatusBarBackground("#fe555a");
         plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackTranslucent");
 
 
-        for(bb in plus.navigator){
-            console.log(bb)
-        }
         var self = plus.webview.currentWebview();
         for (var i = 0; i < 4; i++) {
             var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
@@ -176,12 +195,20 @@
         }
         //更换标题
         var muiTabLable = this.querySelector('.mui-tab-label');
+        document.getElementById('local').style.display = 'inline-block';
+        document.getElementById('setting').style.display = 'none';
         if (muiTabLable.innerHTML == '精选') {
             title.innerHTML = '桃微';
             title.className = ('mui-title mui-tab-label-b');
         } else {
+            console.log(muiTabLable.innerHTML)
+            if (muiTabLable.innerHTML == '我的') {
+                document.getElementById('local').style.display = 'none';
+                document.getElementById('setting').style.display = 'block';
+            }
             title.className = ('mui-title');
             title.innerHTML = muiTabLable.innerHTML;
+
         }
 
         //显示目标选项卡
@@ -222,8 +249,8 @@
                      height:subpage-height//子页面高度，默认为100%*/
                 },
                 /*extras: {
-                    //自定义扩展参数，可以用来处理页面间传值
-                },*/
+                 //自定义扩展参数，可以用来处理页面间传值
+                 },*/
                 show: {
                     aniShow: aniShow//页面显示动画，默认为”slide-in-right“；
                 },
@@ -244,6 +271,38 @@
             })
         });
 
+    }
+
+
+    function setting() {
+        mui('.mui-bar').on('tap', '#setting', function () {
+            console.log('setting');
+            mui.openWindow({
+                url: 'setting.html',//子页面HTML地址，支持本地地址和网络地址
+                id: 'setting.html',//子页面标志
+                styles: {
+                    top: 0,//子页面顶部位置
+                    bottom: 0, //子页面底部位置
+                    background: "00000000",
+                    zindex: 1,
+                    popGesture: 'close'
+                    /*  width:subpage-width,//子页面宽度，默认为100%
+                     height:subpage-height//子页面高度，默认为100%*/
+                },
+                show: {
+                    aniShow: aniShow//页面显示动画，默认为”slide-in-right“；
+                },
+                waiting: {
+                    autoShow: false,//自动显示等待框，默认为true
+                    title: '正在加载...',//等待对话框上显示的提示内容
+                    options: {
+                        width: 200,//等待框背景区域宽度，默认根据内容自动计算合适宽度
+                        height: 100//等待框背景区域高度，默认根据内容自动计算合适高度
+                    }
+                }
+            });
+
+        });
     }
 
 

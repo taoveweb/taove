@@ -1,242 +1,335 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
+    <title>首页</title>
+    <style type="text/css">
+        html,
+        body {
+            background-color: #efeff4;
+            padding: 0;
+            margin: 0;
+        }
 
-	<head>
-		<meta charset="utf-8">
-		<title>Hello MUI</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-		<link rel="stylesheet" href="css/mui.min.css">
-		<style>
-			html,
-			body {
-				background-color: #efeff4;
-			}
-			
-			#pullrefresh .mui-table-view-cell{
-				position: relative;
-				padding: 0;
-				border: none;
-			}
-			#pullrefresh .mui-table-view-cell h2{
-				position: absolute;
-				left: 10px;
-				top: 5px;
-				color: #ffffff;
-				font-size: 16px;
-				text-shadow: 0 1px 0 #000;
-				opacity: 1;
-				font-weight: normal;
-				line-height: 16px;
-			}
+        ul {
+            position: relative;
+            margin: -1px 0 0 0 ;
+            padding: 0;
+            list-style: none;
+            background-color: #fff;
+        }
 
-			#pullrefresh .mui-table-view-cell p{
-				position: absolute;
-				top: 30px;
-				left: 10px;
-				color: #ffffff;
-				font-size: 14px;
-				line-height: 14px;
-				text-shadow: 0 1px 0 #000;
-				opacity: 1;
-			}
-			#pullrefresh .mui-table-view-cell a{
-				margin: 2px 4px;
-				padding: 0;
-				border: none;
-			}
-			#pullrefresh .mui-table-view-cell a:nth-of-type(2) {
-				position: absolute;
-				display: inline-block;
-				bottom: 20px;
-				left: 10px;
-				color: #fff;
-				font-size: 14px;
-				text-shadow: 0 1px 0 #000;
-				opacity: 0.6;
-				height: 30px;
-				line-height: 30px;
-				overflow: visible;
-			}
-			#pullrefresh .mui-table-view-cell a:nth-of-type(2) img{
-				position: relative;
-				top: 11px;
-				margin-right: 5px;
-				display: inline-block;
-				height: 30px;
-				width: 30px;
-				-webkit-border-radius: 30px;
-				-moz-border-radius: 30px;
-				border-radius: 30px;
-			}
-			#pullrefresh .mui-table-view-cell img{
-				display: block;
-				width: 100%;
-				-webkit-border-radius: 5px;
-				-moz-border-radius: 5px;
-				border-radius: 5px;
-				border: none;
-			}
+        li {
+            position: relative;
+            padding: 0;
+            border: none;
+            overflow: hidden;
+            list-style: none;
+        }
 
-			#pullrefresh  .mui-table-view-cell:after{
-				background: none;
-			}
-			.mui-slider{
-				margin-bottom: 2px;
-			}
-			.mui-slider-indicator .mui-indicator{
-				box-shadow: none;
-				opacity: 1;
-				margin: 1px 1px;
-			}
-			.mui-slider-indicator{
-				bottom: 4px;
-			}
-		</style>
-	</head>
+        li h2 {
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            color: #ffffff;
+            font-size: 16px;
+            text-shadow: 0 1px 0 #000;
+            opacity: 1;
+            font-weight: normal;
+            line-height: 16px;
+        }
 
-	<body>
-		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
-			<div class="mui-scroll">
-				<div class="mui-slider">
-					<div class="mui-slider-group mui-slider-loop">
-						<!--支持循环，需要重复图片节点-->
-						<div class="mui-slider-item mui-slider-item-duplicate">
-							<a href="#">
-								<img src="img/yuantiao.png" />
-							</a>
-						</div>
-						<div class="mui-slider-item">
-							<a href="#">
-								<img src="img/cbd.png" />
-							</a>
-						</div>
-						<div class="mui-slider-item">
-							<a href="#">
-								<img src="img/muwu.png" />
-							</a>
-						</div>
-						<div class="mui-slider-item">
-							<a href="#">
-								<img src="img/shuijiao.png" />
-							</a>
-						</div>
-						<div class="mui-slider-item">
-							<a href="#">
-								<img src="img/yuantiao.png" />
-							</a>
-						</div>
-						<!--支持循环，需要重复图片节点-->
-						<div class="mui-slider-item mui-slider-item-duplicate">
-							<a href="#">
-								<img src="img/cbd.png" />
-							</a>
-						</div>
-					</div>
-					<div class="mui-slider-indicator">
-						<div class="mui-indicator mui-active"></div>
-						<div class="mui-indicator"></div>
-						<div class="mui-indicator"></div>
-						<div class="mui-indicator"></div>
-					</div>
-				</div>
-				<ul class="mui-table-view mui-table-view-chevron">
-					<li class="mui-table-view-cell">
-						<a><img src="images/1.png"></a>
-						<h2>中国姑娘</h2>
-						<p>1套外景17张婚纱照</p>
-						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
-					</li>
-					<li class="mui-table-view-cell"><a><img src="images/2.png"></a>
-						<h2>中国姑娘</h2>
-						<p>1套外景17张婚纱照</p>
-						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
-					</li>
-					<li class="mui-table-view-cell"><a><img src="images/3.png"></a>
-						<h2>中国姑娘</h2>
-						<p>1套外景17张婚纱照</p>
-						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
-					</li>
-					<li class="mui-table-view-cell"><a><img src="images/4.png"></a>
-						<h2>中国姑娘</h2>
-						<p>1套外景17张婚纱照</p>
-						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
-					</li>
-					<li class="mui-table-view-cell"><a><img src="images/5.png"></a>
-						<h2>中国姑娘</h2>
-						<p>1套外景17张婚纱照</p>
-						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
-					</li>
-					<li class="mui-table-view-cell"><a><img src="images/6.png"></a>
-						<h2>中国姑娘</h2>
-						<p>1套外景17张婚纱照</p>
-						<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+        li p {
+            position: absolute;
+            top: 30px;
+            left: 10px;
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 14px;
+            text-shadow: 0 1px 0 #000;
+            opacity: 1;
+        }
 
-		<script src="js/mui.min.js"></script>
-		<script>
-			var count = 0;
-			mui.init({
-				swipeBack: false,
-				pullRefresh: {
-					container: '#pullrefresh',
-					down: {
-						callback: pulldownRefresh
-					},
-					up: {
-						contentrefresh: '正在加载...',
-						callback: pullupRefresh
-					}
-				}
-			});
-			/**
-			 * 下拉刷新具体业务实现
-			 */
-			function pulldownRefresh() {
-				setTimeout(function() {
-					var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for (var i = 1, len =6; i < len; i++) {
-						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell';
+        li a {
+            margin: 2px 0px;
+            padding: 0;
+            border: none;
+            display: block;
+            text-decoration: none;
+        }
 
-						li.innerHTML = '<a><img src="images/' +i+ '.png\" /></a>' +'<h2>中国姑娘</h2><p>1套外景17张婚纱照</p>'+
-						'<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>';
-						//下拉刷新，新纪录插到最前面；
-						table.insertBefore(li, table.firstChild);
-					}
-					mui('#pullrefresh').pullRefresh().endPulldownToRefresh(count > 2); //refresh completed
-				}, 1000);
-			}
+        li a:nth-of-type(2) {
+            position: absolute;
+            display: inline-block;
+            bottom: 20px;
+            left: 10px;
+            color: #fff;
+            font-size: 14px;
+            text-shadow: 0 1px 0 #000;
+            height: 30px;
+            line-height: 30px;
+            overflow: visible;
+        }
 
-			/**
-			 * 上拉加载具体业务实现
-			 */
-			function pullupRefresh() {
-				setTimeout(function() {
-					++count;
-					mui('#pullrefresh').pullRefresh().endPullupToRefresh((count > 2)); //参数为true代表没有更多数据了。
-					var table = document.body.querySelector('.mui-table-view');
-					var cells = document.body.querySelectorAll('.mui-table-view-cell');
-					for (var i =1, len =6; i < len; i++) {
-						var li = document.createElement('li');
-						li.className = 'mui-table-view-cell';
-						li.innerHTML = '<a><img src="images/' +i+ '.png\" /></a>' +'<h2>中国姑娘</h2><p>1套外景17张婚纱照</p>'+
-						'<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>';
-						table.appendChild(li);
-					}
-				}, 1000);
-			}
-			var gallery = mui('.mui-slider');
-			gallery.slider({
-				bounceTime:500,
-				interval: 3000 //自动轮播周期，若为0则不自动播放，默认为0；
-			});
-		</script>
-	</body>
+        li a:nth-of-type(2) img {
+            position: relative;
+            top: 11px;
+            margin-right: 5px;
+            display: inline-block;
+            height: 30px;
+            width: 30px;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+        }
 
+        li img {
+            display: block;
+            width: 100%;
+            -webkit-border-radius:0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+            border: none;
+        }
+
+        .swiper-container {
+            width: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+        }
+
+    </style>
+    <script type="text/javascript" src="js/common.js"></script>
+
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+        var aws = null, awp = null, awo = null, at = 200;
+        var ws = null;
+        var list = null;
+        var i = 2;
+
+        var aniShow = "pop-in";
+        //只有ios支持的功能需要在Android平台隐藏；
+  /*      if (mui.os.android) {
+            var list = document.querySelectorAll('.ios-only');
+            if (list) {
+                for (var i = 0; i < list.length; i++) {
+                    list[i].style.display = 'none';
+                }
+            }
+            //Android平台暂时使用slide-in-right动画
+            aniShow = "slide-in-right"
+        }*/
+
+        // 判断扩展API是否准备，否则监听"plusready"事件
+        if (window.plus) {
+            plusReady();
+        } else {
+            document.addEventListener("plusready", plusReady, false);
+        }
+
+
+        // H5 plus事件处理
+        function AlubmplusReady() {
+
+            aws = plus.webview.currentWebview();
+            //awo = aws.opener();
+            if ('iOS' == plus.os.name) {
+                at = 300;
+            }
+            awp = plus.webview.create('album.html', 'album.html', {
+                scrollIndicator: 'none',
+                scalable: false,
+                popGesture: 'hide'
+            }, {preate: true});
+            if (!aws.preate) {
+                awp.addEventListener('loaded', function () {
+                    //awo && awo.evalJS("closeWaiting()");
+                    aws.show(aniShow, at);
+                }, false);
+            }
+
+        }
+
+        // 关闭窗口
+        function preateBack() {
+            if (!aws.preate) {
+                awp && awp.close();
+            }
+            back();
+        }
+
+
+        // 扩展API加载完毕，现在可以正常调用扩展API
+        function plusReady() {
+            AlubmplusReady();
+            ws = plus.webview.currentWebview();
+            ws.setPullToRefresh({
+                support: true,
+                height: "50px",
+                range: "200px",
+                contentdown: {
+                    caption: "下拉可以刷新"
+                },
+                contentover: {
+                    caption: "释放立即刷新"
+                },
+                contentrefresh: {
+                    caption: "正在刷新..."
+                }
+            }, onRefresh);
+
+
+            //下接到底部
+            $(document).on('scroll',function(){
+                //console.log($(document).height()-$(document).scrollTop()-document.documentElement.clientHeight-20);
+                if(($(document).height()-$(document).scrollTop()-document.documentElement.clientHeight-20)<0){
+                    plusscrollbottomCallback();
+                }
+            })
+            //document.addEventListener("plusscrollbottom", plusscrollbottomCallback);
+        }
+
+
+        function plusscrollbottomCallback(event) {
+
+            if (list) {
+                for (var l = 2; l < 6; l++) {
+                    var item = document.createElement("li");
+                    item.innerHTML = '<a><img src="images/' + l + '.png\" /></a>' + '<h2>中国姑娘</h2><p>1套外景17张婚纱照</p>' +
+                    '<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>';
+                    list.appendChild(item);
+
+                    $(list).scrollTop(1000)
+                }
+            }
+
+        }
+
+
+        // DOM构建完成获取列表元素
+        document.addEventListener("DOMContentLoaded", function () {
+            list = document.getElementById("list");
+            $('#list').on('click', 'li', function () {
+                console.log('lis');
+                awp.show(aniShow, at);
+            });
+        });
+        // 刷新页面
+
+        function onRefresh() {
+
+            if (list) {
+                i++;
+                if (i >= 6) {
+                    i = 1
+                }
+                var item = document.createElement("li");
+                item.innerHTML = '<a><img src="images/' + i + '.png\" /></a>' + '<h2>中国姑娘</h2><p>1套外景17张婚纱照</p>' +
+                '<a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>';
+                list.insertBefore(item, list.firstChild);
+            }
+            ws.endPullToRefresh();
+
+        }
+    </script>
+
+
+</head>
+<body>
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/muwu.png" alt=""/></div>
+        <div class="swiper-slide"><img src="img/shuijiao.png" alt=""/></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="js/swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay:2000,
+        speed:600,
+        loop: true
+    });
+</script>
+<ul id="list">
+    <li>
+        <a><img src="images/1.png"></a>
+
+        <h2>中国姑娘</h2>
+
+        <p>1套外景17张婚纱照</p>
+        <a><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
+    </li>
+    <li><a><img src="images/2.png"></a>
+
+        <h2>中国姑娘</h2>
+
+        <p>1套外景17张婚纱照</p>
+        <a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
+    </li>
+    <li><a><img src="images/3.png"></a>
+
+        <h2>中国姑娘</h2>
+
+        <p>1套外景17张婚纱照</p>
+        <a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
+    </li>
+    <li><a><img src="images/4.png"></a>
+
+        <h2>中国姑娘</h2>
+
+        <p>1套外景17张婚纱照</p>
+        <a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
+    </li>
+    <li><a><img src="images/5.png"></a>
+
+        <h2>中国姑娘</h2>
+
+        <p>1套外景17张婚纱照</p>
+        <a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
+    </li>
+    <li><a><img src="images/6.png"></a>
+
+        <h2>中国姑娘</h2>
+
+        <p>1套外景17张婚纱照</p>
+        <a href=""><img src="img/myphoto.png" alt=""/>摄影师小伍</a>
+    </li>
+</ul>
+</body>
 </html>

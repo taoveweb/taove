@@ -206,7 +206,23 @@
     })(mui);
 
 
-    mui('body').on('tap', 'a', function() {
+    mui('.top').on('tap', 'a', function() {
+        var id = this.getAttribute('href');
+        mui.openWindow({
+            id: id,
+            url: this.href,
+            styles: {
+                popGesture: 'close'
+            },
+            show: {
+                aniShow: aniShow
+            },
+            waiting: {
+                autoShow: false
+            }
+        });
+    });
+    mui('.item-box').on('tap', 'a', function() {
         var id = this.getAttribute('href');
         mui.openWindow({
             id: id,

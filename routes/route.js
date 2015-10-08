@@ -1,6 +1,9 @@
 /**
  * Created by Administrator on 2015/5/25.
  */
+
+//pc
+var indexpc = require('../routes/pc/index');
 //web
 var index = require('../routes/index');
 var sort = require('../routes/sort');
@@ -17,6 +20,8 @@ var register = require('../routes/admin/register');
 var intention = require('../routes/admin/intention');
 
 module.exports = function (app) {
+    //pc
+    app.use('/',indexpc );
     //web
     app.use('/', index);
     app.use('/sort', sort);

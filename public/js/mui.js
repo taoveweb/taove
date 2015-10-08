@@ -1997,7 +1997,7 @@ var mui = (function(document, undefined) {
 	});
 	window.addEventListener('swiperight', function(e) {
 		var detail = e.detail;
-		if ($.options.swipeBack === true && Math.abs(detail.angle) < 3) {
+		if ($.options.swipeBack === true && Math.abs(detail.angle) < 100) {
 			$.back();
 		}
 	});
@@ -2325,7 +2325,7 @@ var mui = (function(document, undefined) {
 			xhr.overrideMimeType && xhr.overrideMimeType(mime);
 		}
 		if (settings.contentType || (settings.contentType !== false && settings.data && settings.type.toUpperCase() !== 'GET')) {
-			setHeader('Content-Type', settings.contentType || 'application/x-www-form-urlencoded');
+			setHeader('Content-Type', settings.contentType || 'application/x-www.js-form-urlencoded');
 		}
 		if (settings.headers) {
 			for (var name in settings.headers)

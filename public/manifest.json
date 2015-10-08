@@ -68,9 +68,7 @@
 		"Storage": {
 			"description": "管理应用本地数据"
 		},
-		"UI": {
-			"description": "管理系统原生控件"
-		},
+		
 		"Uploader": {
 			"description": "管理文件上传任务"
 		},
@@ -94,7 +92,7 @@
 
 		"Speech": {
 			"description": "管理语音识别插件"
-		}
+		},"Webview":{},"NativeUI":{},"Navigator":{}
 	},
 	"plus": {
 		"splashscreen": {

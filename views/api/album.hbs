@@ -19,7 +19,7 @@
                 <input id="searchVal" type="text" placeholder="相册名称"><input id="searchBtn" type="submit" value="查询">
             </td>
         </tr>
-        <form method="post" action="/admin/albums" enctype="multipart/form-data">
+        <form method="post" action="/api/albums" enctype="multipart/form-data">
             <tr>
                 <td><input type="text" name="albumsTitle" placeholder="相册名称"></td>
 
@@ -85,7 +85,7 @@
                         <li class="clearfix"><img src="/{{name}}"><input class="delete-imgBtn" _id="{{../_id}}"
                                                                          imgId="{{_id}}" type="button" value="删除"></li>
                         {{#if @last}}
-                            <form method="post" action="/admin/albums" enctype="multipart/form-data">
+                            <form method="post" action="/api/albums" enctype="multipart/form-data">
 
                                 <li>
                                     <input type="hidden" value="{{../../_id}}" name="_id">

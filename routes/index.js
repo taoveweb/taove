@@ -21,6 +21,7 @@ router.post('/photographer/delete/:id', doDelete); // Delete
 //selected photographer action
 
 function index(req, res, next) {
+  console.log(req.headers['user-agent']);
   res.render('index', { title: '桃微' });
 }
 

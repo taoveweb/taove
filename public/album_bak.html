@@ -1,0 +1,279 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <style type="text/css">
+        .mui-fullscreen{
+            position: fixed;
+            z-index: 20;
+            background-color: #000;
+        }
+        p img{
+            max-width: 100%;
+            height: auto;
+        }
+        .mui-bar .mui-title {
+            right: 50px;
+            left: 50px;
+            color: #fff;
+            font-size: 18px;
+        }
+        .mui-bar .mui-icon{
+            color: #fff;
+            font-size:16px;
+            height: 44px;
+            line-height: 44px;
+            padding: 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        .mui-bar {
+            background: linear-gradient(top , rgba(0, 0, 0, 0.65098) 3% , rgba(255, 255, 255, 0) 100%);
+            background: -o-linear-gradient(top , rgba(0, 0, 0, 0.65098) 3% , rgba(255, 255, 255, 0) 100%);
+            background: -ms-linear-gradient(top , rgba(0, 0, 0, 0.65098) 3% , rgba(255, 255, 255, 0) 100%);
+            background: -moz-linear-gradient(top , rgba(0, 0, 0, 0.65098) 3% , rgba(255, 255, 255, 0) 100%);
+            background: -webkit-linear-gradient(top , rgba(0, 0, 0, 0.65098) 3% , rgba(255, 255, 255, 0) 100%);
+        }
+
+        .mui-content{
+            background: url('images/1.png') no-repeat transparent top center
+        }
+        .mui-bar-nav~.mui-content{
+            padding-top: 200px;
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            bottom: 0;
+        }
+        .mui-bar-nav{
+            -webkit-box-shadow: none
+        ;
+            -moz-box-shadow:none;
+            box-shadow: none;
+        }
+        .mui-scroll-wrapper{
+            top: 0px;
+            padding-top: 200px;
+            background: transparent;
+        }
+        .mui-table-view,
+        .mui-scroll{
+            background: transparent;
+        }
+        .mui-action-preview{
+            max-width: 100%;
+            width: 100%;
+        }
+        .mui-table-view-cell{
+            padding:0;
+            background: #f5f6f5;
+        }
+        .mui-table-view-cell.mui-active{
+            background: #f5f6f5;
+        }
+        .mui-bar-nav.mui-bar .mui-icon{
+            margin: 0;
+            padding: 1px 0 0 18px;
+        }
+        .mui-bar{
+            padding: 0;
+        }
+        .mui-icon-back:before, .mui-icon-left-nav:before{
+            font-size: 23px;
+            position: absolute;
+            left: 0;
+            top: -0px;
+
+        }
+        .mui-table-view-cell p{
+            padding:10px 0 10px 0px;
+            font-size: 16px;
+            color: #2c3038;
+        }
+        .mui-table-view-cell p em{
+            font-weight: normal;
+            font-style: normal;
+            color: #989ca3;
+            padding-left: 0px;
+        }
+        .iconfont{
+            display: inline-block;
+            padding: 0 8px;
+            font-size: 18px;
+        }
+        .icon-box{
+            text-align: right;
+            padding: 8px 8px 12px;
+        }
+        .icon-box span{
+            display: inline-block;
+            padding: 3px 10px;
+            background: #e3ebee;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 8px;
+            color: #989ca3;
+            text-shadow: none;
+        }
+        .icon-box span em{
+            font-size: 12px;
+            font-style: normal;
+        }
+    </style>
+
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">反回</a>
+    <h1 class="mui-title">中国好姑娘</h1>
+</header>
+<div class="mui-content">
+    <div id="scroll" class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <p><span class="iconfont">&#xe627;</span></sp>室内韩式<em>（9张婚纱照）</em></p>
+                    <img src="images/1.png"  class="mui-action-preview"  alt=""/>
+                    <div class="icon-box">
+                        <span  class="iconfont">&#xe61d;<em>1</em></span>
+                        <span  class="iconfont">&#xe620;<em>1</em></span>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <img src="images/2.png"  class="mui-action-preview"  alt=""/>
+                    <div class="icon-box">
+                        <span  class="iconfont">&#xe61d;<em>1</em></span>
+                        <span  class="iconfont">&#xe620;<em>1</em></span>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <img src="images/3.png"  class="mui-action-preview"  alt=""/>
+                    <div class="icon-box">
+                        <span  class="iconfont">&#xe61d;<em>1</em></span>
+                        <span  class="iconfont">&#xe620;<em>1</em></span>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <img src="images/4.png"  class="mui-action-preview"  alt=""/>
+                    <div class="icon-box">
+                        <span  class="iconfont">&#xe61d;<em>1</em></span>
+                        <span  class="iconfont">&#xe620;<em>1</em></span>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <img src="images/2.png"  class="mui-action-preview"  alt=""/>
+                    <div class="icon-box">
+                        <span  class="iconfont">&#xe61d;<em>1</em></span>
+                        <span  class="iconfont">&#xe620;<em>1</em></span>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <img src="images/2.png"  class="mui-action-preview"  alt=""/>
+                    <div class="icon-box">
+                        <span  class="iconfont">&#xe61d;<em>1</em></span>
+                        <span  class="iconfont">&#xe620;<em>1</em></span>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <img src="images/2.png"  class="mui-action-preview"  alt=""/>
+                    <div class="icon-box">
+                        <span  class="iconfont">&#xe61d;<em>1</em></span>
+                        <span  class="iconfont">&#xe620;<em>1</em></span>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <img src="images/2.png"  class="mui-action-preview"  alt=""/>
+                    <div class="icon-box">
+                        <span  class="iconfont">&#xe61d;<em>1</em></span>
+                        <span  class="iconfont">&#xe620;<em>1</em></span>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell">
+                    <img src="images/2.png"  class="mui-action-preview"  alt=""/>
+                    <div class="icon-box">
+                        <span  class="iconfont">&#xe61d;<em>1</em></span>
+                        <span  class="iconfont">&#xe620;<em>1</em></span>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/mui.js"></script>
+<script>
+    mui.init();
+    mui('#scroll').scroll({
+        indicators: true //是否显示滚动条
+    });
+    mui.ready(function () {
+        var imgs = document.querySelectorAll("img.mui-action-preview");
+        imgs = mui.slice.call(imgs);
+        var slider = null;
+        if(imgs&&imgs.length>0){
+            slider = document.createElement("div");
+            slider.setAttribute("id","__mui-imageview__");
+            slider.classList.add("mui-slider");
+            slider.classList.add("mui-fullscreen");
+            slider.style.display = "none";
+            slider.addEventListener("tap",function () {
+                slider.style.display = "none";
+            });
+            slider.addEventListener("touchmove",function (event) {
+                event.preventDefault();
+            })
+
+            var slider_group = document.createElement("div");
+            slider_group.setAttribute("id","__mui-imageview__group");
+            slider_group.classList.add("mui-slider-group");
+
+            imgs.forEach(function (value,index,array) {
+                //给图片添加点击事件，触发预览显示；
+                value.addEventListener('tap',function () {
+                    slider.style.display = "block";
+                    _slider.refresh();
+                    _slider.gotoItem(index,0);
+                })
+
+                var item = document.createElement("div");
+                item.classList.add("mui-slider-item");
+                var a = document.createElement("a");
+                // a.setAttribute("href","#");
+                var img = document.createElement("img");
+                img.setAttribute("src",value.src);
+                a.appendChild(img)
+                item.appendChild(a);
+                slider_group.appendChild(item);
+            });
+
+            slider.appendChild(slider_group);
+            document.body.appendChild(slider);
+            var _slider = mui(slider).slider();
+        }
+
+        var oldback = mui.back;
+        mui.back = function () {
+            if(slider&&slider.style.display=="block"){
+                slider.style.display = "none";
+            }else{
+                oldback();
+            }
+        }
+
+    });
+
+
+
+</script>
+
+
+</html>

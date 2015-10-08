@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
+    <title>Hello H5+</title>
+    <script type="text/javascript" src="js/common.js"></script>
+
+    <link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8"/>
+    <link rel="stylesheet" href="css/mui.min.css" type="text/css" charset="utf-8"/>
+    <style type="text/css">
+        body,html{
+            background: transparent;
+        }
+        p img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .mui-bar .mui-title {
+            right: 50px;
+            left: 50px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .mui-bar .mui-icon {
+            color: #fff;
+            font-size: 16px;
+            height: 44px;
+            line-height: 44px;
+            padding: 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        header {
+            background: linear-gradient(top, rgba(0, 0, 0, 0.65098) 3%, rgba(255, 255, 255, 0) 100%);
+            background: -o-linear-gradient(top, rgba(0, 0, 0, 0.65098) 3%, rgba(255, 255, 255, 0) 100%);
+            background: -ms-linear-gradient(top, rgba(0, 0, 0, 0.65098) 3%, rgba(255, 255, 255, 0) 100%);
+            background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.65098) 3%, rgba(255, 255, 255, 0) 100%);
+            background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.65098) 3%, rgba(255, 255, 255, 0) 100%);
+            box-shadow: none;
+            padding-top: 20px;
+            height: 66px;
+        }
+
+        .mui-bar-nav ~ .mui-content {
+            padding-top: 200px;
+            position: absolute;
+            width: 100%;
+            top: 0px;
+            bottom: 0;
+        }
+
+        .mui-table-view,
+        .mui-action-preview {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .mui-table-view-cell {
+            padding: 0;
+            background: #f5f6f5;
+        }
+
+        .mui-table-view-cell.mui-active {
+            background: #f5f6f5;
+        }
+
+        .mui-bar-nav.mui-bar .mui-icon {
+            margin: 0;
+            padding: 1px 0 0 18px;
+        }
+
+        .mui-bar {
+            padding: 0;
+        }
+
+        .mui-icon-back:before, .mui-icon-left-nav:before {
+            font-size: 23px;
+            position: absolute;
+            left: 0;
+            top: -0px;
+
+        }
+
+        .mui-table-view-cell p {
+            padding: 10px 0 10px 0px;
+            font-size: 16px;
+            color: #2c3038;
+            text-align: left;
+        }
+
+        .mui-table-view-cell p em {
+            font-weight: normal;
+            font-style: normal;
+            color: #989ca3;
+            padding-left: 0px;
+        }
+
+        .iconfont {
+            display: inline-block;
+            padding: 0 8px;
+            font-size: 18px;
+        }
+
+        .icon-box {
+            text-align: right;
+            padding: 8px 8px 12px;
+        }
+
+        .icon-box span {
+            display: inline-block;
+            padding: 3px 10px;
+            background: #e3ebee;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 8px;
+            color: #989ca3;
+            text-shadow: none;
+        }
+
+        .icon-box span em {
+            font-size: 12px;
+            font-style: normal;
+        }
+
+        .dlist {
+            margin: 0;
+            border: 0;
+            background: transparent;
+        }
+
+        .nvtt {
+            color: #fff;
+        }
+
+        .nvbt:active, .nvbt {
+            color: #fff;
+            padding-left: 20px;
+            font-size: 14px;
+            background-position: -14px 0;
+            background-color: transparent;
+        }
+
+        .dcontent,
+        .sdcontent {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            bottom: 0px;
+            padding: 0;
+           background: url('images/1.png') no-repeat transparent top center;
+/*            background: transparent;*/
+            padding-top: 200px;
+        }
+    </style>
+
+    <script type="text/javascript">
+/*        var ws = null;
+        // H5 plus事件处理
+        function plusReady() {
+            ws = plus.webview.currentWebview();
+            // 显示遮罩层
+            ws.setStyle({bounceBackground: "url(images/1.png)"});
+            ws.setStyle({background: "transparent"});
+            ws.setStyle({bounce: "vertical"});
+        }
+        if (window.plus) {
+            plusReady();
+        } else {
+            document.addEventListener("plusready", plusReady, false);
+        }*/
+    </script>
+
+</head>
+<body>
+<header>
+    <div class="nvbt iback" onclick="back(true);">返回</div>
+    <div class="nvtt">中国好姑娘</div>
+    <!--    <div class="nvbt idoc" onclick="openDoc('NativeUI Document','/doc/nativeUI.html')"></div>-->
+</header>
+<div id="dcontent" class="dcontent ">
+    <!--    <ul class="dlist">
+            <li class="ditem" onclick="pickDate()">系统日期选择框</li>
+            <li class="ditem" onclick="pickTime()">系统时间选择框</li>
+            <li class="ditem" onclick="showWaiting()">等待框</li>
+            <li class="ditem" onclick="showAlert()">提示框</li>
+            <li class="ditem" onclick="showConfirm()">确认框</li>
+            <li class="ditem" onclick="showPrompt()">输入框</li>
+            <li class="ditem" onclick="showActionSheet()">弹出菜单ActionSheet</li>
+            <li class="ditem" onclick="showToast()">自动消失提示框</li>
+        </ul>-->
+    <ul class="mui-table-view dlist">
+        <li class="mui-table-view-cell">
+            <p><span class="iconfont">&#xe627;</span></sp>室内韩式<em>（9张婚纱照）</em></p>
+            <img src="images/1.png" class="mui-action-preview" alt=""/>
+
+            <div class="icon-box">
+                <span class="iconfont">&#xe61d;<em>1</em></span>
+                <span class="iconfont">&#xe620;<em>1</em></span>
+            </div>
+        </li>
+        <li class="mui-table-view-cell">
+            <img src="images/2.png" class="mui-action-preview" alt=""/>
+
+            <div class="icon-box">
+                <span class="iconfont">&#xe61d;<em>1</em></span>
+                <span class="iconfont">&#xe620;<em>1</em></span>
+            </div>
+        </li>
+        <li class="mui-table-view-cell">
+            <img src="images/3.png" class="mui-action-preview" alt=""/>
+
+            <div class="icon-box">
+                <span class="iconfont">&#xe61d;<em>1</em></span>
+                <span class="iconfont">&#xe620;<em>1</em></span>
+            </div>
+        </li>
+        <li class="mui-table-view-cell">
+            <img src="images/4.png" class="mui-action-preview" alt=""/>
+
+            <div class="icon-box">
+                <span class="iconfont">&#xe61d;<em>1</em></span>
+                <span class="iconfont">&#xe620;<em>1</em></span>
+            </div>
+        </li>
+        <li class="mui-table-view-cell">
+            <img src="images/2.png" class="mui-action-preview" alt=""/>
+
+            <div class="icon-box">
+                <span class="iconfont">&#xe61d;<em>1</em></span>
+                <span class="iconfont">&#xe620;<em>1</em></span>
+            </div>
+        </li>
+        <li class="mui-table-view-cell">
+            <img src="images/2.png" class="mui-action-preview" alt=""/>
+
+            <div class="icon-box">
+                <span class="iconfont">&#xe61d;<em>1</em></span>
+                <span class="iconfont">&#xe620;<em>1</em></span>
+            </div>
+        </li>
+        <li class="mui-table-view-cell">
+            <img src="images/2.png" class="mui-action-preview" alt=""/>
+
+            <div class="icon-box">
+                <span class="iconfont">&#xe61d;<em>1</em></span>
+                <span class="iconfont">&#xe620;<em>1</em></span>
+            </div>
+        </li>
+        <li class="mui-table-view-cell">
+            <img src="images/2.png" class="mui-action-preview" alt=""/>
+
+            <div class="icon-box">
+                <span class="iconfont">&#xe61d;<em>1</em></span>
+                <span class="iconfont">&#xe620;<em>1</em></span>
+            </div>
+        </li>
+        <li class="mui-table-view-cell">
+            <img src="images/2.png" class="mui-action-preview" alt=""/>
+
+            <div class="icon-box">
+                <span class="iconfont">&#xe61d;<em>1</em></span>
+                <span class="iconfont">&#xe620;<em>1</em></span>
+            </div>
+        </li>
+
+    </ul>
+</div>
+</body>
+</html>

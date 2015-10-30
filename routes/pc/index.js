@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/', index);
 
 function index(req, res, next) {
-    res.render('index', { title: '桃微',layout:null });
+    res.render('pc/index', { title: '桃微',layout:null });
 }
 
 module.exports = router;

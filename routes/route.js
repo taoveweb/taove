@@ -3,11 +3,12 @@
  */
 
 //pc
-var indexpc = require('../routes/pc/index');
-//web
-var index = require('../routes/index');
-var sort = require('../routes/sort');
-var photographer = require('../routes/photographer');
+var index_pc = require('../routes/pc/index');
+var app_pc = require('../routes/pc/app');
+//mobile
+var index_mb = require('../routes/index');
+var sort_mb = require('../routes/sort');
+var photographer_mb = require('../routes/photographer');
 //api
 var apiUsers = require('../routes/api/users');
 var apiAlbums = require('../routes/api/albums');
@@ -21,11 +22,12 @@ var intention = require('../routes/admin/intention');
 
 module.exports = function (app) {
     //pc
-    app.use('/',indexpc );
-    //web
-    app.use('/', index);
-    app.use('/sort', sort);
-    app.use('/photographer', photographer);
+    app.use('/',index_pc );
+    app.use('/app',index_app );
+    //mobile
+    app.use('/pc', index_mb);
+    app.use('/pc/sort', sort_mb);
+    app.use('/pc/photographer', photographer_mb);
 
     //api
     app.use('/api', apiAlbums);

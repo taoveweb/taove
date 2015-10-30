@@ -23,7 +23,7 @@ var intention = require('../routes/admin/intention');
 module.exports = function (app) {
     //pc
     app.use('/',index_pc );
-    app.use('/app',index_app );
+    app.use('/app',app_pc );
     //mobile
     app.use('/pc', index_mb);
     app.use('/pc/sort', sort_mb);

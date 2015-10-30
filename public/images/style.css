@@ -1,0 +1,103 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+/*img*/
+image {
+  -webkit-touch-callout: none; }
+
+/*清除浮动*/
+body {
+  -webkit-text-size-adjust: none;
+  color: #261c19;
+  font-family: "'Microsoft YaHei',tahoma,arial,serif;";
+  background-color: #828181; }
+
+.em2 {
+  text-indent: 2em; }
+
+header {
+  width: 100%;
+  margin-bottom: -20px; }
+  header img {
+    width: 100%; }
+
+dl.contain {
+  padding: 0 2.5%; }
+  dl.contain dd {
+    zoom: 1;
+    padding: 10px 0;
+    border-bottom: 1px dashed #c9c9c9; }
+    dl.contain dd:after {
+      clear: both;
+      content: ".";
+      display: block;
+      height: 0;
+      visibility: hidden;
+      overflow: hidden; }
+    dl.contain dd.n1 h2 {
+      margin-top: 7%; }
+    dl.contain dd.n2 h2 {
+      margin-top: 7%; }
+    dl.contain dd.n3 h2 {
+      margin-top: 7%; }
+    dl.contain dd.n4 h2 {
+      margin-top: 5%; }
+    dl.contain dd.n5 h2 {
+      margin-top: 2%; }
+    dl.contain dd.n6 h2 {
+      margin-top: 0; }
+    dl.contain dd.n7 h2 {
+      margin-top: 7%; }
+    @media screen and (orientation: landscape) {
+      dl.contain dd.n1 h2 {
+        margin-top: 0; }
+      dl.contain dd.n2 h2 {
+        margin-top: 0; }
+      dl.contain dd.n3 h2 {
+        margin-top: 0; }
+      dl.contain dd.n4 h2 {
+        margin-top: 0; }
+      dl.contain dd.n5 h2 {
+        margin-top: 0; }
+      dl.contain dd.n6 h2 {
+        margin-top: 0; }
+      dl.contain dd.n7 h2 {
+        margin-top: 0; } }
+    dl.contain dd:last-child {
+      border-bottom: none; }
+    dl.contain dd h2 {
+      float: left;
+      width: 25%; }
+      dl.contain dd h2 img {
+        width: 100%; }
+    dl.contain dd p {
+      width: 70%;
+      height: 100%;
+      padding-left: 3%;
+      margin-left: 1%;
+      font-size: .8rem;
+      float: left;
+      line-height: 1rem;
+      border-left: 1px solid #9fa0a0; }
+    @media screen and (orientation: landscape) {
+      dl.contain dd p {
+        font-size: 1rem;
+        line-height: 1.2rem; } }
+
+footer {
+  color: #fff;
+  margin-top: -20px; }
+  footer img {
+    width: 100%; }
+  footer p {
+    display: none;
+    transform: scale(0.8);
+    font-size: .8rem; }
+    footer p a {
+      font-size: 12px;
+      color: #fff;
+      text-decoration: none; }
+
+/*# sourceMappingURL=style.css.map */

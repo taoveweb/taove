@@ -48,11 +48,13 @@
             padding: 5px;
             margin: 0;
         }
-
+        audio{
+            display: none;
+        }
     </style>
 </head>
 <body>
-<audio id="car_audio" autoplay="true" controls="" loop="" preload="preload">
+<audio id="car_audio"  controls="" loop="" preload="preload">
     <source src="../media/39.mp3" type="audio/mpeg">
 </audio>
 <img class="bg" src="ibg1.png" alt=""/>
@@ -61,6 +63,11 @@
 <div class="content">诚挚邀请</div>
 <p class="timeandaddress">2015年12月15日 12时00分<br>福州市闽清县石湖村
 </p>
-
+<script src="../js/zepto.min.js"></script>
+<script>
+    $("body").on('click',function(){
+        $('#car_audio')[0].play();
+    })
+</script>
 </body>
 </html>

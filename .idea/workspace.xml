@@ -42,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="www.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bin/www.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.040948275">
-              <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/wd/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.464286">
-              <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.6972477">
+              <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
               <folding>
                 <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -152,8 +152,8 @@
         <option value="$PROJECT_DIR$/public/home.html" />
         <option value="$PROJECT_DIR$/public/css/home.css" />
         <option value="$PROJECT_DIR$/public/wedding/index.html" />
-        <option value="$PROJECT_DIR$/public/wd/index.html" />
         <option value="$PROJECT_DIR$/bin/www.js" />
+        <option value="$PROJECT_DIR$/public/wd/index.html" />
       </list>
     </option>
   </component>
@@ -753,25 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="239" column="34" selection-start-line="239" selection-start-column="34" selection-end-line="239" selection-end-column="34" />
-          <folding>
-            <marker date="1446340577050" expanded="true" signature="2174:2314" placeholder="..." />
-            <marker date="1446340577050" expanded="true" signature="2365:2419" placeholder="..." />
-            <marker date="1446340577050" expanded="true" signature="2517:3306" placeholder="..." />
-            <marker date="1446340577050" expanded="true" signature="2560:2768" placeholder="..." />
-            <marker date="1446340577050" expanded="true" signature="2823:3266" placeholder="..." />
-            <marker date="1446340577050" expanded="true" signature="3843:3983" placeholder="..." />
-            <marker date="1446340577050" expanded="true" signature="4034:4088" placeholder="..." />
-            <marker date="1446340577050" expanded="true" signature="4186:4975" placeholder="..." />
-            <marker date="1446340577050" expanded="true" signature="4229:4437" placeholder="..." />
-            <marker date="1446340577050" expanded="true" signature="4492:4935" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/zepto.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -799,21 +780,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/wd/index.html">
+    <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.464286">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="239" column="34" selection-start-line="239" selection-start-column="34" selection-end-line="239" selection-end-column="34" />
           <folding>
-            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1446340577050" expanded="true" signature="2174:2314" placeholder="..." />
+            <marker date="1446340577050" expanded="true" signature="2365:2419" placeholder="..." />
+            <marker date="1446340577050" expanded="true" signature="2517:3306" placeholder="..." />
+            <marker date="1446340577050" expanded="true" signature="2560:2768" placeholder="..." />
+            <marker date="1446340577050" expanded="true" signature="2823:3266" placeholder="..." />
+            <marker date="1446340577050" expanded="true" signature="3843:3983" placeholder="..." />
+            <marker date="1446340577050" expanded="true" signature="4034:4088" placeholder="..." />
+            <marker date="1446340577050" expanded="true" signature="4186:4975" placeholder="..." />
+            <marker date="1446340577050" expanded="true" signature="4229:4437" placeholder="..." />
+            <marker date="1446340577050" expanded="true" signature="4492:4935" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www.js">
+    <entry file="file://$PROJECT_DIR$/public/wd/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.040948275">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
-          <folding />
+        <state vertical-scroll-proportion="0.6972477">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

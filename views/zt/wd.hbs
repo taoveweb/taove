@@ -19,7 +19,6 @@
         body {
             -webkit-overflow-scrolling: touch;
             height: 100%;
-            position: relative;
         }
 
         .bg {
@@ -107,6 +106,8 @@
         #pinkboard{
             position: absolute;
             top: 0;
+            height: auto;
+            bottom: 0;
         }
 
 
@@ -125,7 +126,7 @@
     </style>
 </head>
 <body>
-<div class="wrapper">
+<div id="wrapper" class="wrapper">
     <audio id="caraudio" autoplay="true" controls="" loop="" preload="preload">
         <source src="/media/39.mp3" type="audio/mpeg">
     </audio>
@@ -186,9 +187,9 @@
     var flakes = [],
             canvas = document.getElementById("canvas"),
             ctx = canvas.getContext("2d"),
-            flakeCount = 200,
+            flakeCount = 100,
             mX = -100,
-            mY = -100
+            mY = -100;
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -301,13 +302,15 @@
  */
     var settings = {
         particles: {
-            length:   200, // maximum amount of particles
+            length:   100, // maximum amount of particles
             duration:   2, // particle duration in sec
             velocity: 100, // particle velocity in pixels/sec
             effect: -0.75, // play with this for a nice effect
             size:      30 // particle size in pixels
         }
     };
+    console.log(document.documentElement.clientHeight);
+    document.querySelector('#pinkboard').height=document.documentElement.clientHeight;
 
     /*
      * RequestAnimationFrame polyfill by Erik Möller

@@ -307,9 +307,12 @@
             $('#car_audio')[0].play();
         });
     */
- $(document).on('click',function(){
+    $(document).on('click', function () {
         $('#caraudio')[0].play();
     });
+    document.getElementById('caraudio').addEventListener('oncanplaythrough', function () {
+        this.play();
+    })
 
 
     /*    (function () {

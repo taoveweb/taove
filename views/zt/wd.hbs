@@ -151,7 +151,6 @@
     </style>
 </head>
 <body>
-<img style="opacity: 0" src="/wd/tm.png" alt=""/>
 <div id="wrapper" class="wrapper">
     <audio id="caraudio" autoplay="true" controls="" loop="" preload="preload">
         <source src="/media/39.mp3" type="audio/mpeg">
@@ -159,7 +158,7 @@
     <img class="bg" src="/wd/ibg1.png" alt=""/>
 
     <div id="canvasbox" class="canvasbox">
-        <img style="opacity: 0" src="/wd/tm.png" alt=""/>
+        <img id="tm" style="opacity: 0" src="/wd/tm.png" alt=""/>
         <img class="p" src="/wd/hj.jpg" alt=""/>
         <canvas id="pinkboard"></canvas>
     </div>
@@ -344,7 +343,7 @@
             size:      30 // particle size in pixels
         }
     };
-    //document.querySelector('#pinkboard').height=document.getElementById('canvasbox').style.height;
+    document.querySelector('#pinkboard').height=document.getElementById('tm').style.height;
 
     /*
      * RequestAnimationFrame polyfill by Erik Möller

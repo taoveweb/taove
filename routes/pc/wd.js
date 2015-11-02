@@ -1,12 +1,22 @@
 /**
  * Created by Administrator on 2015/9/7.
  */
+    var util=require('util');
 var express = require('express');
 var router = express.Router();
 router.get('/', index);
 
 function index(req, res, next) {
-    res.render('zt/wd', { title: '黄家金&严珍',layout:null });
+    var headers=req.headers;
+    if(headers['user-agent'].indexOf('Windows')>0){
+        var width='500px';
+    }else{
+        var width='auto';
+    }
+    //console.log(util)
+   // console.log(JSON.parse(headers));
+   // console.log(req.headers);
+    res.render('zt/wd', { title: '黄家金&严珍',layout:null,wd:width });
 }
 
 module.exports = router;

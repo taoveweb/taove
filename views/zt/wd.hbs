@@ -66,6 +66,7 @@
 
         .wrapper {
             margin: 0 auto;
+            width: {{wd}};
         }
 
         .msg {
@@ -90,7 +91,9 @@
             background: #c3282f;
             margin: 10px auto 20px;
         }
-
+        #caraudio{
+            display: none;
+        }
         canvas {
             position: fixed;
             top: 0;
@@ -131,7 +134,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <audio id="car_audio" autoplay="true" controls="" loop="" preload="preload">
+    <audio id="caraudio" autoplay="true" controls="" loop="" preload="preload">
         <source src="/media/39.mp3" type="audio/mpeg">
     </audio>
     <img class="bg" src="/wd/ibg1.png" alt=""/>
@@ -174,7 +177,11 @@
         $('#car_audio')[0].play();
     });
 */
-    document.getElementById('#car_audio').play();
+
+/*    document.onload=function(){
+        (document.getElementById('#caraudio')).play();
+    }*/
+
 
     (function () {
         var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame ||

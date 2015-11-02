@@ -7,59 +7,69 @@
     <meta content="telephone=no,email=no" name="format-detection">
     <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
     <title>黄家金&严珍</title>
-   <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
+    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
     <style>
-        body,html{
-            background:#e73d40;
+        body, html {
+            background: #e73d40;
             padding: 0;
             margin: 0;
 
         }
-        .bg{
+
+        .bg {
             display: block;
-            width: 100%;margin: 0px auto;
+            width: 100%;
+            margin: 0px auto;
         }
-        .p{
+
+        .p {
             width: 50%;
             display: block;
-            -webkit-border-radius:100%;
+            -webkit-border-radius: 100%;
             -moz-border-radius: 100%;
             border-radius: 100%;
             border: 8px solid #c3282f;
             margin: 0 auto;
             margin-top: -40%;
         }
-        .title{
+
+        .title {
             color: #fff;
             font-weight: bold;
             text-align: center;
             font-size: 3em;
             line-height: 1.2em;
         }
-        .content{
+
+        .content {
             text-align: center;
             color: #fff;
             font-size: 2.5em;
             line-height: 1em;
         }
-        .timeandaddress{
+
+        .timeandaddress {
             text-align: center;
             color: #fff;
             font-size: 2em;
             margin: 0;
         }
-        audio{
+
+        audio {
             display: none;
         }
-        .wrapper{
+
+        .wrapper {
             margin: 0 auto;
         }
-        .msg{
+
+        .msg {
             color: #fff;
             padding: 8px;
             font-size: 1.5em;
         }
-        .img-box img{
+
+        .img-box img {
             display: block;
             width: 100%;
             margin: 5px auto;
@@ -68,16 +78,22 @@
 </head>
 <body>
 <div class="wrapper">
-<audio id="car_audio" autoplay="true" controls="" loop="" preload="preload">
-    <source src="../media/39.mp3" type="audio/mpeg">
-</audio>
-<img class="bg" src="ibg1.png" alt=""/>
-<img class="p" src="hj.jpg" alt=""/>
-<h1 class="title">黄家金 & 严珍</h1>
-<div class="content">诚挚邀请</div>
-<p class="timeandaddress">婚礼时间：2015年12月15日 12时00分<br>地点：福州市闽清县石湖村</p>
+    <audio id="car_audio" autoplay="true" controls="" loop="" preload="preload">
+        <source src="../media/39.mp3" type="audio/mpeg">
+    </audio>
+    <img class="bg" src="ibg1.png" alt=""/>
+    <img class="p" src="hj.jpg" alt=""/>
+
+    <h1 class="title">黄家金 & 严珍</h1>
+
+    <div class="content">诚挚邀请</div>
+    <p class="timeandaddress">婚礼时间：2015年12月15日 12时00分<br>地点：福州市闽清县石湖村</p>
+    <p class="msg">
+        尊敬的亲朋好友，新黄家金与新娘严珍郑重的邀请您参加我们的婚礼，望您在百忙之中抽出空闲前来参加，我们用心准备了惊喜和礼物，真心期待您分享我们的甜蜜。
+    </p>
+
     <div class="img-box">
-        <img  src="hj.jpg" alt=""/>
+        <img src="hj.jpg" alt=""/>
         <img src="hj.jpg" alt=""/>
         <img src="hj.jpg" alt=""/>
         <img src="hj.jpg" alt=""/>
@@ -89,13 +105,11 @@
         <img src="hj.jpg" alt=""/>
         <img src="hj.jpg" alt=""/>
     </div>
-<p class="msg">
-        尊敬的亲朋好友，新黄家金与新娘严珍郑重的邀请您参加我们的婚礼，望您在百忙之中抽出空闲前来参加，我们用心准备了惊喜和礼物，真心期待您分享我们的甜蜜。
-    </p>
+
 </div>
 <script src="../js/zepto.min.js"></script>
 <script>
-    $("body").on('click',function(){
+    $("body").on('click', function () {
         $('#car_audio')[0].play();
     })
 </script>

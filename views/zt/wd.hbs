@@ -134,7 +134,7 @@
             overflow: hidden;
         }
         .canvasbox img{
-            width: 50%;
+            width: 100%;
             display: block;
         }
         .canvasbox img.p{
@@ -145,13 +145,7 @@
         }
         #pinkboard{
             position: absolute;
-            top: -2px;
-            left: -2px;
             bottom: 0;
-            width: 101%;
-            height: 101%;
-            display: none;
-            border:none;
         }
 
     </style>
@@ -164,7 +158,7 @@
     <img class="bg" src="/wd/ibg1.png" alt=""/>
 
     <div id="canvasbox" class="canvasbox">
-        <img src="/wd/tm.png" alt=""/>
+        <img style="opacity: 0" src="/wd/tm.png" alt=""/>
         <img class="p" src="/wd/hj.jpg" alt=""/>
         <canvas id="pinkboard"></canvas>
     </div>

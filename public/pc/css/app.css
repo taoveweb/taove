@@ -63,3 +63,50 @@
     -o-animation-delay: 500ms;
     animation-delay: 500ms;
 }
+
+
+/*пео╒*/
+.app{
+    padding-bottom:60px;
+    width: 960px;
+    margin: 0 auto;
+}
+.app dl{
+    float:left;
+    width:264px;
+    padding-top:300px;
+    text-align:center;
+    padding-left:84px;
+}
+.app dl:first-child{
+    padding-left:0;
+}
+.app dt{
+    font-size:20px;
+    position:relative;color:#191a1b;
+}
+.app dd{
+    color:#5d626f;
+    font-size:16px;
+    line-height:30px;
+    padding-top:15px;
+}
+.app dt .icons{
+    display:block;
+    position:absolute;
+    width:240px;height:240px;
+    bottom:60px;
+    left:50%;
+    margin-left:-120px;
+}
+.info-1 .icons{
+    background-image:url('../img/i-1.jpg');
+}
+.info-2 .icons{
+    background-image:url('../img/i-2.jpg');
+}
+.info-3 .icons{
+    background-image:url('../img/i-3.jpg');
+}
+
+.ui-dialog-mask{ opacity: 1; filter: alpha(opacity=100);}

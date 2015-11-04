@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta content="yes" name="apple-mobile-web-app-capable">
-    <meta content="yes" name="apple-touch-fullscreen">
-    <meta content="telephone=no,email=no" name="format-detection">
-    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
-    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="pc/css/base.css">
-    <link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="/favicon.ico"/>
-    <link rel="bookmark" href="/favicon.ico"/>
-    {{{block "pcStyle"}}}
+    <title>秋季特惠</title>
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/autumn.css" rel="stylesheet">
 </head>
 <body>
 <div class="base-top">
     <div class="base-section">
-        <a class="base-logo" href="/"><img src="pc/img/logo.png" alt="桃微"></a>
-        <div class="base-nav"><a class="home-c" href="/">首页</a><a class="app-c" href="/app">app</a><a  class="autumn-c" href="/autumn">秋季特惠</a><a class="photoframes-c" href="/photoframes">婚件产品</a><a class="login-c" href="/login">登录</a>
+        <a class="base-logo"><img src="/img/logo.png" alt="桃微"></a>
+        <div class="base-nav"><a class="current" href="/index">首页</a><a href="/app">app</a><a href="/autumn">秋季特惠</a><a href="/photoframes">婚件产品</a><a href="/login">登录</a>
         </div>
     </div>
 </div>
+<a class="banner" href=""></a>
+<div class="box clearfix">
+    <a class="demo1" href="">
+        <img src="img/demo.png" alt=""/>
+        桃微套餐>
+    </a>
+    <a href="/app">   <img src="img/demo-1.png" alt=""/>桃微APP></a>
+</div>
 
-{{{body}}}
+
+
+
 <div class="base-footer">
     <div class="base-section clearfix">
         <div class="base-col">
@@ -61,7 +63,5 @@
     </div>
     <p class="base-foot">Copyright © 2015.福州桃微网络科技有限公司 All rights reserved</p>
 </div>
-
-{{{block "pcScripts"}}}
 </body>
 </html>

@@ -1,20 +1,19 @@
 {{#extend "adminStyle"}}
-    {{>admincss}}
+    <link rel="stylesheet" href="/css/admin.css"/>
+    <style>
+        .admin {
+            background: #d2d2d2;
+        }
+    </style>
 {{/extend}}
 
-<div class="main login-main">
-    <input type="text" placeholder="手机账号登录"/>
-    <input type="text" placeholder="密码"/>
-    <button>登录</button>
-    <a class="l-register" href="">没有账号？手机号快速注册</a>
 
-    <div class="l-select">还可以选择以下方式登录
-    <div class="clearfix">
-        <a href=""><img src="/img/qq.png">QQ</a>
-        <a href=""><img src="/img/wx.png">微信</a>
-    </div>
-    </div>
-</div>
+
+
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+
 
 {{#extend "adminScripts"}}
     <script>

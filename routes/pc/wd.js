@@ -17,7 +17,7 @@ function index(req, res, next) {
     //console.log(util)
    // console.log(JSON.parse(headers));
    // console.log(req.headers);
-    res.render('zt/wd', { title: '黄家金&严珍',layout:null,wd:width });
+    res.render('pc/zt/wd', { title: '黄家金&严珍',layout:null,wd:width });
 }
 
 module.exports = router;

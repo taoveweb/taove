@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>设置</title>
+
+    <link href="css/mui.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+    <style>
+        html, body {
+            background: transparent;
+        }
+
+        .mui-bar-nav {
+            background: #fe555a;
+        }
+
+        .mui-bar-nav h1 {
+            color: #fff;
+        }
+
+        .mui-bar-nav.mui-bar .mui-icon {
+            color: #fff;;
+        }
+
+        .mui-bar .mui-title {
+            font-size: 18px
+        }
+
+        .mui-table-view-cell-noactive.mui-active ,
+        .mui-table-view-cell-noactive{
+            background-color: #fff;
+            color: #000;
+        }
+        .mui-table-view-cell{
+            min-height: 39px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+        .mui-content > .mui-table-view:first-child{
+            margin-top: 0;
+        }
+        .mui-icon-back:before, .mui-icon-left-nav:before{
+            font-size: 20px;
+        }
+        .mui-bar .mui-icon{
+            font-size: 16px;
+            height: 46px;
+            line-height: 46px;
+            padding: 0;
+        }
+        .mui-bar-nav.mui-bar .mui-icon{
+            padding: 0 0 0 5px;
+        }
+    </style>
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left">我的</a>
+
+    <h1 class="mui-title">更多</h1>
+</header>
+<div class="mui-content">
+    <ul class="mui-table-view">
+<!--        <li class="mui-table-view-divider">单行列表</li>-->
+        <li class="mui-table-view-cell">报影师申请入驻</li>
+        <li class="mui-table-view-cell">关于嫁拍</li>
+        <li class="mui-table-view-cell">使用帮助</li>
+<!--        <li class="mui-table-view-divider">两行列表</li>-->
+    </ul>
+</div>
+<script src="js/mui.min.js"></script>
+<script src="js/app.js"></script>
+<script type="text/javascript">
+    var nw = null;
+    mui.init({});
+    // H5 plus事件处理
+    function plusReady() {
+    }
+    if (window.plus) {
+        plusReady();
+    } else {
+        document.addEventListener("plusready", plusReady, false);
+    }
+
+    function plusReady(){
+
+    }
+
+    mui('.mui-table-view').on('tap','.mui-table-view-cell',function(){
+        var webview=plus.webview.currentWebview();
+        var parent=webview.opener();
+        if(this.innerHTML=="" || this.innerHTML=="其它城市还未开通") return;
+        parent.evalJS('document.getElementById("local").innerHTML="'+this.innerHTML+'"');
+        webview.close();
+    });
+
+
+
+</script>
+</body>
+</html>

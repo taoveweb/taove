@@ -4425,7 +4425,7 @@ var mui = (function(document, undefined) {
 			this.slideIn = this.classList.contains(CLASS_SLIDE_IN);
 			this.scroller = this.wrapper.querySelector(SELECTOR_INNER_WRAP);
 			//			!offCanvas && this.scroller.classList.remove(CLASS_TRANSITIONING);
-			//			!offCanvas && this.scroller.setAttribute('style', '');
+			//			!offCanvas && this.scroller.setAttribute('css', '');
 			this.offCanvasLefts = this.wrapper.querySelectorAll('.' + CLASS_OFF_CANVAS_LEFT);
 			this.offCanvasRights = this.wrapper.querySelectorAll('.' + CLASS_OFF_CANVAS_RIGHT);
 			if (offCanvas) {
@@ -4445,14 +4445,14 @@ var mui = (function(document, undefined) {
 				this.offCanvasRightSlideIn = this.slideIn && (this.offCanvasRight.parentNode === this.wrapper);
 				//				this.offCanvasRight.classList.remove(CLASS_TRANSITIONING);
 				//				this.offCanvasRight.classList.remove(CLASS_ACTIVE);
-				//				this.offCanvasRight.setAttribute('style', '');
+				//				this.offCanvasRight.setAttribute('css', '');
 			}
 			if (this.offCanvasLeft) {
 				this.offCanvasLeftWidth = this.offCanvasLeft.offsetWidth;
 				this.offCanvasLeftSlideIn = this.slideIn && (this.offCanvasLeft.parentNode === this.wrapper);
 				//				this.offCanvasLeft.classList.remove(CLASS_TRANSITIONING);
 				//				this.offCanvasLeft.classList.remove(CLASS_ACTIVE);
-				//				this.offCanvasLeft.setAttribute('style', '');
+				//				this.offCanvasLeft.setAttribute('css', '');
 			}
 			this.backdrop = this.scroller.querySelector('.' + CLASS_ACTION_BACKDEOP);
 
@@ -4989,9 +4989,9 @@ var mui = (function(document, undefined) {
 
 	var fixedPopoverScroll = function(isPopoverScroll) {
 		//		if (isPopoverScroll) {
-		//			document.body.setAttribute('style', 'overflow:hidden;');
+		//			document.body.setAttribute('css', 'overflow:hidden;');
 		//		} else {
-		//			document.body.setAttribute('style', '');
+		//			document.body.setAttribute('css', '');
 		//		}
 	};
 	var onPopoverShown = function(e) {
@@ -5058,7 +5058,7 @@ var mui = (function(document, undefined) {
 		backdrop.classList.remove(CLASS_ACTION_BACKDROP);
 		var _popover = document.querySelector('.mui-popover.mui-active');
 		if (_popover) {
-			//			_popover.setAttribute('style', '');
+			//			_popover.setAttribute('css', '');
 			_popover.addEventListener('webkitTransitionEnd', onPopoverHidden);
 			_popover.classList.remove(CLASS_ACTIVE);
 			//			_popover.removeEventListener('webkitTransitionEnd', onPopoverHidden);
@@ -5081,7 +5081,7 @@ var mui = (function(document, undefined) {
 				//						var offsetWidth = anchor.offsetWidth;
 				//						var offsetLeft = anchor.offsetLeft;
 				//						var innerWidth = window.innerWidth;
-				//						popover.style.left = (Math.min(Math.max(offsetLeft, defaultPadding), innerWidth - offsetWidth - defaultPadding)) + "px";
+				//						popover.css.left = (Math.min(Math.max(offsetLeft, defaultPadding), innerWidth - offsetWidth - defaultPadding)) + "px";
 				//					} else {
 				//						//TODO anchor is position:{left,top,bottom,right}
 				//					}

@@ -9,7 +9,7 @@ var aniShow = "pop-in";
  var list = document.querySelectorAll('.ios-only');
  if (list) {
  for (var i = 0; i < list.length; i++) {
- list[i].style.display = 'none';
+ list[i].css.display = 'none';
  }
  }
  //Android平台暂时使用slide-in-right动画

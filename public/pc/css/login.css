@@ -1,0 +1,5 @@
+.base-nav a.login-c,
+.base-nav a.login-c:hover,
+.base-nav a.login-c:active{
+    background: #ff7478;
+}

@@ -6,6 +6,7 @@
 var index_pc = require('../routes/pc/index');
 var app_pc = require('../routes/pc/app');
 var autumn_pc = require('../routes/pc/autumn');//秋季特惠
+var photoframes_pc = require('../routes/pc/photoframes');//婚件产品
 var wd_pc = require('../routes/pc/wd'); //结婚喜帖
 //mobile
 var index_mb = require('../routes/index');
@@ -27,6 +28,7 @@ module.exports = function (app) {
     app.use('/',index_pc );
     app.use('/app',app_pc );
     app.use('/autumn',autumn_pc );
+    app.use('/photoframes',photoframes_pc );
     app.use('/wd',wd_pc );
     //mobile
     app.use('/pc', index_mb);

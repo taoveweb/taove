@@ -9,7 +9,7 @@ var wd_pc = require('../routes/pc/wd'); //结婚
 //mobile
 var index_mb = require('../routes/index');
 var sort_mb = require('../routes/sort');
-var photographer_mb = require('moblile/photographer');
+var photographer_mb = require('../routes/mobile/photographer');
 //api
 var apiUsers = require('../routes/api/users');
 var apiAlbums = require('../routes/api/albums');

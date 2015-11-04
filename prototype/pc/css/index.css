@@ -1,3 +1,9 @@
+
+.base-nav a.home-c,
+.base-nav a.home-c:hover,
+.base-nav a.home-c:active{
+    background: #ff7478;
+}
 .box{
     width: 100%;
 }

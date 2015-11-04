@@ -1,4 +1,9 @@
 
+.base-nav a.app-c,
+.base-nav a.app-c:hover,
+.base-nav a.app-c:active{
+    background: #ff7478;
+}
 .content{
     height: 798px;
     overflow: hidden;

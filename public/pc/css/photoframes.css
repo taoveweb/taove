@@ -1,5 +1,37 @@
 .base-nav a.photoframes-c,
 .base-nav a.photoframes-c:hover,
-.base-nav a.photoframes-c:active{
+.base-nav a.photoframes-c:active {
     background: #ff7478;
+}
+
+.section {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.item {
+    width: 245px;
+    height:401px;
+    float:left;
+    margin: 15px 2px 0;
+    padding-top: 1px;
+    background: url(../img/photoframes/2.png) no-repeat center top;
+}
+.item .img-a{
+    display: block;
+    width: 200px;
+    height: 283px;
+    background: #f0f0f0;
+    margin: 8px auto 15px;
+}
+.item img{
+    display: block;
+    width: 200px;
+    height: 283px;
+}
+.item h2,
+.item p{
+    position: relative;
+    padding-left: 15px;
+    line-height: 20px;
 }

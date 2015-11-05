@@ -3,7 +3,9 @@
 .base-nav a.photoframes-c:active {
     background: #ff7478;
 }
-
+body{
+    background: #fff;
+}
 .section {
     width: 1000px;
     margin: 0 auto;

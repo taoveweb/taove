@@ -213,7 +213,9 @@ a:hover, a:active, a:focus {
     background: #ff7478;
 }
 
-
+em,b,i{
+    font-style:normal;
+}
 .base-footer{
     height: 312px;
     background: #707070;

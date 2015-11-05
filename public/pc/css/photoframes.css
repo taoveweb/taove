@@ -7,11 +7,12 @@
 .section {
     width: 1000px;
     margin: 0 auto;
+    padding-bottom: 20px;
 }
 
 .item {
     width: 245px;
-    height:367px;
+    height:387px;
     float:left;
     margin: 15px 2px 0;
     padding-top: 1px;
@@ -34,4 +35,36 @@
     position: relative;
     padding-left: 22px;
     line-height: 20px;
+    font-size: 14px;
+}
+.item h2{
+    font-size: 16px;padding-bottom: 5px;
+    color: #2c3039;
+}
+.item p{
+    padding-bottom: 4px;
+    color:  #b5b5b5;
+    padding-top: 3px;
+}
+.item p em{
+    color: #fe555a;
+    position: absolute;
+    right: 20px;
+
+}
+.item p a{
+    display: block;
+    position: absolute;
+    padding: 4px 15px;
+    right: 8px;
+    background: #fe555a;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 16px;
+    top: 0;
+}
+.item p a:hover{
+    background: #FE8945;
 }

@@ -4,14 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var minify = require('express-minify')
 var fs=require('fs');
 var hbs=require('hbs');
+var compression = require('compression')
 global.__baseDir=__dirname;
 var blocks = {};
 
 var app = express();
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
-require('./routes/route')(app);
+
 
 /*
 hbs.registerPartial('partial', fs.readFileSync(__dirname + '/views/admin/admincss.hbs', 'utf8'));
@@ -34,15 +37,18 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
-app.use(favicon(__dirname + '/public/favicon.ico'));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression());
+app.use(minify());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 
+require('./routes/route')(app);
 
 
 // catch 404 and forward to error handler

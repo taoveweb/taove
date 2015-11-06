@@ -7,7 +7,7 @@
 .content{
     height: 589px;
     overflow: hidden;
-    background: url("../img/big_bg.jpg") top center no-repeat;
+    background: url("../img/big_bg.jpg") top center no-repeat #e8dfd0;
 }
 .content .base-section{
     height: 100%;

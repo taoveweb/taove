@@ -212,9 +212,10 @@ body{
     padding-left: 15px;
     padding-bottom: 20px;
 }
-.forget.rotateInDownLeft{
+.forget{
     display: block;
     z-index: 2;
+    top: -100%;
 }
 .forget.rotateOutUpLeft{
     display: block;

@@ -14,16 +14,11 @@ $(function () {
     $('#fogetBtn').on('click', function () {
         //('#forget').addClass('show');
         $('#forget').show();
-        $('#forget').removeClass('rotateOutUpLeft');
-        $('#forget').addClass('animated rotateInDownLeft');
+        $('#forget').animate({top:0});
     })
     $('#forgetBack').on('click', function () {
         //('#forget').addClass('show');
-        $('#forget').removeClass('rotateInDownLeft');
-        $('#forget').addClass('rotateOutUpLeft');
-        window.setTimeout(function(){
-            $('#forget').hide();
-        })
+        $('#forget').animate({top:'-100%'});
     })
 
 })

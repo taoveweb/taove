@@ -13,6 +13,7 @@ $(function () {
 
     $('#fogetBtn').on('click', function () {
         //('#forget').addClass('show');
+        $('#forget').show();
         $('#forget').removeClass('rotateOutUpLeft');
         $('#forget').addClass('animated rotateInDownLeft');
     })
@@ -20,6 +21,9 @@ $(function () {
         //('#forget').addClass('show');
         $('#forget').removeClass('rotateInDownLeft');
         $('#forget').addClass('rotateOutUpLeft');
+        window.setTimeout(function(){
+            $('#forget').hide();
+        })
     })
 
 })

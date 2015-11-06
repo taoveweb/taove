@@ -31,6 +31,4 @@
     display: block;
     height: 541px;
     background: url("../img/banner.jpg") no-repeat center top;
-    -webkit-background-size: cover;
-    background-size: cover;
 }

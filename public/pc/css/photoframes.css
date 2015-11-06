@@ -57,7 +57,7 @@ body{
 .item p a{
     display: block;
     position: absolute;
-    padding: 4px 15px;
+    padding: 2px 15px;
     right: 8px;
     background: #fe555a;
     -webkit-border-radius: 15px;

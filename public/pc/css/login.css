@@ -3,3 +3,233 @@
 .base-nav a.login-c:active{
     background: #ff7478;
 }
+.section{
+    padding: 20px 0;
+    text-align: center;
+    width: auto;
+
+    background: #f4f4f4;
+
+}
+.base-footer{
+    background: none;
+
+}
+.code{
+    width: 500px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+}
+.code h2{
+    padding-top: 30px;
+    font-size: 18px;
+    font-weight: normal;
+}
+.code img{
+    display: block;
+    margin: 20px auto;
+}
+.lr{
+    position: relative;
+    width: 280px;
+    height: 386px;
+    padding: 20px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #fff;
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    overflow: hidden;
+}
+body{
+    background: #3d4450;
+}
+.code p{
+    font-size: 14px;
+    color: #82898d;
+}
+.tab-menu{
+    position: relative;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+}
+.tab-menu span.fr{
+    float: right;
+}
+.tab-menu span{
+    display: inline-block;
+    width: 40%;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+.tab-menu span:hover{
+    color: #fe555a;
+}
+.tab-menu span.tab-c{
+    color: #fe555a;
+}
+.line{
+    position: absolute;
+    width: 40%;
+    left: 0;
+    height: 3px;
+    overflow: hidden;
+    background: #fe555a;
+    bottom: 0;
+}
+.panel-group{
+    position: relative;
+}
+.tab-panel input{
+    height: 32px;
+    background-color: #f6f9f9;
+    border-radius: 16px;
+    border: none;
+    padding: 0 9px;
+    width: 260px;
+    font-size: 14px;
+    color: #989ca3;
+    line-height: 32px\0/;
+    border: 1px solid #fff;
+}
+.tab-panel input:focus {
+    outline: 0;
+    border:1px solid #fe555a;
+}
+.tab-panel .code-text input{
+    width: 50%;
+}
+.tab-panel .code-text span{
+    display: inline-block;
+    cursor: pointer;
+    height: 34px;
+    line-height: 34px;
+    width: 37%;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #fe555a;
+    margin-left: 5%;
+    background: #f4f4f4;
+    text-align: center;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+.tab-panel .code-text span:hover{
+    color: #DC8414;
+}
+.tab-panel .br{
+    position: relative;
+}
+.tab-panel p {
+    height: 20px;
+    line-height: 18px;
+    overflow: hidden;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.tab-panel button{
+    height: 32px;
+    line-height: 32px;
+    border-radius: 16px;
+    font-size: 18px;
+    display: block;
+    margin:50px auto 0;
+    width: 150px;
+    padding: 0;
+    color: #fff;
+    background-color: #dc3f44;
+    border: 0;
+
+}
+.tab-panel button:hover,
+.tab-panel button:focus{
+    background: #DC8414;
+    outline: none;
+}
+.tab-panel a{
+    position: absolute;
+    bottom: -15px;
+    right: 0;
+    color: #f09693;
+    font-size: 14px;
+}
+.tab-panel a:hover{
+    color: #bc3438;
+}
+.tab-panel a i{
+    margin-left: 3px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: url('../img/login/i1.png') 0 0 no-repeat;
+    vertical-align: -3px;
+}
+.tab-panel a:hover i{
+    background: url('../img/login/i1hover.png') 0 0 no-repeat;
+}
+.tab-panel{
+    display: none;
+}
+.tab-panel.tab-c{
+    display: block;
+
+}
+
+.forget{
+    position: absolute;
+    top:0;
+    display: none;
+    background: #fff;
+    padding-top: 20px;
+}
+.animated{
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+}
+.forget.show{
+    display: block;
+}
+
+.forget h1{
+    display: block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    color: #fe555a;
+    font-weight: normal;
+    padding-left: 15px;
+    padding-bottom: 20px;
+}
+.forget.rotateInDownLeft{
+    display: block;
+    z-index: 2;
+}
+.forget.rotateOutUpLeft{
+    display: block;
+    
+}
+.forget.tab-panel button{
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+    font-size: 14px;
+}
+.forget.tab-panel .fixed{
+    width: 40%;
+    font-size: 18px;
+}
+.forget.tab-panel .button-box{
+    text-align: center;
+}

@@ -1,16 +1,95 @@
 {{#extend "pcStyle"}}
+
+    <link rel="stylesheet" href="pc/css/animate.min.css">
     <link rel="stylesheet" href="pc/css/login.css">
     <style>
     </style>
 {{/extend}}
 
 
-登录
+<div class="section">
+    <div class="code">
+        <h2>桃微APP扫描登录</h2>
+        <img src="pc/img/login/code.png" alt=""/>
 
+        <p> 嫁拍客户端，页面左上角二维码图标<br>点击并扫描本二维码登录</p>
+    </div>
+    <div class="lr">
+        <div id="forget" class="tab-panel forget">
+            <h1>找回密码</h1>
+
+            <div class="br">
+                <input type="text" placeholder="手机号"/>
+
+                <p></p>
+            </div>
+            <div class="br code-text">
+                <input type="password" placeholder="短信验证码"/><span>发送验证码</span>
+
+                <p></p>
+            </div>
+            <div class="br ">
+                <input type="password" placeholder="密码"/>
+
+                <p></p>
+            </div>
+            <div class="br button-box">
+                <button class="fixed">修改</button>
+                <button id="forgetBack">返回登录</button>
+            </div>
+        </div>
+        <div id="tabMenu" class="tab-menu clearfix">
+            <span class="tab-c">
+                登录
+            </span>
+            <span class="fr">注册</span>
+            <b id="line" class="line"></b>
+        </div>
+        <div class="panel-group">
+            <div class="tab-panel tab-c">
+                <div class="br">
+                    <input type="txt" placeholder="手机号"/>
+
+                    <p></p>
+                </div>
+                <div class="br">
+                    <input type="password" placeholder="密码"/>
+
+                    <p></p>
+                    <a id="fogetBtn">忘记密码<i></i></a>
+                </div>
+
+                <button>登录</button>
+            </div>
+            <div class="tab-panel">
+                <div class="br">
+                    <input type="text" placeholder="手机号"/>
+
+                    <p></p>
+                </div>
+                <div class="br">
+                    <input type="password" placeholder="密码"/>
+
+                    <p></p>
+                </div>
+                <div class="code-text">
+                    <input type="text" placeholder="短信验证码"/><span>发送验证码</span>
+
+                    <p></p>
+                </div>
+                <button>注册</button>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
 
 
 {{#extend "pcScripts"}}
+    <script src="pc/js/jquery.min.js"></script>
+    <script src="pc/js/login.js"></script>
     <script>
-
     </script>
 {{/extend}}

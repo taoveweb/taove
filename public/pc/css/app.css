@@ -5,17 +5,17 @@
     background: #ff7478;
 }
 .content{
-    height: 798px;
+    height: 589px;
     overflow: hidden;
-    background: url("../img/big_bg.png") top center no-repeat;
+    background: url("../img/big_bg.jpg") top center no-repeat;
 }
 .content .base-section{
     height: 100%;
 }
 .i_title{
     position: absolute;
-    left: 23px;
-    top: 74px;
+    left: 363px;
+    top: 108px;
 }
 .i_iphone{
     position: absolute;
@@ -24,8 +24,8 @@
 }
 .box-a{
     position: absolute;
-    left: 340px;
-    top: 646px;
+    left: 366px;
+    top: 238px;
     padding-left: 155px;
 }
 .box-a span{

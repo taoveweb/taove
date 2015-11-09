@@ -23,4 +23,32 @@ $(function(){
         })
     })
 
+
+
+
+
 })
+
+
+
+
+//菜单浮动
+$(function () {
+    var menu = $('.nav-box').eq(0);
+    if (!menu.length) return;
+    var win = $(window);
+    var offsetTop = menu.offset().top;
+
+    setMenuPosition();
+    win.on('scroll', function () {
+        setMenuPosition();
+    });
+
+    function setMenuPosition() {
+        if (win.scrollTop() >= offsetTop) {
+            menu.addClass('fixed');
+        } else {
+            menu.removeClass('fixed');
+        }
+    }
+});

@@ -3,6 +3,9 @@
 .base-nav a.autumn-c:active{
     background: #ff7478;
 }
+.nav-box-holdplace{
+    height: 57px;
+}
 .section,.base-section{
     width: 1000px;
     margin: 0 auto;
@@ -10,9 +13,21 @@
 .nav-box{
     background: #fff;
     border-bottom: 1px solid #f4f4f4;
+    height: 56px ;
+    position: absolute;
+    left: 0;
+    top: 78px;
+    width: 100%;
+}
+.nav-box.fixed{
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    -webkit-box-shadow: 0 0 5px #333;
+    -moz-box-shadow: 0 0 5px #333;
+    box-shadow: 0 0 5px #333;
 }
 .nav-bar{
-    height: 56px ;
     position: relative;
 }
 .nav-bar h2{
@@ -27,9 +42,10 @@
     position: absolute;
     right: 0;
     top: 0;
-    font-size: 18px;
+    font-size: 16px;
     padding-top: 10px;
 }
+
 .nav-bar .nav a{
     float: left;
     margin-right: 10px;

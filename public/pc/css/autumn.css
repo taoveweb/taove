@@ -655,3 +655,169 @@
     padding-left: 20px;
     font-size: 18px;
 }
+
+
+
+/*弹出框*/
+.pop{
+    display: none;
+}
+.pop,.pop-mask{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+.pop-mask{
+    z-index: 0;
+    background-color: #000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    -ms-filter: "alpha(Opacity=50)";
+    filter: alpha(Opacity=50)
+}
+.pop-content{
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    margin-left: -405px;
+    margin-top: -255px;
+    width: 811px;
+    height: 511px;
+    font-size: 16px;
+    color: #2c3039;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    background: #fff;
+
+}
+.pop-top{
+    font-size: 22px;
+    color: #fff;
+    position: relative;
+    padding:40px 40px 20px;
+    background: #282c30;
+
+}
+.pop-top span{
+    display: block;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #535C64;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.pop-con .br.pop-con-top{
+    background: #f2f2f2;
+    padding-left: 40px;
+}
+.pop-con .br,.pop-con h3{
+    padding:15px 40px;
+}
+.pop-top span:hover{
+    background: #ff0000;
+}
+
+.pop-con input[type=text]{
+    height: 26px;
+    padding: 10px;
+    width: 186px;
+    border: 1px solid #d1d1d1;
+    border-radius: 3px;
+    margin-right: 40px;
+    font-size: 16px;
+    color: #d1d1d1;
+}
+.pop-con button{
+    height: 48px;
+    line-height: 48px;
+    font-size: 18px;
+    width: 180px;
+    margin-left: 30px;
+    background:#bab9b9;
+    border: none;
+    color: #fff;
+}
+.pop-con button:hover,
+.pop-con button:focus{
+    outline: none;
+    background: #A4A3A3;
+    color: #fff;
+}
+
+.pop-con .br{
+    position: relative;
+    padding-left: 126px;
+
+}
+
+.pop-con .br span{
+    position: absolute;
+    left: 40px;
+    top: 15px;
+    display: block;
+    width: 86px;
+    color: #878787;
+}
+
+.pop-con .br label{
+    display: inline-block;
+    width: 85px;
+    margin-right: 15px;
+}
+.pop-con .br label input{
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.pop-con dl{
+    position: relative;
+}
+.pop-con dl dt{
+    background-color: #fff;
+    line-height: 34px;
+    text-align: center;
+    font-size: 16px;
+    height: 34px;
+    border: 1px solid #d1d1d1;
+    display: inline-block;
+    position: relative;
+    cursor: default;
+    padding-left: 20px;
+    padding-right: 40px;
+    background: url("../img/autumn/arrow.png") no-repeat right 13px;
+    cursor: pointer;
+}
+
+.pop-con dl dd{
+    background: #fff;
+    width: 450px;
+    padding: 5px 0;
+    border: 1px solid #d1d1d1;
+    overflow: auto;
+    display: none;
+    
+}
+.pop-con dl dd p{
+    height: 32px;
+    line-height: 32px;
+    padding: 0 30px 0 20px;
+    cursor: pointer;
+}
+.pop-con dl dd p:hover{
+    background: #f3f3f3
+}

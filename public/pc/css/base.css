@@ -8,7 +8,9 @@ blockquote, body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, hr
 article, aside, details, figcaption, figure, footer, header, main, nav, section {
     display: block
 }
-
+ul,li,dl{
+ list-style-type: none;
+}
 h1, h2, h3, h4, h5, h6 {
     font-size: 100%
 }

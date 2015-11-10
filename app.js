@@ -9,9 +9,11 @@ var fs=require('fs');
 var hbs=require('hbs');
 var compression = require('compression')
 global.__baseDir=__dirname;
+
 var blocks = {};
 
 var app = express();
+app.locals.static ='/';
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 

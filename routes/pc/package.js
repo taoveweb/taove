@@ -15,7 +15,7 @@ function index_c(req, res, next) {
     res.render('pc/package', { title: '桃微婚纱摄影--C套系',layout:'layout_pc' });
 }
 function index_d(req, res, next) {
-    res.render('pc/package', { title: '桃微婚纱摄影--D套系',layout:'layout_pc' });
+    res.render('pc/packaged', { title: '桃微婚纱摄影--D套系',layout:'layout_pc' });
 }
 function index_e(req, res, next) {
     res.render('pc/package', { title: '桃微婚纱摄影--E套系',layout:'layout_pc' });

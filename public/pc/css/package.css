@@ -53,10 +53,10 @@ html{
     background:url('../img/pack/dot2.png') 0 center no-repeat;
 }
 .pack-cnt-zeng{
-    position:absolute;
     font-size:16px;
     padding-left:40px;
     left:507px;top:82px;
+    margin-left: 15px;
     background:url('../img/pack/zeng.png?v=2') 0 0 no-repeat;
 }
 .pack-cnt-zeng p{
@@ -100,7 +100,7 @@ html{
     width:260px;
 }
 .pack-c .pack-cnt{
-    padding-bottom:90px;
+    padding-bottom:20px;
 }
 .pack-c .pack-cnt-zeng{
     left: 15px;

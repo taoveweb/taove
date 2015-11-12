@@ -9,7 +9,7 @@ router.get('/', index);
 function index(req, res, next) {
     var headers=req.headers;
 
-    if(headers['user-agent'].indexOf('Windows')>0){
+    if(headers['buyer-agent'].indexOf('Windows')>0){
         var width='400px';
     }else{
         var width='auto';

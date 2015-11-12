@@ -4,18 +4,18 @@ var router = express.Router();
 
 /* GET users listing. */
 
-router.get('/', index); // Current user profile
-router.get('/new', create); // Create new user form
-router.post('/new', doCreate); // Create new user action
-router.get('/edit', edit); // Edit current user form
-router.post('/edit', doEdit); // Edit current user action
+router.get('/', index); // Current buyer profile
+router.get('/new', create); // Create new buyer form
+router.post('/new', doCreate); // Create new buyer action
+router.get('/edit', edit); // Edit current buyer form
+router.post('/edit', doEdit); // Edit current buyer action
 router.get('/delete', confirmDelete); // delete current
-//user form
+//buyer form
 router.post('/delete', doDelete); // Delete current
 
 router.get('/login', login); // Login form
 router.post('/login', doLogin); // Login action
-router.get('/logout', doLogout); // Logout current user
+router.get('/logout', doLogout); // Logout current buyer
 
 function index  (req,res){
   res.render('api/photographer',{

@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET users listing. */
 
-router.get('/', index); // Current user profile
+router.get('/', index); // Current buyer profile
 
 
 function index  (req,res){

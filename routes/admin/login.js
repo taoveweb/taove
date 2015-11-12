@@ -4,9 +4,9 @@ var router = express.Router();
 
 /* GET users listing. */
 
-router.get('/', index); // Current user profile
+router.get('/', index); // Current buyer profile
 router.post('/', doLogin); // Login action
-router.post('/logout', doLogout); // Logout current user
+router.post('/logout', doLogout); // Logout current buyer
 
 function index  (req,res){
     console.log('login');

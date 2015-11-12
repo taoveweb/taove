@@ -12,6 +12,7 @@ var wd_pc = require('../routes/pc/wd'); //结婚喜帖
 var photograhper_pc = require('../routes/pc/photograhper'); //摄影师列表
 var photograhper_detail_pc = require('../routes/pc/photograhper_detail'); //摄影师详情
 var package_pc = require('../routes/pc/package'); //套餐
+var buyer_pc = require('../routes/pc/buyer'); //用户
 //mobile
 var index_mb = require('../routes/index');
 var sort_mb = require('../routes/sort');
@@ -35,6 +36,7 @@ module.exports = function (app) {
     app.use('/photoframes',photoframes_pc );
     app.use('/photograhper',photograhper_pc );
     app.use('/photograhperDetail',photograhper_detail_pc );
+    app.use('/buyer',buyer_pc );
     app.use('/package',package_pc );
     app.use('/login',login_pc );
     app.use('/wd',wd_pc );

@@ -21,6 +21,7 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 /*
 hbs.registerPartial('partial', fs.readFileSync(__dirname + '/views/admin/admincss.hbs', 'utf8'));
 */
+hbs.registerPartial('left', fs.readFileSync(__dirname + '/views/pc/buyer/left.hbs', 'utf8'));//????
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('extend', function(name, context) {
   var block = blocks[name];
@@ -75,7 +76,7 @@ if (app.get('env') === 'development') {
 }
 
 // production error handler
-// no stacktraces leaked to user
+// no stacktraces leaked to buyer
 app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {

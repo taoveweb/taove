@@ -138,7 +138,8 @@ body{
     padding-left: 5px;
 }
 
-.tab-panel button{
+.tab-panel button,
+.tab-panel .button{
     height: 32px;
     line-height: 32px;
     border-radius: 16px;
@@ -150,21 +151,24 @@ body{
     color: #fff;
     background-color: #dc3f44;
     border: 0;
+    text-align: center;
 
 }
 .tab-panel button:hover,
+.tab-panel .button:hover,
+.tab-panel .button:focus,
 .tab-panel button:focus{
     background: #DC8414;
     outline: none;
 }
-.tab-panel a{
+.tab-panel a.wjmb{
     position: absolute;
     bottom: -15px;
     right: 0;
     color: #f09693;
     font-size: 14px;
 }
-.tab-panel a:hover{
+.tab-panel a.wjmb:hover{
     color: #bc3438;
 }
 .tab-panel a i{
@@ -221,11 +225,14 @@ body{
     display: block;
     
 }
-.forget.tab-panel button{
+.forget.tab-panel button,
+.forget.tab-panel .button{
     display: inline-block;
     width: 30%;
     vertical-align: top;
     font-size: 14px;
+
+
 }
 .forget.tab-panel .fixed{
     width: 40%;

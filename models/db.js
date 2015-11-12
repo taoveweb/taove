@@ -109,7 +109,7 @@ var albumsSchema = new Schema({
     style: {type: String, trim: true, required: true},//风格
     img: [imgSchema],
     watches: [{type: ObjectId,ref: 'User'}],
-    customer: {type: String, trim: true, required: true},// {user:user_id}
+    customer: {type: String, trim: true, required: true},// {buyer:user_id}
     createdBy: String,//
     createOn: {type: Date, default: Date.now()},//
     updated: Date,

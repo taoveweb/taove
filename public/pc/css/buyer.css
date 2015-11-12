@@ -1,0 +1,446 @@
+.main{
+    width: 1000px;
+    margin: 15px auto;
+    font-size: 16px;
+}
+.left{
+    width: 88px;
+    float: left;
+    border-right: 1px solid #d5d5d5;
+}
+.left a{
+    display: block;
+    height: 31px;
+    line-height: 31px;
+}
+.left a:hover{
+    color:#ff4f4f;
+}
+.content{
+    border-left: 1px solid #d5d5d5;
+    margin-left: -1px;
+    float: left;
+    width: 911px;
+    min-height: 600px;
+
+}
+.msg{
+    text-align: center;
+    line-height: 100px;
+    height: 100px;
+    
+}
+
+
+
+
+
+
+
+/*购物车*/
+.cart{
+    padding-bottom:71px;
+    margin-left: 50px;
+}
+.cart-title{
+    color:#ff4f4f;
+    font-size:16px;
+}
+.cart-address p{
+    padding-top:18px;
+    font-size:0;
+}
+.cart-address input{
+    vertical-align:top;
+    font-size:14px;
+    height:16x;
+    line-height:16px;
+    padding:10px 5px;
+    border:1px solid  #d5d5d5;
+    background-color:#fff;
+    border-radius:5px;
+}
+.cart-address-nickname{
+    margin-right:26px;
+}
+.cart-address-nickname,
+.cart-address-code,
+.cart-address-tel{
+    width:185px;
+}
+.cart-address-info{
+    width:408px;
+    margin-right:26px;
+}
+/*结算提示*/
+.cart-tips{
+    background-color:#ebebeb;
+    height:68px;
+    padding-left:20px;
+    margin-top:60px;
+    font-size:16px;
+    color:#ff4f4f;
+    line-height:68px;
+}
+.cart-tips-price,
+.cart-tips-btn{
+    display:inline-block;
+    width:123px;
+    text-align:center;
+}
+.cart-tips-btn .ui-btn2{
+    height:28px;line-height:28px;
+    font-size:16px;
+    border-radius:14px;
+}
+/*结算栏标头*/
+.cart-head{
+    height:56px;
+    line-height:56px;
+    color:#5f6c83;
+    font-size:14px;
+    background-color:#fff;
+    border:1px solid  #d5d5d5;
+    border-radius:5px 5px 0 0;
+    margin-top: 30px;
+}
+.cart-head .item{
+    float:left;
+    height:100%;
+    text-align:center;
+}
+.cart-head .item-1{
+    width:315px;
+    text-align:left;
+    padding-left:20px;
+}
+.cart-head .item-2,
+.cart-head .item-3,
+.cart-head .item-4{
+    width:122px;
+}
+.cart-head .item-5{
+    float:right;width:121px;
+}
+/*商品列表*/
+.cart-ul > li{
+    margin-top:10px;
+    height:154px;
+    border:1px solid  #d5d5d5;
+    background-color:#fffef9;
+}
+.cart-ul > li:first-child{
+    margin-top:0;
+    border-top:none;
+}
+.cart-ul .item{
+    float:left;
+    height:100%;
+    border-right:1px solid  #d5d5d5;
+    font-size:14px;
+}
+.cart-ul .item-1{
+    width:160px;
+    padding-right:6px;
+    position:relative;
+    padding-left:168px;
+    background:url('../img/frame/3.png') 19px 3px no-repeat;
+    color:#989ca3;
+}
+.cart-ul-frame-img{
+    cursor:pointer;
+    left:27px;
+    top:13px;
+    position:absolute;
+    width:90px;
+    height:127px;
+    background:url('/res/img/loading-16-16.gif') center center no-repeat;
+}
+.cart-ul-frame-img img{
+    display:block;
+    width:90px;
+    height:127px;
+}
+.cart-ul .cart-ul-name{
+    max-height:44px;
+    line-height:22px;
+    overflow:hidden;
+    color:#f09693;
+    padding-top:26px;
+}
+.cart-ul .item-2,
+.cart-ul .item-4{
+    line-height:154px;
+    text-align:center;
+    width:121px;
+    color:#030303;
+}
+.cart-ul .item-3{
+    width:121px;
+}
+.cart-ul-count{
+    width:72px;
+    height:20px;
+    overflow:hidden;
+    margin:67px auto 0;
+    font-size:0;
+    position:relative;
+}
+.cart-ul-count a{
+    display:inline-block;
+    background-color:#f1f1f1;
+    border:1px solid  #e5e2e2;
+    width:14px;
+    height:18px;
+    line-height:16px;
+    text-align:center;
+    font-size:12px;
+    color:#9b9b9b;
+    position:absolute;
+    top:0;
+}
+.cart-ul-count a:hover{
+    text-decoration:none;
+    border-color:#aeaeae;
+}
+.cart-ul-count input{
+    width:40px;
+    height:18px;
+    border:1px solid  #aeaeae;
+    line-height:16px;
+    text-align:center;
+    font-size:12px;
+    font-family:verdana;
+    position:absolute;
+    left:15px;top:0;
+}
+.cart-ul-count a.disabled:hover{
+    border-color:#e5e2e2;
+    cursor:default;
+}
+.cart-ul-count input:focus{
+    outline:none;
+}
+.cart-ul-count a.jian{
+    left:0;
+    border-right:none;
+}
+.cart-ul-count a.jia{
+    right:0;
+    border-left:none;
+}
+.cart-ul .item-5{
+    width:121px;
+    line-height:154px;
+    text-align:center;
+    border-right:none;
+}
+.cart-ul .item-5 a{
+    color:#ff4f4f;
+}
+/*底部的fixed导航*/
+.cart-fixed{
+    height:70px;
+    position:fixed;
+    bottom:0;left:0;
+    width:100%;
+    border-top:1px solid  #e1e4e4;
+    z-index:999;
+    background-color:rgba(255,255,255,0.95);
+    min-width:960px;
+}
+.cart-fixed .mask{
+    height:100%;
+    background-color:#fff;
+    filter: alpha(opacity=95);
+    position:absolute;
+    left:0;top:0;width:100%;
+}
+@media screen and (min-width:0) {
+    .cart-fixed .mask{
+        display:none;
+    }
+}
+.cart-fixed .w{
+    position:relative;
+    z-index:200;
+    font-size:16px;
+    color:#ff4f4f;
+}
+.cart-fixed-tips{
+    position:absolute;
+    left:140px;
+    top:22px;
+}
+.cart-fixed-btn{
+    right:37px;
+    top:20px;
+    position:absolute;
+}
+.cart-fixed-btn .ui-btn2{
+    font-size:16px;
+    height:28px;
+    line-height:28px;
+    border-radius:14px;
+}
+.cart-fixed-price{
+    width:121px;
+    position:absolute;
+    right:140px;
+    top:22px;
+    text-align:center;
+}
+.cart-quan input{
+    width:123px;
+    height:30px;
+    border:1px solid  #d5d5d5;
+    color:#d5d5d5;
+    padding:0 5px;
+    border-radius:3px;
+    line-height:30px;
+}
+.cart-quan-sub{
+    display:inline-block;
+    height:30px;line-height:30px;
+    color:#1f1f1f;
+    font-size:14px;
+    background-color:#f3f3f3;
+    border:1px solid  #d9d9d9;
+    border-radius:3px;
+    width:57px;
+    text-align:center;
+    margin-left:5px;
+}
+.cart-quan-sub.disabled{
+    color:#ccc;
+    cursor:default;
+}
+.cart-quan-sub.disabled:hover{
+    text-decoration:none;
+}
+
+
+/*
+婚纱照 */
+.tab{
+    position: relative;
+    margin-left: 30px;
+}
+.tab .menu{
+    border-bottom: 1px solid #d5d5d5;
+}
+.tab .menu span{
+    display: block;
+    float: left;
+    padding: 0 15px;
+    text-align: center;
+    color: #b5b5b5;
+    border: 1px solid #f6f9f9;
+    border-bottom: none;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.tab .menu span:hover{
+    color: #ff4f4f;
+}
+.tab .menu .current{
+    background-color: #fff;
+    border-color: #e5e5e5;
+    border-radius: 3px 3px 0 0;
+    color: #ff4f4f;
+}
+
+.panel .item{
+    width: 274px;
+    margin: 14px 7px 0;
+    float: left;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+}
+.panel{
+    border: 1px solid #d5d5d5;
+    padding-bottom: 20px;
+    display: none;
+    padding-left: 7px;
+    border-top: 0;
+}
+.panel.current{
+    display: block;
+}
+.panel .item .box{
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+}
+.panel .item .box img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.panel .item .box .btn{
+    position: absolute;
+    bottom: -46px;
+    left: 0;
+    width: 100%;
+    height: 46px;
+    z-index: 2;
+    color: #fff;
+    -webkit-transition: bottom .3s;
+    transition: bottom .3s;
+    cursor: default;
+
+}
+.panel .item .box:hover .btn{
+    bottom: 0;
+}
+.panel .item .box .btn i{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    z-index: 1;
+}
+.panel .item .box .btn span{
+    display: block;
+    width: 33.3%;
+    float: left;
+    height: 46px;
+    line-height: 46px;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+}
+.panel .item p
+{
+    height: 48px;
+    line-height: 48px;
+    overflow: hidden;
+    font-size: 14px;
+    padding: 0 5px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.upload  .box{
+    background: url("../img/buyer/add.png") center no-repeat #f0f0f0;
+    cursor: pointer;
+}
+
+.panel .upload p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}

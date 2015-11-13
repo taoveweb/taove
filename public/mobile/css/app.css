@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: "taove";
-    src: /* chrome、firefox */ url('../moblile/fonts/iconfonttaove.ttf') format('truetype')
+    src: /* chrome、firefox */ url('../fonts/iconfonttaove.ttf') format('truetype')
 }
 
 .taove {

@@ -40,11 +40,12 @@
 /*购物车*/
 .cart{
     padding-bottom:71px;
-    margin-left: 50px;
+    margin-left: 2.5%;
 }
 .cart-title{
     color:#ff4f4f;
     font-size:16px;
+    padding-top: 4px;
 }
 .cart-address p{
     padding-top:18px;
@@ -324,7 +325,7 @@
 婚纱照 */
 .tab{
     position: relative;
-    margin-left: 30px;
+    margin-left: 2.5%;
 }
 .tab .menu{
     border-bottom: 1px solid #d5d5d5;
@@ -444,3 +445,50 @@
     font-weight: bold;
     font-size: 18px;
 }
+
+
+
+
+
+/*
+订单*/
+.orders-table{
+    width: 95%;
+    text-align: center;
+    margin-left: 2.5%;
+    border: 1px solid #d5d5d5;
+}
+.orders-table thead td{
+    background: #e4e4e4;
+    padding: 8px 0;
+    border-right: 1px solid #d5d5d5;
+
+}
+.orders-table tbody td{
+    background: #fff;
+    padding: 6px 0;
+    border-right: 1px solid #d5d5d5;
+
+}
+.orders-table .cancel{
+    display: inline-block;
+    padding: 2px 15px;
+    border: 1px solid #d4d4d4;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.orders-table .cancel:hover{
+    background: #ff0000;
+    color: #fff;
+
+}
+.order-cart-title{
+    margin-left: 2.5%;
+    padding-bottom: 15px;
+    padding-top: 3px;
+}
+
+
+

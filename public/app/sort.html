@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>分类</title>
+    <link href="css/mui.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+</head>
+<style>
+    .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-progress-bar {
+        background-color: #fe555a;
+        position: fixed;
+        top: 36px;
+        z-index: 2;
+    }
+
+    .mui-slider .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+        color: #fe555a;
+    }
+
+    #sliderSegmentedControl {
+        position: fixed;
+        top: 0;
+        z-index: 2;
+        background: #fff;
+    }
+
+    .mui-slider-group {
+        padding-top: 38px;
+        height: 100%;
+        padding-bottom: 0px;
+        margin-left: 0;
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -ms-transform: translate3d(0px, 0px, 0px);
+        -o-transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    .clearfix:after, .clearfix:before, .li:after, .li:before {
+        content: "\0020";
+        display: block;
+        height: 0;
+        visibility: hidden;
+        position: relative;
+        z-index: -1;
+        line-height: 0
+    }
+
+    .clearfix:after, .li:after {
+        clear: both
+    }
+
+    .clearfix, .li {
+        *zoom: 1
+    }
+
+    .item1mobile a {
+        display: block;
+        float: left;
+        width: 40%;
+        margin: 5%;;
+    }
+
+    .mui-table-view-cell:after {
+        background: none;
+    }
+
+    .mui-slider .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-group .mui-slider-item {
+        border: none;
+    }
+
+    .mui-table-view-cell > a:not(.mui-btn).mui-active {
+        background: none;
+    }
+
+    .mui-table-view-cell > a:not(.mui-btn) {
+        position: relative;
+        display: block;
+        width: 48%;
+        float: left;
+        margin: 0;
+        text-align: center;
+        padding: 0;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .mui-table-view-cell {
+        padding: 5px 10px;
+    }
+
+    .mui-table-view-cell > a:nth-of-type(1) {
+        margin-right: 4%;
+    }
+
+    .mui-table-view-cell > a:not(.mui-btn) img {
+        width: 100%;
+        display: block;
+        margin: 0;
+    }
+
+    .mui-table-view-cell > a:not(.mui-btn) .mui-media-body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        color: #fff;
+        text-shadow: 0 1px 0 #333;
+        font-size: 16px;
+    }
+
+    .mui-table-view-cell > a:not(.mui-btn) .mui-media-body p {
+        color: #fff;
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        -webkit-border-radius: 8px;
+        -moz-border-radius: 8px;
+        border-radius: 8px;
+        width: 60%;
+        left: 20%;
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .mui-control-content {
+        background-color: white;
+        min-height: 215px;
+    }
+
+    .mui-control-content .mui-loading {
+        margin-top: 50px;
+    }
+
+    .mui-content {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+    }
+
+    .mui-slider {
+        height: 100%;
+    }
+</style>
+<body>
+
+<div class="mui-content">
+    <div id="slider" class="mui-slider">
+        <div id="sliderSegmentedControl"
+             class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <a class="mui-control-item" href="#item1mobile">
+                本地
+            </a>
+            <a class="mui-control-item" href="#item2mobile">
+                海岛
+            </a>
+            <a class="mui-control-item" href="#item3mobile">
+                风格
+            </a>
+        </div>
+        <div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+        <div class="mui-slider-group">
+            <div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+                <div id="scroll1" class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/1.png?version=921.7312261462212" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/2.png?version=710.7686675153673">
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/2.png?version=155.31795099377632">
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/3.png?version=325.8642191067338" >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/3.png?version=144.20625404454768" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/4.png?version=935.5338553432375" >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="item2mobile" class="mui-slider-item mui-control-content">
+                <div id="scroll2" class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/1.png?version=921.7312261462212" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/2.png?version=710.7686675153673">
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/2.png?version=155.31795099377632">
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/3.png?version=325.8642191067338" >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/3.png?version=144.20625404454768" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/4.png?version=935.5338553432375" >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div id="item3mobile" class="mui-slider-item mui-control-content">
+                <div id="scroll3" class="mui-scroll-wrapper">
+                    <!--<div class="mui-scroll">
+                        <div class="mui-loading">
+                            <div class="mui-spinner">
+                            </div>
+                        </div>
+                    </div>-->
+                    <div class="mui-scroll">
+                        <ul class="mui-table-view">
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/1.png?version=921.7312261462212" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/2.png?version=710.7686675153673">
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/2.png?version=155.31795099377632">
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/3.png?version=325.8642191067338" >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/3.png?version=144.20625404454768" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/4.png?version=935.5338553432375" >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/4.png?version=674.7034618165344"  >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/5.png?version=60.080841183662415"  >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/5.png?version=317.1889849472791" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/6.png?version=852.1391174290329" data-lazyload-id="9">
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/1.png?version=921.7312261462212" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/2.png?version=710.7686675153673">
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/2.png?version=155.31795099377632">
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/3.png?version=325.8642191067338" >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/3.png?version=144.20625404454768" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/4.png?version=935.5338553432375" >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/4.png?version=674.7034618165344"  >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/5.png?version=60.080841183662415"  >
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                            <li class="mui-table-view-cell"><a><img
+                                    src="images/5.png?version=317.1889849472791" >
+
+                                <div class="mui-media-body">蓝调薰衣草庄园<p class="mui-ellipsis">影集29</p></div>
+                            </a><a><img src="images/6.png?version=852.1391174290329" data-lazyload-id="9">
+
+                                <div class="mui-media-body">万象国际摄影基地<p class="mui-ellipsis">影集50</p></div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/mui.min.js"></script>
+<script src="js/app.js"></script>
+<script>
+    mui.init({
+        swipeBack: false
+    });
+    (function ($) {
+        $('.mui-scroll-wrapper').scroll({
+            indicators: true //是否显示滚动条
+        });
+        var html2 = '<ul  id="muiList1"  class="mui-table-view">二</ul>';
+        var html3 = '<ul  id="muiList2"  class="mui-table-view">三</ul>';
+        var item2 = document.getElementById('item2mobile');
+        var item3 = document.getElementById('item3mobile');
+        document.getElementById('slider').addEventListener('slide', function (e) {
+            if (e.detail.slideNumber === 1) {
+                if (item2.querySelector('.mui-loading')) {
+                    setTimeout(function () {
+                        item2.querySelector('.mui-scroll').innerHTML = html2;
+                    }, 0);
+                }
+            } else if (e.detail.slideNumber === 2) {
+                if (item3.querySelector('.mui-loading')) {
+                    setTimeout(function () {
+                        item3.querySelector('.mui-scroll').innerHTML = html3;
+                    }, 0);
+                }
+            }
+        });
+     
+    })(mui);
+
+
+    var gallery = mui('.mui-slider');
+    gallery.slider({
+        scrollX: false,
+        bounceTime: 600//自动轮播周期，若为0则不自动播放，默认为0；
+    });
+
+
+</script>
+</body>
+</html>

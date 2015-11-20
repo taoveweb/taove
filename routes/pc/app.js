@@ -6,7 +6,7 @@ var router = express.Router();
 router.get('/', index);
 
 function index(req, res, next) {
-    res.render('pc/mobile', { title: '桃微app',layout:"layout_pc" });
+    res.render('pc/app', { title: '桃微app',layout:"layout_pc" });
 }
 
 module.exports = router;

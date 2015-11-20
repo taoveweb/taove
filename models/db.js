@@ -29,7 +29,7 @@ mongoose.connection.on('disconnected', function () {
 });
 mongoose.connection.on('SIGINT', function () {
     db.close(function () {
-        console.log('Mongoose disconnected through app termination');
+        console.log('Mongoose disconnected through mobile termination');
         process.exit(0);
     });
 });
@@ -62,6 +62,14 @@ exports.User = User;
 
 
 //摄影师
+
+
+cfg = { _id:'setD', members:[
+    { _id:0, host:'127.0.0.1:27017' },
+    { _id:1, host:'127.0.0.1:27018' },
+    { _id:2, host:'127.0.0.1:27019' }
+]};
+rs.initiate(cfg)
 var photographerSchema = new Schema({
     realName: {type: String, trim: true, required: true},//
     phone: {type: Number, required: true},//13621214703

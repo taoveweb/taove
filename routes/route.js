@@ -31,7 +31,7 @@ var intention = require('../routes/admin/intention');
 module.exports = function (app) {
     //pc
     app.use('/',index_pc );
-    app.use('/app',app_pc );
+    app.use('/mobile',app_pc );
     app.use('/autumn',autumn_pc );
     app.use('/photoframes',photoframes_pc );
     app.use('/photograhper',photograhper_pc );

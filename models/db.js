@@ -69,7 +69,7 @@ cfg = { _id:'setD', members:[
     { _id:1, host:'127.0.0.1:27018' },
     { _id:2, host:'127.0.0.1:27019' }
 ]};
-rs.initiate(cfg)
+
 var photographerSchema = new Schema({
     realName: {type: String, trim: true, required: true},//
     phone: {type: Number, required: true},//13621214703

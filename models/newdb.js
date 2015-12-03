@@ -46,6 +46,8 @@ var imgSchema = new Schema({
         text: {type: String, trim: true, max: 2000}
     }]
 });
+
+//相册
 var albumsSchema = new Schema({
     albumsTitle: {type: String, trim: true, required: true},//相册主题
     package: {type: String, trim: true, required: true},//套餐
@@ -113,6 +115,6 @@ user.save(function (err, doc) {
     console.log(doc)
 });
 
-User.find(function (err, doc) {dsfas
+User.find(function (err, doc) {
     console.log(doc + 'aa')
 });

@@ -33,7 +33,7 @@ mongoose.connection.on('SIGINT', function () {
 //相册图片
 var imgSchema = new Schema({
     path: {type: String, trim: true, required: true},//目录名
-    name: {type: String, trim: true, required: true},//文件名
+    name: {type: String, trim: true, required: true},//文件名与图片名称一样
     likes: [{type: ObjectId}],//user id
     watches: [{type: ObjectId}],//user id
     master: {type: Boolean, default: false},//封面
@@ -61,7 +61,7 @@ var albumsSchema = new Schema({
 //账单
 var pay=new Schema({
     payMony:Number,
-    createdOn:Date
+    createdOn:{type: Date, default: Date.now()}//创建时间
 });
 
 //消息
@@ -79,32 +79,49 @@ var posts=new Schema({
     message:[message]
 });
 
+//产品物件
+var shops=new Schema({
+    name: String,//imgName
+    photoUrl:String,//链接
+    price:Number,//价格
+    saled:Number,//已销售
+    desgin:String //产品规格
+
+});
+
+//我的购买的商品
+var myshop=new Schema({
+    showid: ObjectId,//shopid
+    getPrice:Number,//购买的价格
+    num: Number //购买数量
+});
+
+
 //主表
 var TaoveSchema = new Schema({
-    nikeName: {type: String, trim: true},//
-    realName: {type: String, trim: true},//
+    nikeName: {type: String, trim: true},//昵称
+    realName: {type: String, trim: true},//真实姓名
     phone: {type: Number, trim: true, required: true},//13621214703
     password: {type: String, required: true, trim: true},//
     email: {type: String, trim: true},//taoveweb@gmail.com
     pohotoUrl: {type: String, trim: true}, //userpicture
     intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
-    photography: [Schema.Types.Mixed],//photography
-    hot: Number,//
-    city: String,//
-    updated: Date,
-    approved: {type: Boolean, default: false},
-    banned: {type: Boolean, default: false},
-    admin: {type: Boolean, default: false},
+    city: String,//城市
+    approved: {type: Boolean, default: false},//核准  摄影师资格
+    banned: {type: Boolean, default: false},//禁止 摄影师状态
+    admin: {type: Boolean, default: false},//管理员 用户
     credentialsPhotoUrl: String,// 证件照 '
     makeuperIntroduction: String,//化妆师
-    goodStyle: {type: String, trim: true},//
-    selfIntroduction: {type: String, trim: true},//
-    fromTime: {type: Number, trim: true},//20150202
-    createdOn: {type: Date, default: Date.now()},
-    lastLogin: Date,
+    goodStyle: {type: String, trim: true},//尚常的样式
+    selfIntroduction: {type: String, trim: true},//自我介绍
+    fromTime: {type: Number, trim: true},//20150202 从事时间
+    updated: Date,//更新日期
+    createdOn: {type: Date, default: Date.now()},//创建时间
+    lastLogin: Date,//最后登录时间
     pay:[pay],//账单
-    posts:[posts],//提交的评论、收藏、喜欢
+    posts:[posts],//提交的评论、喜欢
     albums: [albumsSchema],//相册
+    myshop:[myshop],//商品
     message: [message]//消息
 });
 

@@ -5,89 +5,83 @@
         }
     </style>
 {{/extend}}
-<table class="users users-add">
-    <thead>
-    <tr>
-        <td>用户名</td>
-        <td>手机号码</td>
-        <td>密码</td>
-        <td>电子邮件</td>
-        <td>头像</td>
-        <td>摄影师</td>
-        <td>同意</td>
-        <td>禁止</td>
-        <td>管理员</td>
-        <td>操作</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr id="postData">
-        <td><input type="text" name="name" placeholder="用户名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="text" name="email" placeholder="电子邮件"/></td>
-        <td><input type="file" name="pohotoUrl" placeholder="头像"/></td>
-        <td><input type="text" name="Photographer" placeholder="摄影师"/></td>
-        <td><input type="radio" name="approved"/></td>
-        <td><input type="radio" name="banned"/></td>
-        <td><input type="radio" name="admin"/></td>
-        <td>
-            <button id="postDataBtn">创建</button>
-        </td>
-    </tr>
-    </tbody>
-</table>
-<table class="users users-get">
-    <thead>
-    <tr>
-        <td>用户名</td>
-        <td>手机号码</td>
-        <td>密码</td>
-        <td>电子邮件</td>
-        <td>头像</td>
-        <td>消息</td>
-        <td>意向套餐</td>
-        <td>摄影师</td>
-        <td>创建时间</td>
-        <td>提交的评论</td>
-        <td>更新时间</td>
-        <td>同意</td>
-        <td>禁止</td>
-        <td>管理员</td>
-        <td>最后登录</td>
-        <td>操作</td>
-    </tr>
-    </thead>
-    <tbody>
-    {{#each users}}
-        <tr>
-            <td><input type="text" name="name" placeholder="用户名"/></td>
-            <td><input type="text" name="phone" placeholder="手机号码"/></td>
-            <td><input type="text" name="password" placeholder="密码"/></td>
-            <td><input type="text" name="email" placeholder="电子邮件"/></td>
-            <td><input type="file" name="pohotoUrl" placeholder="头像"/>
-                <button>修改</button>
-            </td>
-            <td><input type="text" name="message" placeholder="消息"/></td>
-            <td><input type="text" name="intention" placeholder="意向套餐"/></td>
-            <td><input type="text" name="Photographer" placeholder="摄影师"/></td>
-            <td><input type="text" placeholder="创建时间"/></td>
-            <td><input type="text" name="posts" placeholder="提交的评论"/></td>
-            <td><input type="text" placeholder="更新时间"/></td>
-            <td><input type="radio" name="approved"/></td>
-            <td><input type="radio" name="banned"/></td>
-            <td><input type="radio" name="admin"/></td>
-            <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-            <td>
-                <button>编缉</button>
-                <button>删除</button>
-            </td>
-        </tr>
-    {{/each}}
-    </tbody>
-</table>
+
+<div class="main">
+    <div class="br">
+        <span>_id：</span> <input type="text"/>
+    </div>
+    <div class="br">
+        <span>昵称：</span><input type="text"/>
+    </div>
+    <div class="br">
+        <span>真实性名：</span>
+    </div>
+    <div class="br">
+        <span>电话：</span>
+    </div>
+    <div class="br">
+        <span>密码：</span>
+    </div>
+    <div class="br">
+        <span>邮箱：</span>
+    </div>
+    <div class="br">
+        <span>头像：</span>
+    </div>
+    <div class="br">
+        <span>套餐意向：</span>
+    </div>
+    <div class="br">
+        <span>城市：</span>
+    </div>
+    <div class="br">
+        <span>摄影师资格：</span>
+    </div>
+    <div class="br">
+        <span>摄影师状态：</span>
+    </div>
+    <div class="br">
+        <span>角色：</span>
+    </div>
+    <div class="br">
+        <span>证件照：</span>
+    </div>
+    <div class="br">
+        <span>化妆师：</span>
+    </div>
+    <div class="br">
+        <span>擅长风格：</span>
+    </div>
+    <div class="br">
+        <span>自我介绍：</span>
+    </div>
+    <div class="br">
+        <span>从事时间：</span>
+    </div>
+    <div class="br">
+        <span>相册：</span>
+    </div>
+    <div class="br">
+        <span>：</span>
+    </div>
+    <div class="br">
+        <span>账单：</span>
+    </div>
+    <div class="br">
+        <span>收藏喜欢：</span>
+    </div>
+    <div class="br">
+        <span>最后登陆：</span>
+    </div>
+    <div class="br">
+        <span>更新时间：</span>
+    </div>
+    <div class="br">
+        <span>创建时间：</span>
+    </div>
 
 
+</div>
 {{#extend "adminScripts"}}
     <script src="../js/js-users.js"></script>
     <script>

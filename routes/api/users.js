@@ -19,7 +19,7 @@ router.get('/logout', doLogout); // Logout current buyer
 
 function index  (req,res){
   console.log('users');
-  res.render('api/buyer',{
+  res.render('api/user',{
     layout:'layout_admin'
   });
 };

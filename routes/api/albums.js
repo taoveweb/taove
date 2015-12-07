@@ -23,24 +23,10 @@ router.get('/photographer', getPhotographer);
 
 /*相册------------------------------------------------*/
 function getAlbum(req, res, next) {
-    console.log('getAlbum------------------------------');
-    var query = {};
-    if (!!req.params.albumsTitle) {
-        query = {albumsTitle: req.params.albumsTitle};
-    }
-    Albums.find(query, null,{sort: { createOn: -1 }}, function (err, list) {
-        if (err) {
-            res.render('api/album', {
-                getSucess: false,
-                title: "相册",
-                err: err
-            });
-        }
-        res.render('api/album', {
-            layout: "layout_admin",
-            title: "相册",
-            list: list
-        });
+
+    res.render('api/album', {
+        layout: "layout_admin",
+        title: "相册"
     });
 
 };

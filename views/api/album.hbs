@@ -9,110 +9,47 @@
 {{#if getSucess}}
     {{err}}
 {{/if}}
-<div class="search clearfix">
-
-
-    <table>
-        <tbody>
-        <tr>
-            <td colspan="11">
-                <input id="searchVal" type="text" placeholder="相册名称"><input id="searchBtn" type="submit" value="查询">
-            </td>
-        </tr>
-        <form method="post" action="/api/albums" enctype="multipart/form-data">
-            <tr>
-                <td><input type="text" name="albumsTitle" placeholder="相册名称"></td>
-
-                <td>
-                    <span>摄影师</span>
-                    <select name="photographer" placeholder="摄影师">
-                        <option value="黄家金">黄家金</option>
-                    </select>
-                </td>
-                <td><span>套餐</span>
-                    <select name="package" placeholder="套餐">
-                        <option value="A">A套餐</option>
-                        <option value="B">B套餐</option>
-                        <option value="C">C套餐</option>
-                    </select>
-                </td>
-                <td><span>地区</span>
-                </td>
-                <td><input type="text" name="description" placeholder="描述"></td>
-
-
-                <td><input type="text" name="style" placeholder="风格"></td>
-                <td><input type="file" name="img" multiple></td>
-
-                <td><input type="text" name="customer" placeholder="客户"></td>
-                <td><input type="text" name="createdBy" placeholder="谁上传的"></td>
-
-                <td>
-                    <input type="submit" value="增加">
-                </td>
-            </tr>
-        </form>
-        </tbody>
-    </table>
-
-
+<div class="header">
+    <input type="text" name="_id" placeholder="_id"/>
+    <input type="text" name="phone" placeholder="手机号"/>
+    <button>搜索</button>
+    <div class="page-nav">
+        <span class="btn">上一页</span>
+        <span><em>1</em>/35</span>
+        <span class="btn">下一页</span>
+    </div>
 </div>
+<table class="users ">
+    <tr id="postData">
+        <td><input type="text" name="title" placeholder="相册标题"/></td>
 
-<table id="tableform">
-    <tbody>
-    {{#each list}}
-        <tr>
-            <td>
-                <span>摄影师</span>
-                <select name="photographer" placeholder="摄影师">
-                    <option value="黄家金">黄家金</option>
-                </select>
-            </td>
-            <td><span>套餐</span>
-                {{package}}
-                <select name="package" placeholder="套餐">
-                    <option value="A">A套餐</option>
-                    <option value="B">B套餐</option>
-                    <option value="C">C套餐</option>
-                </select></td>
-            <td><input type="text" name="albumsTitle" value="{{albumsTitle}}" placeholder="相册名称"></td>
-            <td><input type="text" name="description" value="{{description}}" placeholder="描述"></td>
-            <td><input type="text" name="area" value="{{area}}" placeholder="地区"></td>
-            <td><input type="text" name="style" value="{{style}}" placeholder="风格"></td>
-            <td>
-                <ul class="imgList">
-                    {{#each img}}
-                        {{parent._id}}
-                        <li class="clearfix"><img src="/{{name}}"><input class="delete-imgBtn" _id="{{../_id}}"
-                                                                         imgId="{{_id}}" type="button" value="删除"></li>
-                        {{#if @last}}
-                            <form method="post" action="/api/albums" enctype="multipart/form-data">
-
-                                <li>
-                                    <input type="hidden" value="{{../../_id}}" name="_id">
-                                    <input type="file" name="img" multiple>
-                                    <input class="add_img" type="submit" value="增加图片"/>
-                                </li>
-                            </form>
-                        {{/if}}
-                    {{/each}}
-                </ul>
-            </td>
-            <td><input type="text" name="customer" value="{{customer}}" placeholder="客户"></td>
-            <td><input type="text" name="createdBy" value="{{createdBy}}" placeholder="谁上传的"></td>
-            <td>允许发布<input type="text" name="approved" value="{{approved}}" placeholder="谁上传的"></td>
-            <td>
-                <input class="putBtn" type="button"  _id="{{_id}}" value="修改">
-                <input class="delBtn" type="button" _id="{{_id}}" value="删除">
-            </td>
-        </tr>
-    {{/each}}
-    </tbody>
-
+        <td><input type="text" name="city" placeholder="所在城市"/></td>
+        <td>
+            <select name="goodStyle" id="goodStyle">
+                <option value="中式古典">中式古典</option>
+                <option value="韩式简约">韩式简约</option>
+                <option value="欧式奢华">欧式奢华</option>
+                <option value="唯美自然">唯美自然</option>
+                <option value="个性时尚">个性时尚</option>
+            </select>
+        </td>
+        <td><input type="text" name="img" placeholder="图片信息"/></td>
+        <td><textarea type="text" name="description" placeholder="描述"></textarea></td>
+        <td>
+            <button id="fixed">更新</button>
+            <button id="delete">删除</button>
+        </td>
+    </tr>
+    <tr>
+        <td><input type="text" name="customer" placeholder="用户id"/></td>
+        <td><input type="text" name="createdBy" placeholder="谁提交的"/></td>
+        <td><input type="text" name="createOn" placeholder="创建时间"/></td>
+        <td><input type="text" name="updated" placeholder="更新时间"/></td>
+        <td><input type="text" name="package" placeholder="套餐"/></td>
+        <td><input type="checkbox" name="approved"/></td>
+    </tr>
 
 </table>
-
-
 
 {{#extend "adminScripts"}}
     <script>

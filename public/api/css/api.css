@@ -7,7 +7,8 @@
     bottom: 0;
     background: #f9f9f9;
 }
-.leftMenu a{
+
+.leftMenu a {
     display: block;
     border-bottom: 1px solid #dedede;
     height: 30px;
@@ -17,25 +18,28 @@
     color: #6e6e6e;
 
 }
-.leftMenu a:hover
-{
-    text-decoration:none;
+
+.leftMenu a:hover {
+    text-decoration: none;
     color: #000;
 
 }
 
-.main{
+.main {
     position: absolute;
     left: 200px;
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 15px;
+    padding: 51px;
     overflow: scroll;
 }
 
 input[type=text],
-input[type=password]{
+input[type=password],
+select,
+textarea,
+{
     display: inline-block;
     height: 30px;
     width: 100px;
@@ -45,47 +49,53 @@ input[type=password]{
     border-radius: 3px;
     border: 1px solid #dedede;
 }
-h1{
+
+h1 {
     padding-bottom: 10px;
 }
-.search{
+
+.search {
     border-bottom: 3px solid #dedede;
     padding-bottom: 8px;
 
 }
-.search input{
+
+.search input {
     display: inline-block;
 }
-.search input[type=submit]{
+
+.search input[type=submit] {
     margin-left: 10px;
     width: auto;
     padding: 0 10px;
 }
 
-table{
+table {
     margin-top: 10px;
 }
-table tbody td{
+
+table tbody td {
     padding: 5px 5px;
-    border-bottom:1px  solid #dedede;
+    border-bottom: 1px solid #dedede;
     vertical-align: middle;
 }
-input[type=radio]{
+
+input[type=radio] {
     position: relative;
     top: 3px;
     margin-right: 8px;
 }
-select{
+
+select {
     margin-right: 8px;
 }
 
 input[type=submit],
-
-input[type=button]{
+input[type=button] {
     display: inline-block;
     height: 30px;
     background: #dedede;
-    border:1px solid #d4d4d4;
+    border: 1px solid #d4d4d4;
     padding: 0 10px;
     margin-top: 0;
     cursor: pointer;
@@ -94,24 +104,26 @@ input[type=button]{
 }
 
 input[type=submit]:hover,
-
-input[type=button]:hover{
+input[type=button]:hover {
     background: #777777;
     color: #fff;
 }
-.imgList li{
+
+.imgList li {
     padding: 3px 0;
 }
-.imgList li img{
+
+.imgList li img {
     height: 30px;
     float: left;
 }
 
-.imgList li input{
+.imgList li input {
     float: right;
     margin-left: 8px;
 }
-.imgList li .add_img{
+
+.imgList li .add_img {
     display: block;
     margin: 0 auto;
     clear: both;
@@ -120,17 +132,109 @@ input[type=button]:hover{
     float: left;
 }
 
-.users{
-    width: 100%;
+.users {
+    width: 1135px;
     border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    background: #fff;
+}
+
+.users td {
+    height: 27px;
+    padding: 4px 5px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-align: left;
+    vertical-align: top;
+}
+.users td textarea{
+    height: 87px;
+
+}
+.users td span {
+    display: block;
+    text-align: left;
+    color: #717171;
 }
 
 .users td{
-    height: 30px;padding:  4px 5px;
-    border-bottom: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    text-align: center;
+    position: relative;
 }
-.users thead td{
-    background: #dedede;
+
+.users td img{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+
+.users td button{
+    display: block;
+    margin-bottom: 10px;
+}
+
+#delete{
+    color: #ff0000;
+    position: absolute;
+    bottom: 5px;
+}
+
+.users td button:hover{
+    background: #fff;
+    cursor: pointer;
+}
+
+.header{
+    position: fixed;
+    z-index: 10;
+    width: 1135px;
+    top: 0px;
+    left: 215px;
+    background: #efeff4;
+    padding: 15px 0 14px;
+    border-bottom: 1px solid #d4d4d4;
+}
+
+.header input{
+    display: inline-block;
+    height: 30px;
+    background: #fff;
+    border: 1px solid #d4d4d4;
+    padding: 0 10px;
+    margin-top: 0;
+    cursor: pointer;
+    margin-right: 12px;
+}
+.header button{
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+}
+.page-nav{
+    position: absolute;
+    right: 0;
+    top: 15px;
+    text-align: right;
+
+}
+.page-nav span{
+    display: inline-block;
+    
+    margin-left: 10px;
+    height: 30px;
+    padding: 0 5px;
+    text-align: center;
+    line-height: 30px;
+
+}
+.page-nav span em{
+    color: #ff6600;
+}
+.page-nav .btn{
+    cursor: pointer;
+}
+.page-nav .btn:hover{
+    color: #ff6600;
 }

@@ -46,16 +46,16 @@ var imgSchema = new Schema({
 
 //相册
 var albumsSchema = new Schema({
-    title: {type: String, trim: true, required: true},//相册主题
-    package: {type: String, trim: true, required: true},//套餐
+    title: {type: String, trim: true, required: true},//title
     description: {type: String, trim: true, required: true},//描述
-    area: {type: String, trim: true, required: true},//地区
+    city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
     img: [imgSchema],//图片信息
     customer: ObjectId,// {buyer:user_id}//用户id
-    createdBy: String,//
+    createdBy: String,//谁提交的
     createOn: {type: Date, default: Date.now()},//创建时间
     updated: Date,
+    package: {type: String, trim: true, required: true},//套餐
     approved: {type: Boolean, default: false}
 });
 //账单
@@ -105,19 +105,21 @@ var TaoveSchema = new Schema({
     password: {type: String, required: true, trim: true},//
     email: {type: String, trim: true},//taoveweb@gmail.com
     pohotoUrl: {type: String, trim: true}, //userpicture
-    intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
     city: String,//城市
+    admin: {type: Boolean, default: false},//管理员 用户
     approved: {type: Boolean, default: false},//核准  摄影师资格
     banned: {type: Boolean, default: false},//禁止 摄影师状态
-    admin: {type: Boolean, default: false},//管理员 用户
     credentialsPhotoUrl: String,// 证件照 '
     makeuperIntroduction: String,//化妆师
-    goodStyle: {type: String, trim: true},//尚常的样式
+    goodStyle: {type: String, trim: true},//擅长的样式
     selfIntroduction: {type: String, trim: true},//自我介绍
     fromTime: {type: Number, trim: true},//20150202 从事时间
+    intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
+    lastLogin: Date,//最后登录时间
     updated: Date,//更新日期
     createdOn: {type: Date, default: Date.now()},//创建时间
-    lastLogin: Date,//最后登录时间
+
+
     pay:[pay],//账单
     posts:[posts],//提交的评论、喜欢
     albums: [albumsSchema],//相册

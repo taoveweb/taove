@@ -11,7 +11,6 @@
 {{/if}}
 <div class="header">
     <input type="text" name="_id" placeholder="_id"/>
-    <input type="text" name="phone" placeholder="手机号"/>
     <button>搜索</button>
     <div class="page-nav">
         <span class="btn">上一页</span>
@@ -21,8 +20,8 @@
 </div>
 <table class="users ">
     <tr id="postData">
+        <td><input type="text" name="_id" placeholder="_id"/></td>
         <td><input type="text" name="title" placeholder="相册标题"/></td>
-
         <td><input type="text" name="city" placeholder="所在城市"/></td>
         <td>
             <select name="goodStyle" id="goodStyle">
@@ -35,7 +34,7 @@
         </td>
         <td><input type="text" name="img" placeholder="图片信息"/></td>
         <td><textarea type="text" name="description" placeholder="描述"></textarea></td>
-        <td>
+        <td rowspan="2">
             <button id="fixed">更新</button>
             <button id="delete">删除</button>
         </td>

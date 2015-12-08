@@ -45,7 +45,7 @@ var imgSchema = new Schema({
 });
 
 //相册
-var albumsSchema = new Schema({
+var photographyerAlbums = new Schema({
     title: {type: String, trim: true, required: true},//title
     description: {type: String, trim: true, required: true},//描述
     city: {type: String, trim: true, required: true},//地区
@@ -118,11 +118,10 @@ var TaoveSchema = new Schema({
     lastLogin: Date,//最后登录时间
     updated: Date,//更新日期
     createdOn: {type: Date, default: Date.now()},//创建时间
-
-
+    userAlbumsid:[Schema.Types.Mixed],//用户摄影相册  TaoveSchemaId_photographyerAlbumsId
     pay:[pay],//账单
     posts:[posts],//提交的评论、喜欢
-    albums: [albumsSchema],//相册
+    photographyerAlbums: [photographyerAlbums],//摄影师相册
     myshop:[myshop],//商品
     message: [message]//消息
 });

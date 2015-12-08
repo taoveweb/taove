@@ -31,7 +31,7 @@
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 51px;
+    padding: 51px 15px 15px;
     overflow: scroll;
 }
 

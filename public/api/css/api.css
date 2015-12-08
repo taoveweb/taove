@@ -196,7 +196,16 @@ input[type=button]:hover {
     padding: 15px 0 14px;
     border-bottom: 1px solid #d4d4d4;
 }
+.header label{
+    vertical-align: middle;
+    color:#717171;
+    margin-right: 10px;
 
+}
+.header label input{
+    vertical-align: middle;
+    margin-right: 0;
+}
 .header input{
     display: inline-block;
     height: 30px;

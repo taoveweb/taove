@@ -238,3 +238,21 @@ input[type=button]:hover {
 .page-nav .btn:hover{
     color: #ff6600;
 }
+.users .imglist img{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    position: static;
+}
+.users .imglist span{
+    display: inline-block;
+    width: 33px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    cursor: pointer;
+    vertical-align: top;
+}
+.imglist span:hover{
+    color: #ff0000;
+}

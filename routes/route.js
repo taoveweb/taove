@@ -46,8 +46,8 @@ module.exports = function (app) {
     app.use('/pc/photographer', photographer_mb);
 
     //api
-    app.use('/api', apiAlbums);
-    app.use('/api/users', apiUsers);
+    app.use('/api', apiUsers);
+    app.use('/api/albums', apiAlbums);
     app.use('/api/photographer', apiPhotographer);
 
     //admin

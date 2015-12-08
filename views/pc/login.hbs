@@ -19,13 +19,11 @@
             <h1>找回密码</h1>
 
             <div class="br">
-                <input type="text" placeholder="手机号"/>
-
+                <input type="text" name="phone" placeholder="手机号"/>
                 <p></p>
             </div>
             <div class="br code-text">
                 <input type="password" placeholder="短信验证码"/><span>发送验证码</span>
-
                 <p></p>
             </div>
             <div class="br ">
@@ -48,12 +46,11 @@
         <div class="panel-group">
             <div class="tab-panel tab-c">
                 <div class="br">
-                    <input type="txt" placeholder="手机号"/>
-
+                    <input type="text" placeholder="手机号"/>
                     <p></p>
                 </div>
                 <div class="br">
-                    <input type="password" placeholder="密码"/>
+                    <input  type="password" placeholder="密码"/>
 
                     <p></p>
                     <a class="wjmb" id="fogetBtn">忘记密码<i></i></a>
@@ -63,21 +60,18 @@
             </div>
             <div class="tab-panel">
                 <div class="br">
-                    <input type="text" placeholder="手机号"/>
-
-                    <p></p>
+                    <input id="registerPhone" type="text" placeholder="手机号"/>
+                    <p class="phone-validate"></p>
                 </div>
                 <div class="br">
-                    <input type="password" placeholder="密码"/>
-
-                    <p></p>
+                    <input id="registerPassword" type="password" placeholder="密码"/>
+                    <p class="password-validate">数字和字母组合不少于6个字符</p>
                 </div>
                 <div class="code-text">
                     <input type="text" placeholder="短信验证码"/><span>发送验证码</span>
-
                     <p></p>
                 </div>
-                <button>注册</button>
+                <button id="register">注册</button>
             </div>
 
 

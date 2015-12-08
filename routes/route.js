@@ -7,7 +7,6 @@ var index_pc = require('../routes/pc/index');
 var app_pc = require('../routes/pc/app');
 var autumn_pc = require('../routes/pc/autumn');//秋季特惠
 var photoframes_pc = require('../routes/pc/photoframes');//婚件产品
-var login_pc = require('../routes/pc/login');//登录
 var wd_pc = require('../routes/pc/wd'); //结婚喜帖
 var photograhper_pc = require('../routes/pc/photograhper'); //摄影师列表
 var photograhper_detail_pc = require('../routes/pc/photograhper_detail'); //摄影师详情
@@ -38,7 +37,6 @@ module.exports = function (app) {
     app.use('/photograhperDetail',photograhper_detail_pc );
     app.use('/buyer',buyer_pc );
     app.use('/package',package_pc );
-    app.use('/login',login_pc );
     app.use('/wd',wd_pc );
     //mobile
     app.use('/pc', index_mb);
@@ -52,9 +50,9 @@ module.exports = function (app) {
 
     //admin
     app.use('/admin', admin);
-    app.use('/admin/login', login);
-    app.use('/admin/register', register);
-    app.use('/admin/intention', intention);
+    app.use('/login', login);
+    app.use('/register', register);
+    app.use('/intention', intention);
 
 };
 

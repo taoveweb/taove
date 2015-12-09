@@ -38,6 +38,7 @@ module.exports = function (app) {
     app.use('/buyer',buyer_pc );
     app.use('/package',package_pc );
     app.use('/wd',wd_pc );
+
     //mobile
     app.use('/pc', index_mb);
     app.use('/pc/sort', sort_mb);
@@ -46,13 +47,21 @@ module.exports = function (app) {
     //api
     app.use('/api', apiUsers);
     app.use('/api/albums', apiAlbums);
-    app.use('/api/photographer', apiPhotographer);
+
 
     //admin
     app.use('/admin', admin);
     app.use('/login', login);
     app.use('/register', register);
-    app.use('/intention', intention);
+   app.use('/intention', intention);
 
 };
+
+function authorize (req,res,next){
+    if (!req.session.user_id) {
+        res.redirect('/login');
+    } else {
+        next();
+    }
+}
 

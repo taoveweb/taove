@@ -4,10 +4,11 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var minify = require('express-minify')
+var session=require('express-session');
+var minify = require('express-minify');
 var fs=require('fs');
 var hbs=require('hbs');
-var compression = require('compression')
+var compression = require('compression');
 global.__baseDir=__dirname;
 
 var blocks = {};
@@ -44,6 +45,7 @@ app.set('view engine', 'hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(session());
 app.use(cookieParser());
 app.use(compression());
 app.use(minify());

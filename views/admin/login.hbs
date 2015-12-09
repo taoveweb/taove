@@ -1,22 +1,89 @@
-{{#extend "adminStyle"}}
-    <link rel="stylesheet" href="/css/admin.css"/>
+{{#extend "pcStyle"}}
+
+    <link rel="stylesheet" href="{{static}}common/css/animate.min.css">
+    <link rel="stylesheet" href="{{static}}admin/css/login.css">
     <style>
-        .admin {
-            background: #d2d2d2;
-        }
     </style>
 {{/extend}}
 
 
+<div class="section">
+    <div class="code">
+        <h2>桃微APP扫描登录</h2>
+        <img src="{{static}}pc/img/login/code.png" alt=""/>
+
+        <p> 嫁拍客户端，页面左上角二维码图标<br>点击并扫描本二维码登录</p>
+    </div>
+    <div class="lr">
+        <div id="forget" class="tab-panel forget">
+            <h1>找回密码</h1>
+
+            <div class="br">
+                <input type="text" name="phone" placeholder="手机号"/>
+                <p></p>
+            </div>
+            <div class="br code-text">
+                <input type="password" placeholder="短信验证码"/><span>发送验证码</span>
+                <p></p>
+            </div>
+            <div class="br ">
+                <input type="password" placeholder="密码"/>
+
+                <p></p>
+            </div>
+            <div class="br button-box">
+                <button class="fixed">修改</button>
+                <button id="forgetBack">返回登录</button>
+            </div>
+        </div>
+        <div id="tabMenu" class="tab-menu clearfix">
+            <span class="tab-c">
+                登录
+            </span>
+            <span class="fr">注册</span>
+            <b id="line" class="line"></b>
+        </div>
+        <div class="panel-group">
+            <div class="tab-panel tab-c">
+                <div class="br">
+                    <input  class="phone" type="text" placeholder="手机号"/>
+                    <p class="phone-validate"></p>
+                </div>
+                <div class="br">
+                    <input  class="password"  type="password" placeholder="密码"/>
+                    <p class="password-validate"></p>
+                    <a class="wjmb" id="fogetBtn">忘记密码<i></i></a>
+                </div>
+                <p class="responsemsg"></p>
+                <a id="login" class="button">登录</a>
+            </div>
+            <div class="tab-panel">
+                <div class="br">
+                    <input class="phone" type="text" placeholder="手机号"/>
+                    <p class="phone-validate"></p>
+                </div>
+                <div class="br">
+                    <input class="password" type="password" placeholder="密码"/>
+                    <p class="password-validate"></p>
+                </div>
+                <div class="code-text">
+                    <input type="text" placeholder="短信验证码"/><span>发送验证码</span>
+                    <p></p>
+                </div>
+                <p class="responsemsg"></p>
+                <button id="register">注册</button>
+
+            </div>
 
 
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+        </div>
+
+    </div>
+</div>
 
 
-
-{{#extend "adminScripts"}}
+{{#extend "pcScripts"}}
+    <script src="{{static}}admin/js/login.js"></script>
     <script>
-
     </script>
 {{/extend}}

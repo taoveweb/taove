@@ -1,8 +1,3 @@
-/**
- * Created by Administrator on 2015/4/25aaaaa.
- */
-
-
 var mongoose = require('mongoose');
 var dbURI = 'mongodb://localhost/test';
 var dbOptions = {'user': 'db_username', 'pass': 'db_password'};
@@ -35,105 +30,114 @@ mongoose.connection.on('SIGINT', function () {
 });
 
 
-//用户
-var userSchema = new Schema({
-    name: {type: String, trim: true, required: true},//
-    phone: {type: Number, trim: true, required: true},//13621214703
-    password: {type: String, required: true, trim: true},//
-    email: {type: String, trim: true},//taoveweb@gmail.com
-    pohotoUrl: {type: String, trim: true},
-    message: String,//
-    intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
-    Photographer: {type: ObjectId,ref: 'photographerSchema' },//photographer_id
-    createdOn: {type: Date, default: Date.now()},
-    posts:{
-        likes:[Schema.Types.Mixed],
-        watches: [Schema.Types.Mixed],
-        comments:[Schema.Types.Mixed]
-    },
-    updated: Date,
-    approved: {type: Boolean, default: false},
-    banned: {type: Boolean, default: false},
-    admin: {type: Boolean, default: false},
-    lastLogin: Date
-});
-var User = mongoose.model('User', userSchema);
-exports.User = User;
-
-
-//摄影师
-
-
-cfg = { _id:'setD', members:[
-    { _id:0, host:'127.0.0.1:27017' },
-    { _id:1, host:'127.0.0.1:27018' },
-    { _id:2, host:'127.0.0.1:27019' }
-]};
-
-var photographerSchema = new Schema({
-    realName: {type: String, trim: true, required: true},//
-    phone: {type: Number, required: true},//13621214703
-    email: {type: String, unique: true, required: true, trim: true},//taoveweb@gmail.com
-    fromTime: {type: Number, trim: true, required: true},//20150202
-    selfIntroduction: {type: String, trim: true, required: true},//
-    goodStyle: {type: String, trim: true, required: true},//
-    pohotoUrl: {type: String, trim: true, required: true},//
-    credentialsPhotoUrl: String,// 证件照 '
-    city: String,//
-    makeuperIntroduction: String,//化妆师
-    hot: Number,//
-    albums: [{type: ObjectId, ref: 'albumsSchema'}],
-    createdOn: {type: Date, default: Date.now()},
-    updated: Date
-});
-var Photographer = mongoose.model('Photographer', photographerSchema);
-exports.photographer = Photographer;
-
-
 //相册图片
 var imgSchema = new Schema({
-    path: {type: String, trim: true, required: true},
-    name: {type: String, trim: true, required: true},
-    likes: [{type: ObjectId,ref: 'User' }],
-    watches: [{type: ObjectId, ref: 'User' }],
+    path: {type: String, trim: true, required: true},//目录名
+    name: {type: String, trim: true, required: true},//文件名与图片名称一样
+    likes: [{type: ObjectId}],//user id
+    watches: [{type: ObjectId}],//user id
+    master: {type: Boolean, default: false},//封面
     comment: [{
-        user: {
-            id: {
-                type: ObjectId,
-                ref: 'User'
-            },
-            name: String
-        },
+        userId: ObjectId,//user id
         time: {type: Date, default: Date.now()}, //
         text: {type: String, trim: true, max: 2000}
     }]
 });
-var albumsSchema = new Schema({
-    albumsTitle: {type: String, trim: true, required: true},//相册主题
-    photographer: {type: Schema.Types.Mixed, trim: true, required: true},//{name:'摄影师名称',id:photographer_id}
-    package: {type: String, trim: true, required: true},//套餐
+
+//相册
+var photographyerAlbums = new Schema({
+    photographyId:String,//摄影师Id
+    title: {type: String, trim: true, required: true},//title
     description: {type: String, trim: true, required: true},//描述
-    area: {type: String, trim: true, required: true},//地区
+    city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
-    img: [imgSchema],
-    watches: [{type: ObjectId,ref: 'User'}],
-    customer: {type: String, trim: true, required: true},// {buyer:user_id}
-    createdBy: String,//
-    createOn: {type: Date, default: Date.now()},//
+    img: [imgSchema],//图片信息
+    customer: ObjectId,// {buyer:user_id}//用户id
+    createdBy: String,//谁提交的
+    createOn: {type: Date, default: Date.now()},//创建时间
     updated: Date,
+    package: {type: String, trim: true, required: true},//套餐
     approved: {type: Boolean, default: false}
 });
-
-albumsSchema.pre("save", function (next) {
-    if (!this.isModified('updated')) this.updated = new Date;
-    console.log("updated-----------------------");
-    console.log(this.updated);
-    next();
+//账单
+var pay=new Schema({
+    payMony:Number,
+    createdOn:{type: Date, default: Date.now()}//创建时间
 });
 
-var Albums = mongoose.model('Albums', albumsSchema);
-exports.Albums = Albums;
-module.exports.ObjectId = mongoose.Types.ObjectId;
+//消息
+var message=new Schema({
+    fromId:ObjectId,
+    title:String,
+    comtent:String,
+    time:Date
+});
 
+//提交的评论、收藏=喜欢
+var posts=new Schema({
+    likes: [{type:String}],//imgName
+    watches: [{type:String}],//imgName
+    message:[message]
+});
+
+//产品物件
+var shops=new Schema({
+    name: String,//imgName
+    photoUrl:String,//链接
+    price:Number,//价格
+    saled:Number,//已销售
+    desgin:String //产品规格
+
+});
+
+//我的购买的商品
+var myshop=new Schema({
+    showid: ObjectId,//shopid
+    getPrice:Number,//购买的价格
+    num: Number //购买数量
+});
+
+
+//主表
+var TaoveSchema = new Schema({
+    nikeName: {type: String, trim: true},//昵称
+    realName: {type: String, trim: true},//真实姓名
+    phone: {type: Number, trim: true, required: true},//13621214703
+    password: {type: String, required: true, trim: true},//
+    email: {type: String, trim: true},//taoveweb@gmail.com
+    pohotoUrl: {type: String, trim: true}, //userpicture
+    city: String,//城市
+    admin: {type: Boolean, default: false},//管理员 用户
+    approved: {type: Boolean, default: false},//核准  摄影师资格
+    banned: {type: Boolean, default: false},//禁止 摄影师状态
+    credentialsPhotoUrl: String,// 证件照 '
+    makeuperIntroduction: String,//化妆师
+    goodStyle: {type: String, trim: true},//擅长的样式
+    selfIntroduction: {type: String, trim: true},//自我介绍
+    fromTime: {type: Number, trim: true},//20150202 从事时间
+    intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
+    lastLogin: Date,//最后登录时间
+    updated: Date,//更新日期
+    createdOn: {type: Date, default: Date.now()},//创建时间
+    userAlbumsid:[Schema.Types.Mixed],//用户摄影相册  TaoveSchemaId_photographyerAlbumsId
+    "pay":[pay],//账单
+    "posts":[posts],//提交的评论、喜欢
+    "photographyerAlbums": [photographyerAlbums],//相册id
+    "myshop":[myshop],//商品
+    "message": [message]//消息
+});
+
+
+/*
+photographyerAlbums.pre("save", function (next) {
+    if (!this.isModified('updated')) this.updated = new Date;
+    next();
+});
+*/
+
+
+var Taove = mongoose.model('Taove', TaoveSchema);
+exports.Taove = Taove;
+module.exports.ObjectId = mongoose.Types.ObjectId;
 
 

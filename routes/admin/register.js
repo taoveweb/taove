@@ -1,5 +1,4 @@
 var express = require('express');
-var User=require('../../models/db').User;
 var router = express.Router();
 
 /* GET users listing. */

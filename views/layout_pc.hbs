@@ -11,7 +11,7 @@
     <meta name="renderer" content="webkit">
     <title>{{title}}</title>
     <link rel="stylesheet" href="{{static}}pc/css/base.css">
-<!--    <link rel="icon" href="favicon.ico" mce_href="{{static}}favicon.ico" type="image/x-icon" />
+    <!--    <link rel="icon" href="favicon.ico" mce_href="{{static}}favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="favicon.ico"/>
     <link rel="bookmark" href="favicon.ico"/>-->
     {{{block "pcStyle"}}}
@@ -20,7 +20,13 @@
 <div class="base-top">
     <div class="base-section">
         <a class="base-logo" href="{{static}}"><img src="{{static}}pc/img/logo.png" alt="桃微"></a>
-        <div class="base-nav"><a class="home-c" href="{{static}}">首页</a><a class="app-c" href="{{static}}app">app</a><a  class="autumn-c" href="{{static}}autumn">秋季特惠</a><a class="photoframes-c" href="{{static}}photoframes">婚件产品</a><a class="login-c" href="{{static}}login">登录</a>
+
+        <div class="base-nav"><a class="home-c" href="{{static}}">首页</a>
+            <a class="app-c" href="{{static}}app">app</a>
+            <a class="autumn-c" href="{{static}}autumn">秋季特惠</a>
+            <a class="photoframes-c" href="{{static}}photoframes">婚件产品</a>
+            {{authorize}}
+            <a class="login-c" href="{{static}}login">登录</a>
         </div>
     </div>
 </div>

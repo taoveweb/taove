@@ -29,6 +29,14 @@ var intention = require('../routes/admin/intention');
 
 module.exports = function (app) {
     //pc
+    app.use(function(req,res,next){
+        if (!req.session.userId) {
+            app.authorize=false;
+        }else{
+            app.authorize=res.session.userId;
+        }
+        next();
+    })
     app.use('/',index_pc );
     app.use('/app',app_pc );
     app.use('/autumn',autumn_pc );

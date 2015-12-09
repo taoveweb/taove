@@ -35,7 +35,7 @@ module.exports = function (app) {
     app.use('/photoframes',photoframes_pc );
     app.use('/photograhper',photograhper_pc );
     app.use('/photograhperDetail',photograhper_detail_pc );
-    app.use('/buyer',buyer_pc );
+    app.use('/buyer',authorize,buyer_pc );
     app.use('/package',package_pc );
     app.use('/wd',wd_pc );
 
@@ -57,8 +57,8 @@ module.exports = function (app) {
 
 };
 
-function authorize (req,res,next){
-    if (!req.session.user_id) {
+function authorize(req,res,next){
+    if (!req.session.userId) {
         res.redirect('/login');
     } else {
         next();

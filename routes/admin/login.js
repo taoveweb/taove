@@ -24,7 +24,7 @@ function post(req, res, next) {
                     if (err) {
                         console.error(err);
                     }else{
-                        res.json({ok: 1})
+                        res.json({ok: 1,msg:"注册成功请登录"})
                     }
                 })
             }else{
@@ -39,6 +39,12 @@ function post(req, res, next) {
             if(!doc){
                 res.json({ok: 0,msg:"账号和密码不正确"});
             }else{
+
+             var user_id = req.session.userId;
+                if (!user_id) {
+                    user_id = req.session.userId = {}
+                }
+                user_id['phone']= req.body.phone;
                 res.json({ok: 1,msg:"登录成功"});
             }
 

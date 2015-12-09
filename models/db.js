@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var dbURI = 'mongodb://localhost/test';
-var dbOptions = {'user': 'db_username', 'pass': 'db_password'};
+var dbURI = 'mongodb://taove:taove@localhost/test';
+var dbOptions = {'user': 'taove', 'pass': 'taove'};
 var Schema = mongoose.Schema;
 var ObjectId = Schema.Types.ObjectId;
 mongoose.connect(dbURI);

@@ -436,7 +436,7 @@
 }
 
 .upload  .box{
-    background: url("../img/buyer/add.png") center no-repeat #f0f0f0;
+    background: url("../../pc/img/buyer/add.png") center no-repeat #f0f0f0;
     cursor: pointer;
 }
 

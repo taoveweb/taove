@@ -62,7 +62,7 @@ $(function(){
                 if(data.ok==1){
                     parent.find('.responsemsg').html(data.msg);
                     if(s=="l"){
-                        window.location.href='/buyer/orders';
+                        window.location.href='/admin';
                     }
                 }else{
                     parent.find('.responsemsg').html(data.msg);

@@ -22,7 +22,7 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 /*
 hbs.registerPartial('partial', fs.readFileSync(__dirname + '/views/admin/admincss.hbs', 'utf8'));
 */
-hbs.registerPartial('left', fs.readFileSync(__dirname + '/views/pc/buyer/left.hbs', 'utf8'));//????
+hbs.registerPartial('left', fs.readFileSync(__dirname + '/views/admin/left.hbs', 'utf8'));//????
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('extend', function(name, context) {
   var block = blocks[name];

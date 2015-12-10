@@ -11,6 +11,7 @@ function index(req, res, next) {
     res.render('admin/login', {title: '登录', layout: 'layout_pc'});
 }
 
+
 function post(req, res, next) {
 
     //注册

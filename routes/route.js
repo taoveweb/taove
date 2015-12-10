@@ -61,17 +61,17 @@ module.exports = function (app) {
         req.session.destroy(function(sid){
             console.log(sid)
         });
-        res.locals.loginInfo = false;
+        app.locals.loginInfo = false;
         res.redirect('/login');
     }
 
     function authorize(req, res, next) {
         if (!req.session.userId) {
-            res.locals.loginInfo = false;
+            app.locals.loginInfo = false;
             res.redirect('/login');
         } else {
             req.session.maxAge=Date.now()+1000*60*60;
-            res.locals.loginInfo = req.session.userId;
+            app.locals.loginInfo = req.session.userId;
             next();
         }
     }

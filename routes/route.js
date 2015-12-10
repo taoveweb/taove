@@ -29,14 +29,16 @@ var intention = require('../routes/admin/intention');
 
 module.exports = function (app) {
     //pc
-    app.use(function(req,res,next){
+/*    app.use(function(req,res,next){
         if (!req.session.userId) {
             app.authorize=false;
+            req.session.userId = {};
         }else{
-            app.authorize=res.session.userId;
+           // app.authorize=res.session.userId;
         }
+        console.log('----------------'+JSON.stringify(req.session.userId));
         next();
-    })
+    });*/
     app.use('/',index_pc );
     app.use('/app',app_pc );
     app.use('/autumn',autumn_pc );
@@ -63,13 +65,25 @@ module.exports = function (app) {
     app.use('/register', register);
    app.use('/intention', intention);
 
+
+
+
+
+
+
+
+
+    function authorize(req,res,next){
+        if (!req.session.userId) {
+            app.locals.loginInfo=false;
+            res.redirect('/login');
+        } else {
+            app.locals.loginInfo=req.session.userId;
+            next();
+        }
+    }
+
 };
 
-function authorize(req,res,next){
-    if (!req.session.userId) {
-        res.redirect('/login');
-    } else {
-        next();
-    }
-}
+
 

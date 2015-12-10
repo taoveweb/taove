@@ -15,37 +15,35 @@ function post(req, res, next) {
 
     //注册
     if (req.body.type == 'r') {
-        Taove.findOne({phone:  req.body.phone}, function (err, doc) {
-            if(err){
-                res.json({ok: 0,msg:err})
+        Taove.findOne({phone: req.body.phone}, function (err, doc) {
+            if (err) {
+                res.json({ok: 0, msg: err})
             }
             if (!doc) {
                 Taove.create({phone: req.body.phone, password: req.body.password}, function (err, doc) {
                     if (err) {
                         console.error(err);
-                    }else{
-                        res.json({ok: 1,msg:"注册成功请登录"})
+                    } else {
+                        res.json({ok: 1, msg: "注册成功请登录"})
                     }
                 })
-            }else{
-                res.json({ok: 0,msg:"手机号已经注册过了"})
+            } else {
+                res.json({ok: 0, msg: "手机号已经注册过了"})
             }
         });
-    }else{//登录
-        Taove.findOne({phone:  req.body.phone,password:req.body.password}, function (err, doc) {
-            if(err){
-                res.json({ok: 0,msg:err});
+    } else {//登录
+        Taove.findOne({phone: req.body.phone, password: req.body.password}, function (err, doc) {
+            if (err) {
+                res.json({ok: 0, msg: err});
             }
-            if(!doc){
-                res.json({ok: 0,msg:"账号和密码不正确"});
-            }else{
-
-             var user_id = req.session.userId;
-                if (!user_id) {
-                    user_id = req.session.userId = {}
+            if (!doc) {
+                res.json({ok: 0, msg: "账号和密码不正确"});
+            } else {
+                if (!req.session.userId) {
+                    req.session.userId = {};
                 }
-                user_id['phone']= req.body.phone;
-                res.json({ok: 1,msg:"登录成功"});
+                req.session.userId['phone']=req.body.phone;
+                res.json({ok: 1, msg: "登录成功"});
             }
 
         })

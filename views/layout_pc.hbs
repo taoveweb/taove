@@ -25,8 +25,12 @@
             <a class="app-c" href="{{static}}app">app</a>
             <a class="autumn-c" href="{{static}}autumn">秋季特惠</a>
             <a class="photoframes-c" href="{{static}}photoframes">婚件产品</a>
-            {{authorize}}
-            <a class="login-c" href="{{static}}login">登录</a>
+            {{#if loginInfo.phone}}
+                    <a class="login-c"  href="{{static}}buyer/orders">{{loginInfo.phone}}</a>
+             {{else}}
+                 <a class="login-c" href="{{static}}login">登录</a>
+            {{/if}}
+
         </div>
     </div>
 </div>

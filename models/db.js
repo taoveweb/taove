@@ -111,6 +111,7 @@ var TaoveSchema = new Schema({
     approved: {type: Boolean, default: false},//核准  摄影师资格
     banned: {type: Boolean, default: false},//禁止 摄影师状态
     credentialsPhotoUrl: String,// 证件照 '
+    singed: String,// 签名
     makeuperIntroduction: String,//化妆师
     goodStyle: {type: String, trim: true},//擅长的样式
     selfIntroduction: {type: String, trim: true},//自我介绍

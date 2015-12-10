@@ -4,7 +4,7 @@
     font-size: 16px;
 }
 .left{
-    width: 88px;
+    width: 120px;
     float: left;
     border-right: 1px solid #d5d5d5;
 }
@@ -20,7 +20,7 @@
     border-left: 1px solid #d5d5d5;
     margin-left: -1px;
     float: left;
-    width: 911px;
+    width: 879px;
     min-height: 600px;
 
 }
@@ -354,7 +354,7 @@
 }
 
 .panel .item{
-    width: 274px;
+    width: 266px;
     margin: 14px 7px 0;
     float: left;
     -webkit-border-radius: 5px;
@@ -491,4 +491,55 @@
 }
 
 
+/*申请入驻摄影师*/
+.photographer-form{
+    background: #fff;
+    padding-top: 15px;
+}
+.photographer-form .br{
+    position: relative;
+    padding-left: 178px;
+    padding-bottom: 17px;
 
+}
+.photographer-form .br span{
+    color: #6D6D6D;
+    position: absolute;
+    width: 166px;
+    text-align: right;
+    height: 25px;
+    line-height: 25px;
+    left: 0;
+    font-size: 16px;
+}
+.photographer-form .br input[type=text],
+.photographer-form .br select,
+.photographer-form .br textarea{
+    width: 180px;
+    height: 23px;
+    border: 1px solid #d5d5d5;
+    padding:0 8px;
+}
+.photographer-form .br select{
+    width: 197px;
+    height: 27px;
+}
+.photographer-form .br textarea{
+    height: 60px;
+}
+.photographer-form button{
+    width: 198px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    background: #fe555a;
+    font-size: 16px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 0;
+    color: #ffffff;
+}
+.photographer-form button:hover{
+    background: #fe1e64;
+}

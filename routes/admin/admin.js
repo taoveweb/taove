@@ -18,7 +18,7 @@ function albums(req, res, next) {
     res.render('admin/albums', { title: '相片',layout:'layout_pc' });
 }
 function photographer(req, res, next) {
-    res.render('admin/photographer', { title: '相片',layout:'layout_pc' });
+    res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
 }
 
 module.exports = router;

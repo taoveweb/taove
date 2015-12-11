@@ -22,9 +22,6 @@ function photographer(req, res, next) {
     res.render('admin/photographer', {title: '摄影师申请入驻', layout: 'layout_pc'});
 }
 function postPhotographer(req, res, next) {
-    if (err) {
-        res.json({ok: 1,msg:err});
-    }
     res.json({ok: 1});
     // res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
 }

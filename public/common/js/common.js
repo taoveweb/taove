@@ -8,7 +8,7 @@
             return /^1[3|4|5|7|8][0-9]\d{8}$/.test(str);
         },
         realName:function(str){
-            return /^[\u4e00-\u9fa5]{1,5}/.test(str);
+            return /^[\u4e00-\u9fa5]{1,5}$/.test(str);
         },
         email:function(str){
             return /(^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$)/.test(str);
@@ -20,13 +20,13 @@
             return /^[\u4e00-\u9fa5]{0,20}/.test(str);
         },
         city:function(str){
-            return /^1[3|4|5|7|8][0-9]\d{8}$/.test(str);
+            return /^[\u4e00-\u9fa5]{1,5}$/.test(str);
         },
         selfIntroduction:function(str){
-            return /^1[3|4|5|7|8][0-9]\d{8}$/.test(str);
+            return /^[\u4e00-\u9fa5]{10,50}$/.test(str);
         },
         makeuperIntroduction:function(str){
-            return /^1[3|4|5|7|8][0-9]\d{8}$/.test(str);
+            return /^[\u4e00-\u9fa5]{10,20}$/.test(str);
         },
         password:function(str){
             return /^(\d|[A-Za-z]){6,8}$/.test(str)

@@ -189,6 +189,11 @@ a:hover, a:active, a:focus {
     left: 0;
     top: 6px;
 }
+.base-logo img{
+    display: block;
+    width: 315px;
+    height: 66px;
+}
 .base-nav{
     position: absolute;
     right: 0;

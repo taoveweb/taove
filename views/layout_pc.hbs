@@ -25,11 +25,25 @@
             <a class="app-c" href="{{static}}app">app</a>
             <a class="autumn-c" href="{{static}}autumn">秋季特惠</a>
             <a class="photoframes-c" href="{{static}}photoframes">婚件产品</a>
+
             {{#if loginInfo.phone}}
-                    <a class="login-c"  href="{{static}}admin">{{loginInfo.phone}}</a>
-                    <a class="loginOut" href="{{static}}loginOut">退出</a>
-             {{else}}
-                 <a class="login-c" href="{{static}}login">登录</a>
+                <div class="login-c">
+                    <a class="login-a" href="{{static}}admin">
+                        <img src="http://image.jiapai.cn/noavatar.png@30w_30h_1c_1e.jpg" alt="18550035081" width="30"
+                             height="30">
+                        {{loginInfo.phone}}
+                    </a>
+
+                    <div class="bar-nav-menu">
+                        <i class="arrow">sss</i>
+                        <a href="{{static}}admin">订单</a>
+                        <a href="{{static}}admin/carts">购物车</a>
+                        <a href="{{static}}admin/albums">我的婚纱照</a>
+                        <a href="{{static}}loginOut">退出</a>
+                    </div>
+                </div>
+            {{else}}
+                <a class="login-c" href="{{static}}login">登录</a>
             {{/if}}
 
         </div>

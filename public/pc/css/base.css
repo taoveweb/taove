@@ -194,7 +194,7 @@ a:hover, a:active, a:focus {
     right: 0;
     top: 0;
 }
-.base-nav a{
+.base-nav a,.login-c{
     display: block;
     height: 78px;
     padding: 0 25px;
@@ -207,7 +207,7 @@ a:hover, a:active, a:focus {
     background: #ff7478;
 }
 .base-nav a{
-    transition: 800ms;
+    transition: 200ms;
 }
 .base-nav a.current,
 .base-nav a.current:hover,
@@ -452,4 +452,75 @@ em,b,i{
 }
 .pop-con dl dd p:hover{
     background: #f3f3f3
+}
+
+
+
+
+.login-c{
+    position: relative;
+    padding: 0px;
+}
+.bar-nav-menu {
+    display: none;
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    top: 70px;
+}
+
+.bar-nav-menu .arrow {
+    display: inline-block;
+    border: 5px dashed transparent;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-bottom: 10px solid #fff;
+
+}
+
+.login-c img{
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+}
+
+.login-c:hover .bar-nav-menu{
+    display: block;
+    z-index: 10;
+}
+
+.login-c .bar-nav-menu a {
+    color: #000;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+    padding: 0;
+}
+.login-c .bar-nav-menu a:hover{
+    background: #e9e9e9;
+}
+
+ .login-c .login-a:after {
+     content: ' ';
+     position: absolute;
+     right: 7px;
+     top: 35px;
+     display: block;
+     border: 8px dashed transparent;
+     height: 0;
+     width: 0;
+     overflow: hidden;
+     border-top: 8px solid #fff;
 }

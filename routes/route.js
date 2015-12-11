@@ -70,13 +70,8 @@ module.exports = function (app) {
         if (!req.session.userId) {
             res.locals.loginInfo = false;
         } else {
-/*            var hour = 1000*15;
-            req.session.cookie.expires = new Date(Date.now() + hour);
-            req.session.cookie.maxAge = hour;
-            req.session.touch();*/
             res.locals.loginInfo = req.session.userId;
         }
-        console.log( req.session);
         next();
     }
 

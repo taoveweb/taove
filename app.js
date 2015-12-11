@@ -49,7 +49,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   rolling:true,
-  cookie: { maxAge: 1000*15 },
+  cookie: { maxAge: 1000*60*30 },
   saveUninitialized: true
 }));
 app.use(cookieParser());

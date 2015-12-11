@@ -17,7 +17,6 @@
 
 $(function() {
     $("img").lazyload({
-        placeholder : "images/loading.gif",
         effect: "fadeIn"
     });
 });

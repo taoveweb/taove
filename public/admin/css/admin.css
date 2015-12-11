@@ -545,6 +545,13 @@
 }
 
 
+.photographer-form .br.err p{
+    color: #ff0000;
+}
+
+.photographer-form .br p{
+    color: #298e18;
+}
 
 
 

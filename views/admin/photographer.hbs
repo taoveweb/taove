@@ -10,50 +10,61 @@
 <div class="main clearfix">
     {{> left}}
     <div class="content photographer-form">
-        <div class="br">
-            <span>真实姓名</span><input name="realName" type="text"/>
-        </div>
-        <div class="br">
-            <span>手机号码</span><input name="phone" type="text"/>
-        </div>
-        <div class="br">
-            <span>邮箱</span><input name="email" type="text"/>
-        </div>
-        <div class="br">
-            <span>从业时间(年)</span><input name="fromTime" type="text"/>
-        </div>
-        <div class="br">
-            <span>一句话简介</span><input name="singed" type="text"/>
-        </div>
-        <div class="br">
-            <span>拍摄地址城市</span><input name="city" type="text"/>
-        </div>
-        <div class="br">
-            <span>自我介绍</span><textarea name="selfIntroduction"></textarea>
-        </div>
-        <div class="br">
-            <span>你的跟从化妆师简介</span> <textarea name="makeuperIntroduction"></textarea>
-        </div>
-        <div class="br">
-            <span>最擅长风格</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </div>
-        <div class="br">
-            <span>手持证件照 </span><input name="credentialsPhotoUrl" type="file"/>
-        </div>
-        <div class="br">
-            <button>提交申请</button>
-        </div>
+        <form>
+            <div class="br">
+                <span>真实姓名</span><input name="realName" type="text"/>
+                <p class="realName"></p>
+            </div>
+            <div class="br">
+                <span>手机号码</span><input name="phone" type="text"/>
+                <p class="phone"></p>
+            </div>
+            <div class="br">
+                <span>邮箱</span><input name="email" type="text"/>
+                <p class="email"></p>
+            </div>
+            <div class="br">
+                <span>从业时间(年)</span><input name="fromTime" type="text"/>
+                <p class="fromTime"></p>
+            </div>
+            <div class="br">
+                <span>一句话简介</span><input name="singed" type="text"/>
+                <p class="singed"></p>
+            </div>
+            <div class="br">
+                <span>拍摄地址城市</span><input name="city" type="text"/>
+                <p class="city"></p>
+            </div>
+            <div class="br">
+                <span>自我介绍</span><textarea name="selfIntroduction"></textarea>
+                <p class="selfIntroduction"></p>
+            </div>
+            <div class="br">
+                <span>你的跟从化妆师简介</span> <textarea name="makeuperIntroduction"></textarea>
+                <p class="makeuperIntroduction"></p>
+            </div>
+            <div class="br">
+                <span>最擅长风格</span>
+                <select name="goodStyle" id="goodStyle">
+                    <option value="中式古典">中式古典</option>
+                    <option value="韩式简约">韩式简约</option>
+                    <option value="欧式奢华">欧式奢华</option>
+                    <option value="唯美自然">唯美自然</option>
+                    <option value="个性时尚">个性时尚</option>
+                </select>
+            </div>
+            <div class="br">
+                <span>手持证件照 </span><input name="credentialsPhotoUrl" type="file"/>
+            </div>
+            <div class="br">
+                <button type="submit">提交申请</button>
+            </div>
+        </form>
     </div>
 </div>
 
 {{#extend "pcScripts"}}
+    <script src="{{static}}admin/js/photographer.js"></script>
     <script>
 
     </script>

@@ -28,6 +28,8 @@ var register = require('../routes/admin/register');
 var intention = require('../routes/admin/intention');
 
 module.exports = function (app) {
+    app.use(islogin);
+
     app.use('/', index_pc);
     app.use('/app', app_pc);
     app.use('/autumn', autumn_pc);
@@ -58,20 +60,32 @@ module.exports = function (app) {
 
 
     function loginOut(req, res, next) {
-        req.session.destroy(function(sid){
-            console.log(sid)
-        });
-        app.locals.loginInfo = false;
+        req.session.cookie.maxAge = 0;
+        res.locals.loginInfo = false;
         res.redirect('/login');
+    }
+
+    function islogin(req, res, next) {
+        var date = new Date();
+        if (!req.session.userId) {
+            res.locals.loginInfo = false;
+        } else {
+/*            var hour = 1000*15;
+            req.session.cookie.expires = new Date(Date.now() + hour);
+            req.session.cookie.maxAge = hour;
+            req.session.touch();*/
+            res.locals.loginInfo = req.session.userId;
+        }
+        console.log( req.session);
+        next();
     }
 
     function authorize(req, res, next) {
         if (!req.session.userId) {
-            app.locals.loginInfo = false;
+            res.locals.loginInfo = false;
             res.redirect('/login');
         } else {
-            req.session.expires=Date.now()+1000*5;
-            app.locals.loginInfo = req.session.userId;
+            res.locals.loginInfo = req.session.userId;
             next();
         }
     }

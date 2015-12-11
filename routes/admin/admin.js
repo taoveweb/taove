@@ -7,18 +7,26 @@ router.get('/', orders);
 router.get('/carts', carts);
 router.get('/albums', albums);
 router.get('/photographer', photographer);
+router.post('/photographer', postPhotographer);
 
 function orders(req, res, next) {
-    res.render('admin/orders', { title: '订单',layout:'layout_pc' });
+    res.render('admin/orders', {title: '订单', layout: 'layout_pc'});
 }
 function carts(req, res, next) {
-    res.render('admin/carts', { title: '购物车',layout:'layout_pc' });
+    res.render('admin/carts', {title: '购物车', layout: 'layout_pc'});
 }
 function albums(req, res, next) {
-    res.render('admin/albums', { title: '相片',layout:'layout_pc' });
+    res.render('admin/albums', {title: '相片', layout: 'layout_pc'});
 }
 function photographer(req, res, next) {
-    res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
+    res.render('admin/photographer', {title: '摄影师申请入驻', layout: 'layout_pc'});
+}
+function postPhotographer(req, res, next) {
+    if (err) {
+        res.json({ok: 1,msg:err});
+    }
+    res.json({ok: 1});
+    // res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
 }
 
 module.exports = router;

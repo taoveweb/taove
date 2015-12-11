@@ -28,7 +28,7 @@ var register = require('../routes/admin/register');
 var intention = require('../routes/admin/intention');
 
 module.exports = function (app) {
-    //app.use(islogin);
+    app.use(islogin);
 
     app.use('/', index_pc);
     app.use('/app', app_pc);
@@ -50,8 +50,8 @@ module.exports = function (app) {
 
 
     //admin
-    //app.use('/admin', authorize, admin);
-    app.use('/admin',  admin);
+    app.use('/admin', authorize, admin);
+   // app.use('/admin',  admin);
     app.use('/login', login);
     app.use('/register', register);
     app.use('/intention', intention);

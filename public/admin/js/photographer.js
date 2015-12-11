@@ -3,7 +3,7 @@
  */
 $(function(){
     var validate=true;
-    $('form').submit(function(e) {
+    $('form').submit(function() {
        var param=$(this).serializeArray();
         for(var i= 0,l=param.length;i<l;i++){
             validateHadler(param[i]['name'],param[i]['value']);
@@ -15,15 +15,14 @@ $(function(){
                 }
             )
         }
-        e.stopPropagation();
+
         return false;
     });
 
     function validateHadler(name,value){
         switch (name){
             case 'realName':
-                alert('1')
-                if(!validate(value)){
+                if(!validate.realName(value)){
                     $('.realName').html('1到5个字的中文组字');
                     validate=false;
                                     }else{
@@ -31,7 +30,7 @@ $(function(){
                 }
                 break;
             case 'phone':
-                if(!validate(value)){
+                if(!validate.phone(value)){
                     $('.phone').html('手机号码填的不正确');
                     validate=false;
                 }else{
@@ -39,7 +38,7 @@ $(function(){
                 }
                 break;
             case 'email':
-                if(!validate(value)){
+                if(!validate.email(value)){
                     $('.email').html('电子邮箱不正确如：exapmle@taove.com');
                     validate=false;
                 }else{
@@ -47,7 +46,7 @@ $(function(){
                 }
                 break;
             case 'fromTime':
-                if(!validate(value)){
+                if(!validate.fromTime(value)){
                     $('.fromTime').html('从业时间不正确如：2015/7/8');
                     validate=false;
                 }else{
@@ -55,7 +54,7 @@ $(function(){
                 }
                 break;
             case 'singed':
-                if(!validate(value)){
+                if(!validate.singed(value)){
                     $('.singed').html('签名为0到20个字符的中文');
                     validate=false;
                 }else{
@@ -63,7 +62,7 @@ $(function(){
                 }
                 break;
             case 'city':
-                if(!validate(value)){
+                if(!validate.city(value)){
                     $('.city').html('1到5个字的中文组字');
                     validate=false;
                 }else{
@@ -71,7 +70,7 @@ $(function(){
                 }
                 break;
             case 'selfIntroduction':
-                if(!validate(value)){
+                if(!validate.selfIntroduction(value)){
                     $('.selfIntroduction').html('10到50个字的中文组字');
                     validate=false;
                 }else{
@@ -79,7 +78,7 @@ $(function(){
                 }
                 break;
             case 'makeuperIntroduction':
-                if(!validate(value)){
+                if(!validate.makeuperIntroduction(value)){
                     $('.makeuperIntroduction').html('10到20个字的中文组字');
                     validate=false;
                 }else{

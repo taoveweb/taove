@@ -70,7 +70,7 @@ module.exports = function (app) {
             app.locals.loginInfo = false;
             res.redirect('/login');
         } else {
-            req.session.maxAge=Date.now()+1000*60*60;
+            req.session.expires=Date.now()+1000*5;
             app.locals.loginInfo = req.session.userId;
             next();
         }

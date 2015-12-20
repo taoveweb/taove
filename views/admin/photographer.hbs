@@ -1,5 +1,6 @@
 {{#extend "pcStyle"}}
     <link rel="stylesheet" href="{{static}}admin/css/admin.css">
+    <link href="{{static}}common/fine-uploader/fine-uploader-gallery.css" rel="stylesheet">
     <style>
         .photographer {
             color: #ff4f4f;
@@ -13,34 +14,42 @@
         <form>
             <div class="br">
                 <span>真实姓名</span><input name="realName" type="text"/>
+
                 <p class="realName"></p>
             </div>
             <div class="br">
                 <span>手机号码</span><input name="phone" type="text"/>
+
                 <p class="phone"></p>
             </div>
             <div class="br">
                 <span>邮箱</span><input name="email" type="text"/>
+
                 <p class="email"></p>
             </div>
             <div class="br">
                 <span>从业时间(年)</span><input name="fromTime" type="text"/>
+
                 <p class="fromTime"></p>
             </div>
             <div class="br">
                 <span>一句话简介</span><input name="singed" type="text"/>
+
                 <p class="singed"></p>
             </div>
             <div class="br">
                 <span>拍摄地址城市</span><input name="city" type="text"/>
+
                 <p class="city"></p>
             </div>
             <div class="br">
                 <span>自我介绍</span><textarea name="selfIntroduction"></textarea>
+
                 <p class="selfIntroduction"></p>
             </div>
             <div class="br">
                 <span>你的跟从化妆师简介</span> <textarea name="makeuperIntroduction"></textarea>
+
                 <p class="makeuperIntroduction"></p>
             </div>
             <div class="br">
@@ -55,17 +64,126 @@
             </div>
             <div class="br">
                 <span>手持证件照 </span><input name="credentialsPhotoUrl" type="file"/>
+
+                <p></p>
             </div>
             <div class="br">
                 <button type="submit">提交申请</button>
             </div>
         </form>
+
+        <div id="fine-uploader-gallery">sssss</div>
     </div>
 </div>
 
+
+<script type="text/template" id="qq-template-gallery">
+    <div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="Drop files here">
+        <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">
+            <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                 class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
+        </div>
+        <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+            <span class="qq-upload-drop-area-text-selector"></span>
+        </div>
+        <div class="qq-upload-button-selector qq-upload-button">
+            <div>Upload a file</div>
+        </div>
+            <span class="qq-drop-processing-selector qq-drop-processing">
+                <span>Processing dropped files...</span>
+                <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+            </span>
+        <ul class="qq-upload-list-selector qq-upload-list" role="region" aria-live="polite"
+            aria-relevant="additions removals">
+            <li>
+                <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
+
+                <div class="qq-progress-bar-container-selector qq-progress-bar-container">
+                    <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                         class="qq-progress-bar-selector qq-progress-bar"></div>
+                </div>
+                <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+
+                <div class="qq-thumbnail-wrapper">
+                    <img class="qq-thumbnail-selector" qq-max-size="120" qq-server-scale>
+                </div>
+                <button type="button" class="qq-upload-cancel-selector qq-upload-cancel">X</button>
+                <button type="button" class="qq-upload-retry-selector qq-upload-retry">
+                    <span class="qq-btn qq-retry-icon" aria-label="Retry"></span>
+                    Retry
+                </button>
+
+                <div class="qq-file-info">
+                    <div class="qq-file-name">
+                        <span class="qq-upload-file-selector qq-upload-file"></span>
+                        <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"
+                              aria-label="Edit filename"></span>
+                    </div>
+                    <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                    <span class="qq-upload-size-selector qq-upload-size"></span>
+                    <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">
+                        <span class="qq-btn qq-delete-icon" aria-label="Delete"></span>
+                    </button>
+                    <button type="button" class="qq-btn qq-upload-pause-selector qq-upload-pause">
+                        <span class="qq-btn qq-pause-icon" aria-label="Pause"></span>
+                    </button>
+                    <button type="button" class="qq-btn qq-upload-continue-selector qq-upload-continue">
+                        <span class="qq-btn qq-continue-icon" aria-label="Continue"></span>
+                    </button>
+                </div>
+            </li>
+        </ul>
+
+        <dialog class="qq-alert-dialog-selector">
+            <div class="qq-dialog-message-selector"></div>
+            <div class="qq-dialog-buttons">
+                <button type="button" class="qq-cancel-button-selector">Close</button>
+            </div>
+        </dialog>
+
+        <dialog class="qq-confirm-dialog-selector">
+            <div class="qq-dialog-message-selector"></div>
+            <div class="qq-dialog-buttons">
+                <button type="button" class="qq-cancel-button-selector">No</button>
+                <button type="button" class="qq-ok-button-selector">Yes</button>
+            </div>
+        </dialog>
+
+        <dialog class="qq-prompt-dialog-selector">
+            <div class="qq-dialog-message-selector"></div>
+            <input type="text">
+
+            <div class="qq-dialog-buttons">
+                <button type="button" class="qq-cancel-button-selector">Cancel</button>
+                <button type="button" class="qq-ok-button-selector">Ok</button>
+            </div>
+        </dialog>
+    </div>
+</script>
+
+
+
 {{#extend "pcScripts"}}
     <script src="{{static}}admin/js/photographer.js"></script>
+    <script src="{{static}}common/fine-uploader/fine-uploader.js"></script>
     <script>
-
+        var galleryUploader = new qq.FineUploader({
+            element: document.getElementById("fine-uploader-gallery"),
+            template: 'qq-template-gallery',
+            request: {
+                endpoint: '{{static}}admin/photographer'
+            },
+            thumbnails: {
+                placeholders: {
+                    waitingPath: '{{static}}common/fine-uploader/placeholders/waiting-generic.png',
+                    notAvailablePath: '{{static}}common/fine-uploader/placeholders/not_available-generic.png'
+                }
+            },
+            validation: {
+                allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
+            }
+        });
     </script>
 {{/extend}}
+
+

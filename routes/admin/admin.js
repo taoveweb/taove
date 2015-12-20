@@ -2,6 +2,7 @@
  * Created by Administrator on 2015/9/7.
  */
 var express = require('express');
+var formidable = require('formidable');
 var router = express.Router();
 router.get('/', orders);
 router.get('/carts', carts);
@@ -22,6 +23,19 @@ function photographer(req, res, next) {
     res.render('admin/photographer', {title: '摄影师申请入驻', layout: 'layout_pc'});
 }
 function postPhotographer(req, res, next) {
+    console.log('postAlbum------------');
+
+    var form = new formidable.IncomingForm();
+    form.uploadDir = "./uploads/images/";
+    form.encoding = 'utf-8';
+    form.keepExtensions = true;
+    form.multiples = true;
+    form.parse(req, function (err, fields, files) {
+        var param = fields;
+        console.log(param)
+        var img = files.img;
+        var imgS = [];
+    });
     res.json({ok: 1});
     // res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
 }

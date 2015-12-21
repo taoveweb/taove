@@ -58,7 +58,7 @@ $(function () {
                 break;
             case 'fromTime':
                 if (!validate.fromTime(value)) {
-                    $('.fromTime').html('从业时间不正确如：2015/7/8').parent().addClass('err');
+                    $('.fromTime').html('从业时间不正确如：20150708').parent().addClass('err');
                     valid = false;
                 } else {
                     $('.fromTime').html('通过').parent().removeClass('err');
@@ -74,7 +74,7 @@ $(function () {
                 break;
             case 'city':
                 if (!validate.city(value)) {
-                    $('.city').html('1到5个字的中文组字').parent().addClass('err');
+                    $('.city').html('0到20个字的中文组字').parent().addClass('err');
                     valid = false;
                 } else {
                     $('.city').html('通过').parent().removeClass('err');
@@ -82,7 +82,7 @@ $(function () {
                 break;
             case 'selfIntroduction':
                 if (!validate.selfIntroduction(value)) {
-                    $('.selfIntroduction').html('10到50个字的中文组字').parent().addClass('err');
+                    $('.selfIntroduction').html('0到50个字的中文组字').parent().addClass('err');
                     valid = false;
                 } else {
                     $('.selfIntroduction').html('通过').parent().removeClass('err');
@@ -90,7 +90,7 @@ $(function () {
                 break;
             case 'makeuperIntroduction':
                 if (!validate.makeuperIntroduction(value)) {
-                    $('.makeuperIntroduction').html('10到20个字的中文组字').parent().addClass('err');
+                    $('.makeuperIntroduction').html('0到20个字的中文组字').parent().addClass('err');
                     valid = false;
                 } else {
                     $('.makeuperIntroduction').html('通过').parent().removeClass('err');

@@ -14,22 +14,22 @@
             return /(^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$)/.test(str);
         },
         fromTime:function(str){
-            return /^(20)\d{2}\/[0-9]{1,2}\/\d{1,2}$/.test(str);
+            return /^(20)[0,1][0,1,2,3,4,5,6][0-9]{2}\d{2}$/.test(str);
         },
         singed:function(str){
             return /^[\u4e00-\u9fa5]{0,20}/.test(str);
         },
         city:function(str){
-            return /^[\u4e00-\u9fa5]{1,5}$/.test(str);
+            return /^[\u4e00-\u9fa5]{0,5}$/.test(str);
         },
         selfIntroduction:function(str){
-            return /^[\u4e00-\u9fa5]{10,50}$/.test(str);
+            return /^[\u4e00-\u9fa5]{0,50}$/.test(str);
         },
         makeuperIntroduction:function(str){
-            return /^[\u4e00-\u9fa5]{10,20}$/.test(str);
+            return /^[\u4e00-\u9fa5]{0,20}$/.test(str);
         },
         password:function(str){
-            return /^(\d|[A-Za-z]){6,8}$/.test(str)
+            return /^(\d|[A-Za-z]){6,10}$/.test(str)
         }
     }
 

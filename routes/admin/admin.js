@@ -2,13 +2,13 @@
  * Created by Administrator on 2015/9/7.
  */
 var express = require('express');
-var formidable = require('formidable');
 var router = express.Router();
+var photographer=require('./photographer');
 router.get('/', orders);
 router.get('/carts', carts);
 router.get('/albums', albums);
-router.get('/photographer', photographer);
-router.post('/photographer', postPhotographer);
+router.get('/photographer', photographer.get);
+router.post('/photographer',  photographer.post);
 
 function orders(req, res, next) {
     res.render('admin/orders', {title: '订单', layout: 'layout_pc'});
@@ -18,26 +18,6 @@ function carts(req, res, next) {
 }
 function albums(req, res, next) {
     res.render('admin/albums', {title: '相片', layout: 'layout_pc'});
-}
-function photographer(req, res, next) {
-    res.render('admin/photographer', {title: '摄影师申请入驻', layout: 'layout_pc'});
-}
-function postPhotographer(req, res, next) {
-    console.log('postAlbum------------');
-
-    var form = new formidable.IncomingForm();
-    form.uploadDir = "./uploads/images/";
-    form.encoding = 'utf-8';
-    form.keepExtensions = true;
-    form.multiples = true;
-    form.parse(req, function (err, fields, files) {
-        var param = fields;
-        console.log(param)
-        var img = files.img;
-        var imgS = [];
-    });
-    res.json({ok: 1});
-    // res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
 }
 
 module.exports = router;

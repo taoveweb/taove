@@ -110,12 +110,13 @@ var TaoveSchema = new Schema({
     admin: {type: Boolean, default: false},//管理员 用户
     approved: {type: Boolean, default: false},//核准  摄影师资格
     banned: {type: Boolean, default: false},//禁止 摄影师状态
+    application: {type: Boolean, default: false},//禁止申请摄影状态 已申请和未申请
     credentialsPhotoUrl: String,// 证件照 '
     singed: String,// 签名
     makeuperIntroduction: String,//化妆师
     goodStyle: {type: String, trim: true},//擅长的样式
     selfIntroduction: {type: String, trim: true},//自我介绍
-    fromTime: {type: Number, trim: true},//20150202 从事时间
+    fromTime: {type: String, trim: true},//20150202 从事时间
     intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
     lastLogin: Date,//最后登录时间
     updated: Date,//更新日期
@@ -128,17 +129,37 @@ var TaoveSchema = new Schema({
     "message": [message]//消息
 });
 
-
 /*
-photographyerAlbums.pre("save", function (next) {
-    if (!this.isModified('updated')) this.updated = new Date;
-    next();
+TaoveSchema.post('update', function() {
+    console.log('update')
+    this.update({},{ $set: { updated: new Date() } });
 });
-*/
-
+TaoveSchema.post('save', function() {
+    console.log('save')
+    this.update({},{ $set: { updated: new Date() } });
+});
+TaoveSchema.post('find', function() {
+    console.log('find')
+    this.update({},{ $set: { updated: new Date() } });
+});
+TaoveSchema.pre('update', function() {
+    console.log('update')
+    this.update({},{ $set: { updated: new Date() } });
+});
+TaoveSchema.pre('save', function() {
+    console.log('save')
+    this.update({},{ $set: { updated: new Date() } });
+});
+TaoveSchema.pre('find', function() {
+    console.log('find')
+    this.update({},{ $set: { updated: new Date() } });
+});*/
 
 var Taove = mongoose.model('Taove', TaoveSchema);
-exports.Taove = Taove;
-module.exports.ObjectId = mongoose.Types.ObjectId;
+
+module.exports ={
+    "ObjectId": mongoose.Types.ObjectId,
+    "Taove":Taove
+};
 
 

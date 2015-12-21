@@ -14,7 +14,7 @@
             return /(^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$)/.test(str);
         },
         fromTime:function(str){
-            return /^2015\/[0-9]{1,2}\/\d{1,2}$/.test(str);
+            return /^(20)\d{2}\/[0-9]{1,2}\/\d{1,2}$/.test(str);
         },
         singed:function(str){
             return /^[\u4e00-\u9fa5]{0,20}/.test(str);

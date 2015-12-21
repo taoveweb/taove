@@ -2,17 +2,16 @@
  * Created by Administrator on 2015/12/11 0011.
  */
 $(function () {
-    var valid = true;
+    var valid;
     $('form').submit(function () {
+        valid = true;
         var param = $(this).serializeArray();
         for (var i = 0, l = param.length; i < l; i++) {
-            validateHadler(param[i]['name'], param[i]['value']);
+            validateHadler(param[i]['name'], param[i]['value'])
         }
-
         if (valid) {
-
             $.post("/admin/photographer", param, function (data) {
-                    console.log(data);
+                    console.log(data.success);
                 }
             )
         }
@@ -31,14 +30,14 @@ $(function () {
                     $('.realName').html('通过').parent().removeClass('err');
                 }
                 break;
-            case 'phone':
-                if (!validate.phone(value)) {
-                    $('.phone').html('手机号码填的不正确').parent().addClass('err');
-                    valid = false;
-                } else {
-                    $('.phone').html('通过').parent().removeClass('err');
-                }
-                break;
+            /*            case 'phone':
+             if (!validate.phone(value)) {
+             $('.phone').html('手机号码填的不正确').parent().addClass('err');
+             valid = false;
+             } else {
+             $('.phone').html('通过').parent().removeClass('err');
+             }
+             break;*/
             case 'email':
                 if (!validate.email(value)) {
                     $('.email').html('电子邮箱不正确如：exapmle@taove.com').parent().addClass('err');
@@ -87,8 +86,20 @@ $(function () {
                     $('.makeuperIntroduction').html('通过').parent().removeClass('err');
                 }
                 break;
-            default:
-                break;
-        }
+        };
+
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+

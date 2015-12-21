@@ -3,7 +3,9 @@
  */
 var formidable = require('formidable');
 var fs = require('fs');
-var ObjectId = require('../../models/db').ObjectId;
+var db = require('../../models/db');
+var ObjectId = db.ObjectId;
+var Taove = db.Taove;
 
 
 function getPhotographer(req, res, next) {
@@ -11,16 +13,32 @@ function getPhotographer(req, res, next) {
 }
 function postPhotographer(req, res, next) {
     console.log('postAlbum------------');
+    if (!req.body.realName) {
+        console.log('这是提交图片');
+        updateCredentialsPhotoUrl(req, res, next);
+    } else {
+        console.log('这是申请摄影师信息');
+        update(req, res)
+    }
 
+
+    // res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
+}
+
+
+
+
+//证件照
+function updateCredentialsPhotoUrl(req, res, next) {
     var form = new formidable.IncomingForm();
-    var dir="./uploads/images/"+ new Date().getFullYear()+ (new Date().getMonth()+1)+'/';
+    var dir = "./uploads/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/';
     if (fs.existsSync(dir)) {
         console.log('已经创建过此更新目录了');
     } else {
         fs.mkdirSync(dir);
     }
 
-    form.uploadDir =dir;
+    form.uploadDir = dir;
     form.encoding = 'utf-8';
     form.keepExtensions = true;
     form.multiples = true;
@@ -28,22 +46,68 @@ function postPhotographer(req, res, next) {
     form.parse(req, function (err, fields, files) {
         var param = fields;
         var img = files.img;
-        var name=new ObjectId();
-
-
+        var imgname = new ObjectId();
         var ext = '';
         if (isValidFileName(files.qqfile.path)) {
             ext = getExt(files.qqfile.path);
         } else {
             // 错误处理
         }
-        name+="." + ext;
-        fs.renameSync(files.qqfile.path, dir +name);
-        var imgS = [];
-    });
+        imgname += "." + ext;
+        fs.renameSync(files.qqfile.path, dir + imgname);
+        Taove.findOneAndUpdate(
+            {phone: req.session.userId['phone']},
+            {
+                credentialsPhotoUrl: "/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/' + imgname,
+                updated: new Date()
+            },
+            function (err, doc) {
+                if (err) {
+                    console.log(err);
+                    res.json({
+                        success: false,
+                        msg: '提交图片失败'
+                    });
+                } else {
+                    console.log('提交图片成功');
+                    res.json({
+                        success: true,
+                        msg: '提交图片成功'
+                    });
+                }
+            })
 
-    res.json({ok: 1});
-    // res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
+        //update(req)
+    });
+}
+
+
+function update(req, res) {
+
+    Taove.update({phone: req.session.userId['phone']},
+        {
+            realName: req.body.realName,
+            email: req.body.email,
+            fromTime: req.body.fromTime,
+            singed: req.body.singed,
+            city: req.body.city,
+            selfIntroduction: req.body.selfIntroduction,
+            makeuperIntroduction: req.body.makeuperIntroduction,
+            goodStyle: req.body.goodStyle,
+            application:true,
+            updated: new Date()
+        }, function (err, doc) {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log('申请提交成功');
+                res.json({
+                    ok: 1,
+                    success: true,
+                    msg: '申请提交成功'
+                });
+            }
+        })
 }
 
 
@@ -60,7 +124,10 @@ function isValidFileName(filename) {
 }
 
 
-module.exports={
-    get:getPhotographer,
-    post:postPhotographer
-}
+module.exports = {
+    get: getPhotographer,
+    post: postPhotographer
+};
+
+
+

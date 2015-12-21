@@ -39,10 +39,10 @@
                 </div>
                 <div class="br">
                     <span>手持证件照 </span>
-                    <img width="200" data-original="{{taove.credentialsPhotoUrl}}" alt=""/>
+                    <img width="200" src="/img/alpha.png" data-original="{{taove.credentialsPhotoUrl}}" alt=""/>
                 </div>
                 <div class="br">
-                    <a href="{{static}}admin/photographer?fix=1">修改</a>
+                    <a class="button" href="{{static}}admin/photographer?fix=1">修改</a>
                 </div>
             </form>
 
@@ -111,6 +111,8 @@
 
 
     </div>
+
+
     {{/if}}
 
 </div>
@@ -204,45 +206,50 @@
 
 {{#extend "pcScripts"}}
     <script src="{{static}}admin/js/photographer.js"></script>
-    <script src="{{static}}common/fine-uploader/fine-uploader.js"></script>
-    <script>
 
-        //上传证件照
-        $(function(){
+    {{#if apllication}}
+        <script src="{{static}}common/fine-uploader/fine-uploader.js"></script>
+        <script>
 
-            var galleryUploader = new qq.FineUploader({
-                element: document.getElementById("fine-uploader-gallery"),
-                template: 'qq-template-gallery',
-                request: {
-                    endpoint: '{{static}}admin/photographer'
-                },
-                thumbnails: {
-                    placeholders: {
-                        waitingPath: '{{static}}common/fine-uploader/placeholders/waiting-generic.png',
-                        notAvailablePath: '{{static}}common/fine-uploader/placeholders/not_available-generic.png'
-                    }
-                },
-                multiple:false,
+            //上传证件照
+            $(function(){
 
-                validation: {
-                    allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-                    sizeLimit:1024*1024*2,
-                    'image.maxWidth':1024,
-                    'image.maxHeight':1024
-                },
-                callbacks: {
-                    onComplete: function(id, name, response) {
-                        if (!response.success) {
-                            $('.credentialsPhotoUrl').html('图片提交失败').parent().addClass('err');
-                        } else {
-                            $('.credentialsPhotoUrl').html('图片提交成功').parent().removeClass('err');
+                var galleryUploader = new qq.FineUploader({
+                    element: document.getElementById("fine-uploader-gallery"),
+                    template: 'qq-template-gallery',
+                    request: {
+                        endpoint: '{{static}}admin/photographer'
+                    },
+                    thumbnails: {
+                        placeholders: {
+                            waitingPath: '{{static}}common/fine-uploader/placeholders/waiting-generic.png',
+                            notAvailablePath: '{{static}}common/fine-uploader/placeholders/not_available-generic.png'
+                        }
+                    },
+                    multiple:false,
+
+                    validation: {
+                        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
+                        sizeLimit:1024*1024*2,
+                        'image.maxWidth':1024,
+                        'image.maxHeight':1024
+                    },
+                    callbacks: {
+                        onComplete: function(id, name, response) {
+                            if (!response.success) {
+                                $('.credentialsPhotoUrl').html('图片提交失败').parent().addClass('err');
+                            } else {
+                                $('.credentialsPhotoUrl').html('图片提交成功').parent().removeClass('err');
+                            }
                         }
                     }
-                }
-            });
-        })
+                });
+            })
 
-    </script>
+        </script>
+    {{else}}
+
+    {{/if}}
 {{/extend}}
 
 

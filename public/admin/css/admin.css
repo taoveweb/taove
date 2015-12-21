@@ -501,10 +501,11 @@
     padding-left: 178px;
     padding-bottom: 17px;
     min-height: 24px;
+    color: #000;
 
 }
 .photographer-form .br span{
-    color: #6D6D6D;
+    color: #818181;
     position: absolute;
     width: 166px;
     text-align: right;
@@ -528,7 +529,8 @@
 .photographer-form .br textarea{
     height: 60px;
 }
-.photographer-form button{
+.photographer-form button,
+.photographer-form .button{
     width: 198px;
     height: 35px;
     text-align: center;
@@ -540,6 +542,8 @@
     border-radius: 3px;
     border: 0;
     color: #ffffff;
+    display: block;
+    text-align: center;
 }
 .photographer-form button:hover{
     background: #fe1e64;

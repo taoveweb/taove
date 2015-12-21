@@ -11,7 +11,17 @@ $(function () {
         }
         if (valid) {
             $.post("/admin/photographer", param, function (data) {
-                    console.log(data.success);
+                    if(data.success){
+
+                    }
+
+                    if (!data.success) {
+                        $('.submit').html('提交信息有误').parent().addClass('err');
+                        valid = false;
+
+                    } else {
+                        $('.submit').html('提交申请成功正在审批').parent().removeClass('err');
+                    }
                 }
             )
         }

@@ -10,44 +10,82 @@
 
 <div class="main clearfix">
     {{> left}}
+    {{#if application}}
+        <div class="content photographer-form">
+            <form>
+                <div class="br">
+                    <span>真实姓名</span>{{taove.realName}}
+                </div>
+                <div class="br">
+                    <span>邮箱</span>{{taove.email}}
+                </div>
+                <div class="br">
+                    <span>从业时间(年)</span>{{taove.fromTime}}
+                </div>
+                <div class="br">
+                    <span>一句话简介</span>{{taove.singed}}
+                </div>
+                <div class="br">
+                    <span>拍摄地址城市</span>{{taove.city}}
+                </div>
+                <div class="br">
+                    <span>自我介绍</span>{{taove.selfIntroduction}}
+                </div>
+                <div class="br">
+                    <span>你的跟从化妆师简介</span>{{taove.makeuperIntroduction}}
+                </div>
+                <div class="br">
+                    <span>最擅长风格</span>{{taove.goodStyle}}
+                </div>
+                <div class="br">
+                    <span>手持证件照 </span>
+                    <img width="200" data-original="{{taove.credentialsPhotoUrl}}" alt=""/>
+                </div>
+                <div class="br">
+                    <a href="{{static}}admin/photographer?fix=1">修改</a>
+                </div>
+            </form>
+
+
+        </div>
+    {{else}}
     <div class="content photographer-form">
         <form>
             <div class="br">
-                <span>真实姓名</span><input name="realName" type="text"/>
+                <span>真实姓名</span><input name="realName" value="{{taove.realName}}"  type="text"/>
 
                 <p class="realName"></p>
             </div>
-<!--            <div class="br">
-                <span>手机号码</span><input name="phone" type="text"/>
-                <p class="phone"></p>
-            </div>-->
+            <!--            <div class="br">
+                            <span>手机号码</span><input name="phone" type="text"/>
+                            <p class="phone"></p>
+                        </div>-->
             <div class="br">
-                <span>邮箱</span><input name="email" type="text"/>
+                <span>邮箱</span><input name="email" value="{{taove.email}}" type="text"/>
 
                 <p class="email"></p>
             </div>
             <div class="br">
-                <span>从业时间(年)</span><input name="fromTime" type="text"/>
+                <span>从业时间(年)</span><input name="fromTime" value="{{taove.fromTime}}" type="text"/>
 
                 <p class="fromTime"></p>
             </div>
             <div class="br">
-                <span>一句话简介</span><input name="singed" type="text"/>
+                <span>一句话简介</span><input name="singed" value="{{taove.singed}}"  type="text"/>
 
                 <p class="singed"></p>
             </div>
             <div class="br">
-                <span>拍摄地址城市</span><input name="city" type="text"/>
+                <span>拍摄地址城市</span><input name="city" value="{{taove.singed}}"   type="text"/>
 
                 <p class="city"></p>
             </div>
             <div class="br">
-                <span>自我介绍</span><textarea name="selfIntroduction"></textarea>
-
+                <span>自我介绍</span><textarea name="selfIntroduction">{{taove.selfIntroduction}}</textarea>
                 <p class="selfIntroduction"></p>
             </div>
             <div class="br">
-                <span>你的跟从化妆师简介</span> <textarea name="makeuperIntroduction"></textarea>
+                <span>你的跟从化妆师简介</span> <textarea name="makeuperIntroduction">{{taove.makeuperIntroduction}}</textarea>
 
                 <p class="makeuperIntroduction"></p>
             </div>
@@ -73,6 +111,8 @@
 
 
     </div>
+    {{/if}}
+
 </div>
 
 

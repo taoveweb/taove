@@ -9,10 +9,31 @@ var Taove = db.Taove;
 
 
 function getPhotographer(req, res, next) {
-    res.render('admin/photographer', {title: '摄影师申请入驻', layout: 'layout_pc'});
+
+    Taove.findOne({phone: req.session.userId['phone']}, function (err, doc) {
+        if (doc.application && !req.query.fix) {
+            res.render('admin/photographer',
+                {
+                    title: '摄影师申请入驻',
+                    taove:doc,
+                    application:true,
+                    layout: 'layout_pc'
+                })
+        } else {
+            res.render('admin/photographer',
+                {
+                    title: '摄影师申请入驻',
+                    taove:doc,
+                    application:false,
+                    layout: 'layout_pc'
+                })
+        }
+    });
+
 }
 function postPhotographer(req, res, next) {
     console.log('postAlbum------------');
+
     if (!req.body.realName) {
         console.log('这是提交图片');
         updateCredentialsPhotoUrl(req, res, next);
@@ -24,8 +45,6 @@ function postPhotographer(req, res, next) {
 
     // res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
 }
-
-
 
 
 //证件照
@@ -94,7 +113,7 @@ function update(req, res) {
             selfIntroduction: req.body.selfIntroduction,
             makeuperIntroduction: req.body.makeuperIntroduction,
             goodStyle: req.body.goodStyle,
-            application:true,
+            application: true,
             updated: new Date()
         }, function (err, doc) {
             if (err) {

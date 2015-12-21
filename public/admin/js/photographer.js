@@ -20,6 +20,7 @@ $(function () {
                         valid = false;
 
                     } else {
+                        document.location.href='/admin/photographer';
                         $('.submit').html('提交申请成功正在审批').parent().removeClass('err');
                     }
                 }

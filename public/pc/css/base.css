@@ -529,3 +529,37 @@ em,b,i{
      overflow: hidden;
      border-top: 8px solid #fff;
 }
+
+ .base-right-bar{
+     position: fixed;
+     right: 0;
+     top: 130px;
+     -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+     border-radius: 3px;
+     overflow: hidden;
+     width: 80px;
+     z-index: 100;
+ }
+.base-right-bar a{
+    display: block;
+    text-align: center;
+    color: #fff;
+    border-bottom: 1px solid #d5d5d5;
+    height: 35px;
+    line-height: 35px;
+    background: #f98233;
+
+}
+.base-right-bar a.bar-zx{
+    background: #8fc31f;
+}
+.base-right-bar a.bar-kf{
+    background:#f6666b;
+    border-bottom: 0;
+}
+.base-right-bar a.bar-lz{
+    background: #fe555a;
+    margin-top: 10px;
+    border-bottom: none;
+}

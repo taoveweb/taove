@@ -16,7 +16,7 @@ function getPhotographer(req, res, next) {
                 {
                     title: '摄影师申请入驻',
                     taove:doc,
-                    application:true,
+                    application:1,
                     layout: 'layout_pc'
                 })
         } else {
@@ -24,7 +24,7 @@ function getPhotographer(req, res, next) {
                 {
                     title: '摄影师申请入驻',
                     taove:doc,
-                    application:false,
+                    application:0,
                     layout: 'layout_pc'
                 })
         }

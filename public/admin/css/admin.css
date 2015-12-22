@@ -507,7 +507,7 @@
 .photographer-form .br span{
     color: #818181;
     position: absolute;
-    width: 166px;
+    width: 172px;
     text-align: right;
     height: 25px;
     line-height: 25px;
@@ -517,7 +517,7 @@
 .photographer-form .br input[type=text],
 .photographer-form .br select,
 .photographer-form .br textarea{
-    width: 180px;
+    width: 642px;
     height: 23px;
     border: 1px solid #d5d5d5;
     padding:0 8px;
@@ -559,6 +559,11 @@
     font-size: 14px;
 }
 
-
+.photoCustomer{
+    color: #0000ff
+}
+.photoCustomer:hover{
+    color: #ff6600;
+}
 
 

@@ -83,7 +83,7 @@ $(function () {
                 break;
             case 'selfIntroduction':
                 if (!validate.selfIntroduction(value)) {
-                    $('.selfIntroduction').html('0到50个字的中文组字').parent().addClass('err');
+                    $('.selfIntroduction').html('不能有非法字符').parent().addClass('err');
                     valid = false;
                 } else {
                     $('.selfIntroduction').html('通过').parent().removeClass('err');
@@ -91,7 +91,7 @@ $(function () {
                 break;
             case 'makeuperIntroduction':
                 if (!validate.makeuperIntroduction(value)) {
-                    $('.makeuperIntroduction').html('0到20个字的中文组字').parent().addClass('err');
+                    $('.makeuperIntroduction').html('不能有非法字符').parent().addClass('err');
                     valid = false;
                 } else {
                     $('.makeuperIntroduction').html('通过').parent().removeClass('err');

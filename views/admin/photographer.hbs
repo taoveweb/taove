@@ -14,31 +14,34 @@
         <div class="content photographer-form">
             <form>
                 <div class="br">
-                    <span>真实姓名</span>{{taove.realName}}
+                    <span>审核状态：</span> <em style="color: #ff0000;font-weight:bold;">审核中</em> <a class="photoCustomer"  href="">联系客服></a>
                 </div>
                 <div class="br">
-                    <span>邮箱</span>{{taove.email}}
+                    <span>真实姓名：</span>{{taove.realName}}
                 </div>
                 <div class="br">
-                    <span>从业时间(年)</span>{{taove.fromTime}}
+                    <span>邮箱：</span>{{taove.email}}
                 </div>
                 <div class="br">
-                    <span>一句话简介</span>{{taove.singed}}
+                    <span>从业时间(年)：</span>{{taove.fromTime}}
                 </div>
                 <div class="br">
-                    <span>拍摄地址城市</span>{{taove.city}}
+                    <span>一句话简介：</span>{{taove.singed}}
                 </div>
                 <div class="br">
-                    <span>自我介绍</span>{{taove.selfIntroduction}}
+                    <span>拍摄地址城市：</span>{{taove.city}}
                 </div>
                 <div class="br">
-                    <span>你的跟从化妆师简介</span>{{taove.makeuperIntroduction}}
+                    <span>自我介绍：</span>{{taove.selfIntroduction}}
                 </div>
                 <div class="br">
-                    <span>最擅长风格</span>{{taove.goodStyle}}
+                    <span>你的跟从化妆师简介：</span>{{taove.makeuperIntroduction}}
                 </div>
                 <div class="br">
-                    <span>手持证件照 </span>
+                    <span>最擅长风格：</span>{{taove.goodStyle}}
+                </div>
+                <div class="br">
+                    <span>手持证件照：</span>
                     <img width="200" src="/img/alpha.png" data-original="{{taove.credentialsPhotoUrl}}" alt=""/>
                 </div>
                 <div class="br">
@@ -52,7 +55,7 @@
     <div class="content photographer-form">
         <form>
             <div class="br">
-                <span>真实姓名</span><input name="realName" value="{{taove.realName}}"  type="text"/>
+                <span>真实姓名：</span><input name="realName" value="{{taove.realName}}"  type="text"/>
 
                 <p class="realName"></p>
             </div>
@@ -61,36 +64,36 @@
                             <p class="phone"></p>
                         </div>-->
             <div class="br">
-                <span>邮箱</span><input name="email" value="{{taove.email}}" type="text"/>
+                <span>邮箱：</span><input name="email" value="{{taove.email}}" type="text"/>
 
                 <p class="email"></p>
             </div>
             <div class="br">
-                <span>从业时间(年)</span><input name="fromTime" value="{{taove.fromTime}}" type="text"/>
+                <span>从业时间(年)：</span><input name="fromTime" value="{{taove.fromTime}}" type="text"/>
 
                 <p class="fromTime"></p>
             </div>
             <div class="br">
-                <span>一句话简介</span><input name="singed" value="{{taove.singed}}"  type="text"/>
+                <span>一句话简介：</span><input name="singed" value="{{taove.singed}}"  type="text"/>
 
                 <p class="singed"></p>
             </div>
             <div class="br">
-                <span>拍摄地址城市</span><input name="city" value="{{taove.singed}}"   type="text"/>
+                <span>拍摄地址城市：</span><input name="city" value="{{taove.city}}"   type="text"/>
 
                 <p class="city"></p>
             </div>
             <div class="br">
-                <span>自我介绍</span><textarea name="selfIntroduction">{{taove.selfIntroduction}}</textarea>
+                <span>自我介绍：</span><textarea name="selfIntroduction">{{taove.selfIntroduction}}</textarea>
                 <p class="selfIntroduction"></p>
             </div>
             <div class="br">
-                <span>你的跟从化妆师简介</span> <textarea name="makeuperIntroduction">{{taove.makeuperIntroduction}}</textarea>
+                <span>你的跟从化妆师简介：</span> <textarea name="makeuperIntroduction">{{taove.makeuperIntroduction}}</textarea>
 
                 <p class="makeuperIntroduction"></p>
             </div>
             <div class="br">
-                <span>最擅长风格</span>
+                <span>最擅长风格：</span>
                 <select name="goodStyle" id="goodStyle">
                     <option value="中式古典">中式古典</option>
                     <option value="韩式简约">韩式简约</option>
@@ -100,7 +103,7 @@
                 </select>
             </div>
             <div class="br">
-                <span>手持证件照 </span><div id="fine-uploader-gallery"></div>
+                <span>手持证件照：</span><div id="fine-uploader-gallery" style="margin-right: 40px;"></div>
                 <p class="credentialsPhotoUrl"></p>
             </div>
             <div class="br">
@@ -202,12 +205,11 @@
     </div>
 </script>
 
-
-
 {{#extend "pcScripts"}}
     <script src="{{static}}admin/js/photographer.js"></script>
 
-    {{#if apllication}}
+    {{#if application}}
+    {{else}}
         <script src="{{static}}common/fine-uploader/fine-uploader.js"></script>
         <script>
 
@@ -247,8 +249,6 @@
             })
 
         </script>
-    {{else}}
-
     {{/if}}
 {{/extend}}
 

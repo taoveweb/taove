@@ -23,10 +23,10 @@
             return /^[\u4e00-\u9fa5]{0,5}$/.test($.trim(str));
         },
         selfIntroduction:function(str){
-            return /^[\u4e00-\u9fa5]{0,50}$/.test($.trim(str));
+            return /^([\u4E00-\u9FA5]|\w|（|）|\(|\)|"|'|\.|。|!|,|，|！|\d|\n|\r|、)*$/.test($.trim(str.replace(''," ")));
         },
         makeuperIntroduction:function(str){
-            return /^[\u4e00-\u9fa5]{0,20}$/.test($.trim(str));
+            return /^([\u4E00-\u9FA5]|\w|（|）|\(|\)|"|'|\.|。|!|,|，|！|\d|\n|\r|、)*$/.test($.trim(str.replace(''," ")));
         },
         password:function(str){
             return /^(\d|[A-Za-z]){6,10}$/.test($.trim(str))

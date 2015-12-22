@@ -16,19 +16,19 @@ function login (req,res){
 };
 
 function postLogin (req,res){
-  console.log(req.body);
   if(req.body.username=='admin' && req.body.password==111111){
+
     req.session.apiid={
       'username':req.body.username,
       'password':req.body.password
     };
     res.json({
-      susscess:1,
+      success:true,
       msg:'登录成功'
     });
   }else{
     res.json({
-      susscess:0,
+      success:0,
       msg:'用户名密码有误'
     });
   }

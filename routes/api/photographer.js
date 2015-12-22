@@ -18,7 +18,7 @@ router.get('/logout', doLogout); // Logout current buyer
 
 function index  (req,res){
   res.render('api/photographer',{
-    layout:'layout_admin'
+    layout:'layout_api'
   });
 };
 

@@ -1,0 +1,132 @@
+{{#extend "adminStyle"}}
+    <link rel="stylesheet" href="{{static}}api/css/admin.css"/>
+    <style>
+        .admin {
+            background: #d2d2d2;
+        }
+
+        .main-api {
+            text-align: center;
+            height: 150px;
+            width: 240px;
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            margin: -75px 0 0 -120px;
+
+        }
+
+        .main {
+            left: 0;
+        }
+
+        .leftMenu {
+            display: none;
+        }
+
+        .main-api .br {
+            padding-bottom: 10px;
+
+        }
+
+        .main-api .br input {
+            height: 28px;
+            line-height: 28px;
+            padding: 0 8px;
+            border: 1px solid #d1d1d1;
+            width: 200px;
+        }
+
+        .main-api button {
+            width: 220px;
+            height: 28px;
+            background: #cfcfcf;
+            color: #000;
+        }
+
+        .br.err p {
+            text-align: left;
+            color: #ff0000;
+        }
+
+        .br p {
+            text-align: left;
+            color: #00A000;
+            padding-left: 15px;
+        }
+    </style>
+{{/extend}}
+<form>
+    <div class="main-api">
+        <div class="br">
+            <input type="text" placeholder="用户名" name="username"/>
+
+            <p class="username"></p>
+        </div>
+        <div class="br">
+            <input type="password" placeholder="密码" name="password"/>
+
+            <p class="password"></p>
+        </div>
+        <div class="br">
+            <button>登录</button>
+            <p class="button"></p>
+        </div>
+    </div>
+
+</form>
+{{#extend "adminScripts"}}
+    <script>
+        $(function () {
+            var valid;
+            $('form').submit(function () {
+                valid = true;
+                var param = $(this).serializeArray();
+                for (var i = 0, l = param.length; i < l; i++) {
+                    validateHadler(param[i]['name'], param[i]['value'])
+                }
+                console.log(valid);
+                if (valid) {
+                    $.post("/apiLogin", param, function (data) {
+                                if (!data.success) {
+                                    $('.button').html('提交信息有误').parent().addClass('err');
+                                    valid = false;
+
+                                } else {
+                                    document.location.href = '/api';
+                                    $('.button').html(data.msg).parent().removeClass('err');
+                                }
+                            }
+                    )
+                }
+
+                return false;
+            });
+
+
+            function validateHadler(name, value) {
+
+                switch (name) {
+                    case 'username':
+                        if (!$.trim(value).length > 0) {
+                            $('.username').html('用户名有误').parent().addClass('err');
+                            valid = false;
+                        } else {
+                            $('.username').html('通过').parent().removeClass('err');
+                        }
+                        break;
+                    case 'password':
+                        if (!$.trim(value).length > 0) {
+                            $('.password').html('密码不正确').parent().addClass('err');
+                            valid = false;
+                        } else {
+                            $('.password').html('通过').parent().removeClass('err');
+                        }
+                        break;
+                }
+
+                console.log(!$.trim(value).length > 0, valid)
+            }
+        })
+    </script>
+{{/extend}}

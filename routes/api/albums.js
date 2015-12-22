@@ -25,7 +25,7 @@ router.get('/photographer', getPhotographer);
 function getAlbum(req, res, next) {
 
     res.render('api/album', {
-        layout: "layout_admin",
+        layout: "layout_api",
         title: "相册"
     });
 
@@ -142,7 +142,7 @@ function postAlbum(req, res, next) {
 
 /*用户-------------------------------------------------------*/
 function getPhotographer(req, res, next) {
-    res.render('api/photographer', {layout: "layout_admin"});
+    res.render('api/photographer', {layout: "layout_api"});
 };
 
 

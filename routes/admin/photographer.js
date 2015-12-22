@@ -11,6 +11,7 @@ var Taove = db.Taove;
 function getPhotographer(req, res, next) {
 
     Taove.findOne({phone: req.session.userId['phone']}, function (err, doc) {
+        console.log(doc);
         if (doc.application && !req.query.fix) {
             res.render('admin/photographer',
                 {

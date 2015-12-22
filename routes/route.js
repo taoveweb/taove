@@ -17,9 +17,8 @@ var index_mb = require('../routes/index');
 var sort_mb = require('../routes/sort');
 var photographer_mb = require('../routes/mobile/photographer');
 //api
-var apiUsers = require('../routes/api/users');
-var apiAlbums = require('../routes/api/albums');
-var apiPhotographer = require('../routes/api/photographer');
+var api = require('../routes/api/api');
+var apiLogin = require('../routes/api/login');
 
 //admin
 var admin = require('../routes/admin/admin'); //用户
@@ -28,8 +27,21 @@ var register = require('../routes/admin/register');
 var intention = require('../routes/admin/intention');
 
 module.exports = function (app) {
-    app.use(islogin);
 
+    //api
+    app.use('/api',function(req,res,next){
+        console.log(req.session.apiid);
+        if(req.session.apiid){
+            next();
+        }else{
+            res.redirect('/apiLogin');
+        }
+
+    }, api);
+    app.use('/apiLogin',apiLogin);
+
+
+    app.use(islogin);
     app.use('/', index_pc);
     app.use('/app', app_pc);
     app.use('/autumn', autumn_pc);
@@ -39,14 +51,11 @@ module.exports = function (app) {
     app.use('/package', package_pc);
     app.use('/wd', wd_pc);
 
-    //mobile
+    //pc
     app.use('/pc', index_mb);
     app.use('/pc/sort', sort_mb);
     app.use('/pc/photographer', photographer_mb);
 
-    //api
-    app.use('/api', apiUsers);
-    app.use('/api/albums', apiAlbums);
 
 
     //admin
@@ -85,6 +94,9 @@ module.exports = function (app) {
             next();
         }
     }
+
+
+
 
 };
 

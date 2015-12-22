@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8">
+    <link rel='stylesheet' href='{{static}}api/css/style.css'/>
+    <link rel='stylesheet' href='{{static}}api/css/api.css'/>
+    {{{block "adminStyle"}}}
+</head>
+<body>
+<div class="leftMenu">
+    <a class="user" href="{{static}}api">用户</a>
+    <a class="admin" href="{{static}}api/albums">相册</a>
+</div>
+<div class="main">
+    {{{body}}}
+</div>
+<script src="{{static}}common/js/jquery.min.js"></script>
+{{{block "adminScripts"}}}
+
+</body>
+</html>

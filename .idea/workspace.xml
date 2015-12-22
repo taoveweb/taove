@@ -22,51 +22,14 @@
   <component name="FileEditorManager">
     <splitter split-orientation="horizontal" split-proportion="0.7570934">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.5">
+        <splitter split-orientation="vertical" split-proportion="0.71428573">
           <split-first>
             <leaf>
               <file leaf-file-name="photographer.hbs" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/views/admin/photographer.hbs">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-12.214286">
-                      <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-                      <folding>
-                        <element signature="n#style#0;n#em#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#em#0;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                        <element signature="n#style#0;n#div#0;n#div#8;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="left.hbs" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/views/admin/left.hbs">
-                  <provider selected="true" editor-type-id="text-editor">
                     <state vertical-scroll-proportion="-3.392857">
-                      <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="layout_pc.hbs" pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/views/layout_pc.hbs">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.26602563">
-                      <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
-                      <folding>
-                        <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                        <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="autumn.hbs" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/views/pc/autumn.hbs">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-3.0">
-                      <caret line="320" column="0" selection-start-line="320" selection-start-column="0" selection-end-line="320" selection-end-column="0" />
+                      <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="21" selection-end-column="27" />
                       <folding />
                     </state>
                   </provider>
@@ -82,6 +45,26 @@
                   </provider>
                 </entry>
               </file>
+              <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/views/admin/albums.hbs">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="-6.392857">
+                      <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="production.hbs" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/views/admin/production.hbs">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="-3.392857">
+                      <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
               <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/public/admin/css/admin.css">
                   <provider selected="true" editor-type-id="text-editor">
@@ -92,11 +75,31 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="fine-uploader-gallery.css" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/public/common/fine-uploader/fine-uploader-gallery.css">
+              <file leaf-file-name="db.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/models/db.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-11.8">
-                      <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+                    <state vertical-scroll-proportion="0.0">
+                      <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/routes/admin/admin.js">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="0.0">
+                      <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+                      <folding />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file leaf-file-name="left.hbs" pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/views/admin/left.hbs">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state vertical-scroll-proportion="-4.75">
+                      <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -112,20 +115,10 @@
                   </provider>
                 </entry>
               </file>
-              <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/routes/admin/login.js">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0">
-                      <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
-                      <folding />
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-              <file leaf-file-name="www.js" pinned="false" current-in-tab="false">
+              <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/bin/www.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.0">
+                    <state vertical-scroll-proportion="0.08715596">
                       <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                       <folding />
                     </state>
@@ -139,8 +132,8 @@
               <file leaf-file-name="base.css" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/public/pc/css/base.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.7017544">
-                      <caret line="545" column="23" selection-start-line="545" selection-start-column="23" selection-end-line="545" selection-end-column="23" />
+                    <state vertical-scroll-proportion="0.556962">
+                      <caret line="537" column="19" selection-start-line="537" selection-start-column="19" selection-end-line="537" selection-end-column="19" />
                       <folding />
                     </state>
                   </provider>
@@ -165,7 +158,7 @@
           <file leaf-file-name="photographer.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/admin/photographer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5020862">
+                <state vertical-scroll-proportion="0.5721078">
                   <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
                   <folding />
                 </state>
@@ -200,7 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/pc/js/buyer.js" />
         <option value="$PROJECT_DIR$/views/pc/buyer/albums.hbs" />
         <option value="$PROJECT_DIR$/public/pc/css/buyer.css" />
         <option value="$PROJECT_DIR$/public/mobile/css/app.css" />
@@ -237,7 +229,6 @@
         <option value="$PROJECT_DIR$/views/admin/carts.hbs" />
         <option value="$PROJECT_DIR$/views/admin/albums.hbs" />
         <option value="$PROJECT_DIR$/views/pc/app.hbs" />
-        <option value="$PROJECT_DIR$/routes/admin/admin.js" />
         <option value="$PROJECT_DIR$/models/db.js" />
         <option value="$PROJECT_DIR$/routes/admin/photographer.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
@@ -245,12 +236,14 @@
         <option value="$PROJECT_DIR$/public/admin/js/photographer.js" />
         <option value="$PROJECT_DIR$/public/common/js/common.js" />
         <option value="$PROJECT_DIR$/public/admin/css/admin.css" />
-        <option value="$PROJECT_DIR$/views/admin/photographer.hbs" />
         <option value="$PROJECT_DIR$/public/pc/css/base.css" />
-        <option value="$PROJECT_DIR$/views/admin/left.hbs" />
-        <option value="$PROJECT_DIR$/bin/www.js" />
         <option value="$PROJECT_DIR$/views/pc/autumn.hbs" />
         <option value="$PROJECT_DIR$/views/layout_pc.hbs" />
+        <option value="$PROJECT_DIR$/views/admin/photographer.hbs" />
+        <option value="$PROJECT_DIR$/views/admin/production.hbs" />
+        <option value="$PROJECT_DIR$/routes/admin/admin.js" />
+        <option value="$PROJECT_DIR$/views/admin/left.hbs" />
+        <option value="$PROJECT_DIR$/bin/www.js" />
       </list>
     </option>
   </component>
@@ -508,6 +501,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Expess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taove" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -531,11 +538,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\taove\taove\views\admin" />
       <recent name="G:\taove\taove\public\img" />
       <recent name="G:\taove\taove\public\common\img" />
       <recent name="G:\taove\taove\public\common\js" />
       <recent name="G:\taove\taove\views\pc\buyer" />
-      <recent name="G:\taove\taove\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\taove\taove\public" />
@@ -620,7 +627,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23867229" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -630,7 +637,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496329" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1904762" sideWeight="0.49789253" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2857143" sideWeight="0.49789253" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -696,14 +703,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/admin/js/photographer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin/photographer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -743,14 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.9655173">
           <caret line="9" column="26" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/intention.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="20" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -879,22 +870,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/carts.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.7471265">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/albums.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.609195">
-          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -922,6 +897,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.67256635">
           <caret line="51" column="33" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -972,6 +948,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.4648044">
           <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -979,22 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="15" selection-start-line="112" selection-start-column="4" selection-end-line="112" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,45 +1015,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/photographer.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.214286">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#em#0;n#div#0;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#em#0;n#div#2;n#form#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#8;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/left.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.392857">
-          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pc/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="562" column="21" selection-start-line="562" selection-start-column="21" selection-end-line="562" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin/photographer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5020862">
+        <state vertical-scroll-proportion="0.5721078">
           <caret line="79" column="17" selection-start-line="79" selection-start-column="17" selection-end-line="79" selection-end-column="17" />
           <folding />
         </state>
@@ -1108,12 +1033,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layout_pc.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26602563">
+        <state vertical-scroll-proportion="-2.9642856">
           <caret line="87" column="6" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
           <folding>
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/intention.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="20" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/carts.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04656863">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/production.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.392857">
+          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/photographer.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.392857">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="21" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/albums.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.392857">
+          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/left.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.75">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pc/css/base.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="562" column="21" selection-start-line="562" selection-start-column="21" selection-end-line="562" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08715596">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

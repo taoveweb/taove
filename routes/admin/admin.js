@@ -7,8 +7,13 @@ var photographer=require('./photographer');
 router.get('/', orders);
 router.get('/carts', carts);
 router.get('/albums', albums);
+router.get('/production', production);
 router.get('/photographer', photographer.get);
 router.post('/photographer',  photographer.post);
+
+function production(req, res, next) {
+    res.render('admin/production', {title: '摄影作品', layout: 'layout_pc'});
+}
 
 function orders(req, res, next) {
     res.render('admin/orders', {title: '订单', layout: 'layout_pc'});

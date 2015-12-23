@@ -12,9 +12,9 @@
     <input type="text" name="_id" placeholder="_id"/>
     <label><input type="checkbox" name="group"/>摄影师</label>
     <button>搜索</button>
-    <div class="page-nav">
+    <div class="page-nav"  total="{{length}}">
         <span class="btn pre-btn">上一页</span>
-        <span><em class="current">{{current}}</em>/{{length}}</span>
+        <span><em id="current">{{current}}</em>/{{length}}</span>
         <span class="btn next-btn">下一页</span>
     </div>
 </div>

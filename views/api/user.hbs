@@ -12,9 +12,9 @@
     <input type="text" name="_id" placeholder="_id"/>
     <label><input type="checkbox" name="group"/>摄影师</label>
     <button>搜索</button>
-    <div class="page-nav" current="1" total="{{length}}">
+    <div class="page-nav">
         <span class="btn pre-btn">上一页</span>
-        <span><em class="current">1</em>/{{length}}</span>
+        <span><em class="current">{{current}}</em>/{{length}}</span>
         <span class="btn next-btn">下一页</span>
     </div>
 </div>
@@ -34,9 +34,9 @@
         <tr>
             <td><span>所在城市：</span>{{this.city}}</td>
             <td><span>从事时间：</span>{{this.fromTime}}</td>
-            <td><span>创建时间：</span>{{this.cyear}}/{{this.cmonth}}/{{this.cday}} {{this.chour}}:{{this.cminutes}}:{{this.cseconds}}</td>
-            <td><span>更新时间：</span>{{this.uyear}}/{{this.umonth}}/{{this.uday}} {{this.uhour}}:{{this.uminutes}}:{{this.useconds}}</td>
-            <td><span>登录时间：</span>{{this.lyear}}/{{this.lmonth}}/{{this.lday}} {{this.lhour}}:{{this.lminutes}}:{{this.lseconds}}</td>
+            <td><span>创建时间：</span>{{this.createdOn}}</td>
+            <td><span>更新时间：</span>{{this.updated}}</td>
+            <td><span>登录时间：</span>{{this.lastLogin}}</td>
         </tr>
         <tr>
             <td><span>擅长样式：</span>{{this.goodStyle}} </td>
@@ -65,7 +65,7 @@
     </table>
 {{/each}}
 {{#extend "adminScripts"}}
-    <script src="../js/users.js"></script>
+    <script src="{{static}}api/js/user.js"></script>
     <script>
 
     </script>

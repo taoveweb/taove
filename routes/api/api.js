@@ -9,6 +9,9 @@ var router = express.Router();
 router.get('/', api);
 router.get('/albums', albums);
 function api(req, res) {
+    var pagesize=2;
+    var pageNum=req.query.p || 0;
+    console.log(pageNum*pagesize,pageNum,req.query.p)
     Taove.aggregate({
             $project: {
                 nikeName: 1,
@@ -27,34 +30,16 @@ function api(req, res) {
                 goodStyle: 1,
                 selfIntroduction: 1,
                 fromTime: 1,
+                createdOn: {$dateToString: {format: "%Y-%m-%d %H:%M:%S:%L", date: "$createdOn"}},
+                lastLogin: {$dateToString: {format: "%Y-%m-%d %H:%M:%S:%L", date: "$lastLogin"}},
+                updated: {$dateToString: {format: "%Y-%m-%d %H:%M:%S:%L", date: "$updated"}}
 
-
-                cyear: {$year: "$createdOn"},
-                cmonth: {$month: "$createdOn"},
-                cday: {$dayOfMonth: "$createdOn"},
-                chour: {$hour: "$createdOn"},
-                cminutes: {$minute: "$createdOn"},
-                cseconds: {$second: "$createdOn"},
-                cmilliseconds: {$millisecond: "$createdOn"},
-                lyear: {$year: "$lastLogin"},
-                lmonth: {$month: "$lastLogin"},
-                lday: {$dayOfMonth: "$lastLogin"},
-                lhour: {$hour: "$lastLogin"},
-                lminutes: {$minute: "$lastLogin"},
-                lseconds: {$second: "$lastLogin"},
-                lmilliseconds: {$millisecond: "$lastLogin"},
-                uyear: {$year: "$updated"},
-                umonth: {$month: "$updated"},
-                uday: {$dayOfMonth: "$updated"},
-                uhour: {$hour: "$updated"},
-                uminutes: {$minute: "$updated"},
-                useconds: {$second: "$updated"},
-                umilliseconds: {$millisecond: "$updated"}
             }
-        }
+        },
+        { $skip: pageNum*pagesize },
+        {$limit:pagesize}
     ).
         exec(function (err, doc) {
-            console.log(err,doc);
             if (err) {
                 res.render('api/user', {
                     layout: 'layout_api',
@@ -62,33 +47,34 @@ function api(req, res) {
                     msg: '出错了'
                 });
             } else {
-                Taove.count({},function(err,count){
+                Taove.count(function(err,count){
                     res.render('api/user', {
                         layout: 'layout_api',
                         title: '用户中心',
                         taove: doc,
-                        length:Math.ceil(count/2)
+                        length: Math.ceil(count/2)
                     });
-                });
+                })
+
 
             }
         });
-   /* Taove.find({}, function (err, doc) {
-        // console.log(err,doc);
-        if (err) {
-            res.render('api/user', {
-                layout: 'layout_api',
-                title: '用户中心',
-                msg: '出错了'
-            });
-        } else {
-            res.render('api/user', {
-                layout: 'layout_api',
-                title: '用户中心',
-                taove: doc
-            });
-        }
-    })*/
+    /* Taove.find({}, function (err, doc) {
+     // console.log(err,doc);
+     if (err) {
+     res.render('api/user', {
+     layout: 'layout_api',
+     title: '用户中心',
+     msg: '出错了'
+     });
+     } else {
+     res.render('api/user', {
+     layout: 'layout_api',
+     title: '用户中心',
+     taove: doc
+     });
+     }
+     })*/
 
 }
 ;

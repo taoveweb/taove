@@ -62,11 +62,15 @@ function api(req, res) {
                     msg: '出错了'
                 });
             } else {
-                res.render('api/user', {
-                    layout: 'layout_api',
-                    title: '用户中心',
-                    taove: doc
+                Taove.count({},function(err,count){
+                    res.render('api/user', {
+                        layout: 'layout_api',
+                        title: '用户中心',
+                        taove: doc,
+                        length:Math.ceil(count/2)
+                    });
                 });
+
             }
         });
    /* Taove.find({}, function (err, doc) {

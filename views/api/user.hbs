@@ -12,61 +12,60 @@
     <input type="text" name="_id" placeholder="_id"/>
     <label><input type="checkbox" name="group"/>摄影师</label>
     <button>搜索</button>
-    <div class="page-nav">
-        <span class="btn">上一页</span>
-        <span><em>1</em>/35</span>
-        <span class="btn">下一页</span>
+    <div class="page-nav" current="1" total="{{length}}">
+        <span class="btn pre-btn">上一页</span>
+        <span><em class="current">1</em>/{{length}}</span>
+        <span class="btn next-btn">下一页</span>
     </div>
 </div>
 {{#each taove}}
 
     <table class="users ">
         <tr id="postData">
-            <td>昵称：{{this.nikeName}}</td>
-            <td>真实性名：{{this.realName}}</td>
-            <td>手机号码：{{this.phone}}</td>
-            <td>电子邮箱：{{this.email}}</td>
-            <td>套餐意向：{{this.intention}}</td>
+            <td><span>昵称：</span>{{this.nikeName}}</td>
+            <td><span>真实性名：</span>{{this.realName}}</td>
+            <td><span>手机号码：</span>{{this.phone}}</td>
+            <td><span>电子邮箱：</span>{{this.email}}</td>
+            <td><span>套餐意向：</span>{{this.intention}}</td>
             <td rowspan="3">
                 <button id="fixed">更新</button>
-                <button id="delete">删除</button>
             </td>
         </tr>
         <tr>
-            <td>所在城市：{{this.city}}</td>
-            <td>从事时间：{{this.fromTime}}</td>
-            <td>创建时间：{{this.cyear}}/{{this.cmonth}}/{{this.cday}} {{this.chour}}:{{this.cminutes}}:{{this.cseconds}}</td>
-            <td>更新时间：{{this.uyear}}/{{this.umonth}}/{{this.uday}} {{this.uhour}}:{{this.uminutes}}:{{this.useconds}}</td>
-            <td>登录时间：{{this.lyear}}/{{this.lmonth}}/{{this.lday}} {{this.lhour}}:{{this.lminutes}}:{{this.lseconds}}</td>
+            <td><span>所在城市：</span>{{this.city}}</td>
+            <td><span>从事时间：</span>{{this.fromTime}}</td>
+            <td><span>创建时间：</span>{{this.cyear}}/{{this.cmonth}}/{{this.cday}} {{this.chour}}:{{this.cminutes}}:{{this.cseconds}}</td>
+            <td><span>更新时间：</span>{{this.uyear}}/{{this.umonth}}/{{this.uday}} {{this.uhour}}:{{this.uminutes}}:{{this.useconds}}</td>
+            <td><span>登录时间：</span>{{this.lyear}}/{{this.lmonth}}/{{this.lday}} {{this.lhour}}:{{this.lminutes}}:{{this.lseconds}}</td>
         </tr>
         <tr>
-            <td>擅长样式：{{this.goodStyle}} </td>
-            <td>证件照：<img src="{{this.credentialsPhotoUrl}}" alt=""/></td>
-            <td>头像照：<img src="{{this.pohotoUrl}}" alt=""/></td>
+            <td><span>擅长样式：</span>{{this.goodStyle}} </td>
+            <td><span>证件照：</span><img src="{{this.credentialsPhotoUrl}}" alt=""/></td>
+            <td><span>头像照：</span><img src="{{this.pohotoUrl}}" alt=""/></td>
             <td colspan="2">
-                管理员：<input type="checkbox" name="admin" {{#if this.admin}} checked {{/if}} />
-                摄影师资格：<input type="checkbox" name="approved"  {{#if this.approved}} checked {{/if}} />
-                摄影师状态：<input type="checkbox" name="banned"  {{#if this.banned}} checked {{/if}} />
-                摄影师申请：<input type="checkbox" name="application"  {{#if this.application}} checked {{/if}} />
+                <span>管理员：</span><input type="checkbox" name="admin" {{#if this.admin}} checked {{/if}} />
+                <span>摄影师资格：</span><input type="checkbox" name="approved"  {{#if this.approved}} checked {{/if}} />
+                <span>摄影师状态：</span><input type="checkbox" name="banned"  {{#if this.banned}} checked {{/if}} />
+                <span>摄影师申请：</span><input type="checkbox" name="application"  {{#if this.application}} checked {{/if}} />
             </td>
         </tr>
         <tr>
             <td width="50%" colspan="3">
-                <span>自我介绍</span>{{this.selfIntroduction}}
+                <span>自我介绍：</span>{{this.selfIntroduction}}
             </td>
             <td colspan="3">
-                <span>化妆师</span> {{this.makeuperIntroduction}}
+                <span>化妆师：</span>{{this.makeuperIntroduction}}
             </td>
         </tr>
         <tr>
-            <td colspan="3"><a href="3">查看摄影师相册</a></td>
+            <td colspan="3"><a href="3">查看摄影师作品</a></td>
             <td colspan="3"><a href="">查看摄影师婚纱</a></td>
         </tr>
 
     </table>
 {{/each}}
 {{#extend "adminScripts"}}
-    <script src="../js/js-users.js"></script>
+    <script src="../js/users.js"></script>
     <script>
 
     </script>

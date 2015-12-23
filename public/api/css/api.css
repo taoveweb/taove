@@ -151,11 +151,16 @@ input[type=button]:hover {
     width: 528px;
 }
 .users td span {
-    display: block;
     text-align: left;
     color: #717171;
+    vertical-align: top;
 }
-
+.users td a{
+    color: #ff6600;
+}
+.users td a:hover{
+    color: #e13524;
+}
 .users td{
     position: relative;
     vertical-align: middle;

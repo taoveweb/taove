@@ -7,7 +7,7 @@
 {{/extend}}
 
 <div class="header">
-    <input type="text"name="phone" placeholder="手机号"/>
+    <input type="text" name="phone" placeholder="手机号"/>
     <input type="text" name="realName" placeholder="真实姓名"/>
     <input type="text" name="_id" placeholder="_id"/>
     <label><input type="checkbox" name="group"/>摄影师</label>
@@ -20,49 +20,50 @@
 </div>
 {{#each taove}}
 
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" value="{{this.nikeName}}" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" value="{{this.realName}}"  name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" value="{{this.phone}}"  name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" value="{{this.password}}"  name="password" placeholder="密码"/></td>
-        <td><input type="email" value="{{this.email}}"  name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" value="{{this.city}}"  name="city" placeholder="所在城市"/></td>
-        <td><input type="text" value="{{this.lastLogin}}"  name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" value="{{this.updated}}"  name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" value="{{this.createdOn}}"  name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍">{{this.selfIntroduction}} </textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" value="{{this.fromTime}}"  name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" value="{{this.intention}}"  name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" value="{{this.makeuperIntroduction}}"  name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select  value="{{this.goodStyle}}"  name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
+    <table class="users ">
+        <tr id="postData">
+            <td>昵称：{{this.nikeName}}</td>
+            <td>真实性名：{{this.realName}}</td>
+            <td>手机号码：{{this.phone}}</td>
+            <td>电子邮箱：{{this.email}}</td>
+            <td>套餐意向：{{this.intention}}</td>
+            <td rowspan="3">
+                <button id="fixed">更新</button>
+                <button id="delete">删除</button>
+            </td>
+        </tr>
+        <tr>
+            <td>所在城市：{{this.city}}</td>
+            <td>从事时间：{{this.fromTime}}</td>
+            <td>创建时间：{{this.cyear}}/{{this.cmonth}}/{{this.cday}} {{this.chour}}:{{this.cminutes}}:{{this.cseconds}}</td>
+            <td>更新时间：{{this.uyear}}/{{this.umonth}}/{{this.uday}} {{this.uhour}}:{{this.uminutes}}:{{this.useconds}}</td>
+            <td>登录时间：{{this.lyear}}/{{this.lmonth}}/{{this.lday}} {{this.lhour}}:{{this.lminutes}}:{{this.lseconds}}</td>
+        </tr>
+        <tr>
+            <td>擅长样式：{{this.goodStyle}} </td>
+            <td>证件照：<img src="{{this.credentialsPhotoUrl}}" alt=""/></td>
+            <td>头像照：<img src="{{this.pohotoUrl}}" alt=""/></td>
+            <td colspan="2">
+                管理员：<input type="checkbox" name="admin" {{#if this.admin}} checked {{/if}} />
+                摄影师资格：<input type="checkbox" name="approved"  {{#if this.approved}} checked {{/if}} />
+                摄影师状态：<input type="checkbox" name="banned"  {{#if this.banned}} checked {{/if}} />
+                摄影师申请：<input type="checkbox" name="application"  {{#if this.application}} checked {{/if}} />
+            </td>
+        </tr>
+        <tr>
+            <td width="50%" colspan="3">
+                <span>自我介绍</span>{{this.selfIntroduction}}
+            </td>
+            <td colspan="3">
+                <span>化妆师</span> {{this.makeuperIntroduction}}
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3"><a href="3">查看摄影师相册</a></td>
+            <td colspan="3"><a href="">查看摄影师婚纱</a></td>
+        </tr>
 
-</table>
+    </table>
 {{/each}}
 {{#extend "adminScripts"}}
     <script src="../js/js-users.js"></script>

@@ -118,8 +118,8 @@ var TaoveSchema = new Schema({
     selfIntroduction: {type: String, trim: true},//自我介绍
     fromTime: {type: String, trim: true},//20150202 从事时间
     intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
-    lastLogin: Date,//最后登录时间
-    updated: Date,//更新日期
+    lastLogin: {type: Date, default: Date.now()},//最后登录时间
+    updated: {type: Date, default: Date.now()},//更新日期
     createdOn: {type: Date, default: Date.now()},//创建时间
     userAlbumsid:[Schema.Types.Mixed],//用户摄影相册  TaoveSchemaId_photographyerAlbumsId
     "pay":[pay],//账单
@@ -128,7 +128,10 @@ var TaoveSchema = new Schema({
     "myshop":[myshop],//商品
     "message": [message]//消息
 });
-
+TaoveSchema.virtual('vcreatedOn').get(function () {
+    console.log(moment(this.createdOn).format('YYYY-MM-DD'))
+    return moment(this.createdOn).format('YYYY-MM-DD');
+});
 /*
 TaoveSchema.post('update', function() {
     console.log('update')

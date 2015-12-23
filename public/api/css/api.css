@@ -148,8 +148,7 @@ input[type=button]:hover {
     vertical-align: top;
 }
 .users td textarea{
-    height: 87px;
-
+    width: 528px;
 }
 .users td span {
     display: block;
@@ -159,13 +158,10 @@ input[type=button]:hover {
 
 .users td{
     position: relative;
+    vertical-align: middle;
 }
 
 .users td img{
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    display: block;
     width: 40px;
     height: 40px;
 }
@@ -216,6 +212,7 @@ input[type=button]:hover {
     cursor: pointer;
     margin-right: 12px;
 }
+
 .header button{
     display: inline-block;
     width: 60px;
@@ -264,4 +261,8 @@ input[type=button]:hover {
 }
 .imglist span:hover{
     color: #ff0000;
+}
+
+.users input[type=checkbox]{
+    margin-right: 15px;
 }

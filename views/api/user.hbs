@@ -5,6 +5,7 @@
         }
     </style>
 {{/extend}}
+
 <div class="header">
     <input type="text"name="phone" placeholder="手机号"/>
     <input type="text" name="realName" placeholder="真实姓名"/>
@@ -17,28 +18,30 @@
         <span class="btn">下一页</span>
     </div>
 </div>
+{{#each taove}}
+
 <table class="users ">
     <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
+        <td><input type="text" value="{{this.nikeName}}" name="nikeName" placeholder="昵称"/></td>
+        <td><input type="text" value="{{this.realName}}"  name="realName" placeholder="真实性名"/></td>
+        <td><input type="text" value="{{this.phone}}"  name="phone" placeholder="手机号码"/></td>
+        <td><input type="password" value="{{this.password}}"  name="password" placeholder="密码"/></td>
+        <td><input type="email" value="{{this.email}}"  name="email" placeholder="电子邮箱"/></td>
         <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
     </tr>
     <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
+        <td><input type="text" value="{{this.city}}"  name="city" placeholder="所在城市"/></td>
+        <td><input type="text" value="{{this.lastLogin}}"  name="lastLogin" placeholder="最后登录时间"/></td>
+        <td><input type="text" value="{{this.updated}}"  name="updated" placeholder="更新时间"/></td>
+        <td><input type="text" value="{{this.createdOn}}"  name="createdOn" placeholder="创建时间"/></td>
+        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍">{{this.selfIntroduction}} </textarea></td>
     </tr>
     <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
+        <td><span>从事时间:</span><input type="text" value="{{this.fromTime}}"  name="fromTime" placeholder="从事时间"/></td>
+        <td><span>套餐意向:</span><input type="text" value="{{this.intention}}"  name="intention" placeholder="套餐意向"/></td>
+        <td><span>化妆师:</span><input type="text" value="{{this.makeuperIntroduction}}"  name="makeuperIntroduction" placeholder="化妆师"/></td>
         <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
+            <select  value="{{this.goodStyle}}"  name="goodStyle" id="goodStyle">
                 <option value="中式古典">中式古典</option>
                 <option value="韩式简约">韩式简约</option>
                 <option value="欧式奢华">欧式奢华</option>
@@ -60,393 +63,7 @@
     </tr>
 
 </table>
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
-
-</table>
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
-
-</table>
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
-
-</table>
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
-
-</table>
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
-
-</table>
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
-
-</table>
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
-
-</table>
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
-
-</table>
-<table class="users ">
-    <tr id="postData">
-        <td><input type="text" name="nikeName" placeholder="昵称"/></td>
-        <td><input type="text" name="realName" placeholder="真实性名"/></td>
-        <td><input type="text" name="phone" placeholder="手机号码"/></td>
-        <td><input type="password" name="password" placeholder="密码"/></td>
-        <td><input type="email" name="email" placeholder="电子邮箱"/></td>
-        <td rowspan="5"><button id="fixed">更新</button><button id="delete">删除</button></td>
-    </tr>
-    <tr>
-        <td><input type="text" name="city" placeholder="所在城市"/></td>
-        <td><input type="text" name="lastLogin" placeholder="最后登录时间"/></td>
-        <td><input type="text" name="updated" placeholder="更新时间"/></td>
-        <td><input type="text" name="createdOn" placeholder="创建时间"/></td>
-        <td rowspan="2"><textarea type="text" name="selfIntroduction" placeholder="自我介绍"></textarea></td>
-    </tr>
-    <tr>
-        <td><span>从事时间:</span><input type="text" name="fromTime" placeholder="从事时间"/></td>
-        <td><span>套餐意向:</span><input type="text" name="intention" placeholder="套餐意向"/></td>
-        <td><span>化妆师:</span><input type="text" name="makeuperIntroduction" placeholder="化妆师"/></td>
-        <td><span>擅长样式:</span>
-            <select name="goodStyle" id="goodStyle">
-                <option value="中式古典">中式古典</option>
-                <option value="韩式简约">韩式简约</option>
-                <option value="欧式奢华">欧式奢华</option>
-                <option value="唯美自然">唯美自然</option>
-                <option value="个性时尚">个性时尚</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><span>证件照:</span><input type="file" name="credentialsPhotoUrl"/><img src="" alt=""/></td>
-        <td><span>头像链接:</span><input type="file" name="pohotoUrl"/><img src="" alt=""/></td>
-        <td><span>管理员:</span><input type="checkbox" name="admin"/></td>
-        <td><span>摄影师资格:</span><input type="checkbox" name="approved"/></td>
-        <td><span>摄影师状态:</span><input type="checkbox" name="banned"/></td>
-    </tr>
-    <tr>
-        <td><span>摄影师相册：</span><a href="">查看摄影师相册</a></td>
-        <td colspan="4"><span>摄影师的婚纱：</span><a href="">查看摄影师婚纱</a></td>
-    </tr>
-
-</table>
+{{/each}}
 {{#extend "adminScripts"}}
     <script src="../js/js-users.js"></script>
     <script>

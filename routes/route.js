@@ -64,8 +64,6 @@ module.exports = function (app) {
     app.use('/login', login);
     app.use('/register', register);
     app.use('/intention', intention);
-
-
     app.get('/loginOut', loginOut);
 
 

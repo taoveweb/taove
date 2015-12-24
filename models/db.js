@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var DateOnly = require('mongoose-dateonly')(mongoose);
 var dbURI = 'mongodb://taove:taove@localhost/test';
 var dbOptions = {'user': 'taove', 'pass': 'taove'};
 var Schema = mongoose.Schema;

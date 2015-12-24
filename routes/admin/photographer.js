@@ -78,7 +78,7 @@ function updateCredentialsPhotoUrl(req, res, next) {
             {phone: req.session.userId['phone']},
             {
                 credentialsPhotoUrl: "/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/' + imgname,
-                updated: new Date()
+                updated: new Date(new Date().getTime()+60*60*8*1000)
             },
             function (err, doc) {
                 if (err) {
@@ -114,7 +114,7 @@ function update(req, res) {
             makeuperIntroduction: req.body.makeuperIntroduction,
             goodStyle: req.body.goodStyle,
             application: true,
-            updated: new Date()
+            updated: new Date(new Date().getTime()+60*60*8*1000)
         }, function (err, doc) {
             if (err) {
                 console.log(err)

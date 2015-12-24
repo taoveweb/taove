@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+var DateOnly = require('mongoose-dateonly')(mongoose);
 var dbURI = 'mongodb://taove:taove@localhost/test';
 var dbOptions = {'user': 'taove', 'pass': 'taove'};
 var Schema = mongoose.Schema;
@@ -62,7 +63,7 @@ var photographyerAlbums = new Schema({
 //账单
 var pay=new Schema({
     payMony:Number,
-    createdOn:{type: Date, default: Date.now()}//创建时间
+    createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}//创建时间
 });
 
 //消息
@@ -118,9 +119,9 @@ var TaoveSchema = new Schema({
     selfIntroduction: {type: String, trim: true},//自我介绍
     fromTime: {type: String, trim: true},//20150202 从事时间
     intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
-    lastLogin: {type: Date, default: Date.now()},//最后登录时间
-    updated: {type: Date, default: Date.now()},//更新日期
-    createdOn: {type: Date, default: Date.now()},//创建时间
+    lastLogin: {type: Date, default: new Date().getTime()+60*60*8*1000},//最后登录时间
+    updated: {type: Date, default: new Date().getTime()+60*60*8*1000},//更新日期
+    createdOn: {type: Date, default: new Date().getTime()+60*60*8*1000},//创建时间
     userAlbumsid:[Schema.Types.Mixed],//用户摄影相册  TaoveSchemaId_photographyerAlbumsId
     "pay":[pay],//账单
     "posts":[posts],//提交的评论、喜欢

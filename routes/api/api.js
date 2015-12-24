@@ -7,12 +7,48 @@ var router = express.Router();
 /* GET users listing. */
 
 router.get('/', api);
+router.post('/', postApi);
 router.get('/albums', albums);
+
+function postApi(req,res,next){
+    var params=req.body;
+    Taove.findOneAndUpdate({
+        phone:params.phone
+    },{
+        $set:{
+            admin:params.admin=="true",
+            approved:params.approved=="true",
+            banned:params.banned=="true",
+            application:params.application=="true"
+        }
+    },function(err,doc){
+        res.json({
+            err:err,
+            //doc:doc,
+            //post:params,
+            success:true,
+            msg:'提交成功'
+        })
+    })
+
+}
 function api(req, res) {
-    var pagesize=2;
-    var pageNum=req.query.p || 0;
-    console.log(pageNum*pagesize,pageNum,req.query.p)
-    Taove.aggregate({
+    var pagesize=10;
+    var pageNum=req.query.p || 1;
+    var match={};
+    if(req.query.application=='true'){
+        match.application=true;
+    }
+    if(req.query.phone){
+        match.phone=parseInt(req.query.phone);
+    }
+    if(req.query.realName){
+        match.realName=req.query.realName;
+    }
+    console.log(match);
+    Taove.aggregate(
+        {$match:match},
+        {
             $project: {
                 nikeName: 1,
                 realName: 1,
@@ -30,16 +66,17 @@ function api(req, res) {
                 goodStyle: 1,
                 selfIntroduction: 1,
                 fromTime: 1,
-                createdOn: {$dateToString: {format: "%Y-%m-%d %H:%M:%S:%L", date: "$createdOn"}},
-                lastLogin: {$dateToString: {format: "%Y-%m-%d %H:%M:%S:%L", date: "$lastLogin"}},
-                updated: {$dateToString: {format: "%Y-%m-%d %H:%M:%S:%L", date: "$updated"}}
+                createdOn: {$dateToString: {format: "%Y-%m-%d %H:%M:%S", date: "$createdOn"}},
+                lastLogin: {$dateToString: {format: "%Y-%m-%d %H:%M:%S", date: "$lastLogin"}},
+                updated: {$dateToString: {format: "%Y-%m-%d %H:%M:%S", date: "$updated"}}
 
             }
         },
-        { $skip: pageNum*pagesize },
+        { $skip: (parseInt(pageNum)-1)*pagesize },
         {$limit:pagesize}
     ).
         exec(function (err, doc) {
+            console.log(err);
             if (err) {
                 res.render('api/user', {
                     layout: 'layout_api',
@@ -52,32 +89,14 @@ function api(req, res) {
                         layout: 'layout_api',
                         title: '用户中心',
                         taove: doc,
-                        length: Math.ceil(count/2)
+                        current:parseInt(pageNum),
+                        application:req.query.application=='true',
+                        length: Math.ceil(count/pagesize)
                     });
                 })
-
-
             }
         });
-    /* Taove.find({}, function (err, doc) {
-     // console.log(err,doc);
-     if (err) {
-     res.render('api/user', {
-     layout: 'layout_api',
-     title: '用户中心',
-     msg: '出错了'
-     });
-     } else {
-     res.render('api/user', {
-     layout: 'layout_api',
-     title: '用户中心',
-     taove: doc
-     });
-     }
-     })*/
-
-}
-;
+};
 
 function albums(req, res) {
     res.render('api/album', {

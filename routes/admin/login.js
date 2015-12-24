@@ -44,6 +44,7 @@ function post(req, res, next) {
                     req.session.userId = {};
                 }
                 req.session.userId['phone']=req.body.phone;
+                req.session.userId['approved']=doc.approved;
                 res.json({ok: 1, msg: "登录成功"});
             }
 

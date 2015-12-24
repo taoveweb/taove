@@ -163,7 +163,6 @@ input[type=button]:hover {
 }
 .users td{
     position: relative;
-    vertical-align: middle;
 }
 
 .users td img{
@@ -173,6 +172,7 @@ input[type=button]:hover {
 
 .users td button{
     display: block;
+
     margin-bottom: 10px;
 }
 
@@ -269,5 +269,7 @@ input[type=button]:hover {
 }
 
 .users input[type=checkbox]{
-    margin-right: 15px;
+    margin-left: 20px;
+    position: relative;
+    top: 2px;
 }

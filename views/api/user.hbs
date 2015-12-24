@@ -7,11 +7,10 @@
 {{/extend}}
 
 <div class="header">
-    <input type="text" name="phone" placeholder="手机号"/>
-    <input type="text" name="realName" placeholder="真实姓名"/>
-    <input type="text" name="_id" placeholder="_id"/>
-    <label><input type="checkbox" name="group"/>摄影师</label>
-    <button>搜索</button>
+    <input id="phone" type="text" name="phone" placeholder="手机号"/>
+    <input id="realName" type="text" name="realName" placeholder="真实姓名"/>
+    <label><input type="checkbox" {{#if application}}checked{{/if}} class="application" />摄影师申请</label>
+    <button id="search">搜索</button>
     <div class="page-nav"  total="{{length}}">
         <span class="btn pre-btn">上一页</span>
         <span><em id="current">{{current}}</em>/{{length}}</span>
@@ -19,7 +18,7 @@
     </div>
 </div>
 {{#each taove}}
-
+    <form>
     <table class="users ">
         <tr id="postData">
             <td><span>昵称：</span>{{this.nikeName}}</td>
@@ -28,7 +27,7 @@
             <td><span>电子邮箱：</span>{{this.email}}</td>
             <td><span>套餐意向：</span>{{this.intention}}</td>
             <td rowspan="3">
-                <button id="fixed">更新</button>
+                <button phone="{{this.phone}}" class="fixed">更新</button>
             </td>
         </tr>
         <tr>
@@ -43,10 +42,10 @@
             <td><span>证件照：</span><img src="{{this.credentialsPhotoUrl}}" alt=""/></td>
             <td><span>头像照：</span><img src="{{this.pohotoUrl}}" alt=""/></td>
             <td colspan="2">
-                <span>管理员：</span><input type="checkbox" name="admin" {{#if this.admin}} checked {{/if}} />
-                <span>摄影师资格：</span><input type="checkbox" name="approved"  {{#if this.approved}} checked {{/if}} />
-                <span>摄影师状态：</span><input type="checkbox" name="banned"  {{#if this.banned}} checked {{/if}} />
-                <span>摄影师申请：</span><input type="checkbox" name="application"  {{#if this.application}} checked {{/if}} />
+                <input type="checkbox" name="admin" {{#if this.admin}} checked {{/if}} /><span>管理员</span>
+                <input type="checkbox" name="approved"  {{#if this.approved}} checked {{/if}} /><span>摄影师资格</span>
+                <input type="checkbox" name="banned"  {{#if this.banned}} checked {{/if}} /><span>摄影师状态</span>
+               <input type="checkbox" name="application"  {{#if this.application}} checked {{/if}} /><span>摄影师申请</span>
             </td>
         </tr>
         <tr>
@@ -63,6 +62,7 @@
         </tr>
 
     </table>
+    </form>
 {{/each}}
 {{#extend "adminScripts"}}
     <script src="{{static}}api/js/user.js"></script>

@@ -4,7 +4,7 @@
     font-size: 16px;
 }
 .left{
-    width: 120px;
+    width: 102px;
     float: left;
     border-right: 1px solid #d5d5d5;
 }
@@ -20,7 +20,7 @@
     border-left: 1px solid #d5d5d5;
     margin-left: -1px;
     float: left;
-    width: 879px;
+    width: 896px;
     min-height: 600px;
 
 }

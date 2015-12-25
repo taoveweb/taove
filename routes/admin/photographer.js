@@ -2,6 +2,7 @@
  * Created by Administrator on 2015/12/21 0021.
  */
 var formidable = require('formidable');
+var crypto=require('crypto');
 var fs = require('fs');
 var db = require('../../models/db');
 var ObjectId = db.ObjectId;
@@ -9,22 +10,100 @@ var Taove = db.Taove;
 
 
 function getPhotographer(req, res, next) {
+   /* var match={};
+    match.phone=parseInt(req.session.userId['phone']);
+    console.log(match);
+    Taove.aggregate(
+        {$match: match},
+        {
+            $project: {
+                approved:1,
+                realName:{ $concat: [ { $substr: [ "$realName", 0, 3 ] }, "***"] },
+                email:{ $concat: [ { $substr: [ "$email", 0, 2 ] }, "**" ,{ $substr: [ "$email", 5, -1 ] }] },
+                phone:1,
+                fromTime:1,
+                singed:1,
+                city:1,
+                selfIntroduction:1,
+                makeuperIntroduction:1,
+                goodStyle:1,
+                credentialsPhotoUrl:1
+            }
+        }
+    ).exec(function(err,doc){
+            console.log(err,doc);
+        });*/
 
-    Taove.findOne({phone: req.session.userId['phone']}, function (err, doc) {
+    Taove.findOne({phone: req.session.userId['phone']}, function (err, taove) {
+
+        var crypto = require('crypto');
+        var cipher = crypto.createCipher('aes-256-cbc','InmbuvP6Z8');
+        var text = "123|123123123123123";
+        var crypted = cipher.update(text,'utf8','hex');
+        crypted += cipher.final('hex');
+        var decipher = crypto.createDecipher('aes-256-cbc','InmbuvP6Z8');
+        var dec = decipher.update(crypted,'hex','utf8');
+        dec += decipher.final('utf8');
+
+        console.log(dec,crypted);
+
+
+
+        var crypto = require('crypto');
+        var fs = require('fs');
+        var pem = fs.readFileSync('server.key');
+        var key = pem.toString('ascii');
+        var plaintext = new Buffer('abcdefghijklmnopqrstuv');
+        var encrypted = "";
+        var cipher = crypto.createCipher('blowfish', key);
+        encrypted += cipher.update(plaintext, 'binary', 'hex');
+        encrypted += cipher.final('hex');
+        var decrypted = "";
+        var decipher = crypto.createDecipher('blowfish', key);
+        decrypted += decipher.update(encrypted, 'hex', 'binary');
+        decrypted += decipher.final('binary');
+        var output = new Buffer(decrypted);
+        console.log('aaaaa--------------');
+        console.log(encrypted);
+        console.log(decrypted);
+
+
+
+
+
+
+        var realName=taove.realName;
+        var email=taove.email;
+        var emailIndex=email.indexOf("@");
+        var phone=taove.phone+'';
+        var doc={
+            approved:taove.approved,
+            "realName":realName.substr(0,1)+"*"+realName.substr(-1,1),
+            "email":email.substr(0,2)+"***"+email.substr(emailIndex),
+            "phone":phone.substr(0,7)+"***"+phone.substr(-1,1),
+            fromTime:taove.fromTime,
+            singed:taove.singed,
+            city:taove.city,
+            selfIntroduction:taove.selfIntroduction,
+            makeuperIntroduction:taove.makeuperIntroduction,
+            goodStyle:taove.goodStyle,
+            credentialsPhotoUrl:taove.credentialsPhotoUrl,
+            application:taove.application
+        };
         if (doc.application && !req.query.fix) {
             res.render('admin/photographer',
                 {
                     title: '摄影师申请入驻',
-                    taove:doc,
-                    application:1,
+                    "taove": doc,
+                    application: 1,
                     layout: 'layout_pc'
                 })
         } else {
             res.render('admin/photographer',
                 {
                     title: '摄影师申请入驻',
-                    taove:doc,
-                    application:0,
+                    "taove": doc,
+                    application: 0,
                     layout: 'layout_pc'
                 })
         }
@@ -78,7 +157,7 @@ function updateCredentialsPhotoUrl(req, res, next) {
             {phone: req.session.userId['phone']},
             {
                 credentialsPhotoUrl: "/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/' + imgname,
-                updated: new Date(new Date().getTime()+60*60*8*1000)
+                updated: new Date(new Date().getTime() + 60 * 60 * 8 * 1000)
             },
             function (err, doc) {
                 if (err) {
@@ -105,8 +184,8 @@ function update(req, res) {
 
     Taove.update({phone: req.session.userId['phone']},
         {
-            realName: req.body.realName,
-            email: req.body.email,
+           /* realName: req.body.realName,
+            email: req.body.email,*/
             fromTime: req.body.fromTime,
             singed: req.body.singed,
             city: req.body.city,
@@ -114,7 +193,7 @@ function update(req, res) {
             makeuperIntroduction: req.body.makeuperIntroduction,
             goodStyle: req.body.goodStyle,
             application: true,
-            updated: new Date(new Date().getTime()+60*60*8*1000)
+            updated: new Date(new Date().getTime() + 60 * 60 * 8 * 1000)
         }, function (err, doc) {
             if (err) {
                 console.log(err)

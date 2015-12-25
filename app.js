@@ -47,7 +47,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(session({
     secret: 'keyboard cat',
-    resave: false,
+    resave: true,
     rolling: true,
     cookie: {maxAge: 1000 * 60 * 30},
     saveUninitialized: true,

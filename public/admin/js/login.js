@@ -14,57 +14,66 @@ $(function () {
     $('#fogetBtn').on('click', function () {
         //('#forget').addClass('show');
         $('#forget').show();
-        $('#forget').animate({top:0});
+        $('#forget').animate({top: 0});
     })
     $('#forgetBack').on('click', function () {
         //('#forget').addClass('show');
-        $('#forget').animate({top:'-100%'});
+        $('#forget').animate({top: '-100%'});
     })
 
 });
 
 
 //登录注册
-$(function(){
-  $('#register').click(function(){
-      var that=$(this).parent();
-      postLogin(that,'r');
-  });
+$(function () {
+    $('#register').click(function () {
+        var that = $(this).parent();
+        postLogin(that, 'r');
+    });
 
-    $('#login').click(function(){
-        var that=$(this).parent();
-        postLogin(that,'l');
+    $('#login').click(function () {
+        var that = $(this).parent();
+        postLogin(that, 'l');
     });
 
 
-
-    function postLogin(that,s){
-        var parent=that;
-        var phone_val=parent.find('.phone').val();
-        var password_val=parent.find('.password').val();
-        var pass=true;
-        if(!validate.phone(phone_val)){
-            parent.find('.phone-validate').html('手机格试不正确');
-            pass=false;
+    //触发登录点击事件
+    $(document).keydown(function (e) {
+        if (e.which === 13) {
+            $('#login').trigger('click');
+            e.preventDefault();
         }
-        else{
+
+    })
+
+
+    function postLogin(that, s) {
+        var parent = that;
+        var phone_val = parent.find('.phone').val();
+        var password_val = parent.find('.password').val();
+        var pass = true;
+        if (!validate.phone(phone_val)) {
+            parent.find('.phone-validate').html('手机格试不正确');
+            pass = false;
+        }
+        else {
             parent.find('.phone-validate').html('正常');
         }
-        if(!validate.password(password_val)){
-            pass=false;
+        if (!validate.password(password_val)) {
+            pass = false;
             parent.find('.password-validate').html('密码格式由6到8位字母和数字组成');
-        }else{
+        } else {
             parent.find('.password-validate').html('正常');
         }
 
-        if( pass){
-            $.post('/login', { phone: phone_val, password: password_val,type:s},function(data){
-                if(data.ok==1){
+        if (pass) {
+            $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
+                if (data.ok == 1) {
                     parent.find('.responsemsg').html(data.msg);
-                    if(s=="l"){
-                        window.location.href='/admin';
+                    if (s == "l") {
+                        window.location.href = '/admin';
                     }
-                }else{
+                } else {
                     parent.find('.responsemsg').html(data.msg);
                 }
             })

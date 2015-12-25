@@ -36,9 +36,13 @@
 
                     <div class="bar-nav-menu">
                         <i class="arrow">sss</i>
-                        <a href="{{static}}admin">订单</a>
-                        <a href="{{static}}admin/carts">购物车</a>
+                        <a href="{{static}}admin">我的意向单</a>
+                        <a href="{{static}}admin/carts">我的购物车</a>
                         <a href="{{static}}admin/albums">我的婚纱照</a>
+                        {{#if loginInfo.approved}}
+                            <a href="{{static}}admin/production">摄影师作品</a>
+                            <a href="{{static}}admin/production">摄影师入驻</a>
+                        {{/if}}
                         <a href="{{static}}loginOut">退出</a>
                     </div>
                 </div>

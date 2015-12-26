@@ -42,6 +42,7 @@
     display: block;
     width: 173px;
     height: 64px;
+    cursor:text;
     background: url("../img/code_ma.png") no-repeat -153px -3px;
 }
 .box-a a.android_btn{
@@ -65,7 +66,7 @@
 }
 
 
-/*пео╒*/
+/*О©╫О©╫о╒*/
 .app{
     padding-bottom:60px;
     width: 960px;

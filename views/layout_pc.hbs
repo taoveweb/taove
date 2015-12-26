@@ -19,7 +19,7 @@
 <body>
 <div class="base-top">
     <div class="base-section">
-        <a class="base-logo" href="{{static}}"><img src="{{static}}pc/img/logo.png"  alt="桃微"></a>
+        <a class="base-logo" href="{{static}}"><img src="{{static}}pc/img/logo.png" alt="桃微"></a>
 
         <div class="base-nav"><a class="home-c" href="{{static}}">首页</a>
             <a class="app-c" href="{{static}}app">手机应用</a>
@@ -29,7 +29,9 @@
             {{#if loginInfo.phone}}
                 <div class="login-c">
                     <a class="login-a" href="{{static}}admin">
-                        <img src="{{static}}img/load.png"  data-original="http://image.jiapai.cn/noavatar.png@30w_30h_1c_1e.jpg" alt="18550035081" width="30"
+                        <img src="{{static}}img/load.png"
+                             data-original="http://image.jiapai.cn/noavatar.png@30w_30h_1c_1e.jpg" alt="18550035081"
+                             width="30"
                              height="30">
                         {{loginInfo.phone}}
                     </a>
@@ -41,8 +43,9 @@
                         <a href="{{static}}admin/albums">我的婚纱照</a>
                         {{#if loginInfo.approved}}
                             <a href="{{static}}admin/production">摄影师作品</a>
-                            <a href="{{static}}admin/production">摄影师入驻</a>
                         {{/if}}
+                        <a href="{{static}}admin/production">摄影师入驻</a>
+
                         <a href="{{static}}loginOut">退出</a>
                     </div>
                 </div>
@@ -91,7 +94,7 @@
     <p class="base-foot">Copyright © 2015.福州桃微网络科技有限公司 All rights reserved</p>
 </div>
 <div class="base-right-bar">
-    <a class="bar-yd yd-btn" >立即预定</a>
+    <a class="bar-yd yd-btn">立即预定</a>
     <a class="bar-zx" href="{{static}}admin/photographer">在线资询</a>
     <a class="bar-kf" href="{{static}}admin/photographer">客服热线</a>
     <a class="bar-lz" href="{{static}}admin/photographer">摄影师入驻</a>
@@ -102,7 +105,7 @@
     <div class="pop-mask"></div>
     <div class="pop-content">
         <div class="pop-top">
-            桃微2015秋季惠  <span class="pop-close">×</span>
+            桃微2015秋季惠 <span class="pop-close">×</span>
         </div>
         <div class="pop-con">
             <div class="br pop-con-top">
@@ -112,6 +115,7 @@
                 <button>现在预约＞</button>
             </div>
             <h3>如果方便,请告诉我你的意向(可选)</h3>
+
             <div class="br">
                 <span>拍摄时间</span>
                 <label><input type="radio"/>十一月</label>
@@ -138,11 +142,15 @@
                 <dl class="select">
                     <dt>请5选择路线</dt>
                     <dd>
-                        <p>万象国际摄影基地+温榆河 （韩式简约  唯美自然）</p>
+                        <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
+
                         <p>万象国际摄影基地+798艺术区 （韩式简约 个性时尚）</p>
-                        <p>万象国际摄影基地+温榆河 （韩式简约  唯美自然）</p>
-                        <p>万象国际摄影基地+温榆河 （韩式简约  唯美自然）</p>
-                        <p>万象国际摄影基地+温榆河 （韩式简约  唯美自然）</p>
+
+                        <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
+
+                        <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
+
+                        <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
                     </dd>
                 </dl>
             </div>
@@ -150,7 +158,6 @@
         </div>
     </div>
 </div>
-
 
 
 <script src="{{static}}common/js/jquery.min.js"></script>

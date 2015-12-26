@@ -73,13 +73,20 @@ function getPhotographer(req, res, next) {
 
 
         var realName=taove.realName;
+        if(realName){
+            realName=realName.substr(0,1)+"*"+realName.substr(-1,1);
+        }
         var email=taove.email;
-        var emailIndex=email.indexOf("@");
+        if(email){
+            var emailIndex=email.indexOf('@');
+            email=email.substr(0,2)+"***"+email.substr(emailIndex);
+        }
+
         var phone=taove.phone+'';
         var doc={
             approved:taove.approved,
-            "realName":realName.substr(0,1)+"*"+realName.substr(-1,1),
-            "email":email.substr(0,2)+"***"+email.substr(emailIndex),
+            "realName":realName,
+            "email":email,
             "phone":phone.substr(0,7)+"***"+phone.substr(-1,1),
             fromTime:taove.fromTime,
             singed:taove.singed,
@@ -113,11 +120,11 @@ function getPhotographer(req, res, next) {
 function postPhotographer(req, res, next) {
     console.log('postAlbum------------');
 
-    if (!req.body.realName) {
-        console.log('这是提交图片');
+    if (!req.body.fromTime) {
+        console.log('img');
         updateCredentialsPhotoUrl(req, res, next);
     } else {
-        console.log('这是申请摄影师信息');
+        console.log('info');
         update(req, res)
     }
 
@@ -156,10 +163,11 @@ function updateCredentialsPhotoUrl(req, res, next) {
         Taove.findOneAndUpdate(
             {phone: req.session.userId['phone']},
             {
-                credentialsPhotoUrl: "/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/' + imgname,
-                updated: new Date(new Date().getTime() + 60 * 60 * 8 * 1000)
+                credentialsPhotoUrl: "/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/' + imgname
+                //updated: new Date(new Date().getTime() + 60 * 60 * 8 * 1000)
             },
             function (err, doc) {
+                console.log(err);
                 if (err) {
                     console.log(err);
                     res.json({
@@ -181,20 +189,22 @@ function updateCredentialsPhotoUrl(req, res, next) {
 
 
 function update(req, res) {
+    console.log(req.body.fromTime);
 
     Taove.update({phone: req.session.userId['phone']},
         {
-           /* realName: req.body.realName,
-            email: req.body.email,*/
+            realName: req.body.realName,
+            email: req.body.email,
             fromTime: req.body.fromTime,
             singed: req.body.singed,
             city: req.body.city,
             selfIntroduction: req.body.selfIntroduction,
             makeuperIntroduction: req.body.makeuperIntroduction,
             goodStyle: req.body.goodStyle,
-            application: true,
-            updated: new Date(new Date().getTime() + 60 * 60 * 8 * 1000)
+            application: true
+            //updated: new Date(new Date().getTime() + 60 * 60 * 8 * 1000)
         }, function (err, doc) {
+
             if (err) {
                 console.log(err)
             } else {

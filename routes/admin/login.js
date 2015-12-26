@@ -13,15 +13,17 @@ function index(req, res, next) {
 
 
 function post(req, res, next) {
+    var phone=req.body.phone;
+    var password=req.body.password;
 
     //注册
     if (req.body.type == 'r') {
-        Taove.findOne({phone: req.body.phone}, function (err, doc) {
+        Taove.findOne({phone: phone}, function (err, doc) {
             if (err) {
                 res.json({ok: 0, msg: err})
             }
             if (!doc) {
-                Taove.create({phone: req.body.phone, password: req.body.password}, function (err, doc) {
+                Taove.create({phone: phone, password: password}, function (err, doc) {
                     if (err) {
                         console.error(err);
                     } else {
@@ -33,19 +35,27 @@ function post(req, res, next) {
             }
         });
     } else {//登录
-        Taove.findOne({phone: req.body.phone, password: req.body.password}, function (err, doc) {
+        Taove.findOne({phone: phone}, function (err, doc) {
             if (err) {
                 res.json({ok: 0, msg: err});
             }
             if (!doc) {
-                res.json({ok: 0, msg: "账号和密码不正确"});
+                res.json({ok: 0, msg: "无此账号"});
             } else {
-                if (!req.session.userId) {
-                    req.session.userId = {};
-                }
-                req.session.userId['phone']=req.body.phone;
-                req.session.userId['approved']=doc.approved;
-                res.json({ok: 1, msg: "登录成功",sesstion:req.session.userId});
+                doc.comparepassword(password,function(err,isMatch){
+                    if(err) return next(err);
+                    if(isMatch){
+                        if (!req.session.userId) {
+                            req.session.userId = {};
+                        }
+                        req.session.userId['phone']=req.body.phone;
+                        req.session.userId['approved']=doc.approved;
+                        res.json({ok: 1, msg: "登录成功",sesstion:req.session.userId});
+                    }else{
+                        res.json({ok: 0, msg: "密码不正确"});
+                    }
+
+                });
             }
 
         })

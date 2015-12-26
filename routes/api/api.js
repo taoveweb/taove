@@ -22,6 +22,7 @@ function postApi(req,res,next){
             application:params.application=="true"
         }
     },function(err,doc){
+        req.session.userId['approved']=doc.approved;
         res.json({
             err:err,
             //doc:doc,
@@ -51,6 +52,7 @@ function api(req, res) {
         {
             $project: {
                 nikeName: 1,
+                password: 1,
                 realName: 1,
                 phone: 1,
                 email: 1,
@@ -85,6 +87,7 @@ function api(req, res) {
                 });
             } else {
                 Taove.count(function(err,count){
+
                     res.render('api/user', {
                         layout: 'layout_api',
                         title: '用户中心',

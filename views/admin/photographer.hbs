@@ -14,10 +14,11 @@
             <form>
                 <div class="br">
                     <span>审核状态：</span>
-                    {{#if taove.approved}}
-                        <em style="color: #3dd48d;font-weight:bold;">审核通过</em> <a class="photoCustomer"  href="{{static}}admin/production">上传相册></a>
+                    {{#if loginInfo.approved}}
+                        <em style="color: #3dd48d;font-weight:bold;">审核通过</em> <a class="photoCustomer"
+                                                                                  href="{{static}}admin/production">上传相册></a>
                     {{else}}
-                        <em style="color: #ff0000;font-weight:bold;">审核中</em> <a class="photoCustomer"  href="">联系客服></a>
+                        <em style="color: #ff0000;font-weight:bold;">审核中</em> <a class="photoCustomer" href="">联系客服></a>
                     {{/if}}
 
                 </div>
@@ -60,68 +61,74 @@
 
         </div>
     {{else}}
-    <div class="content photographer-form">
-        <form>
-         <!--   <div class="br">
-                <span>真实姓名：</span><input name="realName" value="{{taove.realName}}"  type="text"/>
+        <div class="content photographer-form">
+            <form>
+                {{#if taove.approved}}
+                {{else}}
+                    <div class="br">
+                        <span>真实姓名：</span><input name="realName" value="{{taove.realName}}" type="text"/>
 
-                <p class="realName"></p>
-            </div>
-                        <div class="br">
-                            <span>手机号码</span><input name="phone" type="text"/>
-                            <p class="phone"></p>
-                        </div>
-            <div class="br">
-                &lt;!&ndash;&lt;!&ndash;<span>邮箱：</span><input name="email" value="{{taove.email}}" type="text"/>
+                        <p class="realName"></p>
+                    </div>
+                    <!--                <div class="br">
+                                        <span>手机号码</span><input name="phone" type="text"/>
+                                        <p class="phone"></p>
+                                    </div>-->
+                    <div class="br"><span>邮箱：</span><input name="email" value="{{taove.email}}" type="text"/>
 
-                <p class="email"></p>&ndash;&gt;&ndash;&gt;
-            </div>-->
-            <div class="br">
-                <span>从业时间(年)：</span><input name="fromTime" value="{{taove.fromTime}}" type="text"/>
+                        <p class="email"></p>
+                    </div>
+                {{/if}}
+                <div class="br">
+                    <span>从业时间(年)：</span><input name="fromTime" value="{{taove.fromTime}}" type="text"/>
 
-                <p class="fromTime"></p>
-            </div>
-            <div class="br">
-                <span>一句话简介：</span><input name="singed" value="{{taove.singed}}"  type="text"/>
+                    <p class="fromTime"></p>
+                </div>
+                <div class="br">
+                    <span>一句话简介：</span><input name="singed" value="{{taove.singed}}" type="text"/>
 
-                <p class="singed"></p>
-            </div>
-            <div class="br">
-                <span>拍摄地址城市：</span><input name="city" value="{{taove.city}}"   type="text"/>
+                    <p class="singed"></p>
+                </div>
+                <div class="br">
+                    <span>拍摄地址城市：</span><input name="city" value="{{taove.city}}" type="text"/>
 
-                <p class="city"></p>
-            </div>
-            <div class="br">
-                <span>自我介绍：</span><textarea name="selfIntroduction">{{taove.selfIntroduction}}</textarea>
-                <p class="selfIntroduction"></p>
-            </div>
-            <div class="br">
-                <span>你的跟从化妆师简介：</span> <textarea name="makeuperIntroduction">{{taove.makeuperIntroduction}}</textarea>
+                    <p class="city"></p>
+                </div>
+                <div class="br">
+                    <span>自我介绍：</span><textarea name="selfIntroduction">{{taove.selfIntroduction}}</textarea>
 
-                <p class="makeuperIntroduction"></p>
-            </div>
-            <div class="br">
-                <span>最擅长风格：</span>
-                <select name="goodStyle" id="goodStyle">
-                    <option value="中式古典">中式古典</option>
-                    <option value="韩式简约">韩式简约</option>
-                    <option value="欧式奢华">欧式奢华</option>
-                    <option value="唯美自然">唯美自然</option>
-                    <option value="个性时尚">个性时尚</option>
-                </select>
-            </div>
-            <div class="br">
-                <span>手持证件照：</span><div id="fine-uploader-gallery" style="margin-right: 40px;"></div>
-                <p class="credentialsPhotoUrl"></p>
-            </div>
-            <div class="br">
-                <button type="submit">提交申请</button>
-                <p class="submit"></p>
-            </div>
-        </form>
+                    <p class="selfIntroduction"></p>
+                </div>
+                <div class="br">
+                    <span>你的跟从化妆师简介：</span> <textarea
+                        name="makeuperIntroduction">{{taove.makeuperIntroduction}}</textarea>
+
+                    <p class="makeuperIntroduction"></p>
+                </div>
+                <div class="br">
+                    <span>最擅长风格：</span>
+                    <select name="goodStyle" id="goodStyle">
+                        <option value="中式古典">中式古典</option>
+                        <option value="韩式简约">韩式简约</option>
+                        <option value="欧式奢华">欧式奢华</option>
+                        <option value="唯美自然">唯美自然</option>
+                        <option value="个性时尚">个性时尚</option>
+                    </select>
+                </div>
+                <div class="br">
+                    <span>手持证件照：</span>
+
+                    <div id="fine-uploader-gallery" style="margin-right: 40px;"></div>
+                    <p class="credentialsPhotoUrl"></p>
+                </div>
+                <div class="br">
+                    <button type="submit">提交申请</button>
+                    <p class="submit"></p>
+                </div>
+            </form>
 
 
-    </div>
+        </div>
 
 
     {{/if}}
@@ -222,7 +229,7 @@
         <script>
 
             //上传证件照
-            $(function(){
+            $(function () {
 
                 var galleryUploader = new qq.FineUploader({
                     element: document.getElementById("fine-uploader-gallery"),
@@ -236,16 +243,16 @@
                             notAvailablePath: '{{static}}common/fine-uploader/placeholders/not_available-generic.png'
                         }
                     },
-                    multiple:false,
+                    multiple: false,
 
                     validation: {
                         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
-                        sizeLimit:1024*1024*2,
-                        'image.maxWidth':1024,
-                        'image.maxHeight':1024
+                        sizeLimit: 1024 * 1024 * 2,
+                        'image.maxWidth': 1024,
+                        'image.maxHeight': 1024
                     },
                     callbacks: {
-                        onComplete: function(id, name, response) {
+                        onComplete: function (id, name, response) {
                             if (!response.success) {
                                 $('.credentialsPhotoUrl').html('图片提交失败').parent().addClass('err');
                             } else {

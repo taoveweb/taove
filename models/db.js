@@ -1,4 +1,6 @@
 var mongoose = require('mongoose');
+var bcrypt=require('bcrypt');
+var SALT_WORK_FACTOR=10;
 var dbURI = 'mongodb://taove:taove@localhost/test';
 var dbOptions = {'user': 'taove', 'pass': 'taove'};
 var Schema = mongoose.Schema;
@@ -118,9 +120,9 @@ var TaoveSchema = new Schema({
     selfIntroduction: {type: String, trim: true},//自我介绍
     fromTime: {type: String, trim: true},//20150202 从事时间
     intention: Schema.Types.Mixed,//{package:'A',budget:'1500~4000',time:'201504'}
-    lastLogin: {type: Date, default: new Date().getTime()+60*60*8*1000},//最后登录时间
-    updated: {type: Date, default: new Date().getTime()+60*60*8*1000},//更新日期
-    createdOn: {type: Date, default: new Date().getTime()+60*60*8*1000},//创建时间
+    lastLogin: {type: Date, default: new Date()},//最后登录时间
+    updated: {type: Date, default: new Date()},//更新日期
+    createdOn: {type: Date, default: new Date()},//创建时间
     userAlbumsid:[Schema.Types.Mixed],//用户摄影相册  TaoveSchemaId_photographyerAlbumsId
     "pay":[pay],//账单
     "posts":[posts],//提交的评论、喜欢
@@ -128,35 +130,37 @@ var TaoveSchema = new Schema({
     "myshop":[myshop],//商品
     "message": [message]//消息
 });
-TaoveSchema.virtual('vcreatedOn').get(function () {
-    console.log(moment(this.createdOn).format('YYYY-MM-DD'))
-    return moment(this.createdOn).format('YYYY-MM-DD');
+
+
+
+TaoveSchema.pre('save',function(next){
+    var user=this;
+    if(this.isNew){
+        this.updated=this.createdOn=this.lastLogin=new Date().getTime()+60*60*8*1000
+    }else{
+        this.updated=new Date().getTime()+60*60*8*1000
+    }
+    bcrypt.genSalt(SALT_WORK_FACTOR,function(err,salt){
+        if(err) return next(err);
+        bcrypt.hash(user.password,salt,function(err,hash){
+            if(err) return next(err);
+            user.password=hash;
+            next();
+        })
+
+    });
 });
-/*
-TaoveSchema.post('update', function() {
-    console.log('update')
-    this.update({},{ $set: { updated: new Date() } });
+
+TaoveSchema.pre('update',function(next){
+    this.update({},{ $set: { updated: new Date().getTime()+60*60*8*1000} });
+    next();
 });
-TaoveSchema.post('save', function() {
-    console.log('save')
-    this.update({},{ $set: { updated: new Date() } });
-});
-TaoveSchema.post('find', function() {
-    console.log('find')
-    this.update({},{ $set: { updated: new Date() } });
-});
-TaoveSchema.pre('update', function() {
-    console.log('update')
-    this.update({},{ $set: { updated: new Date() } });
-});
-TaoveSchema.pre('save', function() {
-    console.log('save')
-    this.update({},{ $set: { updated: new Date() } });
-});
-TaoveSchema.pre('find', function() {
-    console.log('find')
-    this.update({},{ $set: { updated: new Date() } });
-});*/
+TaoveSchema.methods.comparepassword=function(_password,cb){
+    bcrypt.compare(_password,this.password,function(err,isMatch){
+        cb(err,isMatch);
+    })
+}
+
 
 var Taove = mongoose.model('Taove', TaoveSchema);
 

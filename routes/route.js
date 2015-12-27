@@ -69,12 +69,11 @@ module.exports = function (app) {
 
     function loginOut(req, res, next) {
         req.session.cookie.maxAge = 0;
-        res.locals.loginInfo = false;
+        delete res.locals.loginInfo ;
         res.redirect('/login');
     }
 
     function islogin(req, res, next) {
-        var date = new Date();
         if (!req.session.userId) {
             res.locals.loginInfo = false;
         } else {

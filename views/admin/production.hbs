@@ -1,5 +1,6 @@
 {{#extend "pcStyle"}}
     <link rel="stylesheet" href="{{static}}admin/css/admin.css">
+    <link rel="stylesheet" href="{{static}}admin/css/production.css">
     <style>
         .production {
             color: #ff4f4f;
@@ -16,52 +17,33 @@
                 <span class="createBtn">创建相册</span>
                 <span class="sortBtn">展示设置</span>
             </div>
-            <div class="panel current clearfix">
-                <div class="item upload">
-                    <div class="box">
-                    </div>
-                    <p>上传照片</p>
-                </div>
-                <div class="item">
-                    <div class="box">
-                        <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-
-                        <div class="btn clearfix">
-                            <i></i>
-                            <span>删除</span>
-                            <span>旋转</span>
-                            <span>下载</span>
-                        </div>
-                    </div>
-                    <p>木渎古镇</p>
-                </div>
-                <div class="item">
-                    <div class="box">
-                        <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-
-                        <div class="btn clearfix">
-                            <i></i>
-                            <span>删除</span>
-                            <span>旋转</span>
-                            <span>下载</span>
-                        </div>
-                    </div>
-                    <p>木渎古镇</p>
-                </div>
-                <div class="item">
-                    <div class="box">
-                        <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-
-                        <div class="btn clearfix">
-                            <i></i>
-                            <span>删除</span>
-                            <span>旋转</span>
-                            <span>下载</span>
-                        </div>
-                    </div>
-                    <p>木渎古镇</p>
-                </div>
-
+            <div class="productionlist clearfix">
+                <a href="{{static}}admin/productiondetail?production={{production}}" class="item">
+                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                    <span>枯木丽影</span>
+                </a>
+                <a href="{{static}}admin/productiondetail" class="item">
+                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                    <span>枯木丽影</span>
+                </a>
+                <a href="{{static}}admin/productiondetail" class="item">
+                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                    <span>枯木丽影</span>
+                </a><a href="{{static}}admin/productiondetail" class="item">
+                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                <span>枯木丽影</span>
+            </a>
+                <a href="{{static}}admin/productiondetail" class="item">
+                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                    <span>枯木丽影</span>
+                </a><a href="{{static}}admin/productiondetail" class="item">
+                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                <span>枯木丽影</span>
+            </a>
+                <a href="{{static}}admin/productiondetail" class="item">
+                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                    <span>枯木丽影</span>
+                </a>
             </div>
 
         </div>

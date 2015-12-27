@@ -22,6 +22,7 @@ function postApi(req,res,next){
             application:params.application=="true"
         }
     },function(err,doc){
+        //审合后重新设置审合状态
         req.session.userId['approved']=doc.approved;
         res.json({
             err:err,

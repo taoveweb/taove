@@ -9,33 +9,19 @@ var MongoStore = require('connect-mongo')(session);
 var minify = require('express-minify');
 var fs = require('fs');
 var hbs = require('hbs');
+
 var compression = require('compression');
 global.__baseDir = __dirname;
 
-var blocks = {};
+
 
 var app = express();
 app.locals.static = '/';
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
+//??hbs??
+require('./hbsregister')(hbs);
 
-/*
- hbs.registerPartial('partial', fs.readFileSync(__dirname + '/views/admin/admincss.hbs', 'utf8'));
- */
-hbs.registerPartial('left', fs.readFileSync(__dirname + '/views/admin/left.hbs', 'utf8'));//????
-hbs.registerPartials(__dirname + '/views/partials');
-hbs.registerHelper('extend', function (name, context) {
-    var block = blocks[name];
-    if (!block) {
-        block = blocks[name] = [];
-    }
-    block.push(context.fn(this)); // for older versions of handlebars, use block.push(context(this));
-});
-hbs.registerHelper('block', function (name) {
-    var val = (blocks[name] || []).join('\n');
-    blocks[name] = [];
-    return val;
-});
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -51,7 +37,7 @@ app.use(session({
     rolling: true,
     cookie: {maxAge: 1000 * 60 * 30},
     saveUninitialized: true,
-    store: new MongoStore({   //????mongodb???
+    store: new MongoStore({
         url:'mongodb://taove:taove@localhost/test'
     })
 }));

@@ -11,50 +11,45 @@
 <div class="main clearfix">
     {{> left}}
     <div class="content">
-        <div class="tab">
-            <div class="menu clearfix">
-                <span class="uploadBtn">上传图片</span>
-                <span class="createBtn">创建相册</span>
-                <span class="sortBtn">展示设置</span>
-            </div>
-            <div class="productionlist clearfix">
-                <a href="{{static}}admin/productiondetail?production={{production}}" class="item">
-                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                    <span>枯木丽影</span>
-                </a>
-                <a href="{{static}}admin/productiondetail" class="item">
-                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                    <span>枯木丽影</span>
-                </a>
-                <a href="{{static}}admin/productiondetail" class="item">
-                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                    <span>枯木丽影</span>
-                </a><a href="{{static}}admin/productiondetail" class="item">
-                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                <span>枯木丽影</span>
-            </a>
-                <a href="{{static}}admin/productiondetail" class="item">
-                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                    <span>枯木丽影</span>
-                </a><a href="{{static}}admin/productiondetail" class="item">
-                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                <span>枯木丽影</span>
-            </a>
-                <a href="{{static}}admin/productiondetail" class="item">
-                    <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                    <span>枯木丽影</span>
-                </a>
-            </div>
-
+        <div class="menu clearfix">
+            <span class="uploadBtn">上传图片</span>
+            <span class="createBtn">创建相册</span>
+            <span class="sortBtn">展示设置</span>
         </div>
-
+        <div class="productionlist clearfix">
+            <a href="{{static}}admin/productiondetail?production={{production}}" class="item">
+                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                <span>枯木丽影</span>
+            </a>
+            <a href="{{static}}admin/productiondetail" class="item">
+                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                <span>枯木丽影</span>
+            </a>
+            <a href="{{static}}admin/productiondetail" class="item">
+                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                <span>枯木丽影</span>
+            </a><a href="{{static}}admin/productiondetail" class="item">
+            <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+            <span>枯木丽影</span>
+        </a>
+            <a href="{{static}}admin/productiondetail" class="item">
+                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                <span>枯木丽影</span>
+            </a><a href="{{static}}admin/productiondetail" class="item">
+            <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+            <span>枯木丽影</span>
+        </a>
+            <a href="{{static}}admin/productiondetail" class="item ">
+                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                <span>枯木丽影</span>
+            </a>
+        </div>
     </div>
 </div>
 </div>
-
+{{> admin_production_pop}}
 {{#extend "pcScripts"}}
-    <script src="{{static}}pc/js/buyer.js"></script>
+    <script src="{{static}}admin/js/production.js"></script>
     <script>
-
     </script>
 {{/extend}}

@@ -150,9 +150,15 @@
 .select-widget:hover .select-list{
     display: block;
 }
-
+.select-widget .select-selected i{
+    right: 5px;
+}
 .select-widget:hover .select-selected{
     background: #57a4e0;
+    color: #fff;
+}
+.select-widget:hover .select-selected em,
+.select-widget:hover .select-selected i{
     color: #fff;
 }
 .typeselect{
@@ -174,19 +180,26 @@
     margin: 0 5px;
     border-bottom: 1px dashed #d5d5d5;
     cursor: pointer;
-
-    
+}
+.select-item i{
+    display: inline-block;
+    padding-left: 15px;
+    color: #858585;
+    position: absolute;
+    right: 0;
 }
 .select-item:hover{
     background: #f4f4f4;
 }
 .select-item p{
-    line-height: 15px
-;
+    line-height: 15px;
+    position: relative;
 }
 .select-item em{
     display: block;
     line-height: 15px;
+    padding-top: 3px;
+    color: #868686;
 }
 .select-item img{
     display: block;

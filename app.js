@@ -17,6 +17,9 @@ global.__baseDir = __dirname;
 
 var app = express();
 app.locals.static = '/';
+app.locals.imgStatic = '/';
+app.locals.jsStatic = '/';
+app.locals.cssStatic = '/';
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 //??hbs??

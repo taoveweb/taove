@@ -28,8 +28,10 @@ var manualUploader = new qq.FineUploader({
     },
     thumbnails: {
         placeholders: {
-            waitingPath: '/source/placeholders/waiting-generic.png',
-            notAvailablePath: '/source/placeholders/not_available-generic.png'
+            placeholders: {
+                waitingPath: '{{static}}common/fine-uploader/placeholders/waiting-generic.png',
+                notAvailablePath: '{{static}}common/fine-uploader/placeholders/not_available-generic.png'
+            }
         }
     },
     validation: {

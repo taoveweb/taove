@@ -32,6 +32,48 @@ mongoose.connection.on('SIGINT', function () {
 });
 
 
+
+
+
+//账单
+var pay=new Schema({
+    payMony:Number,
+    createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}//创建时间
+});
+
+//消息
+var message=new Schema({
+    fromId:ObjectId,
+    title:String,
+    comtent:String,
+    createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000} //创建时间
+});
+
+//提交的评论、收藏=喜欢
+var posts=new Schema({
+    likes: [{type:String}],//imgName
+    watches: [{type:String}],//imgName
+    message:[message]
+});
+
+//产品物件
+var shops=new Schema({
+    name: String,//imgName
+    photoUrl:String,//链接
+    price:Number,//价格
+    saled:Number,//已销售
+    desgin:String, //产品规格
+    createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000} //创建时间
+});
+
+//我的购买的商品
+var myshop=new Schema({
+    showid: ObjectId,//shopid
+    getPrice:Number,//购买的价格
+    num: Number, //购买数量
+    createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000} //创建时间
+});
+
 //相册图片
 var imgSchema = new Schema({
     path: {type: String, trim: true, required: true},//目录名
@@ -39,6 +81,8 @@ var imgSchema = new Schema({
     likes: [{type: ObjectId}],//user id
     watches: [{type: ObjectId}],//user id
     master: {type: Boolean, default: false},//封面
+    createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间
+    imgType:{type:Number},//图片类型 0为未修 1为精修 3相册封面 4x展架
     comment: [{
         userId: ObjectId,//user id
         time: {type: Date, default: Date.now()}, //
@@ -55,50 +99,11 @@ var photographyerAlbums = new Schema({
     style: {type: String, trim: true, required: true},//风格
     img: [imgSchema],//图片信息
     customer: ObjectId,// {buyer:user_id}//用户id
-    createdBy: String,//谁提交的
-    createOn: {type: Date, default: Date.now()},//创建时间
+    createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间
     updated: Date,
     package: {type: String, trim: true, required: true},//套餐
     approved: {type: Boolean, default: false}
 });
-//账单
-var pay=new Schema({
-    payMony:Number,
-    createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}//创建时间
-});
-
-//消息
-var message=new Schema({
-    fromId:ObjectId,
-    title:String,
-    comtent:String,
-    time:Date
-});
-
-//提交的评论、收藏=喜欢
-var posts=new Schema({
-    likes: [{type:String}],//imgName
-    watches: [{type:String}],//imgName
-    message:[message]
-});
-
-//产品物件
-var shops=new Schema({
-    name: String,//imgName
-    photoUrl:String,//链接
-    price:Number,//价格
-    saled:Number,//已销售
-    desgin:String //产品规格
-
-});
-
-//我的购买的商品
-var myshop=new Schema({
-    showid: ObjectId,//shopid
-    getPrice:Number,//购买的价格
-    num: Number //购买数量
-});
-
 
 //主表
 var TaoveSchema = new Schema({
@@ -126,7 +131,7 @@ var TaoveSchema = new Schema({
     userAlbumsid:[Schema.Types.Mixed],//用户摄影相册  TaoveSchemaId_photographyerAlbumsId
     "pay":[pay],//账单
     "posts":[posts],//提交的评论、喜欢
-    "photographyerAlbums": [photographyerAlbums],//相册id
+    "photographyerAlbums": [photographyerAlbums],//摄影师作品 相册id
     "myshop":[myshop],//商品
     "message": [message]//消息
 });

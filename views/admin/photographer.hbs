@@ -107,13 +107,7 @@
                 </div>
                 <div class="br">
                     <span>最擅长风格：</span>
-                    <select name="goodStyle" id="goodStyle">
-                        <option value="中式古典">中式古典</option>
-                        <option value="韩式简约">韩式简约</option>
-                        <option value="欧式奢华">欧式奢华</option>
-                        <option value="唯美自然">唯美自然</option>
-                        <option value="个性时尚">个性时尚</option>
-                    </select>
+                    {{>style_select}}
                 </div>
                 <div class="br">
                     <span>手持证件照：</span>
@@ -248,8 +242,10 @@
                     validation: {
                         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
                         sizeLimit: 1024 * 1024 * 2,
-                        'image.maxWidth': 1024,
-                        'image.maxHeight': 1024
+                        image:{
+                            maxWidth: 1024,
+                            maxHeight: 1024
+                        }
                     },
                     callbacks: {
                         onComplete: function (id, name, response) {

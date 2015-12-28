@@ -150,9 +150,22 @@
 .select-widget:hover .select-list{
     display: block;
 }
+
 .select-widget:hover .select-selected{
     background: #57a4e0;
     color: #fff;
+}
+.typeselect{
+    position: absolute;
+    left: 301px;
+    top: 10px;
+}
+.typeselect label{
+    display: inline-block;
+    margin-right: 10px;;
+}
+.typeselect input{
+    margin-right: 4px;
 }
 .select-item{
     position: relative;

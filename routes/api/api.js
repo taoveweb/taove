@@ -12,6 +12,7 @@ router.get('/albums', albums);
 
 function postApi(req,res,next){
     var params=req.body;
+    var options={new:true};
     Taove.findOneAndUpdate({
         phone:params.phone
     },{
@@ -21,7 +22,8 @@ function postApi(req,res,next){
             banned:params.banned=="true",
             application:params.application=="true"
         }
-    },function(err,doc){
+    },options,function(err,doc){
+
         //审合后重新设置审合状态
         req.session.userId['approved']=doc.approved;
         res.json({

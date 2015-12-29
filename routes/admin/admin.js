@@ -9,6 +9,7 @@ router.get('/', orders);
 router.get('/carts', carts);
 router.get('/albums', albums);
 router.get('/photographer', photographer.get);
+router.post('/photographer', photographer.post);
 router.get('/production', production.get);
 router.post('/production', production.post);
 router.post('/productiondetail',  production.postdetail);

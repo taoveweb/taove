@@ -50,6 +50,7 @@ function post(req, res, next) {
                         }
                         req.session.userId['phone']=req.body.phone;
                         req.session.userId['approved']=doc.approved;
+                        req.session.userId['city']=doc.city;
                         res.json({ok: 1, msg: "登录成功",sesstion:req.session.userId});
                     }else{
                         res.json({ok: 0, msg: "密码不正确"});

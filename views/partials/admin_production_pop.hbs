@@ -56,29 +56,28 @@
 
         <form action="">
             <div class="br">
-                <span>相册名称：</span> <input type="text"/><em>0/30</em>
+                <span>相册名称：</span> <input name="title" type="text"placeholder="相册名称"/><em>0/15</em>
+                <p class="title"></p>
             </div>
             <div class="br">
-                <span>相册描述：</span> <textarea placeholder="说说这个相册的故事。。。"></textarea><em>0/2000</em>
+                <span>我的客户：</span> <input name="phone" type="text" placeholder="客户的手机号"/><em></em>
+                <p class="phone"></p>
             </div>
             <div class="br">
-                <span >你的客户：</span>
-                <select name="user" id="goodStyle">
-                    <option value="中式古典">选择你的客户</option>
-                    <option value="李如花和武时彩">李如花和武时彩</option>
-                    <option value="韩式简约">韩式简约</option>
-                    <option value="欧式奢华">欧式奢华</option>
-                    <option value="唯美自然">唯美自然</option>
-                    <option value="个性时尚">个性时尚</option>
-                </select>
+                <span>相册描述：</span> <textarea name="description" placeholder="说说这个相册的故事。。。"></textarea><em>0/2000</em>
+                <p class="description"></p>
             </div>
             <div class="br">
-                <span >分类：</span>
+                <span>拍摄城市：</span>{{>city_select}}<em></em>
+            </div>
+            <div class="br">
+                <span >相册风格：</span>
                 {{>style_select}}
             </div>
             <div class="br btn">
-                <button>确定</button>
-                <button class="cancel">取消</button>
+                <a id="createAlbumsBtn" class="button">确定</a>
+                <a class="button cancel close">取消</a>
+                <p class="responsemsg"></p>
             </div>
         </form>
     </div>
@@ -171,3 +170,22 @@
         width: 60%;
     }
 </style>
+
+
+
+
+
+{{#extend "pcScripts"}}
+    <script src="{{static}}common/fine-uploader/fine-uploader.min.js"></script>
+    <script src="{{static}}admin/js/production.js"></script>
+    {{#if loginInfo.phone}}
+        <script>
+            var city="{{loginInfo.city}}";
+            $('#city').find('option').each(function () {
+                if ($(this).val() == city) {
+                    $(this).prop('selected', 'selected');
+                }
+            });
+        </script>
+    {{/if}}
+{{/extend}}

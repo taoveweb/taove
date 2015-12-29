@@ -20,12 +20,12 @@
             return /^[\u4e00-\u9fa5]{0,20}/.test($.trim(str));
         },
         city:function(str){
-            return /^[\u4e00-\u9fa5]{0,5}$/.test($.trim(str));
+            return /^[\u4e00-\u9fa5]{2,10}$/.test($.trim(str));
         },
-        selfIntroduction:function(str){
-            return /^([\u4E00-\u9FA5]|\w|（|）|\(|\)|"|'|\.|。|!|,|，|！|\d|\n|\r|、)*$/.test($.trim(str.replace(''," ")));
+        title:function(str){
+            return /^[\u4e00-\u9fa5]{2,30}$/.test($.trim(str));
         },
-        makeuperIntroduction:function(str){
+        description:function(str){
             return /^([\u4E00-\u9FA5]|\w|（|）|\(|\)|"|'|\.|。|!|,|，|！|\d|\n|\r|、)*$/.test($.trim(str.replace(''," ")));
         },
         password:function(str){

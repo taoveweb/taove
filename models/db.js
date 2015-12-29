@@ -78,6 +78,8 @@ var myshop=new Schema({
 var imgSchema = new Schema({
     path: {type: String, trim: true, required: true},//目录名
     name: {type: String, trim: true, required: true},//文件名与图片名称一样
+    title: {type: String, trim: true},//相册标题
+    description: {type: String, trim: true},//描述
     likes: [{type: ObjectId}],//user id
     watches: [{type: ObjectId}],//user id
     master: {type: Boolean, default: false},//封面
@@ -93,14 +95,14 @@ var imgSchema = new Schema({
 //相册
 var photographyerAlbums = new Schema({
     photographyId:String,//摄影师Id
-    title: {type: String, trim: true, required: true},//title
+    customer: ObjectId,//用户id
+    title: {type: String, trim: true, required: true},//相册标题
     description: {type: String, trim: true, required: true},//描述
     city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
     img: [imgSchema],//图片信息
-    customer: ObjectId,// {buyer:user_id}//用户id
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间
-    updated: Date,
+    updated:{type: Date, default: Date.now()}, //更新时间
     package: {type: String, trim: true, required: true},//套餐
     approved: {type: Boolean, default: false}
 });
@@ -137,7 +139,7 @@ var TaoveSchema = new Schema({
 });
 
 
-
+//主表预处理------------------------------------
 TaoveSchema.pre('save',function(next){
     var user=this;
     if(this.isNew){
@@ -156,6 +158,7 @@ TaoveSchema.pre('save',function(next){
     });
 });
 
+
 TaoveSchema.pre('update',function(next){
     this.update({},{ $set: { updated: new Date().getTime()+60*60*8*1000} });
     next();
@@ -164,7 +167,28 @@ TaoveSchema.methods.comparepassword=function(_password,cb){
     bcrypt.compare(_password,this.password,function(err,isMatch){
         cb(err,isMatch);
     })
-}
+};
+
+//相册预处理----------------------------------------------
+photographyerAlbums.pre('save',function(next){
+    var user=this;
+    if(this.isNew){
+        this.updated=this.createdOn=new Date().getTime()+60*60*8*1000
+    }else{
+        this.updated=new Date().getTime()+60*60*8*1000
+    }
+    next();
+});
+photographyerAlbums.pre('update',function(next){
+    this.update({},{ $set: { updated: new Date().getTime()+60*60*8*1000} });
+    next();
+});
+
+
+
+
+
+
 
 
 var Taove = mongoose.model('Taove', TaoveSchema);

@@ -11,7 +11,7 @@ function getProduction(req, res, next) {
     res.render('admin/production', {title: '摄影作品', layout: 'layout_pc'});
 }
 function postProduction(req, res, next) {
-    res.render('admin/production', {title: '摄影作品', layout: 'layout_pc'});
+    res.json({ok: 1,params:req.body,msg:'创建成功'});
 }
 function getProductiondetail(req, res, next) {
     res.render('admin/production_detail', {title: '摄影作品', layout: 'layout_pc'});

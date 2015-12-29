@@ -4,7 +4,6 @@
 var fs = require('fs');
 var blocks = {};
 module.exports=function(hbs){
-    hbs.registerPartial('left', fs.readFileSync(__dirname + '/views/admin/left.hbs', 'utf8'));//????
     hbs.registerPartials(__dirname + '/views/partials');
     hbs.registerHelper('extend', function (name, context) {
         var block = blocks[name];
@@ -58,4 +57,4 @@ module.exports=function(hbs){
                 return eval(""+v1+operator+v2)?options.fn(this):options.inverse(this);
         }
     });
-}
+};

@@ -75,14 +75,14 @@ $(function () {
                 break;
             case 'city':
                 if (!validate.city(value)) {
-                    $('.city').html('0到20个字的中文组字').parent().addClass('err');
+                    $('.city').html('1到5个字的中文组字').parent().addClass('err');
                     valid = false;
                 } else {
                     $('.city').html('通过').parent().removeClass('err');
                 }
                 break;
             case 'selfIntroduction':
-                if (!validate.selfIntroduction(value)) {
+                if (!validate.description(value)) {
                     $('.selfIntroduction').html('不能有非法字符').parent().addClass('err');
                     valid = false;
                 } else {
@@ -90,7 +90,7 @@ $(function () {
                 }
                 break;
             case 'makeuperIntroduction':
-                if (!validate.makeuperIntroduction(value)) {
+                if (!validate.description(value)) {
                     $('.makeuperIntroduction').html('不能有非法字符').parent().addClass('err');
                     valid = false;
                 } else {

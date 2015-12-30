@@ -23,10 +23,10 @@
             return /^[\u4e00-\u9fa5]{2,10}$/.test($.trim(str));
         },
         title:function(str){
-            return /^[\u4e00-\u9fa5]{2,30}$/.test($.trim(str));
+            return /^[\u4e00-\u9fa5]{2,10}$/.test($.trim(str))
         },
         description:function(str){
-            return /^([\u4E00-\u9FA5]|\w|（|）|\(|\)|"|'|\.|。|!|,|，|！|\d|\n|\r|、)*$/.test($.trim(str.replace(''," ")));
+            return /^([\u4E00-\u9FA5]|\w|（|）|\(|\)|"|'|\.|。|!|,|，|！|\d|\n|\r|、){1,500}$/.test($.trim(str.replace(''," ")));
         },
         password:function(str){
             return /^(\d|[A-Za-z]){6,10}$/.test($.trim(str))

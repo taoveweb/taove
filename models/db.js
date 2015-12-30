@@ -95,7 +95,7 @@ var imgSchema = new Schema({
 //相册
 var photographyerAlbums = new Schema({
     photographyId:String,//摄影师Id
-    customer: ObjectId,//用户id
+    customerId: ObjectId,//用户id
     title: {type: String, trim: true, required: true},//相册标题
     description: {type: String, trim: true, required: true},//描述
     city: {type: String, trim: true, required: true},//地区
@@ -103,7 +103,7 @@ var photographyerAlbums = new Schema({
     img: [imgSchema],//图片信息
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间
     updated:{type: Date, default: Date.now()}, //更新时间
-    package: {type: String, trim: true, required: true},//套餐
+    package: {type: String, trim: true},//套餐
     approved: {type: Boolean, default: false}
 });
 
@@ -192,10 +192,12 @@ photographyerAlbums.pre('update',function(next){
 
 
 var Taove = mongoose.model('Taove', TaoveSchema);
+var Albums = mongoose.model('Albums', photographyerAlbums);
 
 module.exports ={
     "ObjectId": mongoose.Types.ObjectId,
-    "Taove":Taove
+    "Taove":Taove,
+    'Albums':Albums
 };
 
 

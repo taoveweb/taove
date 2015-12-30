@@ -56,7 +56,7 @@
 
         <form action="">
             <div class="br">
-                <span>相册名称：</span> <input name="title" type="text"placeholder="相册名称"/><em>0/15</em>
+                <span>相册名称：</span> <input id="title" name="title" type="text"placeholder="相册名称"/><em class="charNum">0/10</em>
                 <p class="title"></p>
             </div>
             <div class="br">
@@ -181,6 +181,7 @@
     {{#if loginInfo.phone}}
         <script>
             var city="{{loginInfo.city}}";
+            var photographyId="{{loginInfo._id}}";
             $('#city').find('option').each(function () {
                 if ($(this).val() == city) {
                     $(this).prop('selected', 'selected');

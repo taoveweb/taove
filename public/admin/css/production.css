@@ -115,6 +115,9 @@
 ;
 
 }
+.responsemsg{
+    font-size: 16px;
+}
 .productionPop-content h2 span:hover,
 .create-content h2 span:hover{
     color: #fe555a;

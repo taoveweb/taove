@@ -11,7 +11,9 @@ $(function () {
         $(this).parents('.pop').fadeOut();
     });
 
-
+    $("#title").on('keyup',function(){
+        $('.charNum').html($(this).val().length+'/10');
+    });
     //创建相册-------------------
     $('#createAlbumsBtn').click(function () {
         var valid = true;
@@ -24,16 +26,18 @@ $(function () {
         var style = parent.find('select[name=style]').val();
 
 
-        console.log(title,phone,description,city,style);
+
+
+
 
         if (!validate.title(title)) {
-            $('.title').html('1到5个字的中文').parent().addClass('err');
+            $('.title').html('1到15个字的中文').parent().addClass('err');
             valid = false;
         } else {
             $('.title').html('通过').parent().removeClass('err');
         }
-        if (!validate.phone(phone)) {
-            $('.phone').html('请填写正确的手机号码').parent().addClass('err');
+        if (phone&&!validate.phone(phone)) {
+            $('.phone').html('请填写正确的手机号码 或不填').parent().addClass('err');
             valid = false;
         } else {
             $('.phone').html('通过').parent().removeClass('err');
@@ -48,6 +52,7 @@ $(function () {
 
         if (valid) {
             $.post('/admin/production', {
+                photographyId:photographyId,
                 title: title,
                 phone: phone,
                 description: description,

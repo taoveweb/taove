@@ -49,7 +49,7 @@ function createPhotographyerAlbums(res,req,doc, msg) {
         if (err || !doc) {
             res.json({ok: 0, err: err});
         } else {
-            res.json({ok: 0, params: req.body, msg: msg});
+            res.json({ok: 1, params: req.body, msg: msg});
         }
     })
 }

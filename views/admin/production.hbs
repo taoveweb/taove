@@ -21,8 +21,7 @@
 
             {{#each taove}}
                 <a href="{{../static}}admin/productiondetail?production={{this._id}}" class="item">
-                    {{static}}
-                    <img src="{{../static}}img/load.png" data-original="{{../static}}pc/img/buyer/yp.jpg" alt=""/>
+                    <img src="{{../static}}img/load.png" data-original="{{../static}}pc/img/buyer/yp.jpg" alt="{{this.title}}"/>
                     <span>{{this.title}}</span>
                 </a>
             {{/each}}

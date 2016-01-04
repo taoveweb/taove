@@ -62,8 +62,9 @@ $(function () {
                 console.log(data);
                 if (data.ok == 1) {
                     window.setTimeout(function(){
-                        that.parents('.pop').fadeOut()
-                    },2000)
+                        that.parents('.pop').fadeOut();
+                        window.location.href="/admin/production";
+                    },1000)
 
                 }
                 parent.find('.responsemsg').html(data.msg);

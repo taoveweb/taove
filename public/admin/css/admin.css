@@ -329,6 +329,7 @@
 }
 .tab .menu{
     border-bottom: 1px solid #d5d5d5;
+    position: relative;
 }
 .tab .menu span{
     display: block;
@@ -342,6 +343,13 @@
     line-height: 34px;
     font-size: 14px;
     cursor: pointer;
+}
+.tab .menu a{
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    top: 10px;
+    color: #999999;
 }
 .tab .menu span:hover{
     color: #ff4f4f;

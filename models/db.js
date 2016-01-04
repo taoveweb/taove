@@ -93,7 +93,7 @@ var imgSchema = new Schema({
 });
 
 //相册
-var photographyerAlbums = new Schema({
+var AlbumsSchema = new Schema({
     photographyId:String,//摄影师Id
     customerId: ObjectId,//用户id
     title: {type: String, trim: true, required: true},//相册标题
@@ -133,7 +133,6 @@ var TaoveSchema = new Schema({
     userAlbumsid:[Schema.Types.Mixed],//用户摄影相册  TaoveSchemaId_photographyerAlbumsId
     "pay":[pay],//账单
     "posts":[posts],//提交的评论、喜欢
-    "photographyerAlbums": [photographyerAlbums],//摄影师作品 相册id
     "myshop":[myshop],//商品
     "message": [message]//消息
 });
@@ -144,18 +143,18 @@ TaoveSchema.pre('save',function(next){
     var user=this;
     if(this.isNew){
         this.updated=this.createdOn=this.lastLogin=new Date().getTime()+60*60*8*1000
+        bcrypt.genSalt(SALT_WORK_FACTOR,function(err,salt){
+            if(err) return next(err);
+            bcrypt.hash(user.password,salt,function(err,hash){
+                if(err) return next(err);
+                user.password=hash;
+                next();
+            })
+        });
     }else{
         this.updated=new Date().getTime()+60*60*8*1000
+        next();
     }
-    bcrypt.genSalt(SALT_WORK_FACTOR,function(err,salt){
-        if(err) return next(err);
-        bcrypt.hash(user.password,salt,function(err,hash){
-            if(err) return next(err);
-            user.password=hash;
-            next();
-        })
-
-    });
 });
 
 
@@ -170,7 +169,7 @@ TaoveSchema.methods.comparepassword=function(_password,cb){
 };
 
 //相册预处理----------------------------------------------
-photographyerAlbums.pre('save',function(next){
+AlbumsSchema.pre('save',function(next){
     var user=this;
     if(this.isNew){
         this.updated=this.createdOn=new Date().getTime()+60*60*8*1000
@@ -179,7 +178,7 @@ photographyerAlbums.pre('save',function(next){
     }
     next();
 });
-photographyerAlbums.pre('update',function(next){
+AlbumsSchema.pre('update',function(next){
     this.update({},{ $set: { updated: new Date().getTime()+60*60*8*1000} });
     next();
 });
@@ -192,7 +191,7 @@ photographyerAlbums.pre('update',function(next){
 
 
 var Taove = mongoose.model('Taove', TaoveSchema);
-var Albums = mongoose.model('Albums', photographyerAlbums);
+var Albums = mongoose.model('Albums', AlbumsSchema);
 
 module.exports ={
     "ObjectId": mongoose.Types.ObjectId,

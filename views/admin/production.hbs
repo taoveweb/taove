@@ -18,32 +18,14 @@
             <span class="sortBtn">展示设置</span>
         </div>
         <div class="productionlist clearfix">
-            <a href="{{static}}admin/productiondetail?production={{production}}" class="item">
-                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                <span>枯木丽影</span>
-            </a>
-            <a href="{{static}}admin/productiondetail" class="item">
-                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                <span>枯木丽影</span>
-            </a>
-            <a href="{{static}}admin/productiondetail" class="item">
-                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                <span>枯木丽影</span>
-            </a><a href="{{static}}admin/productiondetail" class="item">
-            <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-            <span>枯木丽影</span>
-        </a>
-            <a href="{{static}}admin/productiondetail" class="item">
-                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                <span>枯木丽影</span>
-            </a><a href="{{static}}admin/productiondetail" class="item">
-            <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-            <span>枯木丽影</span>
-        </a>
-            <a href="{{static}}admin/productiondetail" class="item ">
-                <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
-                <span>枯木丽影</span>
-            </a>
+
+            {{#each taove}}
+                <a href="{{../static}}admin/productiondetail?production={{this._id}}" class="item">
+                    {{static}}
+                    <img src="{{../static}}img/load.png" data-original="{{../static}}pc/img/buyer/yp.jpg" alt=""/>
+                    <span>{{this.title}}</span>
+                </a>
+            {{/each}}
         </div>
     </div>
 </div>

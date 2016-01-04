@@ -9,7 +9,10 @@ var Taove = db.Taove;
 var Albums = db.Albums;
 
 function getProduction(req, res, next) {
-    res.render('admin/production', {title: '摄影作品', layout: 'layout_pc'});
+    Albums.find({photographyId:req.session.userId['_id']},function(err,doc){
+        if(err) next(err);
+        res.render('admin/production', {title: '摄影作品',taove:doc, layout: 'layout_pc'});
+    });
 }
 function postProduction(req, res, next) {
 
@@ -25,13 +28,13 @@ function postProduction(req, res, next) {
         Taove.findOne({phone: params.phone}, "_id", function (err, taove) {
             doc.customerId = taove._id;
             if (!taove || err) {
-                createPhotographyerAlbums(res,req,doc, '没有这个客户')
+                createPhotographyerAlbums(res, req, doc, '没有这个客户')
             } else {
-                createPhotographyerAlbums(res,req,doc, '创建成功')
+                createPhotographyerAlbums(res, req, doc, '创建成功')
             }
         })
     } else {
-        createPhotographyerAlbums(res,req,doc, '创建成功')
+        createPhotographyerAlbums(res, req, doc, '创建成功')
     }
 }
 
@@ -44,14 +47,14 @@ function postProductiondetail(req, res, next) {
 }
 
 
-function createPhotographyerAlbums(res,req,doc, msg) {
+function createPhotographyerAlbums(res, req, doc, msg) {
     Albums.create(doc, function (err, doc) {
         if (err || !doc) {
             res.json({ok: 0, err: err});
         } else {
             res.json({ok: 1, params: req.body, msg: msg});
         }
-    })
+    });
 }
 
 function getPhotographer(req, res, next) {

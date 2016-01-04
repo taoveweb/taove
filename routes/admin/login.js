@@ -43,6 +43,7 @@ function post(req, res, next) {
                 res.json({ok: 0, msg: "无此账号"});
             } else {
                 doc.comparepassword(password,function(err,isMatch){
+                    console.log(isMatch)
                     if(err) return next(err);
                     if(isMatch){
                         if (!req.session.userId) {

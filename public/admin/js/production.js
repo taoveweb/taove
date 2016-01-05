@@ -76,12 +76,20 @@ $(function () {
 
 });
 
-
+var AlbumsImgId=$('.select-selected').attr('data-id');
+$('.select-widget').on('click','.select-item',function(){
+    var newnode=$(this).clone();
+    $(newnode).addClass('select-selected');
+    $('.select-selected').replaceWith($(newnode));
+    AlbumsImgId=$(this).attr('data-id');
+    console.log('yes');
+});
 var manualUploader = new qq.FineUploader({
     element: document.getElementById('fine-uploader-manual-trigger'),
     template: 'qq-template-manual-trigger',
     request: {
-        endpoint: '/admin/production'
+        endpoint: '/admin/productionimg',
+        params:{"AlbumsImgId":AlbumsImgId}
     },
     thumbnails: {
         placeholders: {

@@ -7,11 +7,12 @@ var db = require('../../models/db');
 var ObjectId = db.ObjectId;
 var Taove = db.Taove;
 var Albums = db.Albums;
+var AlbumsImg = db.AlbumsImg;
 
 function getProduction(req, res, next) {
-    Albums.find({photographyId:req.session.userId['_id']},function(err,doc){
-        if(err) next(err);
-        res.render('admin/production', {title: '摄影作品',taove:doc, layout: 'layout_pc'});
+    Albums.find({photographyId: req.session.userId['_id']}, function (err, doc) {
+        if (err) next(err);
+        res.render('admin/production', {title: '摄影作品', taove: doc, detail:false, layout: 'layout_pc'});
     });
 }
 function postProduction(req, res, next) {
@@ -38,12 +39,8 @@ function postProduction(req, res, next) {
     }
 }
 
-
 function getProductiondetail(req, res, next) {
-    res.render('admin/production_detail', {title: '摄影作品', layout: 'layout_pc'});
-}
-function postProductiondetail(req, res, next) {
-    res.render('admin/production_detail', {title: '摄影作品', layout: 'layout_pc'});
+    res.render('admin/production_detail', {title: '摄影作品',detail:true, layout: 'layout_pc'});
 }
 
 
@@ -57,75 +54,9 @@ function createPhotographyerAlbums(res, req, doc, msg) {
     });
 }
 
-function getPhotographer(req, res, next) {
-
-    Taove.findOne({phone: req.session.userId['phone']}, function (err, taove) {
-
-
-        var realName = taove.realName;
-        if (realName) {
-            realName = realName.substr(0, 1) + "*" + realName.substr(-1, 1);
-        }
-        var email = taove.email;
-        if (email) {
-            var emailIndex = email.indexOf('@');
-            email = email.substr(0, 2) + "***" + email.substr(emailIndex);
-        }
-
-        var phone = taove.phone + '';
-        var doc = {
-            id: taove._id,
-            approved: taove.approved,
-            "realName": realName,
-            "email": email,
-            "phone": phone.substr(0, 7) + "***" + phone.substr(-1, 1),
-            fromTime: taove.fromTime,
-            singed: taove.singed,
-            city: taove.city,
-            selfIntroduction: taove.selfIntroduction,
-            makeuperIntroduction: taove.makeuperIntroduction,
-            goodStyle: taove.goodStyle,
-            credentialsPhotoUrl: taove.credentialsPhotoUrl,
-            application: taove.application
-        };
-        if (doc.application && !req.query.fix) {
-            res.render('admin/photographer',
-                {
-                    title: '摄影师申请入驻',
-                    "taove": doc,
-                    application: 1,
-                    layout: 'layout_pc'
-                })
-        } else {
-            res.render('admin/photographer',
-                {
-                    title: '摄影师申请入驻',
-                    "taove": doc,
-                    application: 0,
-                    layout: 'layout_pc'
-                })
-        }
-    });
-
-}
-function postPhotographer(req, res, next) {
-    console.log('postAlbum------------');
-
-    if (!req.body.fromTime) {
-        console.log('img');
-        updateCredentialsPhotoUrl(req, res, next);
-    } else {
-        console.log('info');
-        update(req, res)
-    }
-
-
-    // res.render('admin/photographer', { title: '摄影师申请入驻',layout:'layout_pc' });
-}
-
 
 //证件照
-function updateCredentialsPhotoUrl(req, res, next) {
+function postProductionimg(req, res, next) {
     var form = new formidable.IncomingForm();
     var dir = "./uploads/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/';
     if (fs.existsSync(dir)) {
@@ -141,7 +72,6 @@ function updateCredentialsPhotoUrl(req, res, next) {
 
     form.parse(req, function (err, fields, files) {
         var param = fields;
-        var img = files.img;
         var imgname = new ObjectId();
         var ext = '';
         if (isValidFileName(files.qqfile.path)) {
@@ -150,7 +80,9 @@ function updateCredentialsPhotoUrl(req, res, next) {
             // 错误处理
         }
         imgname += "." + ext;
+        console.log(files)
         fs.renameSync(files.qqfile.path, dir + imgname);
+/*
         Taove.findOneAndUpdate(
             {phone: req.session.userId['phone']},
             {
@@ -172,41 +104,8 @@ function updateCredentialsPhotoUrl(req, res, next) {
                         msg: '提交图片成功'
                     });
                 }
-            })
-
-        //update(req)
+            })*/
     });
-}
-
-
-function update(req, res) {
-    console.log(req.body.fromTime);
-
-    Taove.update({phone: req.session.userId['phone']},
-        {
-            realName: req.body.realName,
-            email: req.body.email,
-            fromTime: req.body.fromTime,
-            singed: req.body.singed,
-            city: req.body.city,
-            selfIntroduction: req.body.selfIntroduction,
-            makeuperIntroduction: req.body.makeuperIntroduction,
-            goodStyle: req.body.goodStyle,
-            application: true
-            //updated: new Date(new Date().getTime() + 60 * 60 * 8 * 1000)
-        }, function (err, doc) {
-
-            if (err) {
-                console.log(err)
-            } else {
-                console.log('申请提交成功');
-                res.json({
-                    ok: 1,
-                    success: true,
-                    msg: '申请提交成功'
-                });
-            }
-        })
 }
 
 
@@ -227,7 +126,7 @@ module.exports = {
     get: getProduction,
     post: postProduction,
     getdetail: getProductiondetail,
-    postdetail: postProductiondetail
+    postimg: postProductionimg
 };
 
 

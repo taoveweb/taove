@@ -75,16 +75,19 @@ var myshop=new Schema({
 });
 
 //相册图片
-var imgSchema = new Schema({
-    path: {type: String, trim: true, required: true},//目录名
+var AlbumsImgSchema = new Schema({
+    albumsId:String,//相册id
     name: {type: String, trim: true, required: true},//文件名与图片名称一样
-    title: {type: String, trim: true},//相册标题
+    path: {type: String, trim: true, required: true},//目录名
+    title: {type: String, trim: true},//图片标题
     description: {type: String, trim: true},//描述
     likes: [{type: ObjectId}],//user id
     watches: [{type: ObjectId}],//user id
     master: {type: Boolean, default: false},//封面
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间
     imgType:{type:Number},//图片类型 0为未修 1为精修 3相册封面 4x展架
+    approved: {type: Boolean, default: false},//是否允许发表
+    cover: {type: Boolean, default: false},//封面
     comment: [{
         userId: ObjectId,//user id
         time: {type: Date, default: Date.now()}, //
@@ -100,11 +103,11 @@ var AlbumsSchema = new Schema({
     description: {type: String, trim: true, required: true},//描述
     city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
-    img: [imgSchema],//图片信息
+    imgNum:{type: Number, default: 0},//相册数片数量
+    coverImg:{type: String, default: "img/placeholder.png"},//封面图片
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间
     updated:{type: Date, default: Date.now()}, //更新时间
-    package: {type: String, trim: true},//套餐
-    approved: {type: Boolean, default: false}
+    package: {type: String, trim: true}//套餐
 });
 
 //主表
@@ -192,11 +195,13 @@ AlbumsSchema.pre('update',function(next){
 
 var Taove = mongoose.model('Taove', TaoveSchema);
 var Albums = mongoose.model('Albums', AlbumsSchema);
+var AlbumsImg = mongoose.model('AlbumsImg', AlbumsImgSchema);
 
 module.exports ={
     "ObjectId": mongoose.Types.ObjectId,
     "Taove":Taove,
-    'Albums':Albums
+    'Albums':Albums,
+    'AlbumsImg':AlbumsImg
 };
 
 

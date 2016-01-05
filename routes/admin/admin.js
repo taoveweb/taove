@@ -10,10 +10,10 @@ router.get('/carts', carts);
 router.get('/albums', albums);
 router.get('/photographer', photographer.get);
 router.post('/photographer', photographer.post);
-router.get('/production', production.get);
-router.post('/production', production.post);
-router.post('/productiondetail',  production.postdetail);
-router.get('/productiondetail',  production.getdetail);
+router.get('/production', production.get);//摄影师作品相册
+router.get('/productiondetail',  production.getdetail);//摄影师作品相册图片
+router.post('/production', production.post);//提交相册
+router.post('/productionimg',  production.postimg);
 
 
 

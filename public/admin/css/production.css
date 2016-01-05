@@ -1,8 +1,8 @@
-.menu{
+.menu_p{
     margin-left: 20px;
     padding-bottom: 10px;
 }
-.menu span{
+.menu_p span{
     display: inline-block;
     width: 120px;
     height: 35px;
@@ -15,7 +15,7 @@
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
-.menu span:hover{
+.menu_p span:hover{
     background: #c64348;
 }
 .productionlist{
@@ -33,6 +33,10 @@
     display: block;
     width: 208px;
     height: 140px;
+    border: 1px solid #d5d5d5;
+}
+.productionlist a em{
+    color: #b9b9b9;
 }
 .productionlist a span{
     display: block;
@@ -45,6 +49,9 @@
 }
 .pop .br p{
     color: #3dd48d;
+}
+.pop .select-selected:hover p{
+    color: #fff;
 }
 .mask {
     position: absolute;
@@ -190,6 +197,7 @@
     margin: 0 5px;
     border-bottom: 1px dashed #d5d5d5;
     cursor: pointer;
+    min-height: 30px;
 }
 .select-item i{
     display: inline-block;

@@ -42,7 +42,7 @@ function postProduction(req, res, next) {
 }
 
 function getProductiondetail(req, res, next) {
-    AlbumsImg.find({albumsId: req.query.albumsId}, function (err, albums) {
+    AlbumsImg.find({albumsId: req.query.albumsId}).sort({ createdOn: -1 }).exec(function (err, albums) {
         res.render('admin/production_detail', {title: '摄影作品', detail: true, "albums": albums,imgNum:albums.length, layout: 'layout_pc'});
     });
 

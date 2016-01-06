@@ -77,19 +77,25 @@ $(function () {
 });
 
 var AlbumsImgId=$('.select-selected').attr('data-id');
+var imgType=0;
 $('.select-widget').on('click','.select-item',function(){
     var newnode=$(this).clone();
     $(newnode).addClass('select-selected');
     $('.select-selected').replaceWith($(newnode));
     AlbumsImgId=$(this).attr('data-id');
-    console.log('yes');
+
+});
+
+
+$('.typeselect').find('input').on('change',function(){
+    imgType=$(this).val();
 });
 var manualUploader = new qq.FineUploader({
     element: document.getElementById('fine-uploader-manual-trigger'),
     template: 'qq-template-manual-trigger',
     request: {
         endpoint: '/admin/productionimg',
-        params:{"AlbumsImgId":AlbumsImgId}
+        params:{"AlbumsImgId":AlbumsImgId,'imgType':imgType}
     },
     thumbnails: {
         placeholders: {

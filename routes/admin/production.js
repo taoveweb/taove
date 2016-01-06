@@ -57,6 +57,7 @@ function createPhotographyerAlbums(res, req, doc, msg) {
 
 //证件照
 function postProductionimg(req, res, next) {
+    console.log(req)
     var form = new formidable.IncomingForm();
     var dir = "./uploads/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/';
     if (fs.existsSync(dir)) {

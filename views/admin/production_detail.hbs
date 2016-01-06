@@ -24,20 +24,21 @@
                     </div>
                     <p>上传照片</p>
                 </div>
-                <div class="item">
-                    <div class="box">
-                        <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                {{#each albums}}
+                    <div class="item">
+                        <div class="box">
+                            <img src="{{../static}}img/load.png" data-original="{{../static}}{{this.path}}{{this.name}}" alt=""/>
 
-                        <div class="btn clearfix">
-                            <i></i>
-                            <span>删除</span>
-                            <span>旋转</span>
-                            <span>下载</span>
+                            <div class="btn clearfix">
+                                <i></i>
+                                <span>删除</span>
+                                <span>旋转</span>
+                                <span>下载</span>
+                            </div>
                         </div>
+                        <p>原片</p>
                     </div>
-                    <p>原片</p>
-                </div>
-
+                {{/each}}
             </div>
             <div class="panel clearfix">
                 <div class="item upload">

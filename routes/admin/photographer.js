@@ -63,9 +63,7 @@ function getPhotographer(req, res, next) {
         decrypted += decipher.update(encrypted, 'hex', 'binary');
         decrypted += decipher.final('binary');
         var output = new Buffer(decrypted);
-        console.log('aaaaa--------------');
-        console.log(encrypted);
-        console.log(decrypted);
+
 
 
 

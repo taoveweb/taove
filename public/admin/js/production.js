@@ -76,13 +76,13 @@ $(function () {
 
 });
 
-var AlbumsImgId=$('.select-selected').attr('data-id');
+var AlbumsId=$('.select-selected').attr('data-id') || location.search.split('=')[1];
 var imgType=0;
 $('.select-widget').on('click','.select-item',function(){
     var newnode=$(this).clone();
     $(newnode).addClass('select-selected');
     $('.select-selected').replaceWith($(newnode));
-    AlbumsImgId=$(this).attr('data-id');
+    AlbumsId=$(this).attr('data-id');
 
 });
 
@@ -95,7 +95,7 @@ var manualUploader = new qq.FineUploader({
     template: 'qq-template-manual-trigger',
     request: {
         endpoint: '/admin/productionimg',
-        params:{"AlbumsImgId":AlbumsImgId,'imgType':imgType}
+        params:{"AlbumsId":AlbumsId,'imgType':imgType,cache:Math.random()}
     },
     thumbnails: {
         placeholders: {
@@ -111,7 +111,17 @@ var manualUploader = new qq.FineUploader({
         sizeLimit: 15000000
     },
     autoUpload: false,
-    debug: true
+    debug: true,
+    callbacks: {
+        onComplete: function (id, name, response) {
+            if (response.success) {
+                window.location.reload();
+            }
+        },
+        onUpload:function(id, fileName){
+            console.log(fileName);
+        }
+    }
 });
 
 qq(document.getElementById("trigger-upload")).attach("click", function () {

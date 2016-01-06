@@ -80,10 +80,8 @@ var AlbumsImgSchema = new Schema({
     name: {type: String, trim: true, required: true},//文件名与图片名称一样
     path: {type: String, trim: true, required: true},//目录名
     title: {type: String, trim: true},//图片标题
-    description: {type: String, trim: true},//描述
     likes: [{type: ObjectId}],//user id
     watches: [{type: ObjectId}],//user id
-    master: {type: Boolean, default: false},//封面
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间
     imgType:{type:Number},//图片类型 0为未修 1为精修 3相册封面 4x展架
     approved: {type: Boolean, default: false},//是否允许发表
@@ -185,6 +183,7 @@ AlbumsSchema.pre('update',function(next){
     this.update({},{ $set: { updated: new Date().getTime()+60*60*8*1000} });
     next();
 });
+
 
 
 

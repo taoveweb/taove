@@ -12,9 +12,10 @@ var AlbumsImg = db.AlbumsImg;
 function getProduction(req, res, next) {
     Albums.find({photographyId: req.session.userId['_id']}, function (err, doc) {
         if (err) next(err);
-        res.render('admin/production', {title: '摄影作品', taove: doc, detail:false, layout: 'layout_pc'});
+        res.render('admin/production', {title: '摄影作品', taove: doc, detail: false, layout: 'layout_pc'});
     });
 }
+//创建相册
 function postProduction(req, res, next) {
 
     var params = req.body;
@@ -40,7 +41,10 @@ function postProduction(req, res, next) {
 }
 
 function getProductiondetail(req, res, next) {
-    res.render('admin/production_detail', {title: '摄影作品',detail:true, layout: 'layout_pc'});
+    AlbumsImg.find({albumsId: req.query.albumsId}, function (err, albums) {
+        res.render('admin/production_detail', {title: '摄影作品', detail: true, "albums": albums, layout: 'layout_pc'});
+    });
+
 }
 
 
@@ -55,9 +59,9 @@ function createPhotographyerAlbums(res, req, doc, msg) {
 }
 
 
-//证件照
+//提交相册图片
 function postProductionimg(req, res, next) {
-    console.log(req)
+
     var form = new formidable.IncomingForm();
     var dir = "./uploads/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/';
     if (fs.existsSync(dir)) {
@@ -71,41 +75,56 @@ function postProductionimg(req, res, next) {
     form.keepExtensions = true;
     form.multiples = true;
 
+
     form.parse(req, function (err, fields, files) {
         var param = fields;
         var imgname = new ObjectId();
         var ext = '';
+        var title = param.qqfilename.substring(0, param.qqfilename.indexOf('.'));
+        var imgWebDir = "images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/';
+        var albumsId = param.AlbumsId;
         if (isValidFileName(files.qqfile.path)) {
             ext = getExt(files.qqfile.path);
         } else {
             // 错误处理
         }
         imgname += "." + ext;
-        console.log(files)
         fs.renameSync(files.qqfile.path, dir + imgname);
-/*
-        Taove.findOneAndUpdate(
-            {phone: req.session.userId['phone']},
-            {
-                credentialsPhotoUrl: "/images/" + new Date().getFullYear() + (new Date().getMonth() + 1) + '/' + imgname
-                //updated: new Date(new Date().getTime() + 60 * 60 * 8 * 1000)
-            },
-            function (err, doc) {
-                console.log(err);
-                if (err) {
-                    console.log(err);
-                    res.json({
-                        success: false,
-                        msg: '提交图片失败'
+        // console.log(files.qqfile);
+
+        var doc = {
+            "albumsId": albumsId,//相册id
+            name: imgname,//文件名与图片名称一样
+            path: imgWebDir,//目录名
+            title: title,//图片标题
+            imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
+        };
+
+
+        AlbumsImg.findOne({albumsId: param.AlbumsId, cover: true}, function (err, albums) {
+            if (!albums) {
+                doc.cover = true;
+                AlbumsImg.create(doc, function (err, albums) {
+                    var options = {new: true};
+                    Albums.findOneAndUpdate({_id: albumsId}, {$set: {coverImg: imgWebDir + imgname}}, options, function (err, doc) {
+                        res.json({
+                            success: true,
+                            msg: '提交图片成功'
+                        });
                     });
-                } else {
-                    console.log('提交图片成功');
+                });
+            } else {
+                AlbumsImg.create(doc, function (err, albums) {
                     res.json({
                         success: true,
                         msg: '提交图片成功'
                     });
-                }
-            })*/
+                });
+            }
+
+        });
+
+
     });
 }
 

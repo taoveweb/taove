@@ -20,7 +20,7 @@
         <div class="productionlist clearfix">
 
             {{#each taove}}
-                <a href="{{../static}}admin/productiondetail?production={{this._id}}" class="item">
+                <a href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="item">
                     <img src="{{../static}}img/load.png" data-original="{{../static}}{{this.coverImg}}" alt="{{this.title}}"/>
                     <span>{{this.title}} <em>{{this.imgNum}}张图片</em></span>
                 </a>

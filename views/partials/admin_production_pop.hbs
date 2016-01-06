@@ -12,7 +12,7 @@
                 <div class="select-widget">
                     {{#each taove}}
                         {{#if @first}}
-                            <div class="select-selected select-item" data-id="{{this._id}}">
+                            <div class="select-selected select-item" data-id="{{this._id}}" imgNum="{{this.imgNum}}">
                                 <img src="{{@root/static}}{{this.coverImg}}" alt=""/>
 
                                 <p>{{this.title}}<i>{{this.imgNum}}张</i></p><em></em>
@@ -21,7 +21,7 @@
                     {{/each}}
                     <div class="select-list">
                         {{#each taove}}
-                            <div class="select-item" data-id="{{this._id}}">
+                            <div class="select-item" data-id="{{this._id}}" imgNum="{{this.imgNum}}">
                                 <img src="{{../static}}{{this.coverImg}}" alt=""/>
 
                                 <p>{{this.title}}<i>{{this.imgNum}}张</i></p><em></em>

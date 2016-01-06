@@ -78,6 +78,7 @@ $(function () {
 
 var AlbumsId=$('.select-selected').attr('data-id') || location.search.split('=')[1];
 var imgType=0;
+var imgNum=$('.select-selected').attr('imgNum') || imgNumdetail;
 $('.select-widget').on('click','.select-item',function(){
     var newnode=$(this).clone();
     $(newnode).addClass('select-selected');
@@ -89,13 +90,14 @@ $('.select-widget').on('click','.select-item',function(){
 
 $('.typeselect').find('input').on('change',function(){
     imgType=$(this).val();
+    console.log(imgType)
 });
 var manualUploader = new qq.FineUploader({
     element: document.getElementById('fine-uploader-manual-trigger'),
     template: 'qq-template-manual-trigger',
     request: {
         endpoint: '/admin/productionimg',
-        params:{"AlbumsId":AlbumsId,'imgType':imgType,cache:Math.random()}
+        params:{"AlbumsId":AlbumsId,'imgType':imgType}
     },
     thumbnails: {
         placeholders: {
@@ -108,7 +110,7 @@ var manualUploader = new qq.FineUploader({
     validation: {
         allowedExtensions: ['jpeg', 'jpg', 'png'],
         itemLimit: 5,
-        sizeLimit: 15000000
+        sizeLimit: 1024*1024*5
     },
     autoUpload: false,
     debug: true,
@@ -125,5 +127,12 @@ var manualUploader = new qq.FineUploader({
 });
 
 qq(document.getElementById("trigger-upload")).attach("click", function () {
-    manualUploader.uploadStoredFiles();
+    if(imgNum<200){
+        var params={"AlbumsId":AlbumsId,'imgType':imgType};
+        manualUploader.setParams(params);
+        manualUploader.uploadStoredFiles();
+    }else{
+        alert("最多只能上传200张图片哦")
+    }
+
 });

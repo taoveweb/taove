@@ -184,7 +184,21 @@ AlbumsSchema.pre('update',function(next){
     next();
 });
 
+/*
+//相册图片如果上传的是第一张就把他做为封面
+AlbumsImgSchema.pre('save',function(next){
+    var user=this;
+    if(this.isNew){
+        Albums.count({_id:this.albumsId},function(err,count){
+            Albums.findOneAndUpdate({_id:this.albumsId},{$set:{imgNum:count}},function(){
+                console.log('set'+count);
+                next();
+            })
+        })
+    }
+});
 
+*/
 
 
 

@@ -6,6 +6,9 @@
         .production {
             color: #ff4f4f;
         }
+        .typeselect{
+            position: static;
+        }
     </style>
 {{/extend}}
 
@@ -25,9 +28,10 @@
                     <p>上传照片</p>
                 </div>
                 {{#each albums}}
+                    {{#ifCond imgType "==" 1}}
                     <div class="item">
                         <div class="box">
-                            <img src="{{../static}}img/load.png" data-original="{{../static}}{{this.path}}{{this.name}}" alt=""/>
+                            <img src="/img/load.png" data-original="/{{this.path}}{{this.name}}" alt=""/>
 
                             <div class="btn clearfix">
                                 <i></i>
@@ -38,40 +42,34 @@
                         </div>
                         <p>原片</p>
                     </div>
+                    {{/ifCond}}
                 {{/each}}
             </div>
             <div class="panel clearfix">
-                <div class="item upload">
+                <div class="item upload uploadBtn">
                     <div class="box">
                     </div>
                     <p>上传照片</p>
                 </div>
-                <div class="item">
-                    <div class="box">
-                        <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
 
-                        <div class="btn clearfix">
-                            <i></i>
-                            <span>删除</span>
-                            <span>旋转</span>
-                            <span>下载</span>
-                        </div>
-                    </div>
-                    <p>原片</p>
-                </div>
-                <div class="item">
-                    <div class="box">
-                        <img src="{{static}}img/load.png" data-original="{{static}}pc/img/buyer/yp.jpg" alt=""/>
+                {{#each albums}}
 
-                        <div class="btn clearfix">
-                            <i></i>
-                            <span>删除</span>
-                            <span>旋转</span>
-                            <span>下载</span>
+                    {{#ifCond imgType "==" 0}}
+                        <div class="item">
+                            <div class="box">
+                                <img src="/img/load.png" data-original="/{{this.path}}{{this.name}}" alt=""/>
+
+                                <div class="btn clearfix">
+                                    <i></i>
+                                    <span>删除</span>
+                                    <span>旋转</span>
+                                    <span>下载</span>
+                                </div>
+                            </div>
+                            <p>原片</p>
                         </div>
-                    </div>
-                    <p>原片</p>
-                </div>
+                    {{/ifCond}}
+                {{/each}}
             </div>
 
         </div>
@@ -79,6 +77,8 @@
     </div>
 </div>
 </div>
-
+<script>
+    var imgNumdetail={{imgNum}}
+</script>
 
 {{> admin_production_pop}}

@@ -33,11 +33,11 @@
                         <div class="box">
                             <img src="/img/load.png" data-original="/{{this.path}}{{this.name}}" alt=""/>
 
-                            <div class="btn clearfix">
+                            <div class="btn clearfix" data-id="{{this._id}}">
                                 <i></i>
-                                <span>删除</span>
-                                <span>旋转</span>
-                                <span>下载</span>
+                                <span class="delete">删除</span>
+                                <span class="cover">设为封面</span>
+                                <span class="download">下载</span>
                             </div>
                         </div>
                         <p>原片</p>
@@ -58,12 +58,11 @@
                         <div class="item">
                             <div class="box">
                                 <img src="/img/load.png" data-original="/{{this.path}}{{this.name}}" alt=""/>
-
-                                <div class="btn clearfix">
+                                <div class="btn clearfix" data-id="{{this._id}}">
                                     <i></i>
-                                    <span>删除</span>
-                                    <span>旋转</span>
-                                    <span>下载</span>
+                                    <span class="delete">删除</span>
+                                    <span class="cover">设为封面</span>
+                                    <span class="download">下载</span>
                                 </div>
                             </div>
                             <p>原片</p>
@@ -76,6 +75,18 @@
 
     </div>
 </div>
+</div>
+
+<div class="pop delete-pop"  >
+    <div class="mask"></div>
+    <div class="pop-content">
+        <h2>删除作 <span class="close">×</span></h2>
+        <p>确定要删除和吗</p>
+        <div class="btn">
+            <span class="delete">确定</span>
+            <span>取消</span>
+        </div>
+    </div>
 </div>
 <script>
     var imgNumdetail={{imgNum}}

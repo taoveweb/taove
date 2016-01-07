@@ -77,6 +77,7 @@ var myshop=new Schema({
 //相册图片
 var AlbumsImgSchema = new Schema({
     albumsId:String,//相册id
+    photographyId:String,//摄影师Id
     name: {type: String, trim: true, required: true},//文件名与图片名称一样
     path: {type: String, trim: true, required: true},//目录名
     title: {type: String, trim: true},//图片标题

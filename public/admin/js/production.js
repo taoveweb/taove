@@ -11,13 +11,13 @@ $(function () {
         $(this).parents('.pop').fadeOut();
     });
 
-    $("#title").on('keyup',function(){
-        $('.charNum').html($(this).val().length+'/10');
+    $("#title").on('keyup', function () {
+        $('.charNum').html($(this).val().length + '/10');
     });
     //创建相册-------------------
     $('#createAlbumsBtn').click(function () {
         var valid = true;
-        var that=$(this);
+        var that = $(this);
         var parent = that.parents('form');
         var title = parent.find('input[name=title]').val();
         var phone = parent.find('input[name=phone]').val();
@@ -26,17 +26,13 @@ $(function () {
         var style = parent.find('select[name=style]').val();
 
 
-
-
-
-
         if (!validate.title(title)) {
             $('.title').html('1到15个字的中文').parent().addClass('err');
             valid = false;
         } else {
             $('.title').html('通过').parent().removeClass('err');
         }
-        if (phone&&!validate.phone(phone)) {
+        if (phone && !validate.phone(phone)) {
             $('.phone').html('请填写正确的手机号码 或不填').parent().addClass('err');
             valid = false;
         } else {
@@ -52,19 +48,20 @@ $(function () {
 
         if (valid) {
             $.post('/admin/production', {
-                photographyId:photographyId,
+                photographyId: photographyId,
                 title: title,
                 phone: phone,
                 description: description,
                 city: city,
-                style: style
+                style: style,
+                type:'create'
             }, function (data) {
                 console.log(data);
                 if (data.ok == 1) {
-                    window.setTimeout(function(){
+                    window.setTimeout(function () {
                         that.parents('.pop').fadeOut();
-                        window.location.href="/admin/production";
-                    },1000)
+                        window.location.href = "/admin/production";
+                    }, 1000)
 
                 }
                 parent.find('.responsemsg').html(data.msg);
@@ -76,28 +73,31 @@ $(function () {
 
 });
 
-var AlbumsId=$('.select-selected').attr('data-id') || location.search.split('=')[1];
-var imgType=0;
-var imgNum=$('.select-selected').attr('imgNum') || imgNumdetail;
-$('.select-widget').on('click','.select-item',function(){
-    var newnode=$(this).clone();
+
+//上机相册图片
+var AlbumsId = $('.select-selected').attr('data-id') || location.search.split('=')[1];
+var imgType = 0;
+var imgNum = $('.select-selected').attr('imgNum') || imgNumdetail;
+$('.select-widget').on('click', '.select-item', function () {
+    var newnode = $(this).clone();
     $(newnode).addClass('select-selected');
     $('.select-selected').replaceWith($(newnode));
-    AlbumsId=$(this).attr('data-id');
+    AlbumsId = $(this).attr('data-id');
 
 });
 
 
-$('.typeselect').find('input').on('change',function(){
-    imgType=$(this).val();
+$('.typeselect').find('input').on('change', function () {
+    imgType = $(this).val();
     console.log(imgType)
 });
 var manualUploader = new qq.FineUploader({
     element: document.getElementById('fine-uploader-manual-trigger'),
     template: 'qq-template-manual-trigger',
     request: {
+ /*       customHeaders: {Connection:'close'},*/
         endpoint: '/admin/productionimg',
-        params:{"AlbumsId":AlbumsId,'imgType':imgType}
+        params: {"AlbumsId": AlbumsId, 'imgType': imgType}
     },
     thumbnails: {
         placeholders: {
@@ -110,29 +110,42 @@ var manualUploader = new qq.FineUploader({
     validation: {
         allowedExtensions: ['jpeg', 'jpg', 'png'],
         itemLimit: 5,
-        sizeLimit: 1024*1024*5
+        sizeLimit: 1024 * 1024 * 5
     },
     autoUpload: false,
     debug: true,
     callbacks: {
         onComplete: function (id, name, response) {
             if (response.success) {
-                window.location.reload();
+               ///**/ window.location.reload();
             }
         },
-        onUpload:function(id, fileName){
+        onUpload: function (id, fileName) {
             console.log(fileName);
         }
     }
 });
 
 qq(document.getElementById("trigger-upload")).attach("click", function () {
-    if(imgNum<200){
-        var params={"AlbumsId":AlbumsId,'imgType':imgType};
+    if (imgNum < 200) {
+        var params = {"AlbumsId": AlbumsId, 'imgType': imgType};
         manualUploader.setParams(params);
         manualUploader.uploadStoredFiles();
-    }else{
+    } else {
         alert("最多只能上传200张图片哦")
     }
 
+});
+
+
+//删除相册图片
+$('.panel').on('click', ".delete", function () {
+    var _id = $(this).parent().attr('data-id');
+    var that=$(this);
+    $.post("/admin/production", {_id: _id, type: "delete"},
+        function (data) {
+            if(data.success){
+                that.parents('.item').remove();
+            }
+        });
 });

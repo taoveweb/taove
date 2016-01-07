@@ -346,3 +346,66 @@
 .create-content .br.btn .cancel:hover{
     background: #8a8a8a;
 }
+
+.delete-pop .pop-content{
+    width: 400px;
+    height: 200px;
+    margin-left: -200px;
+    margin-top: -100px;
+    overflow: hidden;
+}
+
+.delete-pop .pop-content h2{
+    height: 40px;
+    background: #f4f4f4;
+    border-bottom: 1px solid #ededed;
+    position: relative;
+    line-height: 40px;
+    padding-left: 15px;
+}
+.delete-pop .pop-content h2 span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+}
+.delete-pop .pop-content h2 span:hover{
+    color: #ff6600;
+}
+.delete-pop .pop-content p{
+    text-align: center;
+
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.delete-pop .pop-content .btn{
+    text-align: center;
+}
+.delete-pop .pop-content .btn span{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #d0d0d0;
+    color: #fff;
+    margin: 15px 10px 0;
+}
+.delete-pop .pop-content .btn span:hover{
+    background: #b9b9b9;
+}
+.delete-pop .pop-content .btn .delete{
+    background: #ff5611;
+}
+.delete-pop .pop-content .btn .delete:hover{
+    background: #c72d2d;
+}

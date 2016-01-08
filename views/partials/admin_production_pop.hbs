@@ -13,8 +13,7 @@
                     {{#each taove}}
                         {{#if @first}}
                             <div class="select-selected select-item" data-id="{{this._id}}" imgNum="{{this.imgNum}}">
-                                <img src="{{@root/static}}{{this.coverImg}}" alt=""/>
-
+                                    <img src="{{@root/static}}img/load.png"  data-original="{{@root/static}}{{this.coverImg}}" alt=""/>
                                 <p>{{this.title}}<i>{{this.imgNum}}张</i></p><em></em>
                             </div>
                         {{/if}}
@@ -22,8 +21,7 @@
                     <div class="select-list">
                         {{#each taove}}
                             <div class="select-item" data-id="{{this._id}}" imgNum="{{this.imgNum}}">
-                                <img src="{{../static}}{{this.coverImg}}" alt=""/>
-
+                                   <img src="{{@root/static}}img/load.png"  data-original="{{@root/static}}{{this.coverImg}}" alt=""/>
                                 <p>{{this.title}}<i>{{this.imgNum}}张</i></p><em></em>
                             </div>
                         {{/each}}
@@ -174,6 +172,8 @@
 {{#extend "pcScripts"}}
     <script src="{{static}}admin/js/admin.js"></script>
     <script src="{{static}}common/fine-uploader/fine-uploader.min.js"></script>
+    <script src="{{static}}common/js/isotope.pkgd.min.js"></script>
+    <script src="{{static}}common/js/imagesloaded.pkgd.js"></script>
     <script src="{{static}}admin/js/production.js"></script>
     {{#if loginInfo.phone}}
         <script>

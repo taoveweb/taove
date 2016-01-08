@@ -54,7 +54,7 @@ $(function () {
                 description: description,
                 city: city,
                 style: style,
-                type:'create'
+                type: 'create'
             }, function (data) {
                 console.log(data);
                 if (data.ok == 1) {
@@ -95,7 +95,7 @@ var manualUploader = new qq.FineUploader({
     element: document.getElementById('fine-uploader-manual-trigger'),
     template: 'qq-template-manual-trigger',
     request: {
- /*       customHeaders: {Connection:'close'},*/
+        /*       customHeaders: {Connection:'close'},*/
         endpoint: '/admin/productionimg',
         params: {"AlbumsId": AlbumsId, 'imgType': imgType}
     },
@@ -109,19 +109,23 @@ var manualUploader = new qq.FineUploader({
     },
     validation: {
         allowedExtensions: ['jpeg', 'jpg', 'png'],
-        itemLimit: 5,
-        sizeLimit: 1024 * 1024 * 5
+        itemLimit: 10,
+        sizeLimit: 1024 * 1024 * 10
     },
     autoUpload: false,
-    debug: true,
+    debug: false,
     callbacks: {
-        onComplete: function (id, name, response) {
-            if (response.success) {
-               ///**/ window.location.reload();
-            }
+        onComplete: function (id, name, responseJSON, maybeXhr) {
+            console.log(responseJSON)
         },
-        onUpload: function (id, fileName) {
-            console.log(fileName);
+        onAllComplete: function (successful, failed) {
+            if(failed.length){
+                alert("相册最多只能存150张,上传超了"+failed.length);
+                window.location.reload();
+            }
+            if (!failed.length) {
+                window.location.reload();
+            }
         }
     }
 });
@@ -141,11 +145,30 @@ qq(document.getElementById("trigger-upload")).attach("click", function () {
 //删除相册图片
 $('.panel').on('click', ".delete", function () {
     var _id = $(this).parent().attr('data-id');
-    var that=$(this);
+    var that = $(this);
+
     $.post("/admin/production", {_id: _id, type: "delete"},
         function (data) {
-            if(data.success){
+            if (data.success) {
                 that.parents('.item').remove();
+                if($('.current').hasClass('grid1')){
+                    $grid1.isotope('layout');
+                }else{
+                    $grid2.isotope('layout');
+                }
+
             }
         });
+});
+
+
+//瀑布流
+
+
+var $grid1 = $('.grid1').isotope({
+    itemSelector: '.grid-item'
+});
+
+var $grid2 = $('.grid2').isotope({
+    itemSelector: '.grid-item'
 });

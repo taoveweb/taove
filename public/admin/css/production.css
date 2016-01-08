@@ -409,3 +409,11 @@
 .delete-pop .pop-content .btn .delete:hover{
     background: #c72d2d;
 }
+
+.imginfo{
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    margin-left: 50px;
+    color: #a3a3a3;
+}

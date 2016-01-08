@@ -363,14 +363,16 @@
 
 .panel .item{
     width: 266px;
-    margin: 14px 7px 0;
-    float: left;
+    margin: 14px 10px 0;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    position: relative;
     background: #fff;
     overflow: hidden;
+    float: left;
+}
+.grid-sizer{
+    width: 266px
 }
 .panel{
     border: 1px solid #d5d5d5;
@@ -378,19 +380,18 @@
     display: none;
     padding-left: 7px;
     border-top: 0;
+    width: 865px;
 }
 .panel.current{
     display: block;
 }
 .panel .item .box{
     position: relative;
-    height: 190px;
+    min-height: 190px;
     overflow: hidden;
 }
 .panel .item .box img{
     display: block;
-    width: 100%;
-    height: 100%;
 }
 .panel .item .box .btn{
     position: absolute;
@@ -441,8 +442,12 @@
     padding: 0 5px;
     text-align: right;
     cursor: pointer;
+    position: relative;
 }
-
+.panel .item p em{
+    position: absolute;
+    left: 10px;
+}
 .upload  .box{
     background: url("../../pc/img/buyer/add.png") center no-repeat #f0f0f0;
     cursor: pointer;

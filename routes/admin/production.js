@@ -8,7 +8,7 @@ var ObjectId = db.ObjectId;
 var Taove = db.Taove;
 var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
-
+var gm = require('gm').subClass({imageMagick: true});
 function getProduction(req, res, next) {
     Albums.find({photographyId: req.session.userId['_id']}, function (err, doc) {
         if (err) next(err);
@@ -30,7 +30,17 @@ function postProduction(req, res, next) {
 }
 
 function getProductiondetail(req, res, next) {
-    AlbumsImg.find({albumsId: req.query.albumsId}).sort({createdOn: -1}).exec(function (err, albums) {
+    AlbumsImg.aggregate({$match: {albumsId: req.query.albumsId}}, {$sort: {createdOn: -1}}, {
+        $project: {
+            albumsId: 1,
+            photographyId: 1,
+            name: 1,
+            path: 1,
+            title: 1,
+            imgType: 1,
+            height: {$multiply: ["$height", {$divide: [266, "$width"]}]}
+        }
+    }).exec(function (err, albums) {
         res.render('admin/production_detail', {
             title: '摄影作品',
             detail: true,
@@ -116,17 +126,9 @@ function postProductionimg(req, res, next) {
     form.keepExtensions = true;
     form.multiples = true;
     form.maxFieldsSize = 5 * 1024 * 1024;
-    console.log('postProductionimg-----------------------------');
-
-    form.on('progress', function(bytesReceived, bytesExpected) {
-        res.json({
-            bytesReceived:bytesReceived,
-            bytesExpected:bytesExpected
-        })
-    });
 
     form.parse(req, function (err, fields, files) {
-        console.log(err, '11111111111111111111111111111');
+
         var param = fields;
         var imgname = new ObjectId();
         var ext = '';
@@ -140,44 +142,53 @@ function postProductionimg(req, res, next) {
         }
         imgname += "." + ext;
         fs.renameSync(files.qqfile.path, dir + imgname);
-        // console.log(files.qqfile);
-        var doc = {
-            "albumsId": albumsId,//相册id
-            photographyId: req.session.userId['_id'],//摄影师Id
-            name: imgname,//文件名与图片名称一样
-            path: imgWebDir,//目录名
-            title: title,//图片标题
-            imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
-        };
+        gm(dir + imgname).size(function (err, size) {
+            console.log(size.width, size.height);
 
-        //如果第一张默认设计为相册首页并更新相册数量
-        AlbumsImg.count({albumsId: param.AlbumsId}, function (err, count) {
-            if (!count) {
-                doc.cover = true;
-            }
-            var albums = new AlbumsImg(doc);
-            if (count >= 200) {
-                res.json({
-                    success: true,
-                    msg: '但提交图片超出来数量'
-                });
-            }
-            albums.save(function (err) {
-                var updateSet = {$set: {imgNum: parseInt(count) + 1}};
+
+            var doc = {
+                "albumsId": albumsId,//相册id
+                photographyId: req.session.userId['_id'],//摄影师Id
+                name: imgname,//文件名与图片名称一样
+                path: imgWebDir,//目录名
+                title: title,//图片标题
+                width: size.width,//
+                height: size.height,//
+                imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
+            };
+
+            //如果第一张默认设计为相册首页并更新相册数量
+            AlbumsImg.count({albumsId: param.AlbumsId}, function (err, count) {
                 if (!count) {
-                    updateSet = {$set: {coverImg: imgWebDir + imgname, imgNum: parseInt(count) + 1}}
+                    doc.cover = true;
                 }
-                Albums.findOneAndUpdate({_id: albumsId}, updateSet, {new: true}, function (err, doc) {
+                var albums = new AlbumsImg(doc);
+                if (count >= 150) {
                     res.json({
-                        success: true,
-                        msg: '提交图片成功'
+                        success: false,
+                        tooMuch: true,
+                        msg: '但提交图片超出来数量'
                     });
-                });
+                } else {
+                    albums.save(function (err) {
+                        var updateSet = {$set: {imgNum: parseInt(count) + 1}};
+                        if (!count) {
+                            updateSet = {$set: {coverImg: imgWebDir + imgname, imgNum: parseInt(count) + 1}}
+                        }
+                        Albums.findOneAndUpdate({_id: albumsId}, updateSet, {new: true}, function (err, doc) {
+                            res.json({
+                                success: true,
+                                files: files.qqfile,
+                                fields: fields,
+                                msg: '提交图片成功'
+                            });
+                        });
+
+                    });
+                }
 
             });
-
         });
-
 
     });
 

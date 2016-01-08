@@ -81,6 +81,8 @@ var AlbumsImgSchema = new Schema({
     name: {type: String, trim: true, required: true},//文件名与图片名称一样
     path: {type: String, trim: true, required: true},//目录名
     title: {type: String, trim: true},//图片标题
+    width:Number,
+    height:Number,
     likes: [{type: ObjectId}],//user id
     watches: [{type: ObjectId}],//user id
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间

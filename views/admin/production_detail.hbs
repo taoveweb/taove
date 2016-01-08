@@ -6,7 +6,8 @@
         .production {
             color: #ff4f4f;
         }
-        .typeselect{
+
+        .typeselect {
             position: static;
         }
     </style>
@@ -16,48 +17,25 @@
     {{> admin_left}}
     <div class="content">
         <div class="tab">
-            <div class="menu clearfix">
-                <span class="current">已精修</span>
-                <span>未精修</span>
+            <div class="menu clearfix" >
+                <span class="current" data-open="0">已精修</span>
+                <span data-open="1">未精修</span>
+
+                <div class="imginfo">共{{imgNum}}张图片</div>
                 <a href="{{static}}admin/production">返回>></a>
             </div>
-            <div class="panel current clearfix">
-                <div class="item upload uploadBtn">
+            <div class="panel current clearfix grid1 ">
+                <div class="item grid-item upload uploadBtn">
                     <div class="box">
                     </div>
                     <p>上传照片</p>
                 </div>
                 {{#each albums}}
                     {{#ifCond imgType "==" 1}}
-                    <div class="item">
-                        <div class="box">
-                            <img src="/img/load.png" data-original="/{{this.path}}{{this.name}}" alt=""/>
-
-                            <div class="btn clearfix" data-id="{{this._id}}">
-                                <i></i>
-                                <span class="delete">删除</span>
-                                <span class="cover">设为封面</span>
-                                <span class="download">下载</span>
-                            </div>
-                        </div>
-                        <p>原片</p>
-                    </div>
-                    {{/ifCond}}
-                {{/each}}
-            </div>
-            <div class="panel clearfix">
-                <div class="item upload uploadBtn">
-                    <div class="box">
-                    </div>
-                    <p>上传照片</p>
-                </div>
-
-                {{#each albums}}
-
-                    {{#ifCond imgType "==" 0}}
-                        <div class="item">
+                        <div class="item grid-item">
                             <div class="box">
-                                <img src="/img/load.png" data-original="/{{this.path}}{{this.name}}" alt=""/>
+                                <img  data-original="/{{this.path}}{{this.name}}" width="266" height="{{this.height}}" alt=""/>
+
                                 <div class="btn clearfix" data-id="{{this._id}}">
                                     <i></i>
                                     <span class="delete">删除</span>
@@ -70,6 +48,32 @@
                     {{/ifCond}}
                 {{/each}}
             </div>
+            <div class="panel clearfix grid2" >
+                <div class="item upload grid-item uploadBtn">
+                    <div class="box">
+                    </div>
+                    <p>上传照片</p>
+                </div>
+
+                {{#each albums}}
+
+                    {{#ifCond imgType "==" 0}}
+                        <div class="item grid-item">
+                            <div class="box">
+                                <img  data-original="/{{this.path}}{{this.name}}" width="266" height="{{this.height}}" alt=""/>
+
+                                <div class="btn clearfix" data-id="{{this._id}}">
+                                    <i></i>
+                                    <span class="delete">删除</span>
+                                    <span class="cover">设为封面</span>
+                                    <span class="download">下载</span>
+                                </div>
+                            </div>
+                            <p><em>{{this.title}}</em>原片</p>
+                        </div>
+                    {{/ifCond}}
+                {{/each}}
+            </div>
 
         </div>
 
@@ -77,11 +81,13 @@
 </div>
 </div>
 
-<div class="pop delete-pop"  >
+<div class="pop delete-pop">
     <div class="mask"></div>
     <div class="pop-content">
         <h2>删除作 <span class="close">×</span></h2>
+
         <p>确定要删除和吗</p>
+
         <div class="btn">
             <span class="delete">确定</span>
             <span>取消</span>
@@ -89,7 +95,7 @@
     </div>
 </div>
 <script>
-    var imgNumdetail={{imgNum}}
+    var imgNumdetail ={{imgNum}}
 </script>
 
 {{> admin_production_pop}}

@@ -143,7 +143,7 @@ function postProductionimg(req, res, next) {
         imgname += "." + ext;
         fs.renameSync(files.qqfile.path, dir + imgname);
         gm(dir + imgname).size(function (err, size) {
-            console.log(size.width, size.height);
+            console.log(err,size.width, size.height);
 
 
             var doc = {

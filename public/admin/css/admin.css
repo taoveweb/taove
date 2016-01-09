@@ -370,6 +370,7 @@
     background: #fff;
     overflow: hidden;
     float: left;
+    display: block;
 }
 .grid-sizer{
     width: 266px

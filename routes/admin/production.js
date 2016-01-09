@@ -66,7 +66,6 @@ function deleteImg(req, res, next) {
         } else {
             var updateSet = {$inc: {imgNum: -1}};
             Albums.findOneAndUpdate({_id: albumsimg.albumsId}, updateSet, {new: true}, function (err, doc) {
-
                 res.json({
                     success: true,
                     msg: '删除成功'
@@ -173,7 +172,7 @@ function postProductionimg(req, res, next) {
                     albums.save(function (err) {
                         var updateSet = {$set: {imgNum: parseInt(count) + 1}};
                         if (!count) {
-                            updateSet = {$set: {coverImg: imgWebDir + imgname, imgNum: parseInt(count) + 1,coverHeight:size.height}}
+                            updateSet = {$set: {coverImg: imgWebDir + imgname, imgNum: parseInt(count) + 1,coverHeight:size.height,coverWidth:size.height}}
                         }
                         Albums.findOneAndUpdate({_id: albumsId}, updateSet, {new: true}, function (err, doc) {
                             res.json({

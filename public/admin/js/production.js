@@ -121,10 +121,10 @@ var manualUploader = new qq.FineUploader({
         onAllComplete: function (successful, failed) {
             if(failed.length){
                 alert("相册最多只能存150张,上传超了"+failed.length);
-               //window.location.reload();
+               window.location.reload();
             }
             if (!failed.length) {
-                //window.location.reload();
+                window.location.reload();
             }
         }
     }

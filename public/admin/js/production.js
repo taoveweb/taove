@@ -162,6 +162,20 @@ $('.panel').on('click', ".delete", function () {
 });
 
 
+//设置为封面
+$('.panel').on('click', ".cover", function () {
+    var _id = $(this).parent().attr('data-id');
+    var that = $(this);
+
+    $.post("/admin/production", {_id: _id, type: "cover"},
+        function (data) {
+            if (data.success) {
+                alert('封面设置成功')
+            }
+        });
+});
+
+
 //瀑布流
 
 

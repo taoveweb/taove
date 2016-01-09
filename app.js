@@ -9,7 +9,7 @@ var MongoStore = require('connect-mongo')(session);
 var minify = require('express-minify');
 var fs = require('fs');
 var hbs = require('hbs');
-
+var helpers=require('handlebars-helpers')
 var compression = require('compression');
 global.__baseDir = __dirname;
 
@@ -23,6 +23,7 @@ app.locals.cssStatic = '/';
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 //??hbs??
+helpers.register(hbs,{});
 require('./hbsregister')(hbs);
 
 // view engine setup
@@ -52,6 +53,7 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 
 
 require('./routes/route')(app);
+
 
 
 // catch 404 and forward to error handler

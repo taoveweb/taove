@@ -423,7 +423,7 @@
 }
 .panel .item .box .btn span{
     display: block;
-    width: 33.3%;
+    width: 50%;
     float: left;
     height: 46px;
     line-height: 46px;
@@ -432,6 +432,9 @@
     position: relative;
     z-index: 3;
     cursor: pointer;
+}
+.panel .item .box .btn span:hover{
+    background: #ff6600;
 }
 .panel .item p
 {
@@ -443,10 +446,12 @@
     text-align: right;
     cursor: pointer;
     position: relative;
+    color: #949494;
 }
 .panel .item p em{
     position: absolute;
     left: 10px;
+    color: #000;
 }
 .upload  .box{
     background: url("../../pc/img/buyer/add.png") center no-repeat #f0f0f0;

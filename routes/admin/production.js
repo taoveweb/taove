@@ -173,7 +173,7 @@ function postProductionimg(req, res, next) {
                     albums.save(function (err) {
                         var updateSet = {$set: {imgNum: parseInt(count) + 1}};
                         if (!count) {
-                            updateSet = {$set: {coverImg: imgWebDir + imgname, imgNum: parseInt(count) + 1}}
+                            updateSet = {$set: {coverImg: imgWebDir + imgname, imgNum: parseInt(count) + 1,coverHeight:size.height}}
                         }
                         Albums.findOneAndUpdate({_id: albumsId}, updateSet, {new: true}, function (err, doc) {
                             res.json({

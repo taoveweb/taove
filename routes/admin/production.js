@@ -10,10 +10,42 @@ var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
 var gm = require('gm').subClass({imageMagick: true});
 function getProduction(req, res, next) {
-    Albums.find({photographyId: req.session.userId['_id']}, function (err, doc) {
-        if (err) next(err);
-        res.render('admin/production', {title: '摄影作品', taove: doc, detail: false, layout: 'layout_pc'});
-    });
+    AlbumsImg.aggregate(
+        {$match: {photographyId: req.session.userId['_id']}},
+        {
+            $group: {
+                _id: "$albumsId",
+                imgs: {$push: {path: "$path", name: "$name", cover: "$cover", width: "$width", height: "$height"}},
+                count: {$sum: 1}
+            }
+        }
+    ).exec(function (err, albumsimg) {
+            Albums.find({photographyId: req.session.userId['_id']}, function (err, doc) {
+                    for (var i = 0; i < doc.length; i++) {
+                        var imgs = albumsimg[i];
+                        if (imgs.imgs) {
+                            doc[i].imgNum = 0;
+                            doc[i].coverImg = "img/placeholder.png";
+                            doc[i].height = 266;
+                        }
+                        else {
+                            doc[i].imgNum = imgs.count;
+                            for (var m = 0; m < imgs.imgs.length; m++) {
+                                var img = imgs.imgs[i];
+                                if (img.cover) {
+                                    doc[i].coverImg = img.path + img.name;
+                                    doc[i].height = img.height * (266 / img.width);
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    res.render('admin/production', {title: '摄影作品', taove: doc, detail: false, layout: 'layout_pc'});
+                }
+            )
+        });
+
 }
 //创建相册
 function postProduction(req, res, next) {
@@ -51,6 +83,7 @@ function getProductiondetail(req, res, next) {
     });
 
 }
+
 //只要在当前用户下的图片才有资格册除----------------------
 function deleteImg(req, res, next) {
     var _id = req.body._id;
@@ -64,17 +97,14 @@ function deleteImg(req, res, next) {
                 msg: '你没有权限'
             })
         } else {
-            var updateSet = {$inc: {imgNum: -1}};
-            Albums.findOneAndUpdate({_id: albumsimg.albumsId}, updateSet, {new: true}, function (err, doc) {
-                res.json({
-                    success: true,
-                    msg: '删除成功'
-                })
-            });
+            res.json({
+                success: true,
+                msg: '删除成功'
+            })
         }
-
     });
 }
+
 //创建相册-----------------------------------------------------
 function createAlbums(req, res, next) {
     var params = req.body;
@@ -142,9 +172,6 @@ function postProductionimg(req, res, next) {
         imgname += "." + ext;
         fs.renameSync(files.qqfile.path, dir + imgname);
         gm(dir + imgname).size(function (err, size) {
-            console.log(err);
-
-
             var doc = {
                 "albumsId": albumsId,//相册id
                 photographyId: req.session.userId['_id'],//摄影师Id
@@ -170,19 +197,12 @@ function postProductionimg(req, res, next) {
                     });
                 } else {
                     albums.save(function (err) {
-                        var updateSet = {$set: {imgNum: parseInt(count) + 1}};
-                        if (!count) {
-                            updateSet = {$set: {coverImg: imgWebDir + imgname, imgNum: parseInt(count) + 1,coverHeight:size.height,coverWidth:size.height}}
-                        }
-                        Albums.findOneAndUpdate({_id: albumsId}, updateSet, {new: true}, function (err, doc) {
-                            res.json({
-                                success: true,
-                                files: files.qqfile,
-                                fields: fields,
-                                msg: '提交图片成功'
-                            });
+                        res.json({
+                            success: true,
+                            files: files.qqfile,
+                            fields: fields,
+                            msg: '提交图片成功'
                         });
-
                     });
                 }
 
@@ -199,6 +219,7 @@ function getExt(filename) {
     var split = filename.split('.');
     return split[split.length - 1];
 }
+
 function isValidFileName(filename) {
     var split = filename.split('.');
     if (split.length < 2) {

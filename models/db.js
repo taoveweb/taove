@@ -104,10 +104,10 @@ var AlbumsSchema = new Schema({
     description: {type: String, trim: true, required: true},//描述
     city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
-    imgNum:{type: Number, default: 0},//相册数片数量
+/*    imgNum:{type: Number, default: 0},//相册数片数量
     coverImg:{type: String, default: "img/placeholder.png"},//封面图片
     coverHeight:Number,//封面高度
-    coverWidth:Number,//封面高度
+    coverWidth:Number,//封面高度*/
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间
     updated:{type: Date, default: Date.now()}, //更新时间
     package: {type: String, trim: true}//套餐

@@ -19,8 +19,8 @@
         </div>
         <div class="panel current clearfix grid1">
             {{#each taove}}
-                <a href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="item">
-                    <img width="266"  height="{{this.coverHeight}}"src="{{../static}}img/load.png" data-original="{{../static}}{{this.coverImg}}" alt="{{this.title}}"/>
+                <a href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="item grid-item">
+                    <img width="266"  height="{{this.height}}"src="{{../static}}img/load.png" data-original="{{../static}}{{this.coverImg}}" alt="{{this.title}}"/>
                     <p><em>{{this.title}}</em>原片</p>
                 </a>
             {{/each}}

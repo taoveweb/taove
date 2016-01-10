@@ -23,7 +23,7 @@ function getProduction(req, res, next) {
             Albums.find({photographyId: req.session.userId['_id']}, function (err, doc) {
                     for (var i = 0; i < doc.length; i++) {
                         var imgs = albumsimg[i];
-                        if (imgs.imgs) {
+                        if (!imgs) {
                             doc[i].imgNum = 0;
                             doc[i].coverImg = "img/placeholder.png";
                             doc[i].height = 266;

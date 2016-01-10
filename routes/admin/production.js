@@ -31,7 +31,7 @@ function getProduction(req, res, next) {
                         else {
                             doc[i].imgNum = imgs.count;
                             for (var m = 0; m < imgs.imgs.length; m++) {
-                                var img = imgs.imgs[i];
+                                var img = imgs.imgs[m];
                                 if (img.cover) {
                                     doc[i].coverImg = img.path + img.name;
                                     doc[i].height = img.height * (266 / img.width);

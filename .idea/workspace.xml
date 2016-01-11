@@ -77,20 +77,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="production_detail.hbs" pinned="false" current-in-tab="false">
+          <file leaf-file-name="production_detail.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/admin/production_detail.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.8461537">
-                  <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
+                <state vertical-scroll-proportion="0.8526646">
+                  <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="admin.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="admin.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/admin/css/admin.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.3312102">
+                <state vertical-scroll-proportion="-3.3548386">
                   <caret line="459" column="7" selection-start-line="459" selection-start-column="7" selection-end-line="459" selection-end-column="7" />
                   <folding />
                 </state>
@@ -184,8 +184,8 @@
         <option value="$PROJECT_DIR$/views/admin/production.hbs" />
         <option value="$PROJECT_DIR$/public/admin/js/production.js" />
         <option value="$PROJECT_DIR$/routes/admin/production.js" />
-        <option value="$PROJECT_DIR$/views/admin/production_detail.hbs" />
         <option value="$PROJECT_DIR$/public/admin/css/admin.css" />
+        <option value="$PROJECT_DIR$/views/admin/production_detail.hbs" />
       </list>
     </option>
   </component>
@@ -857,18 +857,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/production_detail.hbs">
+    <entry file="file://$PROJECT_DIR$/public/admin/css/admin.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
-          <caret line="63" column="55" selection-start-line="63" selection-start-column="55" selection-end-line="63" selection-end-column="55" />
+        <state vertical-scroll-proportion="-3.3548386">
+          <caret line="459" column="7" selection-start-line="459" selection-start-column="7" selection-end-line="459" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/css/admin.css">
+    <entry file="file://$PROJECT_DIR$/views/admin/production_detail.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3312102">
-          <caret line="459" column="7" selection-start-line="459" selection-start-column="7" selection-end-line="459" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.8526646">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
           <folding />
         </state>
       </provider>

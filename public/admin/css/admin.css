@@ -457,7 +457,7 @@
     left: 10px;
     color: #000;
 }
-.upload  .box{
+.panel .upload  .box{
     background: url("../../pc/img/buyer/add.png") center no-repeat #f0f0f0;
     cursor: pointer;
 }

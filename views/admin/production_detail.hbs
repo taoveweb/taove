@@ -30,11 +30,12 @@
                     </div>
                     <p>上传照片</p>
                 </div>
-                {{#each albums}}
+                {{#each albumsimgs}}
                     {{#ifCond imgType "==" 1}}
                         <div class="item grid-item">
                             <div class="box">
-                                <img  data-original="/{{this.path}}{{this.name}}" width="266" height="{{this.height}}" alt=""/>
+                                <img  data-original="/{{this.path}}{{this.name}}"
+                                      width="266" height="{{getHeight this.height this.width 266}}" alt="正在加载。。。"/>
 
                                 <div class="btn clearfix" data-id="{{this._id}}">
                                     <i></i>
@@ -54,12 +55,13 @@
                     <p>上传照片</p>
                 </div>
 
-                {{#each albums}}
+                {{#each albumsimgs}}
 
                     {{#ifCond imgType "==" 0}}
                         <div class="item grid-item">
                             <div class="box">
-                                <img  data-original="/{{this.path}}{{this.name}}" width="266" height="{{this.height}}" alt=""/>
+                                <img  data-original="/{{this.path}}{{this.name}}"
+                                      width="266" height="{{getHeight this.height this.width 266}}" alt="正在加载。。。"/>
 
                                 <div class="btn clearfix" data-id="{{this._id}}">
                                     <i></i>

@@ -9,39 +9,42 @@ var Taove = db.Taove;
 var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
 var gm = require('gm').subClass({imageMagick: true});
+
+//相册性能需更改
 function getProduction(req, res, next) {
     AlbumsImg.aggregate(
-        {$match: {photographyId: req.session.userId['_id']}},
-        {
-            $group: {
-                _id: "$albumsId",
-                imgs: {$push: {path: "$path", name: "$name", cover: "$cover", width: "$width", height: "$height"}},
-                count: {$sum: 1}
-            }
-        }
-    ).exec(function (err, albumsimg) {
-            Albums.find({photographyId: req.session.userId['_id']}, function (err, doc) {
-                    for (var i = 0; i < doc.length; i++) {
-                        var imgs = albumsimg[i];
-                        if (!imgs) {
-                            doc[i].imgNum = 0;
-                            doc[i].coverImg = "img/placeholder.png";
-                            doc[i].height = 266;
-                        }
-                        else {
-                            doc[i].imgNum = imgs.count;
-                            for (var m = 0; m < imgs.imgs.length; m++) {
-                                var img = imgs.imgs[m];
-                                if (img.cover) {
-                                    doc[i].coverImg = img.path + img.name;
-                                    doc[i].height = img.height * (266 / img.width);
-                                    break;
+        {$match: {photographyId: req.session.userId['_id']}}
+    ).group({
+            _id: "$albumsId",
+            imgs: {$push: {name: "$name", path: "$path", width: "$width", height: "$height", cover: "$cover"}}
+        })
+        .exec(function (err, albumsimgs) {
+            Albums.find({photographyId: req.session.userId['_id']}, function (err, docs) {
+                    for (var i = 0; i < docs.length; i++) {
+                        var doc = docs[i];
+                        for (var m = 0; m < albumsimgs.length; m++) {
+                            var imgs = albumsimgs[m];
+                            if (doc._id == imgs._id) {
+                                docs[i].imgNum = imgs.imgs.length;
+                                for (var l = 0; l < imgs.imgs.length; l++) {
+                                    var img = imgs.imgs[l];
+                                    if (img.cover) {
+                                        docs[i].coverImg = img.path + img.name;
+                                        docs[i].height = img.height * (266 / img.width);
+                                        break;
+                                    }
                                 }
                             }
                         }
-                    }
 
-                    res.render('admin/production', {title: '摄影作品', taove: doc, detail: false, layout: 'layout_pc'});
+                        if (!docs[i].imgNum) {
+                            docs[i].imgNum = 0;
+                            docs[i].coverImg = "img/placeholder.png";
+                            docs[i].height = 266;
+                        }
+
+                    }
+                    res.render('admin/production', {title: '摄影作品', taove: docs, detail: false, layout: 'layout_pc'});
                 }
             )
         });
@@ -57,29 +60,61 @@ function postProduction(req, res, next) {
         case "delete":
             deleteImg(req, res, next);
             break;
+        case "cover":
+            coverImg(req, res, next);
+            break;
     }
 
 }
 
 function getProductiondetail(req, res, next) {
-    AlbumsImg.aggregate({$match: {albumsId: req.query.albumsId}}, {$sort: {createdOn: -1}}, {
-        $project: {
-            albumsId: 1,
-            photographyId: 1,
-            name: 1,
-            path: 1,
-            title: 1,
-            imgType: 1,
-            height: {$multiply: ["$height", {$divide: [266, "$width"]}]}
-        }
-    }).exec(function (err, albums) {
+
+
+    AlbumsImg.find({albumsId: req.query.albumsId}).sort({createdOn: -1}).exec(function (err, albumsimgs) {
         res.render('admin/production_detail', {
             title: '摄影作品',
             detail: true,
-            "albums": albums,
-            imgNum: albums.length,
+            "albumsimgs": albumsimgs,
+            imgNum: albumsimgs.length,
             layout: 'layout_pc'
         });
+    });
+    /* AlbumsImg.aggregate({$match: {albumsId: req.query.albumsId}}, {$sort: {createdOn: -1}}, {
+     $project: {
+     albumsId: 1,
+     photographyId: 1,
+     name: 1,
+     path: 1,
+     title: 1,
+     imgType: 1,
+     height: {$multiply: ["$height", {$divide: [266, "$width"]}]}
+     }
+     }).exec(function (err, albums) {
+     res.render('admin/production_detail', {
+     title: '摄影作品',
+     detail: true,
+     "albums": albums,
+     imgNum: albums.length,
+     layout: 'layout_pc'
+     });
+     });*/
+
+}
+
+
+function coverImg(req, res, next) {
+    var _id = req.body._id;
+    var albumsId = req.body.albumsId;
+    var reset = {$set: {_id: _id, albumsId: albumsId}};
+    var set = {cover: true};
+
+    AlbumsImg.findOneAndUpdate({albumsId: albumsId, cover: true}, reset, {new: true}, function (err, doc) {
+        AlbumsImg.findOneAndUpdate({_id: _id}, set, function (err, doc) {
+            res.json({
+                success: true,
+                msg: "封面设置成功"
+            })
+        })
     });
 
 }

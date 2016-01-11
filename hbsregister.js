@@ -19,6 +19,11 @@ module.exports=function(hbs){
     });
 
 
+    hbs.registerHelper('getHeight', function (height,width,v3,options) {
+        var val = height*(260/width);
+        return val;
+    });
+
 
     hbs.registerHelper("ifCond",function(v1,operator,v2,options) {
         switch (operator)

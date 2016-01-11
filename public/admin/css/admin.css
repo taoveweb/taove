@@ -388,11 +388,13 @@
 }
 .panel .item .box{
     position: relative;
-    min-height: 190px;
     overflow: hidden;
 }
 .panel .item .box img{
     display: block;
+}
+.panel .item.upload .box{
+    height: 190px;
 }
 .panel .item .box .btn{
     position: absolute;

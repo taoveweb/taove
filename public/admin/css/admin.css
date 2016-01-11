@@ -389,6 +389,7 @@
 .panel .item .box{
     position: relative;
     overflow: hidden;
+    background: url("/img/load.png") no-repeat center;
 }
 .panel .item .box img{
     display: block;

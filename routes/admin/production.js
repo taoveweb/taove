@@ -52,7 +52,6 @@ function getProduction(req, res, next) {
 }
 //创建相册
 function postProduction(req, res, next) {
-
     switch (req.body.type) {
         case 'create':
             createAlbums(req, res, next);
@@ -101,14 +100,14 @@ function getProductiondetail(req, res, next) {
 
 }
 
-
+//设置封面
 function coverImg(req, res, next) {
     var _id = req.body._id;
     var albumsId = req.body.albumsId;
-    var reset = {$set: {_id: _id, albumsId: albumsId}};
+    var reset = {cover: false};
     var set = {cover: true};
-
-    AlbumsImg.findOneAndUpdate({albumsId: albumsId, cover: true}, reset, {new: true}, function (err, doc) {
+    AlbumsImg.findOneAndUpdate({albumsId: albumsId, cover: true}, reset,function (err, doc) {
+        console.log(err,doc)
         AlbumsImg.findOneAndUpdate({_id: _id}, set, function (err, doc) {
             res.json({
                 success: true,

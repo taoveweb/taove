@@ -166,8 +166,6 @@ $('.panel').on('click', ".delete", function () {
 $('.panel').on('click', ".cover", function () {
     var _id = $(this).parent().attr('data-id');
     var albumsId=window.location.search.split('=')[1];
-    console.log(albumsId)
-    return;
     var that = $(this);
 
     $.post("/admin/production", {_id: _id, albumsId:albumsId,type: "cover"},

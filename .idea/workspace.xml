@@ -20,35 +20,15 @@
     <favorites_list name="Expess" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.8054968">
+    <splitter split-orientation="horizontal" split-proportion="0.68498945">
       <split-first>
         <leaf>
-          <file leaf-file-name="production.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="production.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/admin/js/production.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="174" column="31" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
+                <state vertical-scroll-proportion="0.44347826">
+                  <caret line="167" column="54" selection-start-line="167" selection-start-column="54" selection-end-line="167" selection-end-column="54" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="fine-uploader.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/common/fine-uploader/fine-uploader.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="1355" column="52" selection-start-line="1355" selection-start-column="52" selection-end-line="1355" selection-end-column="52" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                    <element signature="e#502#5984#0" expanded="false" />
-                    <element signature="e#6002#28593#0" expanded="false" />
-                    <element signature="e#28704#28879#0" expanded="false" />
-                    <element signature="e#28975#34766#0" expanded="false" />
-                    <element signature="e#34877#34984#0" expanded="false" />
-                    <element signature="e#35011#37100#0" expanded="false" />
-                    <element signature="e#37399#37573#0" expanded="false" />
-                    <element signature="e#39608#42397#0" expanded="false" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -63,11 +43,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="production.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="production.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/routes/admin/production.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.17702448">
-                  <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -90,7 +70,7 @@
           <file leaf-file-name="db.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/db.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.259887">
+                <state vertical-scroll-proportion="-0.4">
                   <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
                   <folding />
                 </state>
@@ -191,10 +171,10 @@
         <option value="$PROJECT_DIR$/public/common/jQueryFU/index.html" />
         <option value="$PROJECT_DIR$/public/common/jQueryFU/js/main.js" />
         <option value="$PROJECT_DIR$/public/admin/css/admin.css" />
-        <option value="$PROJECT_DIR$/public/admin/js/production.js" />
         <option value="$PROJECT_DIR$/hbsregister.js" />
         <option value="$PROJECT_DIR$/views/admin/production_detail.hbs" />
         <option value="$PROJECT_DIR$/views/admin/production.hbs" />
+        <option value="$PROJECT_DIR$/public/admin/js/production.js" />
         <option value="$PROJECT_DIR$/routes/admin/production.js" />
       </list>
     </option>
@@ -400,7 +380,7 @@
     <frame x="2" y="56" width="1440" height="829" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24151967" sideWeight="0.48958334" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.49389416" sideWeight="0.48958334" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.49789253" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496329" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -817,14 +797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/partials/admin_production_pop.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3076923">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -833,17 +805,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/admin/js/production.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="174" column="31" selection-start-line="174" selection-start-column="31" selection-end-line="174" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.259887">
+        <state vertical-scroll-proportion="-0.4">
           <caret line="86" column="8" selection-start-line="86" selection-start-column="8" selection-end-line="86" selection-end-column="8" />
           <folding />
         </state>
@@ -859,8 +823,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin/production.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17702448">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/partials/admin_production_pop.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3076923">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/admin/js/production.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44347826">
+          <caret line="167" column="54" selection-start-line="167" selection-start-column="54" selection-end-line="167" selection-end-column="54" />
           <folding />
         </state>
       </provider>

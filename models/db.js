@@ -104,10 +104,8 @@ var AlbumsSchema = new Schema({
     description: {type: String, trim: true, required: true},//描述
     city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
-/*    imgNum:{type: Number, default: 0},//相册数片数量
-    coverImg:{type: String, default: "img/placeholder.png"},//封面图片
-    coverHeight:Number,//封面高度
-    coverWidth:Number,//封面高度*/
+    imgs:[AlbumsImgSchema],
+    imgNum:Number,
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}, //创建时间
     updated:{type: Date, default: Date.now()}, //更新时间
     package: {type: String, trim: true}//套餐
@@ -189,21 +187,27 @@ AlbumsSchema.pre('update',function(next){
     next();
 });
 
-/*
 //相册图片如果上传的是第一张就把他做为封面
 AlbumsImgSchema.pre('save',function(next){
     var user=this;
     if(this.isNew){
-        Albums.count({_id:this.albumsId},function(err,count){
-            Albums.findOneAndUpdate({_id:this.albumsId},{$set:{imgNum:count}},function(){
-                console.log('set'+count);
-                next();
-            })
+        Albums.findOneAndUpdate({_id:this.albumsId},{$inc:{imgNum:1}},function(){
+            next();
         })
+    }else{
+        next();
     }
 });
 
-*/
+//相册图片如果上传的是第一张就把他做为封面
+AlbumsImgSchema.pre('remove',function(next){
+    var user=this;
+    console.log({_id:this.albumsId})
+    Albums.findOneAndUpdate({_id:this.albumsId},{$inc:{imgNum:-1}},function(){
+        next();
+    })
+});
+
 
 
 

@@ -121,7 +121,8 @@ function coverImg(req, res, next) {
 //只要在当前用户下的图片才有资格册除----------------------
 function deleteImg(req, res, next) {
     var _id = req.body._id;
-    AlbumsImg.findOneAndRemove({
+    var albmsImg=new AlbumsImg();
+    albmsImg.remove({
         "_id": _id,
         photographyId: req.session.userId['_id']
     }, function (err, albumsimg, result) {
@@ -222,6 +223,7 @@ function postProductionimg(req, res, next) {
                 if (!count) {
                     doc.cover = true;
                 }
+                doc.imgNum=count+1;
                 var albums = new AlbumsImg(doc);
                 if (count >= 150) {
                     res.json({

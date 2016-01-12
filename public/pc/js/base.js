@@ -3,11 +3,11 @@
  */
 $(function(){
     $('.yd-btn').on('click',function(){
-        $('.pop').fadeIn();
+        $('.yd-pop').fadeIn();
     })
 
-    $('body').on('click',".pop-close",function(){
-        $('.pop').fadeOut();
+    $('body').on('click',".yd-close",function(){
+        $('.yd-pop').fadeOut();
     })
 
 

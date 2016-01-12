@@ -31,7 +31,11 @@ mongoose.connection.on('SIGINT', function () {
     });
 });
 
-
+//意向单
+var intention=new Schema({
+    payMony:Number,
+    createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}//创建时间
+});
 
 
 

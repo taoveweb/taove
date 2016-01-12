@@ -109,12 +109,18 @@
                     <span>最擅长风格：</span>
                     {{>style_select}}
                 </div>
+                {{#if loginInfo.approved}}
                 <div class="br">
-                    <span>手持证件照：</span>
-
-                    <div id="fine-uploader-gallery" style="margin-right: 40px;"></div>
-                    <p class="credentialsPhotoUrl"></p>
+                    <img width="200" src="/img/alpha.png" data-original="{{taove.credentialsPhotoUrl}}" alt=""/>
                 </div>
+                {{else}}
+                    <div class="br">
+                        <span>手持证件照：</span>
+
+                        <div id="fine-uploader-gallery" style="margin-right: 40px;"></div>
+                        <p class="credentialsPhotoUrl"></p>
+                    </div>
+                {{/if}}
                 <div class="br">
                     <button type="submit">提交申请</button>
                     <p class="submit"></p>
@@ -242,7 +248,7 @@
                     validation: {
                         allowedExtensions: ['jpeg', 'jpg', 'gif', 'png'],
                         sizeLimit: 1024 * 1024 * 2,
-                        image:{
+                        image: {
                             maxWidth: 1024,
                             maxHeight: 1024
                         }

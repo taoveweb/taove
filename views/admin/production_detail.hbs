@@ -44,7 +44,9 @@
                                     <span class="cover">设为封面</span>
                                 </div>
                             </div>
-                            <p><em>{{this.title}}</em>精修图片</p>
+                            <div class="br">
+                                <p albumsImgsId="{{this._id}}" class="editAlbumsImgsTitle edit" contenteditable="true" >{{this.title}}</p> <em>{{this.imgNum}}原片</em>
+                            </div>
                         </div>
                     {{/ifCond}}
                 {{/each}}
@@ -71,7 +73,10 @@
                                     <span class="cover">设为封面</span>
                                 </div>
                             </div>
-                            <p><em>{{this.title}}</em>原片</p>
+
+                            <div class="br">
+                                <p albumsId="{{this._id}}" class="editAlbumsImgsTitle edit" contenteditable="true" >{{this.title}}</p> <em>{{this.imgNum}}原片</em>
+                            </div>
                         </div>
                     {{/ifCond}}
                 {{/each}}

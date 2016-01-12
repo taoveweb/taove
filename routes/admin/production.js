@@ -44,7 +44,7 @@ function getProduction(req, res, next) {
                         }
 
                     }
-                    res.render('admin/production', {title: '摄影作品', taove: docs, detail: false, layout: 'layout_pc'});
+                    res.render('admin/production', {title: '摄影作品', taove: docs,albumsNum:docs.length, detail: false, layout: 'layout_pc'});
                 }
             )
         });
@@ -52,6 +52,7 @@ function getProduction(req, res, next) {
 }
 //创建相册
 function postProduction(req, res, next) {
+
     switch (req.body.type) {
         case 'create':
             createAlbums(req, res, next);
@@ -62,14 +63,19 @@ function postProduction(req, res, next) {
         case "cover":
             coverImg(req, res, next);
             break;
+        case "editAlbumsTitle":
+            editAlbumsTitle(req, res, next);
+            break;
+        case "editAlbumsImgsTitle":
+            editAlbumsImgsTitle(req, res, next);
+            break;
     }
 
 }
 
 function getProductiondetail(req, res, next) {
 
-
-    AlbumsImg.find({albumsId: req.query.albumsId}).sort({createdOn: -1}).exec(function (err, albumsimgs) {
+    AlbumsImg.find({albumsId: req.query.albumsId, photographyId: req.session.userId['_id']}).sort({createdOn: -1}).exec(function (err, albumsimgs) {
         res.render('admin/production_detail', {
             title: '摄影作品',
             detail: true,
@@ -78,25 +84,6 @@ function getProductiondetail(req, res, next) {
             layout: 'layout_pc'
         });
     });
-    /* AlbumsImg.aggregate({$match: {albumsId: req.query.albumsId}}, {$sort: {createdOn: -1}}, {
-     $project: {
-     albumsId: 1,
-     photographyId: 1,
-     name: 1,
-     path: 1,
-     title: 1,
-     imgType: 1,
-     height: {$multiply: ["$height", {$divide: [266, "$width"]}]}
-     }
-     }).exec(function (err, albums) {
-     res.render('admin/production_detail', {
-     title: '摄影作品',
-     detail: true,
-     "albums": albums,
-     imgNum: albums.length,
-     layout: 'layout_pc'
-     });
-     });*/
 
 }
 
@@ -106,9 +93,8 @@ function coverImg(req, res, next) {
     var albumsId = req.body.albumsId;
     var reset = {cover: false};
     var set = {cover: true};
-    AlbumsImg.findOneAndUpdate({albumsId: albumsId, cover: true}, reset,function (err, doc) {
-        console.log(err,doc)
-        AlbumsImg.findOneAndUpdate({_id: _id}, set, function (err, doc) {
+    AlbumsImg.findOneAndUpdate({albumsId: albumsId, photographyId: req.session.userId['_id'], cover: true}, reset, function (err, doc) {
+        AlbumsImg.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, set, function (err, doc) {
             res.json({
                 success: true,
                 msg: "封面设置成功"
@@ -118,10 +104,52 @@ function coverImg(req, res, next) {
 
 }
 
+//编缉相册标题
+function editAlbumsTitle(req, res, next) {
+    var _id = req.body._id;
+    var title = req.body.title;
+    var reset = {title: title};
+    Albums.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, reset, function (err, doc) {
+        if (err) {
+            res.json({
+                success: false,
+                msg: "编辑失败"
+            })
+        }
+        res.json({
+            success: true,
+            msg: "编辑成功"
+        })
+    });
+}
+
+
+//编缉相册图片标题
+function editAlbumsImgsTitle(req, res, next) {
+    var _id = req.body._id;
+    var title = req.body.title;
+    var reset = {title: title};
+    console.log('aa');
+    AlbumsImg.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, reset, function (err, doc) {
+        console.log(err, doc)
+        if (err) {
+            res.json({
+                success: false,
+                msg: "编辑失败"
+            })
+        }
+        res.json({
+            success: true,
+            msg: "编辑成功"
+        })
+    });
+
+}
+
 //只要在当前用户下的图片才有资格册除----------------------
 function deleteImg(req, res, next) {
     var _id = req.body._id;
-    var albmsImg=new AlbumsImg();
+    var albmsImg = new AlbumsImg();
     albmsImg.remove({
         "_id": _id,
         photographyId: req.session.userId['_id']
@@ -223,7 +251,7 @@ function postProductionimg(req, res, next) {
                 if (!count) {
                     doc.cover = true;
                 }
-                doc.imgNum=count+1;
+                doc.imgNum = count + 1;
                 var albums = new AlbumsImg(doc);
                 if (count >= 150) {
                     res.json({

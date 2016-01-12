@@ -1,8 +1,8 @@
 .menu_p{
-    margin-left: 20px;
+    position: relative;
     padding-bottom: 10px;
 }
-.menu_p span{
+.tab .menu_p span{
     display: inline-block;
     width: 120px;
     height: 35px;
@@ -14,9 +14,18 @@
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    color: #fff;
 }
-.menu_p span:hover{
+.menu_p em{
+    position: absolute;
+    right: 0px;
+    top: 0;
+    height: 35px;
+    line-height: 35px;
+}
+.tab .menu_p span:hover{
     background: #c64348;
+    color: #fff;
 }
 .productionlist{
     margin-left: 20px;

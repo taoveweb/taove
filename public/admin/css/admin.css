@@ -371,6 +371,7 @@
     overflow: hidden;
     float: left;
     display: block;
+    position: relative;
 }
 .grid-sizer{
     width: 266px
@@ -382,14 +383,22 @@
     padding-left: 7px;
     border-top: 0;
     width: 865px;
+    margin-left: -1px;
 }
 .panel.current{
     display: block;
 }
+.panel .item{
+    background:  #fff;;
+    overflow: hidden;
+    border: 1px solid #d5d5d5;
+}
 .panel .item .box{
     position: relative;
     overflow: hidden;
+    display: block;
     background: url("/img/load.png") no-repeat center;
+
 }
 .panel .item .box img{
     display: block;
@@ -408,7 +417,16 @@
     -webkit-transition: bottom .3s;
     transition: bottom .3s;
     cursor: default;
+    line-height: 46px;
+    color: #fff;
 
+}
+.panel .item .box .btn em{
+    z-index: 10;
+    position: relative;
+    text-align: center;
+    display: block;
+    cursor: pointer;
 }
 .panel .item .box:hover .btn{
     bottom: 0;
@@ -440,22 +458,33 @@
 .panel .item .box .btn span:hover{
     background: #ff6600;
 }
-.panel .item p
+.panel .item .br
 {
     height: 48px;
     line-height: 48px;
     overflow: hidden;
     font-size: 14px;
-    padding: 0 5px;
-    text-align: right;
-    cursor: pointer;
     position: relative;
     color: #949494;
+
+
 }
-.panel .item p em{
+.panel .item .br em{
     position: absolute;
-    left: 10px;
+    right: 10px;
+    height: 48px;
+    line-height: 48px;
+    color: #949494;
+    top:0
+}
+.panel .item .br p{
+    margin-right: 80px;
+    height: 48px;
+    padding-top: 15px;
+    line-height: 18px;
     color: #000;
+    padding-left: 10px;
+    overflow: hidden;
 }
 .panel .upload  .box{
     background: url("../../pc/img/buyer/add.png") center no-repeat #f0f0f0;
@@ -469,9 +498,33 @@
 }
 
 
+.alertmsg{
+    display: none;
+    width: 250px;
+    height: 70px;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    margin:-40px 0 0 -125px;
+    background: #fff;
+    border: 1px solid #a0a0a0;
+    -webkit-box-shadow: 0 0 0 10px #d5d5d5;
+    -moz-box-shadow: 0 0 0 10px #d5d5d5;
+    box-shadow: 0 0 0 10px #d5d5d5;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
 
+}
 
-
+.alertmsg p{
+    margin: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #3dd48d;
+    font-weight: bold;
+}
 /*
 订单*/
 .orders-table{

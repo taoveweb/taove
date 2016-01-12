@@ -23,7 +23,7 @@
             return /^[\u4e00-\u9fa5]{2,10}$/.test($.trim(str));
         },
         title:function(str){
-            return /^[\u4e00-\u9fa5]{2,10}$/.test($.trim(str))
+            return /^([\u4e00-\u9fa5]|\d){1,10}$/.test($.trim(str))
         },
         description:function(str){
             return /^([\u4E00-\u9FA5]|\w|（|）|\(|\)|"|'|\.|。|!|,|，|！|\d|\n|\r|、){1,500}$/.test($.trim(str.replace(''," ")));

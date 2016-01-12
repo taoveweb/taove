@@ -12,19 +12,34 @@
 <div class="main clearfix">
     {{> admin_left}}
     <div class="content">
-        <div class="menu menu_p clearfix">
-            <span class="uploadBtn">上传图片</span>
-            <span class="createBtn">创建相册</span>
-            <span class="sortBtn">展示设置</span>
-        </div>
-        <div class="panel current clearfix grid1">
-            {{#each taove}}
-                <a href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="item grid-item">
-                    <img width="266"  height="{{this.height}}"src="{{../static}}img/load.png"
-                         data-original="{{../static}}{{this.coverImg}}" alt="{{this.title}}"/>
-                    <p><em>{{this.title}}</em>{{this.imgNum}}张图片</p>
-                </a>
-            {{/each}}
+        <div class="tab">
+            <div class="menu menu_p clearfix">
+                <span class="uploadBtn">上传图片</span>
+                <span class="createBtn">创建相册</span>
+                <span class="sortBtn">展示设置</span>
+
+                <em>你共有{{albumsNum}}个相册</em>
+            </div>
+            <div class="panel current clearfix grid1">
+                {{#each taove}}
+                    <div class="item grid-item">
+                        <a href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="box">
+                            <img width="266" height="{{this.height}}" src="{{../static}}img/alpha.png"
+                                 data-original="{{../static}}{{this.coverImg}}" alt="{{this.title}}"/>
+
+                            <div class="btn clearfix">
+                                <i></i>
+                                <em>点击进入相册</em>
+                            </div>
+                        </a>
+
+                        <div class="br">
+                            <p albumsId="{{this._id}}" class="editAlbumsTitle edit"
+                               contenteditable="true">{{this.title}}</p> <em>{{this.imgNum}}张图片</em>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
         </div>
     </div>
 </div>

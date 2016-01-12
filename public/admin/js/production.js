@@ -119,9 +119,9 @@ var manualUploader = new qq.FineUploader({
             console.log(responseJSON)
         },
         onAllComplete: function (successful, failed) {
-            if(failed.length){
-                alert("相册最多只能存150张,上传超了"+failed.length);
-               window.location.reload();
+            if (failed.length) {
+                alert("相册最多只能存150张,上传超了" + failed.length);
+                window.location.reload();
             }
             if (!failed.length) {
                 window.location.reload();
@@ -136,7 +136,7 @@ qq(document.getElementById("trigger-upload")).attach("click", function () {
         manualUploader.setParams(params);
         manualUploader.uploadStoredFiles();
     } else {
-        alert("最多只能上传200张图片哦")
+        alertmsg('最多只能上传200张图片哦');
     }
 
 });
@@ -151,9 +151,9 @@ $('.panel').on('click', ".delete", function () {
         function (data) {
             if (data.success) {
                 that.parents('.item').remove();
-                if($('.current').hasClass('grid1')){
+                if ($('.current').hasClass('grid1')) {
                     $grid1.isotope('layout');
-                }else{
+                } else {
                     $grid2.isotope('layout');
                 }
 
@@ -161,17 +161,57 @@ $('.panel').on('click', ".delete", function () {
         });
 });
 
+var titleTmp = "";
+$('.panel').on('focus', ".edit", function () {
+    titleTmp = $(this).html();
+});
+//编缉相册标题
+$('.panel').on('blur', ".editAlbumsTitle", function () {
+    var _id = $(this).attr('albumsId');
+    var that = $(this);
+    var title = that.html();
+    if (titleTmp == title) return;
+    if (!validate.title(title)) {
+        alertmsg('10个字数的汉字或数字');
+        return;
+    }
+
+    $.post("/admin/production", {_id: _id, title: title, type: "editAlbumsTitle"},
+        function (data) {
+            alertmsg(data.msg)
+        });
+});
+
+//编缉相册图片标题
+$('.panel').on('blur', ".editAlbumsImgsTitle", function () {
+    var _id = $(this).attr('albumsImgsId');
+    var that = $(this);
+    var title = that.html();
+    if (titleTmp == title) return;
+    if (!validate.title(title)) {
+        alertmsg('10个字数的汉字或数字','err');
+        return;
+    }
+
+    $.post("/admin/production", {_id: _id, title: title, type: "editAlbumsImgsTitle"},
+        function (data) {
+            alertmsg(data.msg)
+        });
+});
+
 
 //设置为封面
 $('.panel').on('click', ".cover", function () {
     var _id = $(this).parent().attr('data-id');
-    var albumsId=window.location.search.split('=')[1];
+    var albumsId = window.location.search.split('=')[1];
     var that = $(this);
 
-    $.post("/admin/production", {_id: _id, albumsId:albumsId,type: "cover"},
+    $.post("/admin/production", {_id: _id, albumsId: albumsId, type: "cover"},
         function (data) {
+
+
             if (data.success) {
-                alert('封面设置成功')
+                alertmsg('封面设置成功')
             }
         });
 });
@@ -179,7 +219,13 @@ $('.panel').on('click', ".cover", function () {
 
 //瀑布流
 
-
+function alertmsg(msg) {
+    $('.alertmsg').find('p').html(msg)
+    $('.alertmsg').css('display', 'block');
+    setTimeout(function () {
+        $('.alertmsg').fadeOut();
+    }, 1500)
+}
 var $grid1 = $('.grid1').isotope({
     itemSelector: '.grid-item'
 });

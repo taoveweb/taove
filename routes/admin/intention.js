@@ -1,31 +1,72 @@
-var express = require('express');
-var router = express.Router();
+var co = require('co');
 var db = require('../../models/db');
-var Intention=db.Intention;
-router.post('/', postIntention); // Create new buyer action
+var Intention = db.Intention;
+var Taove = db.Taove;
 
-function postIntention(req,res,next){
-    var phone=req.body.phone;
-    var newItention={
-        name:String,
-        phone:Number,
-        photoTime:Date,
-        photoStyle:Number,// 0中式古典1韩式简约2欧式奢华3唯美自然4个性时尚
-        photoCity:String,
-        photoLine:String,//摄影路线
-        photographyId:String//摄影师Id
+function post(req, res, next) {
+    switch (req.body.type){
+        case "post":
+            PostIntention(req,res,next);
+            break;
+        case "delete":{
+            DeleteIntention(req,res,next);
+            break;
+        }
     }
-    Intention.findOne({phone:phone},function(err,intention){
-        if(!intention){
-            Intention.create(newItention,function(err,doc){
+
+};
+
+function  PostIntention(req,res,next){
+    var phone = parseInt(req.body.phone);
+    var body = req.body;
+    delete req.body.type;
+    body.phone = phone;
+    co(function *() {
+        var intetionold = yield  Intention.findOne({phone: phone}).exec();
+        if (!intetionold) {
+            Intention.create(body, function (err, doc) {
                 res.json({
-                    sucess:true,
-                    msg:"提交成功"
+                    success: true,
+                    msg: "提交成功"
                 })
+            })
+        } else {
+            res.json({
+                success: false,
+                msg: "您的电话已经提交了请不要重复提交哦"
             })
         }
     });
-    res.send('doCreate');
+}
+
+function   DeleteIntention(req,res,next){
+    var _id=req.body._id;
+    Intention.findOneAndRemove({_id:_id},function(err,doc){
+        console.log(err,doc);
+        if(doc){
+            res.json({
+                success: true,
+                msg: "取消成功"
+            })
+        }
+    })
+}
+
+function getIntention(req, res, next) {
+    var phone =req.session.userId['phone'];
+    co(function *() {
+        var intention = yield  Intention.findOne({phone: phone}).exec();
+        var photographyPhone=parseInt(intention.photographyPhone);
+        if(!intention.photographyPhone){
+            var taove={}
+        }else{
+            var taove=yield Taove.findOne({phone:photographyPhone},"realName").exec();
+        }
+        res.render('admin/intention', {title: '意向单', layout: 'layout_pc',intention:intention,realName:taove.realName});
+    });
 };
 
-module.exports = router;
+module.exports = {
+    get: getIntention,
+    post: post
+};

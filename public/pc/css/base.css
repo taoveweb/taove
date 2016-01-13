@@ -385,14 +385,14 @@ em,b,i{
     font-size: 18px;
     width: 180px;
     margin-left: 30px;
-    background:#bab9b9;
+    background: #fe555a;;
     border: none;
     color: #fff;
 }
 .pop-con button:hover,
 .pop-con button:focus{
     outline: none;
-    background: #A4A3A3;
+    background: #c72d2d;
     color: #fff;
 }
 
@@ -561,4 +561,39 @@ em,b,i{
     background: #fe555a;
     margin-top: 10px;
     border-bottom: none;
+}
+
+
+
+
+
+.alertmsg{
+    display: none;
+    width: 320px;
+    height: 90px;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    z-index: 1001;
+    margin:-40px 0 0 -160px;
+    background: #fff;
+    border: 1px solid #a0a0a0;
+    -webkit-box-shadow: 0 0 0 10px #d5d5d5;
+    -moz-box-shadow: 0 0 0 10px #d5d5d5;
+    box-shadow: 0 0 0 10px #d5d5d5;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+
+}
+
+.alertmsg p{
+    margin: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #3dd48d;
+}
+.alertmsg p.err{
+    color: #ff4c39;
 }

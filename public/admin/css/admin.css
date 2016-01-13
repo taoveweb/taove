@@ -498,37 +498,10 @@
 }
 
 
-.alertmsg{
-    display: none;
-    width: 250px;
-    height: 70px;
-    position: fixed;
-    left: 50%;
-    top: 40%;
-    margin:-40px 0 0 -125px;
-    background: #fff;
-    border: 1px solid #a0a0a0;
-    -webkit-box-shadow: 0 0 0 10px #d5d5d5;
-    -moz-box-shadow: 0 0 0 10px #d5d5d5;
-    box-shadow: 0 0 0 10px #d5d5d5;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-    overflow: hidden;
-
-}
-
-.alertmsg p{
-    margin: 20px;
-    text-align: center;
-    font-size: 18px;
-    color: #3dd48d;
-    font-weight: bold;
-}
 /*
 订单*/
 .orders-table{
-    width: 95%;
+    width: 97.5%;
     text-align: center;
     margin-left: 2.5%;
     border: 1px solid #d5d5d5;
@@ -544,6 +517,9 @@
     padding: 6px 0;
     border-right: 1px solid #d5d5d5;
 
+}
+.orders-table tbody td em{
+    color: #ff0000;
 }
 .orders-table .cancel{
     display: inline-block;
@@ -563,8 +539,30 @@
     margin-left: 2.5%;
     padding-bottom: 15px;
     padding-top: 3px;
+    position: relative;
+}
+.order-cart-title .yd-btn{
+    display: block;
+    width: 80px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #fe555a;
+    position: absolute;
+    right: 0;
+    top:0;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
 }
 
+.order-cart-title .yd-btn:hover{
+    background: #c72d2d;
+}
 
 /*申请入驻摄影师*/
 .photographer-form{

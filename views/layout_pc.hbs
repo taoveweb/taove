@@ -94,67 +94,77 @@
     <p class="base-foot">Copyright © 2015.福州桃微网络科技有限公司 All rights reserved</p>
 </div>
 <div class="base-right-bar">
+{{#if loginInfo.phone}}
     <a class="bar-yd yd-btn">立即预定</a>
+{{else}}
+    <a class="bar-yd" href="{{static}}admin/login">立即预定</a>
+{{/if}}
     <a class="bar-zx" href="{{static}}admin/photographer">在线资询</a>
     <a class="bar-kf" href="{{static}}admin/photographer">客服热线</a>
     <a class="bar-lz" href="{{static}}admin/photographer">摄影师入驻</a>
 </div>
 
 
-<div class="pop yd-pop">
-    <div class="pop-mask"></div>
-    <div class="pop-content">
-        <div class="pop-top">
-            桃微2015秋季惠 <span class="yd-close">×</span>
-        </div>
-        <div class="pop-con">
-            <div class="br pop-con-top">
-                <p>告诉我你是谁</p>
-                <input type="text" placeholder="姓名*"/>
-                <input type="text" placeholder="电话*"/>
-                <button>现在预约＞</button>
+<div id="YdPop" class="pop yd-pop">
+    <form>
+        <div class="pop-mask"></div>
+        <div class="pop-content">
+            <div class="pop-top">
+                桃微2015秋季惠 <span class="yd-close">×</span>
             </div>
-            <h3>如果方便,请告诉我你的意向(可选)</h3>
+            <div class="pop-con">
+                <div class="br pop-con-top">
+                    <p>告诉我你是谁</p>
+                    <input name="name" type="text" placeholder="姓名*"/>
+                    <input name="phone" type="text" placeholder="电话*"/>
+                    <button class="now_intention">现在预约＞</button>
+                </div>
+                <h3>如果方便,请告诉我你的意向(可选)</h3>
 
-            <div class="br">
-                <span>拍摄时间</span>
-                <label><input type="radio"/>十一月</label>
-                <label><input type="radio"/>十二月</label>
-                <label><input type="radio"/>一月</label>
-                <label><input type="radio"/>二月</label>
-                <label><input type="radio"/>三月</label>
-                <label><input type="radio"/>四月</label>
-            </div>
-            <div class="br">
-                <span>拍摄风格</span>
-                <label><input type="radio"/>中式古典</label>
-                <label><input type="radio"/>韩式简约</label>
-                <label><input type="radio"/>欧式奢华</label>
-                <label><input type="radio"/>唯美自然</label>
-                <label><input type="radio"/>个性时尚</label>
-            </div>
-            <div class="br">
-                <span>拍摄城市</span>
-                {{>city_select}}
-            </div>
-            <div class="br">
-                <span>拍摄路线</span>
-                <dl class="select">
-                    <dt>请5选择路线</dt>
-                    <dd>
-                        <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
-                        <p>万象国际摄影基地+798艺术区 （韩式简约 个性时尚）</p>
-                        <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
-                        <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
-                        <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
-                    </dd>
-                </dl>
-            </div>
+                <div class="br">
+                    <span>拍摄时间</span>
+                    <label><input name="photoTime" value="十一月" type="radio"/>十一月</label>
+                    <label><input name="photoTime" value="十二月" type="radio"/>十二月</label>
+                    <label><input name="photoTime" value="一月" type="radio"/>一月</label>
+                    <label><input name="photoTime" value="二月" type="radio"/>二月</label>
+                    <label><input name="photoTime" value="三月" type="radio"/>三月</label>
+                    <label><input name="photoTime" value="四月" type="radio"/>四月</label>
+                </div>
+                <div class="br">
+                    <span>拍摄风格</span>
+                    <label><input name="photoStyle" value="中式古典" type="radio"/>中式古典</label>
+                    <label><input name="photoStyle" value="韩式简约"  type="radio"/>韩式简约</label>
+                    <label><input name="photoStyle" value="欧式奢华"  type="radio"/>欧式奢华</label>
+                    <label><input name="photoStyle" value="唯美自然"  type="radio"/>唯美自然</label>
+                    <label><input name="photoStyle" value="个性时尚"  type="radio"/>个性时尚</label>
+                </div>
+                <div class="br">
+                    <span>拍摄城市</span>
+                    {{>city_select}}
+                </div>
+                <div class="br">
+                    <span>拍摄路线</span>
+                    <dl class="select">
+                        <dt>请选择路线</dt>
+                        <input name="photoLine" type="hidden"/>
+                        <dd>
+                            <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
+                            <p>万象国际摄影基地+798艺术区 （韩式简约 个性时尚）</p>
+                            <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
+                            <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
+                            <p>万象国际摄影基地+温榆河 （韩式简约 唯美自然）</p>
+                        </dd>
+                    </dl>
+                </div>
 
+            </div>
         </div>
-    </div>
+    </form>
 </div>
 
+<div class="alertmsg">
+    <p></p>
+</div>
 
 <script src="{{static}}common/js/jquery.min.js"></script>
 <script src="{{static}}common/js/jquery.lazyload.min.js"></script>

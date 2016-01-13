@@ -3,12 +3,14 @@ var db = require('../../models/db');
 var Taove = db.Taove;
 var ObjectId = db.ObjectId;
 var router = express.Router();
-
+var intention=require('./intention');
 /* GET users listing. */
 
 router.get('/', api);
 router.post('/', postApi);
 router.get('/albums', albums);
+router.get('/intention', intention.get);
+router.post('/intention', intention.post);
 
 function postApi(req,res,next){
     var params=req.body;

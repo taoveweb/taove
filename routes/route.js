@@ -24,7 +24,6 @@ var apiLogin = require('../routes/api/login');
 var admin = require('../routes/admin/admin'); //用户
 var login = require('../routes/admin/login');
 var register = require('../routes/admin/register');
-var intention = require('../routes/admin/intention');
 
 module.exports = function (app) {
 
@@ -63,7 +62,6 @@ module.exports = function (app) {
    // app.use('/admin',  admin);
     app.use('/login', login);
     app.use('/register', register);
-    app.use('/intention', intention);
     app.get('/loginOut', loginOut);
 
 

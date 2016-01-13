@@ -133,7 +133,7 @@ input[type=button]:hover {
 }
 
 .users {
-    width: 1135px;
+    width: 98%;
     border-left: 1px solid #ddd;
     border-top: 1px solid #ddd;
     background: #fff;
@@ -190,7 +190,7 @@ input[type=button]:hover {
 .header{
     position: fixed;
     z-index: 10;
-    width: 1135px;
+    right: 50px;
     top: 0px;
     left: 215px;
     background: #efeff4;
@@ -206,6 +206,10 @@ input[type=button]:hover {
 .header label input{
     vertical-align: middle;
     margin-right: 0;
+    position: relative;
+    height: 15px;
+    top: -3px;
+
 }
 .header input{
     display: inline-block;

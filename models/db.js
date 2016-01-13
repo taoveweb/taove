@@ -34,12 +34,12 @@ mongoose.connection.on('SIGINT', function () {
 //意向单
 var IntentionSchema=new Schema({
     name:String,
-    phone:Number,
-    photoTime:Date,
-    photoStyle:Number,// 0中式古典1韩式简约2欧式奢华3唯美自然4个性时尚
-    photoCity:String,
+    phone:String,
+    photoTime:String,
+    photoStyle:String,// 0中式古典1韩式简约2欧式奢华3唯美自然4个性时尚
+    city:String,
     photoLine:String,//摄影路线
-    photographyId:String,//摄影师Id
+    photographyPhone:String,//摄影师Id
     hasdo:{type:Boolean,defalut:false},//是否分配过
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}//创建时间
 });
@@ -213,7 +213,6 @@ AlbumsImgSchema.pre('save',function(next){
 //相册图片如果上传的是第一张就把他做为封面
 AlbumsImgSchema.pre('remove',function(next){
     var user=this;
-    console.log({_id:this.albumsId})
     Albums.findOneAndUpdate({_id:this.albumsId},{$inc:{imgNum:-1}},function(){
         next();
     })

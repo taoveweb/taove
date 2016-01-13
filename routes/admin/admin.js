@@ -5,7 +5,12 @@ var express = require('express');
 var router = express.Router();
 var photographer=require('./photographer');
 var production=require('./production');
-router.get('/', orders);
+var intention=require('./intention');
+/*router.get('/', orders);*/
+//意向单
+router.get('/',  intention.get);
+router.post('/',  intention.post);
+
 router.get('/carts', carts);
 router.get('/albums', albums);
 router.get('/photographer', photographer.get);
@@ -19,9 +24,10 @@ router.post('/productionimg',  production.postimg);
 
 
 
-function orders(req, res, next) {
+
+/*function orders(req, res, next) {
     res.render('admin/orders', {title: '订单', layout: 'layout_pc'});
-}
+}*/
 function carts(req, res, next) {
     res.render('admin/carts', {title: '购物车', layout: 'layout_pc'});
 }

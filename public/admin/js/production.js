@@ -219,13 +219,6 @@ $('.panel').on('click', ".cover", function () {
 
 //瀑布流
 
-function alertmsg(msg) {
-    $('.alertmsg').find('p').html(msg)
-    $('.alertmsg').css('display', 'block');
-    setTimeout(function () {
-        $('.alertmsg').fadeOut();
-    }, 1500)
-}
 var $grid1 = $('.grid1').isotope({
     itemSelector: '.grid-item'
 });

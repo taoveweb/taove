@@ -9,45 +9,49 @@ var Taove = db.Taove;
 var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
 var gm = require('gm').subClass({imageMagick: true});
-
+var co = require('co');
 //相册性能需更改
 function getProduction(req, res, next) {
-    AlbumsImg.aggregate(
-        {$match: {photographyId: req.session.userId['_id']}}
-    ).group({
-            _id: "$albumsId",
-            imgs: {$push: {name: "$name", path: "$path", width: "$width", height: "$height", cover: "$cover"}}
-        })
-        .exec(function (err, albumsimgs) {
-            Albums.find({photographyId: req.session.userId['_id']}, function (err, docs) {
-                    for (var i = 0; i < docs.length; i++) {
-                        var doc = docs[i];
-                        for (var m = 0; m < albumsimgs.length; m++) {
-                            var imgs = albumsimgs[m];
-                            if (doc._id == imgs._id) {
-                                docs[i].imgNum = imgs.imgs.length;
-                                for (var l = 0; l < imgs.imgs.length; l++) {
-                                    var img = imgs.imgs[l];
-                                    if (img.cover) {
-                                        docs[i].coverImg = img.path + img.name;
-                                        docs[i].height = img.height * (266 / img.width);
-                                        break;
-                                    }
-                                }
-                            }
-                        }
+    co(function *() {
+        var albumsimgs = yield AlbumsImg.aggregate(
+            {$match: {photographyId: req.session.userId['_id']}}).group({
+                _id: "$albumsId",
+                imgs: {$push: {name: "$name", path: "$path", width: "$width", height: "$height", cover: "$cover"}}
+            }).exec();
+        var docs =yield Albums.find({photographyId: req.session.userId['_id']}).exec();
 
-                        if (!docs[i].imgNum) {
-                            docs[i].imgNum = 0;
-                            docs[i].coverImg = "img/placeholder.png";
-                            docs[i].height = 266;
+        for (var i = 0; i < docs.length; i++) {
+            var doc = docs[i];
+            for (var m = 0; m < albumsimgs.length; m++) {
+                var imgs = albumsimgs[m];
+                if (doc._id == imgs._id) {
+                    docs[i].imgNum = imgs.imgs.length;
+                    for (var l = 0; l < imgs.imgs.length; l++) {
+                        var img = imgs.imgs[l];
+                        if (img.cover) {
+                            docs[i].coverImg = img.path + img.name;
+                            docs[i].height = img.height * (266 / img.width);
+                            break;
                         }
-
                     }
-                    res.render('admin/production', {title: '摄影作品', taove: docs,albumsNum:docs.length, detail: false, layout: 'layout_pc'});
                 }
-            )
+            }
+
+            if (!docs[i].imgNum) {
+                docs[i].imgNum = 0;
+                docs[i].coverImg = "img/placeholder.png";
+                docs[i].height = 266;
+            }
+
+        }
+        res.render('admin/production', {
+            title: '摄影作品',
+            taove: docs,
+            albumsNum: docs.length,
+            detail: false,
+            layout: 'layout_pc'
         });
+    });
 
 }
 //创建相册
@@ -75,7 +79,10 @@ function postProduction(req, res, next) {
 
 function getProductiondetail(req, res, next) {
 
-    AlbumsImg.find({albumsId: req.query.albumsId, photographyId: req.session.userId['_id']}).sort({createdOn: -1}).exec(function (err, albumsimgs) {
+    AlbumsImg.find({
+        albumsId: req.query.albumsId,
+        photographyId: req.session.userId['_id']
+    }).sort({createdOn: -1}).exec(function (err, albumsimgs) {
         res.render('admin/production_detail', {
             title: '摄影作品',
             detail: true,
@@ -93,7 +100,11 @@ function coverImg(req, res, next) {
     var albumsId = req.body.albumsId;
     var reset = {cover: false};
     var set = {cover: true};
-    AlbumsImg.findOneAndUpdate({albumsId: albumsId, photographyId: req.session.userId['_id'], cover: true}, reset, function (err, doc) {
+    AlbumsImg.findOneAndUpdate({
+        albumsId: albumsId,
+        photographyId: req.session.userId['_id'],
+        cover: true
+    }, reset, function (err, doc) {
         AlbumsImg.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, set, function (err, doc) {
             res.json({
                 success: true,

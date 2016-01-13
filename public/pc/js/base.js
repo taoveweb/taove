@@ -85,7 +85,7 @@ $('.now_intention').click(function () {
             alertmsg(data.msg,data);
             if(data.success){
                 $('.yd-pop').fadeOut();
-               window.location.href= "/admin/"
+               window.location.href= "/admin"
             }
         });
 

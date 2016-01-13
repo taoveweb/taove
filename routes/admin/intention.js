@@ -4,19 +4,20 @@ var Intention = db.Intention;
 var Taove = db.Taove;
 
 function post(req, res, next) {
-    switch (req.body.type){
+    switch (req.body.type) {
         case "post":
-            PostIntention(req,res,next);
+            PostIntention(req, res, next);
             break;
-        case "delete":{
-            DeleteIntention(req,res,next);
+        case "delete":
+        {
+            DeleteIntention(req, res, next);
             break;
         }
     }
 
 };
 
-function  PostIntention(req,res,next){
+function PostIntention(req, res, next) {
     var phone = parseInt(req.body.phone);
     var body = req.body;
     delete req.body.type;
@@ -39,11 +40,11 @@ function  PostIntention(req,res,next){
     });
 }
 
-function   DeleteIntention(req,res,next){
-    var _id=req.body._id;
-    Intention.findOneAndRemove({_id:_id},function(err,doc){
-        console.log(err,doc);
-        if(doc){
+function DeleteIntention(req, res, next) {
+    var _id = req.body._id;
+    Intention.findOneAndRemove({_id: _id}, function (err, doc) {
+        console.log(err, doc);
+        if (doc) {
             res.json({
                 success: true,
                 msg: "取消成功"
@@ -53,16 +54,22 @@ function   DeleteIntention(req,res,next){
 }
 
 function getIntention(req, res, next) {
-    var phone =req.session.userId['phone'];
+    var phone = req.session.userId['phone'];
     co(function *() {
         var intention = yield  Intention.findOne({phone: phone}).exec();
-        var photographyPhone=parseInt(intention.photographyPhone);
-        if(!intention.photographyPhone){
-            var taove={}
-        }else{
-            var taove=yield Taove.findOne({phone:photographyPhone},"realName").exec();
+        if (!intention || !intention.photographyPhone) {
+            var taove = {realName: ''}
+        } else {
+            var photographyPhone = parseInt(intention.photographyPhone);
+            var taove = yield Taove.findOne({phone: photographyPhone}, "realName").exec();
         }
-        res.render('admin/intention', {title: '意向单', layout: 'layout_pc',intention:intention,realName:taove.realName});
+
+        res.render('admin/intention', {
+            title: '意向单',
+            layout: 'layout_pc',
+            intention: intention,
+            realName: taove.realName
+        });
     });
 };
 

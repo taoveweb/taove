@@ -148,7 +148,7 @@ input[type=button]:hover {
     vertical-align: top;
 }
 .users td textarea{
-    width: 528px;
+    width: 128px;
 }
 .users td span {
     text-align: left;

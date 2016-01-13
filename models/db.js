@@ -32,8 +32,15 @@ mongoose.connection.on('SIGINT', function () {
 });
 
 //意向单
-var intention=new Schema({
-    payMony:Number,
+var IntentionSchema=new Schema({
+    name:String,
+    phone:Number,
+    photoTime:Date,
+    photoStyle:Number,// 0中式古典1韩式简约2欧式奢华3唯美自然4个性时尚
+    photoCity:String,
+    photoLine:String,//摄影路线
+    photographyId:String,//摄影师Id
+    hasdo:{type:Boolean,defalut:false},//是否分配过
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000}//创建时间
 });
 
@@ -222,12 +229,14 @@ AlbumsImgSchema.pre('remove',function(next){
 var Taove = mongoose.model('Taove', TaoveSchema);
 var Albums = mongoose.model('Albums', AlbumsSchema);
 var AlbumsImg = mongoose.model('AlbumsImg', AlbumsImgSchema);
+var Intention = mongoose.model('Intention', IntentionSchema);
 
 module.exports ={
     "ObjectId": mongoose.Types.ObjectId,
     "Taove":Taove,
     'Albums':Albums,
-    'AlbumsImg':AlbumsImg
+    'AlbumsImg':AlbumsImg,
+    'Intention':Intention
 };
 
 

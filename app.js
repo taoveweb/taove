@@ -11,7 +11,7 @@ var fs = require('fs');
 var hbs = require('hbs');
 var helpers=require('handlebars-helpers');
 var compression = require('compression');
-var processImage = require('express-processimage');
+//var processImage = require('express-processimage');
 global.__baseDir = __dirname;
 
 
@@ -51,7 +51,7 @@ app.use(compression());
 app.use(minify());
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(processImage({root:path.join(__dirname, 'uploads')}));
+//app.use(processImage({root:path.join(__dirname, 'uploads')}));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 

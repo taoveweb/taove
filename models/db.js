@@ -69,12 +69,12 @@ var posts=new Schema({
 
 //婚件产品
 var shops=new Schema({
-    name: String,//imgName
+    title: String,//imgName
     imgs:[],//链接
     price:Number,//价格
     saledNumber:Number,//已销售
     stockNum:Number,//库存数量
-    desgin:String, //产品规格
+    desgin:{}, //产品规格
     createdOn:{type: Date, default: new Date().getTime()+60*60*8*1000} //创建时间
 });
 

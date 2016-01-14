@@ -9,7 +9,7 @@ var co = require('co');
 function getPhotoframes(req, res, next) {
     co(function *(){
         var intention=yield Intention.find({}).exec();
-        res.render('api/intention', {
+        res.render('api/photoframes', {
             layout: "layout_api",
             title: "相册",
             intention:intention

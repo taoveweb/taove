@@ -4,6 +4,7 @@ var Taove = db.Taove;
 var ObjectId = db.ObjectId;
 var router = express.Router();
 var intention=require('./intention');
+var photoframes=require('./photoframes');
 /* GET users listing. */
 
 router.get('/', api);
@@ -11,6 +12,9 @@ router.post('/', postApi);
 router.get('/albums', albums);
 router.get('/intention', intention.get);
 router.post('/intention', intention.post);
+//婚件产吕
+router.get('/photoframes', photoframes.get);
+router.post('/photoframes', photoframes.post);
 
 function postApi(req,res,next){
     var params=req.body;

@@ -12,6 +12,7 @@
     "debug": "~2.1.1",
     "express": "~4.12.2",
     "express-minify": "^0.1.6",
+    "express-resize": "^1.0.2",
     "express-session": "^1.12.1",
     "grunt": "^0.4.5",
     "hbs": "~2.9.0",

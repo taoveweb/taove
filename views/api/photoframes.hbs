@@ -1,0 +1,94 @@
+{{#extend "adminStyle"}}
+    <link rel="stylesheet" href="{{static}}api/css/admin.css"/>
+    <style>
+        .photoframes {
+            background: #d2d2d2;
+        }
+    </style>
+{{/extend}}
+
+<div class="header">
+    <input type="text" name="phone" placeholder="手机号"/>
+    <label><input value="true" name="hasdo" type="radio"/>分配</label>
+    <label><input value="false" name="hasdo" type="radio"/>未分配</label>
+    <button>搜索</button>
+    <div class="page-nav">
+        <span class="btn">上一页</span>
+        <span><em>1</em>/35</span>
+        <span class="btn">下一页</span>
+    </div>
+</div>
+<div class="top-box">
+    <table class="users">
+        <table class="users ">
+            <tr>
+                <td><input type="text" name="title" placeholder="名字"/></td>
+                <td><input type="text" name="price" placeholder="价格"/></td>
+                <td><input type="text" name="saledNumber" placeholder="风格"/></td>
+                <td><input type="text" name="stockNum" placeholder="城市"/></td>
+                <td><input type="text" name="desgin" placeholder="线路"/></td>
+            </tr>
+            <tr>
+                <td colspan="5"></td>
+            </tr>
+            <tr>
+                <td colspan="5"></td>
+            </tr>
+        </table>
+    </table>
+</div>
+<div class="intention-box">
+    {{#each intention}}
+        <form>
+            <table class="users ">
+                <tr>
+                    <td><input type="text" value="{{name}}" name="name" placeholder="名字"/></td>
+                    <td><input type="text" value="{{phone}}" name="phone" placeholder="手机号"/></td>
+                    <td><input type="text" value="{{photoTime}}" name="photoTime" placeholder="预约时间"/></td>
+                    <td><input type="text" value="{{photoStyle}}" name="photoStyle" placeholder="风格"/></td>
+                    <td><input type="text" value="{{city}}" name="city" placeholder="城市"/></td>
+                    <td><input type="text" value="{{photoLine}}" name="photoLine" placeholder="线路"/></td>
+                    <td><input type="text" value="{{photographyPhone}}" name="photographyPhone" placeholder="摄影师"/></td>
+                    <td>
+                        {{#if hasdo}}
+                            <label><input type="radio" value="0" checked name="hasdo"/>已分配</label>
+                            <label><input type="radio" value="1" name="hasdo"/>未分配</label>
+                        {{else}}
+                            <label><input type="radio" value="0" name="hasdo"/>已分配</label>
+                            <label><input type="radio" value="1" checked name="hasdo"/>未分配</label>
+                        {{/if}}
+                    </td>
+                    <td>提交时间：{{formatDate createdOn "%F"}}</td>
+                    <td>
+                        <button data-id="{{_id}}" class="fixed">更新</button>
+                        <button data-id="{{_id}}" style="position: static;" class="delete">删除</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    {{/each}}
+</div>
+{{#extend "adminScripts"}}
+    <script>
+
+        $('.intention-box').on('click', '.fixed', function () {
+            var form = $(this).parents('form');
+            var fields = form.serializeArray();
+            var params = {};
+            jQuery.each(fields, function (i, field) {
+                params[field.name] = field.value;
+            });
+            params.type = "update";
+            params._id = $(this).data('id');
+            $.post("/api/intention", params,
+                    function (data) {
+                        if (data.success) {
+                            alert('更新成功')
+                        }
+                    });
+
+            return false;
+        })
+
+    </script>
+{{/extend}}

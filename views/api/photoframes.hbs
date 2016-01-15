@@ -1,4 +1,7 @@
 {{#extend "adminStyle"}}
+    <!--<script type="text/javascript" charset="utf-8"  src="/common/js/jquery.min.js"></script>-->
+
+
     <link rel="stylesheet" href="{{static}}api/css/admin.css"/>
     <style>
         .photoframes {
@@ -25,14 +28,16 @@
                 <td><input type="text" name="title" placeholder="名字"/></td>
                 <td><input type="text" name="price" placeholder="价格"/></td>
                 <td><input type="text" name="saledNumber" placeholder="风格"/></td>
-                <td><input type="text" name="stockNum" placeholder="城市"/></td>
-                <td><input type="text" name="desgin" placeholder="线路"/></td>
+                <td><input type="text" name="stockNum" placeholder="剩余数量"/></td>
+                <td><input type="text" name="desgin" placeholder="规格"/></td>
             </tr>
             <tr>
-                <td colspan="5"></td>
+                <td colspan="5" class="content"  id="content2"></td>
             </tr>
             <tr>
-                <td colspan="5"></td>
+                <td colspan="5"  class="content"  id="content1">
+                    <script id="editor1" type="text/plain" style="width:1024px;height:200px;">内容1</script>
+                </td>
             </tr>
         </table>
     </table>
@@ -69,6 +74,8 @@
     {{/each}}
 </div>
 {{#extend "adminScripts"}}
+    <script type="text/javascript" charset="utf-8" src="/common/ueditorphp/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/common/ueditorphp/ueditor.all.min.js"></script>
     <script>
 
         $('.intention-box').on('click', '.fixed', function () {
@@ -90,5 +97,31 @@
             return false;
         })
 
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        var ue = UE.getEditor('editor1');
+        ue.ready(function(){
+            //阻止工具栏的点击向上冒泡
+            $(this.container).click(function(e){
+                e.stopPropagation()
+            })
+        });
+        $('.content').click(function(e){
+            var $target = $(this);
+            var content = $target.html();
+            var currentParnet = ue.container.parentNode.parentNode;
+            var currentContent = ue.getContent();
+            $target.html('');
+            $target.append(ue.container.parentNode);
+            ue.reset();
+            setTimeout(function(){
+                ue.setContent(content);
+            },200)
+            $(currentParnet).html(currentContent);
+        })
     </script>
 {{/extend}}

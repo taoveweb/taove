@@ -9,11 +9,10 @@ var MongoStore = require('connect-mongo')(session);
 var minify = require('express-minify');
 var fs = require('fs');
 var hbs = require('hbs');
-var helpers=require('handlebars-helpers');
+var helpers = require('handlebars-helpers');
 var compression = require('compression');
 //var processImage = require('express-processimage');
 global.__baseDir = __dirname;
-
 
 
 var app = express();
@@ -24,7 +23,7 @@ app.locals.cssStatic = '/';
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 //??hbs??
-helpers.register(hbs,{});
+helpers.register(hbs, {});
 require('./hbsregister')(hbs);
 
 // view engine setup
@@ -35,7 +34,7 @@ app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(session({
     secret: 'keyboard cat',
     resave: true,
@@ -43,7 +42,7 @@ app.use(session({
     cookie: {maxAge: 1000 * 60 * 30},
     saveUninitialized: true,
     store: new MongoStore({
-        url:'mongodb://taove:taove@localhost/test'
+        url: 'mongodb://taove:taove@localhost/test'
     })
 }));
 app.use(cookieParser());
@@ -56,7 +55,6 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 
 
 require('./routes/route')(app);
-
 
 
 // catch 404 and forward to error handler

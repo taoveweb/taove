@@ -18,7 +18,8 @@
     "hbs": "~2.9.0",
     "mongoose-pager": "^1.0.0",
     "morgan": "~1.5.1",
-    "serve-favicon": "~2.2.0"
+    "serve-favicon": "~2.2.0",
+    "ueditor": "^1.1.1"
   },
   "devDependencies": {
     "handlebars-helpers": "^0.5.8"

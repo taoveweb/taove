@@ -19,8 +19,8 @@ router.post('/intention', intention.post);
 router.get('/photoframes', photoframes.get);
 router.post('/photoframes', photoframes.post);
 //婚件产吕详情
-router.post('/photoframesDetail',photoframesDetail);
-router.get('/photoframesDetail',photoframesDetail);
+router.use('/photoframesDetail',photoframesDetail);
+
 
 function postApi(req,res,next){
     var params=req.body;

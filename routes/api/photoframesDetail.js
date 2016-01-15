@@ -23,8 +23,6 @@ var co = require('co');
 
 
 module.exports =ueditor(path.join(__baseDir, 'uploads'), function(req, res, next) {
-    console.log('yes')
-
     // ueditor 客户发起上传图片请求
     if (req.query.action === 'uploadimage') {
 

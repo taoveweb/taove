@@ -536,7 +536,6 @@ em,b,i{
      -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
      border-radius: 3px;
-     overflow: hidden;
      width: 80px;
      z-index: 100;
  }
@@ -552,6 +551,21 @@ em,b,i{
 }
 .base-right-bar a.bar-zx{
     background: #8fc31f;
+    position: relative;
+}
+.base-right-bar a.bar-zx img{
+    position: absolute;
+    display: block;
+    width: 106px;
+    height: 106px;
+    left: 0;
+    top: 0;
+    margin-left: -109px;
+    margin-top: -36px;
+    display: none;
+}
+.base-right-bar a.bar-zx:hover img{
+    display: block;
 }
 .base-right-bar a.bar-kf{
     background:#f6666b;

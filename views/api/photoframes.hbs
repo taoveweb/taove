@@ -1,4 +1,7 @@
 {{#extend "adminStyle"}}
+    <!--<script type="text/javascript" charset="utf-8"  src="/common/js/jquery.min.js"></script>-->
+
+
     <link rel="stylesheet" href="{{static}}api/css/admin.css"/>
     <style>
         .photoframes {
@@ -8,33 +11,52 @@
 {{/extend}}
 
 <div class="header">
-    <input type="text" name="phone" placeholder="手机号"/>
-    <label><input value="true" name="hasdo" type="radio"/>分配</label>
-    <label><input value="false" name="hasdo" type="radio"/>未分配</label>
+    <input type="text" name="title" placeholder="名称"/>
+    <label><input value="true" name="public" type="radio"/>发布</label>
+    <label><input value="false" name="public" type="radio"/>未发布</label>
     <button>搜索</button>
     <div class="page-nav">
         <span class="btn">上一页</span>
-        <span><em>1</em>/35</span>
+        <span><em>1</em>/1</span>
         <span class="btn">下一页</span>
     </div>
 </div>
 <div class="top-box">
-    <table class="users">
-        <table class="users ">
-            <tr>
-                <td><input type="text" name="title" placeholder="名字"/></td>
-                <td><input type="text" name="price" placeholder="价格"/></td>
-                <td><input type="text" name="saledNumber" placeholder="风格"/></td>
-                <td><input type="text" name="stockNum" placeholder="城市"/></td>
-                <td><input type="text" name="desgin" placeholder="线路"/></td>
-            </tr>
-            <tr>
-                <td colspan="5"></td>
-            </tr>
-            <tr>
-                <td colspan="5"></td>
-            </tr>
-        </table>
+    <table class="users ">
+        <tr>
+            <td colspan="5" style="font-weight: bold; font-size: 16px">新增婚件产品</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="title" placeholder="名称"/></td>
+            <td><input type="text" name="saledNumber" placeholder="风格"/></td>
+            <td><input type="text" name="Number" placeholder="尺寸"/></td>
+            <td><input type="text" name="promise" placeholder="承诺"/></td>
+            <td>
+                <input type="text" style="width: 60px;" name="stockNum" placeholder="剩余数量"/>
+                <input style="width: 60px" type="text" name="size" placeholder="页数"/>
+                <input type="text" name="price" style="width: 60px;" placeholder="价格"/>
+                <select>
+                    <option value="摆台">摆台</option>
+                    <option value="摆台">相册</option>
+                    <option value="摆台">相框挂件</option>
+                    <option value="摆台">挂件</option>
+                    <option value="摆台">其它</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>轮播图片：</td>
+            <td colspan="4" class="content" type="lb" >
+                <script id="editor1" type="text/plain" style="width:100%;height:200px;">内容1</script>
+            </td>
+        </tr>
+        <tr>
+            <!--产品描述-->
+            <td>产品详细：</td>
+            <td colspan="4"  class="content" type="detail"  >
+
+            </td>
+        </tr>
     </table>
 </div>
 <div class="intention-box">
@@ -42,26 +64,35 @@
         <form>
             <table class="users ">
                 <tr>
-                    <td><input type="text" value="{{name}}" name="name" placeholder="名字"/></td>
-                    <td><input type="text" value="{{phone}}" name="phone" placeholder="手机号"/></td>
-                    <td><input type="text" value="{{photoTime}}" name="photoTime" placeholder="预约时间"/></td>
-                    <td><input type="text" value="{{photoStyle}}" name="photoStyle" placeholder="风格"/></td>
-                    <td><input type="text" value="{{city}}" name="city" placeholder="城市"/></td>
-                    <td><input type="text" value="{{photoLine}}" name="photoLine" placeholder="线路"/></td>
-                    <td><input type="text" value="{{photographyPhone}}" name="photographyPhone" placeholder="摄影师"/></td>
+                    <td colspan="5" style="font-weight: bold; font-size: 16px">新增婚件产品</td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="title" placeholder="名称"/></td>
+                    <td><input type="text" name="saledNumber" placeholder="风格"/></td>
+                    <td><input type="text" name="Number" placeholder="尺寸"/></td>
+                    <td><input type="text" name="promise" placeholder="承诺"/></td>
                     <td>
-                        {{#if hasdo}}
-                            <label><input type="radio" value="0" checked name="hasdo"/>已分配</label>
-                            <label><input type="radio" value="1" name="hasdo"/>未分配</label>
-                        {{else}}
-                            <label><input type="radio" value="0" name="hasdo"/>已分配</label>
-                            <label><input type="radio" value="1" checked name="hasdo"/>未分配</label>
-                        {{/if}}
+                        <input type="text" style="width: 60px;" name="stockNum" placeholder="剩余数量"/>
+                        <input style="width: 60px" type="text" name="size" placeholder="页数"/>
+                        <input type="text" name="price" style="width: 60px;" placeholder="价格"/>
+                        <select>
+                            <option value="摆台">摆台</option>
+                            <option value="摆台">相册</option>
+                            <option value="摆台">相框挂件</option>
+                            <option value="摆台">挂件</option>
+                            <option value="摆台">其它</option>
+                        </select>
                     </td>
-                    <td>提交时间：{{formatDate createdOn "%F"}}</td>
-                    <td>
-                        <button data-id="{{_id}}" class="fixed">更新</button>
-                        <button data-id="{{_id}}" style="position: static;" class="delete">删除</button>
+                </tr>
+                <tr>
+                    <td>轮播图片：</td>
+                    <td colspan="4" class="content" type="lb"  ></td>
+                </tr>
+                <tr>
+                    <!--产品描述-->
+                    <td>产品详细：</td>
+                    <td colspan="4"  class="content" type="detail" >
+
                     </td>
                 </tr>
             </table>
@@ -69,6 +100,8 @@
     {{/each}}
 </div>
 {{#extend "adminScripts"}}
+    <script type="text/javascript" charset="utf-8" src="/common/ueditorphp/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/common/ueditorphp/ueditor.all.min.js"></script>
     <script>
 
         $('.intention-box').on('click', '.fixed', function () {
@@ -90,5 +123,33 @@
             return false;
         })
 
+    </script>
+
+
+
+
+    <script type="text/javascript">
+        var ue = UE.getEditor('editor1');
+        var param="&type=lb&id=";
+        ue.ready(function(){
+            //阻止工具栏的点击向上冒泡
+            $(this.container).click(function(e){
+                e.stopPropagation()
+            });
+        });
+        $('.content').click(function(e){
+            var $target = $(this);
+            var content = $target.html();
+            var currentParnet = ue.container.parentNode.parentNode;
+            var currentContent = ue.getContent();
+            $target.html('');
+            $target.append(ue.container.parentNode);
+            ue.reset();
+            param="&type="+$target.attr('type')+"&id="+"";
+            setTimeout(function(){
+                ue.setContent(content);
+            },200);
+            $(currentParnet).html(currentContent);
+        })
     </script>
 {{/extend}}

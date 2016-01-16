@@ -1,10 +1,13 @@
 var express = require('express');
 var db = require('../../models/db');
+
 var Taove = db.Taove;
 var ObjectId = db.ObjectId;
+
 var router = express.Router();
 var intention=require('./intention');
 var photoframes=require('./photoframes');
+var photoframesDetail=require('./photoframesDetail');
 /* GET users listing. */
 
 router.get('/', api);
@@ -15,6 +18,9 @@ router.post('/intention', intention.post);
 //婚件产吕
 router.get('/photoframes', photoframes.get);
 router.post('/photoframes', photoframes.post);
+//婚件产吕详情
+router.use('/photoframesDetail',photoframesDetail);
+
 
 function postApi(req,res,next){
     var params=req.body;

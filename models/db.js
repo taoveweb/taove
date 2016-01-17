@@ -67,6 +67,7 @@ var posts = new Schema({
 });
 
 //婚件产品
+var ImgSchema = new Schema({ name: 'string' });
 var PhotoFramesSchema = new Schema({
     title: String,//imgName
     price: Number,//价格

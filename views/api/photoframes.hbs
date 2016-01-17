@@ -67,44 +67,26 @@
                     <input type="text" value="{{promise}}"  name="price" style="width: 60px;" placeholder="价格"/>
                     <label><input value="true" {{#if public}} checked {{/if}} name="public" type="radio"/>发布</label>
                     <label><input value="false" {{#compare public "==" false }} checked {{/compare}} name="public" type="radio"/>未发布</label>
-                    <select>
+                    <select name="sort">
                         <option value="摆台">摆台</option>
-                        <option value="摆台">相册</option>
-                        <option value="摆台">相框挂件</option>
-                        <option value="摆台">挂件</option>
-                        <option value="摆台">其它</option>
+                        <option value="相册">相册</option>
+                        <option value="相框挂件">相框挂件</option>
+                        <option value="挂件">挂件</option>
+                        <option value="其它">其它</option>
                     </select>
                 </td>
-                <td rowspan="3"><span class="btn">更新</span></td>
+                <td rowspan="3"><span  data-id="{{_id}}"  class="btn">更新</span></td>
             </tr>
             <tr>
                 <td>轮播图片：</td>
                 <td colspan="4" class="imglist">
-                    <div class="imglist-item">
-                        <img src="" alt=""/>
-                        <span class="delete">删除</span>
-                    </div>
-                    <div class="imglist-item">
-                        <img src="" alt=""/>
-                        <span class="delete">删除</span>
-                    </div>
-                    <div class="imglist-item">
-                        <img src="" alt=""/>
-                        <span class="delete">删除</span>
-                    </div>
-                    <div class="imglist-item">
-                        <img src="" alt=""/>
-                        <span class="delete">删除</span>
-                    </div>
-                    <div class="imglist-item">
-                        <img src="" alt=""/>
-                        <span class="delete">删除</span>
-                    </div>
-                    <div class="imglist-item">
-                        <img src="" alt=""/>
-                        <span class="delete">删除</span>
-                    </div>
-                    <div class="add-item">增加</div>
+                    {{#each imgs}}
+                        <div class="imglist-item">
+                            <img src="" alt=""/>
+                            <span data-id="_id" class="delete">删除</span>
+                        </div>
+                    {{/each}}
+                    <div  data-id="{{_id}}"  class="add-item">增加图片</div>
                 </td>
             </tr>
             <tr>

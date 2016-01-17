@@ -20,22 +20,23 @@
     <favorites_list name="Expess" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.8174771">
+    <splitter split-orientation="horizontal" split-proportion="0.63284004">
       <split-first>
         <leaf>
           <file leaf-file-name="photoframes.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/api/photoframes.hbs">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.670073">
-                  <caret line="68" column="76" selection-start-line="68" selection-start-column="76" selection-end-line="68" selection-end-column="76" />
+                  <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="41" />
                   <folding>
                     <element signature="e#950#992#0#HTML" expanded="true" />
                     <element signature="e#1420#1440#0#HTML" expanded="true" />
+                    <element signature="e#1505#1524#0#HTML" expanded="true" />
                     <element signature="e#1623#1643#0#HTML" expanded="true" />
                     <element signature="e#2669#2689#0#HTML" expanded="true" />
                     <element signature="e#2776#2795#0#HTML" expanded="true" />
                     <element signature="e#2930#2950#0#HTML" expanded="true" />
-                    <element signature="e#5156#5188#0#HTML" expanded="true" />
+                    <element signature="e#4437#4469#0#HTML" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -112,8 +113,8 @@
           <file leaf-file-name="db.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/db.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.35233918">
-                  <caret line="80" column="42" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
+                <state vertical-scroll-proportion="0.15350877">
+                  <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -237,8 +238,8 @@
         <option value="$PROJECT_DIR$/public/api/css/api.css" />
         <option value="$PROJECT_DIR$/public/api/js/photoFramesData.js" />
         <option value="$PROJECT_DIR$/routes/api/photoframes.js" />
-        <option value="$PROJECT_DIR$/models/db.js" />
         <option value="$PROJECT_DIR$/public/api/js/photoFrames.js" />
+        <option value="$PROJECT_DIR$/models/db.js" />
         <option value="$PROJECT_DIR$/views/api/photoframes.hbs" />
       </list>
     </option>
@@ -544,11 +545,12 @@
           <folding>
             <element signature="e#950#992#0#HTML" expanded="true" />
             <element signature="e#1420#1440#0#HTML" expanded="true" />
+            <element signature="e#1505#1524#0#HTML" expanded="true" />
             <element signature="e#1623#1643#0#HTML" expanded="true" />
             <element signature="e#2669#2689#0#HTML" expanded="true" />
             <element signature="e#2776#2795#0#HTML" expanded="true" />
             <element signature="e#2930#2950#0#HTML" expanded="true" />
-            <element signature="e#5156#5188#0#HTML" expanded="true" />
+            <element signature="e#4437#4469#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -940,8 +942,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35233918">
-          <caret line="80" column="42" selection-start-line="80" selection-start-column="42" selection-end-line="80" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.15350877">
+          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -949,15 +951,16 @@
     <entry file="file://$PROJECT_DIR$/views/api/photoframes.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.670073">
-          <caret line="68" column="76" selection-start-line="68" selection-start-column="76" selection-end-line="68" selection-end-column="76" />
+          <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="41" />
           <folding>
             <element signature="e#950#992#0#HTML" expanded="true" />
             <element signature="e#1420#1440#0#HTML" expanded="true" />
+            <element signature="e#1505#1524#0#HTML" expanded="true" />
             <element signature="e#1623#1643#0#HTML" expanded="true" />
             <element signature="e#2669#2689#0#HTML" expanded="true" />
             <element signature="e#2776#2795#0#HTML" expanded="true" />
             <element signature="e#2930#2950#0#HTML" expanded="true" />
-            <element signature="e#5156#5188#0#HTML" expanded="true" />
+            <element signature="e#4437#4469#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,7 +1,7 @@
 /**
  * Created by kiiekin on 16/1/15.
  */
-var photoＦrames = [
+var photoＦramesData = [
     {
         title: "8寸赫拉或韩绒水晶", price: 38, saledNumber: 10, stockNum: 10, size: "15.24x20.32cm",
         pageNum: 1, sort: "摆台", promise: "15天之内交付物品 所有成品都是包含设计排版（除摆台、海报、挂件）"

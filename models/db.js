@@ -67,7 +67,7 @@ var posts = new Schema({
 });
 
 //婚件产品
-var ＳhopsSchema = new Schema({
+var PhotoFramesSchema = new Schema({
     title: String,//imgName
     price: Number,//价格
     saledNumber: Number,//已销售
@@ -78,7 +78,7 @@ var ＳhopsSchema = new Schema({
     sort:String,//类别  摆台
     imgs: [],//链接
     detail:String,
-    public:Boolean,//发布
+    public:{type: Boolean, default: false},//发布
     createdOn: {type: Date, default: new Date().getTime() + 60 * 60 * 8 * 1000} //创建时间
 });
 
@@ -228,13 +228,15 @@ var Taove = mongoose.model('Taove', TaoveSchema);
 var Albums = mongoose.model('Albums', AlbumsSchema);
 var AlbumsImg = mongoose.model('AlbumsImg', AlbumsImgSchema);
 var Intention = mongoose.model('Intention', IntentionSchema);
+var PhotoFrames = mongoose.model('PhotoFrames', PhotoFramesSchema);
 
 module.exports = {
     "ObjectId": mongoose.Types.ObjectId,
     "Taove": Taove,
     'Albums': Albums,
     'AlbumsImg': AlbumsImg,
-    'Intention': Intention
+    'Intention': Intention,
+    'PhotoFrames': PhotoFrames
 };
 
 

@@ -20,14 +20,14 @@
     <favorites_list name="Expess" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.63284004">
+    <splitter split-orientation="horizontal" split-proportion="0.7329105">
       <split-first>
         <leaf>
           <file leaf-file-name="photoframes.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/api/photoframes.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.670073">
-                  <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="41" />
+                <state vertical-scroll-proportion="0.3340206">
+                  <caret line="234" column="44" selection-start-line="234" selection-start-column="44" selection-end-line="234" selection-end-column="44" />
                   <folding>
                     <element signature="e#950#992#0#HTML" expanded="true" />
                     <element signature="e#1420#1440#0#HTML" expanded="true" />
@@ -36,7 +36,8 @@
                     <element signature="e#2669#2689#0#HTML" expanded="true" />
                     <element signature="e#2776#2795#0#HTML" expanded="true" />
                     <element signature="e#2930#2950#0#HTML" expanded="true" />
-                    <element signature="e#4437#4469#0#HTML" expanded="true" />
+                    <element signature="e#4413#9019#0#HTML" expanded="false" />
+                    <element signature="e#9064#9096#0#HTML" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -113,7 +114,7 @@
           <file leaf-file-name="db.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/db.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.15350877">
+                <state vertical-scroll-proportion="0.21694215">
                   <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
                   <folding />
                 </state>
@@ -465,7 +466,7 @@
     <frame x="0" y="23" width="1440" height="829" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45737484" sideWeight="0.48958334" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.270636" sideWeight="0.48958334" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32792208" sideWeight="0.49789253" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24920969" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -550,7 +551,8 @@
             <element signature="e#2669#2689#0#HTML" expanded="true" />
             <element signature="e#2776#2795#0#HTML" expanded="true" />
             <element signature="e#2930#2950#0#HTML" expanded="true" />
-            <element signature="e#4437#4469#0#HTML" expanded="true" />
+            <element signature="e#4413#9019#0#HTML" expanded="false" />
+            <element signature="e#9064#9096#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -942,7 +944,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/models/db.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15350877">
+        <state vertical-scroll-proportion="0.21694215">
           <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
           <folding />
         </state>
@@ -950,8 +952,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/api/photoframes.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.670073">
-          <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.3340206">
+          <caret line="234" column="44" selection-start-line="234" selection-start-column="44" selection-end-line="234" selection-end-column="44" />
           <folding>
             <element signature="e#950#992#0#HTML" expanded="true" />
             <element signature="e#1420#1440#0#HTML" expanded="true" />
@@ -960,7 +962,8 @@
             <element signature="e#2669#2689#0#HTML" expanded="true" />
             <element signature="e#2776#2795#0#HTML" expanded="true" />
             <element signature="e#2930#2950#0#HTML" expanded="true" />
-            <element signature="e#4437#4469#0#HTML" expanded="true" />
+            <element signature="e#4413#9019#0#HTML" expanded="false" />
+            <element signature="e#9064#9096#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>

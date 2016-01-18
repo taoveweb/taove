@@ -15,14 +15,19 @@ $(function(){
 
     });
 
-    $('#add').click(function(){
+    $('#addCollection').click(function(){
         var form = $(this).parents('form');
         var fields = form.serializeArray();
         var params = {};
-        jQuery.each(fields, function (i, field) {
+        var pass=true;
+        return jQuery.each(fields, function (i, field) {
             params[field.name] = field.value;
+            if($.trim(field.value)==""){
+                alertmsg("不能为空");
+                return false;
+            }
         });
-        params.type = "add";
+        params.type = "addCollection";
         params._id = $(this).data('id');
         $.post("/api/photoFrames", params,
             function (data) {
@@ -32,7 +37,38 @@ $(function(){
             });
 
         return false;
-    })
+    });
+
+
+    $('.intention-box').on('click','.photoFrames-delete-btn',function(){
+        var params = {};
+        var id=$(this).attr('data-id');
+        params.type='deleteCollection';
+        params.id=id;
+        $.post("/api/photoFrames", params,
+            function (data) {
+                if (data.success) {
+                    alertmsg("删除成功");
+                }
+            });
+    });
+
+    $('.intention-box').on('click','.deleteImg',function(){
+        var that=$(this);
+        var params = {};
+        var imgId=$(this).attr('data-imgId');
+        var collectionId=$(this).attr('data-collectionId');
+        params.type='deleteImg';
+        params.imgId=imgId;
+        params.collectionId=collectionId;
+        $.post("/api/photoFrames", params,
+            function (data) {
+                if (data.success) {
+                    that.parent().remove();
+                    alertmsg("删除成功");
+                }
+            });
+    });
 
 
     function eachPhotoＦramesData(photoＦramesData,val){
@@ -46,3 +82,17 @@ $(function(){
         return obj;
     }
 });
+
+
+
+$(function () {
+    $('.fileupload').fileupload({
+        dataType: 'json',
+        done: function (e, data) {
+            console.log(data.files)
+
+        }
+    });
+});
+
+

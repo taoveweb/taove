@@ -67,7 +67,7 @@ var posts = new Schema({
 });
 
 //婚件产品
-var ImgSchema = new Schema({ name: 'string' });
+var ImgSchema = new Schema({ name:String,path:String });
 var PhotoFramesSchema = new Schema({
     title: String,//imgName
     price: Number,//价格
@@ -77,7 +77,7 @@ var PhotoFramesSchema = new Schema({
     size:String,//尺寸  15.24x20.32cm
     pageNum:Number,//页数 1P
     sort:String,//类别  摆台
-    imgs: [],//链接
+    imgs: [ImgSchema],//链接
     detail:String,
     public:{type: Boolean, default: false},//发布
     createdOn: {type: Date, default: new Date().getTime() + 60 * 60 * 8 * 1000} //创建时间

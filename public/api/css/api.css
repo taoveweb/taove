@@ -170,11 +170,11 @@ input[type=button]:hover {
     height: 40px;
 }
 
-.users td button{
+/*.users td button{
     display: block;
 
     margin-bottom: 10px;
-}
+}*/
 
 #delete{
     color: #ff0000;
@@ -259,7 +259,7 @@ input[type=button]:hover {
     height: 45px;
     position: static;
 }
-.users .imglist .imglist-item{
+.users .imglist-1 .imglist-item{
     position: relative;
     width: 60px;
     height: 60px;
@@ -268,7 +268,7 @@ input[type=button]:hover {
     margin: 4px
 ;
 }
-.users .btn{
+/*.users .btn{
     display: block;
     width: 60px;
     height: 30px;
@@ -283,7 +283,7 @@ input[type=button]:hover {
 }
 .users .btn:hover{
     background: #656565;
-}
+}*/
 .users label input {
     vertical-align: middle;
     margin-right: 0;
@@ -292,27 +292,63 @@ input[type=button]:hover {
     top: -3px;
 }
 .add-item{
-    display: inline-block;
     margin: 4px;
-    width: 60px;
     border-radius: 4px;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
+
     color: #fff;
-    background: #f56b56;
     vertical-align: top;
+    width: 80px;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
 }
-.add-item:hover{
-    background: #c64348;
+.add-item .add-item-txt{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #868686;
+    z-index: 10;
+    width: 80px;
+    height: 60px;
+    background: #f7f7f7;
     cursor: pointer;
+    text-align: center;
 }
-.users .imglist .imglist-item img{
+#addCollection,
+.photoFrames-update-btn,
+.photoFrames-delete-btn{
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    line-height: 30px;
+    line-height: 30px;
+    color: #868686;
+    background: #f7f7f7;
+    border: 1px solid #d5d5d5;
+    cursor: pointer;
+
+}
+.photoFrames-delete-btn{
+    margin-top: 5px;
+}
+.add-item .add-item-txt:hover,
+#addCollection:hover,
+.photoFrames-update-btn:hover,
+.photoFrames-delete-btn:hover{
+    background: #b9b9b9;
+    color: #fff;
+}
+.users .imglist-1 .imglist-item img{
     width: 60px;
     height: 60px;
 }
-.users .imglist .imglist-item span {
+.users .imglist-1 .imglist-item span {
+    cursor: pointer;
     position: absolute;
+    display: block;
     left: 0px;
     top:100%;
     width: 100%;
@@ -328,21 +364,13 @@ input[type=button]:hover {
     transition: top 200ms;
 
 }
-.users .imglist .imglist-item:hover span{
+.users .imglist-1 .imglist-item:hover span{
     display: block;
     top:30px;
 
 }
-.users .imglist span{
-    display: inline-block;
-    width: 33px;
-    height: 45px;
-    line-height: 45px;
-    text-align: center;
-    cursor: pointer;
-    vertical-align: top;
-}
-.imglist span:hover{
+
+.imglist-1 .imglist-item span:hover{
     color: #ff0000;
 }
 
@@ -350,4 +378,37 @@ input[type=button]:hover {
     margin-left: 20px;
     position: relative;
     top: 2px;
+}
+
+
+
+.alertmsg{
+    display: none;
+    width: 320px;
+    height: 90px;
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    z-index: 1001;
+    margin:-40px 0 0 -160px;
+    background: #fff;
+    border: 1px solid #a0a0a0;
+    -webkit-box-shadow: 0 0 0 10px #d5d5d5;
+    -moz-box-shadow: 0 0 0 10px #d5d5d5;
+    box-shadow: 0 0 0 10px #d5d5d5;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+
+}
+
+.alertmsg p{
+    margin: 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #3dd48d;
+}
+.alertmsg p.err{
+    color: #ff4c39;
 }

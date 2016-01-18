@@ -3,12 +3,6 @@
 
 
     <link rel="stylesheet" href="{{static}}api/css/admin.css"/>
-    <link href="{{static}}common/fine-uploader/fine-uploader-new.css" rel="stylesheet">
-    <style>
-        .photoframes {
-            background: #d2d2d2;
-        }
-    </style>
 {{/extend}}
 
 <div class="header">
@@ -28,12 +22,13 @@
     <form>
         <table class="users ">
             <tr>
-                <td colspan="4" style="font-weight: bold; font-size: 16px">新增婚件产品</td>
-                <td rowspan="2"><span id="add" class="btn">增加</span></td>
+                <td colspan="5" style="font-weight: bold; font-size: 16px">新增婚件产品</td>
+                <td width="60" rowspan="2"><span id="addCollection" class="add-btn">增加</span></td>
             </tr>
             <tr>
                 <td><input class="addTitle" type="text" name="title" placeholder="名称"/></td>
                 <td><input type="text" name="size" placeholder="尺寸"/></td>
+                <td><input type="text" name="stockNum" placeholder="库存数量"/></td>
                 <td><input type="text" name="promise" placeholder="承诺"/></td>
                 <td>
                     <input type="text" style="width: 60px;" name="stockNum" placeholder="库存数量"/>
@@ -57,16 +52,17 @@
     {{#each photoFrames}}
         <table class="users ">
             <tr>
-                <td><input type="text" value="{{title}}" name="title" placeholder="名称"/></td>
-                <td><input type="text" value="{{saledNumber}}"  name="saledNumber" placeholder="销售数量"/></td>
-                <td><input type="text" value="{{Number}}"  name="Number" placeholder="尺寸"/></td>
-                <td><input type="text" value="{{promise}}"  name="promise" placeholder="承诺"/></td>
+                <td width="168"><input type="text" value="{{title}}" name="title" placeholder="名称"/></td>
+                <td><input type="text" value="{{saledNumber}}" name="saledNumber" placeholder="销售数量"/></td>
+                <td><input type="text" value="{{stockNum}}" name="stockNum" placeholder="库存数量"/></td>
+                <td><input type="text" value="{{promise}}" name="promise" placeholder="承诺"/></td>
                 <td>
-                    <input type="text" style="width: 60px;" value="{{stockNum}}"  name="stockNum" placeholder="剩余数量"/>
-                    <input style="width: 60px" type="text" value="{{size}}"  name="size" placeholder="页数"/>
-                    <input type="text" value="{{promise}}"  name="price" style="width: 60px;" placeholder="价格"/>
+                    <input type="text" style="width: 60px;" value="{{stockNum}}" name="stockNum" placeholder="剩余数量"/>
+                    <input style="width: 60px" type="text" value="{{size}}" name="size" placeholder="页数"/>
+                    <input type="text" value="{{promise}}" name="price" style="width: 60px;" placeholder="价格"/>
                     <label><input value="true" {{#if public}} checked {{/if}} name="public" type="radio"/>发布</label>
-                    <label><input value="false" {{#compare public "==" false }} checked {{/compare}} name="public" type="radio"/>未发布</label>
+                    <label><input value="false" {{#compare public "==" false }} checked {{/compare}} name="public"
+                                  type="radio"/>未发布</label>
                     <select name="sort">
                         <option value="摆台">摆台</option>
                         <option value="相册">相册</option>
@@ -75,110 +71,46 @@
                         <option value="其它">其它</option>
                     </select>
                 </td>
-                <td rowspan="3"><span  data-id="{{_id}}"  class="btn">更新</span></td>
+                <td width="60" rowspan="3">
+                    <div data-id="{{_id}}" class="photoFrames-update-btn">更新</div>
+                    <div data-id="{{_id}}" class="photoFrames-delete-btn">删除</div>
+                </td>
             </tr>
             <tr>
                 <td>轮播图片：</td>
-                <td colspan="4" class="imglist">
+                <td colspan="4" class="imglist-1">
                     {{#each imgs}}
                         <div class="imglist-item">
-                            <img src="" alt=""/>
-                            <span data-id="_id" class="delete">删除</span>
+                            <img src="/{{path}}{{name}}" alt=""/>
+                            <span data-imgId="{{_id}}" data-collectionId="{{../_id}}" class="delete deleteImg">删除</span>
                         </div>
                     {{/each}}
-                    <div  data-id="{{_id}}"  id="myUploader" class="add-item">增加图片</div>
+                    <div class="add-item">
+                        <span class="add-item-txt">增加图片</span>
+                        <input class="fileupload" type="file" data-form-data='{"type": "update"}' name="files"
+                               data-url="/api/photoFrames?type=addImg&id={{_id}}" multiple>
+                    </div>
+
                 </td>
             </tr>
             <tr>
                 <!--产品描述-->
                 <td>产品详细：</td>
                 <td colspan="4" class="content" type="detail">
-
+                    {{#if @first}}
+                        <script id="editor1" type="text/plain" style="width:100%;height:200px;">内容1</script>
+                    {{/if}}
                 </td>
             </tr>
         </table>
     {{/each}}
-    <script type="text/template" id="qq-template">
-        <div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="Drop files here">
-            <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">
-                <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
-            </div>
-            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
-                <span class="qq-upload-drop-area-text-selector"></span>
-            </div>
-            <div class="qq-upload-button-selector qq-upload-button">
-                <div>Upload a file</div>
-            </div>
-            <span class="qq-drop-processing-selector qq-drop-processing">
-                <span>Processing dropped files...</span>
-                <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
-            </span>
-            <ul class="qq-upload-list-selector qq-upload-list" role="region" aria-live="polite" aria-relevant="additions removals">
-                <li>
-                    <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
-                    <div class="qq-progress-bar-container-selector qq-progress-bar-container">
-                        <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-progress-bar-selector qq-progress-bar"></div>
-                    </div>
-                    <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
-                    <div class="qq-thumbnail-wrapper">
-                        <img class="qq-thumbnail-selector" qq-max-size="120" qq-server-scale>
-                    </div>
-                    <button type="button" class="qq-upload-cancel-selector qq-upload-cancel">X</button>
-                    <button type="button" class="qq-upload-retry-selector qq-upload-retry">
-                        <span class="qq-btn qq-retry-icon" aria-label="Retry"></span>
-                        Retry
-                    </button>
 
-                    <div class="qq-file-info">
-                        <div class="qq-file-name">
-                            <span class="qq-upload-file-selector qq-upload-file"></span>
-                            <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
-                        </div>
-                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
-                        <span class="qq-upload-size-selector qq-upload-size"></span>
-                        <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">
-                            <span class="qq-btn qq-delete-icon" aria-label="Delete"></span>
-                        </button>
-                        <button type="button" class="qq-btn qq-upload-pause-selector qq-upload-pause">
-                            <span class="qq-btn qq-pause-icon" aria-label="Pause"></span>
-                        </button>
-                        <button type="button" class="qq-btn qq-upload-continue-selector qq-upload-continue">
-                            <span class="qq-btn qq-continue-icon" aria-label="Continue"></span>
-                        </button>
-                    </div>
-                </li>
-            </ul>
 
-            <dialog class="qq-alert-dialog-selector">
-                <div class="qq-dialog-message-selector"></div>
-                <div class="qq-dialog-buttons">
-                    <button type="button" class="qq-cancel-button-selector">Close</button>
-                </div>
-            </dialog>
-
-            <dialog class="qq-confirm-dialog-selector">
-                <div class="qq-dialog-message-selector"></div>
-                <div class="qq-dialog-buttons">
-                    <button type="button" class="qq-cancel-button-selector">No</button>
-                    <button type="button" class="qq-ok-button-selector">Yes</button>
-                </div>
-            </dialog>
-
-            <dialog class="qq-prompt-dialog-selector">
-                <div class="qq-dialog-message-selector"></div>
-                <input type="text">
-                <div class="qq-dialog-buttons">
-                    <button type="button" class="qq-cancel-button-selector">Cancel</button>
-                    <button type="button" class="qq-ok-button-selector">Ok</button>
-                </div>
-            </dialog>
-        </div>
-    </script>
-
-    <script id="editor1" type="text/plain" style="width:100%;height:200px;">内容1</script>
 </div>
 {{#extend "adminScripts"}}
-    <script src="{{static}}common/fine-uploader/fine-uploader.min.js"></script>
+    <script src="/common/jQueryFu/js/vendor/jquery.ui.widget.js"></script>
+    <script src="/common/jQueryFu/js/jquery.iframe-transport.js"></script>
+    <script src="/common/jQueryFu/js/jquery.fileupload.js"></script>
     <script type="text/javascript" charset="utf-8" src="/common/ueditorphp/ueditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="/common/ueditorphp/ueditor.all.min.js"></script>
     <script src="{{static}}api/js/photoFramesData.js"></script>
@@ -209,40 +141,30 @@
 
     <script type="text/javascript">
         //百度编缉器
-        var ue = UE.getEditor('editor1');
-        var param = "&type=lb&id=";
-        ue.ready(function () {
-            //阻止工具栏的点击向上冒泡
-            $(this.container).click(function (e) {
-                e.stopPropagation()
+        if ($('#editor1').length) {
+            var ue = UE.getEditor('editor1');
+            var param = "&type=lb&id=";
+            ue.ready(function () {
+                //阻止工具栏的点击向上冒泡
+                $(this.container).click(function (e) {
+                    e.stopPropagation()
+                });
             });
-        });
-        $('.content').click(function (e) {
-            var $target = $(this);
-            var content = $target.html();
-            var currentParnet = ue.container.parentNode.parentNode;
-            var currentContent = ue.getContent();
-            $target.html('');
-            $target.append(ue.container.parentNode);
-            ue.reset();
-            param = "&type=" + $target.attr('type') + "&id=" + "";
-            setTimeout(function () {
-                ue.setContent(content);
-            }, 200);
-            $(currentParnet).html(currentContent);
-        })
-        //轮播图片上传
-        var uploader = new qq.FineUploader({
-            element: document.getElementById('myUploader'),
-            request: {
-                endpoint: 'server/upload'
-            },
-            deleteFile: {
-                enabled: true,
-                forceConfirm: true,
-                endpoint: 'server/file'
-            }
-        });
+            $('.content').click(function (e) {
+                var $target = $(this);
+                var content = $target.html();
+                var currentParnet = ue.container.parentNode.parentNode;
+                var currentContent = ue.getContent();
+                $target.html('');
+                $target.append(ue.container.parentNode);
+                ue.reset();
+                param = "&type=" + $target.attr('type') + "&id=" + "";
+                setTimeout(function () {
+                    ue.setContent(content);
+                }, 200);
+                $(currentParnet).html(currentContent);
+            })
+        }
     </script>
 
 {{/extend}}

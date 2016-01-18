@@ -31,6 +31,7 @@
         password:function(str){
             return /^(\d|[A-Za-z]){6,10}$/.test($.trim(str))
         }
+
     }
 
 })(window);

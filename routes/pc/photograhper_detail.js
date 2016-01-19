@@ -6,6 +6,7 @@ var router = express.Router();
 router.get('/', index);
 
 function index(req, res, next) {
+
     res.render('pc/photograhper_detail', { title: '桃微摄影师名字',layout:'layout_pc' });
 }
 

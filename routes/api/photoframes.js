@@ -3,7 +3,7 @@
  */
 var db = require('../../models/db');
 var formidable = require('formidable');
-var fs=require('fs');
+var fs = require('fs');
 var PhotoFrames = db.PhotoFrames;
 var ObjectId = db.ObjectId;
 var Taove = db.Taove;
@@ -11,7 +11,7 @@ var co = require('co');
 //相册性能需更改
 function getPhotoframes(req, res, next) {
     co(function *() {
-        var photoFrames = yield PhotoFrames.find({}).sort({createdOn:-1}).exec();
+        var photoFrames = yield PhotoFrames.find({}).sort({createdOn: -1}).exec();
         res.render('api/photoframes', {
             layout: "layout_api",
             title: "相册",
@@ -36,17 +36,19 @@ function post(req, res, next) {
         case 'deleteImg': //删除轮播图
             deleteImgPhotoFrames(req, res, next);
             break;
+        case 'updateCollection': //更新所有
+            updateCollection(req, res, next);
+            break;
     }
 
 }
 
 function addPhotoFrames(req, res, next) {
-    console.log("addPhotoFrames")
     var newObj = req.body;
     delete req.body.type;
 
-    PhotoFrames.create(newObj,function(err,photoFrames){
-        console.log(photoFrames+"photoFrames")
+    PhotoFrames.create(newObj, function (err, photoFrames) {
+        console.log(photoFrames + "photoFrames")
         if (photoFrames) {
             res.json({
                 success: true,
@@ -58,8 +60,8 @@ function addPhotoFrames(req, res, next) {
 
 function deletePhotoFrames(req, res, next) {
     co(function *() {
-        var id=req.body.id;
-        var photoFrames = yield PhotoFrames.findOneAndRemove({_id:id}).exec();
+        var id = req.body.id;
+        var photoFrames = yield PhotoFrames.findOneAndRemove({_id: id}).exec();
         if (photoFrames) {
             res.json({
                 success: true,
@@ -71,35 +73,37 @@ function deletePhotoFrames(req, res, next) {
 
 function deleteImgPhotoFrames(req, res, next) {
     co(function *() {
-        var imgId=req.body.imgId;
-        var collectionId=req.body.collectionId;
-        var set={ $pull: { imgs: { _id: imgId  }}};
-  /*      var photoFrames = yield PhotoFrames.findOne({_id:collectionId}).exec(function(err,doc){
-            console.log(err)
-        });
-        var img=photoFrames.imgs.pull({ _id: imgId },function(err,doc){
-            console.log(err,doc);
-        });*/
-
-        var doc = { $pull: { $elemMatch: {
-            _id: imgId
-        } }};
-
-        PhotoFrames.findOneAndUpdate({_id:collectionId},set,function(err,doc){
-            console.log(err,doc)
+        var imgId = req.body.imgId;
+        var collectionId = req.body.collectionId;
+        var set = {$pull: {imgs: {_id: imgId}}};
+        PhotoFrames.findOneAndUpdate({_id: collectionId}, set, function (err, doc) {
+            console.log(err, doc)
             res.json({
                 success: true,
                 msg: '删除成功'
             })
         })
-
-
-
-
-
     })
 }
 
+
+
+
+function updateCollection(req, res, next) {
+    co(function *() {
+        var _id = req.body._id;
+        var body=req.body;
+        delete req.body.type;
+        delete req.body._id;
+        var set = {$set:body};
+        PhotoFrames.findOneAndUpdate({_id: _id}, set, function (err, doc) {
+            res.json({
+                success: true,
+                msg: '更新成功'
+            })
+        })
+    })
+}
 
 
 function addImgIntention(req, res, next) {
@@ -136,12 +140,16 @@ function addImgIntention(req, res, next) {
         fs.renameSync(files.files.path, dir + imgname);
 
 
-        var doc = { $push: { imgs: {
-            name: imgname,//文件名与图片名称一样
-            path: imgWebDir//目录名
-        } }};
+        var doc = {
+            $push: {
+                imgs: {
+                    name: imgname,//文件名与图片名称一样
+                    path: imgWebDir//目录名
+                }
+            }
+        };
 
-        PhotoFrames.findOneAndUpdate({_id:_id},doc,function(err,doc){
+        PhotoFrames.findOneAndUpdate({_id: _id}, doc, function (err, doc) {
             console.log(err)
             res.json({})
         })
@@ -149,55 +157,25 @@ function addImgIntention(req, res, next) {
     });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*    res.json({
-            "files": [{
-                "url": "https://jquery-file-upload.appspot.com/image%2Fjpeg/4106290111/1.jpg",
-                "thumbnailUrl": "https://jquery-file-upload.appspot.com/image%2Fjpeg/4106290111/1.jpg.80x80.jpg",
-                "name": "1.jpg",
-                "type": "image/jpeg",
-                "size": 122715,
-                "deleteUrl": "https://jquery-file-upload.appspot.com/image%2Fjpeg/4106290111/1.jpg",
-                "deleteType": "DELETE"
-            }]
-        }
-    );
-    co(function *() {
-        var photoFrames = yield PhotoFrames.findOneAndUpdate({_id: _id}, reset).exec();
-        console.log(photoFrames);
-    })*/
+    /*    res.json({
+     "files": [{
+     "url": "https://jquery-file-upload.appspot.com/image%2Fjpeg/4106290111/1.jpg",
+     "thumbnailUrl": "https://jquery-file-upload.appspot.com/image%2Fjpeg/4106290111/1.jpg.80x80.jpg",
+     "name": "1.jpg",
+     "type": "image/jpeg",
+     "size": 122715,
+     "deleteUrl": "https://jquery-file-upload.appspot.com/image%2Fjpeg/4106290111/1.jpg",
+     "deleteType": "DELETE"
+     }]
+     }
+     );
+     co(function *() {
+     var photoFrames = yield PhotoFrames.findOneAndUpdate({_id: _id}, reset).exec();
+     console.log(photoFrames);
+     })*/
 
 
 }
-
 
 
 function getExt(filename) {

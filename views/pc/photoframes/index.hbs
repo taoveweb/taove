@@ -5,60 +5,18 @@
 {{/extend}}
 
 <div class="section clearfix">
-    <div class="item">
-        <a class="img-a" href="{{static}}photoframes/detail"sta><img src="{{static}}img/load.png"  data-original="" alt=""/></a>
-        <h2>8寸赫拉或韩绒水晶</h2>
-        <p>设计排版1P <em>￥38</em></p>
-        <p>15.24x20.32cm <a href="{{static}}photoframes/detail"sta>购买</a></p>
-    </div>
-    <div class="item">
-        <a class="img-a" href="{{static}}photoframes/detail"sta><img src="{{static}}img/load.png"  data-original="" alt=""/></a>
-        <h2>8寸赫拉或韩绒水晶</h2>
-        <p>设计排版1P <em>￥38</em></p>
-        <p>15.24x20.32cm <a href="{{static}}photoframes/detail"sta>购买</a></p>
-    </div>
-    <div class="item">
-        <a class="img-a" href="{{static}}photoframes/detail"sta><img src="{{static}}img/load.png"  data-original="" alt=""/></a>
-        <h2>8寸赫拉或韩绒水晶</h2>
-        <p>设计排版1P <em>￥38</em></p>
-        <p>15.24x20.32cm <a href="{{static}}photoframes/detail"sta>购买</a></p>
-    </div>
-    <div class="item">
-        <a class="img-a" href="{{static}}photoframes/detail"sta><img src="{{static}}img/load.png"  data-original="" alt=""/></a>
-        <h2>8寸赫拉或韩绒水晶</h2>
-        <p>设计排版1P <em>￥38</em></p>
-        <p>15.24x20.32cm <a href="{{static}}photoframes/detail"sta>购买</a></p>
-    </div>
-    <div class="item">
-        <a class="img-a" href="{{static}}photoframes/detail"sta><img src="{{static}}img/load.png"  data-original="" alt=""/></a>
-        <h2>8寸赫拉或韩绒水晶</h2>
-        <p>设计排版1P <em>￥38</em></p>
-        <p>15.24x20.32cm <a href="{{static}}photoframes/detail"sta>购买</a></p>
-    </div>
-    <div class="item">
-        <a class="img-a" href="{{static}}photoframes/detail"sta><img src="{{static}}img/load.png"  data-original="" alt=""/></a>
-        <h2>8寸赫拉或韩绒水晶</h2>
-        <p>设计排版1P <em>￥38</em></p>
-        <p>15.24x20.32cm <a href="{{static}}photoframes/detail"sta>购买</a></p>
-    </div>
-    <div class="item">
-        <a class="img-a" href="{{static}}photoframes/detail"sta><img src="{{static}}img/load.png"  data-original="" alt=""/></a>
-        <h2>8寸赫拉或韩绒水晶</h2>
-        <p>设计排版1P <em>￥38</em></p>
-        <p>15.24x20.32cm <a href="{{static}}photoframes/detail"sta>购买</a></p>
-    </div>
-    <div class="item">
-        <a class="img-a" href="{{static}}photoframes/detail"sta><img src="{{static}}img/load.png"  data-original="" alt=""/></a>
-        <h2>8寸赫拉或韩绒水晶</h2>
-        <p>设计排版1P <em>￥38</em></p>
-        <p>15.24x20.32cm <a href="{{static}}photoframes/detail"sta>购买</a></p>
-    </div>
-    <div class="item">
-        <a class="img-a" href="{{static}}photoframes/detail"sta><img src="{{static}}img/load.png"  data-original="" alt=""/></a>
-        <h2>8寸赫拉或韩绒水晶</h2>
-        <p>设计排版1P <em>￥38</em></p>
-        <p>15.24x20.32cm <a href="{{static}}photoframes/detail"sta>购买</a></p>
-    </div>
+    {{#each photoFrames}}
+        <div class="item">
+            <a class="img-a" href="{{../static}}photoframes/detail?q={{_id}}" sta>
+                {{#withFirst imgs}}
+                    <img src="{{@root/static}}img/load.png" data-original="{{@root/static}}{{path}}{{name}}" alt=""/>
+                {{/withFirst}}
+            </a>
+            <h2>{{title}}</h2>
+            <p>设计排版{{pageNum}}P <em>￥{{price}}</em></p>
+            <p>{{size}} <a href="{{static}}photoframes/detail?q={{_id}}" >购买</a></p>
+        </div>
+    {{/each}}
 </div>
 
 

@@ -379,7 +379,10 @@ input[type=button]:hover {
     position: relative;
     top: 2px;
 }
-
+.users thead td{
+    background: #f3f3f3;
+    color: #6c6c6c;
+}
 
 
 .alertmsg{

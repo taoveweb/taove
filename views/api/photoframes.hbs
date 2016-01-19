@@ -50,59 +50,75 @@
     <h3>婚件产品</h3>
 
     {{#each photoFrames}}
-        <table class="users ">
-            <tr>
-                <td width="168"><input type="text" value="{{title}}" name="title" placeholder="名称"/></td>
-                <td><input type="text" value="{{saledNumber}}" name="saledNumber" placeholder="销售数量"/></td>
-                <td><input type="text" value="{{stockNum}}" name="stockNum" placeholder="库存数量"/></td>
-                <td><input type="text" value="{{promise}}" name="promise" placeholder="承诺"/></td>
-                <td>
-                    <input type="text" style="width: 60px;" value="{{stockNum}}" name="stockNum" placeholder="剩余数量"/>
-                    <input style="width: 60px" type="text" value="{{size}}" name="size" placeholder="页数"/>
-                    <input type="text" value="{{promise}}" name="price" style="width: 60px;" placeholder="价格"/>
-                    <label><input value="true" {{#if public}} checked {{/if}} name="public" type="radio"/>发布</label>
-                    <label><input value="false" {{#compare public "==" false }} checked {{/compare}} name="public"
-                                  type="radio"/>未发布</label>
-                    <select name="sort">
-                        <option value="摆台">摆台</option>
-                        <option value="相册">相册</option>
-                        <option value="相框挂件">相框挂件</option>
-                        <option value="挂件">挂件</option>
-                        <option value="其它">其它</option>
-                    </select>
-                </td>
-                <td width="60" rowspan="3">
-                    <div data-id="{{_id}}" class="photoFrames-update-btn">更新</div>
-                    <div data-id="{{_id}}" class="photoFrames-delete-btn">删除</div>
-                </td>
-            </tr>
-            <tr>
-                <td>轮播图片：</td>
-                <td colspan="4" class="imglist-1">
-                    {{#each imgs}}
-                        <div class="imglist-item">
-                            <img src="/{{path}}{{name}}" alt=""/>
-                            <span data-imgId="{{_id}}" data-collectionId="{{../_id}}" class="delete deleteImg">删除</span>
+        <form>
+            <table class="users ">
+                <thead>
+                    <tr>
+                        <td>名称</td>
+                        <td>销售数量</td>
+                        <td>库存数量</td>
+                        <td>承诺</td>
+                        <td>页数：尺寸：价格：是否发布：类型</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td width="188"><input type="text" value="{{title}}" name="title" placeholder="名称"/></td>
+                    <td><input type="text" value="{{saledNumber}}" name="saledNumber" placeholder="销售数量"/></td>
+                    <td><input type="text" value="{{stockNum}}" name="stockNum" placeholder="库存数量"/></td>
+                    <td><input type="text" value="{{promise}}" name="promise" placeholder="承诺"/></td>
+                    <td>
+                        <input type="text" style="width: 60px;" value="{{pageNum}}" name="pageNum" placeholder="页数"/>
+                        <input style="width: 60px" type="text" value="{{size}}" name="size" placeholder="尺寸"/>
+                        <input type="text" value="{{price}}" name="price" style="width: 60px;" placeholder="价格"/>
+                        <label><input value="true" {{#if public}} checked {{/if}} name="public" type="radio"/>发布</label>
+                        <label><input value="false" {{#compare public "==" false }} checked {{/compare}} name="public"
+                                      type="radio"/>未发布</label>
+                        <select name="sort">
+                            <option value="摆台">摆台</option>
+                            <option value="相册">相册</option>
+                            <option value="相框挂件">相框挂件</option>
+                            <option value="挂件">挂件</option>
+                            <option value="其它">其它</option>
+                        </select>
+                    </td>
+                    <td width="60" rowspan="3">
+                        <div data-id="{{_id}}" class="photoFrames-update-btn">更新</div>
+                        <div data-id="{{_id}}" class="photoFrames-delete-btn">删除</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>轮播图片：</td>
+                    <td colspan="4" class="imglist-1">
+                        {{#each imgs}}
+                            <div class="imglist-item">
+                                <img src="/{{path}}{{name}}" alt=""/>
+                                <span data-imgId="{{_id}}" data-collectionId="{{../_id}}"
+                                      class="delete deleteImg">删除</span>
+                            </div>
+                        {{/each}}
+                        <div class="add-item">
+                            <span class="add-item-txt">增加图片</span>
+                            <input class="fileupload" type="file" data-form-data='{"type": "update"}' name="files"
+                                   data-url="/api/photoFrames?type=addImg&id={{_id}}" multiple>
                         </div>
-                    {{/each}}
-                    <div class="add-item">
-                        <span class="add-item-txt">增加图片</span>
-                        <input class="fileupload" type="file" data-form-data='{"type": "update"}' name="files"
-                               data-url="/api/photoFrames?type=addImg&id={{_id}}" multiple>
-                    </div>
 
-                </td>
-            </tr>
-            <tr>
-                <!--产品描述-->
-                <td>产品详细：</td>
-                <td colspan="4" class="content" type="detail">
-                    {{#if @first}}
-                        <script id="editor1" type="text/plain" style="width:100%;height:200px;">内容1</script>
-                    {{/if}}
-                </td>
-            </tr>
-        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <!--产品描述-->
+                    <td>产品详细：</td>
+                    <td colspan="4" class="content" type="detail">
+                        {{#if @first}}
+                            <script id="editor1" type="text/plain"
+                                    style="width:100%;height:200px;">{{{detail}}}</script>
+                        {{else}}
+                            {{{detail}}}
+                        {{/if}}
+                    </td>
+                </tr>
+            </table>
+        </form>
     {{/each}}
 
 
@@ -115,56 +131,5 @@
     <script type="text/javascript" charset="utf-8" src="/common/ueditorphp/ueditor.all.min.js"></script>
     <script src="{{static}}api/js/photoFramesData.js"></script>
     <script src="{{static}}api/js/photoFrames.js"></script>
-    <script>
-
-        $('.intention-box').on('click', '.fixed', function () {
-            var form = $(this).parents('form');
-            var fields = form.serializeArray();
-            var params = {};
-            jQuery.each(fields, function (i, field) {
-                params[field.name] = field.value;
-            });
-            params.type = "update";
-            params._id = $(this).data('id');
-            $.post("/api/intention", params,
-                    function (data) {
-                        if (data.success) {
-                            alert('更新成功')
-                        }
-                    });
-
-            return false;
-        })
-
-    </script>
-
-
-    <script type="text/javascript">
-        //百度编缉器
-        if ($('#editor1').length) {
-            var ue = UE.getEditor('editor1');
-            var param = "&type=lb&id=";
-            ue.ready(function () {
-                //阻止工具栏的点击向上冒泡
-                $(this.container).click(function (e) {
-                    e.stopPropagation()
-                });
-            });
-            $('.content').click(function (e) {
-                var $target = $(this);
-                var content = $target.html();
-                var currentParnet = ue.container.parentNode.parentNode;
-                var currentContent = ue.getContent();
-                $target.html('');
-                $target.append(ue.container.parentNode);
-                ue.reset();
-                param = "&type=" + $target.attr('type') + "&id=" + "";
-                setTimeout(function () {
-                    ue.setContent(content);
-                }, 200);
-                $(currentParnet).html(currentContent);
-            })
-        }
-    </script>
 
 {{/extend}}

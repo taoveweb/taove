@@ -5,7 +5,7 @@ $(function () {
 
     $('.addTitle').on('blur', function () {
         var parent = $(this).parents('.users');
-        var obj = eachPhotoＦramesData(photoＦramesData, $(this).val());
+        var obj = eachPhotoframesData(photoＦramesData, $(this).val());
         parent.find('[name="size"]').val(obj.size);
         parent.find('[name="promise"]').val(obj.promise);
         parent.find('[name="stockNum"]').val(obj.stockNum);
@@ -22,7 +22,6 @@ $(function () {
         var pass = true;
         pass = jQuery.each(fields, function (i, field) {
             params[field.name] = field.value;
-            console.log(field.value == "")
             if ($.trim(field.value) == "") {
                 alertmsg("不能为空");
                 return false;
@@ -76,11 +75,11 @@ $(function () {
     });
 
 
-    function eachPhotoＦramesData(photoＦramesData, val) {
+    function eachPhotoframesData(photoframesData, val) {
         var obj = {};
         for (var i = 0; i < photoＦramesData.length; i++) {
             if (photoＦramesData[i].title == val) {
-                obj = photoＦramesData[i];
+                obj = photoframesData[i];
                 break;
             }
         }
@@ -90,7 +89,9 @@ $(function () {
 
 
 $(function () {
-    $('body').on('click','.add-item-txt',function(event){
+
+    //境加图片
+    $('body').on('click', '.add-item-txt', function (event) {
         $(this).parent().find('.fileupload').trigger('click');
     })
     $('.fileupload').fileupload({
@@ -100,6 +101,71 @@ $(function () {
 
         }
     });
+
+
+    //百度编缉器
+    if ($('#editor1').length) {
+        var ue = UE.getEditor('editor1');
+        var param = "&type=lb&id=";
+        ue.ready(function () {
+            //阻止工具栏的点击向上冒泡
+            $(this.container).click(function (e) {
+                e.stopPropagation()
+            });
+        });
+        $('.content').click(function (e) {
+            var $target = $(this);
+            var content = $target.html();
+            var currentParnet = ue.container.parentNode.parentNode;
+            var currentContent = ue.getContent();
+            $target.html('');
+            $target.append(ue.container.parentNode);
+            ue.reset();
+            param = "&type=" + $target.attr('type') + "&id=" + "";
+            setTimeout(function () {
+                ue.setContent(content);
+            }, 200);
+            $(currentParnet).html(currentContent);
+        })
+
+
+        //更新所有
+        $('.intention-box').on('click', '.photoFrames-update-btn', function () {
+            var form = $(this).parents('form');
+            var fields = form.serializeArray();
+            var pass=true;
+            var params = {};
+            jQuery.each(fields, function (i, field) {
+                params[field.name] = field.value;
+            });
+            params.type = "updateCollection";
+            params._id = $(this).data('id');
+            delete params.editorValue;
+            if (form.find("#editor1").length) {
+                params.detail = ue.getContent()
+            } else {
+                params.detail = form.find('.content').html();
+            }
+            pass = jQuery.each(fields, function (i, field) {
+                params[field.name] = field.value;
+                if ($.trim(field.value) == "") {
+                    alertmsg("不能为空");
+                    return false;
+                }
+                return true;
+            });
+            if (pass) {
+                $.post("/api/photoFrames", params,
+                    function (data) {
+                        alertmsg(data.msg, data);
+                    });
+            }
+
+            return false;
+        })
+    }
+
+
 });
 
 

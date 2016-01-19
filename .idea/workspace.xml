@@ -20,7 +20,7 @@
     <favorites_list name="Expess" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5953576">
+    <splitter split-orientation="horizontal" split-proportion="0.31618568">
       <split-first>
         <leaf>
           <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
@@ -154,8 +154,8 @@
           <file leaf-file-name="photoFrames.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/api/js/photoFrames.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-64.6">
-                  <caret line="135" column="26" selection-start-line="135" selection-start-column="26" selection-end-line="135" selection-end-column="26" />
+                <state vertical-scroll-proportion="-63.333332">
+                  <caret line="100" column="30" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
@@ -260,7 +260,6 @@
         <option value="$PROJECT_DIR$/views/layout_pc.hbs" />
         <option value="$PROJECT_DIR$/views/layout_api.hbs" />
         <option value="$PROJECT_DIR$/routes/api/photoframes.js" />
-        <option value="$PROJECT_DIR$/public/api/js/photoFrames.js" />
         <option value="$PROJECT_DIR$/public/api/css/api.css" />
         <option value="$PROJECT_DIR$/routes/pc/photograhper_detail.js" />
         <option value="$PROJECT_DIR$/views/pc/photoframes/index.hbs" />
@@ -269,6 +268,7 @@
         <option value="$PROJECT_DIR$/public/common/js/jquery.imagezoom.min.js" />
         <option value="$PROJECT_DIR$/public/pc/css/photoframes_detail.css" />
         <option value="$PROJECT_DIR$/views/api/photoframes.hbs" />
+        <option value="$PROJECT_DIR$/public/api/js/photoFrames.js" />
         <option value="$PROJECT_DIR$/bin/www.js" />
       </list>
     </option>
@@ -964,14 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/api/js/photoFrames.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-64.6">
-          <caret line="135" column="26" selection-start-line="135" selection-start-column="26" selection-end-line="135" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/api/css/api.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -984,22 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="251" column="15" selection-start-line="251" selection-start-column="15" selection-end-line="252" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/photoframes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.8">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/pc/photograhper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1089,6 +1065,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64912283">
           <caret line="128" column="76" selection-start-line="128" selection-start-column="76" selection-end-line="128" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/pc/photograhper.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api/photoframes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/api/js/photoFrames.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-63.333332">
+          <caret line="100" column="30" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
           <folding />
         </state>
       </provider>

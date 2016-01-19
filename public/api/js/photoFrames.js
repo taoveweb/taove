@@ -97,8 +97,10 @@ $(function () {
     $('.fileupload').fileupload({
         dataType: 'json',
         done: function (e, data) {
-            console.log(data.files)
-
+            if(data.files.length){
+                alertmsg("添加成功");
+                window.location.reload();
+            }
         }
     });
 

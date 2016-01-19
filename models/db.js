@@ -71,7 +71,7 @@ var ImgSchema = new Schema({ name:String,path:String });
 var PhotoFramesSchema = new Schema({
     title: String,//imgName
     price: Number,//价格
-    saledNumber: Number,//已销售
+    saledNumber: {type: Number, default: 0},//已销售
     stockNum: Number,//库存数量
     promise: String,//承诺
     size:String,//尺寸  15.24x20.32cm

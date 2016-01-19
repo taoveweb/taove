@@ -11,7 +11,7 @@ var co = require('co');
 //相册性能需更改
 function getPhotoframes(req, res, next) {
     co(function *() {
-        var photoFrames = yield PhotoFrames.find({}).exec();
+        var photoFrames = yield PhotoFrames.find({}).sort({createdOn:-1}).exec();
         res.render('api/photoframes', {
             layout: "layout_api",
             title: "相册",
@@ -41,18 +41,19 @@ function post(req, res, next) {
 }
 
 function addPhotoFrames(req, res, next) {
-    co(function *() {
-        var newObj = req.body;
-        delete req.body.type;
+    console.log("addPhotoFrames")
+    var newObj = req.body;
+    delete req.body.type;
 
-        var photoFrames = yield PhotoFrames.create(newObj).exec();
+    PhotoFrames.create(newObj,function(err,photoFrames){
+        console.log(photoFrames+"photoFrames")
         if (photoFrames) {
             res.json({
                 success: true,
                 msg: '创建成功'
             })
         }
-    })
+    });
 }
 
 function deletePhotoFrames(req, res, next) {

@@ -35,43 +35,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="photoframes_detail.hbs" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/views/pc/photoframes/photoframes_detail.hbs">
+          <file leaf-file-name="photoframes.hbs" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/views/api/photoframes.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.862069">
-                  <caret line="94" column="57" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="57" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="photoframes.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/pc/css/photoframes.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.766667">
-                  <caret line="27" column="6" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="6" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="photoframes_detail.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/public/pc/css/photoframes_detail.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.89788735">
-                  <caret line="125" column="110" selection-start-line="125" selection-start-column="110" selection-end-line="125" selection-end-column="110" />
-                  <folding>
-                    <marker date="1453173522767" expanded="true" signature="6359:6398" placeholder="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="jquery.imagezoom.min.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/common/js/jquery.imagezoom.min.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.6333333">
-                  <caret line="1" column="615" selection-start-line="1" selection-start-column="607" selection-end-line="1" selection-end-column="615" />
+                <state vertical-scroll-proportion="0.5824561">
+                  <caret line="126" column="51" selection-start-line="126" selection-start-column="51" selection-end-line="126" selection-end-column="51" />
                   <folding />
                 </state>
               </provider>
@@ -123,7 +91,17 @@
             <entry file="file://$PROJECT_DIR$/public/api/js/photoFramesData.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="5" column="25" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="25" />
+                  <caret line="13" column="28" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="28" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="photoframes_detail.hbs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/pc/photoframes/photoframes_detail.hbs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-63.785713">
+                  <caret line="94" column="57" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="57" />
                   <folding />
                 </state>
               </provider>
@@ -273,7 +251,6 @@
         <option value="$PROJECT_DIR$/views/layout_api.hbs" />
         <option value="$PROJECT_DIR$/routes/api/photoframes.js" />
         <option value="$PROJECT_DIR$/public/api/js/photoFrames.js" />
-        <option value="$PROJECT_DIR$/views/api/photoframes.hbs" />
         <option value="$PROJECT_DIR$/public/api/css/api.css" />
         <option value="$PROJECT_DIR$/routes/pc/photograhper_detail.js" />
         <option value="$PROJECT_DIR$/views/pc/photoframes/index.hbs" />
@@ -282,6 +259,7 @@
         <option value="$PROJECT_DIR$/public/common/js/jquery.imagezoom.min.js" />
         <option value="$PROJECT_DIR$/public/pc/css/photoframes_detail.css" />
         <option value="$PROJECT_DIR$/bin/www.js" />
+        <option value="$PROJECT_DIR$/views/api/photoframes.hbs" />
       </list>
     </option>
   </component>
@@ -405,11 +383,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="pc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="photoframes" />
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -535,7 +509,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="jQueryFU" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1019,14 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/api/photoframes.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4108911">
-          <caret line="126" column="3" selection-start-line="126" selection-start-column="3" selection-end-line="126" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/pc/photoframes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1039,6 +1005,45 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="77" column="11" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/img/weixin.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/common/js/jquery.imagezoom.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6333333">
+          <caret line="1" column="615" selection-start-line="1" selection-start-column="607" selection-end-line="1" selection-end-column="615" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44481605">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pc/css/photoframes_detail.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.89788735">
+          <caret line="125" column="110" selection-start-line="125" selection-start-column="110" selection-end-line="125" selection-end-column="110" />
+          <folding>
+            <marker date="1453173522767" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/pc/css/photoframes.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41021127">
+          <caret line="27" column="6" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -1056,54 +1061,23 @@
     <entry file="file://$PROJECT_DIR$/public/api/js/photoFramesData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="25" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="25" />
+          <caret line="13" column="28" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/img/weixin.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/pc/photoframes/photoframes_detail.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.862069">
+        <state vertical-scroll-proportion="-63.785713">
           <caret line="94" column="57" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/pc/css/photoframes.css">
+    <entry file="file://$PROJECT_DIR$/views/api/photoframes.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.766667">
-          <caret line="27" column="6" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/common/js/jquery.imagezoom.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6333333">
-          <caret line="1" column="615" selection-start-line="1" selection-start-column="607" selection-end-line="1" selection-end-column="615" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/pc/css/photoframes_detail.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89788735">
-          <caret line="125" column="110" selection-start-line="125" selection-start-column="110" selection-end-line="125" selection-end-column="110" />
-          <folding>
-            <marker date="1453173522767" expanded="true" signature="6359:6398" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44481605">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.5824561">
+          <caret line="126" column="51" selection-start-line="126" selection-start-column="51" selection-end-line="126" selection-end-column="51" />
           <folding />
         </state>
       </provider>

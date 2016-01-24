@@ -9,6 +9,7 @@ body {
     -webkit-box-sizing : border-box;
 }
 body {
+	overflow: scroll;
     background: transparent;
     -webkit-overflow-scrolling : touch;
     -webkit-transform: translate3d(0,0,0);

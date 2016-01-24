@@ -224,7 +224,6 @@ $(function(){
     // dropload
     var dropload = $('.inner').dropload({
         domUp : {
-        	threshold:"600",
             domClass   : 'dropload-up',
             domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
             domUpdate  : '<div class="dropload-update">↑释放更新</div>',
@@ -253,7 +252,8 @@ $(function(){
                     }
                     // 为了测试，延迟1秒加载
                     //setTimeout(function(){
-                        $('.lists').html(result);
+                        //$('.lists').html(result);
+                        $('.lists').prepend(result);
                         // 每次数据加载完，必须重置
                         dropload.resetload();
                     //},1000);

@@ -259,14 +259,16 @@
     MyDropLoad.prototype.resetload = function(){
         var me = this;
         if(me.direction == 'down' && me.upInsertDOM){
-            me.$domUp.css({'height':'0'}).on('webkitTransitionEnd mozTransitionEnd transitionend',function(){
-                me.loading = false;
-                me.upInsertDOM = false;
-                $(this).remove();
-                fnRecoverContentHeight(me);
+        		if(me.$domUp.length){
+	            me.$domUp.css({'height':'0'}).on('webkitTransitionEnd mozTransitionEnd transitionend',function(){
+	                me.loading = false;
+	                me.upInsertDOM = false;
+	                $(this).remove();
+	                fnRecoverContentHeight(me);
             });
+           }
         }else if(me.direction == 'up'){
-            me.loading = false;
+            me.loading = false; 
             // 如果有数据
             if(me.isData){
                 // 加载区修改样式

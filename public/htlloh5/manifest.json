@@ -348,982 +348,1146 @@
         }
     },
 "dependencies":{
-  "pages": {
-    "plus/doc.html": {
-      "href": "plus/doc.html",
-      "priority": 29
-    },
-    "doc/payment.html": {
-      "href": "doc/payment.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 1
-    },
-    "plus/payment.html": {
-      "href": "plus/payment.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/payment.html"
-      ],
-      "priority": 0
-    },
-    "doc/runtime.html": {
-      "href": "doc/runtime.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "priority": 2
-    },
-    "plus/runtime_launch.html": {
-      "href": "plus/runtime_launch.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [],
-      "priority": 3
-    },
-    "plus/runtime.html": {
-      "href": "plus/runtime.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/runtime.html",
-        "plus/runtime_launch.html"
-      ],
-      "priority": 1
-    },
-    "doc/barcode.html": {
-      "href": "doc/barcode.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "priority": 3
-    },
-    "plus/barcode_scan.html": {
-      "href": "plus/barcode_scan.html",
-      "resources": [],
-      "refer": [],
-      "priority": 4
-    },
-    "plus/barcode.html": {
-      "href": "plus/barcode.html",
-      "resources": [
-        "img/barcode.png",
-        "css/common.css",
-        "js/common.js",
-        "js/immersed.js"
-      ],
-      "refer": [
-        "doc/barcode.html",
-        "plus/barcode_scan.html"
-      ],
-      "priority": 2
-    },
-    "doc/xhr.html": {
-      "href": "doc/xhr.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "priority": 4
-    },
-    "plus/xhr.html": {
-      "href": "plus/xhr.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/xhr.html"
-      ],
-      "priority": 3
-    },
-    "doc/oauth.html": {
-      "href": "doc/oauth.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 5
-    },
-    "plus/oauth.html": {
-      "href": "plus/oauth.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/oauth.html"
-      ],
-      "priority": 4
-    },
-    "doc/share.html": {
-      "href": "doc/share.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "priority": 6
-    },
-    "plus/share.html": {
-      "href": "plus/share.html",
-      "resources": [
-        "img/add.png",
-        "logo.png",
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/share.html"
-      ],
-      "priority": 5
-    },
-    "plus/njs_android_shortcut.html": {
-      "href": "plus/njs_android_shortcut.html",
-      "resources": [],
-      "priority": 6
-    },
-    "plus/njs_ios_gamecenter.html": {
-      "href": "plus/njs_ios_gamecenter.html",
-      "resources": [
-        "img/5.jpg"
-      ],
-      "refer": [],
-      "priority": 7
-    },
-    "doc/android.html": {
-      "href": "doc/android.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 9
-    },
-    "doc/ios.html": {
-      "href": "doc/ios.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 10
-    },
-    "doc/native.js.html": {
-      "href": "doc/native.js.html",
-      "resources": [
-        "doc/res/prettify.js",
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "refer": [
-        "doc/android.html",
-        "doc/ios.html"
-      ],
-      "priority": 9
-    },
-    "plus/njs_efficient.html": {
-      "href": "plus/njs_efficient.html",
-      "resources": [],
-      "refer": [],
-      "priority": 10
-    },
-    "plus/njs.html": {
-      "href": "plus/njs.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "plus/njs_android_shortcut.html",
-        "plus/njs_ios_gamecenter.html",
-        "doc/native.js.html",
-        "plus/njs_efficient.html"
-      ],
-      "priority": 6
-    },
-    "doc/downloader.html": {
-      "href": "doc/downloader.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "priority": 8
-    },
-    "plus/downloader.html": {
-      "href": "plus/downloader.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/downloader.html"
-      ],
-      "priority": 7
-    },
-    "plus/nativeui_waiting.html": {
-      "href": "plus/nativeui_waiting.html",
-      "resources": [
-        "img/waiting.png",
-        "js/common.js"
-      ],
-      "refer": [],
-      "priority": 8
-    },
-    "doc/nativeUI.html": {
-      "href": "doc/nativeUI.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "priority": 10
-    },
-    "plus/nativeui.html": {
-      "href": "plus/nativeui.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "plus/nativeui_waiting.html",
-        "doc/nativeUI.html"
-      ],
-      "priority": 8
-    },
-    "doc/io.html": {
-      "href": "doc/io.html",
-      "resources": [
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/doc.css",
-        "doc/res/doc.js"
-      ],
-      "priority": 10
-    },
-    "plus/file.html": {
-      "href": "plus/file.html",
-      "resources": [
-        "img/fdir.png",
-        "img/ffile.png",
-        "img/fdisk.png",
-        "img/fup.png",
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/io.html"
-      ],
-      "priority": 9
-    },
-    "index.html": {
-      "href": "index.html",
-      "resources": [
-        "js/immersed.js",
-        "css/common.css",
-        "js/shortcut.js",
-        "icon.png",
-        "plus/doc.html"
-      ],
-      "refer": [
-        "plus/payment.html",
-        "plus/runtime.html",
-        "plus/barcode.html",
-        "plus/xhr.html",
-        "plus/oauth.html",
-        "plus/share.html",
-        "plus/njs.html",
-        "plus/downloader.html",
-        "plus/nativeui.html",
-        "plus/file.html",
-        "plus/zip.html",
-        "plus/push.html",
-        "plus/statistic.html",
-        "plus/audio.html",
-        "plus/uploader.html",
-        "plus/storage.html",
-        "plus/accelerometer.html",
-        "plus/navigator.html",
-        "plus/message.html",
-        "plus/speech.html",
-        "plus/proximity.html",
-        "plus/maps.html",
-        "plus/camera.html",
-        "plus/device.html",
-        "plus/orientation.html",
-        "plus/gallery.html",
-        "plus/webview.html",
-        "plus/geolocation.html",
-        "about.html",
-        "plus/events.html"
-      ],
-      "priority": 0
-    },
-    "doc/zip.html": {
-      "href": "doc/zip.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 12
-    },
-    "plus/zip.html": {
-      "href": "plus/zip.html",
-      "resources": [
-        "img/shake/1.jpg",
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/zip.html"
-      ],
-      "priority": 10
-    },
-    "doc/push.html": {
-      "href": "doc/push.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 12
-    },
-    "plus/push.html": {
-      "href": "plus/push.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/push.html"
-      ],
-      "priority": 11
-    },
-    "doc/statistic.html": {
-      "href": "doc/statistic.html",
-      "resources": [
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js",
-        "doc/res/doc.css",
-        "doc/res/doc.js"
-      ],
-      "priority": 13
-    },
-    "plus/statistic.html": {
-      "href": "plus/statistic.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/statistic.html"
-      ],
-      "priority": 12
-    },
-    "doc/audio.html": {
-      "href": "doc/audio.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 14
-    },
-    "plus/audio.html": {
-      "href": "plus/audio.html",
-      "resources": [
-        "img/arecord.png",
-        "img/astop.png",
-        "audio/friendship.mp3",
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/audio.html"
-      ],
-      "priority": 13
-    },
-    "plus/uploader_ret.html": {
-      "href": "plus/uploader_ret.html",
-      "resources": [],
-      "refer": [],
-      "priority": 14
-    },
-    "doc/uploader.html": {
-      "href": "doc/uploader.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "priority": 16
-    },
-    "plus/uploader.html": {
-      "href": "plus/uploader.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "plus/uploader_ret.html",
-        "doc/uploader.html"
-      ],
-      "priority": 14
-    },
-    "doc/storage.html": {
-      "href": "doc/storage.html",
-      "resources": [
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js",
-        "doc/res/doc.css",
-        "doc/res/doc.js"
-      ],
-      "priority": 16
-    },
-    "plus/storage.html": {
-      "href": "plus/storage.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/storage.html"
-      ],
-      "priority": 15
-    },
-    "doc/accelerometer.html": {
-      "href": "doc/accelerometer.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 17
-    },
-    "plus/accelerometer_shake.html": {
-      "href": "plus/accelerometer_shake.html",
-      "resources": [
-        "img/shakeup.png",
-        "img/shakedown.png",
-        "audio/shake.wav",
-        "img/shake/1.jpg",
-        "img/shake/2.jpg",
-        "img/shake/3.jpg",
-        "img/shake/4.jpg"
-      ],
-      "refer": [],
-      "priority": 18
-    },
-    "plus/accelerometer.html": {
-      "href": "plus/accelerometer.html",
-      "resources": [
-        "css/common.css",
-        "js/common.js",
-        "js/immersed.js"
-      ],
-      "refer": [
-        "doc/accelerometer.html",
-        "plus/accelerometer_shake.html"
-      ],
-      "priority": 16
-    },
-    "plus/navigator_status.html": {
-      "href": "plus/navigator_status.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [],
-      "priority": 18
-    },
-    "doc/navigator.html": {
-      "href": "doc/navigator.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 19
-    },
-    "plus/navigator.html": {
-      "href": "plus/navigator.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "plus/navigator_status.html",
-        "doc/navigator.html"
-      ],
-      "priority": 17
-    },
-    "doc/messaging.html": {
-      "href": "doc/messaging.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 19
-    },
-    "plus/message.html": {
-      "href": "plus/message.html",
-      "resources": [
-        "img/helloh5.jpg",
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/messaging.html"
-      ],
-      "priority": 18
-    },
-    "doc/speech.html": {
-      "href": "doc/speech.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 20
-    },
-    "plus/speech.html": {
-      "href": "plus/speech.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/speech.html"
-      ],
-      "priority": 19
-    },
-    "doc/proximity.html": {
-      "href": "doc/proximity.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 21
-    },
-    "plus/proximity.html": {
-      "href": "plus/proximity.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/proximity.html"
-      ],
-      "priority": 20
-    },
-    "plus/maps_map_sub.html": {
-      "href": "plus/maps_map_sub.html",
-      "resources": [
-        "css/common.css"
-      ],
-      "priority": 22
-    },
-    "plus/maps_map.html": {
-      "href": "plus/maps_map.html",
-      "resources": [
-        "js/common.js",
-        "logo.png"
-      ],
-      "refer": [
-        "plus/maps_map_sub.html"
-      ],
-      "priority": 21
-    },
-    "doc/maps.html": {
-      "href": "doc/maps.html",
-      "resources": [
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/doc.css",
-        "doc/res/doc.js"
-      ],
-      "priority": 23
-    },
-    "plus/maps.html": {
-      "href": "plus/maps.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "plus/maps_map.html",
-        "doc/maps.html"
-      ],
-      "priority": 21
-    },
-    "plus/camera_image.html": {
-      "href": "plus/camera_image.html",
-      "resources": [],
-      "priority": 22
-    },
-    "plus/camera_video.html": {
-      "href": "plus/camera_video.html",
-      "resources": [],
-      "priority": 23
-    },
-    "doc/camera.html": {
-      "href": "doc/camera.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 25
-    },
-    "plus/camera.html": {
-      "href": "plus/camera.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "plus/camera_image.html",
-        "plus/camera_video.html",
-        "doc/camera.html"
-      ],
-      "priority": 22
-    },
-    "doc/device.html": {
-      "href": "doc/device.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "priority": 24
-    },
-    "plus/device.html": {
-      "href": "plus/device.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/device.html"
-      ],
-      "priority": 23
-    },
-    "doc/orientation.html": {
-      "href": "doc/orientation.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 25
-    },
-    "plus/orientation_level.html": {
-      "href": "plus/orientation_level.html",
-      "resources": [
-        "img/orientationb.png",
-        "img/orientationl.png",
-        "img/orientationbg.png"
-      ],
-      "priority": 26
-    },
-    "plus/orientation_compass.html": {
-      "href": "plus/orientation_compass.html",
-      "resources": [
-        "img/orientationa.png",
-        "img/orientationbg.png",
-        "img/orientationc.png"
-      ],
-      "refer": [],
-      "priority": 27
-    },
-    "plus/orientation.html": {
-      "href": "plus/orientation.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/orientation.html",
-        "plus/orientation_level.html",
-        "plus/orientation_compass.html"
-      ],
-      "priority": 24
-    },
-    "doc/gallery.html": {
-      "href": "doc/gallery.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 26
-    },
-    "plus/gallery.html": {
-      "href": "plus/gallery.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/gallery.html"
-      ],
-      "priority": 25
-    },
-    "plus/webview_pullrefresh_custom.html": {
-      "href": "plus/webview_pullrefresh_custom.html",
-      "resources": [],
-      "priority": 26,
-      "refer": []
-    },
-    "plus/webview_pullhead_custom.html": {
-      "href": "plus/webview_pullhead_custom.html",
-      "resources": [
-        "img/pull_arrow.png",
-        "img/pull_fresh.png"
-      ],
-      "refer": [
-        "plus/webview_pullrefresh_custom.html"
-      ],
-      "priority": 26
-    },
-    "plus/webview_float.html": {
-      "href": "plus/webview_float.html",
-      "resources": [
-        "img/ui.png"
-      ],
-      "priority": 27
-    },
-    "plus/webview_new.html": {
-      "href": "plus/webview_new.html",
-      "resources": [
-        "img/ui.png"
-      ],
-      "refer": [],
-      "priority": 29
-    },
-    "plus/webview_animation.html": {
-      "href": "plus/webview_animation.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "plus/webview_new.html"
-      ],
-      "priority": 29
-    },
-    "plus/webview_pullrefresh.html": {
-      "href": "plus/webview_pullrefresh.html",
-      "resources": [],
-      "priority": 30,
-      "refer": []
-    },
-    "plus/webview_pullhead.html": {
-      "href": "plus/webview_pullhead.html",
-      "resources": [],
-      "refer": [
-        "plus/webview_pullrefresh.html"
-      ],
-      "priority": 30
-    },
-    "doc/webview.html": {
-      "href": "doc/webview.html",
-      "resources": [
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/doc.css",
-        "doc/res/doc.js"
-      ],
-      "priority": 31
-    },
-    "plus/webview_embed.html": {
-      "href": "plus/webview_embed.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [],
-      "priority": 32
-    },
-    "plus/webview_mask_side.html": {
-      "href": "plus/webview_mask_side.html",
-      "resources": [],
-      "refer": [],
-      "priority": 33
-    },
-    "plus/webview_mask.html": {
-      "href": "plus/webview_mask.html",
-      "resources": [
-        "plus/webview_mask_side.html"
-      ],
-      "refer": [],
-      "priority": 33
-    },
-    "plus/webview.html": {
-      "href": "plus/webview.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "plus/webview_pullhead_custom.html",
-        "plus/webview_float.html",
-        "plus/webview_animation.html",
-        "plus/webview_pullhead.html",
-        "doc/webview.html",
-        "plus/webview_embed.html",
-        "plus/webview_mask.html"
-      ],
-      "priority": 26
-    },
-    "doc/geolocation.html": {
-      "href": "doc/geolocation.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 28
-    },
-    "plus/geolocation.html": {
-      "href": "plus/geolocation.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/geolocation.html"
-      ],
-      "priority": 27
-    },
-    "about.html": {
-      "href": "about.html",
-      "resources": [
-        "js/common.js",
-        "img/h5p.jpg"
-      ],
-      "refer": [],
-      "priority": 28
-    },
-    "doc/events.html": {
-      "href": "doc/events.html",
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.sons.css",
-        "doc/res/prettify.js"
-      ],
-      "priority": 30
-    },
-    "plus/events.html": {
-      "href": "plus/events.html",
-      "resources": [
-        "js/common.js"
-      ],
-      "refer": [
-        "doc/events.html"
-      ],
-      "priority": 29
-    },
-    "doc/cache.html": {
-      "priority": 0,
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "refer": []
-    },
-    "doc/console.html": {
-      "priority": 0,
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "refer": []
-    },
-    "doc/contacts.html": {
-      "priority": 0,
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "refer": []
-    },
-    "doc/interface-orientation.html": {
-      "priority": 0,
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "refer": []
-    },
-    "doc/key.html": {
-      "priority": 0,
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "refer": []
-    },
-    "doc/nativeobj.html": {
-      "priority": 0,
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "refer": []
-    },
-    "doc/splashscreen.html": {
-      "priority": 0,
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "refer": []
-    },
-    "doc/ui.html": {
-      "priority": 0,
-      "resources": [
-        "doc/res/doc.css",
-        "doc/res/doc.js",
-        "doc/res/prettify.js",
-        "doc/res/prettify.sons.css"
-      ],
-      "refer": []
-    }
-  },
-  "idle": {
-    "resources": [
-    ]
-  }
-}
+	  "pages": {
+	    "plus/doc.html": {
+	      "href": "plus/doc.html",
+	      "priority": 29,
+	      "resources": [],
+	      "refer": []
+	    },
+	    "doc/payment.html": {
+	      "href": "doc/payment.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 1
+	    },
+	    "plus/payment.html": {
+	      "href": "plus/payment.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/payment.html",
+	        "plus/doc.html",
+	        "plus/payment_iap.html"
+	      ],
+	      "priority": 0
+	    },
+	    "doc/runtime.html": {
+	      "href": "doc/runtime.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "priority": 2
+	    },
+	    "plus/runtime_launch.html": {
+	      "href": "plus/runtime_launch.html",
+	      "resources": [
+	        "js/common.js"
+	      ],
+	      "refer": [],
+	      "priority": 3
+	    },
+	    "plus/runtime.html": {
+	      "href": "plus/runtime.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/runtime.html",
+	        "plus/runtime_launch.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 1
+	    },
+	    "doc/barcode.html": {
+	      "href": "doc/barcode.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "priority": 3
+	    },
+	    "plus/barcode_scan.html": {
+	      "href": "plus/barcode_scan.html",
+	      "resources": [],
+	      "refer": [],
+	      "priority": 4
+	    },
+	    "plus/barcode.html": {
+	      "href": "plus/barcode.html",
+	      "resources": [
+	        "img/barcode.png",
+	        "css/common.css",
+	        "js/common.js",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/barcode.html",
+	        "plus/barcode_scan.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 2
+	    },
+	    "doc/xhr.html": {
+	      "href": "doc/xhr.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "priority": 4
+	    },
+	    "plus/xhr.html": {
+	      "href": "plus/xhr.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/xhr.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 3
+	    },
+	    "doc/oauth.html": {
+	      "href": "doc/oauth.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 5
+	    },
+	    "plus/oauth.html": {
+	      "href": "plus/oauth.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/oauth.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 4
+	    },
+	    "doc/share.html": {
+	      "href": "doc/share.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "priority": 6
+	    },
+	    "plus/share.html": {
+	      "href": "plus/share.html",
+	      "resources": [
+	        "img/add.png",
+	        "logo.png",
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/share.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 5
+	    },
+	    "plus/njs_android_shortcut.html": {
+	      "href": "plus/njs_android_shortcut.html",
+	      "resources": [
+	        "css/common.css",
+	        "icon.png",
+	        "js/common.js",
+	        "js/immersed.js"
+	      ],
+	      "priority": 6,
+	      "refer": [
+	        "plus/doc.html"
+	      ]
+	    },
+	    "plus/njs_ios_gamecenter.html": {
+	      "href": "plus/njs_ios_gamecenter.html",
+	      "resources": [
+	        "img/5.jpg",
+	        "js/common.js",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/doc.html"
+	      ],
+	      "priority": 7
+	    },
+	    "doc/android.html": {
+	      "href": "doc/android.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 9
+	    },
+	    "doc/ios.html": {
+	      "href": "doc/ios.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 10
+	    },
+	    "doc/native.js.html": {
+	      "href": "doc/native.js.html",
+	      "resources": [
+	        "doc/res/prettify.js",
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "refer": [
+	        "doc/android.html",
+	        "doc/ios.html"
+	      ],
+	      "priority": 9
+	    },
+	    "plus/njs_efficient.html": {
+	      "href": "plus/njs_efficient.html",
+	      "resources": [],
+	      "refer": [],
+	      "priority": 10
+	    },
+	    "plus/njs.html": {
+	      "href": "plus/njs.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/njs_android_shortcut.html",
+	        "plus/njs_ios_gamecenter.html",
+	        "doc/native.js.html",
+	        "plus/njs_efficient.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 6
+	    },
+	    "doc/downloader.html": {
+	      "href": "doc/downloader.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "priority": 8
+	    },
+	    "plus/downloader.html": {
+	      "href": "plus/downloader.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/downloader.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 7
+	    },
+	    "plus/nativeui_waiting.html": {
+	      "href": "plus/nativeui_waiting.html",
+	      "resources": [
+	        "img/waiting.png",
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/doc.html"
+	      ],
+	      "priority": 8
+	    },
+	    "doc/nativeUI.html": {
+	      "href": "doc/nativeUI.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "priority": 10
+	    },
+	    "plus/nativeui.html": {
+	      "href": "plus/nativeui.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/nativeui_waiting.html",
+	        "doc/nativeUI.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 8
+	    },
+	    "doc/io.html": {
+	      "href": "doc/io.html",
+	      "resources": [
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/doc.css",
+	        "doc/res/doc.js"
+	      ],
+	      "priority": 10
+	    },
+	    "plus/file.html": {
+	      "href": "plus/file.html",
+	      "resources": [
+	        "img/fdir.png",
+	        "img/ffile.png",
+	        "img/fdisk.png",
+	        "img/fup.png",
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/io.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 9
+	    },
+	    "index.html": {
+	      "href": "index.html",
+	      "resources": [
+	        "js/immersed.js",
+	        "css/common.css",
+	        "js/shortcut.js",
+	        "icon.png",
+	        "plus/doc.html",
+	        "js/update.js"
+	      ],
+	      "refer": [
+	        "plus/payment.html",
+	        "plus/runtime.html",
+	        "plus/barcode.html",
+	        "plus/xhr.html",
+	        "plus/oauth.html",
+	        "plus/share.html",
+	        "plus/njs.html",
+	        "plus/downloader.html",
+	        "plus/nativeui.html",
+	        "plus/file.html",
+	        "plus/zip.html",
+	        "plus/push.html",
+	        "plus/statistic.html",
+	        "plus/audio.html",
+	        "plus/uploader.html",
+	        "plus/storage.html",
+	        "plus/accelerometer.html",
+	        "plus/navigator.html",
+	        "plus/message.html",
+	        "plus/speech.html",
+	        "plus/proximity.html",
+	        "plus/maps.html",
+	        "plus/camera.html",
+	        "plus/device.html",
+	        "plus/orientation.html",
+	        "plus/gallery.html",
+	        "plus/webview.html",
+	        "plus/geolocation.html",
+	        "about.html",
+	        "plus/events.html"
+	      ],
+	      "priority": 0
+	    },
+	    "doc/zip.html": {
+	      "href": "doc/zip.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 12
+	    },
+	    "plus/zip.html": {
+	      "href": "plus/zip.html",
+	      "resources": [
+	        "img/shake/1.jpg",
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/zip.html",
+	        "plus/doc.html",
+	        "index.html"
+	      ],
+	      "priority": 10
+	    },
+	    "doc/push.html": {
+	      "href": "doc/push.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 12
+	    },
+	    "plus/push.html": {
+	      "href": "plus/push.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/push.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 11
+	    },
+	    "doc/statistic.html": {
+	      "href": "doc/statistic.html",
+	      "resources": [
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js",
+	        "doc/res/doc.css",
+	        "doc/res/doc.js"
+	      ],
+	      "priority": 13
+	    },
+	    "plus/statistic.html": {
+	      "href": "plus/statistic.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/statistic.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 12
+	    },
+	    "doc/audio.html": {
+	      "href": "doc/audio.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 14
+	    },
+	    "plus/audio.html": {
+	      "href": "plus/audio.html",
+	      "resources": [
+	        "img/arecord.png",
+	        "img/astop.png",
+	        "audio/friendship.mp3",
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/audio.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 13
+	    },
+	    "plus/uploader_ret.html": {
+	      "href": "plus/uploader_ret.html",
+	      "resources": [
+	        "css/common.css",
+	        "js/common.js",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/doc.html"
+	      ],
+	      "priority": 14
+	    },
+	    "doc/uploader.html": {
+	      "href": "doc/uploader.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "priority": 16
+	    },
+	    "plus/uploader.html": {
+	      "href": "plus/uploader.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/uploader_ret.html",
+	        "doc/uploader.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 14
+	    },
+	    "doc/storage.html": {
+	      "href": "doc/storage.html",
+	      "resources": [
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js",
+	        "doc/res/doc.css",
+	        "doc/res/doc.js"
+	      ],
+	      "priority": 16
+	    },
+	    "plus/storage.html": {
+	      "href": "plus/storage.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/storage.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 15
+	    },
+	    "doc/accelerometer.html": {
+	      "href": "doc/accelerometer.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 17
+	    },
+	    "plus/accelerometer_shake.html": {
+	      "href": "plus/accelerometer_shake.html",
+	      "resources": [
+	        "img/shakeup.png",
+	        "img/shakedown.png",
+	        "audio/shake.wav",
+	        "img/shake/1.jpg",
+	        "img/shake/2.jpg",
+	        "img/shake/3.jpg",
+	        "img/shake/4.jpg"
+	      ],
+	      "refer": [],
+	      "priority": 18
+	    },
+	    "plus/accelerometer.html": {
+	      "href": "plus/accelerometer.html",
+	      "resources": [
+	        "css/common.css",
+	        "js/common.js",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/accelerometer.html",
+	        "plus/accelerometer_shake.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 16
+	    },
+	    "plus/navigator_status.html": {
+	      "href": "plus/navigator_status.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/doc.html"
+	      ],
+	      "priority": 18
+	    },
+	    "doc/navigator.html": {
+	      "href": "doc/navigator.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 19
+	    },
+	    "plus/navigator.html": {
+	      "href": "plus/navigator.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/navigator_status.html",
+	        "doc/navigator.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 17
+	    },
+	    "doc/messaging.html": {
+	      "href": "doc/messaging.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 19
+	    },
+	    "plus/message.html": {
+	      "href": "plus/message.html",
+	      "resources": [
+	        "img/helloh5.jpg",
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/messaging.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 18
+	    },
+	    "doc/speech.html": {
+	      "href": "doc/speech.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 20
+	    },
+	    "plus/speech.html": {
+	      "href": "plus/speech.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/speech.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 19
+	    },
+	    "doc/proximity.html": {
+	      "href": "doc/proximity.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 21
+	    },
+	    "plus/proximity.html": {
+	      "href": "plus/proximity.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/proximity.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 20
+	    },
+	    "plus/maps_map_sub.html": {
+	      "href": "plus/maps_map_sub.html",
+	      "resources": [
+	        "css/common.css"
+	      ],
+	      "priority": 22,
+	      "refer": []
+	    },
+	    "plus/maps_map.html": {
+	      "href": "plus/maps_map.html",
+	      "resources": [
+	        "js/common.js",
+	        "logo.png",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/maps_map_sub.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 21
+	    },
+	    "doc/maps.html": {
+	      "href": "doc/maps.html",
+	      "resources": [
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/doc.css",
+	        "doc/res/doc.js"
+	      ],
+	      "priority": 23
+	    },
+	    "plus/maps.html": {
+	      "href": "plus/maps.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/maps_map.html",
+	        "doc/maps.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 21
+	    },
+	    "plus/camera_image.html": {
+	      "href": "plus/camera_image.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css"
+	      ],
+	      "priority": 22,
+	      "refer": [
+	        "plus/doc.html"
+	      ]
+	    },
+	    "plus/camera_video.html": {
+	      "href": "plus/camera_video.html",
+	      "resources": [
+	        "css/common.css",
+	        "js/common.js"
+	      ],
+	      "priority": 23,
+	      "refer": [
+	        "plus/doc.html"
+	      ]
+	    },
+	    "doc/camera.html": {
+	      "href": "doc/camera.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 25
+	    },
+	    "plus/camera.html": {
+	      "href": "plus/camera.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/camera_image.html",
+	        "plus/camera_video.html",
+	        "doc/camera.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 22
+	    },
+	    "doc/device.html": {
+	      "href": "doc/device.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "priority": 24
+	    },
+	    "plus/device.html": {
+	      "href": "plus/device.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/device.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 23
+	    },
+	    "doc/orientation.html": {
+	      "href": "doc/orientation.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 25
+	    },
+	    "plus/orientation_level.html": {
+	      "href": "plus/orientation_level.html",
+	      "resources": [
+	        "img/orientationb.png",
+	        "img/orientationl.png",
+	        "img/orientationbg.png"
+	      ],
+	      "priority": 26
+	    },
+	    "plus/orientation_compass.html": {
+	      "href": "plus/orientation_compass.html",
+	      "resources": [
+	        "img/orientationa.png",
+	        "img/orientationbg.png",
+	        "img/orientationc.png"
+	      ],
+	      "refer": [],
+	      "priority": 27
+	    },
+	    "plus/orientation.html": {
+	      "href": "plus/orientation.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/orientation.html",
+	        "plus/orientation_level.html",
+	        "plus/orientation_compass.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 24
+	    },
+	    "doc/gallery.html": {
+	      "href": "doc/gallery.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 26
+	    },
+	    "plus/gallery.html": {
+	      "href": "plus/gallery.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/gallery.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 25
+	    },
+	    "plus/webview_pullrefresh_custom.html": {
+	      "href": "plus/webview_pullrefresh_custom.html",
+	      "resources": [
+	        "css/common.css"
+	      ],
+	      "priority": 26,
+	      "refer": []
+	    },
+	    "plus/webview_pullhead_custom.html": {
+	      "href": "plus/webview_pullhead_custom.html",
+	      "resources": [
+	        "img/pull_arrow.png",
+	        "img/pull_fresh.png",
+	        "css/common.css",
+	        "js/common.js",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/webview_pullrefresh_custom.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 26
+	    },
+	    "plus/webview_float.html": {
+	      "href": "plus/webview_float.html",
+	      "resources": [
+	        "img/ui.png",
+	        "js/common.js",
+	        "css/common.css"
+	      ],
+	      "priority": 27,
+	      "refer": [
+	        "plus/doc.html"
+	      ]
+	    },
+	    "plus/webview_new.html": {
+	      "href": "plus/webview_new.html",
+	      "resources": [
+	        "img/ui.png"
+	      ],
+	      "refer": [],
+	      "priority": 29
+	    },
+	    "plus/webview_animation.html": {
+	      "href": "plus/webview_animation.html",
+	      "resources": [
+	        "js/common.js"
+	      ],
+	      "refer": [
+	        "plus/webview_new.html"
+	      ],
+	      "priority": 29
+	    },
+	    "plus/webview_pullrefresh.html": {
+	      "href": "plus/webview_pullrefresh.html",
+	      "resources": [],
+	      "priority": 30,
+	      "refer": []
+	    },
+	    "plus/webview_pullhead.html": {
+	      "href": "plus/webview_pullhead.html",
+	      "resources": [],
+	      "refer": [
+	        "plus/webview_pullrefresh.html"
+	      ],
+	      "priority": 30
+	    },
+	    "doc/webview.html": {
+	      "href": "doc/webview.html",
+	      "resources": [
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/doc.css",
+	        "doc/res/doc.js"
+	      ],
+	      "priority": 31
+	    },
+	    "plus/webview_embed.html": {
+	      "href": "plus/webview_embed.html",
+	      "resources": [
+	        "js/common.js"
+	      ],
+	      "refer": [],
+	      "priority": 32
+	    },
+	    "plus/webview_mask_side.html": {
+	      "href": "plus/webview_mask_side.html",
+	      "resources": [],
+	      "refer": [],
+	      "priority": 33
+	    },
+	    "plus/webview_mask.html": {
+	      "href": "plus/webview_mask.html",
+	      "resources": [
+	        "plus/webview_mask_side.html"
+	      ],
+	      "refer": [],
+	      "priority": 33
+	    },
+	    "plus/webview.html": {
+	      "href": "plus/webview.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/webview_pullhead_custom.html",
+	        "plus/webview_float.html",
+	        "plus/webview_animation.html",
+	        "plus/webview_pullhead.html",
+	        "doc/webview.html",
+	        "plus/webview_embed.html",
+	        "plus/webview_mask.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 26
+	    },
+	    "doc/geolocation.html": {
+	      "href": "doc/geolocation.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 28
+	    },
+	    "plus/geolocation.html": {
+	      "href": "plus/geolocation.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/geolocation.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 27
+	    },
+	    "about.html": {
+	      "href": "about.html",
+	      "resources": [
+	        "js/common.js",
+	        "img/h5p.jpg",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/doc.html"
+	      ],
+	      "priority": 28
+	    },
+	    "doc/events.html": {
+	      "href": "doc/events.html",
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.sons.css",
+	        "doc/res/prettify.js"
+	      ],
+	      "priority": 30
+	    },
+	    "plus/events.html": {
+	      "href": "plus/events.html",
+	      "resources": [
+	        "js/common.js",
+	        "css/common.css",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "doc/events.html",
+	        "plus/doc.html"
+	      ],
+	      "priority": 29
+	    },
+	    "doc/cache.html": {
+	      "priority": 0,
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "refer": []
+	    },
+	    "doc/console.html": {
+	      "priority": 0,
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "refer": []
+	    },
+	    "doc/contacts.html": {
+	      "priority": 0,
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "refer": []
+	    },
+	    "doc/interface-orientation.html": {
+	      "priority": 0,
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "refer": []
+	    },
+	    "doc/key.html": {
+	      "priority": 0,
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "refer": []
+	    },
+	    "doc/nativeobj.html": {
+	      "priority": 0,
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "refer": []
+	    },
+	    "doc/splashscreen.html": {
+	      "priority": 0,
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "refer": []
+	    },
+	    "doc/ui.html": {
+	      "priority": 0,
+	      "resources": [
+	        "doc/res/doc.css",
+	        "doc/res/doc.js",
+	        "doc/res/prettify.js",
+	        "doc/res/prettify.sons.css"
+	      ],
+	      "refer": []
+	    },
+	    "plus/payment_iap.html": {
+	      "href": "plus/payment_iap.html",
+	      "resources": [
+	        "css/common.css",
+	        "js/common.js",
+	        "js/immersed.js"
+	      ],
+	      "refer": [
+	        "plus/doc.html"
+	      ],
+	      "priority": 1
+	    }
+	  },
+	  "idle": {
+	    "resources": [
+	      "sa@3x.png",
+	      "js/update.json",
+	      "dropload/dropload.min.js",
+	      "sa.png",
+	      "dropload/dropload.js",
+	      "dropload/dropload.css",
+	      "sa@2x.png"
+	    ]
+	  }
+	}
 }

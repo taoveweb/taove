@@ -47,8 +47,8 @@
                 domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
                 domNoData: '<div class="dropload-noData">暂无数据</div>'
             },
-            distance: 1,                                                       // 拉动距离
-            threshold: '200',                                                      // 提前加载距离
+            distance: 50,                                                       // 拉动距离
+            threshold: 200,                                                      // 提前加载距离
             loadUpFn: '',                                                       // 上方function
             loadDownFn: ''                                                      // 下方function
         }, options);

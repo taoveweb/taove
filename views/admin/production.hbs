@@ -24,8 +24,8 @@
                 {{#each taove}}
                     <div class="item grid-item">
                         <a href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="box">
-                            <img width="266" height="{{this.height}}" src="{{../static}}img/alpha.png"
-                                 data-original="{{../static}}{{this.coverImg}}" alt="{{this.title}}"/>
+                            <img width="266" height="{{getHeight this.coverImg.height this.coverImg.width 266}}" src="{{../static}}img/alpha.png"
+                                 data-original="{{../static}}{{this.coverImg.path}}{{this.coverImg.name}}" alt="{{this.title}}"/>
 
                             <div class="btn clearfix">
                                 <i></i>

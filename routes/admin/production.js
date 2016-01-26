@@ -10,41 +10,10 @@ var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
 var gm = require('gm').subClass({imageMagick: true});
 var co = require('co');
-//相册性能需更改
+
+//相册
 function getProduction(req, res, next) {
     co(function *() {
-        /*  var albumsimgs = yield AlbumsImg.aggregate(
-         {$match: {photographyId: req.session.userId['_id']}}).group({
-         _id: "$albumsId",
-         imgs: {$push: {name: "$name", path: "$path", width: "$width", height: "$height", cover: "$cover"}}
-         }).exec();
-         var docs =yield Albums.find({photographyId: req.session.userId['_id']}).exec();
-
-         for (var i = 0; i < docs.length; i++) {
-         var doc = docs[i];
-         for (var m = 0; m < albumsimgs.length; m++) {
-         var imgs = albumsimgs[m];
-         if (doc._id == imgs._id) {
-         docs[i].imgNum = imgs.imgs.length;
-         for (var l = 0; l < imgs.imgs.length; l++) {
-         var img = imgs.imgs[l];
-         if (img.cover) {
-         docs[i].coverImg = img.path + img.name;
-         docs[i].height = img.height * (266 / img.width);
-         break;
-         }
-         }
-         }
-         }
-
-         if (!docs[i].imgNum) {
-         docs[i].imgNum = 0;
-         docs[i].coverImg = "img/placeholder.png";
-         docs[i].height = 266;
-         }
-
-         }*/
-
         var docs = yield Albums.find({photographyId: req.session.userId['_id']}).exec();
         res.render('admin/production', {
             title: '摄影作品',
@@ -106,8 +75,8 @@ function coverImg(req, res, next) {
         photographyId: req.session.userId['_id'],
         cover: true
     }, reset, function (err, doc) {
-        AlbumsImg.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, set, function (err, albumsId) {
-            updateCoverimg(doc);
+        AlbumsImg.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, set, {new:true},function (err, albumsId) {
+            updateCoverimg(albumsId);
             res.json({
                 success: true,
                 msg: "封面设置成功"
@@ -167,6 +136,8 @@ function deleteImg(req, res, next) {
         var albumsId = albumsimg.albumsId;
         if (albumsimg) {
             var doc = yield AlbumsImg.findOne({albumsId: albumsId});
+            var count=yield AlbumsImg.count({albumsId: albumsId}).exec();
+            yield Albums.findOneAndUpdate({_id: albumsId}, {$set: {imgNum:count}}).exec();
             //删除的是封面重新设置封面
             if (albumsimg.cover && doc) {
                 yield AlbumsImg.findOneAndUpdate({_id: doc._id}, {$set: {cover: true}});
@@ -299,7 +270,7 @@ function postProductionimg(req, res, next) {
 
 //更新相册封面
 function updateCoverimg(doc) {
-    Albums.findOneAndUpdate({_id: albumsId}, {$set: {coverImg: doc}}, {news: true}, function (err, doc) {
+    Albums.findOneAndUpdate({_id: doc.albumsId}, {$set: {coverImg: doc}}, {news: true}, function (err, doc) {
         console.log("updateCoverimg")
     })
 }

@@ -217,13 +217,6 @@ AlbumsImgSchema.pre('save', function (next) {
     }
 });
 
-//更新相册图片数量
-AlbumsImgSchema.pre('remove', function (next) {
-    var user = this;
-    Albums.findOneAndUpdate({_id: this.albumsId}, {$inc: {imgNum: -1}}, function () {
-        next();
-    })
-});
 
 
 var Taove = mongoose.model('Taove', TaoveSchema);

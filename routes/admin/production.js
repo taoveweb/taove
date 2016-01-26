@@ -49,7 +49,7 @@ function getProduction(req, res, next) {
         res.render('admin/production', {
             title: '摄影作品',
             taove: docs,
-            albumsNum: docs.imgNum,
+            albumsNum: docs.length,
             detail: false,
             layout: 'layout_pc'
         });

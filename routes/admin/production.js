@@ -156,27 +156,33 @@ function editAlbumsImgsTitle(req, res, next) {
 
 }
 
-//只要在当前用户下的图片才有资格册除----------------------
+//只要在当前用户下的图片才有资格           册除----------------------
 function deleteImg(req, res, next) {
     var _id = req.body._id;
     var albmsImg = new AlbumsImg();
-    AlbumsImg.findOneAndRemove({
-        "_id": _id,
-        photographyId: req.session.userId['_id']
-    }, function (err, albumsimg) {
-        AlbumsImg.findOne().exec(function(err,doc){
-            if(albumsimg.cover){
-                AlbumsImg.findOneAndUpdate({_id:doc._id},{$set:{cover:true}})
-            }
-            if(doc){
+
+    co(function *(){
+        var albumsimg=yield AlbumsImg.findOneAndRemove({ "_id": _id, photographyId: req.session.userId['_id']}).exec();
+        var albumsId=albumsimg.albumsId;
+        if(albumsimg){
+            var doc= yield AlbumsImg.findOne({albumsId:albumsId});
+            //删除的是封面重新设置封面
+            console.log(albumsimg.cover,doc,albumsId)
+            if(albumsimg.cover && doc){
+                yield AlbumsImg.findOneAndUpdate({_id:doc._id},{$set:{cover:true}});
                 updateCoverimg(doc);
             }
-        });
-        res.json({
-            success: true,
-            msg: '删除成功'
-        })
-    });
+            res.json({
+                success: true,
+                msg: '删除成功'
+            })
+        }else{
+            res.json({
+                success: false,
+                msg: '删除失败'
+            })
+        }
+    })
 }
 
 //创建相册-----------------------------------------------------

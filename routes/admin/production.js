@@ -13,46 +13,47 @@ var co = require('co');
 //相册性能需更改
 function getProduction(req, res, next) {
     co(function *() {
-        var albumsimgs = yield AlbumsImg.aggregate(
-            {$match: {photographyId: req.session.userId['_id']}}).group({
-                _id: "$albumsId",
-                imgs: {$push: {name: "$name", path: "$path", width: "$width", height: "$height", cover: "$cover"}}
-            }).exec();
-        var docs =yield Albums.find({photographyId: req.session.userId['_id']}).exec();
+        /*  var albumsimgs = yield AlbumsImg.aggregate(
+         {$match: {photographyId: req.session.userId['_id']}}).group({
+         _id: "$albumsId",
+         imgs: {$push: {name: "$name", path: "$path", width: "$width", height: "$height", cover: "$cover"}}
+         }).exec();
+         var docs =yield Albums.find({photographyId: req.session.userId['_id']}).exec();
 
-        for (var i = 0; i < docs.length; i++) {
-            var doc = docs[i];
-            for (var m = 0; m < albumsimgs.length; m++) {
-                var imgs = albumsimgs[m];
-                if (doc._id == imgs._id) {
-                    docs[i].imgNum = imgs.imgs.length;
-                    for (var l = 0; l < imgs.imgs.length; l++) {
-                        var img = imgs.imgs[l];
-                        if (img.cover) {
-                            docs[i].coverImg = img.path + img.name;
-                            docs[i].height = img.height * (266 / img.width);
-                            break;
-                        }
-                    }
-                }
-            }
+         for (var i = 0; i < docs.length; i++) {
+         var doc = docs[i];
+         for (var m = 0; m < albumsimgs.length; m++) {
+         var imgs = albumsimgs[m];
+         if (doc._id == imgs._id) {
+         docs[i].imgNum = imgs.imgs.length;
+         for (var l = 0; l < imgs.imgs.length; l++) {
+         var img = imgs.imgs[l];
+         if (img.cover) {
+         docs[i].coverImg = img.path + img.name;
+         docs[i].height = img.height * (266 / img.width);
+         break;
+         }
+         }
+         }
+         }
 
-            if (!docs[i].imgNum) {
-                docs[i].imgNum = 0;
-                docs[i].coverImg = "img/placeholder.png";
-                docs[i].height = 266;
-            }
+         if (!docs[i].imgNum) {
+         docs[i].imgNum = 0;
+         docs[i].coverImg = "img/placeholder.png";
+         docs[i].height = 266;
+         }
 
-        }
+         }*/
+
+        var docs = yield Albums.find({photographyId: req.session.userId['_id']}).exec();
         res.render('admin/production', {
             title: '摄影作品',
             taove: docs,
-            albumsNum: docs.length,
+            albumsNum: docs.imgNum,
             detail: false,
             layout: 'layout_pc'
         });
     });
-
 }
 //创建相册
 function postProduction(req, res, next) {
@@ -161,22 +162,21 @@ function deleteImg(req, res, next) {
     var _id = req.body._id;
     var albmsImg = new AlbumsImg();
 
-    co(function *(){
-        var albumsimg=yield AlbumsImg.findOneAndRemove({ "_id": _id, photographyId: req.session.userId['_id']}).exec();
-        var albumsId=albumsimg.albumsId;
-        if(albumsimg){
-            var doc= yield AlbumsImg.findOne({albumsId:albumsId});
+    co(function *() {
+        var albumsimg = yield AlbumsImg.findOneAndRemove({"_id": _id, photographyId: req.session.userId['_id']}).exec();
+        var albumsId = albumsimg.albumsId;
+        if (albumsimg) {
+            var doc = yield AlbumsImg.findOne({albumsId: albumsId});
             //删除的是封面重新设置封面
-            console.log(albumsimg.cover,doc,albumsId)
-            if(albumsimg.cover && doc){
-                yield AlbumsImg.findOneAndUpdate({_id:doc._id},{$set:{cover:true}});
+            if (albumsimg.cover && doc) {
+                yield AlbumsImg.findOneAndUpdate({_id: doc._id}, {$set: {cover: true}});
                 updateCoverimg(doc);
             }
             res.json({
                 success: true,
                 msg: '删除成功'
             })
-        }else{
+        } else {
             res.json({
                 success: false,
                 msg: '删除失败'
@@ -298,12 +298,8 @@ function postProductionimg(req, res, next) {
 
 
 //更新相册封面
-function updateCoverimg(doc){
-    var coverImg=doc.path+doc.name;
-    var albumsId=doc.albumsId;
-    var width=doc.width;
-    var height=doc.height;
-    Albums.findOneAndUpdate({_id:albumsId},{$set:{coverImg:coverImg}},{news:true},function(err,doc){
+function updateCoverimg(doc) {
+    Albums.findOneAndUpdate({_id: albumsId}, {$set: {coverImg: doc}}, {news: true}, function (err, doc) {
         console.log("updateCoverimg")
     })
 }

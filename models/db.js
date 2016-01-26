@@ -123,7 +123,7 @@ var AlbumsSchema = new Schema({
     city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
     imgNum: Number,
-    coverImg:{type:String,default:"img/placeholder.png"},
+    coverImg:{},
     createdOn: {type: Date, default: new Date().getTime() + 60 * 60 * 8 * 1000}, //创建时间
     updated: {type: Date, default: Date.now()}, //更新时间
     package: {type: String, trim: true}//套餐

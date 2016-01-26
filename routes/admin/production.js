@@ -105,7 +105,8 @@ function coverImg(req, res, next) {
         photographyId: req.session.userId['_id'],
         cover: true
     }, reset, function (err, doc) {
-        AlbumsImg.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, set, function (err, doc) {
+        AlbumsImg.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, set, function (err, albumsId) {
+            updateCoverimg(doc);
             res.json({
                 success: true,
                 msg: "封面设置成功"
@@ -140,9 +141,7 @@ function editAlbumsImgsTitle(req, res, next) {
     var _id = req.body._id;
     var title = req.body.title;
     var reset = {title: title};
-    console.log('aa');
     AlbumsImg.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, reset, function (err, doc) {
-        console.log(err, doc)
         if (err) {
             res.json({
                 success: false,
@@ -161,21 +160,22 @@ function editAlbumsImgsTitle(req, res, next) {
 function deleteImg(req, res, next) {
     var _id = req.body._id;
     var albmsImg = new AlbumsImg();
-    albmsImg.remove({
+    AlbumsImg.findOneAndRemove({
         "_id": _id,
         photographyId: req.session.userId['_id']
-    }, function (err, albumsimg, result) {
-        if (!albumsimg) {
-            res.json({
-                success: false,
-                msg: '你没有权限'
-            })
-        } else {
-            res.json({
-                success: true,
-                msg: '删除成功'
-            })
-        }
+    }, function (err, albumsimg) {
+        AlbumsImg.findOne().exec(function(err,doc){
+            if(albumsimg.cover){
+                AlbumsImg.findOneAndUpdate({_id:doc._id},{$set:{cover:true}})
+            }
+            if(doc){
+                updateCoverimg(doc);
+            }
+        });
+        res.json({
+            success: true,
+            msg: '删除成功'
+        })
     });
 }
 
@@ -261,6 +261,7 @@ function postProductionimg(req, res, next) {
             AlbumsImg.count({albumsId: param.AlbumsId}, function (err, count) {
                 if (!count) {
                     doc.cover = true;
+                    updateCoverimg(doc);
                 }
                 doc.imgNum = count + 1;
                 var albums = new AlbumsImg(doc);
@@ -287,6 +288,18 @@ function postProductionimg(req, res, next) {
     });
 
 
+}
+
+
+//更新相册封面
+function updateCoverimg(doc){
+    var coverImg=doc.path+doc.name;
+    var albumsId=doc.albumsId;
+    var width=doc.width;
+    var height=doc.height;
+    Albums.findOneAndUpdate({_id:albumsId},{$set:{coverImg:coverImg}},{news:true},function(err,doc){
+        console.log("updateCoverimg")
+    })
 }
 
 

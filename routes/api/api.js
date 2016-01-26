@@ -1,9 +1,7 @@
 var express = require('express');
 var db = require('../../models/db');
-
 var Taove = db.Taove;
 var ObjectId = db.ObjectId;
-
 var router = express.Router();
 var intention=require('./intention');
 var photoframes=require('./photoframes');

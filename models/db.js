@@ -106,6 +106,7 @@ var AlbumsImgSchema = new Schema({
     imgType: {type: Number},//图片类型 0为未修 1为精修 3相册封面 4x展架
     approved: {type: Boolean, default: false},//是否允许发表
     cover: {type: Boolean, default: false},//封面
+    refined: {type: Boolean, default: false},//精选
     comment: [{
         userId: ObjectId,//user id
         time: {type: Date, default: Date.now()}, //
@@ -121,8 +122,8 @@ var AlbumsSchema = new Schema({
     description: {type: String, trim: true, required: true},//描述
     city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
-    imgs: [AlbumsImgSchema],
     imgNum: Number,
+    coverImg:{type:String,default:"img/placeholder.png"},
     createdOn: {type: Date, default: new Date().getTime() + 60 * 60 * 8 * 1000}, //创建时间
     updated: {type: Date, default: Date.now()}, //更新时间
     package: {type: String, trim: true}//套餐
@@ -216,7 +217,7 @@ AlbumsImgSchema.pre('save', function (next) {
     }
 });
 
-//相册图片如果上传的是第一张就把他做为封面
+//更新相册图片数量
 AlbumsImgSchema.pre('remove', function (next) {
     var user = this;
     Albums.findOneAndUpdate({_id: this.albumsId}, {$inc: {imgNum: -1}}, function () {

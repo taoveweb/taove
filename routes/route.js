@@ -13,9 +13,8 @@ var photograhper_detail_pc = require('../routes/pc/photograhper_detail'); //摄�
 var package_pc = require('../routes/pc/package'); //套餐
 
 //mobile
-var index_mb = require('../routes/index');
-var sort_mb = require('../routes/sort');
-var photographer_mb = require('../routes/mobile/photographer');
+var index_mb = require('../routes/mobile/mobile');
+
 //api
 var api = require('../routes/api/api');
 var apiLogin = require('../routes/api/login');
@@ -50,12 +49,8 @@ module.exports = function (app) {
     app.use('/package', package_pc);
     app.use('/wd', wd_pc);
 
-    //pc
-    app.use('/pc', index_mb);
-    app.use('/pc/sort', sort_mb);
-    app.use('/pc/photographer', photographer_mb);
-
-
+    //mobile
+    app.use('/m', index_mb);
 
     //admin
     app.use('/admin', authorize, admin);

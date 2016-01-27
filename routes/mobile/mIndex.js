@@ -10,7 +10,7 @@ var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
     co(function *() {
-        var docs = yield Albums.find({photographyId: req.session.userId['_id']}).exec();
+        var docs = yield Albums.find().exec();
         res.render('mobile/index', {
             title: '摄影作品',
             taove: docs,
@@ -22,8 +22,18 @@ function indexGet(req, res, next) {
 }
 
 
+function indexPost(req, res, next) {
+    co(function *() {
+        var docs = yield Albums.find().exec();
+        console.log(docs);
+        res.json(docs)
+    });
+}
+
+
 module.exports = {
-    get: indexGet
+    get: indexGet,
+    post: indexPost
 };
 
 

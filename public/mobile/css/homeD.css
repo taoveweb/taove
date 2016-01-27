@@ -64,7 +64,7 @@ body{
     -webkit-overflow-scrolling: touch;
 }
 .inner .item{
-    display: -webkit-box;
+ /*   display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -72,18 +72,12 @@ body{
     -webkit-box-align:center;
     box-align:center;
     -webkit-align-items:center;
-    align-items:center;
-    padding:3.125%;
+    align-items:center;*/
     border-bottom: 1px solid #ddd;
     color: #333;
     text-decoration: none;
 }
-.inner .item img{
-    display: block;
-    width: 100%;
-    height: 100px;
-    border:1px solid #ddd;
-}
+
 .inner .item h3{
     display: block;
     -webkit-box-flex: 1;
@@ -106,6 +100,90 @@ body{
 .opacity{
     -webkit-animation: opacity 0.5s linear;
     animation: opacity 0.5s linear;
+}
+
+
+.item {
+    border: 1px solid #d5d5d5;
+    margin: 14px 10px 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: #fff;
+    overflow: hidden;
+    float: left;
+    display: block;
+    position: relative;
+}
+
+.item .box {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background: url("/img/load.png") no-repeat center;
+}
+
+.item .box .btn {
+    position: absolute;
+    bottom: -46px;
+    left: 0;
+    width: 100%;
+    height: 46px;
+    z-index: 2;
+    color: #fff;
+    -webkit-transition: bottom .3s;
+    transition: bottom .3s;
+    cursor: default;
+    line-height: 46px;
+    color: #fff;
+}
+.item .box:hover .btn{
+    bottom: 0;
+}
+.item .box .btn i {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    opacity: .5;
+    filter: alpha(opacity=50);
+    z-index: 1;
+}
+
+.item .box .btn em {
+    z-index: 10;
+    position: relative;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+}
+.item .br {
+    height: 48px;
+    line-height: 48px;
+    overflow: hidden;
+    font-size: 14px;
+    position: relative;
+    color: #949494;
+}
+.item .br p {
+    margin-right: 80px;
+    height: 48px;
+    padding-top: 15px;
+    line-height: 18px;
+    color: #000;
+    padding-left: 10px;
+    overflow: hidden;
+}
+.item .br em {
+    position: absolute;
+    right: 10px;
+    height: 48px;
+    line-height: 48px;
+    color: #949494;
+    top: 0;
 }
 @-webkit-keyframes opacity {
     0% {

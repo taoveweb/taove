@@ -249,8 +249,8 @@ function postProductionimg(req, res, next) {
             imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
         };
 
-        var count=AlbumsImg.count({albumsId: param.AlbumsId}).exec();
-
+        var count=yield AlbumsImg.count({albumsId: param.AlbumsId}).exec();
+        console.log(count)
         if (!count) {
             doc.cover = true;
             updateCoverimg(doc);

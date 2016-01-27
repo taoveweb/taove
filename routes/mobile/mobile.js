@@ -10,11 +10,7 @@ var co = require('co');
 var index=require('./mIndex');
 
 router.get('/', index.get);
-
-
-function index(req, res, next) {
-  res.render('index', { title: '桃微' });
-}
+router.post('/', index.post);
 
 
 

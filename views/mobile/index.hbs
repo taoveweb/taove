@@ -2,14 +2,40 @@
     <div class="header">
         <h1>头部</h1>
         <a href="javascript:;" class="btn lock">锁定</a>
+
         <div class="footer" style="position:absolute;left:0;top:0;background-color:#fff;">
             <a href=""></a>
             <a href="#"></a>
         </div>
     </div>
-    <div class="inner">
+    <div id="inner" class="inner">
+        <script src="{{static}}mobile/js/lazyload.min.js"></script>
+        <script>
+            var lazy = lazyload({
+                container: document.getElementById('inner')
+            });
+        </script>
         <div class="lists">
+            {{#each taove}}
+                <div class="item grid-item">
+                    <a width="266" height="{{getHeight this.coverImg.height this.coverImg.width 266}}"
+                       href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="box">
+                        <img width="266" src="{{../static}}img/alpha.png"
+                             data-src="{{../static}}{{this.coverImg.path}}{{this.coverImg.name}}"
+                             alt="{{this.title}}" onload=lazy(this) />
 
+                        <div class="btn clearfix">
+                            <i></i>
+                            <em>点击进入相册</em>
+                        </div>
+                    </a>
+
+                    <div class="br">
+                        <p albumsId="{{this._id}}" class="editAlbumsTitle edit"
+                           contenteditable="true">{{this.title}}</p> <em>{{this.imgNum}}张图片</em>
+                    </div>
+                </div>
+            {{/each}}
         </div>
     </div>
 </div>
@@ -31,19 +57,20 @@
 
 {{#extend "mScripts"}}
     <script src="/mobile/dropload/dropload.js"></script>
+
     <script>
-        $(function(){
+        $(function () {
             // 按钮操作
-            $('.header .btn').on('click',function(){
+            $('.header .btn').on('click', function () {
                 var $this = $(this);
-                if(!!$this.hasClass('lock')){
-                    $this.attr('class','btn unlock');
+                if (!!$this.hasClass('lock')) {
+                    $this.attr('class', 'btn unlock');
                     $this.text('解锁');
                     // 锁定
                     dropload.lock();
                     $('.dropload-down').hide();
-                }else{
-                    $this.attr('class','btn lock');
+                } else {
+                    $this.attr('class', 'btn lock');
                     $this.text('锁定');
                     // 解锁
                     dropload.unlock();
@@ -53,30 +80,45 @@
 
             // dropload
             var dropload = $('.inner').dropload({
-                domUp : {
-                    domClass   : 'dropload-up',
-                    domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
-                    domUpdate  : '<div class="dropload-update">↑释放更新</div>',
-                    domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+                domUp: {
+                    domClass: 'dropload-up',
+                    domRefresh: '<div class="dropload-refresh">↓下拉刷新</div>',
+                    domUpdate: '<div class="dropload-update">↑释放更新</div>',
+                    domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
                 },
-                domDown : {
-                    threshold:"600",
-                    domClass   : 'dropload-down',
-                    domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
-                    domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
-                    domNoData  : '<div class="dropload-noData">暂无数据</div>'
+                domDown: {
+                    threshold: "600",
+                    domClass: 'dropload-down',
+                    domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
+                    domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+                    domNoData: '<div class="dropload-noData">暂无数据</div>'
                 },
-                loadUpFn : function(me){
+                loadUpFn: function (me) {
                     $.ajax({
-                        type: 'GET',
-                        url: '/mobile/more.json',
+                        type: 'post',
+                        data: {q: 'ajax'},
+                        url: '/m',
                         dataType: 'json',
-                        success: function(data){
+                        success: function (data) {
                             var result = '';
-                            for(var i = 0; i < data.lists.length; i++){
-                                result +=   '<a class="item opacity" href="'+data.lists[i].link+'">\
-                                        <img src="'+data.lists[i].pic+'" alt="">\
-                                     </a>';
+                            for (var i = 0; i < data.length; i++) {
+                                var img = data[i];
+                                result +=
+                                        '<div class="item grid-item">\
+                                        <a style="width:266px; height:'+ parseInt(img.coverImg.height*(266/img.coverImg.width))+'px"\
+                                        href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
+                                <img  width="266" height="'+ parseInt(img.coverImg.height*(266/img.coverImg.width))+'" src="/img/alpha.png"\
+                                data-src="/' + img.coverImg.path + img.coverImg.name + '" onload=lazy(this) />\
+                                <div class="btn clearfix">\
+                                <i></i>\
+                                <em>点击进入相册</em>\
+                                </div>\
+                                </a>\
+                                <div class="br">\
+                                <p albumsId="' + img._id + ' " class="editAlbumsTitle edit"\
+                                contenteditable="true">' + img.title + ' </p> <em>' + img.imgNum + ' 张图片</em>\
+                                </div>\
+                                </div>';
                             }
                             // 为了测试，延迟1秒加载
                             //setTimeout(function(){
@@ -86,24 +128,39 @@
                             dropload.resetload();
                             //},1000);
                         },
-                        error: function(xhr, type){
+                        error: function (xhr, type) {
                             alert('Ajax error!');
                             // 即使加载出错，也得重置
                             dropload.resetload();
                         }
                     });
                 },
-                loadDownFn : function(me){
+                loadDownFn: function (me) {
                     $.ajax({
-                        type: 'GET',
-                        url: '/mobile/update.json',
+                        type: 'post',
+                        url: '/m',
+                        data: {q: 'ajax'},
                         dataType: 'json',
-                        success: function(data){
+                        success: function (data) {
                             var result = '';
-                            for(var i = 0; i < data.lists.length; i++){
-                                result +=   '<a class="item opacity" href="'+data.lists[i].link+'">\
-                                        <img src="'+data.lists[i].pic+'" alt="">\
-                                    </a>';
+                            for (var i = 0; i < data.length; i++) {
+                                var img = data[i];
+                                result +=
+                                        '<div class="item grid-item">\
+                                        <a style="width:266px; height:'+ parseInt(img.coverImg.height*(266/img.coverImg.width))+'px"\
+                                        href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
+                                <img  width="266" height="'+ parseInt(img.coverImg.height*(266/img.coverImg.width))+'" src="/img/alpha.png"\
+                                data-src="/' + img.coverImg.path + img.coverImg.name + '" onload=lazy(this) />\
+                                <div class="btn clearfix">\
+                                <i></i>\
+                                <em>点击进入相册</em>\
+                                </div>\
+                                </a>\
+                                <div class="br">\
+                                <p albumsId="' + img._id + ' " class="editAlbumsTitle edit"\
+                                contenteditable="true">' + img.title + ' </p> <em>' + img.imgNum + ' 张图片</em>\
+                                </div>\
+                                </div>';
                             }
                             // 为了测试，延迟1秒加载
                             // setTimeout(function(){
@@ -112,7 +169,7 @@
                             dropload.resetload();
                             //},1000);
                         },
-                        error: function(xhr, type){
+                        error: function (xhr, type) {
                             alert('Ajax error!');
                             // 即使加载出错，也得重置
                             dropload.resetload();

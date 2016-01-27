@@ -61,7 +61,6 @@ function getProductiondetail(req, res, next) {
             layout: 'layout_pc'
         });
     });
-
 }
 
 //设置封面
@@ -70,20 +69,22 @@ function coverImg(req, res, next) {
     var albumsId = req.body.albumsId;
     var reset = {cover: false};
     var set = {cover: true};
-    AlbumsImg.findOneAndUpdate({
-        albumsId: albumsId,
-        photographyId: req.session.userId['_id'],
-        cover: true
-    }, reset, function (err, doc) {
-        AlbumsImg.findOneAndUpdate({_id: _id, photographyId: req.session.userId['_id']}, set, {new:true},function (err, albumsId) {
-            updateCoverimg(albumsId);
-            res.json({
-                success: true,
-                msg: "封面设置成功"
-            })
+    co(function *() {
+        yield AlbumsImg.findOneAndUpdate({
+            albumsId: albumsId,
+            photographyId: req.session.userId['_id'],
+            cover: true
+        }, reset);
+        var albums = yield AlbumsImg.findOneAndUpdate({
+            _id: _id,
+            photographyId: req.session.userId['_id']
+        }, set, {new: true});
+        updateCoverimg(albums);
+        res.json({
+            success: true,
+            msg: "封面设置成功"
         })
     });
-
 }
 
 //编缉相册标题
@@ -132,12 +133,15 @@ function deleteImg(req, res, next) {
     var albmsImg = new AlbumsImg();
 
     co(function *() {
-        var albumsimg = yield AlbumsImg.findOneAndRemove({"_id": _id, photographyId: req.session.userId['_id']}).exec();
+        var albumsimg = yield AlbumsImg.findOneAndRemove({
+            "_id": _id,
+            photographyId: req.session.userId['_id']
+        }).exec();
         var albumsId = albumsimg.albumsId;
         if (albumsimg) {
             var doc = yield AlbumsImg.findOne({albumsId: albumsId});
-            var count=yield AlbumsImg.count({albumsId: albumsId}).exec();
-            yield Albums.findOneAndUpdate({_id: albumsId}, {$set: {imgNum:count}}).exec();
+            var count = yield AlbumsImg.count({albumsId: albumsId}).exec();
+            yield Albums.findOneAndUpdate({_id: albumsId}, {$set: {imgNum: count}}).exec();
             //删除的是封面重新设置封面
             if (albumsimg.cover && doc) {
                 yield AlbumsImg.findOneAndUpdate({_id: doc._id}, {$set: {cover: true}});
@@ -207,8 +211,14 @@ function postProductionimg(req, res, next) {
     form.multiples = true;
     form.maxFieldsSize = 5 * 1024 * 1024;
 
-    form.parse(req, function (err, fields, files) {
-
+    co(function *(){
+       var parse= yield new Promise(function(resolve, reject) {
+            form.parse(req, function (err, fields, files) {
+                resolve({fields:fields,files:files})
+            })
+        });
+        var fields=parse.fields;
+        var files=parse.files;
         var param = fields;
         var imgname = new ObjectId();
         var ext = '';
@@ -222,49 +232,50 @@ function postProductionimg(req, res, next) {
         }
         imgname += "." + ext;
         fs.renameSync(files.qqfile.path, dir + imgname);
-        gm(dir + imgname).size(function (err, size) {
-            var doc = {
-                "albumsId": albumsId,//相册id
-                photographyId: req.session.userId['_id'],//摄影师Id
-                name: imgname,//文件名与图片名称一样
-                path: imgWebDir,//目录名
-                title: title,//图片标题
-                width: size.width,//
-                height: size.height,//
-                imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
-            };
-
-            //如果第一张默认设计为相册首页并更新相册数量
-            AlbumsImg.count({albumsId: param.AlbumsId}, function (err, count) {
-                if (!count) {
-                    doc.cover = true;
-                    updateCoverimg(doc);
-                }
-                doc.imgNum = count + 1;
-                var albums = new AlbumsImg(doc);
-                if (count >= 150) {
-                    res.json({
-                        success: false,
-                        tooMuch: true,
-                        msg: '但提交图片超出来数量'
-                    });
-                } else {
-                    albums.save(function (err) {
-                        res.json({
-                            success: true,
-                            files: files.qqfile,
-                            fields: fields,
-                            msg: '提交图片成功'
-                        });
-                    });
-                }
-
-            });
+        var size= yield new Promise(function(resolve, reject) {
+            gm(dir + imgname).size(function (err, size) {
+                resolve(size);
+            })
         });
 
-    });
+        var doc = {
+            "albumsId": albumsId,//相册id
+            photographyId: req.session.userId['_id'],//摄影师Id
+            name: imgname,//文件名与图片名称一样
+            path: imgWebDir,//目录名
+            width: size.width,
+            height: size.height,
+            title: title,//图片标题
+            imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
+        };
+
+        var count=AlbumsImg.count({albumsId: param.AlbumsId}).exec();
+
+        if (!count) {
+            doc.cover = true;
+            updateCoverimg(doc);
+        }
+        doc.imgNum = count + 1;
+        var albums = new AlbumsImg(doc);
+
+        if (count >= 150) {
+            res.json({
+                success: false,
+                tooMuch: true,
+                msg: '但提交图片超出来数量'
+            });
+        } else {
+            yield  albums.save();
+            res.json({
+                success: true,
+                files: files.qqfile,
+                fields: fields,
+                msg: '提交图片成功'
+            });
+        }
 
 
+    })
 }
 
 

@@ -59,6 +59,8 @@ body{
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    flex-direction: column;
+    -webkit-flex-direction: column;
     background-color: #fff;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
@@ -111,9 +113,9 @@ body{
     border-radius: 5px;
     background: #fff;
     overflow: hidden;
-    float: left;
-    display: block;
+    width: 266px;
     position: relative;
+    flex-grow:0;
 }
 
 .item .box {

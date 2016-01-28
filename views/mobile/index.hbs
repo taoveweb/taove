@@ -18,12 +18,12 @@
         <div class="lists">
             {{#each taove}}
                 <div class="item grid-item">
-                    <a width="266" height="{{getHeight this.coverImg.height this.coverImg.width 266}}"
+                    <a style="width:266px; height:{{getHeight this.coverImg.height this.coverImg.width 266}}px"
                        href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="box">
                         <img width="266" src="{{../static}}img/alpha.png"
+                             height="{{getHeight this.coverImg.height this.coverImg.width 266}}"
                              data-src="{{../static}}{{this.coverImg.path}}{{this.coverImg.name}}"
                              alt="{{this.title}}" onload=lazy(this) />
-
                         <div class="btn clearfix">
                             <i></i>
                             <em>点击进入相册</em>
@@ -57,8 +57,14 @@
 
 {{#extend "mScripts"}}
     <script src="/mobile/dropload/dropload.js"></script>
+    <script src="/common/js/isotope.pkgd.min.js"></script>
 
     <script>
+
+        //瀑布流
+        var inner =  new Isotope( '.inner', {
+            itemSelector: '.item'
+        });
         $(function () {
             // 按钮操作
             $('.header .btn').on('click', function () {
@@ -124,6 +130,10 @@
                             //setTimeout(function(){
                             //$('.lists').html(result);
                             $('.lists').prepend(result);
+                            new Isotope( '.inner', {
+                                itemSelector: '.item'
+                            });
+
                             // 每次数据加载完，必须重置
                             dropload.resetload();
                             //},1000);
@@ -165,6 +175,10 @@
                             // 为了测试，延迟1秒加载
                             // setTimeout(function(){
                             $('.lists').append(result);
+                            new Isotope( '.inner', {
+                                itemSelector: '.item'
+                            });
+
                             // 每次数据加载完，必须重置
                             dropload.resetload();
                             //},1000);

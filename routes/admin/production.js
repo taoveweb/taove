@@ -16,7 +16,6 @@ function getProduction(req, res, next) {
 
     co(function *() {
         var docs = yield Albums.find({photographyId: req.session.userId['_id']}).exec();
-        console.log(docs[0].coverImg)
         res.render('admin/production', {
             title: '摄影作品',
             taove: docs,

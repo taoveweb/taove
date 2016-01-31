@@ -8,13 +8,15 @@ var ObjectId = db.ObjectId;
 var Taove = db.Taove;
 var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
-var gm = require('gm').subClass({imageMagick: true});
+var gm = require('gm'); //.subClass({imageMagick: true});
 var co = require('co');
 
 //相册
 function getProduction(req, res, next) {
+
     co(function *() {
         var docs = yield Albums.find({photographyId: req.session.userId['_id']}).exec();
+        console.log(docs[0].coverImg)
         res.render('admin/production', {
             title: '摄影作品',
             taove: docs,
@@ -169,7 +171,13 @@ function createAlbums(req, res, next) {
         description: params.description,
         customerId: req.session.userId['_id'],
         city: params.city,
-        style: params.style
+        style: params.style,
+        coverImg: {
+            height: 200,
+            width: 200,
+            path: 'img/',
+            name: 'load.jpg'
+        }
     };
     if (params.phone != "") {
         Taove.findOne({phone: params.phone}, "_id", function (err, taove) {
@@ -211,14 +219,14 @@ function postProductionimg(req, res, next) {
     form.multiples = true;
     form.maxFieldsSize = 5 * 1024 * 1024;
 
-    co(function *(){
-       var parse= yield new Promise(function(resolve, reject) {
+    co(function *() {
+        var parse = yield new Promise(function (resolve, reject) {
             form.parse(req, function (err, fields, files) {
-                resolve({fields:fields,files:files})
+                resolve({fields: fields, files: files})
             })
         });
-        var fields=parse.fields;
-        var files=parse.files;
+        var fields = parse.fields;
+        var files = parse.files;
         var param = fields;
         var imgname = new ObjectId();
         var ext = '';
@@ -230,13 +238,22 @@ function postProductionimg(req, res, next) {
         } else {
             // 错误处理
         }
+        var imgname540 = imgname + "_540." + ext;
         imgname += "." + ext;
+
         fs.renameSync(files.qqfile.path, dir + imgname);
-        var size= yield new Promise(function(resolve, reject) {
+        var size = yield new Promise(function (resolve, reject) {
             gm(dir + imgname).size(function (err, size) {
                 resolve(size);
             })
         });
+        //生成540的小图片
+        yield new Promise(function (resolve, reject) {
+            gm(dir + imgname).resize(540).write(dir + imgname540, function (err) {
+                resolve(err);
+            })
+        });
+
 
         var doc = {
             "albumsId": albumsId,//相册id
@@ -248,8 +265,8 @@ function postProductionimg(req, res, next) {
             title: title,//图片标题
             imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
         };
-
-        var count=yield AlbumsImg.count({albumsId: param.AlbumsId}).exec();
+        console.log(doc)
+        var count = yield AlbumsImg.count({albumsId: param.AlbumsId}).exec();
         console.log(count)
         if (!count) {
             doc.cover = true;

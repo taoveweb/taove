@@ -22,12 +22,6 @@ router.post('/productionimg',  production.postimg);
 
 
 
-
-
-
-/*function orders(req, res, next) {
-    res.render('admin/orders', {title: '订单', layout: 'layout_pc'});
-}*/
 function carts(req, res, next) {
     res.render('admin/carts', {title: '购物车', layout: 'layout_pc'});
 }

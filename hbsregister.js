@@ -20,8 +20,14 @@ module.exports=function(hbs){
 
 
     hbs.registerHelper('getHeight', function (height,width,v3,options) {
-        var val = height*(260/width);
+        var val = height*(v3/width);
         return val;
+    });
+
+    hbs.registerHelper('reNameImg', function (imgName,options) {
+        var val = imgName.split('.');
+        var result=val[0]+"_540"+'.'+val[1];
+        return result;
     });
 
 

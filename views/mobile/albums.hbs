@@ -17,19 +17,18 @@
         </script>
         <div class="lists">
             {{#each taove}}
-                <div class="item grid-item">
-                    <a style="width:266px; height:{{getHeight this.coverImg.height this.coverImg.width 266}}px"
+                <div class="item grid-item" createdOn="{{this.createdOn}}">
+                    <a style="width:540px; height:{{getHeight this.coverImg.height this.coverImg.width 540}}px"
                        href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="box">
-                        <img width="266" src="{{../static}}img/alpha.png"
-                             height="{{getHeight this.coverImg.height this.coverImg.width 266}}"
-                             data-src="{{../static}}{{this.coverImg.path}}{{this.coverImg.name}}"
+                        <img width="540" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                             height="{{getHeight this.coverImg.height this.coverImg.width 540}}"
+                             data-src="{{../static}}{{this.coverImg.path}}{{reNameImg this.coverImg.name}}"
                              alt="{{this.title}}" onload=lazy(this) />
                         <div class="btn clearfix">
                             <i></i>
                             <em>点击进入相册</em>
                         </div>
                     </a>
-
                     <div class="br">
                         <p albumsId="{{this._id}}" class="editAlbumsTitle edit"
                            contenteditable="true">{{this.title}}</p> <em>{{this.imgNum}}张图片</em>
@@ -57,14 +56,14 @@
 
 {{#extend "mScripts"}}
     <script src="/mobile/dropload/dropload.js"></script>
-    <script src="/common/js/isotope.pkgd.min.js"></script>
+<!--    <script src="/common/js/isotope.pkgd.min.js"></script>-->
 
     <script>
 
         //瀑布流
-        var inner =  new Isotope( '.inner', {
+     /*   var inner =  new Isotope( '.inner', {
             itemSelector: '.item'
-        });
+        });*/
         $(function () {
             // 按钮操作
             $('.header .btn').on('click', function () {
@@ -100,21 +99,24 @@
                     domNoData: '<div class="dropload-noData">暂无数据</div>'
                 },
                 loadUpFn: function (me) {
+                    var url='/m?q=update&createdOn='+$('.item').first().attr('createdOn');
                     $.ajax({
-                        type: 'post',
-                        data: {q: 'ajax'},
-                        url: '/m',
+                        type: 'get',
+                        url: url,
+                        catch:false,
                         dataType: 'json',
                         success: function (data) {
+
                             var result = '';
                             for (var i = 0; i < data.length; i++) {
                                 var img = data[i];
+                                var imgName=img.coverImg.name.split('.')[0]+"_540."+img.coverImg.name.split('.')[1];
                                 result +=
-                                        '<div class="item grid-item">\
-                                        <a style="width:266px; height:'+ parseInt(img.coverImg.height*(266/img.coverImg.width))+'px"\
+                                        '<div class="item grid-item" createdOn="'+img.createdOn+'">\
+                                        <a style="width:540px; height:'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'px"\
                                         href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
-                                <img  width="266" height="'+ parseInt(img.coverImg.height*(266/img.coverImg.width))+'" src="/img/alpha.png"\
-                                data-src="/' + img.coverImg.path + img.coverImg.name + '" onload=lazy(this) />\
+                                <img  width="540" height="'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'" src="/img/alpha.png"\
+                                data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
                                 <div class="btn clearfix">\
                                 <i></i>\
                                 <em>点击进入相册</em>\
@@ -130,37 +132,42 @@
                             //setTimeout(function(){
                             //$('.lists').html(result);
                             $('.lists').prepend(result);
-                            new Isotope( '.inner', {
+                            if(!result){
+                                me.noData();
+                            }
+                           /* new Isotope( '.inner', {
                                 itemSelector: '.item'
-                            });
+                            });*/
 
                             // 每次数据加载完，必须重置
                             dropload.resetload();
                             //},1000);
                         },
                         error: function (xhr, type) {
-                            alert('Ajax error!');
+                            console.log(xhr,type)
                             // 即使加载出错，也得重置
                             dropload.resetload();
                         }
                     });
                 },
                 loadDownFn: function (me) {
+                    var url='/m?q=more&createdOn='+$('.item').last().attr('createdOn');
                     $.ajax({
-                        type: 'post',
-                        url: '/m',
-                        data: {q: 'ajax'},
+                        type: 'get',
+                        url: url,
+                        catch:false,
                         dataType: 'json',
                         success: function (data) {
                             var result = '';
                             for (var i = 0; i < data.length; i++) {
                                 var img = data[i];
+                                var imgName=img.coverImg.name.split('.')[0]+"_540."+img.coverImg.name.split('.')[1];
                                 result +=
-                                        '<div class="item grid-item">\
-                                        <a style="width:266px; height:'+ parseInt(img.coverImg.height*(266/img.coverImg.width))+'px"\
+                                        '<div class="item grid-item"  createdOn="'+img.createdOn+'">\
+                                        <a style="width: 540px; height:'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'px"\
                                         href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
-                                <img  width="266" height="'+ parseInt(img.coverImg.height*(266/img.coverImg.width))+'" src="/img/alpha.png"\
-                                data-src="/' + img.coverImg.path + img.coverImg.name + '" onload=lazy(this) />\
+                                <img  width="540" height="'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'" src="/img/alpha.png"\
+                                data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
                                 <div class="btn clearfix">\
                                 <i></i>\
                                 <em>点击进入相册</em>\
@@ -175,16 +182,18 @@
                             // 为了测试，延迟1秒加载
                             // setTimeout(function(){
                             $('.lists').append(result);
-                            new Isotope( '.inner', {
+                            if(!result){
+                                me.noData();
+                            }
+                           /* new Isotope( '.inner', {
                                 itemSelector: '.item'
                             });
-
+*/
                             // 每次数据加载完，必须重置
                             dropload.resetload();
                             //},1000);
                         },
                         error: function (xhr, type) {
-                            alert('Ajax error!');
                             // 即使加载出错，也得重置
                             dropload.resetload();
                         }

@@ -7,10 +7,10 @@ var co = require('co');
 
 
 
-var index=require('./mIndex');
+var albums=require('./albums');
 
-router.get('/', index.get);
-router.post('/', index.post);
+router.get('/', albums.get);
+router.post('/', albums.post);
 
 
 

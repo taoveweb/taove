@@ -11,14 +11,10 @@ var co = require('co');
 function indexGet(req, res, next) {
     co(function *() {
         if (req.query.q && req.query.q == 'more') {
-            var tt = yield Albums.find().exec();
-            console.log(tt);
-            var docs = yield Albums.find().skip( req.query.length).limit(1).exec();
-            console.log(docs.length)
+            var docs = yield Albums.find({createdOn: {$gt:req.query.createdOn}}).limit(1).exec();
             res.json(docs)
         } else if (req.query.q && req.query.q == 'update') {
-            var docs = yield Albums.find().skip( req.query.length).limit(1).exec();
-            console.log(docs.length);
+            var docs = yield Albums.find({createdOn: {$lt:req.query.createdOn}}).limit(1).exec();
             res.json(docs)
         } else {
             var docs = yield Albums.find().limit(1).exec();

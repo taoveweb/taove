@@ -11,7 +11,8 @@ var co = require('co');
 function indexGet(req, res, next) {
     co(function *() {
         if (req.query.q && req.query.q == 'more') {
-            var docs = yield Albums.find({createdOn: {$gt:new Date(req.query.createdOn).getTime() - 60 * 60 * 8 * 1000}}).limit(1).exec();
+            var docs = yield Albums.find({createdOn: {$gt:new Date(req.query.createdOn).getTime() - 60 * 60 * 16 * 1000}}).limit(1).exec();
+            console.log(docs)
             res.json(docs)
         } else if (req.query.q && req.query.q == 'update') {
             var docs = yield Albums.find({createdOn: {$lt:req.query.createdOn}}).limit(1).exec();

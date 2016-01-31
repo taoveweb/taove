@@ -11,6 +11,8 @@ var co = require('co');
 function indexGet(req, res, next) {
     co(function *() {
         if (req.query.q && req.query.q == 'more') {
+            var tt = yield Albums.find().exec();
+            console.log(tt);
             var docs = yield Albums.find().skip( req.query.length).limit(1).exec();
             console.log(docs.length)
             res.json(docs)

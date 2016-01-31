@@ -23,10 +23,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.6090622">
       <split-first>
         <leaf>
-          <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="www.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/www.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.16814159">
+                <state vertical-scroll-proportion="-1.9">
                   <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
@@ -63,11 +63,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="albums.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="albums.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/routes/mobile/albums.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.22">
-                  <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.47079647">
+                  <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -204,8 +204,8 @@
         <option value="$PROJECT_DIR$/routes/admin/production.js" />
         <option value="$PROJECT_DIR$/hbsregister.js" />
         <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
-        <option value="$PROJECT_DIR$/routes/mobile/albums.js" />
         <option value="$PROJECT_DIR$/bin/www.js" />
+        <option value="$PROJECT_DIR$/routes/mobile/albums.js" />
       </list>
     </option>
   </component>
@@ -913,18 +913,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/mobile/albums.js">
+    <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.22">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+        <state vertical-scroll-proportion="-1.9">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www.js">
+    <entry file="file://$PROJECT_DIR$/routes/mobile/albums.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16814159">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.47079647">
+          <caret line="14" column="28" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
           <folding />
         </state>
       </provider>

@@ -67,7 +67,7 @@
             <entry file="file://$PROJECT_DIR$/routes/mobile/albums.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.43716815">
-                  <caret line="13" column="121" selection-start-line="13" selection-start-column="121" selection-end-line="13" selection-end-column="121" />
+                  <caret line="13" column="115" selection-start-line="13" selection-start-column="115" selection-end-line="13" selection-end-column="115" />
                   <folding />
                 </state>
               </provider>
@@ -905,14 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.94">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/db.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3699115">
@@ -921,10 +913,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.94">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/mobile/albums.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43716815">
-          <caret line="13" column="121" selection-start-line="13" selection-start-column="121" selection-end-line="13" selection-end-column="121" />
+          <caret line="13" column="115" selection-start-line="13" selection-start-column="115" selection-end-line="13" selection-end-column="115" />
           <folding />
         </state>
       </provider>

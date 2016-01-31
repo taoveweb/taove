@@ -9,10 +9,9 @@ var AlbumsImg = db.AlbumsImg;
 var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
-    console.log(req.query.createdOn);
     co(function *() {
         if (req.query.q && req.query.q == 'more') {
-            var docs = yield Albums.find({createdOn: {$gt: req.query.createdOn}}).limit(1).exec();
+            var docs = yield Albums.find({createdOn: {$gt:   new Date(req.query.createdOn).getTime() - 60 * 60 * 8 * 1000}}).limit(1).exec();
             console.log(docs.length);
             res.json(docs)
         } else if (req.query.q && req.query.q == 'update') {

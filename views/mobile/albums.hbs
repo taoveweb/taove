@@ -99,7 +99,7 @@
                     domNoData: '<div class="dropload-noData">暂无数据</div>'
                 },
                 loadUpFn: function (me) {
-                    var url='/m?q=update&createdOn='+$('.item').first().attr('createdOn');
+                    var url='/m?q=update&length='+$('.item').length;
                     $.ajax({
                         type: 'get',
                         url: url,
@@ -151,7 +151,7 @@
                     });
                 },
                 loadDownFn: function (me) {
-                    var url='/m?q=more&createdOn='+$('.item').last().attr('createdOn');
+                    var url='/m?q=more&length='+$('.item').length;
                     $.ajax({
                         type: 'get',
                         url: url,

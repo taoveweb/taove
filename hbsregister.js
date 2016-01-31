@@ -21,7 +21,7 @@ module.exports=function(hbs){
 
     hbs.registerHelper('getHeight', function (height,width,v3,options) {
         var val = height*(v3/width);
-        return val;
+        return parseInt(val);
     });
 
     hbs.registerHelper('reNameImg', function (imgName,options) {

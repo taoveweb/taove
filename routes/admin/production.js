@@ -175,7 +175,7 @@ function createAlbums(req, res, next) {
             height: 200,
             width: 200,
             path: 'img/',
-            name: 'load.jpg'
+            name: 'load.png'
         }
     };
     if (params.phone != "") {

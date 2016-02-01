@@ -12,13 +12,13 @@ function indexGet(req, res, next) {
     console.log(req.query.createdOn)
     co(function *() {
         if (req.query.q && req.query.q == 'more') {
-            var docs = yield Albums.find({createdOn: {$gt:req.query.createdOn}}).limit(1).exec();
+            var docs = yield Albums.find({createdOn: {$gt:req.query.createdOn}}).limit(2).exec();
             res.json(docs)
         } else if (req.query.q && req.query.q == 'update') {
-            var docs = yield Albums.find({createdOn: {$lt:req.query.createdOn}}).limit(1).exec();
+            var docs = yield Albums.find({createdOn: {$lt:req.query.createdOn}}).limit(2).exec();
             res.json(docs)
         } else {
-            var docs = yield Albums.find().limit(1).exec();
+            var docs = yield Albums.find().limit(2).exec();
             res.render('mobile/albums', {
                 title: '摄影作品',
                 taove: docs,

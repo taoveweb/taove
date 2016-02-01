@@ -9,6 +9,8 @@ var AlbumsImg = db.AlbumsImg;
 var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
+    var data=new Date('Mon Feb 01 2016 05:47:14 GMT+0900 (JST)');
+    console.log(data.getTimezoneOffset())
     co(function *() {
         if (req.query.q && req.query.q == 'more') {
             var docs = yield Albums.find({createdOn: {$gt:req.query.createdOn}}).limit(1).exec();

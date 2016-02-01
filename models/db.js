@@ -102,7 +102,7 @@ var AlbumsImgSchema = new Schema({
     height: Number,
     likes: [{type: ObjectId}],//user id
     watches: [{type: ObjectId}],//user id
-    createdOn: {type: Date, default: new Date().getTime() + 60 * 60 * 8 * 1000}, //创建时间
+    createdOn: {type: Date, default: Date.now}, //创建时间
     imgType: {type: Number},//图片类型 0为未修 1为精修 3相册封面 4x展架
     approved: {type: Boolean, default: false},//是否允许发表
     cover: {type: Boolean, default: false},//封面

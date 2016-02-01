@@ -8,7 +8,7 @@ var ObjectId = db.ObjectId;
 var Taove = db.Taove;
 var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
-var gm = require('gm'); //.subClass({imageMagick: true});
+var gm = require('gm').subClass({imageMagick: true});
 var co = require('co');
 
 //相册
@@ -243,6 +243,7 @@ function postProductionimg(req, res, next) {
         fs.renameSync(files.qqfile.path, dir + imgname);
         var size = yield new Promise(function (resolve, reject) {
             gm(dir + imgname).size(function (err, size) {
+                console.log(err)
                 resolve(size);
             })
         });

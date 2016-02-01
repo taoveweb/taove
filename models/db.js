@@ -124,8 +124,8 @@ var AlbumsSchema = new Schema({
     style: {type: String, trim: true, required: true},//风格
     imgNum: Number,
     coverImg:{},
-    createdOn: {type: Date, default: new Date().getTime() + 60 * 60 * 8 * 1000}, //创建时间
-    updated: {type: Date, default: Date.now()}, //更新时间
+    createdOn: {type: Number, default:new Date().getTime()}, //创建时间
+    updated: {type: Number, default: new Date().getTime()}, //更新时间
     package: {type: String, trim: true}//套餐
 });
 
@@ -194,14 +194,14 @@ TaoveSchema.methods.comparepassword = function (_password, cb) {
 AlbumsSchema.pre('save', function (next) {
     var user = this;
     if (this.isNew) {
-        this.updated = this.createdOn = new Date().getTime() + 60 * 60 * 8 * 1000
+        this.updated = this.createdOn = new Date().getTime()
     } else {
-        this.updated = new Date().getTime() + 60 * 60 * 8 * 1000
+        this.updated = new Date().getTime()
     }
     next();
 });
 AlbumsSchema.pre('update', function (next) {
-    this.update({}, {$set: {updated: new Date().getTime() + 60 * 60 * 8 * 1000}});
+    this.update({}, {$set: {updated: new Date().getTime()}});
     next();
 });
 

@@ -56,7 +56,6 @@ $(function () {
                 style: style,
                 type: 'create'
             }, function (data) {
-                console.log(data);
                 if (data.ok == 1) {
                     window.setTimeout(function () {
                         that.parents('.pop').fadeOut();
@@ -110,7 +109,11 @@ var manualUploader = new qq.FineUploader({
     validation: {
         allowedExtensions: ['jpeg', 'jpg', 'png'],
         itemLimit: 10,
-        sizeLimit: 1024 * 1024 * 10
+        sizeLimit: 1024 * 1024 * 7,
+        image: {
+            minHeight: 1080,
+            minWidth: 1080
+        }
     },
     autoUpload: false,
     debug: false,

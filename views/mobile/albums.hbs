@@ -18,10 +18,10 @@
         <div class="lists">
             {{#each taove}}
                 <div class="item grid-item" createdOn="{{this.createdOn}}">
-                    <a style="width:540px; height:{{getHeight this.coverImg.height this.coverImg.width 540}}px"
+                    <a style="width:{{../imgWidth}}px; height:{{getHeight this.coverImg.height this.coverImg.width ../imgWidth}}px"
                        href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="box">
-                        <img width="540" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                             height="{{getHeight this.coverImg.height this.coverImg.width 540}}"
+                        <img width="{{../imgWidth}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                             height="{{getHeight this.coverImg.height this.coverImg.width ../imgWidth}}"
                              data-src="{{../static}}{{this.coverImg.path}}{{reNameImg this.coverImg.name}}"
                              alt="{{this.title}}" onload=lazy(this) />
                         <div class="btn clearfix">
@@ -59,6 +59,8 @@
 <!--    <script src="/common/js/isotope.pkgd.min.js"></script>-->
 
     <script>
+
+        var imgWidth={{imgWidth}};
 
         //瀑布流
      /*   var inner =  new Isotope( '.inner', {
@@ -110,12 +112,12 @@
                             var result = '';
                             for (var i = 0; i < data.length; i++) {
                                 var img = data[i];
-                                var imgName=img.coverImg.name.split('.')[0]+"_540."+img.coverImg.name.split('.')[1];
+                                var imgName=img.coverImg.name.split('.')[0]+"_1080."+img.coverImg.name.split('.')[1];
                                 result +=
                                         '<div class="item grid-item" createdOn="'+img.createdOn+'">\
-                                        <a style="width:540px; height:'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'px"\
+                                        <a style="width:1080px; height:'+ parseInt(img.coverImg.height*(imgWidth/img.coverImg.width))+'px"\
                                         href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
-                                <img  width="540" height="'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'" src="/img/alpha.png"\
+                                <img  width="1080" height="'+ parseInt(img.coverImg.height*(imgWidth/img.coverImg.width))+'" src="/img/alpha.png"\
                                 data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
                                 <div class="btn clearfix">\
                                 <i></i>\
@@ -161,12 +163,12 @@
                             var result = '';
                             for (var i = 0; i < data.length; i++) {
                                 var img = data[i];
-                                var imgName=img.coverImg.name.split('.')[0]+"_540."+img.coverImg.name.split('.')[1];
+                                var imgName=img.coverImg.name.split('.')[0]+"_1080."+img.coverImg.name.split('.')[1];
                                 result +=
-                                        '<div class="item grid-item"  createdOn="'+img.createdOn+'">\
-                                        <a style="width: 540px; height:'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'px"\
+                                        '<div class="item grid-item" createdOn="'+img.createdOn+'">\
+                                        <a style="width:1080px; height:'+ parseInt(img.coverImg.height*(imgWidth/img.coverImg.width))+'px"\
                                         href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
-                                <img  width="540" height="'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'" src="/img/alpha.png"\
+                                <img  width="1080" height="'+ parseInt(img.coverImg.height*(imgWidth/img.coverImg.width))+'" src="/img/alpha.png"\
                                 data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
                                 <div class="btn clearfix">\
                                 <i></i>\

@@ -4,6 +4,7 @@
 var fs = require('fs');
 var blocks = {};
 module.exports=function(hbs){
+
     hbs.registerPartials(__dirname + '/views/partials');
     hbs.registerHelper('extend', function (name, context) {
         var block = blocks[name];

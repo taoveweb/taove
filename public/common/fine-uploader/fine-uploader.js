@@ -232,6 +232,7 @@ var qq = function(element) {
 
         // extract the MIME
         mimeString = dataUri.split(",")[0]
+        mimeString = dataUri.split(",")[0]
             .split(":")[1]
             .split(";")[0];
 
@@ -3498,8 +3499,8 @@ qq.status = {
                 tooManyItemsError: "Too many items ({netItems}) would be uploaded.  Item limit is {itemLimit}.",
                 maxHeightImageError: "Image is too tall.",
                 maxWidthImageError: "Image is too wide.",
-                minHeightImageError: "Image is not tall enough.",
-                minWidthImageError: "Image is not wide enough.",
+                minHeightImageError: "\u56fe\u7247\u6700\u5c0f\u5bbd\u5ea6\u548c\u9ad8\u5ea6\u4e3a\u0031\u0030\u0038\u0030\u0070\u0078",
+                minWidthImageError: "\u56fe\u7247\u6700\u5c0f\u5bbd\u5ea6\u548c\u9ad8\u5ea6\u4e3a\u0031\u0030\u0038\u0030\u0070\u0078",
                 retryFailTooManyItems: "Retry failed - you have reached your file limit.",
                 onLeave: "The files are being uploaded, if you leave now the upload will be canceled.",
                 unsupportedBrowserIos8Safari: "Unrecoverable error - this browser does not permit file uploading of any kind due to serious bugs in iOS8 Safari.  Please use iOS8 Chrome until Apple fixes these issues."

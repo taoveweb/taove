@@ -237,19 +237,18 @@ function postProductionimg(req, res, next) {
         } else {
             // 错误处理
         }
-        var imgname540 = imgname + "_540." + ext;
+        var imgname1080 = imgname + "_1080." + ext;
         imgname += "." + ext;
 
         fs.renameSync(files.qqfile.path, dir + imgname);
         var size = yield new Promise(function (resolve, reject) {
             gm(dir + imgname).size(function (err, size) {
-                console.log(err)
                 resolve(size);
             })
         });
         //生成540的小图片
         yield new Promise(function (resolve, reject) {
-            gm(dir + imgname).resize(540).write(dir + imgname540, function (err) {
+            gm(dir + imgname).resize(1080).write(dir + imgname1080, function (err) {
                 resolve(err);
             })
         });
@@ -265,9 +264,7 @@ function postProductionimg(req, res, next) {
             title: title,//图片标题
             imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
         };
-        console.log(doc)
         var count = yield AlbumsImg.count({albumsId: param.AlbumsId}).exec();
-        console.log(count)
         if (!count) {
             doc.cover = true;
             updateCoverimg(doc);

@@ -28,7 +28,7 @@ module.exports=function(hbs){
     hbs.registerHelper('reNameImg', function (imgName,options) {
         if(!imgName) return false;
         var val = imgName.split('.');
-        var result=val[0]+"_540"+'.'+val[1];
+        var result=val[0]+"_1080"+'.'+val[1];
         return result;
     });
 

@@ -15,19 +15,14 @@
                 container: document.getElementById('inner')
             });
         </script>
-        <div class="lists">
+        <div class="lists"  style="width: {{imgWidth}}px;">
             {{#each taove}}
                 <div class="item grid-item" createdOn="{{this.createdOn}}">
-                    <a style="width:{{../imgWidth}}px; height:{{getHeight this.coverImg.height this.coverImg.width ../imgWidth}}px"
+                    <a style="width:{{@root/imgWidth}}px; height:{{getHeight this.coverImg.height this.coverImg.width @root/imgWidth}}px"
                        href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="box">
-                        <img width="{{../imgWidth}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                             height="{{getHeight this.coverImg.height this.coverImg.width ../imgWidth}}"
-                             data-src="{{../static}}{{this.coverImg.path}}{{reNameImg this.coverImg.name}}"
+                        <img  src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                             data-src="{{../static}}{{this.coverImg.path}}{{reNameImg this.coverImg.name ../imgWidth}}"
                              alt="{{this.title}}" onload=lazy(this) />
-                        <div class="btn clearfix">
-                            <i></i>
-                            <em>点击进入相册</em>
-                        </div>
                     </a>
                     <div class="br">
                         <p albumsId="{{this._id}}" class="editAlbumsTitle edit"
@@ -112,18 +107,12 @@
                             var result = '';
                             for (var i = 0; i < data.length; i++) {
                                 var img = data[i];
-                                var imgName=img.coverImg.name.split('.')[0]+"_540."+img.coverImg.name.split('.')[1];
-                                result +=
-                                        '<div class="item grid-item" createdOn="'+img.createdOn+'">\
-                                        <a style="width:540px; height:'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'px"\
+                                var imgName=img.coverImg.name.split('.')[0]+"_1080."+img.coverImg.name.split('.')[1];
+                                result +='<div class="item grid-item" createdOn="'+img.createdOn+'">\
+                                        <a style="width:{{imgWidth}}px; height:'+ parseInt(img.coverImg.height*({{imgWidth}}/img.coverImg.width))+'px"\
                                         href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
-                                <img  width="540" height="'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'" src="/img/alpha.png"\
-                                data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
-                                <div class="btn clearfix">\
-                                <i></i>\
-                                <em>点击进入相册</em>\
-                                </div>\
-                                </a>\
+                                <img  src="/img/alpha.png" data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
+                                 </a>\
                                 <div class="br">\
                                 <p albumsId="' + img._id + ' " class="editAlbumsTitle edit"\
                                 contenteditable="true">' + img.title + ' </p> <em>' + img.imgNum + ' 张图片</em>\
@@ -163,17 +152,11 @@
                             var result = '';
                             for (var i = 0; i < data.length; i++) {
                                 var img = data[i];
-                                var imgName=img.coverImg.name.split('.')[0]+"_540."+img.coverImg.name.split('.')[1];
-                                result +=
-                                        '<div class="item grid-item"  createdOn="'+img.createdOn+'">\
-                                        <a style="width: 540px; height:'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'px"\
+                                var imgName=img.coverImg.name.split('.')[0]+"_1080."+img.coverImg.name.split('.')[1];
+                                result +='<div class="item grid-item" createdOn="'+img.createdOn+'">\
+                                        <a style="width:{{imgWidth}}px; height:'+ parseInt(img.coverImg.height*({{imgWidth}}/img.coverImg.width))+'px"\
                                         href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
-                                <img  width="540" height="'+ parseInt(img.coverImg.height*(540/img.coverImg.width))+'" src="/img/alpha.png"\
-                                data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
-                                <div class="btn clearfix">\
-                                <i></i>\
-                                <em>点击进入相册</em>\
-                                </div>\
+                                <img  src="/img/alpha.png" data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
                                 </a>\
                                 <div class="br">\
                                 <p albumsId="' + img._id + ' " class="editAlbumsTitle edit"\

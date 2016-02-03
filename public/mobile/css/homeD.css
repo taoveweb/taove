@@ -169,29 +169,21 @@ body{
     cursor: pointer;
 }
 .item .br {
-    height: 48px;
-    line-height: 48px;
     overflow: hidden;
-    font-size: 14px;
     position: relative;
     color: #949494;
+    padding: 1em;
 }
 .item .br p {
-    margin-right: 80px;
-    height: 48px;
-    padding-top: 15px;
-    line-height: 18px;
     color: #000;
-    padding-left: 10px;
     overflow: hidden;
 }
 .item .br em {
     position: absolute;
-    right: 10px;
-    height: 48px;
-    line-height: 48px;
+    right: 0px;
     color: #949494;
     top: 0;
+    padding: 1em;
 }
 @-webkit-keyframes opacity {
     0% {

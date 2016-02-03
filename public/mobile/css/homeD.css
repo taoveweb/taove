@@ -171,6 +171,7 @@ body{
     position: relative;
     color: #949494;
     padding: 1em;
+    font-size: 1.5em;
 }
 .item .br p {
     color: #000;

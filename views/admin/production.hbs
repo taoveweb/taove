@@ -24,8 +24,8 @@
                 {{#each taove}}
                     <div class="item grid-item">
                         <a href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="box">
-                            <img width="266" height="{{getHeight this.coverImg.height this.coverImg.width 266}}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                 data-original="{{../static}}{{this.coverImg.path}}{{reNameImg this.coverImg.name}}" alt="{{this.title}}"/>
+                            <!--图片-->
+                            {{{getImg this.coverImg.width this.coverImg.height 266 this.coverImg.path this.coverImg.name}}}
                             <div class="btn clearfix">
                                 <i></i>
                                 <em>点击进入相册</em>

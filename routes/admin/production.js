@@ -238,6 +238,7 @@ function postProductionimg(req, res, next) {
             // 错误处理
         }
         var imgname1080 = imgname + "_1080." + ext;
+        var imgname640 = imgname + "_640." + ext;
         imgname += "." + ext;
 
         fs.renameSync(files.qqfile.path, dir + imgname);
@@ -246,12 +247,22 @@ function postProductionimg(req, res, next) {
                 resolve(size);
             })
         });
-        //生成540的小图片
-        yield new Promise(function (resolve, reject) {
-            gm(dir + imgname).resize(1080).write(dir + imgname1080, function (err) {
-                resolve(err);
-            })
-        });
+        if(size.width>=1080){
+            yield new Promise(function (resolve, reject) {
+                gm(dir + imgname).resize(1080).write(dir + imgname1080, function (err) {
+                    resolve(err);
+                })
+            });
+        }
+
+        if(size.width>=640){
+            yield new Promise(function (resolve, reject) {
+                gm(dir + imgname).resize(640).write(dir + imgname640, function (err) {
+                    resolve(err);
+                })
+            });
+        }
+
 
 
         var doc = {

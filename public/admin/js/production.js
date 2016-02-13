@@ -111,7 +111,7 @@ var manualUploader = new qq.FineUploader({
         itemLimit: 10,
         sizeLimit: 1024 * 1024 * 7,
         image: {
-            minHeight: 540,
+            minHeight: 200,
             minWidth: 540
         }
     },

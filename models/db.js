@@ -122,7 +122,7 @@ var AlbumsSchema = new Schema({
     description: {type: String, trim: true, required: true},//描述
     city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
-    imgNum: Number,
+    imgNum: {type: Number, default: 0},//创建时间
     coverImg:{},
     createdOn: {type: Number, default:new Date().getTime()}, //创建时间
     updated: {type: Number, default: new Date().getTime()}, //更新时间

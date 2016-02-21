@@ -8,7 +8,7 @@ var ObjectId = db.ObjectId;
 var Taove = db.Taove;
 var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
-var gm = require('gm').subClass({imageMagick: true});
+var gm = require('gm');//.subClass({imageMagick: true});
 var co = require('co');
 
 //相册
@@ -172,8 +172,8 @@ function createAlbums(req, res, next) {
         city: params.city,
         style: params.style,
         coverImg: {
-            height: 200,
-            width: 200,
+            height: 266,
+            width: 266,
             path: 'img/',
             name: 'load.png'
         }
@@ -247,7 +247,7 @@ function postProductionimg(req, res, next) {
                 resolve(size);
             })
         });
-        if(size.width>=1080){
+        if (size.width >= 1080) {
             yield new Promise(function (resolve, reject) {
                 gm(dir + imgname).resize(1080).write(dir + imgname1080, function (err) {
                     resolve(err);
@@ -255,7 +255,7 @@ function postProductionimg(req, res, next) {
             });
         }
 
-        if(size.width>=640){
+        if (size.width >= 640) {
             yield new Promise(function (resolve, reject) {
                 gm(dir + imgname).resize(640).write(dir + imgname640, function (err) {
                     resolve(err);
@@ -263,8 +263,7 @@ function postProductionimg(req, res, next) {
             });
         }
 
-
-
+        console.log('in')
         var doc = {
             "albumsId": albumsId,//相册id
             photographyId: req.session.userId['_id'],//摄影师Id

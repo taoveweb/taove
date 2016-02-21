@@ -53,6 +53,27 @@ module.exports=function(hbs){
         return img;
     });
 
+    hbs.registerHelper('getImgM', function (width,height,setWidth,imgPath,imgName,options) {
+        if(!imgName) return false;
+        var val = imgName.split('.');
+        var w=width;
+        var h=height;
+        var src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+        var original=imgPath+imgName;
+        if(setWidth<width){
+            original=imgPath+val[0]+"_"+setWidth+'.'+val[1];
+            w=setWidth;
+            h=parseInt(height*(setWidth/width));
+        }
+
+        if(setWidth==266){
+            original=imgPath+imgName;
+            w=setWidth;
+        }
+        var img= '<img width="'+w+'" height="'+h+'" src="'+src+'" data-src="/'+original+'" onload="lzld(this)" />'
+        return img;
+    });
+
 
     hbs.registerHelper("ifCond",function(v1,operator,v2,options) {
         switch (operator)

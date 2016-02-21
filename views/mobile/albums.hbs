@@ -15,18 +15,18 @@
                 container: document.getElementById('inner')
             });
         </script>
-        <div class="lists"  style="width: {{imgWidth}}px;">
+        <div class="lists" style="width: {{imgWidth}}px;">
             {{#each taove}}
                 <div class="item grid-item" createdOn="{{this.createdOn}}">
                     <a style="width:{{@root/imgWidth}}px; height:{{getHeight this.coverImg.height this.coverImg.width @root/imgWidth}}px"
-                       href="{{../static}}admin/productiondetail?albumsId={{this._id}}" class="box">
-                        <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAMFBMVEUAAADr6+uqqqooKCjk5OTW1ta+vr4tLS0sLCzq6uoyMjLPz8/a2tqhoaGxsbGGhobeD1WUAAAAEHRSTlMATU0zSklNKRksDgwbMT5MXmZMlAAABTVJREFUeNrtmEtoE0EYx0ejZE1E/EISEJ8ZTC6+AjkkeHJLKgQtuMUooh6yxOLNhRySYyVoRVAqxMNqD4EeFE9RvBREKughGKEWPQmigngQA3rQk8TZndlMVtSafUAK82tLdnbT+c/3mt39kEAgEAgEAoFAIBAIBAIbbQVgrg2wbRb5Rlh+CrEn226AvgX5xgaYgLMAr6Mv4Rbyiyew4+MrgIkJBbYhv9C73erbbvdLtdvtNpFPPAU4/x5gx2VijW8i9xTYfhFg+0uI1e4hnwhdh+glgJMyfKr5Zkno7iv4AvAWJqpXfRNB964pO+Xo19gP4i3feNH7HktElAu9n0vIJ8LLGPd2JyJjvR7Gb5AvhD9gjA/0isVe7xs5+ow8Y+NNGShRFRsc+H6AGGJQBsb4HHLFggwWk2TeVDE/bmqlMEEBi0LL1Y7Y5zBbe7Q4VcyreEolSnwFW1xEga81SuZU6FFeBjiByycw3g19TiOnPATuLOYdPi7ZTkVbTg3h7ohhXAIbagpUnOTjI8gZ6wcXbrmG+68cHTQlhpxxg8/Ig8wzISUfHpSedeYtmp3PyeFj7iyOWgZ1f4t8r20uYKuz/OW5+SFl1d0UTp1jRsVTEMdLA990wjogLJplj0u86HmtqyVQ97KbP7no8LHBWt5aLDONKXVAZSwJY5gbveg07oeQwXKSpVh5ElMUmtdyjPoLyU4jr1j/GKbeiuNyHDNSfX/t6S/oGBoWtjqzjjdhOmUSVMygspEkRPYhg/um1Q4AAjJ4kKTJJFNDuCmxFHGZuY41ZLTZlchywioLjO2mYAXwkjciWLGizKHb1mQJJnd5IrIR9/N1ENkIym6I7PFEZFPKyiRM4f6KJyG+zxORtUlzi5Sj2MZuFvn9nog8SFgblQXPL0x+W16ILJeY97Ed04kyqIteiHwwRMZKLO72yKsKqEueiChGsiowie0oLIc9EekvGduxDHznnYj8Z5GEVyJWGv1GwsiHBER2CZGhRFZP4FdK4VVTjCtuK6tmg3S+1bu/aSWsm9bquf2u9CCxeh6J/vvhbmQfU4d+4B7ZV4ehX4JG9nVu2BfT0X3FHrZZMLptjyEbOKPcihpsqo39sakmc8NanrUHGR62B+2NzrhVH7wqU9Bni7ctW4iOn1ihZeuy+cyxN589bqNzPiNfCC9jzhvkFy8wY98i8o/wiy7G3S/PkZ9smEX+sVHX9bnjz9rrCoWFM8dO31x8druh58c9dtp4/mm+cPzoBr2hNwp64djRzumCrntsV6O4rjG35SjROKU32qf0U+2j3os86mzstG4/78zpG2YXkN5ZmG0/6nRaSCAQCAQCgeBfzNOPGmIEpxEhpPFhbX4aOSJDaSJUNcehgyiYyWRtIux7uVozi5wSILNJTKxG/q5ScwJ9kUomQy1BjmGzBTU6aAbuaFKaWZg1xKdraD6YoWjICdJBJhKgK603Z1CNHFPtGpLSQUOEXEBoBhFcicywmFdIUHJmIthFyEUi704klKMioWxQq9Q1Q6Q5ICIZvpsJHXQuYmRTMF0x5glmzegYKnVyNYckjVoSvKKRyGjuLKmnrRKR2ExVm8gMOR2oN12JhLJMpJIxIG6RcqZIkImQ8zliphsR4g0qQmMRIoOARqSNi1TEMFBKu8wuqS+So4MsLf86skQyufm0pGUR+XEtUpm2Qm9+Vkl5EldJRh3makFHIv1KlnJsW5k2zjWJNvusZBFzV0CbJ3uLC/7mbz6rpNWIy5BAIBAIBAKBQCAQCAQCgUAwAvwCLLg/0HrtFZcAAAAASUVORK5CYII="
-                             data-src="{{../static}}{{this.coverImg.path}}{{reNameImg this.coverImg.name ../imgWidth}}"
-                             onload=lazy(this) />
+                       class="box">
+                        {{#with this.coverImg}}
+                            {{{getImgM width height 1080 path name }}}
+                        {{/with}}
                     </a>
+
                     <div class="br">
-                        <p albumsId="{{this._id}}" class="editAlbumsTitle edit"
-                           contenteditable="true">{{this.title}}</p> <em>{{this.imgNum}}张图片</em>
+                        <p class="editAlbumsTitle edit" >{{this.title}}</p> <em>{{this.imgNum}}张图片</em>
                     </div>
                 </div>
             {{/each}}
@@ -51,140 +51,133 @@
 
 {{#extend "mScripts"}}
     <script src="/mobile/dropload/dropload.js"></script>
-<!--    <script src="/common/js/isotope.pkgd.min.js"></script>-->
+    <!--    <script src="/common/js/isotope.pkgd.min.js"></script>-->
 
     <script>
 
-        var imgWidth={{imgWidth}}
+        var imgWidth ={{imgWidth}}
 
-        //瀑布流
-     /*   var inner =  new Isotope( '.inner', {
-            itemSelector: '.item'
-        });*/
-        $(function () {
-            // 按钮操作
-            $('.header .btn').on('click', function () {
-                var $this = $(this);
-                if (!!$this.hasClass('lock')) {
-                    $this.attr('class', 'btn unlock');
-                    $this.text('解锁');
-                    // 锁定
-                    dropload.lock();
-                    $('.dropload-down').hide();
-                } else {
-                    $this.attr('class', 'btn lock');
-                    $this.text('锁定');
-                    // 解锁
-                    dropload.unlock();
-                    $('.dropload-down').show();
-                }
-            });
-
-            // dropload
-            var dropload = $('.inner').dropload({
-                domUp: {
-                    domClass: 'dropload-up',
-                    domRefresh: '<div class="dropload-refresh">↓下拉刷新</div>',
-                    domUpdate: '<div class="dropload-update">↑释放更新</div>',
-                    domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
-                },
-                domDown: {
-                    threshold: "600",
-                    domClass: 'dropload-down',
-                    domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
-                    domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
-                    domNoData: '<div class="dropload-noData">暂无数据</div>'
-                },
-                loadUpFn: function (me) {
-                    var url='/m?q=update&createdOn='+$('.item').first().attr('createdOn');
-                    $.ajax({
-                        type: 'get',
-                        url: url,
-                        catch:false,
-                        dataType: 'json',
-                        success: function (data) {
-
-                            var result = '';
-                            for (var i = 0; i < data.length; i++) {
-                                var img = data[i];
-                                var imgName=img.coverImg.name.split('.')[0]+"_1080."+img.coverImg.name.split('.')[1];
-                                result +='<div class="item grid-item" createdOn="'+img.createdOn+'">\
-                                        <a style="width:{{imgWidth}}px; height:'+ parseInt(img.coverImg.height*({{imgWidth}}/img.coverImg.width))+'px"\
-                                        href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
-                                <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAMFBMVEUAAADr6+uqqqooKCjk5OTW1ta+vr4tLS0sLCzq6uoyMjLPz8/a2tqhoaGxsbGGhobeD1WUAAAAEHRSTlMATU0zSklNKRksDgwbMT5MXmZMlAAABTVJREFUeNrtmEtoE0EYx0ejZE1E/EISEJ8ZTC6+AjkkeHJLKgQtuMUooh6yxOLNhRySYyVoRVAqxMNqD4EeFE9RvBREKughGKEWPQmigngQA3rQk8TZndlMVtSafUAK82tLdnbT+c/3mt39kEAgEAgEAoFAIBAIBAIbbQVgrg2wbRb5Rlh+CrEn226AvgX5xgaYgLMAr6Mv4Rbyiyew4+MrgIkJBbYhv9C73erbbvdLtdvtNpFPPAU4/x5gx2VijW8i9xTYfhFg+0uI1e4hnwhdh+glgJMyfKr5Zkno7iv4AvAWJqpXfRNB964pO+Xo19gP4i3feNH7HktElAu9n0vIJ8LLGPd2JyJjvR7Gb5AvhD9gjA/0isVe7xs5+ow8Y+NNGShRFRsc+H6AGGJQBsb4HHLFggwWk2TeVDE/bmqlMEEBi0LL1Y7Y5zBbe7Q4VcyreEolSnwFW1xEga81SuZU6FFeBjiByycw3g19TiOnPATuLOYdPi7ZTkVbTg3h7ohhXAIbagpUnOTjI8gZ6wcXbrmG+68cHTQlhpxxg8/Ig8wzISUfHpSedeYtmp3PyeFj7iyOWgZ1f4t8r20uYKuz/OW5+SFl1d0UTp1jRsVTEMdLA990wjogLJplj0u86HmtqyVQ97KbP7no8LHBWt5aLDONKXVAZSwJY5gbveg07oeQwXKSpVh5ElMUmtdyjPoLyU4jr1j/GKbeiuNyHDNSfX/t6S/oGBoWtjqzjjdhOmUSVMygspEkRPYhg/um1Q4AAjJ4kKTJJFNDuCmxFHGZuY41ZLTZlchywioLjO2mYAXwkjciWLGizKHb1mQJJnd5IrIR9/N1ENkIym6I7PFEZFPKyiRM4f6KJyG+zxORtUlzi5Sj2MZuFvn9nog8SFgblQXPL0x+W16ILJeY97Ed04kyqIteiHwwRMZKLO72yKsKqEueiChGsiowie0oLIc9EekvGduxDHznnYj8Z5GEVyJWGv1GwsiHBER2CZGhRFZP4FdK4VVTjCtuK6tmg3S+1bu/aSWsm9bquf2u9CCxeh6J/vvhbmQfU4d+4B7ZV4ehX4JG9nVu2BfT0X3FHrZZMLptjyEbOKPcihpsqo39sakmc8NanrUHGR62B+2NzrhVH7wqU9Bni7ctW4iOn1ihZeuy+cyxN589bqNzPiNfCC9jzhvkFy8wY98i8o/wiy7G3S/PkZ9smEX+sVHX9bnjz9rrCoWFM8dO31x8druh58c9dtp4/mm+cPzoBr2hNwp64djRzumCrntsV6O4rjG35SjROKU32qf0U+2j3os86mzstG4/78zpG2YXkN5ZmG0/6nRaSCAQCAQCgeBfzNOPGmIEpxEhpPFhbX4aOSJDaSJUNcehgyiYyWRtIux7uVozi5wSILNJTKxG/q5ScwJ9kUomQy1BjmGzBTU6aAbuaFKaWZg1xKdraD6YoWjICdJBJhKgK603Z1CNHFPtGpLSQUOEXEBoBhFcicywmFdIUHJmIthFyEUi704klKMioWxQq9Q1Q6Q5ICIZvpsJHXQuYmRTMF0x5glmzegYKnVyNYckjVoSvKKRyGjuLKmnrRKR2ExVm8gMOR2oN12JhLJMpJIxIG6RcqZIkImQ8zliphsR4g0qQmMRIoOARqSNi1TEMFBKu8wuqS+So4MsLf86skQyufm0pGUR+XEtUpm2Qm9+Vkl5EldJRh3makFHIv1KlnJsW5k2zjWJNvusZBFzV0CbJ3uLC/7mbz6rpNWIy5BAIBAIBAKBQCAQCAQCgUAwAvwCLLg/0HrtFZcAAAAASUVORK5CYII=" data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
-                                 </a>\
-                                <div class="br">\
-                                <p albumsId="' + img._id + ' " class="editAlbumsTitle edit"\
-                                contenteditable="true">' + img.title + ' </p> <em>' + img.imgNum + ' 张图片</em>\
-                                </div>\
-                                </div>';
-                            }
-                            // 为了测试，延迟1秒加载
-                            //setTimeout(function(){
-                            //$('.lists').html(result);
-                            $('.lists').prepend(result);
-                            if(!result){
-                                me.noData();
-                            }
-                           /* new Isotope( '.inner', {
-                                itemSelector: '.item'
-                            });*/
-
-                            // 每次数据加载完，必须重置
-                            dropload.resetload();
-                            //},1000);
-                        },
-                        error: function (xhr, type) {
-                            console.log(xhr,type)
-                            // 即使加载出错，也得重置
-                            dropload.resetload();
+            //瀑布流
+            /*   var inner =  new Isotope( '.inner', {
+                   itemSelector: '.item'
+               });*/
+                $(function () {
+                    // 按钮操作
+                    $('.header .btn').on('click', function () {
+                        var $this = $(this);
+                        if (!!$this.hasClass('lock')) {
+                            $this.attr('class', 'btn unlock');
+                            $this.text('解锁');
+                            // 锁定
+                            dropload.lock();
+                            $('.dropload-down').hide();
+                        } else {
+                            $this.attr('class', 'btn lock');
+                            $this.text('锁定');
+                            // 解锁
+                            dropload.unlock();
+                            $('.dropload-down').show();
                         }
                     });
-                },
-                loadDownFn: function (me) {
-                    var url='/m?q=more&createdOn='+$('.item').last().attr('createdOn');
-                    $.ajax({
-                        type: 'get',
-                        url: url,
-                        catch:false,
-                        dataType: 'json',
-                        success: function (data) {
-                            var result = '';
-                            for (var i = 0; i < data.length; i++) {
-                                var img = data[i];
-                                var imgName=img.coverImg.name.split('.')[0]+"_1080."+img.coverImg.name.split('.')[1];
-                                result +='<div class="item grid-item" createdOn="'+img.createdOn+'">\
-                                        <a style="width:{{imgWidth}}px; height:'+ parseInt(img.coverImg.height*({{imgWidth}}/img.coverImg.width))+'px"\
-                                        href="/admin/productiondetail?albumsId='+ img._id + '"  class="box">\
-                                <img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADIBAMAAABfdrOtAAAAMFBMVEUAAADr6+uqqqooKCjk5OTW1ta+vr4tLS0sLCzq6uoyMjLPz8/a2tqhoaGxsbGGhobeD1WUAAAAEHRSTlMATU0zSklNKRksDgwbMT5MXmZMlAAABTVJREFUeNrtmEtoE0EYx0ejZE1E/EISEJ8ZTC6+AjkkeHJLKgQtuMUooh6yxOLNhRySYyVoRVAqxMNqD4EeFE9RvBREKughGKEWPQmigngQA3rQk8TZndlMVtSafUAK82tLdnbT+c/3mt39kEAgEAgEAoFAIBAIBAIbbQVgrg2wbRb5Rlh+CrEn226AvgX5xgaYgLMAr6Mv4Rbyiyew4+MrgIkJBbYhv9C73erbbvdLtdvtNpFPPAU4/x5gx2VijW8i9xTYfhFg+0uI1e4hnwhdh+glgJMyfKr5Zkno7iv4AvAWJqpXfRNB964pO+Xo19gP4i3feNH7HktElAu9n0vIJ8LLGPd2JyJjvR7Gb5AvhD9gjA/0isVe7xs5+ow8Y+NNGShRFRsc+H6AGGJQBsb4HHLFggwWk2TeVDE/bmqlMEEBi0LL1Y7Y5zBbe7Q4VcyreEolSnwFW1xEga81SuZU6FFeBjiByycw3g19TiOnPATuLOYdPi7ZTkVbTg3h7ohhXAIbagpUnOTjI8gZ6wcXbrmG+68cHTQlhpxxg8/Ig8wzISUfHpSedeYtmp3PyeFj7iyOWgZ1f4t8r20uYKuz/OW5+SFl1d0UTp1jRsVTEMdLA990wjogLJplj0u86HmtqyVQ97KbP7no8LHBWt5aLDONKXVAZSwJY5gbveg07oeQwXKSpVh5ElMUmtdyjPoLyU4jr1j/GKbeiuNyHDNSfX/t6S/oGBoWtjqzjjdhOmUSVMygspEkRPYhg/um1Q4AAjJ4kKTJJFNDuCmxFHGZuY41ZLTZlchywioLjO2mYAXwkjciWLGizKHb1mQJJnd5IrIR9/N1ENkIym6I7PFEZFPKyiRM4f6KJyG+zxORtUlzi5Sj2MZuFvn9nog8SFgblQXPL0x+W16ILJeY97Ed04kyqIteiHwwRMZKLO72yKsKqEueiChGsiowie0oLIc9EekvGduxDHznnYj8Z5GEVyJWGv1GwsiHBER2CZGhRFZP4FdK4VVTjCtuK6tmg3S+1bu/aSWsm9bquf2u9CCxeh6J/vvhbmQfU4d+4B7ZV4ehX4JG9nVu2BfT0X3FHrZZMLptjyEbOKPcihpsqo39sakmc8NanrUHGR62B+2NzrhVH7wqU9Bni7ctW4iOn1ihZeuy+cyxN589bqNzPiNfCC9jzhvkFy8wY98i8o/wiy7G3S/PkZ9smEX+sVHX9bnjz9rrCoWFM8dO31x8druh58c9dtp4/mm+cPzoBr2hNwp64djRzumCrntsV6O4rjG35SjROKU32qf0U+2j3os86mzstG4/78zpG2YXkN5ZmG0/6nRaSCAQCAQCgeBfzNOPGmIEpxEhpPFhbX4aOSJDaSJUNcehgyiYyWRtIux7uVozi5wSILNJTKxG/q5ScwJ9kUomQy1BjmGzBTU6aAbuaFKaWZg1xKdraD6YoWjICdJBJhKgK603Z1CNHFPtGpLSQUOEXEBoBhFcicywmFdIUHJmIthFyEUi704klKMioWxQq9Q1Q6Q5ICIZvpsJHXQuYmRTMF0x5glmzegYKnVyNYckjVoSvKKRyGjuLKmnrRKR2ExVm8gMOR2oN12JhLJMpJIxIG6RcqZIkImQ8zliphsR4g0qQmMRIoOARqSNi1TEMFBKu8wuqS+So4MsLf86skQyufm0pGUR+XEtUpm2Qm9+Vkl5EldJRh3makFHIv1KlnJsW5k2zjWJNvusZBFzV0CbJ3uLC/7mbz6rpNWIy5BAIBAIBAKBQCAQCAQCgUAwAvwCLLg/0HrtFZcAAAAASUVORK5CYII=" data-src="/' + img.coverImg.path + imgName + '" onload=lazy(this) />\
-                                </a>\
-                                <div class="br">\
-                                <p albumsId="' + img._id + ' " class="editAlbumsTitle edit"\
-                                contenteditable="true">' + img.title + ' </p> <em>' + img.imgNum + ' 张图片</em>\
-                                </div>\
-                                </div>';
-                            }
-                            // 为了测试，延迟1秒加载
-                            // setTimeout(function(){
-                            $('.lists').append(result);
-                            if(!result){
-                                me.noData();
-                            }
-                           /* new Isotope( '.inner', {
-                                itemSelector: '.item'
+
+                    // dropload
+                    var dropload = $('.inner').dropload({
+                        domUp: {
+                            domClass: 'dropload-up',
+                            domRefresh: '<div class="dropload-refresh">↓下拉刷新</div>',
+                            domUpdate: '<div class="dropload-update">↑释放更新</div>',
+                            domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+                        },
+                        domDown: {
+                            threshold: "600",
+                            domClass: 'dropload-down',
+                            domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
+                            domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+                            domNoData: '<div class="dropload-noData">暂无数据</div>'
+                        },
+                        loadUpFn: function (me) {
+                            var url = '/m?q=update&createdOn=' + $('.item').first().attr('createdOn');
+                            $.ajax({
+                                type: 'get',
+                                url: url,
+                                catch: false,
+                                dataType: 'json',
+                                success: function (data) {
+                                    var result = setItem(data);
+                                    $('.lists').prepend(result);
+                                    if (!result) {
+                                        me.noData();
+                                    }
+                                    // 每次数据加载完，必须重置
+                                    dropload.resetload();
+                                },
+                                error: function (xhr, type) {
+                                    console.log(xhr, type)
+                                    // 即使加载出错，也得重置
+                                    dropload.resetload();
+                                }
                             });
-*/
-                            // 每次数据加载完，必须重置
-                            dropload.resetload();
-                            //},1000);
                         },
-                        error: function (xhr, type) {
-                            // 即使加载出错，也得重置
-                            dropload.resetload();
+                        loadDownFn: function (me) {
+                            var url = '/m?q=more&createdOn=' + $('.item').last().attr('createdOn');
+                            $.ajax({
+                                type: 'get',
+                                url: url,
+                                catch: false,
+                                dataType: 'json',
+                                success: function (data) {
+                                    var result = setItem(data);
+                                    $('.lists').append(result);
+                                    console.log(!result)
+                                    if (!result) {
+                                        me.noData();
+                                    }
+                                    // 每次数据加载完，必须重置
+                                    dropload.resetload();
+                                },
+                                error: function (xhr, type) {
+                                    // 即使加载出错，也得重置
+                                    dropload.resetload();
+                                }
+                            });
                         }
                     });
-                }
-            });
-        });
+
+
+                    function setItem(data) {
+                        var result = "";
+                        var innerWd=$('.lists').width();
+                        if (data.length) {
+                            result = '<div class="item grid-item" >' +
+                            '<a class="box"><img> </a>' +
+                            '<div class="br">' +
+                            '<p class="editAlbumsTitle edit" > </p><em></em>' +
+                            '</div>' +
+                            '</div>';
+                            result = $(result).eq(0);
+                            for (var i = 0; i < data.length; i++) {
+                                var img = data[i];
+                                var coverImg = img.coverImg;
+                                var wd=coverImg.width;
+                                var hd=coverImg.height;
+                                result.attr('createdOn',img.createdOn);
+                                if(coverImg.width<innerWd){
+                                    wd=innerWd;
+                                    hd=parseInt(coverImg.height*wd/coverImg.width)
+                                }
+                                result.find('.box').css({
+                                    width: wd,
+                                    height: hd
+                                });
+                                result.find('img').attr('data-src', "/" + coverImg.path + coverImg.name)
+                                result.find('img').on('load', lzld(result.find('img')[0]));
+                                result.find('p').html(img.title+'<em>'+img.imgNum+'张图片</em>')
+                            }
+                        }
+                        return result;
+
+
+                    }
+                });
     </script>
 {{/extend}}

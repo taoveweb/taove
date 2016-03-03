@@ -1,0 +1,183 @@
+<div class="outer">
+    <div class="header">
+        <h1>头部</h1>
+        <a href="javascript:;" class="btn lock">锁定</a>
+
+        <div class="footer" style="position:absolute;left:0;top:0;background-color:#fff;">
+            <a href=""></a>
+            <a href="#"></a>
+        </div>
+    </div>
+    <div id="inner" class="inner">
+        <script src="{{static}}mobile/js/lazyload.min.js"></script>
+        <script>
+            var lazy = lazyload({
+                container: document.getElementById('inner')
+            });
+        </script>
+        <div class="lists" style="width: {{imgWidth}}px;">
+            {{#each taove}}
+                <div class="item grid-item" createdOn="{{this.createdOn}}">
+                    <a style="width:{{@root/imgWidth}}px; height:{{getHeight this.coverImg.height this.coverImg.width @root/imgWidth}}px"
+                       class="box">
+                        {{#with this.coverImg}}
+                            {{{getImgM width height 1080 path name }}}
+                        {{/with}}
+                    </a>
+
+                    <div class="br">
+                        <p class="editAlbumsTitle edit" >{{this.title}}</p> <em>{{this.imgNum}}张图片</em>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+{{#extend "mStyle"}}
+    <link rel="stylesheet" href="/mobile/dropload/dropload.css"/>
+    <link rel="stylesheet" href="/mobile/css/homeD.css">
+    <style>
+        .photographer {
+            color: #fe555a;
+        }
+    </style>
+{{/extend}}
+
+{{#extend "mScripts"}}
+    <script src="/mobile/dropload/dropload.js"></script>
+    <!--    <script src="/common/js/isotope.pkgd.min.js"></script>-->
+
+    <script>
+
+        var imgWidth ={{imgWidth}}
+
+            //瀑布流
+            /*   var inner =  new Isotope( '.inner', {
+                   itemSelector: '.item'
+               });*/
+                $(function () {
+                    // 按钮操作
+                    $('.header .btn').on('click', function () {
+                        var $this = $(this);
+                        if (!!$this.hasClass('lock')) {
+                            $this.attr('class', 'btn unlock');
+                            $this.text('解锁');
+                            // 锁定
+                            dropload.lock();
+                            $('.dropload-down').hide();
+                        } else {
+                            $this.attr('class', 'btn lock');
+                            $this.text('锁定');
+                            // 解锁
+                            dropload.unlock();
+                            $('.dropload-down').show();
+                        }
+                    });
+
+                    // dropload
+                    var dropload = $('.inner').dropload({
+                        domUp: {
+                            domClass: 'dropload-up',
+                            domRefresh: '<div class="dropload-refresh">↓下拉刷新</div>',
+                            domUpdate: '<div class="dropload-update">↑释放更新</div>',
+                            domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+                        },
+                        domDown: {
+                            threshold: "600",
+                            domClass: 'dropload-down',
+                            domRefresh: '<div class="dropload-refresh">↑上拉加载更多</div>',
+                            domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+                            domNoData: '<div class="dropload-noData">暂无数据</div>'
+                        },
+                        loadUpFn: function (me) {
+                            var url = '/m?q=update&createdOn=' + $('.item').first().attr('createdOn');
+                            $.ajax({
+                                type: 'get',
+                                url: url,
+                                catch: false,
+                                dataType: 'json',
+                                success: function (data) {
+                                    var result = setItem(data);
+                                    $('.lists').prepend(result);
+                                    if (!result) {
+                                        me.noData();
+                                    }
+                                    // 每次数据加载完，必须重置
+                                    dropload.resetload();
+                                },
+                                error: function (xhr, type) {
+                                    console.log(xhr, type)
+                                    // 即使加载出错，也得重置
+                                    dropload.resetload();
+                                }
+                            });
+                        },
+                        loadDownFn: function (me) {
+                            var url = '/m?q=more&createdOn=' + $('.item').last().attr('createdOn');
+                            $.ajax({
+                                type: 'get',
+                                url: url,
+                                catch: false,
+                                dataType: 'json',
+                                success: function (data) {
+                                    var result = setItem(data);
+                                    $('.lists').append(result);
+                                    console.log(!result)
+                                    if (!result) {
+                                        me.noData();
+                                    }
+                                    // 每次数据加载完，必须重置
+                                    dropload.resetload();
+                                },
+                                error: function (xhr, type) {
+                                    // 即使加载出错，也得重置
+                                    dropload.resetload();
+                                }
+                            });
+                        }
+                    });
+
+
+                    function setItem(data) {
+                        var result = "";
+                        var innerWd=$('.lists').width();
+                        if (data.length) {
+                            result = '<div class="item grid-item" >' +
+                            '<a class="box"><img> </a>' +
+                            '<div class="br">' +
+                            '<p class="editAlbumsTitle edit" > </p><em></em>' +
+                            '</div>' +
+                            '</div>';
+                            result = $(result).eq(0);
+                            for (var i = 0; i < data.length; i++) {
+                                var img = data[i];
+                                var coverImg = img.coverImg;
+                                var wd=coverImg.width;
+                                var hd=coverImg.height;
+                                result.attr('createdOn',img.createdOn);
+                                if(coverImg.width<innerWd){
+                                    wd=innerWd;
+                                    hd=parseInt(coverImg.height*wd/coverImg.width)
+                                }
+                                result.find('.box').css({
+                                    width: wd,
+                                    height: hd
+                                });
+                                result.find('img').attr('data-src', "/" + coverImg.path + coverImg.name)
+                                result.find('img').on('load', lzld(result.find('img')[0]));
+                                result.find('p').html(img.title+'<em>'+img.imgNum+'张图片</em>')
+                            }
+                        }
+                        return result;
+
+
+                    }
+                });
+    </script>
+{{/extend}}

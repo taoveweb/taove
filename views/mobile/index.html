@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=0.5, maximum-scale=0.5">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper.min.css">
+
+    <!-- Demo styles -->
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #fff;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select:none;
+            -khtml-user-select:none;
+            -webkit-user-select:none;
+            -ms-user-select:none;
+            user-select:none;
+        }
+
+        .swiper-slide {
+            font-size: 18px;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 0px;
+        }
+        .swiper-slide  img{
+            display: block;
+            width: 100%;
+            height: 600px;
+            margin-bottom: 10px;
+
+        }
+    </style>
+</head>
+<body>
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img src="img/a.jpg" alt="" />
+            <img src="img/b.jpg" alt="" />
+            <img src="img/c.jpg" alt="" />
+            <img src="img/d.jpg" alt="" />
+            <img src="img/e.jpg" alt="" />
+            <img src="img/f.jpg" alt="" />
+        </div>
+    </div>
+    <!-- Add Scroll Bar -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="swiper.min.js"></script>
+<script src="js/zepto.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        scrollbar: '.swiper-scrollbar',
+        direction: 'vertical',
+        slidesPerView: 'auto',
+        autoHeight: true,
+        mousewheelControl: true,
+        freeMode: true,
+        onProgress: function (swpper, progess) {
+            if (swpper.height * (1 - progess) < 1 && swpper.touches.diff<0) {
+                var arr=['a','b','c','d','e','f']
+                for (var i = 0; i < 6; i++) {
+                    $('.swiper-slide').append('<img src="img/'+arr[i]+'.jpg" />')
+
+                }
+                swpper.update();
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

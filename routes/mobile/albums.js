@@ -18,7 +18,7 @@ function indexGet(req, res, next) {
             var docs = yield Albums.find({createdOn: {$gt:req.query.createdOn}}).sort({createdOn:-1}).limit(2).exec();
             res.json(docs)
         } else {
-            var docs = yield Albums.find().sort({createdOn:-1}).limit(2).exec();
+            var docs = yield Albums.find().sort({createdOn:-1}).limit(4).exec();
             res.render('mobile/albums', {
                 title: '摄影作品',
                 taove: docs,

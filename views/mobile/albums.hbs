@@ -68,7 +68,7 @@
         }
 
         .swiper-slide img {
-
+            height: 100%;
         }
     </style>
 {{/extend}}
@@ -112,10 +112,11 @@
                 var img = data[i];
                 var coverImg = img.coverImg;
                 var wd = coverImg.width;
+                var scwd = $(document).width();//coverImg.width;
                 var hd = coverImg.height;
                 var htmlstr = `<div class="item grid-item" createdon="${img.createdOn}">
-                        <a style="width:828px; height:${hd * 828 / wd}px" class="box">
-                        <img  width="828" height="${hd * 828 / wd}" data-src="${"/" + coverImg.path + coverImg.name}" class="swiper-lazy">
+                        <a style="${scwd}; height:${hd * scwd / wd}px" class="box">
+                        <img  width="${scwd}" height="${hd * scwd / wd}" data-src="${"/" + coverImg.path + coverImg.name}" class="swiper-lazy">
                         </a>
                         <div class="br">
                         <p class="editAlbumsTitle edit">${img.title}</p> <em>${img.imgNum}张图片</em>

@@ -85,9 +85,8 @@
             freeMode: true,
             lazyLoading: true,
             onProgress: function (swpper, progess) {
-                console.log(swpper.height * (1 - progess))
-                if (swpper.height * (1 - progess) < 0 && swpper.touches.diff < 0) {
-
+                var diff=swpper.touches.diff;
+                if (progess>=1 && diff<0) {
                     var url = '/m?q=more&createdOn=' + $('.item').last().attr('createdOn');
                     $.ajax({
                         type: 'get',

@@ -78,12 +78,12 @@
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.60985625">
-              <caret line="143" column="117" selection-start-line="143" selection-start-column="117" selection-end-line="143" selection-end-column="117" />
+              <caret line="143" column="86" selection-start-line="143" selection-start-column="86" selection-end-line="143" selection-end-column="86" />
               <folding>
-                <marker date="1457084477995" expanded="true" signature="4457:4913" placeholder="..." />
-                <marker date="1457084477995" expanded="true" signature="4493:4528" placeholder="..." />
-                <marker date="1457084477995" expanded="true" signature="4541:4711" placeholder="..." />
-                <marker date="1457084477995" expanded="true" signature="4752:4882" placeholder="..." />
+                <marker date="1457084781974" expanded="true" signature="4457:4910" placeholder="..." />
+                <marker date="1457084781974" expanded="true" signature="4493:4528" placeholder="..." />
+                <marker date="1457084781974" expanded="true" signature="4541:4708" placeholder="..." />
+                <marker date="1457084781974" expanded="true" signature="4749:4879" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -502,10 +502,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="22" column="47" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
           <folding>
-            <marker date="1457084477995" expanded="true" signature="4457:4913" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4493:4528" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4541:4711" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4752:4882" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4457:4910" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4493:4528" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4541:4708" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4749:4879" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -658,10 +658,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1457084477995" expanded="true" signature="4457:4913" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4493:4528" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4541:4711" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4752:4882" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4457:4910" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4493:4528" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4541:4708" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4749:4879" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -695,10 +695,10 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1457084477995" expanded="true" signature="4457:4913" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4493:4528" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4541:4711" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4752:4882" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4457:4910" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4493:4528" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4541:4708" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4749:4879" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -904,12 +904,12 @@
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60985625">
-          <caret line="143" column="117" selection-start-line="143" selection-start-column="117" selection-end-line="143" selection-end-column="117" />
+          <caret line="143" column="86" selection-start-line="143" selection-start-column="86" selection-end-line="143" selection-end-column="86" />
           <folding>
-            <marker date="1457084477995" expanded="true" signature="4457:4913" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4493:4528" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4541:4711" placeholder="..." />
-            <marker date="1457084477995" expanded="true" signature="4752:4882" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4457:4910" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4493:4528" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4541:4708" placeholder="..." />
+            <marker date="1457084781974" expanded="true" signature="4749:4879" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -53,22 +53,26 @@ module.exports=function(hbs){
         return img;
     });
 
-    hbs.registerHelper('getImgM', function (width,height,setWidth,imgPath,imgName,options) {
+    hbs.registerHelper('getImgM', function (width,height,sizeLevel,imgPath,imgName,options) {
         if(!imgName) return false;
         var val = imgName.split('.');
         var w=width;
         var h=height;
         var src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
         var original=imgPath+imgName;
+        var setWidth=0;
+        switch(sizeLevel){
+            case 2:
+                setWidth=640;
+                break;
+            case 3:
+                setWidth=1080;
+                break;
+        }
         if(setWidth<width){
             original=imgPath+val[0]+"_"+setWidth+'.'+val[1];
             w=setWidth;
             h=parseInt(height*(setWidth/width));
-        }
-
-        if(setWidth==266){
-            original=imgPath+imgName;
-            w=setWidth;
         }
         var img= '<img style="width:'+w+'px; height:'+h+'px;" src="'+src+'" data-src="/'+original+'"   class="swiper-lazy" />'
         return img;

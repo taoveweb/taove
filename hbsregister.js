@@ -70,7 +70,7 @@ module.exports=function(hbs){
             original=imgPath+imgName;
             w=setWidth;
         }
-        var img= '<img width="'+w+'" height="'+h+'" src="'+src+'" data-src="/'+original+'"   class="swiper-lazy" />'
+        var img= '<img style="width:'+w+'px; height:'+h+'px;" src="'+src+'" data-src="/'+original+'"   class="swiper-lazy" />'
         return img;
     });
 

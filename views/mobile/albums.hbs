@@ -4,10 +4,9 @@
         <div id="swiper" class="swiper-slide" count="{{albumsNum}}">
             {{#each taove}}
                 <div class="item grid-item" createdOn="{{this.createdOn}}">
-                    <a style="width:{{@root/imgWidth}}px; height:{{getHeight this.coverImg.height this.coverImg.width @root/imgWidth}}px"
-                       class="box">
+                    <a class="box">
                         {{#with this.coverImg}}
-                            {{{getImgM width height 1080 path name }}}
+                            {{{getImgM width height 640 path name }}}
                         {{/with}}
                     </a>
 
@@ -49,7 +48,6 @@
         .swiper-container {
             width: 100%;
             height: 100%;
-
             moz-user-select: -moz-none;
             -moz-user-select: none;
             -o-user-select: none;
@@ -60,21 +58,32 @@
         }
 
         .swiper-slide {
-            font-size: 18px;
             height: auto;
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
             padding: 0px;
         }
-
-        .swiper-slide img {
-            height: 100%;
+        .item .br em{
+            font-style: normal;
         }
     </style>
 {{/extend}}
 
 {{#extend "mScripts"}}
     <script>
+        //重团置图片尺寸
+        var srwidth=$('.swiper-wrapper').width();
+        $('#swiper').find('img').each(function(){
+            var This=$(this)
+            if(This.width()<srwidth){
+                This.css({
+                    width:srwidth,
+                    height:this.height*srwidth/this.width
+                })
+            }
+        })
+
+
         var ajax=true;
         var total=$('#swiper').attr('count');
         var swiper = new Swiper('.swiper-container', {
@@ -117,11 +126,11 @@
                 var img = data[i];
                 var coverImg = img.coverImg;
                 var wd = coverImg.width;
-                var scwd = $(document).width();//coverImg.width;
+                var scwd = $('.swiper-wrapper').width();//coverImg.width;
                 var hd = coverImg.height;
                 var htmlstr = `<div class="item grid-item" createdon="${img.createdOn}">
                         <a style="${scwd}; height:${hd * scwd / wd}px" class="box">
-                        <img  width="${scwd}" height="${hd * scwd / wd}" data-src="${"/" + coverImg.path + coverImg.name}" class="swiper-lazy">
+                        <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${ + coverImg.path + coverImg.name.replace('.','_640.')}" class="swiper-lazy">
                         </a>
                         <div class="br">
                         <p class="editAlbumsTitle edit">${img.title}</p> <em>${img.imgNum}张图片</em>

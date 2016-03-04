@@ -128,11 +128,20 @@
                 var wd = coverImg.width;
                 var scwd = $('.swiper-wrapper').width();//coverImg.width;
                 var hd = coverImg.height;
-                console.log(coverImg)
-                coverImg.name=coverImg.sizeLevel==1? coverImg.name: coverImg.sizeLevel==2?coverImg.name.replace('.','_640.'):coverImg.name.replace('.','_1080.');
+                var coverImgname= coverImg.name;
+                switch(coverImg.sizeLevel){
+                    case 2:
+                        coverImgname= coverImg.name.replace('.','_640.')
+                        break;
+                    case 3:
+                        coverImgname= coverImg.name.replace('.','_1080.')
+                        break;
+                }
+
+                console.log( coverImg.name)
                 var htmlstr = `<div class="item grid-item" createdon="${img.createdOn}">
                         <a style="${scwd}; height:${hd * scwd / wd}px" class="box">
-                        <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${ + coverImg.path + coverImg.name}" class="swiper-lazy">
+                        <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${ + coverImg.path + coverImgname}" class="swiper-lazy">
                         </a>
                         <div class="br">
                         <p class="editAlbumsTitle edit">${img.title}</p> <em>${img.imgNum}张图片</em>

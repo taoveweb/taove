@@ -100,6 +100,7 @@ var AlbumsImgSchema = new Schema({
     title: {type: String, trim: true},//图片标题
     width: Number,
     height: Number,
+    sizeLevel:{type:Number,default:1},//图片质量1为一般2为640 3为1080
     likes: [{type: ObjectId}],//user id
     watches: [{type: ObjectId}],//user id
     createdOn: {type: Date, default: Date.now}, //创建时间

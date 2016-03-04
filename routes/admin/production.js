@@ -226,6 +226,7 @@ function postProductionimg(req, res, next) {
         });
         var fields = parse.fields;
         var files = parse.files;
+        var sizeLevel=1;
         var param = fields;
         var imgname = new ObjectId();
         var ext = '';
@@ -248,6 +249,7 @@ function postProductionimg(req, res, next) {
             })
         });
         if (size.width >= 1080) {
+            sizeLevel=3;
             yield new Promise(function (resolve, reject) {
                 gm(dir + imgname).resize(1080).write(dir + imgname1080, function (err) {
                     resolve(err);
@@ -256,6 +258,7 @@ function postProductionimg(req, res, next) {
         }
 
         if (size.width >= 640) {
+            sizeLevel=2;
             yield new Promise(function (resolve, reject) {
                 gm(dir + imgname).resize(640).write(dir + imgname640, function (err) {
                     resolve(err);
@@ -263,7 +266,7 @@ function postProductionimg(req, res, next) {
             });
         }
 
-        console.log('in')
+
         var doc = {
             "albumsId": albumsId,//相册id
             photographyId: req.session.userId['_id'],//摄影师Id
@@ -271,6 +274,7 @@ function postProductionimg(req, res, next) {
             path: imgWebDir,//目录名
             width: size.width,
             height: size.height,
+            sizeLevel:sizeLevel,
             title: title,//图片标题
             imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
         };

@@ -9,7 +9,7 @@ var AlbumsImg = db.AlbumsImg;
 var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
-    console.log(req.header)
+    console.log(req.get('User-Agent'))
 
     co(function *() {
         if (req.query.q && req.query.q == 'more') {
@@ -19,11 +19,12 @@ function indexGet(req, res, next) {
             var docs = yield Albums.find({createdOn: {$gt:req.query.createdOn}}).sort({createdOn:-1}).limit(2).exec();
             res.json(docs)
         } else {
-            var docs = yield Albums.find().sort({createdOn:-1}).limit(4).exec();
+            var count=yield  Albums.count();
+            var docs = yield Albums.find().sort({createdOn:-1}).limit(3).exec();
             res.render('mobile/albums', {
                 title: '摄影作品',
                 taove: docs,
-                albumsNum: docs.length,
+                albumsNum: count,
                 detail: false,
                 layout: 'layout_m'
             });

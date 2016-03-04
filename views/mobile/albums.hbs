@@ -1,7 +1,7 @@
 <!-- Swiper -->
 <div class="swiper-container">
     <div class="swiper-wrapper">
-        <div id="swiper" class="swiper-slide">
+        <div id="swiper" class="swiper-slide" count="{{albumsNum}}">
             {{#each taove}}
                 <div class="item grid-item" createdOn="{{this.createdOn}}">
                     <a style="width:{{@root/imgWidth}}px; height:{{getHeight this.coverImg.height this.coverImg.width @root/imgWidth}}px"
@@ -75,6 +75,8 @@
 
 {{#extend "mScripts"}}
     <script>
+        var ajax=true;
+        var total=$('#swiper').attr('count');
         var swiper = new Swiper('.swiper-container', {
             scrollbar: '.swiper-scrollbar',
             direction: 'vertical',
@@ -86,7 +88,9 @@
             lazyLoading: true,
             onProgress: function (swpper, progess) {
                 var diff=swpper.touches.diff;
-                if (progess>=1 && diff<0) {
+                var loaded=$('.swiper-lazy').length<total;
+                if (progess<1 && diff<0 && ajax && loaded) {
+                    ajax=false;
                     var url = '/m?q=more&createdOn=' + $('.item').last().attr('createdOn');
                     $.ajax({
                         type: 'get',
@@ -94,8 +98,9 @@
                         catch: false,
                         dataType: 'json',
                         success: function (data) {
-                            setitem(data, swpper)
-                        },
+                            setitem(data, swpper);
+                            ajax=true;
+                          },
                         error: function (xhr, type) {
 
                         }

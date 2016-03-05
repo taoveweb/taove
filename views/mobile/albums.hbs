@@ -67,7 +67,8 @@
             box-sizing: border-box;
             padding: 0px;
         }
-        .item .br em{
+
+        .item .br em {
             font-style: normal;
         }
     </style>
@@ -76,20 +77,18 @@
 {{#extend "mScripts"}}
     <script>
         //重团置图片尺寸
-        var srwidth=$('.swiper-wrapper').width();
-        $('.box').find('img').each(function(){
-            var This=$(this)
-            if(This.width()<srwidth){
-                This.css({
-                    width:srwidth,
-                    height:this.height*srwidth/this.width
-                })
-            }
+        var srwidth = $('.swiper-wrapper').width();
+        $('.box').find('img').each(function () {
+            var This = $(this)
+            This.css({
+                width: srwidth,
+                height: this.height * srwidth / this.width
+            })
         })
 
 
-        var ajax=true;
-        var total=$('#swiper').attr('count');
+        var ajax = true;
+        var total = $('#swiper').attr('count');
         var swiper = new Swiper('.swiper-container', {
             scrollbar: '.swiper-scrollbar',
             direction: 'vertical',
@@ -99,14 +98,14 @@
             mousewheelControl: true,
             freeMode: true,
             lazyLoading: true,
-            onTouchStart:function(swpper){
+            onTouchStart: function (swpper) {
                 swpper.setWrapperTranslate(swpper.getWrapperTranslate());
             },
             onProgress: function (swpper, progess) {
-                var diff=swpper.touches.diff;
-                var loaded=$('.swiper-lazy').length<total;
-                if (progess<1 && diff<0 && ajax && loaded) {
-                    ajax=false;
+                var diff = swpper.touches.diff;
+                var loaded = $('.swiper-lazy').length < total;
+                if (progess < 1 && diff < 0 && ajax && loaded) {
+                    ajax = false;
                     var url = '/m?q=more&createdOn=' + $('.item').last().attr('createdOn');
                     $.ajax({
                         type: 'get',
@@ -115,8 +114,8 @@
                         dataType: 'json',
                         success: function (data) {
                             setitem(data, swpper);
-                            ajax=true;
-                          },
+                            ajax = true;
+                        },
                         error: function (xhr, type) {
 
                         }
@@ -135,13 +134,13 @@
                 var wd = coverImg.width;
                 var scwd = $('.swiper-wrapper').width();//coverImg.width;
                 var hd = coverImg.height;
-                var coverImgname= coverImg.name;
-                switch(coverImg.sizeLevel){
+                var coverImgname = coverImg.name;
+                switch (coverImg.sizeLevel) {
                     case 2:
-                        coverImgname= coverImg.name.replace('.','_640.')
+                        coverImgname = coverImg.name.replace('.', '_640.')
                         break;
                     case 3:
-                        coverImgname= coverImg.name.replace('.','_1080.')
+                        coverImgname = coverImg.name.replace('.', '_1080.')
                         break;
                 }
 
@@ -165,19 +164,29 @@
         }
 
 
-       function timeago (date) {
+        function timeago(date) {
             date = new Date(date);
             var seconds = Math.floor((new Date() - date) / 1000);
             var interval = Math.floor(seconds / 31536000);
-            if (interval > 1) {return "" + interval + "年"; }
+            if (interval > 1) {
+                return "" + interval + "年";
+            }
             interval = Math.floor(seconds / 2592000);
-            if (interval > 1) {return "" + interval + "月"; }
+            if (interval > 1) {
+                return "" + interval + "月";
+            }
             interval = Math.floor(seconds / 86400);
-            if (interval > 1) {return "" + interval + "天"; }
+            if (interval > 1) {
+                return "" + interval + "天";
+            }
             interval = Math.floor(seconds / 3600);
-            if (interval > 1) {return "" + interval + "时"; }
+            if (interval > 1) {
+                return "" + interval + "时";
+            }
             interval = Math.floor(seconds / 60);
-            if (interval > 1) {return "" + interval + "分"; }
+            if (interval > 1) {
+                return "" + interval + "分";
+            }
             if (Math.floor(seconds) === 0) {
                 return '刚刚';
             } else {

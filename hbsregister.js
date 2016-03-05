@@ -60,23 +60,20 @@ module.exports=function(hbs){
         var h=height;
         var src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
         var original=imgPath+imgName;
-        var setWidth=0;
+        var setWidth='';
         switch(sizeLevel){
             case 2:
-                setWidth=640;
+                setWidth='_640';
                 break;
             case 3:
-                setWidth=1080;
+                setWidth='_1080';
                 break;
         }
-        if(setWidth<width){
-            original=imgPath+val[0]+"_"+setWidth+'.'+val[1];
-            w=setWidth;
-            h=parseInt(height*(setWidth/width));
-        }
+        original=imgPath+val[0]+setWidth+'.'+val[1];
         var img= '<img style="width:'+w+'px; height:'+h+'px;" src="'+src+'" data-src="/'+original+'"   class="swiper-lazy" />'
         return img;
     });
+
 
 
     hbs.registerHelper("ifCond",function(v1,operator,v2,options) {

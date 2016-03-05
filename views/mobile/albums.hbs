@@ -77,7 +77,7 @@
     <script>
         //重团置图片尺寸
         var srwidth=$('.swiper-wrapper').width();
-        $('#swiper').find('.box img').each(function(){
+        $('.box').find('img').each(function(){
             var This=$(this)
             if(This.width()<srwidth){
                 This.css({

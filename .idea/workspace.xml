@@ -125,14 +125,14 @@
               <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.5373832">
-                      <caret line="102" column="32" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
+                    <state vertical-scroll-proportion="0.60046726">
+                      <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
                       <folding>
-                        <marker date="1457237474097" expanded="true" signature="4774:5462" placeholder="..." />
-                        <marker date="1457237474097" expanded="true" signature="4824:5005" placeholder="..." />
-                        <marker date="1457237474097" expanded="false" signature="5041:5076" placeholder="..." />
-                        <marker date="1457237474097" expanded="true" signature="5089:5256" placeholder="..." />
-                        <marker date="1457237474097" expanded="true" signature="5297:5431" placeholder="..." />
+                        <marker date="1457238587692" expanded="true" signature="4776:5464" placeholder="..." />
+                        <marker date="1457238587692" expanded="true" signature="4826:5007" placeholder="..." />
+                        <marker date="1457238587692" expanded="false" signature="5043:5078" placeholder="..." />
+                        <marker date="1457238587692" expanded="true" signature="5091:5258" placeholder="..." />
+                        <marker date="1457238587692" expanded="true" signature="5299:5433" placeholder="..." />
                       </folding>
                     </state>
                   </provider>
@@ -155,8 +155,8 @@
               <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.6481481">
-                      <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+                    <state vertical-scroll-proportion="-1.199074">
+                      <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
                       <folding />
                     </state>
                   </provider>
@@ -233,9 +233,9 @@
         <option value="$PROJECT_DIR$/hbsregister.js" />
         <option value="$PROJECT_DIR$/node_modules/handlebars-helpers/lib/helpers/helpers-dates.js" />
         <option value="$PROJECT_DIR$/public/mobile/fonts/iconfont.ttf" />
-        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
-        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
         <option value="$PROJECT_DIR$/bin/www.js" />
+        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
+        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
       </list>
     </option>
   </component>
@@ -949,33 +949,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5373832">
-          <caret line="102" column="32" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="32" />
-          <folding>
-            <marker date="1457237474097" expanded="true" signature="4774:5462" placeholder="..." />
-            <marker date="1457237474097" expanded="true" signature="4824:5005" placeholder="..." />
-            <marker date="1457237474097" expanded="false" signature="5041:5076" placeholder="..." />
-            <marker date="1457237474097" expanded="true" signature="5089:5256" placeholder="..." />
-            <marker date="1457237474097" expanded="true" signature="5297:5431" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6481481">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.38606676">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.199074">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60046726">
+          <caret line="102" column="18" selection-start-line="102" selection-start-column="18" selection-end-line="102" selection-end-column="18" />
+          <folding>
+            <marker date="1457238587692" expanded="true" signature="4776:5464" placeholder="..." />
+            <marker date="1457238587692" expanded="true" signature="4826:5007" placeholder="..." />
+            <marker date="1457238587692" expanded="false" signature="5043:5078" placeholder="..." />
+            <marker date="1457238587692" expanded="true" signature="5091:5258" placeholder="..." />
+            <marker date="1457238587692" expanded="true" signature="5299:5433" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -26,6 +26,13 @@ var register = require('../routes/admin/register');
 
 module.exports = function (app) {
 
+    app.use(function(req,res,next){
+        if(/Mobile/.test(req.get('user-agent')) && !/\/m/.test(req.url)){
+            res.redirect('/m');
+        }
+        next();
+    })
+
     //api
     app.use('/api',function(req,res,next){
         console.log(req.session.apiid);
@@ -36,6 +43,8 @@ module.exports = function (app) {
         }
 
     }, api);
+
+
     app.use('/apiLogin',apiLogin);
 
 

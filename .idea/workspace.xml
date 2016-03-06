@@ -126,13 +126,13 @@
                 <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
                   <provider selected="true" editor-type-id="text-editor">
                     <state vertical-scroll-proportion="0.35714287">
-                      <caret line="100" column="12" selection-start-line="100" selection-start-column="10" selection-end-line="103" selection-end-column="16" />
+                      <caret line="100" column="10" selection-start-line="100" selection-start-column="10" selection-end-line="103" selection-end-column="14" />
                       <folding>
-                        <marker date="1457306136892" expanded="true" signature="4778:5466" placeholder="..." />
-                        <marker date="1457306136892" expanded="true" signature="4828:5009" placeholder="..." />
-                        <marker date="1457306136892" expanded="false" signature="5045:5080" placeholder="..." />
-                        <marker date="1457306136892" expanded="true" signature="5093:5260" placeholder="..." />
-                        <marker date="1457306136892" expanded="true" signature="5301:5435" placeholder="..." />
+                        <marker date="1457306193611" expanded="true" signature="4774:5462" placeholder="..." />
+                        <marker date="1457306193611" expanded="true" signature="4824:5005" placeholder="..." />
+                        <marker date="1457306193611" expanded="false" signature="5041:5076" placeholder="..." />
+                        <marker date="1457306193611" expanded="true" signature="5089:5256" placeholder="..." />
+                        <marker date="1457306193611" expanded="true" signature="5297:5431" placeholder="..." />
                       </folding>
                     </state>
                   </provider>
@@ -925,13 +925,13 @@
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35714287">
-          <caret line="100" column="12" selection-start-line="100" selection-start-column="10" selection-end-line="103" selection-end-column="16" />
+          <caret line="100" column="10" selection-start-line="100" selection-start-column="10" selection-end-line="103" selection-end-column="14" />
           <folding>
-            <marker date="1457306136892" expanded="true" signature="4778:5466" placeholder="..." />
-            <marker date="1457306136892" expanded="true" signature="4828:5009" placeholder="..." />
-            <marker date="1457306136892" expanded="false" signature="5045:5080" placeholder="..." />
-            <marker date="1457306136892" expanded="true" signature="5093:5260" placeholder="..." />
-            <marker date="1457306136892" expanded="true" signature="5301:5435" placeholder="..." />
+            <marker date="1457306193611" expanded="true" signature="4774:5462" placeholder="..." />
+            <marker date="1457306193611" expanded="true" signature="4824:5005" placeholder="..." />
+            <marker date="1457306193611" expanded="false" signature="5041:5076" placeholder="..." />
+            <marker date="1457306193611" expanded="true" signature="5089:5256" placeholder="..." />
+            <marker date="1457306193611" expanded="true" signature="5297:5431" placeholder="..." />
           </folding>
         </state>
       </provider>

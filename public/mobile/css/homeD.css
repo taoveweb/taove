@@ -209,6 +209,7 @@ body{
     overflow: hidden;
     position: absolute;
     left: 0;
+    border: 1px solid rgba(90,90,90,0.3);
 }
 .userinfo span{
     position: absolute;

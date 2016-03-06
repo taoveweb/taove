@@ -214,7 +214,7 @@ body{
 .userinfo span{
     position: absolute;
     right: 0rem;
-    line-height: 1.1rem;
+    line-height: 1rem;
     color: #686868;
 }
 @-webkit-keyframes opacity {

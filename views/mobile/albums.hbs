@@ -15,7 +15,7 @@
                     </a>
 
                     <div class="br">
-                        <p class="editAlbumsTitle edit">{{this.title}}</p> <em>{{this.imgNum}}张图片</em>
+                        <p class="editAlbumsTitle edit">拍摄地 {{this.city}};</p> <em>{{this.imgNum}}张图片</em>
                     </div>
                 </div>
             {{/each}}
@@ -154,7 +154,7 @@
                         <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">
                         </a>
                         <div class="br">
-                        <p class="editAlbumsTitle edit">${img.title}</p> <em>${img.imgNum}张图片</em>
+                        <p class="editAlbumsTitle edit">拍摄地 ${img.city};</p> <em>${img.imgNum}张图片</em>
                         </div>
                         </div>`;
                 $('.swiper-slide').append(htmlstr);

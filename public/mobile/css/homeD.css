@@ -172,7 +172,8 @@ body{
     overflow: hidden;
     position: relative;
     color: #949494;
-    padding: 0.2rem;
+    padding: 0.2rem 0;
+    margin: 0 0.2rem;
 }
 .item .br p {
     color: #000;
@@ -183,36 +184,35 @@ body{
     right: 0px;
     color: #949494;
     top: 0;
-    padding: 1em;
+    padding: 0.2rem;
 }
 
 .userinfo{
-    height: 1.1rem;
-    margin:0 0.2rem;
+    height: 1rem;
 
 }
 .userinfo a{
     position: relative;
     text-decoration: none;
-    height: 1.1rem;
-    line-height:1.1rem;
+    height: 1rem;
+    line-height:1rem;
     color:#222726;
-    padding-left: 1.2rem;
+    padding-left: 1.1rem;
 }
 .userinfo img{
-    width: 1.1rem;
-    height: 1.1rem;
+    width: 1rem;
+    height: 1rem;
     background: #e4e4e4;
-    -webkit-border-radius: 1.1rem;
-    -moz-border-radius: 1.1rem;
-    border-radius: 1.1rem;
+    -webkit-border-radius:1rem;
+    -moz-border-radius: 1rem;
+    border-radius:1rem;
     overflow: hidden;
     position: absolute;
     left: 0;
 }
 .userinfo span{
     position: absolute;
-    right: 0.2rem;
+    right: 0rem;
     line-height: 1.1rem;
     color: #686868;
 }

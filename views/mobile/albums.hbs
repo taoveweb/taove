@@ -14,8 +14,8 @@
                         {{/with}}
                     </a>
 
-                    <div class="br">
-                        <p class="editAlbumsTitle edit">拍摄地 {{this.city}};</p> <em>{{this.imgNum}}张图片</em>
+                    <div class="br imginfo">
+                        <p class="editAlbumsTitle edit">{{this.city}}大洋教堂;{{this.imgNum}}张图片;2000元;</p> <em>30个喜欢</em>
                     </div>
                 </div>
             {{/each}}
@@ -154,8 +154,8 @@
                         <a style="${scwd}; height:${hd * scwd / wd}px" class="box">
                         <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">
                         </a>
-                        <div class="br">
-                        <p class="editAlbumsTitle edit">拍摄地 ${img.city};</p> <em>${img.imgNum}张图片</em>
+                        <div class="br imginfo">
+                        <p class="editAlbumsTitle edit"> ${img.city}大洋教堂;${img.imgNum}张图片;2000元;</p> <em>30个喜欢</em>
                         </div>
                         </div>`;
                 $('.swiper-slide').append(htmlstr);

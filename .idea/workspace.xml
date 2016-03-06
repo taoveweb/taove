@@ -29,8 +29,8 @@
           <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/www.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.68940496">
-                  <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
+                <state vertical-scroll-proportion="0.38606676">
+                  <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -155,8 +155,8 @@
               <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.9768519">
-                      <caret line="216" column="18" selection-start-line="216" selection-start-column="18" selection-end-line="216" selection-end-column="18" />
+                    <state vertical-scroll-proportion="0.8240741">
+                      <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
                       <folding />
                     </state>
                   </provider>
@@ -233,9 +233,9 @@
         <option value="$PROJECT_DIR$/hbsregister.js" />
         <option value="$PROJECT_DIR$/node_modules/handlebars-helpers/lib/helpers/helpers-dates.js" />
         <option value="$PROJECT_DIR$/public/mobile/fonts/iconfont.ttf" />
-        <option value="$PROJECT_DIR$/bin/www.js" />
-        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
         <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
+        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
+        <option value="$PROJECT_DIR$/bin/www.js" />
       </list>
     </option>
   </component>
@@ -949,22 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9768519">
-          <caret line="216" column="18" selection-start-line="216" selection-start-column="18" selection-end-line="216" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68940496">
-          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5373832">
@@ -976,6 +960,22 @@
             <marker date="1457237474097" expanded="true" signature="5089:5256" placeholder="..." />
             <marker date="1457237474097" expanded="true" signature="5297:5431" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8240741">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38606676">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>

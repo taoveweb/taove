@@ -125,6 +125,7 @@ body{
     position: relative;
     overflow: hidden;
     display: block;
+    background: #eeeeee;
 }
 .item .box img{
     width: 100%;

@@ -155,8 +155,8 @@
               <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.7361111">
-                      <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+                    <state vertical-scroll-proportion="0.4212963">
+                      <caret line="124" column="23" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="23" />
                       <folding />
                     </state>
                   </provider>
@@ -234,8 +234,8 @@
         <option value="$PROJECT_DIR$/node_modules/handlebars-helpers/lib/helpers/helpers-dates.js" />
         <option value="$PROJECT_DIR$/public/mobile/fonts/iconfont.ttf" />
         <option value="$PROJECT_DIR$/bin/www.js" />
-        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
         <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
+        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
       </list>
     </option>
   </component>
@@ -957,14 +957,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7361111">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.60046726">
@@ -976,6 +968,14 @@
             <marker date="1457238841358" expanded="true" signature="5089:5256" placeholder="..." />
             <marker date="1457238841358" expanded="true" signature="5297:5431" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4212963">
+          <caret line="124" column="23" selection-start-line="124" selection-start-column="23" selection-end-line="124" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

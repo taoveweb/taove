@@ -1,35 +1,46 @@
-<!-- Swiper -->
-<div class="swiper-container">
+<div class="swiper-container swiper-container-h">
     <div class="swiper-wrapper">
-        <div id="swiper" class="swiper-slide" count="{{albumsNum}}">
-            {{#each taove}}
-                <div class="item grid-item" createdOn="{{this.createdOn}}">
-                    <div class="br userinfo">
-                        <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                        <span>{{timeago this.createdOn}}</span>
-                    </div>
-                    <a class="box">
-                        {{#with this.coverImg}}
-                            {{{getImgM width height sizeLevel path name }}}
-                        {{/with}}
-                    </a>
-
-                    <div class="br imginfo">
-                        <p class="editAlbumsTitle edit">{{this.city}}大洋教堂;{{this.imgNum}}张图片;2000元;</p> <em>30个喜欢</em>
+        <div class="swiper-slide">Horizontal Slide 1</div>
+        <div class="swiper-slide">
+            <div class="swiper-container swiper-container-v">
+                <div class="swiper-wrapper">
+                    <div id="swiper" class="swiper-slide swiper-slide-v" count="{{albumsNum}}">
+                        {{#each taove}}
+                            <div class="item grid-item" createdOn="{{this.createdOn}}">
+                                <div class="br userinfo">
+                                    <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
+                                    <span>{{timeago this.createdOn}}</span>
+                                </div>
+                                <a class="box">
+                                    {{#with this.coverImg}}
+                                        {{{getImgM width height sizeLevel path name }}}
+                                    {{/with}}
+                                </a>
+                                <div class="br imginfo">
+                                    <p class="editAlbumsTitle edit">{{this.city}}大洋教堂;{{this.imgNum}}张图片;2000元;</p> <em>30个喜欢</em>
+                                </div>
+                            </div>
+                        {{/each}}
                     </div>
                 </div>
-            {{/each}}
+                <!-- Add Scroll Bar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
         </div>
+        <div class="swiper-slide">Horizontal Slide 3</div>
     </div>
-    <!-- Add Scroll Bar -->
-    <div class="swiper-scrollbar"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination-h"></div>
 </div>
+
+<!-- Initialize Swiper -->
+
+
+
 
 <!-- Swiper JS -->
 <script src="{{static}}common/js/zepto.min.js"></script>
 <script src="{{static}}mobile/js/swiper.min.js"></script>
-
-
 
 {{#extend "mStyle"}}
     <link rel="stylesheet" href="/mobile/css/homeD.css">
@@ -62,10 +73,21 @@
         }
 
         .swiper-slide {
-            height: auto;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-            padding: 0px;
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            flex-direction: column;
+            flex-shrink: 0;
         }
 
         .item .br em {
@@ -76,6 +98,14 @@
 
 {{#extend "mScripts"}}
     <script>
+        var swiperH = new Swiper('.swiper-container-h', {
+            pagination: '.swiper-pagination-h',
+            paginationClickable: true,
+            spaceBetween: 50
+        });
+
+
+
         //重团置图片尺寸
         var srwidth = $('.swiper-wrapper').width();
         $('.box').find('img').each(function () {
@@ -89,7 +119,7 @@
 
         var ajax = true;
         var total = $('#swiper').attr('count');
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('.swiper-container-v', {
             scrollbar: '.swiper-scrollbar',
             direction: 'vertical',
             slidesPerView: 'auto',
@@ -133,7 +163,7 @@
                 var img = data[i];
                 var coverImg = img.coverImg;
                 var wd = coverImg.width;
-                var scwd = $('.swiper-wrapper').width();//coverImg.width;
+                var scwd = $('.swiper-slide-v').width();//coverImg.width;
                 var hd = coverImg.height;
                 var coverImgname = coverImg.name;
                 switch (coverImg.sizeLevel) {
@@ -158,7 +188,7 @@
                         <p class="editAlbumsTitle edit"> ${img.city}大洋教堂;${img.imgNum}张图片;2000元;</p> <em>30个喜欢</em>
                         </div>
                         </div>`;
-                $('.swiper-slide').append(htmlstr);
+                $('.swiper-slide-v').append(htmlstr);
 
             }
             swpper.update();

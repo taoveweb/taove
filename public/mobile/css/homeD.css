@@ -25,6 +25,7 @@ body{
     overflow: hidden;
     text-decoration: none;
     margin-bottom: 0.35rem;
+    width: 100%;
 }
 
 .item .box {

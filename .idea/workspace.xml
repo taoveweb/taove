@@ -29,7 +29,7 @@
           <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/www.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6391437">
+                <state vertical-scroll-proportion="0.3144208">
                   <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
@@ -125,14 +125,14 @@
               <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="-2.7769232">
-                      <caret line="152" column="30" selection-start-line="152" selection-start-column="30" selection-end-line="152" selection-end-column="30" />
+                    <state vertical-scroll-proportion="0.35561496">
+                      <caret line="247" column="24" selection-start-line="247" selection-start-column="24" selection-end-line="247" selection-end-column="24" />
                       <folding>
-                        <marker date="1457349023439" expanded="true" signature="8610:9319" placeholder="..." />
-                        <marker date="1457349023439" expanded="true" signature="8660:8841" placeholder="..." />
-                        <marker date="1457349023439" expanded="true" signature="8877:8912" placeholder="..." />
-                        <marker date="1457349023439" expanded="true" signature="8925:9092" placeholder="..." />
-                        <marker date="1457349023439" expanded="true" signature="9141:9288" placeholder="..." />
+                        <marker date="1457350816686" expanded="true" signature="8610:9385" placeholder="..." />
+                        <marker date="1457350816686" expanded="true" signature="8660:8841" placeholder="..." />
+                        <marker date="1457350816686" expanded="true" signature="8877:8912" placeholder="..." />
+                        <marker date="1457350816686" expanded="true" signature="8925:9158" placeholder="..." />
+                        <marker date="1457350816686" expanded="true" signature="9207:9354" placeholder="..." />
                       </folding>
                     </state>
                   </provider>
@@ -165,7 +165,7 @@
               <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="1.0592105">
+                    <state vertical-scroll-proportion="0.37704918">
                       <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
                       <folding />
                     </state>
@@ -243,8 +243,8 @@
         <option value="$PROJECT_DIR$/node_modules/handlebars-helpers/lib/helpers/helpers-dates.js" />
         <option value="$PROJECT_DIR$/public/mobile/fonts/iconfont.ttf" />
         <option value="$PROJECT_DIR$/routes/route.js" />
-        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
         <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
+        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
         <option value="$PROJECT_DIR$/bin/www.js" />
       </list>
     </option>
@@ -496,7 +496,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2496329" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.56108105" sideWeight="0.49789253" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27135134" sideWeight="0.49789253" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39956093" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -908,7 +908,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0592105">
+        <state vertical-scroll-proportion="0.37704918">
           <caret line="86" column="18" selection-start-line="86" selection-start-column="18" selection-end-line="86" selection-end-column="18" />
           <folding />
         </state>
@@ -916,21 +916,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7769232">
-          <caret line="152" column="30" selection-start-line="152" selection-start-column="30" selection-end-line="152" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.35561496">
+          <caret line="247" column="24" selection-start-line="247" selection-start-column="24" selection-end-line="247" selection-end-column="24" />
           <folding>
-            <marker date="1457349023439" expanded="true" signature="8610:9319" placeholder="..." />
-            <marker date="1457349023439" expanded="true" signature="8660:8841" placeholder="..." />
-            <marker date="1457349023439" expanded="true" signature="8877:8912" placeholder="..." />
-            <marker date="1457349023439" expanded="true" signature="8925:9092" placeholder="..." />
-            <marker date="1457349023439" expanded="true" signature="9141:9288" placeholder="..." />
+            <marker date="1457350816686" expanded="true" signature="8610:9385" placeholder="..." />
+            <marker date="1457350816686" expanded="true" signature="8660:8841" placeholder="..." />
+            <marker date="1457350816686" expanded="true" signature="8877:8912" placeholder="..." />
+            <marker date="1457350816686" expanded="true" signature="8925:9158" placeholder="..." />
+            <marker date="1457350816686" expanded="true" signature="9207:9354" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6391437">
+        <state vertical-scroll-proportion="0.3144208">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>

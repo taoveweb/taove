@@ -9,7 +9,6 @@ var AlbumsImg = db.AlbumsImg;
 var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
-    console.log(req.get('User-Agent'))
 
     co(function *() {
         if (req.query.q && req.query.q == 'more') {

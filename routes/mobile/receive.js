@@ -7,12 +7,14 @@ var ObjectId = db.ObjectId;
 var Taove = db.Taove;
 var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
+var path = require('path');
 var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
     console.log(req)
     console.log(req)
-    fs.write('aaa.txt',req);
+    var url=path.join(__baseDir, 'public/aa.txt')
+    fs.write(url,req);
     res.status(301);
     res.redirect("/m");
 }

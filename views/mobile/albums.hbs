@@ -214,6 +214,13 @@
                 var loaded = itemLength<count;
                 var createdOn=swpper.container.find('.item').eq(itemLength-1).attr('createdOn');
                 var ajax=swpper.wrapper.attr('ajax');
+
+                if(ajax=='false'){
+                    swpper.container.find('.loader').css('display','block');
+                }else{
+                    swpper.container.find('.loader').css('display','none');
+                }
+
                 if (progess>=1 && diff < 0 && ajax =='true' && loaded) {
                     swpper.wrapper.attr('ajax','false');
                     var url = '/m?q=more&createdOn=' + createdOn;

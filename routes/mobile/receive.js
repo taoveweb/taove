@@ -9,11 +9,10 @@ var AlbumsImg = db.AlbumsImg;
 var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
-    console.log('aaa-------------')
-    console.log('aaa-------a------')
-    console.log(req)
+    console.log(req.body)
+    console.log(req.params)
     res.status(301);
-    res.json({ok:req.body})
+    res.redirect("/m");
 }
 
 

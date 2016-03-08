@@ -232,6 +232,7 @@
                         success: function (data) {
                             setitem(data, swpper);
                             swpper.wrapper.attr('ajax','true');
+                            swpper.container.find('.loader').css('display','none');
                         },
                         error: function (xhr, type) {
 

@@ -196,9 +196,11 @@
             onProgress: function (swpper, progess) {
                 var diff = swpper.touches.diff;
                 var loaded =swpper.container.find('.swiper-lazy').length < swpper.wrapper.attr('count');
-                if (progess>=1 && diff < 0 &&  swpper.wrapper.attr('ajax')=='true' && loaded) {
+                var createdOn=swpper.container.find('.item').last().attr('createdOn');
+                var ajax=swpper.wrapper.attr('ajax');
+                if (progess>=1 && diff < 0 && ajax =='true' && loaded) {
                     swpper.wrapper.attr('ajax','false');
-                    var url = '/m?q=more&createdOn=' + swpper.container.find('.item').last().attr('createdOn');
+                    var url = '/m?q=more&createdOn=' + createdOn;
                     $.ajax({
                         type: 'get',
                         url: url,

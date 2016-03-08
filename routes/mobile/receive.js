@@ -9,8 +9,8 @@ var AlbumsImg = db.AlbumsImg;
 var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
-    res.status(301);
     console.log('aaa')
+    res.status(301);
     console.log(req.body)
     console.log('bbb')
     res.json({ok:'ys'})

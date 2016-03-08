@@ -42,6 +42,7 @@ app.use(function(req, res, next){
     });
     req.on('end', function () {
         req.reqData = Buffer.concat(reqData, size).toString();
+        console.log(req.reqData)
     });
     next();
 });

@@ -153,6 +153,7 @@ body{
     position: absolute;
     left: 50%;
     bottom: 0.8rem;
+    z-index: 1;
 }
 
 

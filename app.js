@@ -32,7 +32,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public
-app.use(function(req, res, next){
+/*app.use(function(req, res, next){
     var reqData = [];
     var size = 0;
     req.on('data', function (data) {
@@ -45,7 +45,7 @@ app.use(function(req, res, next){
         console.log(req.reqData)
     });
     next();
-});
+});*/
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

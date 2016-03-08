@@ -2,7 +2,7 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper"  count="{{albumsNum}}">
+                <div class="swiper-wrapper"  ajax="true" count="{{albumsNum}}">
                     <div class="swiper-slide swiper-slide-v">
                         {{#each taove}}
                             <div class="item grid-item" createdOn="{{this.createdOn}}">
@@ -28,7 +28,7 @@
         </div>
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper"  count="{{albumsNum}}">
+                <div class="swiper-wrapper" ajax="true"  count="{{albumsNum}}">
                     <div class="swiper-slide swiper-slide-v">
                         {{#each taove}}
                             <div class="item grid-item" createdOn="{{this.createdOn}}">
@@ -180,7 +180,6 @@
         })
 
 
-        var ajax = true;
         var swiper = new Swiper('.swiper-container-v', {
             scrollbar: '.swiper-scrollbar',
             direction: 'vertical',
@@ -197,8 +196,8 @@
             onProgress: function (swpper, progess) {
                 var diff = swpper.touches.diff;
                 var loaded =swpper.container.find('.swiper-lazy').length < swpper.wrapper.attr('count');
-                if (progess>=1 && diff < 0 && ajax && loaded) {
-                    ajax = false;
+                if (progess>=1 && diff < 0 &&  swpper.wrapper.attr('ajax')=='true' && loaded) {
+                    swpper.wrapper.attr('ajax','false')
                     var url = '/m?q=more&createdOn=' + $('.item').last().attr('createdOn');
                     $.ajax({
                         type: 'get',
@@ -207,7 +206,7 @@
                         dataType: 'json',
                         success: function (data) {
                             setitem(data, swpper);
-                            ajax = true;
+                            swpper.wrapper.attr('ajax','true')
                         },
                         error: function (xhr, type) {
 

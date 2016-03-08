@@ -2,8 +2,8 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide swiper-slide-v" count="{{albumsNum}}">
+                <div class="swiper-wrapper"  count="{{albumsNum}}">
+                    <div class="swiper-slide swiper-slide-v">
                         {{#each taove}}
                             <div class="item grid-item" createdOn="{{this.createdOn}}">
                                 <div class="br userinfo">
@@ -28,8 +28,8 @@
         </div>
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide swiper-slide-v" count="{{albumsNum}}">
+                <div class="swiper-wrapper"  count="{{albumsNum}}">
+                    <div class="swiper-slide swiper-slide-v">
                         {{#each taove}}
                             <div class="item grid-item" createdOn="{{this.createdOn}}">
                                 <div class="br userinfo">
@@ -181,7 +181,6 @@
 
 
         var ajax = true;
-        var total = $('.swiper-slide-v').attr('count');
         var swiper = new Swiper('.swiper-container-v', {
             scrollbar: '.swiper-scrollbar',
             direction: 'vertical',
@@ -197,7 +196,7 @@
             },
             onProgress: function (swpper, progess) {
                 var diff = swpper.touches.diff;
-                var loaded =swpper.container.find('.swiper-lazy').length < total;
+                var loaded =swpper.container.find('.swiper-lazy').length < swpper.wrapper.attr('count');
                 if (progess>=1 && diff < 0 && ajax && loaded) {
                     ajax = false;
                     var url = '/m?q=more&createdOn=' + $('.item').last().attr('createdOn');

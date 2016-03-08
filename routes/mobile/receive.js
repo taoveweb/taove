@@ -12,8 +12,6 @@ var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
     console.log(req.reqData)
-    var url=path.join(__baseDir, 'public/aa.txt')
-    fs.write(url,req);
     res.status(301);
     res.redirect("/m");
 }

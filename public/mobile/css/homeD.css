@@ -155,6 +155,7 @@ body{
     bottom: 0.8rem;
     z-index: 1;
     display: none;
+    text-align: center;
 }
 
 

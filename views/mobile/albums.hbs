@@ -111,6 +111,7 @@
         .swiper-wrapper{
             position: relative;
             z-index: 2;
+            background:#fff;
         }
         .swiper-slide {
             /* Center slide text vertically */
@@ -217,8 +218,9 @@
 
                 if(ajax=='false' && loaded){
                     swpper.container.find('.loader').css('display','block');
-                }else{
-                    swpper.container.find('.loader').css('display','none');
+                }
+                if(itemLength==count){
+                    swpper.container.find('.loader').css({'left':'0','display':'block','width':'100%'}).html('没有更多的数据了');
                 }
 
                 if (progess>=1 && diff < 0 && ajax =='true' && loaded) {

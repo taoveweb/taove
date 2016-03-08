@@ -11,9 +11,9 @@ var co = require('co');
 function indexGet(req, res, next) {
     console.log('aaa-------------')
     console.log('aaa-------a------')
-    console.log(res.body)
+    console.log(req.body)
     res.status(301);
-    res.json({ok:res.body})
+    res.json({ok:req.body})
 }
 
 

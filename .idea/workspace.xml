@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,15 +57,15 @@
       <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56393445">
-              <caret line="198" column="99" selection-start-line="198" selection-start-column="99" selection-end-line="198" selection-end-column="99" />
+            <state vertical-scroll-proportion="0.7163935">
+              <caret line="208" column="63" selection-start-line="208" selection-start-column="63" selection-end-line="208" selection-end-column="63" />
               <folding>
                 <element signature="e#3261#5423#0#Handlebars" expanded="false" />
-                <marker date="1457401236280" expanded="true" signature="8832:9607" placeholder="..." />
-                <marker date="1457401236280" expanded="true" signature="8882:9063" placeholder="..." />
-                <marker date="1457401236280" expanded="false" signature="9099:9134" placeholder="..." />
-                <marker date="1457401236280" expanded="true" signature="9147:9380" placeholder="..." />
-                <marker date="1457401236280" expanded="true" signature="9429:9576" placeholder="..." />
+                <marker date="1457401479055" expanded="true" signature="8754:9529" placeholder="..." />
+                <marker date="1457401479055" expanded="true" signature="8804:8985" placeholder="..." />
+                <marker date="1457401479055" expanded="false" signature="9021:9056" placeholder="..." />
+                <marker date="1457401479055" expanded="true" signature="9069:9302" placeholder="..." />
+                <marker date="1457401479055" expanded="true" signature="9351:9498" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -725,15 +726,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56393445">
-          <caret line="198" column="99" selection-start-line="198" selection-start-column="99" selection-end-line="198" selection-end-column="99" />
+        <state vertical-scroll-proportion="0.7163935">
+          <caret line="208" column="63" selection-start-line="208" selection-start-column="63" selection-end-line="208" selection-end-column="63" />
           <folding>
             <element signature="e#3261#5423#0#Handlebars" expanded="false" />
-            <marker date="1457401236280" expanded="true" signature="8832:9607" placeholder="..." />
-            <marker date="1457401236280" expanded="true" signature="8882:9063" placeholder="..." />
-            <marker date="1457401236280" expanded="false" signature="9099:9134" placeholder="..." />
-            <marker date="1457401236280" expanded="true" signature="9147:9380" placeholder="..." />
-            <marker date="1457401236280" expanded="true" signature="9429:9576" placeholder="..." />
+            <marker date="1457401479055" expanded="true" signature="8754:9529" placeholder="..." />
+            <marker date="1457401479055" expanded="true" signature="8804:8985" placeholder="..." />
+            <marker date="1457401479055" expanded="false" signature="9021:9056" placeholder="..." />
+            <marker date="1457401479055" expanded="true" signature="9069:9302" placeholder="..." />
+            <marker date="1457401479055" expanded="true" signature="9351:9498" placeholder="..." />
           </folding>
         </state>
       </provider>

@@ -195,8 +195,10 @@
             },
             onProgress: function (swpper, progess) {
                 var diff = swpper.touches.diff;
-                var loaded =swpper.container.find('.swiper-lazy').length < swpper.wrapper.attr('count');
-                var createdOn=swpper.container.find('.item').last().attr('createdOn');
+                var itemLength=swpper.container.find('.swiper-lazy').length
+                var count= swpper.wrapper.attr('count')
+                var loaded = itemLength<count;
+                var createdOn=swpper.container.find('.item').eq(itemLength).attr('createdOn');
                 var ajax=swpper.wrapper.attr('ajax');
                 if (progess>=1 && diff < 0 && ajax =='true' && loaded) {
                     swpper.wrapper.attr('ajax','false');

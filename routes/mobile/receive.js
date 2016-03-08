@@ -10,7 +10,7 @@ var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
     res.status(301);
-    console.log(req.params)
+    console.log(req.body)
     res.json({ok:'ys'})
 }
 

@@ -215,7 +215,7 @@
                 var createdOn=swpper.container.find('.item').eq(itemLength-1).attr('createdOn');
                 var ajax=swpper.wrapper.attr('ajax');
 
-                if(ajax=='false'){
+                if(ajax=='false' && loaded){
                     swpper.container.find('.loader').css('display','block');
                 }else{
                     swpper.container.find('.loader').css('display','none');

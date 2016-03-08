@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mobile/css/homeD.css" afterPath="$PROJECT_DIR$/public/mobile/css/homeD.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
@@ -23,108 +24,124 @@
     <favorites_list name="taove" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="mobile.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/mobile/mobile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.7">
-              <caret line="15" column="31" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.14">
-              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="albums.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/mobile/albums.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5">
-              <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="receive.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/mobile/receive.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.32">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3605313">
-              <caret line="34" column="2" selection-start-line="34" selection-start-column="0" selection-end-line="47" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="udid.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/mobile/udid.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.94">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="www.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/www.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.32">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="udid.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/udid.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.142858">
-              <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="udid.mobileconfig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/udid.mobileconfig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="route.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.68">
-              <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="vertical" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="mobile.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/mobile/mobile.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.7">
+                  <caret line="15" column="31" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="31" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="3.14">
+                  <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="albums.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/mobile/albums.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-6.5">
+                  <caret line="27" column="34" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="receive.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/mobile/receive.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-5.32">
+                  <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-3.8">
+                  <caret line="34" column="2" selection-start-line="34" selection-start-column="0" selection-end-line="47" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="udid.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/mobile/udid.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-4.94">
+                  <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="60" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/bin/www.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.7037037">
+                  <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-4.086207">
+                  <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#346#1288#0#Handlebars" expanded="false" />
+                    <element signature="e#1825#2938#0#HTML" expanded="false" />
+                    <marker date="1457428121126" expanded="true" signature="9356:10131" placeholder="..." />
+                    <marker date="1457428121126" expanded="true" signature="9406:9587" placeholder="..." />
+                    <marker date="1457428121126" expanded="false" signature="9623:9658" placeholder="..." />
+                    <marker date="1457428121126" expanded="true" signature="9671:9904" placeholder="..." />
+                    <marker date="1457428121126" expanded="true" signature="9953:10100" placeholder="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="route.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/routes/route.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-3.42">
+                  <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.24">
+                  <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -145,18 +162,18 @@
         <option value="$PROJECT_DIR$/routes/admin/production.js" />
         <option value="$PROJECT_DIR$/hbsregister.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
         <option value="$PROJECT_DIR$/routes/mobile/albums.js" />
-        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
         <option value="$PROJECT_DIR$/public/.mobileconfig" />
         <option value="$PROJECT_DIR$/routes/mobile/udid.js" />
         <option value="$PROJECT_DIR$/routes/mobile/mobile.js" />
         <option value="$PROJECT_DIR$/public/udid.mobileconfig" />
-        <option value="$PROJECT_DIR$/bin/www.js" />
         <option value="$PROJECT_DIR$/routes/mobile/receive.js" />
         <option value="$PROJECT_DIR$/public/udid.html" />
         <option value="$PROJECT_DIR$/routes/route.js" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
+        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
+        <option value="$PROJECT_DIR$/bin/www.js" />
       </list>
     </option>
   </component>
@@ -225,7 +242,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -239,7 +256,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taove" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taove" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -257,11 +288,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
+              <option name="myItemId" value="mobile" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,7 +380,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34415585" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34415585" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -617,13 +652,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.1">
-          <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/admin/register.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -679,21 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.844828">
-          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-          <folding>
-            <element signature="e#3261#5423#0#Handlebars" expanded="false" />
-            <marker date="1457402132359" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1457402132359" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1457402132359" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1457402132359" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1457402132359" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/mobile/albums.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5">
@@ -734,6 +747,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.8">
+          <caret line="34" column="2" selection-start-line="34" selection-start-column="0" selection-end-line="47" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.42">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/udid.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41530055">
+          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24">
+          <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.086207">
+          <caret line="107" column="24" selection-start-line="107" selection-start-column="24" selection-end-line="107" selection-end-column="24" />
+          <folding>
+            <element signature="e#346#1288#0#Handlebars" expanded="false" />
+            <element signature="e#1825#2938#0#HTML" expanded="false" />
+            <marker date="1457428121126" expanded="true" signature="9356:10131" placeholder="..." />
+            <marker date="1457428121126" expanded="true" signature="9406:9587" placeholder="..." />
+            <marker date="1457428121126" expanded="false" signature="9623:9658" placeholder="..." />
+            <marker date="1457428121126" expanded="true" signature="9671:9904" placeholder="..." />
+            <marker date="1457428121126" expanded="true" signature="9953:10100" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/mobile/mobile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.7">
@@ -742,34 +803,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/udid.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.142858">
-          <caret line="12" column="7" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.32">
+        <state vertical-scroll-proportion="0.7037037">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.68">
-          <caret line="36" column="42" selection-start-line="36" selection-start-column="42" selection-end-line="36" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3605313">
-          <caret line="34" column="2" selection-start-line="34" selection-start-column="0" selection-end-line="47" selection-end-column="5" />
           <folding />
         </state>
       </provider>

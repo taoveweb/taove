@@ -22,6 +22,11 @@
                         {{/each}}
                     </div>
                 </div>
+                <div class="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <!-- Add Scroll Bar -->
                 <div class="swiper-scrollbar"></div>
             </div>
@@ -50,6 +55,11 @@
                     </div>
                 </div>
                 <!-- Add Scroll Bar -->
+                <div class="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="swiper-scrollbar"></div>
             </div>
         </div>
@@ -87,6 +97,7 @@
         }
 
         .swiper-container {
+            position: relative;
             width: 100%;
             height: 100%;
             moz-user-select: -moz-none;
@@ -97,7 +108,10 @@
             -ms-user-select: none;
             user-select: none;
         }
-
+        .swiper-wrapper{
+            position: relative;
+            z-index: 2;
+        }
         .swiper-slide {
             /* Center slide text vertically */
             display: -webkit-box;

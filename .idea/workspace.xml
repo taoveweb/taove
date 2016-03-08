@@ -57,15 +57,15 @@
       <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5172415">
-              <caret line="202" column="72" selection-start-line="202" selection-start-column="72" selection-end-line="202" selection-end-column="72" />
+            <state vertical-scroll-proportion="-8.844828">
+              <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
               <folding>
                 <element signature="e#3261#5423#0#Handlebars" expanded="false" />
-                <marker date="1457401853079" expanded="true" signature="8908:9683" placeholder="..." />
-                <marker date="1457401853079" expanded="true" signature="8958:9139" placeholder="..." />
-                <marker date="1457401853079" expanded="false" signature="9175:9210" placeholder="..." />
-                <marker date="1457401853079" expanded="true" signature="9223:9456" placeholder="..." />
-                <marker date="1457401853079" expanded="true" signature="9505:9652" placeholder="..." />
+                <marker date="1457402132359" expanded="true" signature="8910:9685" placeholder="..." />
+                <marker date="1457402132359" expanded="true" signature="8960:9141" placeholder="..." />
+                <marker date="1457402132359" expanded="false" signature="9177:9212" placeholder="..." />
+                <marker date="1457402132359" expanded="true" signature="9225:9458" placeholder="..." />
+                <marker date="1457402132359" expanded="true" signature="9507:9654" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -718,15 +718,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5172415">
-          <caret line="202" column="72" selection-start-line="202" selection-start-column="72" selection-end-line="202" selection-end-column="72" />
+        <state vertical-scroll-proportion="-8.844828">
+          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
           <folding>
             <element signature="e#3261#5423#0#Handlebars" expanded="false" />
-            <marker date="1457401853079" expanded="true" signature="8908:9683" placeholder="..." />
-            <marker date="1457401853079" expanded="true" signature="8958:9139" placeholder="..." />
-            <marker date="1457401853079" expanded="false" signature="9175:9210" placeholder="..." />
-            <marker date="1457401853079" expanded="true" signature="9223:9456" placeholder="..." />
-            <marker date="1457401853079" expanded="true" signature="9505:9652" placeholder="..." />
+            <marker date="1457402132359" expanded="true" signature="8910:9685" placeholder="..." />
+            <marker date="1457402132359" expanded="true" signature="8960:9141" placeholder="..." />
+            <marker date="1457402132359" expanded="false" signature="9177:9212" placeholder="..." />
+            <marker date="1457402132359" expanded="true" signature="9225:9458" placeholder="..." />
+            <marker date="1457402132359" expanded="true" signature="9507:9654" placeholder="..." />
           </folding>
         </state>
       </provider>

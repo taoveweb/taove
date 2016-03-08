@@ -196,6 +196,7 @@
             onProgress: function (swpper, progess) {
                 var diff = swpper.touches.diff;
                 var loaded =swpper.container.find('.swiper-lazy').length < swpper.wrapper.attr('count');
+                console.log(progess>=1 , diff < 0 ,  swpper.wrapper.attr('ajax')=='true' , loaded);
                 if (progess>=1 && diff < 0 &&  swpper.wrapper.attr('ajax')=='true' && loaded) {
                     swpper.wrapper.attr('ajax','false')
                     var url = '/m?q=more&createdOn=' + $('.item').last().attr('createdOn');

@@ -224,6 +224,7 @@
             onTouchEnd: function (swipper) {
                 if (swipper.wrapper.data('sendupdate') == 'true') {
                     swipper.wrapper.attr('ajax', 'false');
+                    swipper.wrapper.data('sendupdate','false');
                     var updateCreatedOn = swipper.container.find('.item').eq(0).attr('createdOn');
                     var url = '/m?q=update&createdOn=' + updateCreatedOn;
                     var diff=swipper.wrapper.data('diff');
@@ -236,7 +237,6 @@
                 var count = swipper.wrapper.attr('count');
                 var loaded = itemLength < count;
                 var moreCreatedOn = swipper.container.find('.item').eq(itemLength - 1).attr('createdOn');
-
                 var ajax = swipper.wrapper.attr('ajax');
                 var pullDistance = progess * swipper.height / window.devicePixelRatio;//拖动距离
                 if (ajax == 'false' && loaded) {
@@ -271,7 +271,6 @@
         });
 
         function getajax(url, swipper, diff) {
-            console.log('ajax');
             $.ajax({
                 type: 'get',
                 url: url,

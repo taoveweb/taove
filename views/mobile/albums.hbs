@@ -2,7 +2,7 @@
     <div class="swiper-wrapper">
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper"  ajax="true" count="{{albumsNum}}">
+                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
                     <div class="refresh">下接刷新
                         <div class="refresh-icon"></div>
                     </div>
@@ -18,6 +18,7 @@
                                         {{{getImgM width height sizeLevel path name }}}
                                     {{/with}}
                                 </a>
+
                                 <div class="br imginfo">
                                     <p class="editAlbumsTitle edit">{{this.city}}大洋教堂;{{this.imgNum}}张图片;2000元;</p> <em>30个喜欢</em>
                                 </div>
@@ -37,7 +38,7 @@
         </div>
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper" ajax="true"  count="{{albumsNum}}">
+                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
                     <div class="refresh">下接刷新
                         <div class="refresh-icon"></div>
                     </div>
@@ -54,6 +55,7 @@
                                     {{/with}}
                                     <div class="swiper-lazy-preloader"></div>
                                 </a>
+
                                 <div class="br imginfo">
                                     <p class="editAlbumsTitle edit">{{this.city}}大洋教堂;{{this.imgNum}}张图片;2000元;</p> <em>30个喜欢</em>
                                 </div>
@@ -79,8 +81,6 @@
 </div>
 
 <!-- Initialize Swiper -->
-
-
 
 
 <!-- Swiper JS -->
@@ -117,11 +117,13 @@
             -ms-user-select: none;
             user-select: none;
         }
-        .swiper-wrapper{
+
+        .swiper-wrapper {
             position: relative;
             z-index: 2;
-            background:#fff;
+            background: #fff;
         }
+
         .swiper-slide {
             /* Center slide text vertically */
             display: -webkit-box;
@@ -144,13 +146,15 @@
         .item .br em {
             font-style: normal;
         }
-        .swiper-container-horizontal>.swiper-pagination-bullets{
+
+        .swiper-container-horizontal > .swiper-pagination-bullets {
             top: 0;
             bottom: auto;
             background: #fff;
             border-bottom: 1px solid #d1d1d1;
         }
-        .swiper-pagination-bullet{
+
+        .swiper-pagination-bullet {
             width: auto;
             height: auto;
             opacity: 0.6;
@@ -161,7 +165,8 @@
             border-radius: 0;
             font-size: 0.35rem;
         }
-        .swiper-pagination-bullet-active{
+
+        .swiper-pagination-bullet-active {
             border-bottom: 6px solid #007aff;
             opacity: 1;
         }
@@ -174,23 +179,22 @@
             pagination: '.swiper-pagination-h',
             paginationClickable: true,
             paginationBulletRender: function (index, className) {
-                var str='';
-                switch(index){
+                var str = '';
+                switch (index) {
                     case 0:
-                        str='关注';
+                        str = '关注';
                         break;
                     case 1:
-                        str='精选';
+                        str = '精选';
                         break;
                     case 2:
-                        str='附近';
+                        str = '附近';
                         break;
                 }
                 return '<span class="' + className + '">' + str + '</span>';
             },
             spaceBetween: 50
         });
-
 
 
         //重团置图片尺寸
@@ -217,54 +221,76 @@
                 swipper.setWrapperTranslate(swipper.getWrapperTranslate());
                 swipper.update();
             },
+            onTouchEnd: function (swipper) {
+                if (swipper.wrapper.data('sendupdate') == 'true') {
+                    swipper.wrapper.attr('ajax', 'false');
+                    var updateCreatedOn = swipper.container.find('.item').eq(0).attr('createdOn');
+                    var url = '/m?q=update&createdOn=' + updateCreatedOn;
+                    var diff=swipper.wrapper.data('diff');
+                    getajax(url, swipper, diff)
+                }
+            },
             onProgress: function (swipper, progess) {
                 var diff = swipper.touches.diff;
-                var itemLength=swipper.container.find('.swiper-lazy').length;
-                var count= swipper.wrapper.attr('count');
-                var loaded = itemLength<count;
-                var moreCreatedOn=swipper.container.find('.item').eq(itemLength-1).attr('createdOn');
-                var updateCreatedOn=swipper.container.find('.item').eq(0).attr('createdOn');
-                var ajax=swipper.wrapper.attr('ajax');
-                var pullDistance=progess*swipper.height/window.devicePixelRatio;//拖动距离
-                if(ajax=='false' && loaded){
-                    swipper.container.find('.loader').css('display','block');
+                var itemLength = swipper.container.find('.swiper-lazy').length;
+                var count = swipper.wrapper.attr('count');
+                var loaded = itemLength < count;
+                var moreCreatedOn = swipper.container.find('.item').eq(itemLength - 1).attr('createdOn');
+
+                var ajax = swipper.wrapper.attr('ajax');
+                var pullDistance = progess * swipper.height / window.devicePixelRatio;//拖动距离
+                if (ajax == 'false' && loaded) {
+                    swipper.container.find('.loader').css('display', 'block');
                 }
-                if(itemLength==count){
-                    swipper.container.find('.loader').css({'left':'0','display':'block','width':'100%'}).html('没有更多的数据了');
+
+                if (itemLength == count) {
+                    swipper.container.find('.loader').css({
+                        'left': '0',
+                        'display': 'block',
+                        'width': '100%'
+                    }).html('没有更多的数据了');
                 }
-                if(pullDistance<-40){
+
+                if (pullDistance < -40 && ajax == 'true') {
+                    swipper.wrapper.data('sendupdate', 'true');
+                    swipper.wrapper.data('diff',diff);
                     swipper.container.find('.refresh').css({}).html('松开刷新');
-                    var url = '/m?q=update&createdOn=' + updateCreatedOn;
-                }else if  (progess>=1 && diff < 0 && ajax =='true' && loaded) {
-                    swipper.wrapper.attr('ajax','false');
-                    var url = '/m?q=more&createdOn=' + moreCreatedOn;
-                }else{
-                    return;
+                } else if (pullDistance < 0 && pullDistance > -40) {
+                    swipper.wrapper.data('sendupdate', 'false');
+                    swipper.container.find('.refresh').css({}).html('下拉刷新');
                 }
 
-                $.ajax({
-                    type: 'get',
-                    url: url,
-                    catch: false,
-                    dataType: 'json',
-                    success: function (data) {
-                        setitem(data, swipper,diff);
-                        swipper.wrapper.attr('ajax','true');
-                        swipper.container.find('.loader').css('display','none');
-                    },
-                    error: function (xhr, type) {
-
-                    }
-                });
+                if (progess >= 1 && diff < 0 && ajax == 'true' && loaded) {
+                    swipper.wrapper.attr('ajax', 'false');
+                    var url = '/m?q=more&createdOn=' + moreCreatedOn;
+                    getajax(url, swipper, diff)
+                }
 
 
             }
         });
 
+        function getajax(url, swipper, diff) {
+            console.log('ajax');
+            $.ajax({
+                type: 'get',
+                url: url,
+                catch: false,
+                dataType: 'json',
+                success: function (data) {
+                    setitem(data, swipper, diff);
+                    swipper.wrapper.attr('ajax', 'true');
+                    swipper.container.find('.loader').css('display', 'none');
+                },
+                error: function (xhr, type) {
+
+                }
+            });
+        }
 
 
-        function setitem(data, swipper,diff) {
-            var htmlstr="";
+        function setitem(data, swipper, diff) {
+            var htmlstr = "";
             for (var i = 0; i < data.length; i++) {
                 var img = data[i];
                 var coverImg = img.coverImg;
@@ -282,7 +308,7 @@
                 }
 
 
-                htmlstr+= `<div class="item grid-item" createdon="${img.createdOn}">
+                htmlstr += `<div class="item grid-item" createdon="${img.createdOn}">
                         <div class="br userinfo">
                             <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
                             <span>${timeago(img.createdOn)}</span>
@@ -297,9 +323,9 @@
                         </div>`;
 
             }
-            if(diff<0){
+            if (diff < 0) {
                 swipper.slides.append(htmlstr);
-            }else{
+            } else {
                 swipper.slides.prepend(htmlstr);
                 swipper.container.find('.refresh').css({}).html('下拉刷新');
             }

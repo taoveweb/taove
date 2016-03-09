@@ -238,7 +238,7 @@
                 var loaded = itemLength < count;
                 var moreCreatedOn = swipper.container.find('.item').eq(itemLength - 1).attr('createdOn');
                 var ajax = swipper.wrapper.attr('ajax');
-                var pullDistance = progess * swipper.height / window.devicePixelRatio;//拖动距离
+                var pullDistance = swipper.getWrapperTranslate() / window.devicePixelRatio;//拖动距离
                 if (ajax == 'false' && loaded) {
                     swipper.container.find('.loader').css('display', 'block');
                 }
@@ -250,12 +250,11 @@
                         'width': '100%'
                     }).html('没有更多的数据了');
                 }
-console.log(pullDistance,ajax)
-                if (pullDistance < -40 && ajax == 'true') {
+                if (pullDistance >40 && ajax == 'true') {
                     swipper.wrapper.data('sendupdate', 'true');
                     swipper.wrapper.data('diff',diff);
                     swipper.container.find('.refresh').css({}).html('松开刷新');
-                } else if (pullDistance < 0 && pullDistance > -40) {
+                } else if (pullDistance >0 && pullDistance <40) {
                     swipper.wrapper.data('sendupdate', 'false');
                     swipper.container.find('.refresh').css({}).html('下拉刷新');
                 }

@@ -250,7 +250,7 @@
                         'width': '100%'
                     }).html('没有更多的数据了');
                 }
-
+console.log(pullDistance,ajax)
                 if (pullDistance < -40 && ajax == 'true') {
                     swipper.wrapper.data('sendupdate', 'true');
                     swipper.wrapper.data('diff',diff);
@@ -326,7 +326,7 @@
                 swipper.slides.append(htmlstr);
             } else {
                 swipper.slides.prepend(htmlstr);
-                swipper.container.find('.refresh').css({}).html('下拉刷新');
+                swipper.container.find('.refresh').html('下拉刷新');
             }
             swipper.update();
         }

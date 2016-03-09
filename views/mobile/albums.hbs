@@ -3,6 +3,9 @@
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
                 <div class="swiper-wrapper"  ajax="true" count="{{albumsNum}}">
+                    <div class="refresh">下接刷新
+                        <div class="refresh-icon"></div>
+                    </div>
                     <div class="swiper-slide swiper-slide-v">
                         {{#each taove}}
                             <div class="item grid-item" createdOn="{{this.createdOn}}">
@@ -22,6 +25,7 @@
                         {{/each}}
                     </div>
                 </div>
+
                 <div class="loader">
                     <span></span>
                     <span></span>
@@ -54,7 +58,9 @@
                         {{/each}}
                     </div>
                 </div>
-                <!-- Add Scroll Bar -->
+                <div class="refresh">下接刷新
+                    <div class="refresh-icon"></div>
+                </div>
                 <div class="loader">
                     <span></span>
                     <span></span>
@@ -187,7 +193,7 @@
         //重团置图片尺寸
         var srwidth = $('.swiper-wrapper').width();
         $('.box').find('img').each(function () {
-            var This = $(this)
+            var This = $(this);
             This.css({
                 width: srwidth,
                 height: this.height * srwidth / this.width

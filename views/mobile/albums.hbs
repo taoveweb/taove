@@ -38,6 +38,9 @@
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
                 <div class="swiper-wrapper" ajax="true"  count="{{albumsNum}}">
+                    <div class="refresh">下接刷新
+                        <div class="refresh-icon"></div>
+                    </div>
                     <div class="swiper-slide swiper-slide-v">
                         {{#each taove}}
                             <div class="item grid-item" createdOn="{{this.createdOn}}">
@@ -210,48 +213,58 @@
             mousewheelControl: true,
             freeMode: true,
             lazyLoading: true,
-            onTouchStart: function (swpper) {
-                swpper.setWrapperTranslate(swpper.getWrapperTranslate());
-                swpper.update();
+            onTouchStart: function (swipper) {
+                swipper.setWrapperTranslate(swipper.getWrapperTranslate());
+                swipper.update();
             },
-            onProgress: function (swpper, progess) {
-                var diff = swpper.touches.diff;
-                var itemLength=swpper.container.find('.swiper-lazy').length;
-                var count= swpper.wrapper.attr('count');
+            onProgress: function (swipper, progess) {
+                var diff = swipper.touches.diff;
+                var itemLength=swipper.container.find('.swiper-lazy').length;
+                var count= swipper.wrapper.attr('count');
                 var loaded = itemLength<count;
-                var createdOn=swpper.container.find('.item').eq(itemLength-1).attr('createdOn');
-                var ajax=swpper.wrapper.attr('ajax');
-
+                var moreCreatedOn=swipper.container.find('.item').eq(itemLength-1).attr('createdOn');
+                var updateCreatedOn=swipper.container.find('.item').eq(0).attr('createdOn');
+                var ajax=swipper.wrapper.attr('ajax');
+                var pullDistance=progess*swipper.height/window.devicePixelRatio;//拖动距离
                 if(ajax=='false' && loaded){
-                    swpper.container.find('.loader').css('display','block');
+                    swipper.container.find('.loader').css('display','block');
                 }
                 if(itemLength==count){
-                    swpper.container.find('.loader').css({'left':'0','display':'block','width':'100%'}).html('没有更多的数据了');
+                    swipper.container.find('.loader').css({'left':'0','display':'block','width':'100%'}).html('没有更多的数据了');
+                }
+                if(pullDistance<-40){
+                    swipper.container.find('.refresh').css({}).html('松开刷新');
+                    var url = '/m?q=update&createdOn=' + updateCreatedOn;
+                }else if  (progess>=1 && diff < 0 && ajax =='true' && loaded) {
+                    swipper.wrapper.attr('ajax','false');
+                    var url = '/m?q=more&createdOn=' + moreCreatedOn;
+                }else{
+                    return;
                 }
 
-                if (progess>=1 && diff < 0 && ajax =='true' && loaded) {
-                    swpper.wrapper.attr('ajax','false');
-                    var url = '/m?q=more&createdOn=' + createdOn;
-                    $.ajax({
-                        type: 'get',
-                        url: url,
-                        catch: false,
-                        dataType: 'json',
-                        success: function (data) {
-                            setitem(data, swpper);
-                            swpper.wrapper.attr('ajax','true');
-                            swpper.container.find('.loader').css('display','none');
-                        },
-                        error: function (xhr, type) {
+                $.ajax({
+                    type: 'get',
+                    url: url,
+                    catch: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        setitem(data, swipper,diff);
+                        swipper.wrapper.attr('ajax','true');
+                        swipper.container.find('.loader').css('display','none');
+                    },
+                    error: function (xhr, type) {
 
-                        }
-                    });
-                }
+                    }
+                });
+
+
             }
         });
 
 
-        function setitem(data, swpper) {
+
+        function setitem(data, swipper,diff) {
+            var htmlstr="";
             for (var i = 0; i < data.length; i++) {
                 var img = data[i];
                 var coverImg = img.coverImg;
@@ -269,7 +282,7 @@
                 }
 
 
-                var htmlstr = `<div class="item grid-item" createdon="${img.createdOn}">
+                htmlstr+= `<div class="item grid-item" createdon="${img.createdOn}">
                         <div class="br userinfo">
                             <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
                             <span>${timeago(img.createdOn)}</span>
@@ -282,10 +295,15 @@
                         <p class="editAlbumsTitle edit"> ${img.city}大洋教堂;${img.imgNum}张图片;2000元;</p> <em>30个喜欢</em>
                         </div>
                         </div>`;
-                swpper.slides.append(htmlstr);
 
             }
-            swpper.update();
+            if(diff<0){
+                swipper.slides.append(htmlstr);
+            }else{
+                swipper.slides.prepend(htmlstr);
+                swipper.container.find('.refresh').css({}).html('下拉刷新');
+            }
+            swipper.update();
         }
 
 

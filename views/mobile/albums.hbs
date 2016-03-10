@@ -11,7 +11,7 @@
                             <div class="item grid-item" createdOn="{{this.createdOn}}">
                                 <div class="br userinfo">
                                     <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                                    <span  class="time" createOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
+                                    <span  class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
                                 </div>
                                 <a class="box">
                                     {{#with this.coverImg}}
@@ -47,7 +47,7 @@
                             <div class="item grid-item" createdOn="{{this.createdOn}}">
                                 <div class="br userinfo">
                                     <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                                    <span class="time" createOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
+                                    <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
                                 </div>
                                 <a class="box">
                                     {{#with this.coverImg}}
@@ -309,7 +309,7 @@
                 htmlstr += `<div class="item grid-item" createdon="${img.createdOn}">
                         <div class="br userinfo">
                             <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                            <span  class="time" createOn="{{img.createdOn}}" >${timeago(img.createdOn)}</span>
+                            <span  class="time" createdOn="${img.createdOn}" >${timeago(img.createdOn)}</span>
                         </div>
                         <a style="${scwd}; height:${hd * scwd / wd}px" class="box">
                         <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">
@@ -327,7 +327,7 @@
             } else {
                 //刷新
                 swipper.container.find('.time').each(function(){
-                    var html= timeago(parseInt($(this).attr('createOn')));
+                    var html= timeago(parseInt($(this).attr('createdOn')));
                    $(this).html(html);
                 })
                 swipper.slides.prepend(htmlstr);

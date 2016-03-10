@@ -152,6 +152,31 @@ body{
     text-align: center;
     width: 100%;
 }
+.refresh .refresh-icon{
+    position: fixed;
+    top: -1rem;
+    left: 50%;
+    margin-left: -3rem;
+    z-index: 10;
+    width: 1rem;
+    height: 1rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    border: 2px solid #ff5d4b;
+    border-bottom-color: transparent;
+    display: block;
+    background: #fff;
+}
+.anim {
+    animation: loader 1s infinite linear;
+}
+
+@keyframes loader {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(359deg); }
+}
+
+
 .loader{
     position: absolute;
     left: 50%;

@@ -3,7 +3,7 @@
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
                 <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
-                    <div class="refresh">下接刷新
+                    <div class="refresh"><span>下接刷新</span>
                         <div class="refresh-icon"></div>
                     </div>
                     <div class="swiper-slide swiper-slide-v">
@@ -39,7 +39,7 @@
         <div class="swiper-slide">
             <div class="swiper-container swiper-container-v">
                 <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
-                    <div class="refresh">下接刷新
+                    <div class="refresh"><span>下接刷新</span>
                         <div class="refresh-icon"></div>
                     </div>
                     <div class="swiper-slide swiper-slide-v">
@@ -223,12 +223,28 @@
             },
             onTouchEnd: function (swipper) {
                 if (swipper.wrapper.data('sendupdate') == 'true') {
+                    swipper.container.find('.refresh-icon').addClass('anim');
+                  //  swipper.container.find('.refresh-icon').css({"transform": "rotate(0deg)",'transition':'none'});
                     swipper.wrapper.attr('ajax', 'false');
                     swipper.wrapper.data('sendupdate','false');
                     var updateCreatedOn = swipper.container.find('.item').eq(0).attr('createdOn');
                     var url = '/m?q=update&createdOn=' + updateCreatedOn;
                     var diff=swipper.wrapper.data('diff');
                     getajax(url, swipper, diff)
+                }
+
+                if(swipper.wrapper.data('sendupdate') == 'false'){
+                    (function(swipper){
+                        window.setTimeout(function(){
+                            swipper.container.find('.refresh-icon').css({
+                                transition:'1s',
+                                top:'-2rem',
+                                transform:"rotate(0deg)"
+                            });
+                        },10)
+
+                    })(swipper)
+
                 }
             },
             onProgress: function (swipper, progess) {
@@ -253,10 +269,17 @@
                 if (pullDistance >40 && ajax == 'true') {
                     swipper.wrapper.data('sendupdate', 'true');
                     swipper.wrapper.data('diff',diff);
-                    swipper.container.find('.refresh').css({}).html('松开刷新');
+                    swipper.container.find('.refresh span').html('松开刷新');
                 } else if (pullDistance >0 && pullDistance <40) {
                     swipper.wrapper.data('sendupdate', 'false');
-                    swipper.container.find('.refresh').css({}).html('下拉刷新');
+                    swipper.container.find('.refresh span').html('下拉刷新');
+                 }
+                if(pullDistance >0 && ajax == 'true'){
+                    swipper.container.find('.refresh-icon').css({
+                        transition:'300ms',
+                        top:"0.5rem",
+                        transform:"rotate("+(pullDistance*10)+"deg)"
+                    });
                 }
 
                 if (progess >= 1 && diff < 0 && ajax == 'true' && loaded) {
@@ -331,9 +354,14 @@
                     var html= timeago(parseInt($(this).attr('createdOn')));
                    $(this).html(html);
                 })
-                swipper.wrapper.attr('createdOn',taove.count)
+                swipper.wrapper.attr('createdOn',taove.count);
                 swipper.slides.prepend(htmlstr);
-                swipper.container.find('.refresh').html('下拉刷新');
+                swipper.container.find('.refresh span').html('下拉刷新');
+                swipper.container.find('.refresh-icon').removeClass('anim').css({
+                    transition:'300ms',
+                    top:'-1rem',
+                    transform:"rotate(0deg)"
+                });
             }
             swipper.update();
         }

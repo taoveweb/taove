@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mobile/css/homeD.css" afterPath="$PROJECT_DIR$/public/mobile/css/homeD.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
@@ -87,28 +86,28 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="www.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/www.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.31932774">
+                <state vertical-scroll-proportion="-3.04">
                   <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
+          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-12.214286">
-                  <caret line="239" column="46" selection-start-line="239" selection-start-column="46" selection-end-line="239" selection-end-column="46" />
+                <state vertical-scroll-proportion="0.7248996">
+                  <caret line="240" column="39" selection-start-line="240" selection-start-column="39" selection-end-line="240" selection-end-column="39" />
                   <folding>
                     <element signature="e#4181#6350#0#HTML" expanded="false" />
-                    <marker date="1457584730286" expanded="true" signature="12627:13446" placeholder="..." />
-                    <marker date="1457584730286" expanded="true" signature="12677:12902" placeholder="..." />
-                    <marker date="1457584730286" expanded="true" signature="12938:12973" placeholder="..." />
-                    <marker date="1457584730286" expanded="true" signature="12986:13219" placeholder="..." />
-                    <marker date="1457584730286" expanded="true" signature="13268:13415" placeholder="..." />
+                    <marker date="1457585297988" expanded="true" signature="12627:13446" placeholder="..." />
+                    <marker date="1457585297988" expanded="true" signature="12677:12902" placeholder="..." />
+                    <marker date="1457585297988" expanded="true" signature="12938:12973" placeholder="..." />
+                    <marker date="1457585297988" expanded="true" signature="12986:13219" placeholder="..." />
+                    <marker date="1457585297988" expanded="true" signature="13268:13415" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -172,8 +171,8 @@
         <option value="Z:/Application/Home/Controller/Luck28Controller.class.php" />
         <option value="$PROJECT_DIR$/routes/mobile/albums.js" />
         <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
-        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
         <option value="$PROJECT_DIR$/bin/www.js" />
+        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
       </list>
     </option>
   </component>
@@ -779,21 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.214286">
-          <caret line="239" column="46" selection-start-line="239" selection-start-column="46" selection-end-line="239" selection-end-column="46" />
-          <folding>
-            <element signature="e#4181#6350#0#HTML" expanded="false" />
-            <marker date="1457584730286" expanded="true" signature="12627:13446" placeholder="..." />
-            <marker date="1457584730286" expanded="true" signature="12677:12902" placeholder="..." />
-            <marker date="1457584730286" expanded="true" signature="12938:12973" placeholder="..." />
-            <marker date="1457584730286" expanded="true" signature="12986:13219" placeholder="..." />
-            <marker date="1457584730286" expanded="true" signature="13268:13415" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/mobile/mobile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.7">
@@ -804,9 +788,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31932774">
+        <state vertical-scroll-proportion="-3.04">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7248996">
+          <caret line="240" column="39" selection-start-line="240" selection-start-column="39" selection-end-line="240" selection-end-column="39" />
+          <folding>
+            <element signature="e#4181#6350#0#HTML" expanded="false" />
+            <marker date="1457585297988" expanded="true" signature="12627:13446" placeholder="..." />
+            <marker date="1457585297988" expanded="true" signature="12677:12902" placeholder="..." />
+            <marker date="1457585297988" expanded="true" signature="12938:12973" placeholder="..." />
+            <marker date="1457585297988" expanded="true" signature="12986:13219" placeholder="..." />
+            <marker date="1457585297988" expanded="true" signature="13268:13415" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

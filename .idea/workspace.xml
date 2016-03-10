@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,7 +89,7 @@
           <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/www.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5588235">
+                <state vertical-scroll-proportion="0.8657244">
                   <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
@@ -98,15 +99,15 @@
           <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-6.107143">
-                  <caret line="227" column="42" selection-start-line="227" selection-start-column="42" selection-end-line="227" selection-end-column="42" />
+                <state vertical-scroll-proportion="-5.428571">
+                  <caret line="274" column="30" selection-start-line="274" selection-start-column="30" selection-end-line="274" selection-end-column="30" />
                   <folding>
                     <element signature="e#4181#6350#0#HTML" expanded="false" />
-                    <marker date="1457586156663" expanded="true" signature="12393:13212" placeholder="..." />
-                    <marker date="1457586156663" expanded="true" signature="12443:12668" placeholder="..." />
-                    <marker date="1457586156663" expanded="true" signature="12704:12739" placeholder="..." />
-                    <marker date="1457586156663" expanded="true" signature="12752:12985" placeholder="..." />
-                    <marker date="1457586156663" expanded="true" signature="13034:13181" placeholder="..." />
+                    <marker date="1457586423083" expanded="true" signature="12391:13210" placeholder="..." />
+                    <marker date="1457586423083" expanded="true" signature="12441:12666" placeholder="..." />
+                    <marker date="1457586423083" expanded="true" signature="12702:12737" placeholder="..." />
+                    <marker date="1457586423083" expanded="true" signature="12750:12983" placeholder="..." />
+                    <marker date="1457586423083" expanded="true" signature="13032:13179" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -129,7 +130,7 @@
           <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.44039735">
+                <state vertical-scroll-proportion="0.75141245">
                   <caret line="175" column="35" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
                   <folding />
                 </state>
@@ -368,7 +369,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1548999" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -378,7 +379,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34415585" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34415585" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -779,7 +780,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44039735">
+        <state vertical-scroll-proportion="0.75141245">
           <caret line="175" column="35" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
           <folding />
         </state>
@@ -787,22 +788,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.107143">
-          <caret line="227" column="42" selection-start-line="227" selection-start-column="42" selection-end-line="227" selection-end-column="42" />
+        <state vertical-scroll-proportion="-5.428571">
+          <caret line="274" column="30" selection-start-line="274" selection-start-column="30" selection-end-line="274" selection-end-column="30" />
           <folding>
             <element signature="e#4181#6350#0#HTML" expanded="false" />
-            <marker date="1457586156663" expanded="true" signature="12393:13212" placeholder="..." />
-            <marker date="1457586156663" expanded="true" signature="12443:12668" placeholder="..." />
-            <marker date="1457586156663" expanded="true" signature="12704:12739" placeholder="..." />
-            <marker date="1457586156663" expanded="true" signature="12752:12985" placeholder="..." />
-            <marker date="1457586156663" expanded="true" signature="13034:13181" placeholder="..." />
+            <marker date="1457586423083" expanded="true" signature="12391:13210" placeholder="..." />
+            <marker date="1457586423083" expanded="true" signature="12441:12666" placeholder="..." />
+            <marker date="1457586423083" expanded="true" signature="12702:12737" placeholder="..." />
+            <marker date="1457586423083" expanded="true" signature="12750:12983" placeholder="..." />
+            <marker date="1457586423083" expanded="true" signature="13032:13179" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5588235">
+        <state vertical-scroll-proportion="0.8657244">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>

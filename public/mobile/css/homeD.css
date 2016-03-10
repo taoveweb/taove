@@ -155,9 +155,9 @@ body{
 }
 .refresh .refresh-icon{
     position: fixed;
-    top: -0.4rem;
+    top: -1rem;
     left: 50%;
-    margin-left: -2rem;
+    margin-left: -0.5rem;
     z-index: 10;
     width: 1rem;
     height: 1rem;

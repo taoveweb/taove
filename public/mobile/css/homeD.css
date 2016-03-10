@@ -166,6 +166,7 @@ body{
     border-bottom-color: transparent;
     display: block;
     background: #fff;
+    transform-origin:center center 0;
 }
 .anim {
     animation: loader 1s infinite linear;

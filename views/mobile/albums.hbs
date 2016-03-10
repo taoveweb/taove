@@ -270,10 +270,14 @@
                     swipper.container.find('.refresh span').html('下拉刷新');
                  }
                 if(pullDistance >0 && ajax == 'true'){
+                    var refressPull=swipper.getWrapperTranslate();
+                    if(pullDistance>50 ){
+                        refressPull=50*window.devicePixelRatio;
+                    }
                     swipper.container.find('.refresh-icon').css({
-                        transition:'300ms',
-                        top:"1rem",
-                        transform:"rotate("+(pullDistance*10)+"deg)"
+                        transition:'0ms',
+                        top:refressPull+"px",
+                        transform:"rotate("+(pullDistance*15)+"deg)"
                     });
                 }
 

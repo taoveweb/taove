@@ -222,19 +222,19 @@
             onTouchStart: function (swipper) {
                 swipper.setWrapperTranslate(swipper.getWrapperTranslate());
                 swipper.update();
-                swipper.container.data('onTouchEnd','false');
+                swipper.container.data('onTouchEnd', 'false');
             },
             onTouchEnd: function (swipper) {
-                var pullDistance=swipper.getWrapperTranslate();
-                var realyDistance=pullDistance/window.devicePixelRatio;
-                swipper.container.data('onTouchEnd','true');
-                if (realyDistance>=50) {
+                var pullDistance = swipper.getWrapperTranslate();
+                var realyDistance = pullDistance / window.devicePixelRatio;
+                swipper.container.data('onTouchEnd', 'true');
+                if (realyDistance >= 50) {
                     //刷新
                     swipper.container.find('.refresh-icon').addClass('anim');
                     var updateCreatedOn = swipper.container.find('.item').eq(0).attr('createdOn');
                     var url = '/m?q=update&createdOn=' + updateCreatedOn;
                     getajax(url, swipper, pullDistance)
-                }else{
+                } else {
                     swipper.container.find('.refresh').css({
                         "z-index": 1,
                         transition: '400ms',
@@ -254,8 +254,8 @@
                 var loaded = itemLength < count;
                 var moreCreatedOn = swipper.container.find('.item').eq(itemLength - 1).attr('createdOn');
                 var ajax = swipper.wrapper.attr('ajax');
-                var pullDistance=swipper.getWrapperTranslate();
-                var realyDistance=pullDistance/window.devicePixelRatio;
+                var pullDistance = swipper.getWrapperTranslate();
+                var realyDistance = pullDistance / window.devicePixelRatio;
                 if (ajax == 'false' && loaded) {
                     swipper.container.find('.loader').css('display', 'block');
                 }
@@ -273,8 +273,8 @@
                 if (realyDistance > 0 && realyDistance < 50) {
                     swipper.container.find('.refresh span').html('下拉刷新');
                 }
-                if (realyDistance > 0  && swipper.container.data('onTouchEnd')=="false") {
-                    var transformY=pullDistance
+                if (realyDistance > 0 && swipper.container.data('onTouchEnd') == "false") {
+                    var transformY = pullDistance
                     if (realyDistance > 50) {
                         var transformY = 50 * window.devicePixelRatio;
                     }
@@ -294,7 +294,6 @@
                     getajax(url, swipper, diff)
                 }
 
-
             }
         });
 
@@ -304,13 +303,29 @@
                 url: url,
                 catch: false,
                 dataType: 'json',
+                timeout: 10 * 1000,
                 success: function (data) {
                     setitem(data, swipper, diff);
-                    swipper.wrapper.attr('ajax', 'true');
-                    swipper.container.find('.loader').css('display', 'none');
                 },
                 error: function (xhr, type) {
 
+                },
+                complete: function () {
+                    if (diff < 0) {
+                        //加载更多
+                        swipper.wrapper.attr('ajax', 'true');
+                        swipper.container.find('.loader').css('display', 'none');
+                    } else {
+                        swipper.container.find('.refresh').css({
+                            "z-index": 1,
+                            transition: '400ms',
+                            transform: "translate3d(0,-1rem,0)"
+                        });
+                        swipper.container.find('.refresh-icon').removeClass('anim').css({
+                            transition: '400ms',
+                            transform: "rotate(0deg)"
+                        });
+                    }
                 }
             });
         }
@@ -362,15 +377,6 @@
                 })
                 swipper.wrapper.attr('createdOn', taove.count);
                 swipper.slides.prepend(htmlstr);
-                swipper.container.find('.refresh').css({
-                    "z-index": 1,
-                    transition: '400ms',
-                    transform: "translate3d(0,-1rem,0)"
-                });
-                swipper.container.find('.refresh-icon').removeClass('anim').css({
-                    transition: '400ms',
-                    transform: "rotate(0deg)"
-                });
             }
             swipper.update();
         }

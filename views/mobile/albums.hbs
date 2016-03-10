@@ -4,6 +4,7 @@
             <div class="swiper-container swiper-container-v">
                 <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
                     <div class="refresh"><span>下接刷新</span>
+
                         <div class="refresh-icon"></div>
                     </div>
                     <div class="swiper-slide swiper-slide-v">
@@ -11,7 +12,7 @@
                             <div class="item grid-item" createdOn="{{this.createdOn}}">
                                 <div class="br userinfo">
                                     <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                                    <span  class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
+                                    <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
                                 </div>
                                 <a class="box">
                                     {{#with this.coverImg}}
@@ -40,6 +41,7 @@
             <div class="swiper-container swiper-container-v">
                 <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
                     <div class="refresh"><span>下接刷新</span>
+
                         <div class="refresh-icon"></div>
                     </div>
                     <div class="swiper-slide swiper-slide-v">
@@ -220,26 +222,29 @@
             onTouchStart: function (swipper) {
                 swipper.setWrapperTranslate(swipper.getWrapperTranslate());
                 swipper.update();
-            },
-            onTransitionEnd:function(swipper){
-                swipper.container.find('.refresh-icon').css({
-                    transition:'400ms',
-                    top:'-1rem',
-                    transform:"rotate(-360deg)"
-                });
+                swipper.container.data('onTouchEnd','false');
             },
             onTouchEnd: function (swipper) {
-                if (swipper.wrapper.data('sendupdate') == 'true') {
+                var pullDistance=swipper.getWrapperTranslate();
+                var realyDistance=pullDistance/window.devicePixelRatio;
+                swipper.container.data('onTouchEnd','true');
+                if (realyDistance>=50) {
+                    //刷新
                     swipper.container.find('.refresh-icon').addClass('anim');
-                  //  swipper.container.find('.refresh-icon').css({"transform": "rotate(0deg)",'transition':'none'});
-                    swipper.wrapper.attr('ajax', 'false');
-                    swipper.wrapper.data('sendupdate','false');
                     var updateCreatedOn = swipper.container.find('.item').eq(0).attr('createdOn');
                     var url = '/m?q=update&createdOn=' + updateCreatedOn;
-                    var diff=swipper.wrapper.data('diff');
-                    getajax(url, swipper, diff)
+                    getajax(url, swipper, pullDistance)
+                }else{
+                    swipper.container.find('.refresh').css({
+                        "z-index": 1,
+                        transition: '400ms',
+                        transform: "translate3d(0px,-1rem,0px)"
+                    });
+                    swipper.container.find('.refresh-icon').css({
+                        transition: '400ms',
+                        transform: "rotate(-360deg)"
+                    });
                 }
-
 
             },
             onProgress: function (swipper, progess) {
@@ -249,7 +254,8 @@
                 var loaded = itemLength < count;
                 var moreCreatedOn = swipper.container.find('.item').eq(itemLength - 1).attr('createdOn');
                 var ajax = swipper.wrapper.attr('ajax');
-                var pullDistance = swipper.getWrapperTranslate() / window.devicePixelRatio;//拖动距离
+                var pullDistance=swipper.getWrapperTranslate();
+                var realyDistance=pullDistance/window.devicePixelRatio;
                 if (ajax == 'false' && loaded) {
                     swipper.container.find('.loader').css('display', 'block');
                 }
@@ -261,23 +267,24 @@
                         'width': '100%'
                     }).html('没有更多的数据了');
                 }
-                if (pullDistance >40 && ajax == 'true') {
-                    swipper.wrapper.data('sendupdate', 'true');
-                    swipper.wrapper.data('diff',diff);
+                if (realyDistance > 50) {
                     swipper.container.find('.refresh span').html('松开刷新');
-                } else if (pullDistance >0 && pullDistance <40) {
-                    swipper.wrapper.data('sendupdate', 'false');
+                }
+                if (realyDistance > 0 && realyDistance < 50) {
                     swipper.container.find('.refresh span').html('下拉刷新');
-                 }
-                if(pullDistance >0 && ajax == 'true'){
-                    var refressPull=swipper.getWrapperTranslate();
-                    if(pullDistance>50 ){
-                        refressPull=50*window.devicePixelRatio;
+                }
+                if (realyDistance > 0  && swipper.container.data('onTouchEnd')=="false") {
+                    var transformY=pullDistance
+                    if (realyDistance > 50) {
+                        var transformY = 50 * window.devicePixelRatio;
                     }
+                    swipper.container.find('.refresh').css({
+                        "z-index": 2,
+                        transition: '0ms',
+                        transform: "translate3d(0," + transformY + "px,0)"
+                    });
                     swipper.container.find('.refresh-icon').css({
-                        transition:'0ms',
-                        top:refressPull+"px",
-                        transform:"rotate("+(pullDistance*15)+"deg)"
+                        transform: "rotate(" + (pullDistance * 15) + "deg)"
                     });
                 }
 
@@ -311,7 +318,7 @@
 
         function setitem(taove, swipper, diff) {
             var htmlstr = "";
-            var data=taove.taove;
+            var data = taove.taove;
             for (var i = 0; i < data.length; i++) {
                 var img = data[i];
                 var coverImg = img.coverImg;
@@ -349,17 +356,20 @@
                 swipper.slides.append(htmlstr);
             } else {
                 //刷新
-                swipper.container.find('.time').each(function(){
-                    var html= timeago(parseInt($(this).attr('createdOn')));
-                   $(this).html(html);
+                swipper.container.find('.time').each(function () {
+                    var html = timeago(parseInt($(this).attr('createdOn')));
+                    $(this).html(html);
                 })
-                swipper.wrapper.attr('createdOn',taove.count);
+                swipper.wrapper.attr('createdOn', taove.count);
                 swipper.slides.prepend(htmlstr);
-                swipper.container.find('.refresh span').html('下拉刷新');
+                swipper.container.find('.refresh').css({
+                    "z-index": 1,
+                    transition: '400ms',
+                    transform: "translate3d(0,-1rem,0)"
+                });
                 swipper.container.find('.refresh-icon').removeClass('anim').css({
-                    transition:'300ms',
-                    top:'-1rem',
-                    transform:"rotate(0deg)"
+                    transition: '400ms',
+                    transform: "rotate(0deg)"
                 });
             }
             swipper.update();

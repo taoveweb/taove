@@ -151,12 +151,13 @@ body{
 .refresh{
     text-align: center;
     width: 100%;
+    transform: translate3d(0,-1rem,0)
 }
 .refresh .refresh-icon{
     position: fixed;
-    top: -1rem;
+    top: -0.4rem;
     left: 50%;
-    margin-left: -3rem;
+    margin-left: -2rem;
     z-index: 10;
     width: 1rem;
     height: 1rem;

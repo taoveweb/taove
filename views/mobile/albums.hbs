@@ -221,6 +221,13 @@
                 swipper.setWrapperTranslate(swipper.getWrapperTranslate());
                 swipper.update();
             },
+            onTransitionEnd:function(swipper){
+                swipper.container.find('.refresh-icon').css({
+                    transition:'400ms',
+                    top:'-1rem',
+                    transform:"rotate(-360deg)"
+                });
+            },
             onTouchEnd: function (swipper) {
                 if (swipper.wrapper.data('sendupdate') == 'true') {
                     swipper.container.find('.refresh-icon').addClass('anim');
@@ -233,19 +240,7 @@
                     getajax(url, swipper, diff)
                 }
 
-                if(swipper.wrapper.data('sendupdate') == 'false'){
-                    (function(swipper){
-                        window.setTimeout(function(){
-                            swipper.container.find('.refresh-icon').css({
-                                transition:'500ms',
-                                top:'-1rem',
-                                transform:"rotate(0deg)"
-                            });
-                        },10)
 
-                    })(swipper)
-
-                }
             },
             onProgress: function (swipper, progess) {
                 var diff = swipper.touches.diff;

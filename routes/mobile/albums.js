@@ -15,8 +15,9 @@ function indexGet(req, res, next) {
             var docs = yield Albums.find({createdOn: {$lt:req.query.createdOn}}).sort({createdOn:-1}).limit(2).exec();
             res.json(docs)
         } else if (req.query.q && req.query.q == 'update') {
+            var count=yield  Albums.count();
             var docs = yield Albums.find({createdOn: {$gt:req.query.createdOn}}).sort({createdOn:-1}).limit(2).exec();
-            res.json(docs)
+            res.json({docs:docs,count:count})
         } else {
             var count=yield  Albums.count();
             var docs = yield Albums.find().sort({createdOn:-1}).limit(3).exec();

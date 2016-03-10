@@ -13,11 +13,11 @@ function indexGet(req, res, next) {
     co(function *() {
         if (req.query.q && req.query.q == 'more') {
             var docs = yield Albums.find({createdOn: {$lt:req.query.createdOn}}).sort({createdOn:-1}).limit(2).exec();
-            res.json(docs)
+            res.json({taove:docs})
         } else if (req.query.q && req.query.q == 'update') {
             var count=yield  Albums.count();
             var docs = yield Albums.find({createdOn: {$gt:req.query.createdOn}}).sort({createdOn:-1}).limit(2).exec();
-            res.json({docs:docs,count:count})
+            res.json({taove:docs,count:count})
         } else {
             var count=yield  Albums.count();
             var docs = yield Albums.find().sort({createdOn:-1}).limit(3).exec();

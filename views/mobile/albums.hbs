@@ -287,8 +287,9 @@
         }
 
 
-        function setitem(data, swipper, diff) {
+        function setitem(taove, swipper, diff) {
             var htmlstr = "";
+            var data=taove.taove;
             for (var i = 0; i < data.length; i++) {
                 var img = data[i];
                 var coverImg = img.coverImg;
@@ -298,10 +299,10 @@
                 var coverImgname = coverImg.name;
                 switch (coverImg.sizeLevel) {
                     case 2:
-                        coverImgname = coverImg.name.replace('.', '_640.')
+                        coverImgname = coverImg.name.replace('.', '_640.');
                         break;
                     case 3:
-                        coverImgname = coverImg.name.replace('.', '_1080.')
+                        coverImgname = coverImg.name.replace('.', '_1080.');
                         break;
                 }
 
@@ -330,6 +331,7 @@
                     var html= timeago(parseInt($(this).attr('createdOn')));
                    $(this).html(html);
                 })
+                swipper.wrapper.attr('createdOn',taove.count)
                 swipper.slides.prepend(htmlstr);
                 swipper.container.find('.refresh').html('下拉刷新');
             }

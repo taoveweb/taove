@@ -218,6 +218,7 @@
             preloadImages: false,
             mousewheelControl: true,
             freeMode: true,
+            lazyLoading: true,
   /*          onInit:function(swiper){
                 swiper.container.data('imageNumLoding',0);
                 swiper.container.data('imageNumloaded',0);
@@ -372,7 +373,7 @@
                             <span  class="time" createdOn="${img.createdOn}" >${timeago(img.createdOn)}</span>
                         </div>
                         <a style="${scwd}; height:${hd * scwd / wd}px" class="box">
-                        <img  width="${scwd}" height="${hd * scwd / wd}"  src="/${coverImg.path + coverImgname}" >
+                        <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">
                         <div class="swiper-lazy-preloader"></div>
                         </a>
                         <div class="br imginfo">

@@ -219,6 +219,9 @@
             mousewheelControl: true,
             freeMode: true,
             lazyLoading: true,
+            onLazyImageLoad:function(swiper, slide, image){
+                console.log(image);
+            },
             onTouchStart: function (swipper) {
                 swipper.setWrapperTranslate(swipper.getWrapperTranslate());
                 swipper.update();

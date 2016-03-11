@@ -278,9 +278,9 @@
                     swipper.container.find('.refresh span').html('下拉刷新');
                 }
                 if (realyDistance > 0 && swipper.container.data('onTouchEnd') == "false") {
-                    var transformY = pullDistance*1.45;
+                    var transformY = pullDistance*1.3;
                     if (realyDistance > 50) {
-                        var transformY = 70 * window.devicePixelRatio;
+                        var transformY = 60 * window.devicePixelRatio;
                     }
                     swipper.container.find('.refresh').css({
                         "z-index": 2,

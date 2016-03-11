@@ -366,14 +366,15 @@
                         break;
                 }
 
-
+           /* <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">*/
                 htmlstr += `<div class="item grid-item" createdon="${img.createdOn}">
                         <div class="br userinfo">
                             <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
                             <span  class="time" createdOn="${img.createdOn}" >${timeago(img.createdOn)}</span>
                         </div>
                         <a style="${scwd}; height:${hd * scwd / wd}px" class="box">
-                        <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">
+                        <img  width="${scwd}" height="${hd * scwd / wd}" src="/${coverImg.path + coverImgname}">
+
                         <div class="swiper-lazy-preloader"></div>
                         </a>
                         <div class="br imginfo">

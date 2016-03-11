@@ -219,8 +219,17 @@
             mousewheelControl: true,
             freeMode: true,
             lazyLoading: true,
+            onInit:function(swiper){
+                swiper.container.data('imageNumLoding',0);
+                swiper.container.data('imageNumloaded',0);
+            },
             onLazyImageLoad:function(swiper, slide, image){
-                console.log(image);
+                swiper.container.data('imageNumLoding', swiper.container.data('imageNumLoding')+1);
+                console.log('imageNumLoding:'+swiper.container.data('imageNumLoding'));
+            },
+            onLazyImageReady:function(swiper, slide, image){
+                swiper.container.data('imageNumloaded', swiper.container.data('imageNumloaded')+1);
+                console.log('imageNumloaded:'+swiper.container.data('imageNumloaded'));
             },
             onTouchStart: function (swipper) {
                 swipper.setWrapperTranslate(swipper.getWrapperTranslate());

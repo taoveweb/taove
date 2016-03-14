@@ -36,11 +36,26 @@ function indexGet(req, res, next) {
 
 
 function indexPost(req, res, next) {
-    var name=req.body.name;
-    console.log(req.body.uuid)
+    var name=req.body.name|| '';
+    var uuid=req.body.uuid || '';
+    var userid=req.body.userid || '';
+
+    var set='';
+
+    if(uuid){
+        set={$push:{likes:uuid}};
+    }else if(userid){
+        set={$push:{likes:userid}};
+    }else{
+      res.json({
+          msg:false
+      });
+    }
+
+
     co(function *() {
-        //var docs = yield AlbumsImg.findOneAndUpdate({name:name},{$set:{}}).exec();
-        var docs = yield AlbumsImg.findOne({name:name}).exec();
+        var docs = yield AlbumsImg.findOneAndUpdate({name:name},set).exec();
+       // var docs = yield AlbumsImg.findOne({name:name}).exec();
         res.json(docs)
     });
 }

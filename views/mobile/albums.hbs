@@ -437,7 +437,8 @@
         //喜欢
         $(function(){
             $('body').on('doubleTap','.box',function(){
-                $(this).parent().find('.bigLike').addClass('active');
+
+                $(this).parent().find('.bigLike').toggleClass('active');
             })
         });
 

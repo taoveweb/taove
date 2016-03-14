@@ -1,97 +1,3 @@
-<div class="swiper-container swiper-container-h">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
-                    <div class="refresh"><span>下接刷新</span>
-                        <div class="refresh-icon"></div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-v">
-                        {{#each taove}}
-                            <div class="item grid-item" createdOn="{{this.createdOn}}">
-                                <div class="br userinfo">
-                                    <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                                    <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
-                                </div>
-                                <a class="box">
-                                    {{#with this.coverImg}}
-                                        {{{getImgM width height sizeLevel path name }}}
-                                    {{/with}}
-                                </a>
-
-                                <div class="br imginfo">
-                                    <p class="editAlbumsTitle edit"><span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}大洋教堂;
-                                        <span class="img"></span>{{this.imgNum}}张图片;2000元;</p> <em class="bigLike"></em>
-                                    </p>
-                                </div>
-                            </div>
-                        {{/each}}
-                    </div>
-                </div>
-
-                <div class="loader">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <!-- Add Scroll Bar -->
-                <div class="swiper-scrollbar"></div>
-            </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
-                    <div class="refresh"><span>下接刷新</span>
-
-                        <div class="refresh-icon"></div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-v">
-                        {{#each taove}}
-                            <div class="item grid-item" createdOn="{{this.createdOn}}">
-                                <div class="br userinfo">
-                                    <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                                    <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
-                                </div>
-                                <a class="box">
-                                    {{#with this.coverImg}}
-                                        {{{getImgM width height sizeLevel path name }}}
-                                    {{/with}}
-                                    <div class="swiper-lazy-preloader"></div>
-                                </a>
-
-                                <div class="br imginfo">
-                                    <p class="editAlbumsTitle edit"><span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}大洋教堂;
-                                        <span class="img"></span>{{this.imgNum}}张图片;2000元;</p> <em class="bigLike"></em>
-                                    </p>
-                                </div>
-                            </div>
-                        {{/each}}
-                    </div>
-                </div>
-                <div class="refresh">下接刷新
-                    <div class="refresh-icon"></div>
-                </div>
-                <div class="loader">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="swiper-scrollbar"></div>
-            </div>
-        </div>
-        <div class="swiper-slide">Horizontal Slide 3</div>
-    </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination swiper-pagination-h"></div>
-</div>
-
-<!-- Initialize Swiper -->
-
-
-<!-- Swiper JS -->
-<script src="{{static}}common/js/zepto.min.js"></script>
-<script src="{{static}}mobile/js/swiper.min.js"></script>
-
 {{#extend "mStyle"}}
     <link rel="stylesheet" href="/mobile/css/homeD.css">
     <link rel="stylesheet" href="/common/css/swiper.min.css">
@@ -178,6 +84,105 @@
     </style>
 {{/extend}}
 
+<div class="swiper-container swiper-container-h">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="swiper-container swiper-container-v">
+                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
+                    <div class="refresh"><span>下接刷新</span>
+
+                        <div class="refresh-icon"></div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-v">
+                        {{#each taove}}
+                            <div class="item grid-item" createdOn="{{this.createdOn}}">
+                                <div class="br userinfo">
+                                    <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
+                                    <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
+                                </div>
+                                <a class="box">
+                                    {{#with this.coverImg}}
+                                        {{{getImgM width height sizeLevel path name }}}
+                                    {{/with}}
+                                </a>
+
+                                <div class="br imginfo">
+                                    <div class="editAlbumsTitle edit"><span class="like"></span>30个喜欢; <span
+                                            class="local"></span> {{this.city}}大洋教堂;
+                                        <span class="img"></span>{{this.imgNum}}张图片;2000元;
+                                    </div>
+                                    <em class="bigLike"></em>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+
+                <div class="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <!-- Add Scroll Bar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="swiper-container swiper-container-v">
+                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
+                    <div class="refresh"><span>下接刷新</span>
+
+                        <div class="refresh-icon"></div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-v">
+                        {{#each taove}}
+                            <div class="item grid-item" createdOn="{{this.createdOn}}">
+                                <div class="br userinfo">
+                                    <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
+                                    <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
+                                </div>
+                                <a class="box">
+                                    {{#with this.coverImg}}
+                                        {{{getImgM width height sizeLevel path name }}}
+                                    {{/with}}
+                                    <div class="swiper-lazy-preloader"></div>
+                                </a>
+
+                                <div class="br imginfo">
+                                    <div class="editAlbumsTitle edit">
+                                        <span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}大洋教堂;
+                                        <span class="img"></span>{{this.imgNum}}张图片;2000元;
+                                    </div>
+                                    <em class="bigLike"></em>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="refresh">下接刷新
+                    <div class="refresh-icon"></div>
+                </div>
+                <div class="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">Horizontal Slide 3</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination-h"></div>
+</div>
+
+<!-- Initialize Swiper -->
+
+
+<!-- Swiper JS -->
+<script src="{{static}}common/js/zepto.min.js"></script>
+<script src="{{static}}mobile/js/swiper.min.js"></script>
+
 {{#extend "mScripts"}}
     <script>
         var swiperH = new Swiper('.swiper-container-h', {
@@ -222,18 +227,18 @@
             mousewheelControl: true,
             freeMode: true,
             lazyLoading: true,
-  /*          onInit:function(swiper){
-                swiper.container.data('imageNumLoding',0);
-                swiper.container.data('imageNumloaded',0);
-            },
-            onLazyImageLoad:function(swiper, slide, image){
-                swiper.container.data('imageNumLoding', swiper.container.data('imageNumLoding')+1);
-                console.log('imageNumLoding:'+swiper.container.data('imageNumLoding'));
-            },
-            onLazyImageReady:function(swiper, slide, image){
-                swiper.container.data('imageNumloaded', swiper.container.data('imageNumloaded')+1);
-                console.log('imageNumloaded:'+swiper.container.data('imageNumloaded'));
-            },*/
+            /*          onInit:function(swiper){
+                          swiper.container.data('imageNumLoding',0);
+                          swiper.container.data('imageNumloaded',0);
+                      },
+                      onLazyImageLoad:function(swiper, slide, image){
+                          swiper.container.data('imageNumLoding', swiper.container.data('imageNumLoding')+1);
+                          console.log('imageNumLoding:'+swiper.container.data('imageNumLoding'));
+                      },
+                      onLazyImageReady:function(swiper, slide, image){
+                          swiper.container.data('imageNumloaded', swiper.container.data('imageNumloaded')+1);
+                          console.log('imageNumloaded:'+swiper.container.data('imageNumloaded'));
+                      },*/
             onTouchStart: function (swipper) {
                 swipper.setWrapperTranslate(swipper.getWrapperTranslate());
                 swipper.update();
@@ -243,10 +248,10 @@
                 var pullDistance = swipper.getWrapperTranslate();
                 var realyDistance = pullDistance / window.devicePixelRatio;
                 swipper.container.data('onTouchEnd', 'true');
-                if (realyDistance >50) {
-                    window.setTimeout(function(){
+                if (realyDistance > 50) {
+                    window.setTimeout(function () {
                         swipper.container.find('.refresh span').html('正在加载中');
-                    },10);
+                    }, 10);
 
                     //刷新
                     swipper.container.find('.refresh-icon').addClass('anim');
@@ -293,7 +298,7 @@
                     swipper.container.find('.refresh span').html('下拉刷新');
                 }
                 if (realyDistance > 0 && swipper.container.data('onTouchEnd') == "false") {
-                    var transformY = pullDistance*1.3;
+                    var transformY = pullDistance * 1.3;
                     if (realyDistance > 50) {
                         var transformY = 60 * window.devicePixelRatio;
                     }
@@ -369,7 +374,7 @@
                         break;
                 }
 
-           /* <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">*/
+                /* <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">*/
                 htmlstr += `<div class="item grid-item" createdon="${img.createdOn}">
                         <div class="br userinfo">
                             <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
@@ -380,7 +385,7 @@
                         <div class="swiper-lazy-preloader"></div>
                         </a>
                         <div class="br imginfo">
-                        <p class="editAlbumsTitle edit"><span class="like"></span>30个喜欢;<span class="local"></span> ${img.city}大洋教堂;<span class="img"></span>${img.imgNum}张图片;2000元;</p> <em class="bigLike"></em>
+                        <div class="editAlbumsTitle edit"><span class="like"></span>30个喜欢;<span class="local"></span> ${img.city}大洋教堂;<span class="img"></span>${img.imgNum}张图片;2000元;</div> <em class="bigLike"></em>
                         </div>
                         </div>`;
 
@@ -432,13 +437,12 @@
         }
 
 
-
         //喜欢
-        $(function(){
-            $('body').on('doubleTap','.box',function(){
+        $(function () {
+            $('body').on('doubleTap', '.box', function () {
                 $(this).parent().find('.bigLike').toggleClass('active');
             })
-            $('body').on('tap','.bigLike',function(){
+            $('body').on('tap', '.bigLike', function () {
                 $(this).parent().find('.bigLike').toggleClass('active');
             })
         });

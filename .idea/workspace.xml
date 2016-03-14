@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mobile/css/homeD.css" afterPath="$PROJECT_DIR$/public/mobile/css/homeD.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,8 +80,8 @@
           <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/www.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.24050634">
-                  <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+                <state vertical-scroll-proportion="0.81962025">
+                  <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
@@ -88,20 +90,14 @@
           <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-4.12069">
-                  <caret line="442" column="14" selection-start-line="442" selection-start-column="14" selection-end-line="442" selection-end-column="14" />
+                <state vertical-scroll-proportion="-3.7931035">
+                  <caret line="389" column="32" selection-start-line="389" selection-start-column="32" selection-end-line="389" selection-end-column="32" />
                   <folding>
-                    <element signature="e#4539#6708#0#HTML" expanded="false" />
-                    <element signature="e#6814#7465#0#HTML" expanded="false" />
-                    <element signature="e#7587#7759#0#HTML" expanded="false" />
-                    <element signature="e#7818#12610#0#HTML" expanded="false" />
-                    <element signature="e#12659#13829#0#HTML" expanded="false" />
-                    <element signature="e#13879#16279#0#HTML" expanded="false" />
-                    <marker date="1457936150289" expanded="true" signature="14836:15750" placeholder="..." />
-                    <marker date="1457936150289" expanded="true" signature="14886:15111" placeholder="..." />
-                    <marker date="1457936150289" expanded="true" signature="15147:15182" placeholder="..." />
-                    <marker date="1457936150289" expanded="true" signature="15195:15428" placeholder="..." />
-                    <marker date="1457936150289" expanded="true" signature="15477:15719" placeholder="..." />
+                    <marker date="1457942398365" expanded="true" signature="15125:16043" placeholder="..." />
+                    <marker date="1457942398365" expanded="true" signature="15175:15400" placeholder="..." />
+                    <marker date="1457942398365" expanded="true" signature="15436:15471" placeholder="..." />
+                    <marker date="1457942398365" expanded="true" signature="15484:15717" placeholder="..." />
+                    <marker date="1457942398365" expanded="true" signature="15766:16012" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -134,11 +130,11 @@
           <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.56435645">
-                  <caret line="242" column="29" selection-start-line="242" selection-start-column="29" selection-end-line="242" selection-end-column="29" />
+                <state vertical-scroll-proportion="0.50165015">
+                  <caret line="208" column="29" selection-start-line="208" selection-start-column="29" selection-end-line="208" selection-end-column="29" />
                   <folding>
-                    <element signature="e#4155#4968#1" expanded="true" />
-                    <element signature="e#5169#5814#1" expanded="true" />
+                    <element signature="e#4195#5008#1" expanded="true" />
+                    <element signature="e#5210#5855#1" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -178,9 +174,9 @@
         <option value="$PROJECT_DIR$/routes/mobile/albums.js" />
         <option value="$PROJECT_DIR$/hbsregister.js" />
         <option value="$PROJECT_DIR$/public/common/js/zepto.min.js" />
-        <option value="$PROJECT_DIR$/bin/www.js" />
-        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
         <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
+        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
+        <option value="$PROJECT_DIR$/bin/www.js" />
       </list>
     </option>
   </component>
@@ -832,40 +828,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.12069">
-          <caret line="442" column="14" selection-start-line="442" selection-start-column="14" selection-end-line="442" selection-end-column="14" />
+        <state vertical-scroll-proportion="-3.7931035">
+          <caret line="389" column="32" selection-start-line="389" selection-start-column="32" selection-end-line="389" selection-end-column="32" />
           <folding>
-            <element signature="e#4539#6708#0#HTML" expanded="false" />
-            <element signature="e#6814#7465#0#HTML" expanded="false" />
-            <element signature="e#7587#7759#0#HTML" expanded="false" />
-            <element signature="e#7818#12610#0#HTML" expanded="false" />
-            <element signature="e#12659#13829#0#HTML" expanded="false" />
-            <element signature="e#13879#16279#0#HTML" expanded="false" />
-            <marker date="1457936150289" expanded="true" signature="14836:15750" placeholder="..." />
-            <marker date="1457936150289" expanded="true" signature="14886:15111" placeholder="..." />
-            <marker date="1457936150289" expanded="true" signature="15147:15182" placeholder="..." />
-            <marker date="1457936150289" expanded="true" signature="15195:15428" placeholder="..." />
-            <marker date="1457936150289" expanded="true" signature="15477:15719" placeholder="..." />
+            <marker date="1457942398365" expanded="true" signature="15125:16043" placeholder="..." />
+            <marker date="1457942398365" expanded="true" signature="15175:15400" placeholder="..." />
+            <marker date="1457942398365" expanded="true" signature="15436:15471" placeholder="..." />
+            <marker date="1457942398365" expanded="true" signature="15484:15717" placeholder="..." />
+            <marker date="1457942398365" expanded="true" signature="15766:16012" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.50165015">
+          <caret line="208" column="29" selection-start-line="208" selection-start-column="29" selection-end-line="208" selection-end-column="29" />
+          <folding>
+            <element signature="e#4195#5008#1" expanded="true" />
+            <element signature="e#5210#5855#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24050634">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.81962025">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56435645">
-          <caret line="242" column="29" selection-start-line="242" selection-start-column="29" selection-end-line="242" selection-end-column="29" />
-          <folding>
-            <element signature="e#4155#4968#1" expanded="true" />
-            <element signature="e#5169#5814#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

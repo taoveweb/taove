@@ -209,7 +209,9 @@ body{
     -o-animation:3s infinite linear;
 
 }
-
+.editAlbumsTitle.edit{
+    width: 80%;
+}
 
 .loader span:nth-child(1){
     background:#E84C3D;
@@ -237,6 +239,7 @@ body{
     padding: 0.3rem 0 0 0;
     opacity: 0.5;
 }
+
 .item .imginfo .bigLike.active {
     opacity: 1;
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABABAMAAABYR2ztAAAAKlBMVEUAAADrTzrrTzjrTzjrTzjsTjfsTzjsTzjrTzjsTjjsTjjuT0LrTzjrTzjMvi9TAAAADXRSTlMAEyXOt0ebaoEz8gXdEcMBZgAAAUZJREFUSMfl1D9Lw0AYx/Ffom2RLkGdnOImQkEFR0HdBcFVwV0K9QXkBYgUBBcRHBwdCk7i4uALyGLiv9jnvViu1+dyuTzX7v1MN3xJ7k9ymDfL68647C4lyi6hbIzGwytYTkg5xMgpKbsoWSXtGrgl7QBsaUBaFrVoorjh4IzYe2LGn/wAMgoqmTxijQSPOuhKwReUkESxCppycK6CNzn4M4t0mYX25eCHF+FdxpEc5CrYk4Ns6itmm2QiB9+z7UNHDj5UsCAHWypoyUFPBYEcRPBvZY6xByn41UHT8734JxFBS8R91Bbrg30OgpRqDCOwjrDPrFEXHKPknhxPKAtTZwYxLCvVYBu2duVA8mdUvNjBBRx9+2t1NQbECl6ie9WZC86V2KfkCvVPmMUQvPJtKlE7vgNZ0JUmYI41j+C12YNfG/PpH3q/PBiRpta3AAAAAElFTkSuQmCC") no-repeat center;

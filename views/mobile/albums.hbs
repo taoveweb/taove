@@ -435,7 +435,8 @@
 
 
         //喜欢
-        $('.swiper-slide').on('doubleTap ','.box',function(){
+        $('body').on('doubleTap','.box',function(){
+            alert('ok');
             $(this).parent().find('.bigLike').addClass('active');
         })
 

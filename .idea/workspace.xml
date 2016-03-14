@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
@@ -86,10 +85,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
+          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.56735754">
+                <state vertical-scroll-proportion="-3.775862">
                   <caret line="387" column="130" selection-start-line="387" selection-start-column="130" selection-end-line="387" selection-end-column="130" />
                   <folding>
                     <marker date="1457943264605" expanded="true" signature="15132:16054" placeholder="..." />
@@ -102,10 +101,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="hbsregister.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="hbsregister.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/hbsregister.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.64">
+                <state vertical-scroll-proportion="1.5928143">
                   <caret line="73" column="126" selection-start-line="73" selection-start-column="126" selection-end-line="73" selection-end-column="126" />
                   <folding />
                 </state>
@@ -126,10 +125,10 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="homeD.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.3255209">
+                <state vertical-scroll-proportion="-16.966667">
                   <caret line="266" column="5" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
                   <folding>
                     <element signature="e#4180#4993#1" expanded="true" />
@@ -139,10 +138,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="db.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="db.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/models/db.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.58">
+                <state vertical-scroll-proportion="-0.6201299">
                   <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
                   <folding />
                 </state>
@@ -447,7 +446,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24891774" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12554112" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -816,14 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hbsregister.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.64">
-          <caret line="73" column="126" selection-start-line="73" selection-start-column="126" selection-end-line="73" selection-end-column="126" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/mobile/udid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.36">
@@ -842,14 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.58">
-          <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.76">
@@ -860,7 +843,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.3255209">
+        <state vertical-scroll-proportion="-16.966667">
           <caret line="266" column="5" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
           <folding>
             <element signature="e#4180#4993#1" expanded="true" />
@@ -871,7 +854,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56735754">
+        <state vertical-scroll-proportion="-3.775862">
           <caret line="387" column="130" selection-start-line="387" selection-start-column="130" selection-end-line="387" selection-end-column="130" />
           <folding>
             <marker date="1457943264605" expanded="true" signature="15132:16054" placeholder="..." />
@@ -880,6 +863,22 @@
             <marker date="1457943264605" expanded="true" signature="15491:15724" placeholder="..." />
             <marker date="1457943264605" expanded="true" signature="15773:16023" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hbsregister.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5928143">
+          <caret line="73" column="126" selection-start-line="73" selection-start-column="126" selection-end-line="73" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6201299">
+          <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>

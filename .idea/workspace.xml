@@ -23,7 +23,7 @@
     <favorites_list name="taove" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.72943723">
+    <splitter split-orientation="vertical" split-proportion="0.51729107">
       <split-first>
         <leaf>
           <file leaf-file-name="mobile.js" pinned="false" current-in-tab="false">
@@ -89,14 +89,14 @@
           <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.77068967">
-                  <caret line="111" column="87" selection-start-line="111" selection-start-column="87" selection-end-line="111" selection-end-column="87" />
+                <state vertical-scroll-proportion="0.56735754">
+                  <caret line="387" column="130" selection-start-line="387" selection-start-column="130" selection-end-line="387" selection-end-column="130" />
                   <folding>
-                    <marker date="1457943125956" expanded="true" signature="15131:16052" placeholder="..." />
-                    <marker date="1457943125956" expanded="true" signature="15181:15406" placeholder="..." />
-                    <marker date="1457943125956" expanded="true" signature="15442:15477" placeholder="..." />
-                    <marker date="1457943125956" expanded="true" signature="15490:15723" placeholder="..." />
-                    <marker date="1457943125956" expanded="true" signature="15772:16021" placeholder="..." />
+                    <marker date="1457943264605" expanded="true" signature="15132:16054" placeholder="..." />
+                    <marker date="1457943264605" expanded="true" signature="15182:15407" placeholder="..." />
+                    <marker date="1457943264605" expanded="true" signature="15443:15478" placeholder="..." />
+                    <marker date="1457943264605" expanded="true" signature="15491:15724" placeholder="..." />
+                    <marker date="1457943264605" expanded="true" signature="15773:16023" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -129,7 +129,7 @@
           <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.1789473">
+                <state vertical-scroll-proportion="1.3255209">
                   <caret line="266" column="5" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
                   <folding>
                     <element signature="e#4180#4993#1" expanded="true" />
@@ -860,7 +860,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1789473">
+        <state vertical-scroll-proportion="1.3255209">
           <caret line="266" column="5" selection-start-line="266" selection-start-column="5" selection-end-line="266" selection-end-column="5" />
           <folding>
             <element signature="e#4180#4993#1" expanded="true" />
@@ -871,14 +871,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77068967">
-          <caret line="111" column="87" selection-start-line="111" selection-start-column="87" selection-end-line="111" selection-end-column="87" />
+        <state vertical-scroll-proportion="0.56735754">
+          <caret line="387" column="130" selection-start-line="387" selection-start-column="130" selection-end-line="387" selection-end-column="130" />
           <folding>
-            <marker date="1457943125956" expanded="true" signature="15131:16052" placeholder="..." />
-            <marker date="1457943125956" expanded="true" signature="15181:15406" placeholder="..." />
-            <marker date="1457943125956" expanded="true" signature="15442:15477" placeholder="..." />
-            <marker date="1457943125956" expanded="true" signature="15490:15723" placeholder="..." />
-            <marker date="1457943125956" expanded="true" signature="15772:16021" placeholder="..." />
+            <marker date="1457943264605" expanded="true" signature="15132:16054" placeholder="..." />
+            <marker date="1457943264605" expanded="true" signature="15182:15407" placeholder="..." />
+            <marker date="1457943264605" expanded="true" signature="15443:15478" placeholder="..." />
+            <marker date="1457943264605" expanded="true" signature="15491:15724" placeholder="..." />
+            <marker date="1457943264605" expanded="true" signature="15773:16023" placeholder="..." />
           </folding>
         </state>
       </provider>

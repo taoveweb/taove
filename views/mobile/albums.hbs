@@ -22,7 +22,7 @@
 
                                 <div class="br imginfo">
                                     <p class="editAlbumsTitle edit"><span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}大洋教堂;
-                                        <span class="img"></span>{{this.imgNum}}张图片;2000元;</p> <em class="bigLike active"></em>
+                                        <span class="img"></span>{{this.imgNum}}张图片;2000元;</p> <em class="bigLike"></em>
                                     </p>
                                 </div>
                             </div>
@@ -431,6 +431,13 @@
                 return Math.floor(seconds) + '秒';
             }
         }
+
+
+
+        //喜欢
+        $('.swiper-slide').on('doubleTap ','.box',function(){
+            $(this).parent().find('.bigLike').addClass('active');
+        })
 
     </script>
 {{/extend}}

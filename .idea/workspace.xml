@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
@@ -85,28 +86,33 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
+          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.275862">
-                  <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+                <state vertical-scroll-proportion="0.6300885">
+                  <caret line="437" column="41" selection-start-line="437" selection-start-column="41" selection-end-line="437" selection-end-column="41" />
                   <folding>
-                    <element signature="e#4547#6716#0#HTML" expanded="false" />
-                    <marker date="1457924746304" expanded="true" signature="14844:15758" placeholder="..." />
-                    <marker date="1457924746304" expanded="true" signature="14894:15119" placeholder="..." />
-                    <marker date="1457924746304" expanded="true" signature="15155:15190" placeholder="..." />
-                    <marker date="1457924746304" expanded="true" signature="15203:15436" placeholder="..." />
-                    <marker date="1457924746304" expanded="true" signature="15485:15727" placeholder="..." />
+                    <element signature="e#4540#6709#0#HTML" expanded="false" />
+                    <element signature="e#6815#7466#0#HTML" expanded="false" />
+                    <element signature="e#7588#7760#0#HTML" expanded="false" />
+                    <element signature="e#7819#12611#0#HTML" expanded="false" />
+                    <element signature="e#12660#13830#0#HTML" expanded="false" />
+                    <element signature="e#13880#16280#0#HTML" expanded="false" />
+                    <marker date="1457925535899" expanded="true" signature="14837:15751" placeholder="..." />
+                    <marker date="1457925535899" expanded="true" signature="14887:15112" placeholder="..." />
+                    <marker date="1457925535899" expanded="true" signature="15148:15183" placeholder="..." />
+                    <marker date="1457925535899" expanded="true" signature="15196:15429" placeholder="..." />
+                    <marker date="1457925535899" expanded="true" signature="15478:15720" placeholder="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="hbsregister.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="hbsregister.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/hbsregister.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.56369984">
-                  <caret line="73" column="122" selection-start-line="73" selection-start-column="103" selection-end-line="73" selection-end-column="122" />
+                <state vertical-scroll-proportion="-10.64">
+                  <caret line="73" column="126" selection-start-line="73" selection-start-column="126" selection-end-line="73" selection-end-column="126" />
                   <folding />
                 </state>
               </provider>
@@ -169,9 +175,9 @@
         <option value="Z:/Application/Home/Controller/Luck28Controller.class.php" />
         <option value="$PROJECT_DIR$/routes/mobile/albums.js" />
         <option value="$PROJECT_DIR$/bin/www.js" />
-        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
         <option value="$PROJECT_DIR$/hbsregister.js" />
         <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
+        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
       </list>
     </option>
   </component>
@@ -779,34 +785,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.275862">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding>
-            <element signature="e#4547#6716#0#HTML" expanded="false" />
-            <marker date="1457924746304" expanded="true" signature="14844:15758" placeholder="..." />
-            <marker date="1457924746304" expanded="true" signature="14894:15119" placeholder="..." />
-            <marker date="1457924746304" expanded="true" signature="15155:15190" placeholder="..." />
-            <marker date="1457924746304" expanded="true" signature="15203:15436" placeholder="..." />
-            <marker date="1457924746304" expanded="true" signature="15485:15727" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hbsregister.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56369984">
-          <caret line="73" column="122" selection-start-line="73" selection-start-column="103" selection-end-line="73" selection-end-column="122" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25853658">
           <caret line="237" column="16" selection-start-line="237" selection-start-column="16" selection-end-line="237" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hbsregister.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.64">
+          <caret line="73" column="126" selection-start-line="73" selection-start-column="126" selection-end-line="73" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6300885">
+          <caret line="437" column="41" selection-start-line="437" selection-start-column="41" selection-end-line="437" selection-end-column="41" />
+          <folding>
+            <element signature="e#4540#6709#0#HTML" expanded="false" />
+            <element signature="e#6815#7466#0#HTML" expanded="false" />
+            <element signature="e#7588#7760#0#HTML" expanded="false" />
+            <element signature="e#7819#12611#0#HTML" expanded="false" />
+            <element signature="e#12660#13830#0#HTML" expanded="false" />
+            <element signature="e#13880#16280#0#HTML" expanded="false" />
+            <marker date="1457925535899" expanded="true" signature="14837:15751" placeholder="..." />
+            <marker date="1457925535899" expanded="true" signature="14887:15112" placeholder="..." />
+            <marker date="1457925535899" expanded="true" signature="15148:15183" placeholder="..." />
+            <marker date="1457925535899" expanded="true" signature="15196:15429" placeholder="..." />
+            <marker date="1457925535899" expanded="true" signature="15478:15720" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

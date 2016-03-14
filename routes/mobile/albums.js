@@ -37,8 +37,10 @@ function indexGet(req, res, next) {
 
 function indexPost(req, res, next) {
     var name=req.body.name;
+    console.log(req.body.uuid)
     co(function *() {
-        var docs = yield AlbumsImg.findOneAndUpdate({name:name},{$set:{}}).exec();
+        //var docs = yield AlbumsImg.findOneAndUpdate({name:name},{$set:{}}).exec();
+        var docs = yield AlbumsImg.findOne({name:name}).exec();
         res.json(docs)
     });
 }

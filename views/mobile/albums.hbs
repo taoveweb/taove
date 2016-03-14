@@ -435,10 +435,12 @@
 
 
         //喜欢
-        $('body').bind('longTap','.box',function(){
-            console.log('ok');
-            $(this).parent().find('.bigLike').addClass('active');
-        })
+        $(function(){
+            $('body').on('doubleTap','.box',function(){
+                $(this).parent().find('.bigLike').addClass('active');
+            })
+        });
+
 
     </script>
 {{/extend}}

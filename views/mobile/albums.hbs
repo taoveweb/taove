@@ -4,7 +4,6 @@
             <div class="swiper-container swiper-container-v">
                 <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
                     <div class="refresh"><span>下接刷新</span>
-
                         <div class="refresh-icon"></div>
                     </div>
                     <div class="swiper-slide swiper-slide-v">
@@ -437,7 +436,9 @@
         //喜欢
         $(function(){
             $('body').on('doubleTap','.box',function(){
-
+                $(this).parent().find('.bigLike').toggleClass('active');
+            })
+            $('body').on('tap','.bigLike',function(){
                 $(this).parent().find('.bigLike').toggleClass('active');
             })
         });

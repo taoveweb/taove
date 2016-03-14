@@ -21,7 +21,9 @@
                                 </a>
 
                                 <div class="br imginfo">
-                                    <p class="editAlbumsTitle edit">{{this.city}}大洋教堂;{{this.imgNum}}张图片;2000元;</p> <em>30个喜欢</em>
+                                    <p class="editAlbumsTitle edit"><span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}大洋教堂;
+                                        <span class="img"></span>{{this.imgNum}}张图片;2000元;</p> <em class="bigLike"></em>
+                                    </p>
                                 </div>
                             </div>
                         {{/each}}
@@ -59,7 +61,9 @@
                                 </a>
 
                                 <div class="br imginfo">
-                                    <p class="editAlbumsTitle edit">{{this.city}}大洋教堂;{{this.imgNum}}张图片;2000元;</p> <em>30个喜欢</em>
+                                    <p class="editAlbumsTitle edit"><span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}大洋教堂;
+                                        <span class="img"></span>{{this.imgNum}}张图片;2000元;</p> <em class="bigLike"></em>
+                                    </p>
                                 </div>
                             </div>
                         {{/each}}
@@ -377,7 +381,7 @@
                         <div class="swiper-lazy-preloader"></div>
                         </a>
                         <div class="br imginfo">
-                        <p class="editAlbumsTitle edit"> ${img.city}大洋教堂;${img.imgNum}张图片;2000元;</p> <em>30个喜欢</em>
+                        <p class="editAlbumsTitle edit"><span class="like"></span>30个喜欢;<span class="local"></span> ${img.city}大洋教堂;<span class="img"></span>${img.imgNum}张图片;2000元;</p> <em class="bigLike active"></em>
                         </div>
                         </div>`;
 

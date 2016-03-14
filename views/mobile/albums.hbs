@@ -100,18 +100,19 @@
                                     <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
                                     <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
                                 </div>
-                                <a class="box">
+                                <a  img-name="{{coverImg.name}}" class="box" >
                                     {{#with this.coverImg}}
                                         {{{getImgM width height sizeLevel path name }}}
                                     {{/with}}
+                                    <div class="swiper-lazy-preloader"></div>
                                 </a>
 
                                 <div class="br imginfo">
-                                    <div class="editAlbumsTitle edit"><span class="like"></span>30个喜欢; <span
-                                            class="local"></span>在{{this.city}}大洋教堂;
+                                    <div class="editAlbumsTitle edit">
+                                        <span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
                                         <span class="img"></span>有{{this.imgNum}}张图片;套餐2000元;
                                     </div>
-                                    <em class="bigLike"></em>
+                                    <em img-name="{{coverImg.name}}" class="bigLike"></em>
                                 </div>
                             </div>
                         {{/each}}
@@ -141,7 +142,7 @@
                                     <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
                                     <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
                                 </div>
-                                <a class="box">
+                                <a  img-name="{{coverImg.name}}" class="box" >
                                     {{#with this.coverImg}}
                                         {{{getImgM width height sizeLevel path name }}}
                                     {{/with}}
@@ -153,7 +154,7 @@
                                         <span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
                                         <span class="img"></span>有{{this.imgNum}}张图片;套餐2000元;
                                     </div>
-                                    <em class="bigLike"></em>
+                                    <em img-name="{{coverImg.name}}" class="bigLike"></em>
                                 </div>
                             </div>
                         {{/each}}
@@ -360,6 +361,7 @@
             var data = taove.taove;
             for (var i = 0; i < data.length; i++) {
                 var img = data[i];
+                console.log(coverImg)
                 var coverImg = img.coverImg;
                 var wd = coverImg.width;
                 var scwd = $('.swiper-slide-v').width();//coverImg.width;
@@ -380,12 +382,13 @@
                             <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
                             <span  class="time" createdOn="${img.createdOn}" >${timeago(img.createdOn)}</span>
                         </div>
-                        <a style="${scwd}; height:${hd * scwd / wd}px" class="box">
+                        <a img-name="${coverImg.name}" style="${scwd}; height:${hd * scwd / wd}px" class="box">
                         <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">
                         <div class="swiper-lazy-preloader"></div>
                         </a>
                         <div class="br imginfo">
-                        <div class="editAlbumsTitle edit"><span class="like"></span>30个喜欢;<span class="local"></span> 在${img.city}大洋教堂;<span class="img"></span>有${img.imgNum}张图片;套餐2000元;</div> <em class="bigLike"></em>
+                        <div class="editAlbumsTitle edit"><span class="like"></span>30个喜欢;<span class="local"></span>
+                         在${img.city}大洋教堂;<span class="img"></span>有${img.imgNum}张图片;套餐2000元;</div> <em  img-name="${coverImg.name}"  class="bigLike"></em>
                         </div>
                         </div>`;
 
@@ -437,15 +440,54 @@
         }
 
 
-        //喜欢
-        $(function () {
+
+
+        if(window.plus){
+            plusReady();
+        }else{
+            document.addEventListener("plusready",plusReady,false);
+        }
+
+        function plusReady(){
             $('body').on('doubleTap', '.box', function () {
+                var name=$(this).attr('img-name');
                 $(this).parent().find('.bigLike').toggleClass('active');
+                postLike(name)
+            });
+            $('body').on('tap', '.bigLike', function () {
+                var name=$(this).attr('img-name');
+                $(this).parent().find('.bigLike').toggleClass('active');
+                postLike(name);
+
+            });
+
+            function postLike(name){
+                $.post('/m',{name:name,uuid:plus.device.uuid},function(data){
+                    console.log(data)
+                })
+            }
+        }
+        //喜欢
+      /*  $(function () {
+            $('body').on('doubleTap', '.box', function () {
+                var name=$(this).attr('img-name');
+                $(this).parent().find('.bigLike').toggleClass('active');
+                postLike(name)
             })
             $('body').on('tap', '.bigLike', function () {
+                var name=$(this).attr('img-name');
                 $(this).parent().find('.bigLike').toggleClass('active');
+                postLike(name);
+
             })
-        });
+
+
+            function postLike(name){
+                $.post('/m',{name:name},function(data){
+                    console.log(data)
+                })
+            }
+        });*/
 
 
     </script>

@@ -68,6 +68,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
 
+
+
 require('./routes/route')(app);
 
 

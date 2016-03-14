@@ -101,7 +101,7 @@ var AlbumsImgSchema = new Schema({
     width: Number,
     height: Number,
     sizeLevel:{type:Number,default:1},//图片质量1为一般2为640 3为1080
-    likes: [{type: ObjectId}],//user id
+    likes: [{type: String}],//user id 惑 uuid
     watches: [{type: ObjectId}],//user id
     createdOn: {type: Date, default: Date.now}, //创建时间
     imgType: {type: Number},//图片类型 0为未修 1为精修 3相册封面 4x展架
@@ -123,7 +123,7 @@ var AlbumsSchema = new Schema({
     description: {type: String, trim: true, required: true},//描述
     city: {type: String, trim: true, required: true},//地区
     style: {type: String, trim: true, required: true},//风格
-    imgNum: {type: Number, default: 0},//创建时间
+    imgNum: {type: Number, default: 0},//图片数量
     coverImg:{},
     createdOn: {type: Number, default:new Date().getTime()}, //创建时间
     updated: {type: Number, default: new Date().getTime()}, //更新时间

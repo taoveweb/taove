@@ -2,6 +2,7 @@
  * Created by Administrator on 2015/12/21 0021.
  */
 var db = require('../../models/db');
+var path=require('path');
 var ObjectId = db.ObjectId;
 var Taove = db.Taove;
 var Albums = db.Albums;
@@ -35,9 +36,9 @@ function indexGet(req, res, next) {
 
 
 function indexPost(req, res, next) {
+    var name=req.body.name;
     co(function *() {
-        var docs = yield Albums.find().exec();
-        console.log(docs);
+        var docs = yield AlbumsImg.findOneAndUpdate({name:name},{$set:{}}).exec();
         res.json(docs)
     });
 }

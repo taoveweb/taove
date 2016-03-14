@@ -83,11 +83,7 @@ body{
     padding: 0.2rem 0;
     margin: 0 0.2rem;
 }
-.item .br p {
-    color: #122b68;
-    overflow: hidden;
-    font-size: 0.3rem;
-}
+
 
 
 .userinfo{
@@ -211,6 +207,9 @@ body{
 }
 .editAlbumsTitle.edit{
     width: 80%;
+    color: #122b68;
+    overflow: hidden;
+    font-size: 0.3rem;
 }
 
 .loader span:nth-child(1){

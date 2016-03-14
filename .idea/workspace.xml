@@ -24,7 +24,7 @@
     <favorites_list name="taove" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.52287585">
+    <splitter split-orientation="vertical" split-proportion="0.69411767">
       <split-first>
         <leaf>
           <file leaf-file-name="mobile.js" pinned="false" current-in-tab="false">
@@ -77,27 +77,27 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="www.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/www.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.81962025">
+                <state vertical-scroll-proportion="-5.18">
                   <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
+          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.7931035">
-                  <caret line="389" column="32" selection-start-line="389" selection-start-column="32" selection-end-line="389" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.39269406">
+                  <caret line="425" column="41" selection-start-line="425" selection-start-column="41" selection-end-line="425" selection-end-column="41" />
                   <folding>
-                    <marker date="1457942398365" expanded="true" signature="15125:16043" placeholder="..." />
-                    <marker date="1457942398365" expanded="true" signature="15175:15400" placeholder="..." />
-                    <marker date="1457942398365" expanded="true" signature="15436:15471" placeholder="..." />
-                    <marker date="1457942398365" expanded="true" signature="15484:15717" placeholder="..." />
-                    <marker date="1457942398365" expanded="true" signature="15766:16012" placeholder="..." />
+                    <marker date="1457942876563" expanded="true" signature="15125:16043" placeholder="..." />
+                    <marker date="1457942876563" expanded="true" signature="15175:15400" placeholder="..." />
+                    <marker date="1457942876563" expanded="true" signature="15436:15471" placeholder="..." />
+                    <marker date="1457942876563" expanded="true" signature="15484:15717" placeholder="..." />
+                    <marker date="1457942876563" expanded="true" signature="15766:16012" placeholder="..." />
                   </folding>
                 </state>
               </provider>
@@ -130,12 +130,22 @@
           <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.50165015">
-                  <caret line="208" column="29" selection-start-line="208" selection-start-column="29" selection-end-line="208" selection-end-column="29" />
+                <state vertical-scroll-proportion="1.734104">
+                  <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
                   <folding>
-                    <element signature="e#4195#5008#1" expanded="true" />
-                    <element signature="e#5210#5855#1" expanded="true" />
+                    <element signature="e#4180#4993#1" expanded="true" />
+                    <element signature="e#5195#5840#1" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="db.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/models/db.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-7.58">
+                  <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -174,9 +184,9 @@
         <option value="$PROJECT_DIR$/routes/mobile/albums.js" />
         <option value="$PROJECT_DIR$/hbsregister.js" />
         <option value="$PROJECT_DIR$/public/common/js/zepto.min.js" />
+        <option value="$PROJECT_DIR$/bin/www.js" />
         <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
         <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
-        <option value="$PROJECT_DIR$/bin/www.js" />
       </list>
     </option>
   </component>
@@ -340,6 +350,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taove" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="taove" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -659,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3372781">
-          <caret line="102" column="13" selection-start-line="102" selection-start-column="4" selection-end-line="102" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.029503105">
@@ -826,36 +843,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
+    <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.7931035">
-          <caret line="389" column="32" selection-start-line="389" selection-start-column="32" selection-end-line="389" selection-end-column="32" />
-          <folding>
-            <marker date="1457942398365" expanded="true" signature="15125:16043" placeholder="..." />
-            <marker date="1457942398365" expanded="true" signature="15175:15400" placeholder="..." />
-            <marker date="1457942398365" expanded="true" signature="15436:15471" placeholder="..." />
-            <marker date="1457942398365" expanded="true" signature="15484:15717" placeholder="..." />
-            <marker date="1457942398365" expanded="true" signature="15766:16012" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-5.18">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.58">
+          <caret line="107" column="54" selection-start-line="107" selection-start-column="54" selection-end-line="107" selection-end-column="54" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50165015">
-          <caret line="208" column="29" selection-start-line="208" selection-start-column="29" selection-end-line="208" selection-end-column="29" />
+        <state vertical-scroll-proportion="1.734104">
+          <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding>
-            <element signature="e#4195#5008#1" expanded="true" />
-            <element signature="e#5210#5855#1" expanded="true" />
+            <element signature="e#4180#4993#1" expanded="true" />
+            <element signature="e#5195#5840#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www.js">
+    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81962025">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.39269406">
+          <caret line="425" column="41" selection-start-line="425" selection-start-column="41" selection-end-line="425" selection-end-column="41" />
+          <folding>
+            <marker date="1457942876563" expanded="true" signature="15125:16043" placeholder="..." />
+            <marker date="1457942876563" expanded="true" signature="15175:15400" placeholder="..." />
+            <marker date="1457942876563" expanded="true" signature="15436:15471" placeholder="..." />
+            <marker date="1457942876563" expanded="true" signature="15484:15717" placeholder="..." />
+            <marker date="1457942876563" expanded="true" signature="15766:16012" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

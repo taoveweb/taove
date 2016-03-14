@@ -435,8 +435,8 @@
 
 
         //喜欢
-        $('body').on('doubleTap','.box',function(){
-            alert('ok');
+        $('body').bind('longTap','.box',function(){
+            console.log('ok');
             $(this).parent().find('.bigLike').addClass('active');
         })
 

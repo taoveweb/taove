@@ -234,7 +234,7 @@ body{
     background-size: contain;
     width: 0.8rem;
     height: 0.8rem;
-    padding: 0.2rem 0 0 0;
+    padding: 0.25rem 0 0 0;
 
 }
 .item .imginfo .bigLike.active{

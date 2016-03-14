@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/mobile/img/iconfont-xihuan.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/mobile/img/iconfont-xihuanA.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mobile/css/homeD.css" afterPath="$PROJECT_DIR$/public/mobile/css/homeD.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -26,7 +23,7 @@
     <favorites_list name="taove" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.52380955">
+    <splitter split-orientation="vertical" split-proportion="0.7131661">
       <split-first>
         <leaf>
           <file leaf-file-name="mobile.js" pinned="false" current-in-tab="false">
@@ -79,20 +76,20 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="www.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/bin/www.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.665">
+                <state vertical-scroll-proportion="-5.32">
                   <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
+          <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.275862">
+                <state vertical-scroll-proportion="0.33628318">
                   <caret line="381" column="28" selection-start-line="381" selection-start-column="28" selection-end-line="381" selection-end-column="28" />
                   <folding>
                     <element signature="e#4540#6709#0#HTML" expanded="false" />
@@ -133,8 +130,8 @@
           <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.44708994">
-                  <caret line="231" column="24" selection-start-line="231" selection-start-column="24" selection-end-line="231" selection-end-column="24" />
+                <state vertical-scroll-proportion="0.73170733">
+                  <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -174,8 +171,8 @@
         <option value="$PROJECT_DIR$/routes/mobile/albums.js" />
         <option value="$PROJECT_DIR$/hbsregister.js" />
         <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
-        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
         <option value="$PROJECT_DIR$/bin/www.js" />
+        <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
       </list>
     </option>
   </component>
@@ -775,9 +772,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/mobile/mobile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.7">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.32">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.275862">
+        <state vertical-scroll-proportion="0.33628318">
           <caret line="381" column="28" selection-start-line="381" selection-start-column="28" selection-end-line="381" selection-end-column="28" />
           <folding>
             <element signature="e#4540#6709#0#HTML" expanded="false" />
@@ -792,24 +805,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44708994">
-          <caret line="231" column="24" selection-start-line="231" selection-start-column="24" selection-end-line="231" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/mobile/mobile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.7">
-          <caret line="15" column="31" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.665">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.73170733">
+          <caret line="236" column="17" selection-start-line="236" selection-start-column="17" selection-end-line="236" selection-end-column="17" />
           <folding />
         </state>
       </provider>

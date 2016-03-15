@@ -442,7 +442,7 @@
 
 
 
-        if(window.plus){
+      /*  if(window.plus){
             plusReady();
         }else{
             document.addEventListener("plusready",plusReady,false);
@@ -473,9 +473,9 @@
                     console.log(data)
                 })
             }
-        }
+        }*/
         //喜欢
-      /*  $(function () {
+        $(function () {
             $('body').on('doubleTap', '.box', function () {
                 var name=$(this).attr('img-name');
                 $(this).parent().find('.bigLike').toggleClass('active');
@@ -491,10 +491,12 @@
 
             function postLike(name){
                 $.post('/m',{name:name},function(data){
-                    console.log(data)
+                    if(!data.sucess){
+                        $(this).parent().find('.bigLike').toggleClass('active');
+                    }
                 })
             }
-        });*/
+        });
 
 
     </script>

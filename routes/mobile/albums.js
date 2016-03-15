@@ -38,25 +38,32 @@ function indexGet(req, res, next) {
 function indexPost(req, res, next) {
     var name=req.body.name|| '';
     var uuid=req.body.uuid || '';
-    var userid=req.body.userid || '';
-
-    var set='';
+    var userid=req.session.userId['_id'] || '';
+    var val='';
 
     if(uuid){
-        set={$push:{likes:uuid}};
+        val=uuid;
     }else if(userid){
-        set={$push:{likes:userid}};
+        val=userid;
     }else{
       res.json({
-          msg:false
+          sucess:false,
+          msg:'参数有错'
       });
     }
-
-
+    console.log(name,uuid,userid);
     co(function *() {
-        var docs = yield AlbumsImg.findOneAndUpdate({name:name},set).exec();
-       // var docs = yield AlbumsImg.findOne({name:name}).exec();
-        res.json(docs)
+        var has = yield AlbumsImg.findOne({likes:val,name:name}).exec();
+        console.log(has);
+        if(has){
+            yield AlbumsImg.findOneAndUpdate({name:name},{$pull:{likdes:val}}).exec();
+        }else{
+            yield AlbumsImg.findOneAndUpdate({name:name},{$push:{likdes:val}}).exec();
+        }
+        res.json({
+            success:true,
+            msg:'成功'
+        })
     });
 }
 

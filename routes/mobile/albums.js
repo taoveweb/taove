@@ -38,7 +38,8 @@ function indexGet(req, res, next) {
 function indexPost(req, res, next) {
     var name=req.body.name|| '';
     var uuid=req.body.uuid || '';
-   var userid=req.body.userid || '';
+    var type=req.body.type;
+     var userid=req.body.userid || '';
     var val='';
 
     if(uuid){
@@ -52,10 +53,10 @@ function indexPost(req, res, next) {
       });
     }
 
+
     co(function *() {
         var has = yield AlbumsImg.findOne({likes:val,name:name}).exec();
-        console.log(has);
-        if(has){
+        if(has && type=='pull'){
             yield AlbumsImg.findOneAndUpdate({name:name},{$pull:{likes:val}}).exec();
         }else{
             yield AlbumsImg.findOneAndUpdate({name:name},{$push:{likes:val}}).exec();

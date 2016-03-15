@@ -452,17 +452,24 @@
             $('body').on('doubleTap', '.box', function () {
                 var name=$(this).attr('img-name');
                 $(this).parent().find('.bigLike').toggleClass('active');
-                postLike(name)
+                if($(this).parent().find('.bigLike').hasClass('active')){
+                    postLike(name,'pull');
+                }else{
+                    postLike(name,'push');
+                }
             });
             $('body').on('tap', '.bigLike', function () {
                 var name=$(this).attr('img-name');
                 $(this).parent().find('.bigLike').toggleClass('active');
-                postLike(name);
-
+                if($(this).parent().find('.bigLike').hasClass('active')){
+                    postLike(name,'pull');
+                }else{
+                    postLike(name,'push');
+                }
             });
 
-            function postLike(name){
-                $.post('/m',{name:name,uuid:plus.device.uuid},function(data){
+            function postLike(name,type){
+                $.post('/m',{name:name,uuid:plus.device.uuid,type:type},function(data){
                     console.log(data)
                 })
             }

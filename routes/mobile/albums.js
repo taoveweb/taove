@@ -38,7 +38,7 @@ function indexGet(req, res, next) {
 function indexPost(req, res, next) {
     var name=req.body.name|| '';
     var uuid=req.body.uuid || '';
-    var userid=req.session.userId['_id'] || '';
+   var userid=req.body.userid || '';
     var val='';
 
     if(uuid){

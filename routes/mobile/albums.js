@@ -51,14 +51,14 @@ function indexPost(req, res, next) {
           msg:'参数有错'
       });
     }
-    console.log(name,uuid,userid);
+
     co(function *() {
         var has = yield AlbumsImg.findOne({likes:val,name:name}).exec();
         console.log(has);
         if(has){
-            yield AlbumsImg.findOneAndUpdate({name:name},{$pull:{likdes:val}}).exec();
+            yield AlbumsImg.findOneAndUpdate({name:name},{$pull:{likes:val}}).exec();
         }else{
-            yield AlbumsImg.findOneAndUpdate({name:name},{$push:{likdes:val}}).exec();
+            yield AlbumsImg.findOneAndUpdate({name:name},{$push:{likes:val}}).exec();
         }
         res.json({
             success:true,

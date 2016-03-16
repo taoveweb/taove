@@ -50,10 +50,14 @@ function indexPost(req, res, next) {
 
     co(function *() {
         var has = yield AlbumsImg.findOne({likes: val, name: name}).exec();
+        var doc='';
         if (has && type == 'pull') {
-            yield AlbumsImg.findOneAndUpdate({name: name}, {$pull: {likes: val}}).exec();
+          doc=  yield AlbumsImg.findOneAndUpdate({name: name}, {$pull: {likes: val}},{new: true}).exec();
         } else {
-            yield AlbumsImg.findOneAndUpdate({name: name}, {$push: {likes: val}}).exec();
+          doc=  yield AlbumsImg.findOneAndUpdate({name: name}, {$push: {likes: val}},{new: true}).exec();
+        }
+        if(doc && doc.cover){
+            updateCoverimg(doc);
         }
         res.json({
             success: true,
@@ -62,6 +66,13 @@ function indexPost(req, res, next) {
     });
 }
 
+
+//更新相册封面
+function updateCoverimg(doc) {
+    Albums.findOneAndUpdate({_id: doc.albumsId}, {$set: {coverImg: doc}}, {news: true}, function (err, doc) {
+        console.log("updateCoverimg")
+    })
+}
 
 module.exports = {
     get: indexGet,

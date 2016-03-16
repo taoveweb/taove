@@ -8,14 +8,14 @@ var ObjectId = db.ObjectId;
 var Taove = db.Taove;
 var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
-var gm = require('gm');//.subClass({imageMagick: true});
+var gm = require('gm').subClass({imageMagick: true});
 var co = require('co');
 
 //相册
 function getProduction(req, res, next) {
 
     co(function *() {
-        var docs = yield Albums.find({photographyId: req.session.userId['_id']}).exec();
+        var docs = yield Albums.find({photographyId: req.session.userId['_id']}).sort({createdOn:1}).exec();
         res.render('admin/production', {
             title: '摄影作品',
             taove: docs,
@@ -66,6 +66,7 @@ function getProductiondetail(req, res, next) {
 
 //设置封面
 function coverImg(req, res, next) {
+
     var _id = req.body._id;
     var albumsId = req.body.albumsId;
     var reset = {cover: false};
@@ -279,13 +280,12 @@ function postProductionimg(req, res, next) {
             imgType: param.imgType//图片类型 0为未修 1为精修 3相册封面 4x展架
         };
         var count = yield AlbumsImg.count({albumsId: param.AlbumsId}).exec();
-        if (!count) {
-            doc.cover = true;
-            updateCoverimg(doc);
-        }
         doc.imgNum = count + 1;
         var albums = new AlbumsImg(doc);
-
+        if (!count) {
+            doc.cover = true;
+            updateCoverimg(albums);
+        }
         if (count >= 150) {
             res.json({
                 success: false,

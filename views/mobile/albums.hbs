@@ -112,7 +112,7 @@
                                         <span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
                                         <span class="img"></span>有{{this.imgNum}}张图片;套餐2000元;
                                     </div>
-                                    <em img-name="{{coverImg.name}}" class="bigLike"></em>
+                                    <em data-likes="{{coverImg.likes}}" img-name="{{coverImg.name}}" class="bigLike"></em>
                                 </div>
                             </div>
                         {{/each}}
@@ -154,7 +154,7 @@
                                         <span class="like"></span>30个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
                                         <span class="img"></span>有{{this.imgNum}}张图片;套餐2000元;
                                     </div>
-                                    <em img-name="{{coverImg.name}}" class="bigLike"></em>
+                                    <em data-likes="{{coverImg.likes}}"  img-name="{{coverImg.name}}" class="bigLike"></em>
                                 </div>
                             </div>
                         {{/each}}
@@ -388,7 +388,7 @@
                         </a>
                         <div class="br imginfo">
                         <div class="editAlbumsTitle edit"><span class="like"></span>30个喜欢;<span class="local"></span>
-                         在${img.city}大洋教堂;<span class="img"></span>有${img.imgNum}张图片;套餐2000元;</div> <em  img-name="${coverImg.name}"  class="bigLike"></em>
+                         在${img.city}大洋教堂;<span class="img"></span>有${img.imgNum}张图片;套餐2000元;</div> <em data-likes="${coverImg.likdes}"  img-name="${coverImg.name}"  class="bigLike"></em>
                         </div>
                         </div>`;
 

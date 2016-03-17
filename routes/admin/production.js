@@ -281,11 +281,15 @@ function postProductionimg(req, res, next) {
         };
         var count = yield AlbumsImg.count({albumsId: param.AlbumsId}).exec();
         doc.imgNum = count + 1;
-        var albums = new AlbumsImg(doc);
+
         if (!count) {
             doc.cover = true;
+            var albums = new AlbumsImg(doc);
             updateCoverimg(albums);
+        }else{
+            var albums = new AlbumsImg(doc);
         }
+
         if (count >= 150) {
             res.json({
                 success: false,

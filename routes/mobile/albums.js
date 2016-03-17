@@ -39,7 +39,7 @@ function indexPost(req, res, next) {
     var phone = req.session.userId['phone'] || '';
     var val = '';
     if (phone) {
-        val = phone;
+        val = phone+'';
     } else {
         res.json({
             sucess: false,
@@ -47,15 +47,16 @@ function indexPost(req, res, next) {
         });
     }
 
-
     co(function *() {
         var has = yield AlbumsImg.findOne({likes: val, name: name}).exec();
         var doc='';
-        if (has && type == 'pull') {
+       // console.log(name,val,has);
+        if (has) {
           doc=  yield AlbumsImg.findOneAndUpdate({name: name}, {$pull: {likes: val}},{new: true}).exec();
         } else {
           doc=  yield AlbumsImg.findOneAndUpdate({name: name}, {$push: {likes: val}},{new: true}).exec();
         }
+
         if(doc && doc.cover){
             updateCoverimg(doc);
         }

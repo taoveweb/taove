@@ -478,9 +478,9 @@
                 This.parent().find('.like-num').html(likenum);
                 $.post('/m',{name:name},function(data){
                     if(!data.sucess){
-                        This.parent().find('.bigLike').toggleClass('active');
+                       /* This.parent().find('.bigLike').toggleClass('active');
                         likenum--;
-                        This.parent().find('.like-num').html(likenum);
+                        This.parent().find('.like-num').html(likenum);*/
                     }
                 })
             }

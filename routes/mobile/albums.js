@@ -14,8 +14,6 @@ function indexGet(req, res, next) {
         if (req.query.q && req.query.q == 'more') {
             var docs = yield Albums.find({createdOn: {$lt: req.query.createdOn}}).sort({createdOn: -1}).limit(2).exec();
             //res.json({taove: docs})
-            res.set('Content-Type', 'text/html');
-            res.set('charset', 'utf-8');
             res.render('mobile/ajax_albums_box', {
                     taove: docs,
                     layout: null
@@ -32,8 +30,6 @@ function indexGet(req, res, next) {
                     layout: null
                 },
                 function (err, html) {
-                    res.set('Content-Type', 'text/html');
-                    res.set('charset', 'utf-8');
                     res.send(html);
                 });
         } else {

@@ -101,7 +101,7 @@ var AlbumsImgSchema = new Schema({
     width: Number,
     height: Number,
     sizeLevel:{type:Number,default:1},//图片质量1为一般2为640 3为1080
-    likes: [{type: String}],//user id 惑 uuid
+    likes: {type: Array,default:[]},//user id 惑 uuid
     watches: [{type: ObjectId}],//user id
     createdOn: {type: Date, default: Date.now}, //创建时间
     imgType: {type: Number},//图片类型 0为未修 1为精修 3相册封面 4x展架

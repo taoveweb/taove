@@ -331,7 +331,7 @@
                 type: 'get',
                 url: url,
                 catch: false,
-                dataType: 'json',
+                /*dataType: 'json',*/
                 timeout: 10 * 1000,
                 success: function (data) {
                     setitem(data, swipper, diff);
@@ -362,12 +362,13 @@
         function setitem(taove, swipper, diff) {
              if (diff < 0) {
                 //加载更多
+                 console.log(taove);
                 swipper.slides.append(taove);
             } else {
                 //刷新
                 swipper.container.find('.time').each(function () {
                     var html = timeago(parseInt($(this).attr('createdOn')));
-                    $(this).html(html);
+                    $(this).html(taove);
                 })
                 swipper.wrapper.attr('createdOn', taove.count);
                 swipper.slides.prepend(taove);

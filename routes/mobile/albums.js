@@ -13,11 +13,29 @@ function indexGet(req, res, next) {
     co(function *() {
         if (req.query.q && req.query.q == 'more') {
             var docs = yield Albums.find({createdOn: {$lt: req.query.createdOn}}).sort({createdOn: -1}).limit(2).exec();
-            res.json({taove: docs})
+            //res.json({taove: docs})
+            res.set('Content-Type', 'text/html');
+            res.set('charset', 'utf-8');
+            res.render('mobile/ajax_albums_box', {
+                    taove: docs,
+                    layout: null
+                },
+                function (err, html) {
+                    res.send(html);
+                });
         } else if (req.query.q && req.query.q == 'update') {
             var count = yield  Albums.count();
             var docs = yield Albums.find({createdOn: {$gt: req.query.createdOn}}).sort({createdOn: -1}).limit(2).exec();
-            res.json({taove: docs, count: count})
+            // res.json({taove: docs, count: count})
+            res.render('mobile/ajax_albums_box', {
+                    taove: docs,
+                    layout: null
+                },
+                function (err, html) {
+                    res.set('Content-Type', 'text/html');
+                    res.set('charset', 'utf-8');
+                    res.send(html);
+                });
         } else {
             var count = yield  Albums.count();
             var docs = yield Albums.find().sort({createdOn: -1}).limit(3).exec();
@@ -39,7 +57,7 @@ function indexPost(req, res, next) {
     var phone = req.session.userId['phone'] || '';
     var val = '';
     if (phone) {
-        val = phone+'';
+        val = phone + '';
     } else {
         res.json({
             sucess: false,
@@ -49,15 +67,15 @@ function indexPost(req, res, next) {
 
     co(function *() {
         var has = yield AlbumsImg.findOne({likes: val, name: name}).exec();
-        var doc='';
-       // console.log(name,val,has);
+        var doc = '';
+        // console.log(name,val,has);
         if (has) {
-          doc=  yield AlbumsImg.findOneAndUpdate({name: name}, {$pull: {likes: val}},{new: true}).exec();
+            doc = yield AlbumsImg.findOneAndUpdate({name: name}, {$pull: {likes: val}}, {new: true}).exec();
         } else {
-          doc=  yield AlbumsImg.findOneAndUpdate({name: name}, {$push: {likes: val}},{new: true}).exec();
+            doc = yield AlbumsImg.findOneAndUpdate({name: name}, {$push: {likes: val}}, {new: true}).exec();
         }
 
-        if(doc && doc.cover){
+        if (doc && doc.cover) {
             updateCoverimg(doc);
         }
         res.json({

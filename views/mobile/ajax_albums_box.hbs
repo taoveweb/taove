@@ -1,0 +1,24 @@
+{{#each taove}}
+    <div class="item grid-item" createdOn="{{this.createdOn}}">
+        <div class="br userinfo">
+            <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
+            <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
+        </div>
+        <a  img-name="{{coverImg.name}}" class="box" >
+            {{#with this.coverImg}}
+                {{{getImgM width height sizeLevel path name }}}
+            {{/with}}
+            <div class="swiper-lazy-preloader"></div>
+        </a>
+
+        <div class="br imginfo">
+            <div class="editAlbumsTitle edit">
+                <span class="like"></span>{{length coverImg.likes}}个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
+                <span class="img"></span>有{{this.imgNum}}张图片;套餐2000元;
+            </div>
+
+            <em data-likes="{{coverImg.likes}}" img-name="{{coverImg.name}}" class="bigLike
+                                    {{#inArray coverImg.likes  ../loginInfo.phone }}active {{else}} active{{/inArray}}"></em>
+        </div>
+    </div>
+{{/each}}

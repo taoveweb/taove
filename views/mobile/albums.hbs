@@ -360,44 +360,9 @@
         }
         //设置新的图片
         function setitem(taove, swipper, diff) {
-            var htmlstr = "";
-            var data = taove.taove;
-            for (var i = 0; i < data.length; i++) {
-                var img = data[i];
-                var coverImg = img.coverImg;
-                var wd = coverImg.width;
-                var scwd = $('.swiper-slide-v').width();//coverImg.width;
-                var hd = coverImg.height;
-                var coverImgname = coverImg.name;
-                switch (coverImg.sizeLevel) {
-                    case 2:
-                        coverImgname = coverImg.name.replace('.', '_640.');
-                        break;
-                    case 3:
-                        coverImgname = coverImg.name.replace('.', '_1080.');
-                        break;
-                }
-
-                /* <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">*/
-                htmlstr += `<div class="item grid-item" createdon="${img.createdOn}">
-                        <div class="br userinfo">
-                            <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                            <span  class="time" createdOn="${img.createdOn}" >${timeago(img.createdOn)}</span>
-                        </div>
-                        <a img-name="${coverImg.name}" style="${scwd}; height:${hd * scwd / wd}px" class="box">
-                        <img  width="${scwd}" height="${hd * scwd / wd}" data-src="/${coverImg.path + coverImgname}" class="swiper-lazy">
-                        <div class="swiper-lazy-preloader"></div>
-                        </a>
-                        <div class="br imginfo">
-                        <div class="editAlbumsTitle edit"><span class="like"></span>30个喜欢;<span class="local"></span>
-                         在${img.city}大洋教堂;<span class="img"></span>有${img.imgNum}张图片;套餐2000元;</div> <em data-likes="${coverImg.likdes}"  img-name="${coverImg.name}"  class="bigLike"></em>
-                        </div>
-                        </div>`;
-
-            }
-            if (diff < 0) {
+             if (diff < 0) {
                 //加载更多
-                swipper.slides.append(htmlstr);
+                swipper.slides.append(taove);
             } else {
                 //刷新
                 swipper.container.find('.time').each(function () {
@@ -405,7 +370,7 @@
                     $(this).html(html);
                 })
                 swipper.wrapper.attr('createdOn', taove.count);
-                swipper.slides.prepend(htmlstr);
+                swipper.slides.prepend(taove);
             }
             swipper.update();
         }

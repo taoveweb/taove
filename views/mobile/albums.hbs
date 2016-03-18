@@ -108,7 +108,7 @@
 
                                 <div class="br imginfo">
                                     <div class="editAlbumsTitle edit">
-                                        <span class="like"></span>{{length coverImg.likes}}个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
+                                        <span class="like"></span><span class="like-num">{{length coverImg.likes}}</span>个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
                                         <span class="img"></span>有{{this.imgNum}}张图片;套餐2000元;
                                     </div>
 
@@ -152,12 +152,12 @@
 
                                 <div class="br imginfo">
                                     <div class="editAlbumsTitle edit">
-                                        <span class="like"></span>{{length coverImg.likes}}个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
+                                        <span class="like"></span><span class="like-num">{{length coverImg.likes}}</span>个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
                                         <span class="img"></span>有{{this.imgNum}}张图片;套餐2000元;
                                     </div>
 
                                     <em data-likes="{{coverImg.likes}}" img-name="{{coverImg.name}}" class="bigLike
-                                    {{#inArray coverImg.likes  ../loginInfo.phone }}active {{else}} active{{/inArray}}"></em>
+                                    {{#inArray coverImg.likes  ../loginInfo.phone }}active {{else}} {{/inArray}}"></em>
                                 </div>
                             </div>
                         {{/each}}
@@ -220,7 +220,7 @@
                 width: srwidth,
                 height: this.height * srwidth / this.width
             })
-        })
+        });
 
         //坚滚动
         var swiper = new Swiper('.swiper-container-v', {
@@ -362,17 +362,24 @@
         function setitem(taove, swipper, diff) {
              if (diff < 0) {
                 //加载更多
-                 console.log(taove);
                 swipper.slides.append(taove);
             } else {
                 //刷新
                 swipper.container.find('.time').each(function () {
                     var html = timeago(parseInt($(this).attr('createdOn')));
                     $(this).html(taove);
-                })
+                });
                 swipper.wrapper.attr('createdOn', taove.count);
                 swipper.slides.prepend(taove);
             }
+
+            $('.box').find('img').each(function () {
+                var This = $(this);
+                This.css({
+                    width: srwidth,
+                    height: this.height * srwidth / this.width
+                })
+            });
             swipper.update();
         }
 
@@ -445,22 +452,35 @@
         //喜欢请求
         $(function () {
             $('body').on('doubleTap', '.box', function () {
-                var name=$(this).attr('img-name');
-                $(this).parent().find('.bigLike').toggleClass('active');
-                postLike(name)
-            })
+                /*var name=$(this).attr('img-name');
+                $(this).parent().find('.bigLike').toggleClass('active');*/
+                postLike(this)
+            });
+
             $('body').on('tap', '.bigLike', function () {
-                var name=$(this).attr('img-name');
-                $(this).parent().find('.bigLike').toggleClass('active');
-                postLike(name);
+/*                var name=$(this).attr('img-name');
+                $(this).parent().find('.bigLike').toggleClass('active');*/
+                postLike(this);
 
-            })
+            });
 
 
-            function postLike(name){
+            function postLike(obj){
+                var This=$(obj);
+                var name=This.attr('img-name');
+                var likenum= 0+This.parent().find('.like-num').html();
+                This.parent().find('.bigLike').toggleClass('active');
+                if(This.parent().find('.bigLike').hasClass('active')){
+                    likenum++;
+                }else{
+                    likenum--;
+                }
+                This.parent().find('.like-num').html(likenum);
                 $.post('/m',{name:name},function(data){
                     if(!data.sucess){
-                        $(this).parent().find('.bigLike').toggleClass('active');
+                        This.parent().find('.bigLike').toggleClass('active');
+                        likenum--;
+                        This.parent().find('.like-num').html(likenum);
                     }
                 })
             }

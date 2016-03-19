@@ -948,7 +948,15 @@
     .swiper-pagination-bullet-active {
         border-bottom: 6px solid #007aff;
         opacity: 1
-    }</style>
+    }
+
+    .swiper-lazy-preloader{
+        -webkit-animation: none;
+        -o-animation: none;
+        animation: none;
+        display: block;
+    }
+    </style>
 {{/extend}}
 <div class="swiper-container swiper-container-h">
     <div class="swiper-wrapper">
@@ -1023,13 +1031,15 @@
         };
         xmlHTTP.onprogress = function (e) {
             thisImg.completedPercentage = parseInt((e.loaded / e.total) * 100);
-            boximg.nextElementSibling.innerHTML=thisImg.completedPercentage
+            boximg.nextElementSibling.innerHTML= thisImg.completedPercentage;
         };
         xmlHTTP.onloadstart = function () {
             thisImg.completedPercentage = 0;
+            boximg.nextElementSibling.innerHTML= thisImg.completedPercentage;
         };
         xmlHTTP.onloadend = function () {
             thisImg.completedPercentage = 100;
+            boximg.nextElementSibling.style.display="none"
         }
         xmlHTTP.send();
     };
@@ -1043,6 +1053,7 @@
             img.load(url,swiperLazy[m]);
         }
     }
+
 
 
 

@@ -1039,6 +1039,7 @@
         xmlHTTP.onprogress = function (e) {
             thisImg.completedPercentage = parseInt((e.loaded / e.total) * 100);
             boximg.nextElementSibling.innerHTML= thisImg.completedPercentage+'%';
+            console.log(  thisImg.completedPercentage,e.loaded,e.total,url)
         };
         xmlHTTP.onloadstart = function () {
             thisImg.completedPercentage = 0;

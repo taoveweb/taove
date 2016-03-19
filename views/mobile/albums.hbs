@@ -93,30 +93,7 @@
                         <div class="refresh-icon"></div>
                     </div>
                     <div class="swiper-slide swiper-slide-v">
-                        {{#each taove}}
-                            <div class="item grid-item" createdOn="{{this.createdOn}}">
-                                <div class="br userinfo">
-                                    <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                                    <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
-                                </div>
-                                <a  img-name="{{coverImg.name}}" class="box" >
-                                    {{#with this.coverImg}}
-                                        {{{getImgM width height sizeLevel path name }}}
-                                    {{/with}}
-                                    <div class="swiper-lazy-preloader"></div>
-                                </a>
-
-                                <div class="br imginfo">
-                                    <div class="editAlbumsTitle edit">
-                                        <span class="like"></span><span class="like-num">{{length coverImg.likes}}</span>个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
-                                        <span class="img"></span>有{{this.imgNum}}张图片;套餐2000元;
-                                    </div>
-
-                                    <em img-name="{{coverImg.name}}" class="bigLike
-                                {{#inArray coverImg.likes  ../loginInfo.phone }}active {{else}} {{/inArray}}"></em>
-                                </div>
-                            </div>
-                        {{/each}}
+                        {{>"ajax_albums_box"}}
                     </div>
                 </div>
 
@@ -137,30 +114,8 @@
                         <div class="refresh-icon"></div>
                     </div>
                     <div class="swiper-slide swiper-slide-v">
-                        {{#each taove}}
-                            <div class="item grid-item" createdOn="{{this.createdOn}}">
-                                <div class="br userinfo">
-                                    <a href="#"><img src="/img/pic1.jpg" alt=""/>taove</a>
-                                    <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
-                                </div>
-                                <a  img-name="{{coverImg.name}}" class="box" >
-                                    {{#with this.coverImg}}
-                                        {{{getImgM width height sizeLevel path name }}}
-                                    {{/with}}
-                                    <div class="swiper-lazy-preloader"></div>
-                                </a>
+                        {{>"ajax_albums_box"}}
 
-                                <div class="br imginfo">
-                                    <div class="editAlbumsTitle edit">
-                                        <span class="like"></span><span class="like-num">{{length coverImg.likes}}</span>个喜欢; <span class="local"></span> {{this.city}}在大洋教堂;
-                                        <span class="img"></span>有{{this.imgNum}}张图片;套餐2000元;
-                                    </div>
-
-                                    <em data-likes="{{coverImg.likes}}" img-name="{{coverImg.name}}" class="bigLike
-                                    {{#inArray coverImg.likes  ../loginInfo.phone }}active {{else}} {{/inArray}}"></em>
-                                </div>
-                            </div>
-                        {{/each}}
                     </div>
                 </div>
                 <div class="refresh">下接刷新

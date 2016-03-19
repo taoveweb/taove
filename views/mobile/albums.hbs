@@ -1056,8 +1056,7 @@
         var swiperLazy=document.querySelectorAll('.swiper-lazy');
         for(var m=0; m<swiperLazy.length;m++){
             var url=swiperLazy[m].getAttribute('data-src');
-            var img = new Image();
-            img.load(url,swiperLazy[m]);
+            new Image().load(url,swiperLazy[m]);
         }
     }
 

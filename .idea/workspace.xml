@@ -49,8 +49,8 @@
           <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-2.310345">
-                  <caret line="1032" column="47" selection-start-line="1032" selection-start-column="47" selection-end-line="1032" selection-end-column="47" />
+                <state vertical-scroll-proportion="-6.2413793">
+                  <caret line="1062" column="0" selection-start-line="1062" selection-start-column="0" selection-end-line="1062" selection-end-column="0" />
                   <folding>
                     <element signature="e#3715#3973#2#HTML" expanded="true" />
                     <element signature="e#4157#4415#2#HTML" expanded="true" />
@@ -62,7 +62,7 @@
                     <element signature="e#19519#20963#2#HTML" expanded="true" />
                     <element signature="e#26333#27146#1#HTML" expanded="true" />
                     <element signature="e#27378#28023#1#HTML" expanded="true" />
-                    <element signature="e#35737#36388#0#HTML" expanded="false" />
+                    <element signature="e#35710#36361#0#HTML" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -439,7 +439,7 @@
             <element signature="e#19519#20963#2#HTML" expanded="true" />
             <element signature="e#26333#27146#1#HTML" expanded="true" />
             <element signature="e#27378#28023#1#HTML" expanded="true" />
-            <element signature="e#35737#36388#0#HTML" expanded="false" />
+            <element signature="e#35710#36361#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -491,7 +491,7 @@
             <element signature="e#19519#20963#2#HTML" expanded="true" />
             <element signature="e#26333#27146#1#HTML" expanded="true" />
             <element signature="e#27378#28023#1#HTML" expanded="true" />
-            <element signature="e#35737#36388#0#HTML" expanded="false" />
+            <element signature="e#35710#36361#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -680,8 +680,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.310345">
-          <caret line="1032" column="47" selection-start-line="1032" selection-start-column="47" selection-end-line="1032" selection-end-column="47" />
+        <state vertical-scroll-proportion="-6.2413793">
+          <caret line="1062" column="0" selection-start-line="1062" selection-start-column="0" selection-end-line="1062" selection-end-column="0" />
           <folding>
             <element signature="e#3715#3973#2#HTML" expanded="true" />
             <element signature="e#4157#4415#2#HTML" expanded="true" />
@@ -693,7 +693,7 @@
             <element signature="e#19519#20963#2#HTML" expanded="true" />
             <element signature="e#26333#27146#1#HTML" expanded="true" />
             <element signature="e#27378#28023#1#HTML" expanded="true" />
-            <element signature="e#35737#36388#0#HTML" expanded="false" />
+            <element signature="e#35710#36361#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

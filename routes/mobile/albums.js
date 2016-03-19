@@ -11,6 +11,7 @@ var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
     co(function *() {
+        //加载更多图片
         if (req.query.q && req.query.q == 'more') {
             var docs = yield Albums.find({createdOn: {$lt: req.query.createdOn}}).sort({createdOn: -1}).limit(2).exec();
             //res.json({taove: docs})
@@ -21,7 +22,9 @@ function indexGet(req, res, next) {
                 function (err, html) {
                     res.send(html);
                 });
-        } else if (req.query.q && req.query.q == 'update') {
+        } else if (
+           //更新图片
+            req.query.q && req.query.q == 'update') {
             var count = yield  Albums.count();
             var docs = yield Albums.find({createdOn: {$gt: req.query.createdOn}}).sort({createdOn: -1}).limit(2).exec();
             // res.json({taove: docs, count: count})
@@ -33,6 +36,7 @@ function indexGet(req, res, next) {
                     res.send(html);
                 });
         } else {
+            //初次加载
             var count = yield  Albums.count();
             var docs = yield Albums.find().sort({createdOn: -1}).limit(3).exec();
             res.render('mobile/albums', {

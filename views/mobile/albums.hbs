@@ -951,10 +951,16 @@
     }
 
     .swiper-lazy-preloader{
+        text-align: center;
+        width: 1rem;
+        height: 1rem;
         -webkit-animation: none;
         -o-animation: none;
         animation: none;
         display: block;
+    }
+    .swiper-lazy-preloader:after{
+        background: none;
     }
     </style>
 {{/extend}}
@@ -1024,6 +1030,7 @@
         var xmlHTTP = new XMLHttpRequest();
         xmlHTTP.open('GET', url, true);
         xmlHTTP.responseType = 'arraybuffer';
+        boximg.nextElementSibling.innerHTML= '0%';
         xmlHTTP.onload = function (e) {
             var blob = new Blob([this.response]);
             boximg.src = window.URL.createObjectURL(blob);
@@ -1031,11 +1038,11 @@
         };
         xmlHTTP.onprogress = function (e) {
             thisImg.completedPercentage = parseInt((e.loaded / e.total) * 100);
-            boximg.nextElementSibling.innerHTML= thisImg.completedPercentage;
+            boximg.nextElementSibling.innerHTML= thisImg.completedPercentage+'%';
         };
         xmlHTTP.onloadstart = function () {
             thisImg.completedPercentage = 0;
-            boximg.nextElementSibling.innerHTML= thisImg.completedPercentage;
+            boximg.nextElementSibling.innerHTML= thisImg.completedPercentage+'%';
         };
         xmlHTTP.onloadend = function () {
             thisImg.completedPercentage = 100;

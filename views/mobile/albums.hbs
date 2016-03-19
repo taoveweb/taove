@@ -1219,7 +1219,7 @@
                 //刷新
                 swipper.container.find('.time').each(function () {
                     var html = timeago(parseInt($(this).attr('createdOn')));
-                    $(this).html(taove);
+                    $(this).html(html);
                 });
                 swipper.wrapper.attr('createdOn', taove.count);
                 swipper.slides.prepend(taove);

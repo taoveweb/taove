@@ -142,7 +142,28 @@
                 <div class="swiper-scrollbar"></div>
             </div>
         </div>
-        <div class="swiper-slide">Horizontal Slide 3</div>
+        <div class="swiper-slide">
+            <div class="swiper-container swiper-container-v">
+                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
+                    <div class="refresh"><span>下接刷新</span>
+
+                        <div class="refresh-icon"></div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-v">
+
+                    </div>
+                </div>
+                <div class="refresh">下接刷新
+                    <div class="refresh-icon"></div>
+                </div>
+                <div class="loader">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination swiper-pagination-h"></div>
@@ -206,8 +227,11 @@
             pagination: '.swiper-pagination-h',
             paginationClickable: true,
             onSlideNextEnd: function (swiper) {
+                //自动刷新
                 var activeV = swiperV[swiper.activeIndex];
                 var pullDistance = window.devicePixelRatio * 100;
+                if(activeV.container.data('refresh')) {return;}
+                activeV.container.data('refresh',true);
                 activeV.setWrapperTranslate(pullDistance);
                 activeV.setWrapperTransition(300);
                 activeV.container.find('.refresh-icon').addClass('anim');
@@ -216,7 +240,6 @@
                     var url = '/m?q=update&createdOn=' + updateCreatedOn;
                     getajax(url, activeV, pullDistance)
                 }, 300);
-
             },
             paginationBulletRender: function (index, className) {
                 var str = '';

@@ -13,7 +13,7 @@ function indexGet(req, res, next) {
     co(function *() {
         //加载更多图片
         if (req.query.q && req.query.q == 'more') {
-            var docs = yield Albums.find({createdOn: {$lt: req.query.createdOn}}).sort({createdOn: -1}).limit(2).exec();
+            var docs = yield Albums.find({createdOn: {$lt: req.query.createdOn}}).sort({createdOn: -1}).limit(3).exec();
             //res.json({taove: docs})
             res.render('mobile/ajax_albums_box', {
                     taove: docs,
@@ -26,7 +26,7 @@ function indexGet(req, res, next) {
            //更新图片
             req.query.q && req.query.q == 'update') {
             var count = yield  Albums.count();
-            var docs = yield Albums.find({createdOn: {$gt: req.query.createdOn}}).sort({createdOn: -1}).limit(2).exec();
+            var docs = yield Albums.find({createdOn: {$gt: req.query.createdOn}}).sort({createdOn: -1}).limit(3).exec();
             // res.json({taove: docs, count: count})
             res.render('mobile/ajax_albums_box', {
                     taove: docs,

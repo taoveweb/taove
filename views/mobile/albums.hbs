@@ -187,7 +187,7 @@
         boximg.nextElementSibling.innerHTML = '0%';
         xmlHTTP.onload = function (e) {
             var blob = new Blob([this.response]);
-            boximg.src = window.URL.createObjectURL(blob);
+            boximg.src = url;
             boximg.setAttribute('class', 'swiper-lazyed');
         };
         xmlHTTP.onprogress = function (e) {

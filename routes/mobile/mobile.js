@@ -15,6 +15,10 @@ router.use(function(req,res,next){
     req.session.userId = {};
     req.session.userId['phone']=18550035081+'';
     res.locals.loginInfo = req.session.userId;
+    if(!/Mobile/.test(req.get('user-agent'))){
+        res.locals.nomibile=true;
+    }
+
     next();
 });
 router.get('/', albums.get);

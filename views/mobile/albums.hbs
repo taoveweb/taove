@@ -16,9 +16,8 @@
         }
 
         .swiper-container {
-            position: relative;
-            width: 100%;
             height: 100%;
+            position: relative;
             moz-user-select: -moz-none;
             -moz-user-select: none;
             -o-user-select: none;
@@ -94,79 +93,119 @@
         .swiper-lazy-preloader:after {
             background: none;
         }
+
+        .wrap {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-container-h {
+            height: 100%;
+            border-bottom: 1rem solid #222729;
+            box-sizing: border-box;
+        }
+        .menu{
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 1rem;
+            display: flex;
+            z-index: 10;
+            flex-direction: row;
+        }
+        .menu a{
+            flex: 1;
+            line-height: 1rem;
+            text-align: center;
+            background: #222729;
+            text-decoration: none;
+            font-size: 0.3rem;
+            color: #fff;
+        }
+        .menu a.active{
+            background: #000;
+        }
     </style>
 
 {{/extend}}
-<div class="swiper-container swiper-container-h">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
-                    <div class="refresh"><span>下接刷新</span>
+<div class="wrap">
+    <div class="swiper-container swiper-container-h">
+        <div class="swiper-wrapper swiper-wrapper swiper-wrapper-h">
+            <div class="swiper-slide">
+                <div class="swiper-container swiper-container-v">
+                    <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
+                        <div class="refresh"><span>下接刷新</span>
 
+                            <div class="refresh-icon"></div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-v">
+                            {{>"ajax_albums_box"}}
+                        </div>
+                    </div>
+
+                    <div class="loader">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!-- Add Scroll Bar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-container swiper-container-v">
+                    <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
+                        <div class="refresh"><span>下接刷新</span>
+
+                            <div class="refresh-icon"></div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-v">
+                            <!--    {{>"ajax_albums_box"}}-->
+                        </div>
+                    </div>
+                    <div class="refresh">下接刷新
                         <div class="refresh-icon"></div>
                     </div>
-                    <div class="swiper-slide swiper-slide-v">
-                        {{>"ajax_albums_box"}}
+                    <div class="loader">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
+                    <div class="swiper-scrollbar"></div>
                 </div>
-
-                <div class="loader">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <!-- Add Scroll Bar -->
-                <div class="swiper-scrollbar"></div>
             </div>
-        </div>
-        <div class="swiper-slide">
-            <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
-                    <div class="refresh"><span>下接刷新</span>
+            <div class="swiper-slide">
+                <div class="swiper-container swiper-container-v">
+                    <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
+                        <div class="refresh"><span>下接刷新</span>
 
+                            <div class="refresh-icon"></div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-v">
+
+                        </div>
+                    </div>
+                    <div class="refresh">下接刷新
                         <div class="refresh-icon"></div>
                     </div>
-                    <div class="swiper-slide swiper-slide-v">
-                        <!--    {{>"ajax_albums_box"}}-->
+                    <div class="loader">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
+                    <div class="swiper-scrollbar"></div>
                 </div>
-                <div class="refresh">下接刷新
-                    <div class="refresh-icon"></div>
-                </div>
-                <div class="loader">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="swiper-scrollbar"></div>
             </div>
         </div>
-        <div class="swiper-slide">
-            <div class="swiper-container swiper-container-v">
-                <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
-                    <div class="refresh"><span>下接刷新</span>
-
-                        <div class="refresh-icon"></div>
-                    </div>
-                    <div class="swiper-slide swiper-slide-v">
-
-                    </div>
-                </div>
-                <div class="refresh">下接刷新
-                    <div class="refresh-icon"></div>
-                </div>
-                <div class="loader">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="swiper-scrollbar"></div>
-            </div>
-        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-h"></div>
     </div>
-    <!-- Add Pagination -->
-    <div class="swiper-pagination swiper-pagination-h"></div>
+    <div class="menu">
+        <a class="active" href="">首页</a>
+        <a href="">浏览</a>
+        <a href="">消息</a>
+        <a href="">我的</a>
+    </div>
 </div>
 <script>
     var srwidth = document.querySelector('.swiper-wrapper').offsetWidth;
@@ -230,8 +269,10 @@
                 //自动刷新
                 var activeV = swiperV[swiper.activeIndex];
                 var pullDistance = window.devicePixelRatio * 100;
-                if(activeV.container.data('refresh')) {return;}
-                activeV.container.data('refresh',true);
+                if (activeV.container.data('refresh')) {
+                    return;
+                }
+                activeV.container.data('refresh', true);
                 activeV.setWrapperTranslate(pullDistance);
                 activeV.setWrapperTransition(300);
                 activeV.container.find('.refresh-icon').addClass('anim');

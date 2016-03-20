@@ -71,7 +71,7 @@ module.exports=function(hbs){
         }
         original=imgPath+val[0]+setWidth+'.'+val[1];
        // var img= '<img style="width:'+w+'px; height:'+h+'px;" src="'+src+'" data-src="/'+original+'"   class="swiper-lazy" />'
-        var img= '<img style="width:'+w+'px; height:'+h+'px;" src="'+src+'" data-src="/'+original+'"   class="swiper-lazy" />'
+        var img= '<img style="width:'+w+'px; height:'+h+'px;" src="'+src+'" data-src="/'+original+'"   class="lazy" />'
         return img;
     });
 

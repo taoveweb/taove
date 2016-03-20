@@ -207,7 +207,7 @@
 
     initImg();
     function initImg() {
-        var swiperLazy = document.querySelectorAll('.swiper-lazy');
+        var swiperLazy = document.querySelectorAll('.lazy');
         for (var m = 0; m < swiperLazy.length; m++) {
             var url = swiperLazy[m].getAttribute('data-src');
             new Image().load(url, swiperLazy[m]);

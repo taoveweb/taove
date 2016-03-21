@@ -116,8 +116,8 @@
       <file leaf-file-name="homeD.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.79506934">
-              <caret line="374" column="27" selection-start-line="374" selection-start-column="27" selection-end-line="374" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.45986986">
+              <caret line="358" column="1307" selection-start-line="358" selection-start-column="1307" selection-end-line="358" selection-end-column="1307" />
               <folding>
                 <element signature="e#2#122#0" expanded="false" />
                 <element signature="e#129#171#0" expanded="false" />
@@ -185,8 +185,7 @@
                 <element signature="e#7321#8194#1" expanded="true" />
                 <element signature="e#8248#9409#1" expanded="true" />
                 <element signature="e#9458#10947#1" expanded="true" />
-                <element signature="e#11001#12262#1" expanded="true" />
-                <element signature="e#12311#13700#1" expanded="true" />
+                <element signature="e#12343#13732#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -535,7 +534,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2606325" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46564886" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -942,8 +941,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79506934">
-          <caret line="374" column="27" selection-start-line="374" selection-start-column="27" selection-end-line="374" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.45986986">
+          <caret line="358" column="1307" selection-start-line="358" selection-start-column="1307" selection-end-line="358" selection-end-column="1307" />
           <folding>
             <element signature="e#2#122#0" expanded="false" />
             <element signature="e#129#171#0" expanded="false" />
@@ -1011,8 +1010,7 @@
             <element signature="e#7321#8194#1" expanded="true" />
             <element signature="e#8248#9409#1" expanded="true" />
             <element signature="e#9458#10947#1" expanded="true" />
-            <element signature="e#11001#12262#1" expanded="true" />
-            <element signature="e#12311#13700#1" expanded="true" />
+            <element signature="e#12343#13732#1" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -102,7 +102,6 @@
         }
 
         .swiper-container-h {
-            display: none;
             border-bottom: 1.2rem solid #222729;
             box-sizing: border-box;
         }
@@ -626,7 +625,7 @@
             var self = plus.webview.currentWebview();
             for (var i = 0; i < subpages.length; i++) {
                 var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
-                sub.show();
+                sub.hide();
                 self.append(sub);
             }
             //当前激活选项

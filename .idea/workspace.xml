@@ -67,8 +67,8 @@
       <file leaf-file-name="index.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/mobile/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19689119">
-              <caret line="95" column="3" selection-start-line="95" selection-start-column="3" selection-end-line="151" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.29533678">
+              <caret line="104" column="28" selection-start-line="104" selection-start-column="28" selection-end-line="104" selection-end-column="28" />
               <folding>
                 <element signature="e#26#7778#0#HTML" expanded="false" />
                 <element signature="e#437#1310#1#HTML" expanded="true" />
@@ -76,7 +76,6 @@
                 <element signature="e#2622#4111#1#HTML" expanded="true" />
                 <element signature="e#4189#5482#1#HTML" expanded="true" />
                 <element signature="e#5555#6944#1#HTML" expanded="true" />
-                <marker date="1458617992434" expanded="true" signature="8275:10070" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -966,8 +965,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19689119">
-          <caret line="95" column="3" selection-start-line="95" selection-start-column="3" selection-end-line="151" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.29533678">
+          <caret line="104" column="28" selection-start-line="104" selection-start-column="28" selection-end-line="104" selection-end-column="28" />
           <folding>
             <element signature="e#26#7778#0#HTML" expanded="false" />
             <element signature="e#437#1310#1#HTML" expanded="true" />
@@ -975,7 +974,6 @@
             <element signature="e#2622#4111#1#HTML" expanded="true" />
             <element signature="e#4189#5482#1#HTML" expanded="true" />
             <element signature="e#5555#6944#1#HTML" expanded="true" />
-            <marker date="1458617992434" expanded="true" signature="8275:10070" placeholder="..." />
           </folding>
         </state>
       </provider>

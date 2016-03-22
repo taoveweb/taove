@@ -250,7 +250,7 @@
                 activeV.container.find('.refresh span').html('正在加载中');
                 window.setTimeout(function () {
                     var updateCreatedOn = activeV.container.find('.item').eq(0).attr('createdOn') || 0;
-                    var url = '/m?q=update&createdOn=' + updateCreatedOn;
+                    var url = '/m/albums?q=update&createdOn=' + updateCreatedOn;
                     getajax(url, activeV, pullDistance)
                 }, 300);
             },
@@ -358,7 +358,7 @@
 
                 if (progess >= 1 && diff < 0 && ajax == 'true' && loaded) {
                     swipper.wrapper.attr('ajax', 'false');
-                    var url = '/m?q=more&createdOn=' + moreCreatedOn;
+                    var url = '/m/albums?q=more&createdOn=' + moreCreatedOn;
                     getajax(url, swipper, diff)
                 }
 
@@ -485,7 +485,7 @@
                     likenum--;
                 }
                 This.parent().find('.like-num').html(likenum);
-                $.post('/m', {name: name}, function (data) {
+                $.post('/m/albums', {name: name}, function (data) {
                     if (!data.sucess) {
                         /* This.parent().find('.bigLike').toggleClass('active');
                          likenum--;

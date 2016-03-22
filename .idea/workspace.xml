@@ -58,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6909091">
-              <caret line="642" column="27" selection-start-line="642" selection-start-column="27" selection-end-line="642" selection-end-column="27" />
+              <caret line="642" column="35" selection-start-line="642" selection-start-column="35" selection-end-line="642" selection-end-column="35" />
               <folding>
                 <element signature="e#6998#8291#1#HTML" expanded="true" />
                 <element signature="e#13943#15754#0#HTML" expanded="false" />
@@ -863,7 +863,7 @@
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6909091">
-          <caret line="642" column="27" selection-start-line="642" selection-start-column="27" selection-end-line="642" selection-end-column="27" />
+          <caret line="642" column="35" selection-start-line="642" selection-start-column="35" selection-end-line="642" selection-end-column="35" />
           <folding>
             <element signature="e#6998#8291#1#HTML" expanded="true" />
             <element signature="e#13943#15754#0#HTML" expanded="false" />

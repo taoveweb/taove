@@ -635,19 +635,13 @@
                 var targetTab = this.getAttribute('data-href');
                 $(this).addClass('active').siblings().removeClass('active');
                 plus.webview.show(targetTab);
-               /* if (targetTab == activeTab) {
-                    return;
+
+                if (targetTab = "http://www.taove.com/m") {
+                    for (var i = 0; i < subpages.length; i++) {
+                        plus.webview.hide(subpages[i]);
+                     }
                 }
-                if (targetTab = "http://www.taove.com/m" && activeTab) {
-                    plus.webview.hide(activeTab);
-                    return;
-                }
-                //显示目标选项卡
-                //隐藏当前;
-                plus.webview.show(targetTab);
-                plus.webview.hide(activeTab);
-                //更改当前活跃的选项卡
-                activeTab = targetTab;*/
+
             });
 
         }

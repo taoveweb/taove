@@ -8,8 +8,10 @@ var co = require('co');
 
 
 var albums=require('./albums');
-var receive=require('./receive');
-var udid=require('./udid');
+var explorer=require('./explorer');
+var sk=require('./sk');
+var message=require('./message');
+var login=require('./login');
 router.use(function(req,res,next){
     var phone=18550035081;
     req.session.userId = {};
@@ -22,12 +24,24 @@ router.use(function(req,res,next){
 
     next();
 });
+//Ê×Ò³
 router.get('/', albums.get);
 router.post('/', albums.post);
-router.post('/receive', receive.post);
-router.get('/receive', receive.post);
-router.get('/udid', udid.get);
 
+//ä¯ÀÀ
+router.get('/explorer', explorer.get);
+router.post('/explorer', explorer.post);
 
+//ÅÄÕÕ
+router.get('/sk', sk.get);
+router.post('/sk', sk.post);
+
+//ÏûÏ¢
+router.get('/message', message.get);
+router.post('/message', message.post);
+
+//µÇÂ¼
+router.get('/login', login.get);
+router.post('/login', login.post);
 
 module.exports = router;

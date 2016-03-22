@@ -82,11 +82,11 @@
 {{/extend}}
 <div class="wrap">
     <div class="menu">
-        <a class="active home" href="http://www.taove.com/m/albums"></a>
-        <a class="explorer" href="http://www.taove.com/m/explorer"></a>
-        <a class="sk" href="http://www.taove.com/m/sk"></a>
-        <a class="message" href="http://www.taove.com/m/message"></a>
-        <a class="my" href="http://www.taove.com/m/login"></a>
+        <a class="active home" data-href="http://www.taove.com/m/albums"></a>
+        <a class="explorer" data-href="http://www.taove.com/m/explorer"></a>
+        <a class="sk" data-href="http://www.taove.com/m/sk"></a>
+        <a class="message" data-href="http://www.taove.com/m/message"></a>
+        <a class="my" data-href="http://www.taove.com/m/login"></a>
     </div>
 </div>
 
@@ -129,7 +129,7 @@
             var title = document.getElementById("title");
             //选项卡点击事件
             $('.menu').on('tap', 'a', function(e) {
-                var targetTab = this.getAttribute('href');
+                var targetTab = this.getAttribute('data-href');
                 if (targetTab == activeTab) {
                     return;
                 }

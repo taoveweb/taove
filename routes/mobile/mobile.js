@@ -7,6 +7,7 @@ var co = require('co');
 
 
 
+var index=require('./index');
 var albums=require('./albums');
 var explorer=require('./explorer');
 var sk=require('./sk');
@@ -24,9 +25,14 @@ router.use(function(req,res,next){
 
     next();
 });
+
 //Ê×Ò³
-router.get('/', albums.get);
-router.post('/', albums.post);
+router.get('/', index.get);
+router.post('/', index.post);
+
+//Ïà²á
+router.get('/albums', albums.get);
+router.post('/albums', albums.post);
 
 //ä¯ÀÀ
 router.get('/explorer', explorer.get);

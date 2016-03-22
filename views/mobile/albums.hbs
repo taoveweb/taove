@@ -634,7 +634,7 @@
             $('.menu').on('tap', 'a', function (e) {
                 var targetTab = this.getAttribute('data-href');
                 $(this).addClass('active').siblings().removeClass('active');
-                plus.webview.hide(activeTab);
+                plus.webview.show(activeTab);
                /* if (targetTab == activeTab) {
                     return;
                 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/index.hbs" afterPath="$PROJECT_DIR$/views/mobile/index.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
@@ -54,21 +54,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="false">
+      <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.9827585">
-              <caret line="486" column="53" selection-start-line="486" selection-start-column="53" selection-end-line="486" selection-end-column="53" />
+            <state vertical-scroll-proportion="0.7726496">
+              <caret line="302" column="40" selection-start-line="302" selection-start-column="40" selection-end-line="302" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/mobile/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8119658">
-              <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+            <state vertical-scroll-proportion="-3.9310346">
+              <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
               <folding>
                 <element signature="e#26#7778#0#HTML" expanded="false" />
                 <element signature="e#437#1310#1#HTML" expanded="true" />
@@ -235,11 +235,11 @@
         <option value="$PROJECT_DIR$/views/mobile/explorer.hbs" />
         <option value="$PROJECT_DIR$/views/mobile/login.hbs" />
         <option value="$PROJECT_DIR$/public/mobile/css/homeD.css" />
-        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
         <option value="$PROJECT_DIR$/bin/www.js" />
         <option value="$PROJECT_DIR$/routes/mobile/index.js" />
         <option value="$PROJECT_DIR$/routes/mobile/mobile.js" />
         <option value="$PROJECT_DIR$/views/mobile/index.hbs" />
+        <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
       </list>
     </option>
   </component>
@@ -948,14 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.9827585">
-          <caret line="486" column="53" selection-start-line="486" selection-start-column="53" selection-end-line="486" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/layout_m.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.362069">
@@ -966,8 +958,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8119658">
-          <caret line="108" column="66" selection-start-line="108" selection-start-column="66" selection-end-line="108" selection-end-column="66" />
+        <state vertical-scroll-proportion="-3.9310346">
+          <caret line="95" column="12" selection-start-line="95" selection-start-column="12" selection-end-line="95" selection-end-column="12" />
           <folding>
             <element signature="e#26#7778#0#HTML" expanded="false" />
             <element signature="e#437#1310#1#HTML" expanded="true" />
@@ -976,6 +968,14 @@
             <element signature="e#4189#5482#1#HTML" expanded="true" />
             <element signature="e#5555#6944#1#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7726496">
+          <caret line="302" column="40" selection-start-line="302" selection-start-column="40" selection-end-line="302" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

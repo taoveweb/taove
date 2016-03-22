@@ -300,7 +300,7 @@
                     //刷新
                     swipper.container.find('.refresh-icon').addClass('anim');
                     var updateCreatedOn = swipper.container.find('.item').eq(0).attr('createdOn') || 0;
-                    var url = '/m?q=update&createdOn=' + updateCreatedOn;
+                    var url = '/m/albums?q=update&createdOn=' + updateCreatedOn;
                     getajax(url, swipper, pullDistance)
                 } else {
                     swipper.container.find('.refresh').css({

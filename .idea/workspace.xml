@@ -67,8 +67,8 @@
       <file leaf-file-name="index.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/mobile/index.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12991454">
-              <caret line="84" column="65" selection-start-line="84" selection-start-column="65" selection-end-line="84" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.8119658">
+              <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
               <folding>
                 <element signature="e#26#7778#0#HTML" expanded="false" />
                 <element signature="e#437#1310#1#HTML" expanded="true" />
@@ -965,8 +965,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/index.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12991454">
-          <caret line="84" column="65" selection-start-line="84" selection-start-column="65" selection-end-line="84" selection-end-column="65" />
+        <state vertical-scroll-proportion="0.8119658">
+          <caret line="108" column="27" selection-start-line="108" selection-start-column="27" selection-end-line="108" selection-end-column="27" />
           <folding>
             <element signature="e#26#7778#0#HTML" expanded="false" />
             <element signature="e#437#1310#1#HTML" expanded="true" />

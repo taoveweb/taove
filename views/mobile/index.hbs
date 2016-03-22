@@ -1,4 +1,116 @@
 {{#extend "mStyle"}}
+    <link rel="stylesheet" href="/mobile/css/homeD.css">
+    <link rel="stylesheet" href="/common/css/swiper.min.css">
+    <style>
+        html, body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #fff;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            height: 100%;
+            position: relative;
+            moz-user-select: -moz-none;
+            -moz-user-select: none;
+            -o-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+        }
+
+        .swiper-wrapper {
+            position: relative;
+            z-index: 2;
+            background: #fff;
+        }
+
+        .swiper-slide {
+            /* Center slide text vertically */
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            flex-direction: column;
+            flex-shrink: 0;
+            margin: 0.5rem 0;
+        }
+
+        .item .br em {
+            font-style: normal;
+        }
+
+        .swiper-container-horizontal > .swiper-pagination-bullets {
+            top: 0;
+            bottom: auto;
+            background: #fff;
+            border-bottom: 1px solid #d1d1d1;
+        }
+
+        .swiper-pagination-bullet {
+            width: auto;
+            height: auto;
+            opacity: 0.6;
+            background: none;
+            padding: 0.2rem 0.4rem 0.15rem;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            font-size: 0.35rem;
+        }
+
+        .swiper-pagination-bullet-active {
+            border-bottom: 6px solid #007aff;
+            opacity: 1;
+        }
+
+        .swiper-lazy-preloader {
+            text-align: center;
+            width: 1rem;
+            height: 1rem;
+            -webkit-animation: none;
+            -o-animation: none;
+            animation: none;
+            display: block;
+        }
+
+        .swiper-lazy-preloader:after {
+            background: none;
+        }
+
+        .wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-container-h{
+            border-bottom: 1.2rem solid #222729;
+            box-sizing: border-box;
+        }
+
+    </style>
+
+{{/extend}}
+
+{{#extend "mStyle"}}
 
     <style>
         html, body {
@@ -81,6 +193,77 @@
 
 {{/extend}}
 <div class="wrap">
+    <div class="swiper-container swiper-container-h">
+        <div class="swiper-wrapper swiper-wrapper swiper-wrapper-h">
+            <div class="swiper-slide">
+                <div class="swiper-container swiper-container-v">
+                    <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
+                        <div class="refresh"><span>下接刷新</span>
+
+                            <div class="refresh-icon"></div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-v">
+                            {{>"ajax_albums_box"}}
+                        </div>
+                    </div>
+
+                    <div class="loader">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <!-- Add Scroll Bar -->
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-container swiper-container-v">
+                    <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
+                        <div class="refresh"><span>下接刷新</span>
+
+                            <div class="refresh-icon"></div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-v">
+                            <!--    {{>"ajax_albums_box"}}-->
+                        </div>
+                    </div>
+                    <div class="refresh">下接刷新
+                        <div class="refresh-icon"></div>
+                    </div>
+                    <div class="loader">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="swiper-container swiper-container-v">
+                    <div class="swiper-wrapper" ajax="true" count="{{albumsNum}}">
+                        <div class="refresh"><span>下接刷新</span>
+
+                            <div class="refresh-icon"></div>
+                        </div>
+                        <div class="swiper-slide swiper-slide-v">
+
+                        </div>
+                    </div>
+                    <div class="refresh">下接刷新
+                        <div class="refresh-icon"></div>
+                    </div>
+                    <div class="loader">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-h"></div>
+    </div>
     <div class="menu">
         <a class="active home" data-href="http://www.taove.com/m/albums"></a>
         <a class="explorer" data-href="http://www.taove.com/m/explorer"></a>
@@ -91,7 +274,328 @@
 </div>
 
 
+<script>
+    var srwidth = document.querySelector('.swiper-wrapper').offsetWidth;
+    var imgs = document.querySelectorAll('.box img');
+    var boxs = document.querySelectorAll('.box');
+    for (var i = 0; i < imgs.length; i++) {
+        var img = imgs[i];
+        var box = boxs[i];
+        box.style.cssText = img.style.cssText = `width:${srwidth}px;height:${parseInt(img.offsetHeight * srwidth / img.offsetWidth)}px`;
+    }
+
+
+    Image.prototype.load = function (url, boximg, callback) {
+        var thisImg = this;
+        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP.open('GET', url, true);
+        xmlHTTP.responseType = 'arraybuffer';
+        boximg.nextElementSibling.innerHTML = '0%';
+        xmlHTTP.onload = function (e) {
+            var blob = new Blob([this.response]);
+            boximg.src = window.URL.createObjectURL(blob);
+            boximg.setAttribute('class', 'swiper-lazyed');
+        };
+        xmlHTTP.onprogress = function (e) {
+            thisImg.completedPercentage = parseInt((e.loaded / e.total) * 100);
+            boximg.nextElementSibling.innerHTML = thisImg.completedPercentage + '%';
+        };
+        xmlHTTP.onloadstart = function () {
+            thisImg.completedPercentage = 0;
+            boximg.nextElementSibling.innerHTML = thisImg.completedPercentage + '%';
+        };
+        xmlHTTP.onloadend = function () {
+            thisImg.completedPercentage = 100;
+            boximg.nextElementSibling.style.display = "none"
+        }
+        xmlHTTP.send();
+    };
+
+    initImg();
+    function initImg() {
+        var swiperLazy = document.querySelectorAll('.lazy');
+        for (var m = 0; m < swiperLazy.length; m++) {
+            var url = swiperLazy[m].getAttribute('data-src');
+            new Image().load(url, swiperLazy[m]);
+        }
+    }
+
+
+</script>
+
 <script src="{{static}}common/js/zepto.min.js"></script>
+<script src="{{static}}mobile/js/swiper.min.js"></script>
+
+{{#extend "mScripts"}}
+    <script>
+        //横滚动
+        var swiperH = new Swiper('.swiper-container-h', {
+            pagination: '.swiper-pagination-h',
+            paginationClickable: true,
+            onSlideNextEnd: function (swiper) {
+                //自动刷新
+                var activeV = swiperV[swiper.activeIndex];
+                var pullDistance = window.devicePixelRatio * 100;
+                if (activeV.container.data('refresh')) {
+                    return;
+                }
+                activeV.container.data('refresh', true);
+                activeV.setWrapperTranslate(pullDistance);
+                activeV.setWrapperTransition(300);
+                activeV.container.find('.refresh-icon').addClass('anim');
+                activeV.container.find('.refresh span').html('正在加载中');
+                window.setTimeout(function () {
+                    var updateCreatedOn = activeV.container.find('.item').eq(0).attr('createdOn') || 0;
+                    var url = '/m/albums?q=update&createdOn=' + updateCreatedOn;
+                    getajax(url, activeV, pullDistance)
+                }, 300);
+            },
+            paginationBulletRender: function (index, className) {
+                var str = '';
+                switch (index) {
+                    case 0:
+                        str = '关注';
+                        break;
+                    case 1:
+                        str = '精选';
+                        break;
+                    case 2:
+                        str = '附近';
+                        break;
+                }
+                return '<span class="' + className + '">' + str + '</span>';
+            },
+            spaceBetween: 50
+        });
+
+        //坚滚动
+        var swiperV = new Swiper('.swiper-container-v', {
+            scrollbar: '.swiper-scrollbar',
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            autoHeight: true,
+            preloadImages: false,
+            watchSlidesProgress: true,
+            mousewheelControl: true,
+            freeMode: true,
+            // lazyLoading: true,
+            onTouchStart: function (swipper) {
+                swipper.setWrapperTranslate(swipper.getWrapperTranslate());
+                swipper.update();
+                swipper.container.data('onTouchEnd', 'false');
+            },
+            onTouchEnd: function (swipper) {
+                var pullDistance = swipper.getWrapperTranslate();
+                var realyDistance = pullDistance / window.devicePixelRatio;
+                swipper.container.data('onTouchEnd', 'true');
+                if (realyDistance > 50) {
+                    window.setTimeout(function () {
+                        swipper.container.find('.refresh span').html('正在加载中');
+                    }, 10);
+
+                    //刷新
+                    swipper.container.find('.refresh-icon').addClass('anim');
+                    var updateCreatedOn = swipper.container.find('.item').eq(0).attr('createdOn') || 0;
+                    var url = '/m/albums?q=update&createdOn=' + updateCreatedOn;
+                    getajax(url, swipper, pullDistance)
+                } else {
+                    swipper.container.find('.refresh').css({
+                        "z-index": 1,
+                        transition: '400ms',
+                        transform: "translate3d(0px,-1rem,0px)"
+                    });
+                    swipper.container.find('.refresh-icon').css({
+                        transition: '400ms',
+                        transform: "rotate(-360deg)"
+                    });
+                }
+
+            },
+            onProgress: function (swipper, progess) {
+                var diff = swipper.touches.diff;
+                var itemLength = swipper.container.find('.box').length;
+                var count = swipper.wrapper.attr('count');
+                var loaded = itemLength < count;
+                var moreCreatedOn = swipper.container.find('.item').eq(itemLength - 1).attr('createdOn');
+                var ajax = swipper.wrapper.attr('ajax');
+                var pullDistance = swipper.getWrapperTranslate();
+                var realyDistance = pullDistance / window.devicePixelRatio;
+                if (ajax == 'false' && loaded) {
+                    swipper.container.find('.loader').css('display', 'block');
+                }
+
+                if (itemLength >= count) {
+                    swipper.container.find('.loader').css({
+                        'left': '0',
+                        'display': 'block',
+                        'width': '100%'
+                    }).html('没有更多的数据了');
+                }
+                if (realyDistance > 50) {
+                    swipper.container.find('.refresh span').html('松开刷新');
+                }
+                if (realyDistance > 0 && realyDistance < 50) {
+                    swipper.container.find('.refresh span').html('下拉刷新');
+                }
+                if (realyDistance > 0 && swipper.container.data('onTouchEnd') == "false") {
+                    var transformY = pullDistance * 1.3;
+                    if (realyDistance > 50) {
+                        var transformY = 60 * window.devicePixelRatio;
+                    }
+                    swipper.container.find('.refresh').css({
+                        "z-index": 2,
+                        transition: '0ms',
+                        transform: "translate3d(0," + transformY + "px,0)"
+                    });
+                    swipper.container.find('.refresh-icon').css({
+                        transform: "rotate(" + (pullDistance * 15) + "deg)"
+                    });
+                }
+
+                if (progess >= 1 && diff < 0 && ajax == 'true' && loaded) {
+                    swipper.wrapper.attr('ajax', 'false');
+                    var url = '/m/albums?q=more&createdOn=' + moreCreatedOn;
+                    getajax(url, swipper, diff)
+                }
+
+            }
+        });
+        //请求新的图片
+        function getajax(url, swipper, diff) {
+            $.ajax({
+                type: 'get',
+                url: url,
+                catch: false,
+                /*dataType: 'json',*/
+                timeout: 10 * 1000,
+                success: function (data) {
+                    setitem(data, swipper, diff);
+                },
+                error: function (xhr, type) {
+
+                },
+                complete: function () {
+                    if (diff < 0) {
+                        //加载更多
+                        swipper.wrapper.attr('ajax', 'true');
+                        swipper.container.find('.loader').css('display', 'none');
+                    } else {
+                        swipper.container.find('.refresh').css({
+                            "z-index": 1,
+                            transition: '400ms',
+                            transform: "translate3d(0,-1rem,0)"
+                        });
+                        swipper.container.find('.refresh-icon').removeClass('anim').css({
+                            transition: '400ms',
+                            transform: "rotate(0deg)"
+                        });
+
+                        swipper.setWrapperTranslate(0);
+                        swipper.setWrapperTransition(300);
+                    }
+                }
+            });
+        }
+        //设置新的图片
+        function setitem(taove, swipper, diff) {
+            if (diff < 0) {
+                //加载更多
+                swipper.slides.append(taove);
+            } else {
+                //刷新
+                swipper.container.find('.time').each(function () {
+                    var html = timeago(parseInt($(this).attr('createdOn')));
+                    $(this).html(html);
+                });
+                swipper.wrapper.attr('createdOn', taove.count);
+                swipper.slides.prepend(taove);
+            }
+
+            $('.box').find('img').each(function () {
+                var This = $(this);
+                This.css({
+                    width: srwidth,
+                    height: this.height * srwidth / this.width
+                })
+            });
+            initImg();
+            swipper.update();
+        }
+
+        //时间
+        function timeago(date) {
+            date = new Date(date);
+            var seconds = Math.floor((new Date() - date) / 1000);
+            var interval = Math.floor(seconds / 31536000);
+            if (interval > 1) {
+                return "" + interval + "年";
+            }
+            interval = Math.floor(seconds / 2592000);
+            if (interval > 1) {
+                return "" + interval + "月";
+            }
+            interval = Math.floor(seconds / 86400);
+            if (interval > 1) {
+                return "" + interval + "天";
+            }
+            interval = Math.floor(seconds / 3600);
+            if (interval > 1) {
+                return "" + interval + "小时";
+            }
+            interval = Math.floor(seconds / 60);
+            if (interval > 1) {
+                return "" + interval + "分";
+            }
+            if (Math.floor(seconds) === 0) {
+                return '刚刚';
+            } else {
+                return Math.floor(seconds) + '秒';
+            }
+        }
+
+
+        //喜欢请求
+        $(function () {
+            $('body').on('doubleTap', '.box', function () {
+                /*var name=$(this).attr('img-name');
+                $(this).parent().find('.bigLike').toggleClass('active');*/
+                postLike(this)
+            });
+
+            $('body').on('tap', '.bigLike', function () {
+                /*                var name=$(this).attr('img-name');
+                                $(this).parent().find('.bigLike').toggleClass('active');*/
+                postLike(this);
+
+            });
+
+
+            function postLike(obj) {
+                var This = $(obj);
+                var name = This.attr('img-name');
+                var likenum = 0 + This.parent().find('.like-num').html();
+                This.parent().find('.bigLike').toggleClass('active');
+                if (This.parent().find('.bigLike').hasClass('active')) {
+                    likenum++;
+                } else {
+                    likenum--;
+                }
+                This.parent().find('.like-num').html(likenum);
+                $.post('/m/albums', {name: name}, function (data) {
+                    if (!data.sucess) {
+                        /* This.parent().find('.bigLike').toggleClass('active');
+                         likenum--;
+                         This.parent().find('.like-num').html(likenum);*/
+                    }
+                })
+            }
+        });
+
+
+    </script>
+
+
+{{/extend}}
 {{#extend "mScripts"}}
     <script>
         //用到dcloud--------------------------------------

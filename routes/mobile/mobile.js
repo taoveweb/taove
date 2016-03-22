@@ -28,12 +28,12 @@ router.use(function(req,res,next){
 });
 
 //Ê×Ò³
-router.get('/', index.get);
-router.post('/', index.post);
+/*router.get('/', index.get);
+router.post('/', index.post);*/
 
 //Ïà²á
-router.get('/albums', albums.get);
-router.post('/albums', albums.post);
+router.get('/', albums.get);
+router.post('/', albums.post);
 
 //ä¯ÀÀ
 router.get('/explorer', explorer.get);

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,12 +56,12 @@
       <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57947975">
-              <caret line="616" column="25" selection-start-line="616" selection-start-column="25" selection-end-line="616" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.63439304">
+              <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
               <folding>
-                <element signature="e#6998#8291#1#HTML" expanded="true" />
-                <element signature="e#13943#15754#0#HTML" expanded="false" />
-                <element signature="e#15872#26450#0#Handlebars" expanded="false" />
+                <element signature="e#7025#8318#1#HTML" expanded="true" />
+                <element signature="e#13970#15781#0#HTML" expanded="false" />
+                <element signature="e#15926#26463#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -862,12 +861,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57947975">
-          <caret line="616" column="25" selection-start-line="616" selection-start-column="25" selection-end-line="616" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.63439304">
+          <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
           <folding>
-            <element signature="e#6998#8291#1#HTML" expanded="true" />
-            <element signature="e#13943#15754#0#HTML" expanded="false" />
-            <element signature="e#15872#26450#0#Handlebars" expanded="false" />
+            <element signature="e#7025#8318#1#HTML" expanded="true" />
+            <element signature="e#13970#15781#0#HTML" expanded="false" />
+            <element signature="e#15926#26463#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

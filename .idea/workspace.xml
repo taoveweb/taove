@@ -57,8 +57,8 @@
       <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74421966">
-              <caret line="646" column="33" selection-start-line="646" selection-start-column="33" selection-end-line="646" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.57947975">
+              <caret line="616" column="25" selection-start-line="616" selection-start-column="25" selection-end-line="616" selection-end-column="25" />
               <folding>
                 <element signature="e#6998#8291#1#HTML" expanded="true" />
                 <element signature="e#13943#15754#0#HTML" expanded="false" />
@@ -862,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74421966">
-          <caret line="646" column="33" selection-start-line="646" selection-start-column="33" selection-end-line="646" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.57947975">
+          <caret line="616" column="25" selection-start-line="616" selection-start-column="25" selection-end-line="616" selection-end-column="25" />
           <folding>
             <element signature="e#6998#8291#1#HTML" expanded="true" />
             <element signature="e#13943#15754#0#HTML" expanded="false" />

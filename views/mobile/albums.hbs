@@ -629,13 +629,13 @@
                 self.append(sub);
             }
             //当前激活选项
-            var activeTab ='';
+            var activeTab = '';
             //选项卡点击事件
             $('.menu').on('tap', 'a', function (e) {
-                console.log(sub);
                 var targetTab = this.getAttribute('data-href');
                 $(this).addClass('active').siblings().removeClass('active');
-                if (targetTab == activeTab) {
+                plus.webview.hide(activeTab);
+               /* if (targetTab == activeTab) {
                     return;
                 }
                 if (targetTab = "http://www.taove.com/m" && activeTab) {
@@ -644,11 +644,10 @@
                 }
                 //显示目标选项卡
                 //隐藏当前;
-                console.log('a');
                 plus.webview.show(targetTab);
                 plus.webview.hide(activeTab);
                 //更改当前活跃的选项卡
-                activeTab = targetTab;
+                activeTab = targetTab;*/
             });
 
         }

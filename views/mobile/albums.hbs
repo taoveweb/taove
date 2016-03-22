@@ -615,7 +615,7 @@
 
             var subpages = ['http://www.taove.com/m/explorer', 'http://www.taove.com/m/sk', 'http://www.taove.com/m/message', 'http://www.taove.com/m/login'];
             var subpage_style = {
-                "z-index": 2,
+                zindex: 2,
                 top: '0',
                 bottom: $('.menu').height() / window.devicePixelRatio + 'px'
             };
@@ -626,7 +626,7 @@
             var self = plus.webview.currentWebview();
             for (var i = 0; i < subpages.length; i++) {
                 var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
-                sub.hide();
+                sub.show();
                 self.append(sub);
             }
             //当前激活选项

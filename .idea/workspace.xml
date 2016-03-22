@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/albums.hbs" afterPath="$PROJECT_DIR$/views/mobile/albums.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,8 +57,8 @@
       <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.63439304">
-              <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.50578034">
+              <caret line="628" column="24" selection-start-line="628" selection-start-column="24" selection-end-line="628" selection-end-column="24" />
               <folding>
                 <element signature="e#7025#8318#1#HTML" expanded="true" />
                 <element signature="e#13970#15781#0#HTML" expanded="false" />
@@ -861,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63439304">
-          <caret line="104" column="26" selection-start-line="104" selection-start-column="26" selection-end-line="104" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.50578034">
+          <caret line="628" column="24" selection-start-line="628" selection-start-column="24" selection-end-line="628" selection-end-column="24" />
           <folding>
             <element signature="e#7025#8318#1#HTML" expanded="true" />
             <element signature="e#13970#15781#0#HTML" expanded="false" />

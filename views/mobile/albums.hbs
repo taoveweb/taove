@@ -625,7 +625,7 @@
             var self = plus.webview.currentWebview();
             for (var i = 0; i < subpages.length; i++) {
                 var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
-                sub.show();
+                sub.hide();
                 self.append(sub);
             }
             //当前激活选项
@@ -634,7 +634,7 @@
             $('.menu').on('tap', 'a', function (e) {
                 var targetTab = this.getAttribute('data-href');
                 $(this).addClass('active').siblings().removeClass('active');
-                plus.webview.show(activeTab);
+                plus.webview.show(targetTab);
                /* if (targetTab == activeTab) {
                     return;
                 }

@@ -12,7 +12,7 @@ var co = require('co');
 
 function indexGet(req, res, next) {
     res.render('mobile/index', {
-        title: '登录',
+        title: '首页',
         layout: 'layout_m'
     });
 }

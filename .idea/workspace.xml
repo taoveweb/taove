@@ -56,12 +56,12 @@
       <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6162311">
-              <caret line="632" column="38" selection-start-line="632" selection-start-column="38" selection-end-line="632" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.716763">
+              <caret line="639" column="69" selection-start-line="639" selection-start-column="69" selection-end-line="639" selection-end-column="69" />
               <folding>
-                <element signature="e#6991#8284#1#HTML" expanded="true" />
-                <element signature="e#13925#15736#0#HTML" expanded="false" />
-                <element signature="e#15854#26432#0#Handlebars" expanded="false" />
+                <element signature="e#6998#8291#1#HTML" expanded="true" />
+                <element signature="e#13943#15754#0#HTML" expanded="false" />
+                <element signature="e#15872#26450#0#Handlebars" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -401,7 +401,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.08864865" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15783784" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -861,12 +861,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6162311">
-          <caret line="632" column="38" selection-start-line="632" selection-start-column="38" selection-end-line="632" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.716763">
+          <caret line="639" column="69" selection-start-line="639" selection-start-column="69" selection-end-line="639" selection-end-column="69" />
           <folding>
-            <element signature="e#6991#8284#1#HTML" expanded="true" />
-            <element signature="e#13925#15736#0#HTML" expanded="false" />
-            <element signature="e#15854#26432#0#Handlebars" expanded="false" />
+            <element signature="e#6998#8291#1#HTML" expanded="true" />
+            <element signature="e#13943#15754#0#HTML" expanded="false" />
+            <element signature="e#15872#26450#0#Handlebars" expanded="false" />
           </folding>
         </state>
       </provider>

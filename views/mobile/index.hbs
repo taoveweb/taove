@@ -113,7 +113,7 @@
 
             //创建子页面，首个选项卡页面显示，其它均隐藏；
             var self = plus.webview.currentWebview();
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < subpages.length; i++) {
                 var temp = {};
                 var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
                 if (i > 0) {
@@ -135,6 +135,7 @@
                 }
                 //显示目标选项卡
                  //隐藏当前;
+                $(this).addClass('active').siblings().removeClass('active');
                 plus.webview.show(targetTab);
                 plus.webview.hide(activeTab);
                 //更改当前活跃的选项卡

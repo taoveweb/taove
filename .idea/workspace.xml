@@ -57,8 +57,8 @@
       <file leaf-file-name="albums.hbs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72231406">
-              <caret line="637" column="32" selection-start-line="637" selection-start-column="32" selection-end-line="637" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.6909091">
+              <caret line="642" column="27" selection-start-line="642" selection-start-column="27" selection-end-line="642" selection-end-column="27" />
               <folding>
                 <element signature="e#6998#8291#1#HTML" expanded="true" />
                 <element signature="e#13943#15754#0#HTML" expanded="false" />
@@ -392,7 +392,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1548999" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -862,8 +862,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72231406">
-          <caret line="637" column="32" selection-start-line="637" selection-start-column="32" selection-end-line="637" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.6909091">
+          <caret line="642" column="27" selection-start-line="642" selection-start-column="27" selection-end-line="642" selection-end-column="27" />
           <folding>
             <element signature="e#6998#8291#1#HTML" expanded="true" />
             <element signature="e#13943#15754#0#HTML" expanded="false" />

@@ -634,12 +634,17 @@
             $('.menu').on('tap', 'a', function (e) {
                 var targetTab = this.getAttribute('data-href');
                 $(this).addClass('active').siblings().removeClass('active');
-                plus.webview.show(targetTab);
-                if (targetTab == "http://www.taove.com/m") {
-                    for (var i = 0; i < subpages.length; i++) {
-                        plus.webview.hide(subpages[i]);
-                     }
+                if (targetTab == activeTab) {
+                    return;
                 }
+
+                if (targetTab == "http://www.taove.com/m") {
+                    plus.webview.hide(activeTab);
+                    return;
+                }
+                plus.webview.show(targetTab);
+                plus.webview.hide(activeTab);
+                activeTab = targetTab;
 
             });
 

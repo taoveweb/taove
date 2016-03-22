@@ -625,7 +625,7 @@
             var self = plus.webview.currentWebview();
             for (var i = 0; i < subpages.length; i++) {
                 var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
-                sub.hide();
+                sub.show();
                 self.append(sub);
             }
             //当前激活选项

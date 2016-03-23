@@ -27,27 +27,27 @@ router.use(function(req,res,next){
     next();
 });
 
-//Ê×Ò³
+//
 /*router.get('/', index.get);
 router.post('/', index.post);*/
 
-//Ïà²á
+//
 router.get('/', albums.get);
 router.post('/', albums.post);
 
-//ä¯ÀÀ
+//
 router.get('/explorer', explorer.get);
 router.post('/explorer', explorer.post);
 
-//ÅÄÕÕ
+//
 router.get('/sk', sk.get);
 router.post('/sk', sk.post);
 
-//ÏûÏ¢
+//
 router.get('/message', message.get);
 router.post('/message', message.post);
 
-//µÇÂ¼
+//
 router.get('/login', login.get);
 router.post('/login', login.post);
 

@@ -5,11 +5,13 @@
     <meta content="yes" name="apple-touch-fullscreen">
     <meta content="telephone=no,email=no" name="format-detection">
     <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
-   <!-- <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">-->
+    <!--<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">-->
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="renderer" content="webkit">
     <title>{{title}}</title>
+
+    {{{block "mStyle"}}}
     <script>
         !function (N, M) {
             function L() {
@@ -63,11 +65,11 @@
             }
             N.addEventListener("resize", function () {
                 clearTimeout(K),
-                        K = setTimeout(L, 300)
+                        K = setTimeout(L, 10)
             }, !1),
                     N.addEventListener("pageshow", function (b) {
                         b.persisted && (clearTimeout(K),
-                                K = setTimeout(L, 300))
+                                K = setTimeout(L,10))
                     }, !1),
                     "complete" === J.readyState ? J.body.style.fontSize = 12 * F + "px" : J.addEventListener("DOMContentLoaded", function () {
                         J.body.style.fontSize = 12 * F + "px"
@@ -88,7 +90,6 @@
                     }
         }(window, window.lib || (window.lib = {}));
     </script>
-    {{{block "mStyle"}}}
     {{#if nomibile}}
         <style>
             .wrap{

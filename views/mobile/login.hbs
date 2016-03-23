@@ -567,7 +567,11 @@
             height: 100%;
         }
         .login{
-            margin: 20% 10%;
+            margin: 30% 10%;
+        }
+        .login .br{
+            margin-bottom: 0.3rem;
+            color: #fff;
         }
         .login input{
             display: block;
@@ -575,14 +579,23 @@
             border:none;
             border-bottom: 1px solid #fff;
             background: transparent;
+            height: 1rem;
+            line-height: 1rem;
+            color: #fff;
+        }
+        .login ::-webkit-input-placeholder{
+            color: #fff;
         }
         .login button{
             width: 100%;
-            height: 2.5rem;
-            -webkit-border-radius: 3px;
-            -moz-border-radius: 3px;
-            border-radius: 3px;
+            height: 1rem;
+            -webkit-border-radius: 0.2rem;
+            -moz-border-radius:  0.2rem;
+            border-radius:  0.2rem;
             background: #1d84ce;
+            border:none;
+            font-size: 0.4rem;
+            color: #fff;
         }
         .login button:focus,
         .login button:hover{
@@ -594,18 +607,20 @@
             color: #fff;
             font-size: 1.2rem;
         }
+        input:-webkit-autofill {
+            background: #1d84ce;
+            color: #fff;
+        }
     </style>
 {{/extend}}
 <div class="wrap">
-    <h1>{{title}}</h1>
-
     <div class="content">
         <div class="login">
             <div class="br">
                 <input type="text" placeholder="手机号/邮箱"/>
             </div>
             <div class="br">
-                <input type="text" placeholder="手机号/邮箱"/>
+                <input type="password" placeholder="密码"/>
             </div>
             <div class="br">
                 <button>登录</button>

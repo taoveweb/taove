@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/login.hbs" afterPath="$PROJECT_DIR$/views/mobile/login.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5218121">
-              <caret line="648" column="32" selection-start-line="648" selection-start-column="32" selection-end-line="648" selection-end-column="32" />
+              <caret line="648" column="28" selection-start-line="648" selection-start-column="28" selection-end-line="648" selection-end-column="28" />
               <folding>
                 <element signature="e#25#1641#0#HTML" expanded="false" />
                 <element signature="e#50#179#0#HTML" expanded="false" />
@@ -1350,7 +1349,7 @@
     <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5218121">
-          <caret line="648" column="32" selection-start-line="648" selection-start-column="32" selection-end-line="648" selection-end-column="32" />
+          <caret line="648" column="28" selection-start-line="648" selection-start-column="28" selection-end-line="648" selection-end-column="28" />
           <folding>
             <element signature="e#25#1641#0#HTML" expanded="false" />
             <element signature="e#50#179#0#HTML" expanded="false" />

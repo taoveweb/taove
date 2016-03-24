@@ -886,16 +886,4 @@
 </div>
 {{#extend "mScripts"}}
     <script src="{{static}}common/js/zepto.min.js"></script>
-    <script type="text/javascript">
-        // H5 plus事件处理
-        function plusReady(){
-            // 设置系统状态栏背景为红色
-            plus.navigator.setStatusBarBackground( "#1da1f2" );
-        }
-        if(window.plus){
-            plusReady();
-        }else{
-            document.addEventListener("plusready",plusReady,false);
-        }
-    </script>
-{{/extend}}
+ {{/extend}}

@@ -46,6 +46,7 @@ app.set('view engine', 'hbs');
     });
     next();
 });*/
+app.use(compression());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -60,7 +61,6 @@ app.use(session({
     })
 }));
 app.use(cookieParser());
-app.use(compression());
 app.use(minify());
 
 app.use(express.static(path.join(__dirname, 'public')));

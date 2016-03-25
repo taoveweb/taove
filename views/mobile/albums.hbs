@@ -625,9 +625,6 @@
             //创建子页面，首个选项卡页面显示，其它均隐藏；
             var self = plus.webview.currentWebview();
             for (var i = 0; i < subpages.length; i++) {
-                if(subpages[i]=='http://www.taove.com/m/login'){
-                    subpage_style['background']="#1da1f2"
-                }
                 var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
                 sub.hide();
                 self.append(sub);
@@ -642,10 +639,10 @@
                     return;
                 }
 
-                if(targetTab == "http://www.taove.com/m/login"){
-                    plus.navigator.setStatusBarBackground( "#1da1f2" );
-                }else{
-                    plus.navigator.setStatusBarBackground( "#ffffff" );
+                if (targetTab == "http://www.taove.com/m/login") {
+                    plus.navigator.setStatusBarBackground("#1da1f2");
+                } else {
+                    plus.navigator.setStatusBarBackground("#ffffff");
                 }
 
                 if (targetTab == "http://www.taove.com/m") {

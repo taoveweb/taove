@@ -580,8 +580,8 @@
             $('.box').find('img').each(function () {
                 var This = $(this);
                 This.css({
-                    width: srwidth,
-                    height: this.height * srwidth / this.width
+                    width: srwidth/3,
+                    height: srwidth/3
                 })
             });
             initImg();

@@ -10,6 +10,7 @@ var minify = require('express-minify');
 var fs = require('fs');
 var hbs = require('hbs');
 var helpers = require('handlebars-helpers');
+var minifyHTML  = require('express-minify-html');
 var compression = require('compression');
 //var processImage = require('express-processimage');
 global.__baseDir = __dirname;
@@ -24,6 +25,17 @@ app.locals.imgWidth=828;
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 //??hbs??
+app.use(minifyHTML({
+    override:      true,
+    htmlMinifier: {
+        removeComments:            true,
+        collapseWhitespace:        true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes:     true,
+        removeEmptyAttributes:     true,
+        minifyJS:                  true
+    }
+}));
 helpers.register(hbs, {});
 require('./hbsregister')(hbs);
 

@@ -5,7 +5,7 @@ var fs = require('fs');
 var blocks = {};
 module.exports=function(hbs){
     hbs.registerPartial('ajax_albums_box', fs.readFileSync(__dirname + '/views/mobile/ajax_albums_box.hbs', 'utf8'));
-    hbs.registerPartial('ajax_albums_box', fs.readFileSync(__dirname + '/views/mobile/ajax_explorer_box.hbs', 'utf8'));
+    hbs.registerPartial('ajax_explorer_box', fs.readFileSync(__dirname + '/views/mobile/ajax_explorer_box.hbs', 'utf8'));
     hbs.registerPartials(__dirname + '/views/partials');
     hbs.registerHelper('extend', function (name, context) {
         var block = blocks[name];

@@ -602,11 +602,24 @@
             swipper.update();
         }
 
-        $(function(){
+        function loadImg(){
             var url = '/m/explorer?q=more&createdOn='+new Date().getTime();
             getajax(url, swiperV, 0);
-        })
+        };
 
 
+    </script>
+    <script>
+        function plusReady(){
+            ws=plus.webview.currentWebview();
+            if(ws.isVisible()){
+                loadImg();
+            }
+        }
+        if(window.plus){
+            plusReady();
+        }else{
+            document.addEventListener("plusready",plusReady,false);
+        }
     </script>
 {{/extend}}

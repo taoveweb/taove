@@ -602,19 +602,19 @@
             swipper.update();
         }
 
-        function loadImg(){
-            var url = '/m/explorer?q=more&createdOn='+new Date().getTime();
-            getajax(url, swiperV, 0);
-        };
+
 
 
     </script>
     <script>
+        function loadImg(){
+            var url = '/m/explorer?q=more&createdOn='+new Date().getTime();
+            getajax(url, swiperV, 0);
+            ws.removeEventListener('show',loadImg)
+        };
         function plusReady(){
             ws=plus.webview.currentWebview();
-            if(ws.isVisible()){
-                loadImg();
-            }
+            ws.addEventListener('show',loadImg,false)
         }
         if(window.plus){
             plusReady();

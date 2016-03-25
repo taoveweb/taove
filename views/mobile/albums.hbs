@@ -625,6 +625,9 @@
             //创建子页面，首个选项卡页面显示，其它均隐藏；
             var self = plus.webview.currentWebview();
             for (var i = 0; i < subpages.length; i++) {
+                if(subpages[i]=='http://www.taove.com/m/login'){
+                    subpage_style['background']="#1d84ce"
+                }
                 var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
                 sub.hide();
                 self.append(sub);

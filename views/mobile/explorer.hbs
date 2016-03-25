@@ -615,7 +615,10 @@
         };
         function plusReady(){
             ws=plus.webview.currentWebview();
-            ws.addEventListener('show',loadImg,false)
+            ws.addEventListener('show',loadImg,false);
+            if(ws.isVisible()){
+                loadImg();
+            }
         }
         if(window.plus){
             plusReady();

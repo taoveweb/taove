@@ -1,0 +1,8 @@
+{{#each taove}}
+    <a img-name="{{coverImg.name}}" class="box" createdOn="{{this.createdOn}}">
+        {{#with this.coverImg}}
+            {{{getImgM width height sizeLevel path name }}}
+        {{/with}}
+        <div class="swiper-lazy-preloader"></div>
+    </a>
+{{/each}}

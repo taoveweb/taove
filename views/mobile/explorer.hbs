@@ -602,6 +602,11 @@
             swipper.update();
         }
 
+        $(function(){
+            var url = '/m/explorer?q=more&createdOn='+new Date().getTime();
+            getajax(url, swiperV, 0);
+        })
+
 
     </script>
 {{/extend}}

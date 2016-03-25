@@ -612,7 +612,8 @@
         }
 
         function plusReady() {
-
+            plus.navigator.setStatusBarBackground("#000000");
+            plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
             var subpages = ['http://www.taove.com/m/explorer', 'http://www.taove.com/m/sk', 'http://www.taove.com/m/message', 'http://www.taove.com/m/login'];
             var subpage_style = {
                 zindex: 2,
@@ -639,7 +640,7 @@
                     return;
                 }
 
-                if (targetTab == "http://www.taove.com/m/explorer") {
+                /*if (targetTab == "http://www.taove.com/m/explorer") {
                     plus.navigator.setStatusBarBackground("#000000");
                     plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
 
@@ -654,7 +655,7 @@
                     if (targetTab == !"http://www.taove.com/m/explorer") {
                         plus.navigator.setStatusBarBackground("#ffffff");
                     }
-                }
+                }*/
 
 
                 if (targetTab == "http://www.taove.com/m") {

@@ -29,11 +29,13 @@ app.use(minifyHTML({
     override:      true,
     htmlMinifier: {
         removeComments:            true,
+        collapseInlineTagWhitespace:true,
         collapseWhitespace:        true,
         collapseBooleanAttributes: true,
         removeAttributeQuotes:     true,
         removeEmptyAttributes:     true,
-        minifyJS:                  true
+        minifyJS:                  true,
+        minifyCSS:true
     }
 }));
 helpers.register(hbs, {});

@@ -50,7 +50,7 @@
         <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.7571885">
-              <caret line="654" column="17" selection-start-line="654" selection-start-column="17" selection-end-line="654" selection-end-column="17" />
+              <caret line="655" column="21" selection-start-line="655" selection-start-column="21" selection-end-line="655" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -1080,7 +1080,7 @@
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7571885">
-          <caret line="654" column="17" selection-start-line="654" selection-start-column="17" selection-end-line="654" selection-end-column="17" />
+          <caret line="655" column="21" selection-start-line="655" selection-start-column="21" selection-end-line="655" selection-end-column="21" />
           <folding />
         </state>
       </provider>

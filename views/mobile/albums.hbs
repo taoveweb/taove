@@ -639,19 +639,21 @@
                     return;
                 }
 
-                if(targetTab == "http://www.taove.com/m/explorer"){
-                    plus.navigator.setStatusBarBackground( "#000000" );
-                    plus.navigator.setStatusBarStyle( "UIStatusBarStyleBlackOpaque" );
+                if (targetTab == "http://www.taove.com/m/explorer") {
+                    plus.navigator.setStatusBarBackground("#000000");
+                    plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
 
-                }else{
-                    plus.navigator.setStatusBarBackground( "#ffffff" );
-                    plus.navigator.setStatusBarStyle( "UIStatusBarStyleDefault" );
+                } else {
+                    plus.navigator.setStatusBarBackground("#ffffff");
+                    plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
 
                 }
-                if(targetTab == "http://www.taove.com/m/login"){
-                    plus.navigator.setStatusBarBackground( "#1da1f2" );
-                }else{
-                    plus.navigator.setStatusBarBackground( "#ffffff" );
+                if (targetTab == "http://www.taove.com/m/login") {
+                    plus.navigator.setStatusBarBackground("#1da1f2");
+                } else {
+                    if (targetTab == !"http://www.taove.com/m/explorer") {
+                        plus.navigator.setStatusBarBackground("#ffffff");
+                    }
                 }
 
 

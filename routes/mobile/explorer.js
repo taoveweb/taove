@@ -39,7 +39,7 @@ function indexGet(req, res, next) {
         } else {
             //初次加载
             var count = yield  Albums.count();
-            var docs = yield Albums.find().sort({createdOn: -1}).limit(3).exec();
+            var docs = yield Albums.find().sort({createdOn: -1}).limit(12).exec();
             res.render('mobile/explorer', {
                 title: '摄影作品',
                 taove: docs,

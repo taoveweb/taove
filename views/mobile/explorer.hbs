@@ -192,6 +192,7 @@
         .refresh {
             text-align: center;
             width: 100%;
+            height: 0;
             transform: translate3d(0, -1rem, 0)
         }
 
@@ -358,11 +359,23 @@
                 -o-transform: translateX(-20px)
             }
         }
-        
         .box{
             width: 33.3%;
-            height: 33.3%;
             display: block;
+
+        }
+        .box img{
+            width: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            display: block;
+
+        }
+        .swiper-slide{
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0;
         }
     </style>
 {{/extend}}
@@ -387,14 +400,14 @@
     <div class="swiper-scrollbar"></div>
 </div>
 <script>
-    var srwidth = document.querySelector('.swiper-wrapper').offsetWidth;
+/*    var srwidth = document.querySelector('.swiper-wrapper').offsetWidth;
     var imgs = document.querySelectorAll('.box img');
     var boxs = document.querySelectorAll('.box');
     for (var i = 0; i < imgs.length; i++) {
         var img = imgs[i];
         var box = boxs[i];
         box.style.cssText = img.style.cssText = `width:${srwidth/3}px;height:${srwidth/3}px`;
-    }
+    }*/
 
 
     Image.prototype.load = function (url, boximg, callback) {
@@ -405,7 +418,7 @@
         boximg.nextElementSibling.innerHTML = '0%';
         xmlHTTP.onload = function (e) {
             var blob = new Blob([this.response]);
-            boximg.src = window.URL.createObjectURL(blob);
+            boximg.style['backgroundImage']  =`url(${window.URL.createObjectURL(blob)})`; //window.URL.createObjectURL(blob);
             boximg.setAttribute('class', 'swiper-lazyed');
         };
         xmlHTTP.onprogress = function (e) {
@@ -577,13 +590,13 @@
                 swipper.slides.prepend(taove);
             }
 
-            $('.box').find('img').each(function () {
+           /* $('.box').find('img').each(function () {
                 var This = $(this);
                 This.css({
                     width: srwidth/3,
                     height: srwidth/3
                 })
-            });
+            });*/
             initImg();
             swipper.update();
         }

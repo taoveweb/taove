@@ -1,7 +1,7 @@
 {{#each taove}}
     <a img-name="{{coverImg.name}}" class="box" createdOn="{{this.createdOn}}">
         {{#with this.coverImg}}
-            {{{getImgM width height sizeLevel path name }}}
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAAA1BMVEX///+nxBvIAAAAAXRSTlMD2e+J3AAAAA1JREFUGNNjGAWDCgAAAZAAAXtlmk8AAAAASUVORK5CYII="  data-src="/{{path}}{{name}}" class="lazy" alt=""/>
         {{/with}}
         <div class="swiper-lazy-preloader"></div>
     </a>

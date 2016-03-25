@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="865ad6de-63ac-466e-b206-f87be539f9dc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/ajax_explorer_box.hbs" afterPath="$PROJECT_DIR$/views/mobile/ajax_explorer_box.hbs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/explorer.hbs" afterPath="$PROJECT_DIR$/views/mobile/explorer.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/mobile/explorer.js" afterPath="$PROJECT_DIR$/routes/mobile/explorer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
@@ -24,10 +26,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="www.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bin/www.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.031404957">
               <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
               <folding />
             </state>
@@ -59,18 +61,98 @@
       <file leaf-file-name="ajax_albums_box.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/mobile/ajax_albums_box.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-7.464286">
               <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="explorer.hbs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="explorer.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/mobile/explorer.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2227806">
-              <caret line="575" column="63" selection-start-line="575" selection-start-column="63" selection-end-line="575" selection-end-column="63" />
+            <state vertical-scroll-proportion="-4.5689654">
+              <caret line="363" column="27" selection-start-line="363" selection-start-column="27" selection-end-line="363" selection-end-column="27" />
+              <folding>
+                <element signature="e#87#1975#0#HTML" expanded="false" />
+                <element signature="e#108#257#0#HTML" expanded="false" />
+                <element signature="e#274#411#0#HTML" expanded="false" />
+                <element signature="e#432#479#0#HTML" expanded="false" />
+                <element signature="e#723#780#0#HTML" expanded="false" />
+                <element signature="e#814#853#0#HTML" expanded="false" />
+                <element signature="e#869#949#0#HTML" expanded="false" />
+                <element signature="e#973#1006#0#HTML" expanded="false" />
+                <element signature="e#1030#1097#0#HTML" expanded="false" />
+                <element signature="e#1111#1164#0#HTML" expanded="false" />
+                <element signature="e#1221#1293#0#HTML" expanded="false" />
+                <element signature="e#1310#1350#0#HTML" expanded="false" />
+                <element signature="e#1372#1412#0#HTML" expanded="false" />
+                <element signature="e#1445#1514#0#HTML" expanded="false" />
+                <element signature="e#1542#1577#0#HTML" expanded="false" />
+                <element signature="e#1596#1732#0#HTML" expanded="false" />
+                <element signature="e#1746#1780#0#HTML" expanded="false" />
+                <element signature="e#1794#1832#0#HTML" expanded="false" />
+                <element signature="e#1850#1900#0#HTML" expanded="false" />
+                <element signature="e#1917#1962#0#HTML" expanded="false" />
+                <element signature="e#2007#2076#0#HTML" expanded="false" />
+                <element signature="e#2091#2233#0#HTML" expanded="false" />
+                <element signature="e#2261#2584#0#HTML" expanded="false" />
+                <element signature="e#2610#2707#0#HTML" expanded="false" />
+                <element signature="e#2731#3317#0#HTML" expanded="false" />
+                <element signature="e#3387#3520#0#HTML" expanded="false" />
+                <element signature="e#3556#3853#0#HTML" expanded="false" />
+                <element signature="e#3896#3977#0#HTML" expanded="false" />
+                <element signature="e#4010#4230#0#HTML" expanded="false" />
+                <element signature="e#4269#4310#0#HTML" expanded="false" />
+                <element signature="e#4342#4438#0#HTML" expanded="false" />
+                <element signature="e#4457#4596#0#HTML" expanded="false" />
+                <element signature="e#4620#4794#0#HTML" expanded="false" />
+                <element signature="e#4827#5286#0#HTML" expanded="false" />
+                <element signature="e#5302#5362#0#HTML" expanded="false" />
+                <element signature="e#5372#5547#0#HTML" expanded="false" />
+                <element signature="e#5407#5462#0#HTML" expanded="false" />
+                <element signature="e#5480#5537#0#HTML" expanded="false" />
+                <element signature="e#5565#5740#0#HTML" expanded="false" />
+                <element signature="e#5763#6123#0#HTML" expanded="false" />
+                <element signature="e#6155#6277#0#HTML" expanded="false" />
+                <element signature="e#6313#6522#0#HTML" expanded="false" />
+                <element signature="e#6558#6627#0#HTML" expanded="false" />
+                <element signature="e#6663#6875#0#HTML" expanded="false" />
+                <element signature="e#6885#7204#0#HTML" expanded="false" />
+                <element signature="e#6927#6994#0#HTML" expanded="false" />
+                <element signature="e#7011#7079#0#HTML" expanded="false" />
+                <element signature="e#7097#7194#0#HTML" expanded="false" />
+                <element signature="e#7214#7521#0#HTML" expanded="false" />
+                <element signature="e#7253#7317#0#HTML" expanded="false" />
+                <element signature="e#7334#7399#0#HTML" expanded="false" />
+                <element signature="e#7417#7511#0#HTML" expanded="false" />
+                <element signature="e#7531#7830#0#HTML" expanded="false" />
+                <element signature="e#7568#7630#0#HTML" expanded="false" />
+                <element signature="e#7647#7710#0#HTML" expanded="false" />
+                <element signature="e#7728#7820#0#HTML" expanded="false" />
+                <element signature="e#7840#8159#0#HTML" expanded="false" />
+                <element signature="e#7881#7979#0#HTML" expanded="false" />
+                <element signature="e#7996#8063#0#HTML" expanded="false" />
+                <element signature="e#8081#8149#0#HTML" expanded="false" />
+                <element signature="e#8169#8476#0#HTML" expanded="false" />
+                <element signature="e#8207#8302#0#HTML" expanded="false" />
+                <element signature="e#8319#8383#0#HTML" expanded="false" />
+                <element signature="e#8401#8466#0#HTML" expanded="false" />
+                <element signature="e#8486#8785#0#HTML" expanded="false" />
+                <element signature="e#8522#8615#0#HTML" expanded="false" />
+                <element signature="e#8632#8694#0#HTML" expanded="false" />
+                <element signature="e#8712#8775#0#HTML" expanded="false" />
+                <element signature="e#9086#9182#0#HTML" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ajax_explorer_box.hbs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/mobile/ajax_explorer_box.hbs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0357144">
+              <caret line="3" column="176" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="176" />
               <folding />
             </state>
           </provider>
@@ -79,7 +161,7 @@
       <file leaf-file-name="login.hbs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-14.25">
               <caret line="944" column="0" selection-start-line="944" selection-start-column="0" selection-end-line="944" selection-end-column="0" />
               <folding />
             </state>
@@ -89,8 +171,8 @@
       <file leaf-file-name="hbsregister.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hbsregister.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+            <state vertical-scroll-proportion="-8.74">
+              <caret line="74" column="114" selection-start-line="74" selection-start-column="110" selection-end-line="74" selection-end-column="114" />
               <folding />
             </state>
           </provider>
@@ -100,7 +182,7 @@
         <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="304" column="0" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
+              <caret line="252" column="21" selection-start-line="252" selection-start-column="21" selection-end-line="252" selection-end-column="42" />
               <folding>
                 <element signature="e#2#122#0" expanded="false" />
                 <element signature="e#129#171#0" expanded="false" />
@@ -137,7 +219,6 @@
                 <element signature="e#3765#3934#0" expanded="false" />
                 <element signature="e#3962#4007#0" expanded="false" />
                 <element signature="e#4035#4207#0" expanded="false" />
-                <element signature="e#4251#5064#1" expanded="true" />
                 <element signature="e#5226#5954#0" expanded="false" />
                 <element signature="e#5990#6041#0" expanded="false" />
                 <element signature="e#6050#6102#0" expanded="false" />
@@ -170,8 +251,8 @@
       <file leaf-file-name="explorer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/mobile/explorer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="48" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="48" />
+            <state vertical-scroll-proportion="-4.94">
+              <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -220,12 +301,12 @@
         <option value="$PROJECT_DIR$/views/pc/index.hbs" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/views/mobile/login.hbs" />
-        <option value="$PROJECT_DIR$/views/mobile/ajax_explorer_box.hbs" />
-        <option value="$PROJECT_DIR$/routes/mobile/explorer.js" />
-        <option value="$PROJECT_DIR$/bin/www.js" />
         <option value="$PROJECT_DIR$/views/mobile/albums.hbs" />
         <option value="$PROJECT_DIR$/hbsregister.js" />
+        <option value="$PROJECT_DIR$/routes/mobile/explorer.js" />
+        <option value="$PROJECT_DIR$/views/mobile/ajax_explorer_box.hbs" />
         <option value="$PROJECT_DIR$/views/mobile/explorer.hbs" />
+        <option value="$PROJECT_DIR$/bin/www.js" />
       </list>
     </option>
   </component>
@@ -455,10 +536,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34415585" sideWeight="0.5021075" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26054054" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -768,6 +849,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -803,22 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="944" column="0" selection-start-line="944" selection-start-column="0" selection-end-line="944" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/albums.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -827,10 +893,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.25">
+          <caret line="944" column="0" selection-start-line="944" selection-start-column="0" selection-end-line="944" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/mobile/explorer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.94">
+          <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/mobile/ajax_albums_box.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.464286">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/mobile/css/homeD.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="304" column="0" selection-start-line="304" selection-start-column="0" selection-end-line="304" selection-end-column="0" />
+          <caret line="252" column="21" selection-start-line="252" selection-start-column="21" selection-end-line="252" selection-end-column="42" />
           <folding>
             <element signature="e#2#122#0" expanded="false" />
             <element signature="e#129#171#0" expanded="false" />
@@ -867,7 +957,6 @@
             <element signature="e#3765#3934#0" expanded="false" />
             <element signature="e#3962#4007#0" expanded="false" />
             <element signature="e#4035#4207#0" expanded="false" />
-            <element signature="e#4251#5064#1" expanded="true" />
             <element signature="e#5226#5954#0" expanded="false" />
             <element signature="e#5990#6041#0" expanded="false" />
             <element signature="e#6050#6102#0" expanded="false" />
@@ -896,41 +985,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/mobile/ajax_albums_box.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hbsregister.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="42" selection-start-line="7" selection-start-column="42" selection-end-line="7" selection-end-column="42" />
+        <state vertical-scroll-proportion="-8.74">
+          <caret line="74" column="114" selection-start-line="74" selection-start-column="110" selection-end-line="74" selection-end-column="114" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/ajax_explorer_box.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21212122">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/mobile/explorer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="48" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="48" />
+        <state vertical-scroll-proportion="-2.0357144">
+          <caret line="3" column="176" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="176" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/explorer.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2227806">
-          <caret line="575" column="63" selection-start-line="575" selection-start-column="63" selection-end-line="575" selection-end-column="63" />
+        <state vertical-scroll-proportion="-4.5689654">
+          <caret line="363" column="27" selection-start-line="363" selection-start-column="27" selection-end-line="363" selection-end-column="27" />
+          <folding>
+            <element signature="e#87#1975#0#HTML" expanded="false" />
+            <element signature="e#108#257#0#HTML" expanded="false" />
+            <element signature="e#274#411#0#HTML" expanded="false" />
+            <element signature="e#432#479#0#HTML" expanded="false" />
+            <element signature="e#723#780#0#HTML" expanded="false" />
+            <element signature="e#814#853#0#HTML" expanded="false" />
+            <element signature="e#869#949#0#HTML" expanded="false" />
+            <element signature="e#973#1006#0#HTML" expanded="false" />
+            <element signature="e#1030#1097#0#HTML" expanded="false" />
+            <element signature="e#1111#1164#0#HTML" expanded="false" />
+            <element signature="e#1221#1293#0#HTML" expanded="false" />
+            <element signature="e#1310#1350#0#HTML" expanded="false" />
+            <element signature="e#1372#1412#0#HTML" expanded="false" />
+            <element signature="e#1445#1514#0#HTML" expanded="false" />
+            <element signature="e#1542#1577#0#HTML" expanded="false" />
+            <element signature="e#1596#1732#0#HTML" expanded="false" />
+            <element signature="e#1746#1780#0#HTML" expanded="false" />
+            <element signature="e#1794#1832#0#HTML" expanded="false" />
+            <element signature="e#1850#1900#0#HTML" expanded="false" />
+            <element signature="e#1917#1962#0#HTML" expanded="false" />
+            <element signature="e#2007#2076#0#HTML" expanded="false" />
+            <element signature="e#2091#2233#0#HTML" expanded="false" />
+            <element signature="e#2261#2584#0#HTML" expanded="false" />
+            <element signature="e#2610#2707#0#HTML" expanded="false" />
+            <element signature="e#2731#3317#0#HTML" expanded="false" />
+            <element signature="e#3387#3520#0#HTML" expanded="false" />
+            <element signature="e#3556#3853#0#HTML" expanded="false" />
+            <element signature="e#3896#3977#0#HTML" expanded="false" />
+            <element signature="e#4010#4230#0#HTML" expanded="false" />
+            <element signature="e#4269#4310#0#HTML" expanded="false" />
+            <element signature="e#4342#4438#0#HTML" expanded="false" />
+            <element signature="e#4457#4596#0#HTML" expanded="false" />
+            <element signature="e#4620#4794#0#HTML" expanded="false" />
+            <element signature="e#4827#5286#0#HTML" expanded="false" />
+            <element signature="e#5302#5362#0#HTML" expanded="false" />
+            <element signature="e#5372#5547#0#HTML" expanded="false" />
+            <element signature="e#5407#5462#0#HTML" expanded="false" />
+            <element signature="e#5480#5537#0#HTML" expanded="false" />
+            <element signature="e#5565#5740#0#HTML" expanded="false" />
+            <element signature="e#5763#6123#0#HTML" expanded="false" />
+            <element signature="e#6155#6277#0#HTML" expanded="false" />
+            <element signature="e#6313#6522#0#HTML" expanded="false" />
+            <element signature="e#6558#6627#0#HTML" expanded="false" />
+            <element signature="e#6663#6875#0#HTML" expanded="false" />
+            <element signature="e#6885#7204#0#HTML" expanded="false" />
+            <element signature="e#6927#6994#0#HTML" expanded="false" />
+            <element signature="e#7011#7079#0#HTML" expanded="false" />
+            <element signature="e#7097#7194#0#HTML" expanded="false" />
+            <element signature="e#7214#7521#0#HTML" expanded="false" />
+            <element signature="e#7253#7317#0#HTML" expanded="false" />
+            <element signature="e#7334#7399#0#HTML" expanded="false" />
+            <element signature="e#7417#7511#0#HTML" expanded="false" />
+            <element signature="e#7531#7830#0#HTML" expanded="false" />
+            <element signature="e#7568#7630#0#HTML" expanded="false" />
+            <element signature="e#7647#7710#0#HTML" expanded="false" />
+            <element signature="e#7728#7820#0#HTML" expanded="false" />
+            <element signature="e#7840#8159#0#HTML" expanded="false" />
+            <element signature="e#7881#7979#0#HTML" expanded="false" />
+            <element signature="e#7996#8063#0#HTML" expanded="false" />
+            <element signature="e#8081#8149#0#HTML" expanded="false" />
+            <element signature="e#8169#8476#0#HTML" expanded="false" />
+            <element signature="e#8207#8302#0#HTML" expanded="false" />
+            <element signature="e#8319#8383#0#HTML" expanded="false" />
+            <element signature="e#8401#8466#0#HTML" expanded="false" />
+            <element signature="e#8486#8785#0#HTML" expanded="false" />
+            <element signature="e#8522#8615#0#HTML" expanded="false" />
+            <element signature="e#8632#8694#0#HTML" expanded="false" />
+            <element signature="e#8712#8775#0#HTML" expanded="false" />
+            <element signature="e#9086#9182#0#HTML" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.031404957">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
       </provider>

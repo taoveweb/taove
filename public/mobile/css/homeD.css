@@ -36,7 +36,8 @@ body {
     position: relative;
     overflow: hidden;
     display: block;
-    background: #eee
+    background: #eee;
+    width:100%;
 }
 
 .item .box img {

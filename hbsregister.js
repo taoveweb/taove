@@ -59,7 +59,7 @@ module.exports=function(hbs){
         var val = imgName.split('.');
         var w=width;
         var h=height;
-        var src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
+        var src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAAA1BMVEX///+nxBvIAAAAAXRSTlMD2e+J3AAAAA1JREFUGNNjGAWDCgAAAZAAAXtlmk8AAAAASUVORK5CYII=";
         var original=imgPath+imgName;
         var setWidth='';
         switch(sizeLevel){

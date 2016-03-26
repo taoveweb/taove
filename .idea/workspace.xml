@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76c88cd2-b0a3-4390-ae51-690ec8a4b305" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/www.js" afterPath="$PROJECT_DIR$/bin/www.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/mobile/explorer.hbs" afterPath="$PROJECT_DIR$/views/mobile/explorer.hbs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="taove.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -128,7 +129,7 @@
             <entry file="file://$PROJECT_DIR$/views/mobile/explorer.hbs">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-4.1034484">
-                  <caret line="381" column="31" selection-start-line="381" selection-start-column="31" selection-end-line="381" selection-end-column="31" />
+                  <caret line="239" column="22" selection-start-line="239" selection-start-column="22" selection-end-line="239" selection-end-column="22" />
                   <folding>
                     <element signature="e#87#1975#0#HTML" expanded="false" />
                   </folding>
@@ -867,7 +868,7 @@
     <entry file="file://$PROJECT_DIR$/views/mobile/explorer.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.1034484">
-          <caret line="381" column="31" selection-start-line="381" selection-start-column="31" selection-end-line="381" selection-end-column="31" />
+          <caret line="239" column="22" selection-start-line="239" selection-start-column="22" selection-end-line="239" selection-end-column="22" />
           <folding>
             <element signature="e#87#1975#0#HTML" expanded="false" />
           </folding>

@@ -521,13 +521,6 @@
                 swipper.slides.prepend(taove);
             }
 
-            $('.box').find('img').each(function () {
-                var This = $(this);
-                This.css({
-                    width: srwidth,
-                    height: this.height * srwidth / this.width
-                })
-            });
             initImg();
             swipper.update();
         }

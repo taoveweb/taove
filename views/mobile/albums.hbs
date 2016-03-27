@@ -291,7 +291,7 @@
     for (var i = 0; i < imgs.length; i++) {
         var img = imgs[i];
         var box = boxs[i];
-        //box.style.cssText = img.style.cssText = `width:${srwidth}px;height:${parseInt(img.offsetHeight * srwidth / img.offsetWidth)}px`;
+        //img.style.cssText = `width:${srwidth}px;height:${parseInt(img.offsetHeight * srwidth / img.offsetWidth)}px`;
     }
 
 
@@ -521,6 +521,13 @@
                 swipper.slides.prepend(taove);
             }
 
+          /*  $('.box').find('img').each(function () {
+                var This = $(this);
+                This.css({
+                    width: srwidth,
+                    height: this.attr('height') * srwidth / this.prop("width")
+                })
+            });*/
             initImg();
             swipper.update();
         }

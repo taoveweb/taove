@@ -705,13 +705,15 @@
     <div class="content">
         <div class="login">
             <div class="br">
-                <input type="text" placeholder="手机号/邮箱"/>
+                <input id="phone" type="text" placeholder="手机号/邮箱"/>
+                <p class="phone-validate"></p>
             </div>
             <div class="br">
-                <input type="password" placeholder="密码"/>
+                <input id="password" type="password" placeholder="密码"/>
+                <p class="password-validate"></p>
             </div>
             <div class="br">
-                <button>登录</button>
+                <button id="login">登录</button>
             </div>
             <div class="br rf-btn">
                 <span class="r-link">注册</span>
@@ -930,6 +932,45 @@
     </div>
 </div>
 {{#extend "mScripts"}}
+    <script>
+        $('#login').tap(function(){
+            var that=$(this);
+            postLogin(that, 'l')
+        });
+
+        function postLogin(that, s) {
+            var parent = that;
+            var phone_val = parent.find('#phone').val();
+            var password_val = parent.find('#password').val();
+            var pass = true;
+            if (!validate.phone(phone_val)) {
+                parent.find('.phone-validate').html('手机格试不正确');
+                pass = false;
+            }
+            else {
+                parent.find('.phone-validate').html('正常');
+            }
+            if (!validate.password(password_val)) {
+                pass = false;
+                parent.find('.password-validate').html('密码格式由6到8位字母和数字组成');
+            } else {
+                parent.find('.password-validate').html('正常');
+            }
+
+            if (pass) {
+                $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
+                    if (data.ok == 1) {
+                        parent.find('.responsemsg').html(data.msg);
+                        if (s == "l") {
+                            alert('登录成功')
+                        }
+                    } else {
+                        parent.find('.responsemsg').html(data.msg);
+                    }
+                })
+            }
+        }
+    </script>
     <script>
         //用到dcloud--------------------------------------
 

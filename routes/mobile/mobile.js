@@ -15,14 +15,14 @@ var message=require('./message');
 var login=require('./login');
 
 router.use(function(req,res,next){
-    var phone=18550035081;
+ /*   var phone=18550035081;
     req.session.userId = {};
     req.session.userId['phone']=18550035081+'';
     res.locals.loginInfo = req.session.userId;
     if(!/Mobile/.test(req.get('user-agent'))){
         res.redirect('/');
         res.locals.nomibile=true;
-    }
+    }*/
 
     next();
 });

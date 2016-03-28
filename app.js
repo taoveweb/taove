@@ -21,7 +21,6 @@ app.locals.static = '/';
 app.locals.imgStatic = '/';
 app.locals.jsStatic = '/';
 app.locals.cssStatic = '/';
-app.locals.imgWidth=828;
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 //??hbs??

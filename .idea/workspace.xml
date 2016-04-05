@@ -112,13 +112,13 @@
           <file leaf-file-name="login.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4028021">
-                  <caret line="742" column="9" selection-start-line="742" selection-start-column="9" selection-end-line="742" selection-end-column="9" />
+                <state vertical-scroll-proportion="0.60245186">
+                  <caret line="706" column="0" selection-start-line="706" selection-start-column="0" selection-end-line="706" selection-end-column="0" />
                   <folding>
-                    <element signature="e#24186#35195#0#HTML" expanded="false" />
-                    <element signature="e#25961#26004#0#HTML" expanded="true" />
-                    <element signature="e#26058#26084#0#HTML" expanded="true" />
-                    <element signature="e#35230#36633#0#HTML" expanded="false" />
+                    <element signature="e#24107#35116#0#HTML" expanded="false" />
+                    <element signature="e#25882#25925#0#HTML" expanded="true" />
+                    <element signature="e#25979#26005#0#HTML" expanded="true" />
+                    <element signature="e#35151#36554#0#HTML" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -784,13 +784,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4028021">
-          <caret line="742" column="9" selection-start-line="742" selection-start-column="9" selection-end-line="742" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.60245186">
+          <caret line="706" column="0" selection-start-line="706" selection-start-column="0" selection-end-line="706" selection-end-column="0" />
           <folding>
-            <element signature="e#24186#35195#0#HTML" expanded="false" />
-            <element signature="e#25961#26004#0#HTML" expanded="true" />
-            <element signature="e#26058#26084#0#HTML" expanded="true" />
-            <element signature="e#35230#36633#0#HTML" expanded="false" />
+            <element signature="e#24107#35116#0#HTML" expanded="false" />
+            <element signature="e#25882#25925#0#HTML" expanded="true" />
+            <element signature="e#25979#26005#0#HTML" expanded="true" />
+            <element signature="e#35151#36554#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

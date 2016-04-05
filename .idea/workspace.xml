@@ -22,7 +22,7 @@
     <favorites_list name="taove" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5706006">
+    <splitter split-orientation="horizontal" split-proportion="0.41201264">
       <split-first>
         <leaf>
           <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
@@ -112,13 +112,13 @@
           <file leaf-file-name="login.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.60245186">
-                  <caret line="706" column="0" selection-start-line="706" selection-start-column="0" selection-end-line="706" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.33625218">
+                  <caret line="596" column="26" selection-start-line="596" selection-start-column="26" selection-end-line="596" selection-end-column="26" />
                   <folding>
-                    <element signature="e#24107#35116#0#HTML" expanded="false" />
-                    <element signature="e#25882#25925#0#HTML" expanded="true" />
-                    <element signature="e#25979#26005#0#HTML" expanded="true" />
-                    <element signature="e#35151#36554#0#HTML" expanded="false" />
+                    <element signature="e#24050#35059#0#HTML" expanded="false" />
+                    <element signature="e#25825#25868#0#HTML" expanded="true" />
+                    <element signature="e#25922#25948#0#HTML" expanded="true" />
+                    <element signature="e#35094#36497#0#HTML" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -784,13 +784,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60245186">
-          <caret line="706" column="0" selection-start-line="706" selection-start-column="0" selection-end-line="706" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33625218">
+          <caret line="596" column="26" selection-start-line="596" selection-start-column="26" selection-end-line="596" selection-end-column="26" />
           <folding>
-            <element signature="e#24107#35116#0#HTML" expanded="false" />
-            <element signature="e#25882#25925#0#HTML" expanded="true" />
-            <element signature="e#25979#26005#0#HTML" expanded="true" />
-            <element signature="e#35151#36554#0#HTML" expanded="false" />
+            <element signature="e#24050#35059#0#HTML" expanded="false" />
+            <element signature="e#25825#25868#0#HTML" expanded="true" />
+            <element signature="e#25922#25948#0#HTML" expanded="true" />
+            <element signature="e#35094#36497#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

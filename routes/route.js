@@ -27,7 +27,7 @@ var register = require('../routes/admin/register');
 module.exports = function (app) {
 
     app.use(function(req,res,next){
-        if(/Mobile/.test(req.get('user-agent')) && !/\/m/.test(req.url)){
+        if(/Mobile/.test(req.get('user-agent')) && !/\/m/.test(req.url) && !req.xhr){
             res.redirect('/m');
         }
         next();

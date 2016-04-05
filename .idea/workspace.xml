@@ -28,7 +28,7 @@
           <file leaf-file-name="www.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/bin/www.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.22931035">
+                <state vertical-scroll-proportion="0.22970639">
                   <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
                   <folding />
                 </state>
@@ -112,13 +112,13 @@
           <file leaf-file-name="login.hbs" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.46853146">
-                  <caret line="744" column="64" selection-start-line="744" selection-start-column="64" selection-end-line="744" selection-end-column="64" />
+                <state vertical-scroll-proportion="0.469352">
+                  <caret line="744" column="57" selection-start-line="744" selection-start-column="57" selection-end-line="744" selection-end-column="57" />
                   <folding>
-                    <element signature="e#24098#35107#0#HTML" expanded="false" />
-                    <element signature="e#25873#25916#0#HTML" expanded="true" />
-                    <element signature="e#25970#25996#0#HTML" expanded="true" />
-                    <element signature="e#35142#36545#0#HTML" expanded="false" />
+                    <element signature="e#24108#35117#0#HTML" expanded="false" />
+                    <element signature="e#25883#25926#0#HTML" expanded="true" />
+                    <element signature="e#25980#26006#0#HTML" expanded="true" />
+                    <element signature="e#35152#36555#0#HTML" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -382,7 +382,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864866" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28756756" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28787878" sideWeight="0.49789253" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -776,7 +776,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/www.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22931035">
+        <state vertical-scroll-proportion="0.22970639">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding />
         </state>
@@ -784,13 +784,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/mobile/login.hbs">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46853146">
-          <caret line="744" column="64" selection-start-line="744" selection-start-column="64" selection-end-line="744" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.469352">
+          <caret line="744" column="57" selection-start-line="744" selection-start-column="57" selection-end-line="744" selection-end-column="57" />
           <folding>
-            <element signature="e#24098#35107#0#HTML" expanded="false" />
-            <element signature="e#25873#25916#0#HTML" expanded="true" />
-            <element signature="e#25970#25996#0#HTML" expanded="true" />
-            <element signature="e#35142#36545#0#HTML" expanded="false" />
+            <element signature="e#24108#35117#0#HTML" expanded="false" />
+            <element signature="e#25883#25926#0#HTML" expanded="true" />
+            <element signature="e#25980#26006#0#HTML" expanded="true" />
+            <element signature="e#35152#36555#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

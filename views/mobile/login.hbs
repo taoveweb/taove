@@ -704,7 +704,6 @@
             padding-top: 0.1rem;
         }
 
-
         .circle {
             display: none;
             position: absolute;
@@ -733,7 +732,6 @@
                 transform: rotate(360deg);
             }
         }
-
 
         input {
             -webkit-user-select: auto !important;
@@ -1036,12 +1034,12 @@
             }
 
             if (pass) {
-                $('.circle').css('display','block');
+                $('.circle').css('display', 'block');
                 $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
                     if (data.ok == 1) {
                         parent.find('.responsemsg').html(data.msg);
                         if (s == "l") {
-                            $('.circle').css('display','none');
+                            $('.circle').css('display', 'none');
                             $('#login').html('登录成功');
                         }
                     } else {
@@ -1063,7 +1061,9 @@
 
         function plusReady() {
             var self = plus.webview.currentWebview();
-            self.hide('auto')
+            $('.back').tap(function () {
+                self.hide('auto')
+            })
         }
 
 

@@ -746,26 +746,26 @@
     <div class="content">
         <div class="login">
             <div class="br">
-                <input id="phone" type="number" autofocus placeholder="ÊÖ»úºÅ"/>
+                <input id="phone" type="number" autofocus placeholder="æ‰‹æœºå·"/>
 
                 <p class="phone-validate"></p>
             </div>
             <div class="br">
-                <input id="password" type="password" placeholder="ÃÜÂë"/>
+                <input id="password" type="password" placeholder="å¯†ç "/>
 
                 <p class="password-validate"></p>
             </div>
             <div class="br">
-                <button id="login">µÇÂ¼</button>
+                <button id="login">ç™»å½•</button>
                 <div class="circle"></div>
             </div>
             <div class="br rf-btn">
-                <span class="r-link">×¢²á</span>
-                <span class="f-link">Íü¼ÇÃÜÂë</span>
+                <span class="r-link">æ³¨å†Œ</span>
+                <span class="f-link">å¿˜è®°å¯†ç </span>
             </div>
         </div>
         <div class="other-login">
-            <h3><span>Éç½»ÕËºÅ¿ìËÙµÇÂ¼</span></h3>
+            <h3><span>ç¤¾äº¤è´¦å·å¿«é€Ÿç™»å½•</span></h3>
 
             <div class="list">
                 <span class="wx"></span>
@@ -1001,7 +1001,7 @@
                     return /^([\u4e00-\u9fa5]|\d){1,10}$/.test($.trim(str))
                 },
                 description: function (str) {
-                    return /^([\u4E00-\u9FA5]|\w|£¨|£©|\(|\)|"|'|\.|¡£|!|,|£¬|£¡|\d|\n|\r|¡¢){1,500}$/.test($.trim(str.replace('', " ")));
+                    return /^([\u4E00-\u9FA5]|\w|ï¼ˆ|ï¼‰|\(|\)|"|'|\.|ã€‚|!|,|ï¼Œ|ï¼|\d|\n|\r|ã€){1,500}$/.test($.trim(str.replace('', " ")));
                 },
                 password: function (str) {
                     return /^(\d|[A-Za-z]){6,10}$/.test($.trim(str))
@@ -1023,17 +1023,17 @@
             var password_val = parent.find('#password').val();
             var pass = true;
             if (!validate.phone(phone_val)) {
-                parent.find('.phone-validate').html('ÊÖ»ú¸ñÊÔ²»ÕıÈ·');
+                parent.find('.phone-validate').html('æ‰‹æœºæ ¼è¯•ä¸æ­£ç¡®');
                 pass = false;
             }
             else {
-                parent.find('.phone-validate').html('Õı³£');
+                parent.find('.phone-validate').html('æ­£å¸¸');
             }
             if (!validate.password(password_val)) {
                 pass = false;
-                parent.find('.password-validate').html('ÃÜÂë¸ñÊ½ÓÉ6µ½8Î»×ÖÄ¸ºÍÊı×Ö×é³É');
+                parent.find('.password-validate').html('å¯†ç æ ¼å¼ç”±6åˆ°8ä½å­—æ¯å’Œæ•°å­—ç»„æˆ');
             } else {
-                parent.find('.password-validate').html('Õı³£');
+                parent.find('.password-validate').html('æ­£å¸¸');
             }
 
             if (pass) {
@@ -1043,7 +1043,7 @@
                         parent.find('.responsemsg').html(data.msg);
                         if (s == "l") {
                             $('.circle').css('display','none');
-                            $('#login').html('µÇÂ¼³É¹¦');
+                            $('#login').html('ç™»å½•æˆåŠŸ');
                         }
                     } else {
                         parent.find('.responsemsg').html(data.msg);
@@ -1053,7 +1053,7 @@
         }
     </script>
     <script>
-        //ÓÃµ½dcloud--------------------------------------
+        //ç”¨åˆ°dcloud--------------------------------------
 
         if (window.plus) {
             plusReady();

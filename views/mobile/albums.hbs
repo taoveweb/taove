@@ -643,7 +643,6 @@
             //当前激活选项
             var activeTab = '';
             //选项卡点击事件
-            alert('b')
             $('.menu').on('tap', 'a', function (e) {
                 if (!login && this.getAttribute('data-href')=='http://www.taove.com/m/my' && !loginW) {
                     loginW = plus.webview.open( "http://www.taove.com/m/login","http://www.taove.com/m/login",{

@@ -736,14 +736,19 @@
         input {
             -webkit-user-select: auto !important;
         }
+        .back {
+            font-size: 0.8rem;
+            border: none;
+            background: none;
+        }
     </style>
 {{/extend}}
 <div class="wrap">
     <div class="content">
-        <div class="back">取消</div>
+        <button class="back">取消</button>
         <div class="login">
             <div class="br">
-                <input id="phone" type="number" autofocus placeholder="手机号"/>
+                <input id="phone" type="number" placeholder="手机号"/>
 
                 <p class="phone-validate"></p>
             </div>
@@ -1062,12 +1067,9 @@
         function plusReady() {
             var self = plus.webview.currentWebview();
             $('.back').tap(function () {
-                self.hide('auto')
+                $('input').trigger('blur');
+                self.hide('auto');
             })
-
-            function callback(){
-
-            }
         }
 
 

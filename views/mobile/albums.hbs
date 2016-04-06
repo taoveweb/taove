@@ -646,8 +646,8 @@
             alert('b')
             $('.menu').on('tap', 'a', function (e) {
                 alert(!login)
-                alert(this.getAttribute('data-href')=='http://www.taove.com/m/login')
-                alert(!loginW)
+                alert(this.getAttribute('data-href')=='http://www.taove.com/m/login');
+                alert(!loginW);
                 if (!login && this.getAttribute('data-href')=='http://www.taove.com/m/my' && !loginW) {
                     loginW = plus.webview.open( "http://www.taove.com/m/login","http://www.taove.com/m/login",{
                         zindex: 2,

@@ -644,8 +644,13 @@
             var activeTab = '';
             //选项卡点击事件
             $('.menu').on('tap', 'a', function (e) {
+                alert(!login+this.getAttribute('data-href')=='http://www.taove.com/m/my'+!loginW)
                 if (!login && this.getAttribute('data-href')=='http://www.taove.com/m/my' && !loginW) {
-                    loginW = plus.webview.open( "http://www.taove.com/m/login","http://www.taove.com/m/login",subpage_style,'slide-in-righ');
+                    loginW = plus.webview.open( "http://www.taove.com/m/login","http://www.taove.com/m/login",{
+                        zindex: 2,
+                        top: '0',
+                        bottom:'0'
+                    },'slide-in-righ');
                     return;
                 }else{
                     plus.webview.show(loginW ,'slide-in-righ');

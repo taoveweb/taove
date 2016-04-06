@@ -624,7 +624,7 @@
             //plus.navigator.setStatusBarBackground("#000000");
             // plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
             plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
-            var subpages = ['http://www.taove.com/m/explorer', 'http://www.taove.com/m/sk', 'http://www.taove.com/m/message', 'http://www.taove.com/m/my'];
+            var subpages = ['http://www.taove.com/m/explorer', 'http://www.taove.com/m/sk', 'http://www.taove.com/m/message', 'http://www.taove.com/m/login'];
             var subpage_style = {
                 zindex: 2,
                 top: '0',
@@ -646,7 +646,7 @@
             alert('b')
             $('.menu').on('tap', 'a', function (e) {
                 alert(!login)
-                alert(this.getAttribute('data-href')=='http://www.taove.com/m/my')
+                alert(this.getAttribute('data-href')=='http://www.taove.com/m/login')
                 alert(!loginW)
                 if (!login && this.getAttribute('data-href')=='http://www.taove.com/m/my' && !loginW) {
                     loginW = plus.webview.open( "http://www.taove.com/m/login","http://www.taove.com/m/login",{

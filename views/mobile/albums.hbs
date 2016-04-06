@@ -621,7 +621,7 @@
         }
 
         function plusReady() {
-            plus.navigator.setStatusBarBackground("#000000");
+            //plus.navigator.setStatusBarBackground("#000000");
             // plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
             plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
             var subpages = ['http://www.taove.com/m/explorer', 'http://www.taove.com/m/sk', 'http://www.taove.com/m/message', 'http://www.taove.com/m/my'];
@@ -645,7 +645,7 @@
             //选项卡点击事件
             $('.menu').on('tap', 'a', function (e) {
                 if (!login && this.getAttribute('data-href')=='http://www.taove.com/m/my' && !loginW) {
-                    loginW = plus.webview.open( "http://www.taove.com/m/login" ,'slide-in-righ');
+                    loginW = plus.webview.open( "http://www.taove.com/m/login","http://www.taove.com/m/login",subpage_style,'slide-in-righ');
                     return;
                 }else{
                     plus.webview.show(loginW ,'slide-in-righ');

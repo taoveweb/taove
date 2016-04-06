@@ -645,15 +645,12 @@
             //选项卡点击事件
             alert('b')
             $('.menu').on('tap', 'a', function (e) {
-                alert(!login)
-                alert(this.getAttribute('data-href')=='http://www.taove.com/m/login');
-                alert(!loginW);
                 if (!login && this.getAttribute('data-href')=='http://www.taove.com/m/my' && !loginW) {
                     loginW = plus.webview.open( "http://www.taove.com/m/login","http://www.taove.com/m/login",{
                         zindex: 2,
                         top: '0',
                         bottom:'0'
-                    },'slide-in-righ');
+                    },'slide-in-righ',300);
                     return;
                 }else{
                     plus.webview.show(loginW ,'slide-in-righ');

@@ -742,6 +742,7 @@
 {{/extend}}
 <div class="wrap">
     <div class="content">
+        <div class="back">取消</div>
         <div class="login">
             <div class="br">
                 <input id="phone" type="number" autofocus placeholder="手机号"/>
@@ -1062,6 +1063,7 @@
 
         function plusReady() {
             var self = plus.webview.currentWebview();
+            self.hide('auto')
         }
 
 

@@ -92,7 +92,8 @@
             display: block;
             margin: -0.5rem 0 0 -0.5rem;
             text-align: center;
-            line-height: 1rem;opacity: 0.6;
+            line-height: 1rem;
+            opacity: 0.6;
         }
 
         .swiper-lazy-preloader:after {
@@ -202,6 +203,7 @@
     </style>
 
 {{/extend}}
+
 <div class="wrap">
     <div class="swiper-container swiper-container-h">
         <div class="swiper-wrapper swiper-wrapper swiper-wrapper-h">
@@ -213,6 +215,7 @@
                             <div class="refresh-icon"></div>
                         </div>
                         <div class="swiper-slide swiper-slide-v">
+
                             {{>"ajax_albums_box"}}
                         </div>
                     </div>
@@ -277,9 +280,9 @@
     <div class="menu">
         <a class="active home" data-href="http://www.taove.com/m"></a>
         <a class="explorer" data-href="http://www.taove.com/m/explorer"></a>
-       <!-- <a class="sk" data-href="http://www.taove.com/m/sk"></a>
-        <a class="message" data-href="http://www.taove.com/m/message"></a>-->
-        <a class="my" data-href="http://www.taove.com/m/login"></a>
+        <a class="sk" data-href="http://www.taove.com/m/sk"></a>
+        <a class="message" data-href="http://www.taove.com/m/message"></a>
+        <a class="my" data-href="http://www.taove.com/m/my"></a>
     </div>
 </div>
 
@@ -521,13 +524,13 @@
                 swipper.slides.prepend(taove);
             }
 
-          /*  $('.box').find('img').each(function () {
-                var This = $(this);
-                This.css({
-                    width: srwidth,
-                    height: this.attr('height') * srwidth / this.prop("width")
-                })
-            });*/
+            /*  $('.box').find('img').each(function () {
+                  var This = $(this);
+                  This.css({
+                      width: srwidth,
+                      height: this.attr('height') * srwidth / this.prop("width")
+                  })
+              });*/
             initImg();
             swipper.update();
         }
@@ -608,6 +611,8 @@
 {{/extend}}
 {{#extend "mScripts"}}
     <script>
+        var loginW='';
+
         //用到dcloud--------------------------------------
         if (window.plus) {
             plusReady();
@@ -617,9 +622,9 @@
 
         function plusReady() {
             plus.navigator.setStatusBarBackground("#000000");
-            plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
-           // var subpages = ['http://www.taove.com/m/explorer', 'http://www.taove.com/m/sk', 'http://www.taove.com/m/message', 'http://www.taove.com/m/login'];
-            var subpages = ['http://www.taove.com/m/explorer',  'http://www.taove.com/m/login'];
+            // plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
+            plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
+            var subpages = ['http://www.taove.com/m/explorer', 'http://www.taove.com/m/sk', 'http://www.taove.com/m/message', 'http://www.taove.com/m/my'];
             var subpage_style = {
                 zindex: 2,
                 top: '0',
@@ -639,11 +644,20 @@
             var activeTab = '';
             //选项卡点击事件
             $('.menu').on('tap', 'a', function (e) {
+                if (!login && this.getAttribute('data-href')=='http://www.taove.com/m/my' && !loginW) {
+                    loginW = plus.webview.open( "http://www.taove.com/m/login" ,'slide-in-righ');
+                    return;
+                }else{
+                    plus.webview.show(loginW ,'slide-in-righ');
+                    return;
+                }
                 var targetTab = this.getAttribute('data-href');
                 $(this).addClass('active').siblings().removeClass('active');
                 if (targetTab == activeTab) {
                     return;
                 }
+
+
 
                 /*if (targetTab == "http://www.taove.com/m/explorer") {
                     plus.navigator.setStatusBarBackground("#000000");

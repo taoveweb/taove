@@ -278,14 +278,14 @@
         <div class="swiper-pagination swiper-pagination-h"></div>
     </div>
     <div class="menu">
-        <a class="active home" data-href="http://www.taove.com/m"></a>
-        <a class="explorer" data-href="http://www.taove.com/m/explorer"></a>
-        <a class="sk" data-href="http://www.taove.com/m/sk"></a>
-        <a class="message" data-href="http://www.taove.com/m/message"></a>
-        <a class="my" data-href="http://www.taove.com/m/my"></a>
+        <a class="active home" data-href="{{static}}m"></a>
+        <a class="explorer" data-href="{{static}}m/explorer"></a>
+        <a class="sk" data-href="{{static}}m/sk"></a>
+        <a class="message" data-href="{{static}}m/message"></a>
+        <a class="my" data-href="{{static}}m/my"></a>
     </div>
 </div>
-
+{{host}}
 
 <script>
     var srwidth = document.querySelector('.swiper-wrapper').offsetWidth;
@@ -611,7 +611,7 @@
 {{/extend}}
 {{#extend "mScripts"}}
     <script>
-        var loginW='';
+        var loginW = '';
 
         //用到dcloud--------------------------------------
         if (window.plus) {
@@ -624,7 +624,7 @@
             //plus.navigator.setStatusBarBackground("#000000");
             // plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
             plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
-            var subpages = ['http://www.taove.com/m/explorer', 'http://www.taove.com/m/sk', 'http://www.taove.com/m/message', 'http://www.taove.com/m/login'];
+            var subpages = ['{{static}}m/explorer', '{{static}}m/sk', '{{static}}m/message', '{{static}}m/my'];
             var subpage_style = {
                 zindex: 2,
                 top: '0',
@@ -643,16 +643,19 @@
             //当前激活选项
             var activeTab = '';
             //选项卡点击事件
+            console.log("a")
             $('.menu').on('tap', 'a', function (e) {
-                if (!login && this.getAttribute('data-href')=='http://www.taove.com/m/my' && !loginW) {
-                    loginW = plus.webview.open( "http://www.taove.com/m/login","http://www.taove.com/m/login",{
-                        zindex: 2,
-                        top: '0',
-                        bottom:'0'
-                    },'slide-in-righ',300);
-                    return;
-                }else{
-                    plus.webview.show(loginW ,'slide-in-righ');
+                if (!login && this.getAttribute('data-href') == '{{static}}m/my') {
+                    if (loginW) {
+                        plus.webview.show(loginW, "slide-in-right");
+                    } else {
+                        loginW = plus.webview.open("{{static}}m/login", "{{static}}m/login", {
+                                    zindex: 2,
+                                    top: '0',
+                                    bottom: '0'
+                                },
+                                "slide-in-right",300,callback);
+                    }
                     return;
                 }
                 var targetTab = this.getAttribute('data-href');
@@ -662,8 +665,7 @@
                 }
 
 
-
-                /*if (targetTab == "http://www.taove.com/m/explorer") {
+                /*if (targetTab == "{{static}}m/explorer") {
                     plus.navigator.setStatusBarBackground("#000000");
                     plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
 
@@ -672,16 +674,16 @@
                     plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
 
                 }
-                if (targetTab == "http://www.taove.com/m/login") {
+                if (targetTab == "{{static}}m/login") {
                     plus.navigator.setStatusBarBackground("#1da1f2");
                 } else {
-                    if (targetTab == !"http://www.taove.com/m/explorer") {
+                    if (targetTab == !"{{static}}m/explorer") {
                         plus.navigator.setStatusBarBackground("#ffffff");
                     }
                 }*/
 
 
-                if (targetTab == "http://www.taove.com/m") {
+                if (targetTab == "{{static}}m") {
                     plus.webview.hide(activeTab);
                     activeTab = '';
                     return;

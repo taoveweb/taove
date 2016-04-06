@@ -12,16 +12,24 @@ var hbs = require('hbs');
 var helpers = require('handlebars-helpers');
 var minifyHTML  = require('express-minify-html');
 var compression = require('compression');
+var os = require('os');
+var hostname = os.networkInterfaces();
 //var processImage = require('express-processimage');
 global.__baseDir = __dirname;
 
 
 var app = express();
-app.locals.static = '/';
 app.locals.imgStatic = '/';
 app.locals.jsStatic = '/';
 app.locals.cssStatic = '/';
 app.use(favicon(__dirname + '/public/favicon.ico'));
+
+
+app.use(function(req,res,next){
+    app.locals.static=req.protocol+"://"+req.headers['host']+'/';
+    next();
+});
+console.log(app.locals.static)
 
 //??hbs??
 app.use(minifyHTML({

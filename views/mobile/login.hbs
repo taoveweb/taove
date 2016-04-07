@@ -576,7 +576,7 @@
         }
 
         .login {
-            margin: 35% 10% 0;
+            margin: 35% 7% 0;
             position: relative;
 
         }
@@ -591,13 +591,15 @@
             display: block;
             width: 100%;
             border: none;
-            border-bottom: 1px solid #fff;
-            background: transparent;
-            height: 0.7rem;
-            line-height: 0.7rem;
+            background: rgba(255, 255, 255, 0.1);
+            height: 0.9rem;
+            line-height: 0.9rem;
             color: #fff;
-            padding: 0 0.1rem;
+            padding: 0 0.2rem;
             box-sizing: border-box;
+            -webkit-border-radius: 0.2rem;
+            -moz-border-radius: 0.2rem;
+            border-radius: 0.2rem;
         }
 
         .login ::-webkit-input-placeholder {
@@ -606,14 +608,15 @@
 
         .login button {
             width: 100%;
-            height: 1.1rem;
+            height: 1rem;
             -webkit-border-radius: 0.2rem;
             -moz-border-radius: 0.2rem;
             border-radius: 0.2rem;
-            background: #1d84ce;
+            background: rgba(255, 255, 255, 0.01);
             border: none;
             font-size: 0.4rem;
             color: #fff;
+            border: 1px solid #fff;
         }
 
         .login button:focus,
@@ -640,8 +643,9 @@
         }
 
         .other-login {
-            position: relative;
-            margin: 20% 10% 0;
+            position: absolute;
+            bottom: 1rem;
+            width: 100%;
 
         }
 
@@ -691,9 +695,6 @@
             opacity: 0.8;
         }
 
-        .rf-btn {
-            padding-top: 0.3rem;
-        }
 
         .f-link {
             position: absolute;
@@ -707,10 +708,11 @@
         .circle {
             display: none;
             position: absolute;
-            right: 0.2rem;
+            left: 50%;
             top: 0.2rem;
             box-sizing: border-box;
             width: 0.7rem;
+            margin-left: -0.35rem;
             height: 0.7rem;
             border-radius: 100%;
             border: 10px solid rgba(255, 255, 255, 0.2);
@@ -736,29 +738,38 @@
         input {
             -webkit-user-select: auto !important;
         }
+
         .back {
-            font-size: 0.8rem;
+            margin:0.2rem;
             border: none;
-            background: none;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAJFBMVEUAAAD///////////////////////////////////////////+0CY3pAAAAC3RSTlMAPimt6hDIZYpS985VSwcAAAD9SURBVGje7dUtDsJAEIbhAcKfq8fgMfVoFAbBAfCYegxHqK/jBlBCKXM5kk0lhn1JOmzm9W2edr+m4nlfNs6ENWuEtdZCSCPVBgJUCwYIBARQLQkgEAgglDGAtn0BJt3111jA0QFWAEsIuElc4y0E7B3wI8CLAjYSmZU34AAMuEDAfdfTCIcKASsHWAEcIOAhkS0gYOAAK4A6FlB1NzjTJ8gFzrgWwR8S/pI4AS+JTwlvKYEtGCAY2EL+x1swQDAwR99CcoToX+28u8EzmlAlQJhiwikBgoGDMEAwcBBJEOxsoRH4FkphB9GKEEIAAEIAEEIAIEIAEEIhnve5N4voWJhDhz/BAAAAAElFTkSuQmCC");
+            width: 0.8rem;
+            height: 0.8rem;
+            background-size: contain;
+            
+
+        }
+        .validate-msg{
+            height: 0.6rem;
+            line-height: 0.6rem;
+            text-align: center;
         }
     </style>
 {{/extend}}
 <div class="wrap">
     <div class="content">
-        <button class="back">取消</button>
+        <button class="back"></button>
         <div class="login">
             <div class="br">
                 <input id="phone" type="number" placeholder="手机号"/>
-
-                <p class="phone-validate"></p>
             </div>
             <div class="br">
                 <input id="password" type="password" placeholder="密码"/>
-
-                <p class="password-validate"></p>
             </div>
             <div class="br">
                 <button id="login">登录</button>
+                <p class="validate-msg"></p>
+
                 <div class="circle"></div>
             </div>
             <div class="br rf-btn">
@@ -1025,31 +1036,28 @@
             var password_val = parent.find('#password').val();
             var pass = true;
             if (!validate.phone(phone_val)) {
-                parent.find('.phone-validate').html('手机格试不正确');
+                parent.find('.validate-msg').html('手机格试不正确');
                 pass = false;
-            }
-            else {
-                parent.find('.phone-validate').html('正常');
             }
             if (!validate.password(password_val)) {
                 pass = false;
-                parent.find('.password-validate').html('密码格式由6到8位字母和数字组成');
-            } else {
-                parent.find('.password-validate').html('正常');
+                parent.find('.validate-msg').html('密码格式由6到8位字母和数字组成');
             }
 
             if (pass) {
+                $('#login').html('');
                 $('.circle').css('display', 'block');
                 $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
                     if (data.ok == 1) {
                         parent.find('.responsemsg').html(data.msg);
                         if (s == "l") {
                             $('.circle').css('display', 'none');
-                            $('#login').html('登录成功');
                         }
                     } else {
                         parent.find('.responsemsg').html(data.msg);
                     }
+                }).done(function () {
+                    $('#login').html('登录');
                 })
             }
         }

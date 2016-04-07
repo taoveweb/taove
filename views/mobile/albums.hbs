@@ -645,7 +645,7 @@
             //选项卡点击事件
             console.log("a")
             $('.menu').on('tap', 'a', function (e) {
-                console.log("{{static}}m/login",!login && this.getAttribute('data-href') == '{{static}}m/my');
+                console.log("{{static}}m/login",!login , this.getAttribute('data-href') , '{{static}}m/my');
                 if (!login && this.getAttribute('data-href') == '{{static}}m/my') {
                     if (loginW) {
                         plus.webview.show(loginW, "slide-in-right");

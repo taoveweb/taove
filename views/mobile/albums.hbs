@@ -621,8 +621,8 @@
         }
 
         function plusReady() {
-            //plus.navigator.setStatusBarBackground("#000000");
-            // plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
+            plus.navigator.setStatusBarBackground("#fff");
+            plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
            // plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
             var subpages = ['{{static}}m/explorer', '{{static}}m/sk', '{{static}}m/message', '{{static}}m/my'];
             var subpage_style = {
@@ -643,7 +643,6 @@
             //当前激活选项
             var activeTab = '';
             //选项卡点击事件
-            console.log("a")
             $('.menu').on('tap', 'a', function (e) {
                 console.log("{{static}}m/login",!login , this.getAttribute('data-href') , '{{static}}m/my');
                 if (!login && this.getAttribute('data-href') == '{{static}}m/my') {

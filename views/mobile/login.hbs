@@ -1055,6 +1055,10 @@
                         if (s == "l") {
                             $('.circle').css('display', 'none');
                             $('#login').html('登录成功');
+                            if(window.plus){
+                                var h=plus.webview.getLaunchWebview();
+                                h.login=data.sesstion['phone'];
+                            }
                         }
                     } else {
                         parent.find('.responsemsg').html(data.msg);

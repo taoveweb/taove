@@ -621,7 +621,6 @@
 
         .login button:focus,
         .login button:hover {
-            background: #1d84ce;
             font-size: 0.4rem;
         }
 
@@ -1050,7 +1049,7 @@
             if (pass) {
                 $('#login').html('');
                 $('.circle').css('display', 'block');
-                $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
+                $.post('/login', {phone: phone_val, password: password_val, type: s,complete:function(){$('#login').html('登录')}}, function (data) {
                     if (data.ok == 1) {
                         parent.find('.responsemsg').html(data.msg);
                         if (s == "l") {
@@ -1059,8 +1058,6 @@
                     } else {
                         parent.find('.responsemsg').html(data.msg);
                     }
-                }).done(function () {
-                    $('#login').html('登录');
                 })
             }
         }

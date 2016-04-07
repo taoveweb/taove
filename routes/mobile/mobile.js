@@ -12,6 +12,7 @@ var albums=require('./albums');
 var explorer=require('./explorer');
 var sk=require('./sk');
 var message=require('./message');
+var my=require('./my');
 var login=require('./login');
 
 router.use(function(req,res,next){
@@ -47,6 +48,8 @@ router.post('/sk', sk.post);
 router.get('/message', message.get);
 router.post('/message', message.post);
 
+router.get('/my', my.get);
+router.post('/my', my.post);
 //
 router.get('/login', login.get);
 router.post('/login', login.post);

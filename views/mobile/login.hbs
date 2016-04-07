@@ -1056,8 +1056,8 @@
                             $('.circle').css('display', 'none');
                             $('#login').html('登录成功');
                             if(window.plus){
-                                var h=plus.webview.getLaunchWebview();
-                                h.login=data.sesstion['phone'];
+                                store.set('username', data.sesstion['phone']);
+                                console.log(store.get('username'))
                             }
                         }
                     } else {

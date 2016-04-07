@@ -611,8 +611,8 @@
 {{/extend}}
 {{#extend "mScripts"}}
     <script>
-        var loginW = '';
-
+        store.set('username', '{{loginInfo.phone}}')
+        var loginW='';
         //用到dcloud--------------------------------------
         if (window.plus) {
             plusReady();
@@ -644,8 +644,8 @@
             var activeTab = '';
             //选项卡点击事件
             $('.menu').on('tap', 'a', function (e) {
-                console.log("{{static}}m/login",!login , this.getAttribute('data-href') , '{{static}}m/my');
-                if (!login && this.getAttribute('data-href') == '{{static}}m/my') {
+                console.log("{{static}}m/login",!store.get('username') , this.getAttribute('data-href') , '{{static}}m/my');
+                if (!store.get('username') && this.getAttribute('data-href') == '{{static}}m/my') {
                     if (loginW) {
                         plus.webview.show(loginW, "slide-in-right");
                     } else {

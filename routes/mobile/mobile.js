@@ -54,4 +54,14 @@ router.post('/my', my.post);
 router.get('/login', login.get);
 router.post('/login', login.post);
 
+//手机版退出
+router.post('/loginOut', function(req,res,next){
+    req.session.cookie.maxAge = 0;
+    delete res.locals.loginInfo ;
+    res.json({
+        ok:1,
+        msg:'退出成功'
+    });
+});
+
 module.exports = router;

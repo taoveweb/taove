@@ -621,9 +621,9 @@
         }
 
         function plusReady() {
-            plus.navigator.setStatusBarBackground("#fff");
-            plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
-           // plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
+           // plus.navigator.setStatusBarBackground("#fff");
+            //plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
+            plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
             var subpages = ['{{static}}m/explorer', '{{static}}m/sk', '{{static}}m/message', '{{static}}m/my'];
             var subpage_style = {
                 zindex: 2,
@@ -644,7 +644,6 @@
             var activeTab = '';
             //选项卡点击事件
             $('.menu').on('tap', 'a', function (e) {
-                console.log("{{static}}m/login",!store.get('username') , this.getAttribute('data-href') , '{{static}}m/my');
                 if (!store.get('username') && this.getAttribute('data-href') == '{{static}}m/my') {
                     if (loginW) {
                         plus.webview.show(loginW, "slide-in-right");
@@ -652,10 +651,13 @@
                         loginW = plus.webview.open("{{static}}m/login", "{{static}}m/login", {
                                     zindex: 2,
                                     top: '0',
-                                    bottom: '0'
+                                    bottom: '0',
+                                    background:'#1da1f2',
+                                    'popGesture':'hide'
                                 },
                                 "slide-in-right");
                     }
+
                     return;
                 }
                 var targetTab = this.getAttribute('data-href');
@@ -663,24 +665,6 @@
                 if (targetTab == activeTab) {
                     return;
                 }
-
-
-                /*if (targetTab == "{{static}}m/explorer") {
-                    plus.navigator.setStatusBarBackground("#000000");
-                    plus.navigator.setStatusBarStyle("UIStatusBarStyleBlackOpaque");
-
-                } else {
-                    plus.navigator.setStatusBarBackground("#ffffff");
-                    plus.navigator.setStatusBarStyle("UIStatusBarStyleDefault");
-
-                }
-                if (targetTab == "{{static}}m/login") {
-                    plus.navigator.setStatusBarBackground("#1da1f2");
-                } else {
-                    if (targetTab == !"{{static}}m/explorer") {
-                        plus.navigator.setStatusBarBackground("#ffffff");
-                    }
-                }*/
 
 
                 if (targetTab == "{{static}}m") {

@@ -1027,6 +1027,8 @@
         })(window);
     </script>
     <script>
+        var selfW='';
+
         $('#login').tap(function () {
             var that = $('.login');
             postLogin(that, 'l')
@@ -1051,13 +1053,14 @@
                 $('.circle').css('display', 'block');
                 $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
                     if (data.ok == 1) {
-                        parent.find('.responsemsg').html(data.msg);
                         if (s == "l") {
                             $('.circle').css('display', 'none');
                             $('#login').html('登录成功');
+                            store.set('username', data.sesstion['phone']);
                             if(window.plus){
-                                store.set('username', data.sesstion['phone']);
-                                console.log(store.get('username'))
+                                var topW=plus.webview.getLaunchWebview();
+                                topW.evalJS('$(".my").trigger("tap")');
+                                selfW.hide('auto');
                             }
                         }
                     } else {
@@ -1078,10 +1081,18 @@
 
 
         function plusReady() {
-            var self = plus.webview.currentWebview();
+            selfW = plus.webview.currentWebview();
+            plus.navigator.setStatusBarBackground("#1da1f2");
+            selfW.setStyle({background:'#1da1f2'});
+            selfW.addEventListener( "hide", function(e){
+                plus.navigator.setStatusBarBackground("#ffffff");
+                }, false );
+            selfW.addEventListener( "show", function(e){
+                plus.navigator.setStatusBarBackground("#1da1f2");
+                }, false );
             $('.back').tap(function () {
                 $('input').trigger('blur');
-                self.hide('auto');
+                selfW.hide('auto');
             })
         }
 

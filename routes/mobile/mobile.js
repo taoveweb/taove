@@ -14,23 +14,8 @@ var sk=require('./sk');
 var message=require('./message');
 var my=require('./my');
 var login=require('./login');
+var register=require('./register');
 
-router.use(function(req,res,next){
- /*   var phone=18550035081;
-    req.session.userId = {};
-    req.session.userId['phone']=18550035081+'';
-    res.locals.loginInfo = req.session.userId;
-    if(!/Mobile/.test(req.get('user-agent'))){
-        res.redirect('/');
-        res.locals.nomibile=true;
-    }*/
-
-    next();
-});
-
-//
-/*router.get('/', index.get);
-router.post('/', index.post);*/
 
 //
 router.get('/', albums.get);
@@ -53,6 +38,9 @@ router.post('/my', my.post);
 //
 router.get('/login', login.get);
 router.post('/login', login.post);
+
+router.get('/register', register.get);
+router.post('/register', register.post);
 
 //手机版退出
 router.post('/loginOut', function(req,res,next){

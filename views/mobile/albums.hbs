@@ -613,6 +613,7 @@
     <script>
         store.set('username', '{{loginInfo.phone}}')
         var loginW='';
+        var waiting=null;
         //用到dcloud--------------------------------------
         if (window.plus) {
             plusReady();
@@ -648,7 +649,8 @@
                     if (loginW) {
                         plus.webview.show(loginW, "slide-in-right");
                     } else {
-                        loginW = plus.webview.open("{{static}}m/login", "{{static}}m/login", {
+                        waiting=plus.nativeUI.showWaiting();
+                        loginW = plus.webview.create("{{static}}m/login", "{{static}}m/login", {
                                     zindex: 2,
                                     top: '0',
                                     bottom: '0',
@@ -656,6 +658,11 @@
                                     'popGesture':'hide'
                                 },
                                 "slide-in-right");
+                        loginW.onloaded=function(){
+                            plus.webview.show(loginW, "slide-in-right");
+                            waiting&&waiting.close();
+                            waiting=null;
+                        }
                     }
 
                     return;

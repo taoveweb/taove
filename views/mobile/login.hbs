@@ -763,7 +763,7 @@
         <button class="back"></button>
         <div class="login">
             <div class="br">
-                <input id="phone" type="number" placeholder="手机号"/>
+                <input id="phone" type="tel" placeholder="手机号"/>
             </div>
             <div class="br">
                 <input id="password" type="password" placeholder="密码"/>
@@ -1072,7 +1072,8 @@
     </script>
     <script>
         //用到dcloud--------------------------------------
-
+        var loginW="";
+        var waiting=null;
         if (window.plus) {
             plusReady();
         } else {
@@ -1081,9 +1082,34 @@
 
 
         function plusReady() {
+
+
+
+            $('.r-link').tap(function(){
+
+                if (loginW) {
+                    plus.webview.show(loginW, "slide-in-right");
+                } else {
+                    waiting=plus.nativeUI.showWaiting();
+                    loginW = plus.webview.create("{{static}}m/register", "{{static}}m/register", {
+                                zindex: 2,
+                                top: '0',
+                                bottom: '0',
+                                background:'#1da1f2',
+                                'popGesture':'hide'
+                            },
+                            "slide-in-right");
+                    loginW.onloaded=function(){
+                        plus.webview.show(loginW, "slide-in-right");
+                        waiting&&waiting.close();
+                        waiting=null;
+                    }
+                }
+            });
+
+
             selfW = plus.webview.currentWebview();
             plus.navigator.setStatusBarBackground("#1da1f2");
-            selfW.setStyle({background:'#1da1f2'});
             selfW.addEventListener( "hide", function(e){
                 plus.navigator.setStatusBarBackground("#ffffff");
                 }, false );

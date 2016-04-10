@@ -18,6 +18,7 @@ function post(req, res, next) {
 
     //注册
     if (req.body.type == 'r') {
+
         Taove.findOne({phone: phone}, function (err, doc) {
             if (err) {
                 res.json({ok: 0, msg: err})

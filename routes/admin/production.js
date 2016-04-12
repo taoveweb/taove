@@ -8,7 +8,7 @@ var ObjectId = db.ObjectId;
 var Taove = db.Taove;
 var Albums = db.Albums;
 var AlbumsImg = db.AlbumsImg;
-var gm = require('gm');//.subClass({imageMagick: true});
+var gm = require('gm').subClass({imageMagick: true});
 var co = require('co');
 
 //相册

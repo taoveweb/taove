@@ -647,7 +647,7 @@
             $('.menu').on('tap', 'a', function (e) {
                 if (!store.get('username') && this.getAttribute('data-href') == '{{static}}m/my') {
                     if (loginW) {
-                        plus.webview.show(loginW, "slide-in-right");
+                        plus.webview.show(loginW, "none");
                     } else {
                         waiting=plus.nativeUI.showWaiting();
                         loginW = plus.webview.create("{{static}}m/login", "{{static}}m/login", {
@@ -656,10 +656,9 @@
                                     bottom: '0',
                                     background:'#1da1f2',
                                     'popGesture':'hide'
-                                },
-                                "slide-in-right");
+                                });
                         loginW.onloaded=function(){
-                            plus.webview.show(loginW, "slide-in-right");
+                            plus.webview.show(loginW, "none");
                             waiting&&waiting.close();
                             waiting=null;
                         }

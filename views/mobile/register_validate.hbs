@@ -317,14 +317,16 @@
     <div class="content">
 
         <div class="login">
-            <h2>手机号注册</h2>
+            <h2>输入验证码</h2>
+            <p>输入我们发送到发以联系方式的6位数字验证码：<br>
+                +86{{phone}},<a href="">重发验证码</a>
+            </p>
             <div class="br">
-                <input id="phone" type="tel" placeholder="手机号"/>
+                <input id="phone_validate" type="number" placeholder="输入验证码"/>
             </div>
             <div class="br">
                 <button class="disable" id="login">继续</button>
                 <p class="validate-msg"></p>
-
                 <div class="circle"></div>
             </div>
         </div>
@@ -373,8 +375,8 @@
     </script>
     <script>
         var selfW='';
+
         var dis=true;
-        var registerW='';
         $('#phone').on('keyup',function(){
             if($(this).val()){
                 dis=false;
@@ -391,11 +393,9 @@
                 return;
             }
             var that = $('.login');
-            postLogin(that, 'register')
+            postLogin(that, 'l')
         });
 
-
-        //验证手机可用后再发送验证码并跳转到输入验正码页面
         function postLogin(that, s) {
             var parent = that;
             var phone_val = parent.find('#phone').val();
@@ -408,34 +408,12 @@
             if (pass) {
                 $('#login').html('');
                 $('.circle').css('display', 'block');
-                $.post('{{static}}m/register', {phone: phone_val,type: 'register_validate'}, function (data) {
+                $.post('{{static}}m/register', {phone: phone_val,type: 'register'}, function (data) {
                     if (data.ok == 1) {
                         $('.circle').css('display', 'none');
                         $('#login').html('可以注册');
                         $('.validate-msg').html('');
-
-                        if (registerW) {
-                            plus.webview.show(loginW, "slide-in-right");
-                        } else {
-                            waiting=plus.nativeUI.showWaiting();
-                            registerW = plus.webview.create("{{static}}m/register?type=register_validate&phone="+phone_val, "{{static}}m/register", {
-                                        zindex: 2,
-                                        top: '0',
-                                        bottom: '0',
-                                        background:'#1da1f2',
-                                        'popGesture':'hide'
-                                    },
-                                    "slide-in-right");
-                            registerW.onloaded=function(){
-                                plus.webview.show(registerW, "slide-in-right");
-                                waiting&&waiting.close();
-                                waiting=null;
-                            }
-                        }
-
-
-
-                    } else {
+                     } else {
                         $('#login').html('继续');
                         $('.circle').css('display', 'none');
                         $('.validate-msg').html(data.msg);

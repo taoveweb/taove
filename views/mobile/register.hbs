@@ -170,7 +170,7 @@
         }
 
         .login .disable,
-        .login .disable:active{
+        .login .disable:active {
             background: rgba(255, 255, 255, 0.01);
             opacity: 0.5;
             border: 1px solid #fff;
@@ -207,15 +207,12 @@
 
         }
 
-
-
         .list span {
             display: inline-block;
             width: 1rem;
             height: 1rem;
 
         }
-
 
         * {
             moz-user-select: -moz-none;
@@ -231,7 +228,6 @@
         .wx:hover {
             opacity: 0.8;
         }
-
 
         .f-link {
             position: absolute;
@@ -275,36 +271,42 @@
         input {
             -webkit-user-select: auto !important;
         }
-        .hasuser{
+
+        .hasuser {
             position: fixed;
             left: 0rem;
-            bottom:0rem;
+            bottom: 0rem;
             width: 100%;
             text-align: center;
             color: #DBDBDB;
             z-index: 10;
         }
-        .hasuser p{
+
+        .hasuser p {
             text-align: center;
             line-height: 0.8rem;
             height: 0.8rem;
         }
+
         .hasuser p a {
-            color:#DBDBDB ;
+            color: #DBDBDB;
         }
+
         .back {
-            heigit:1.1rem;
+            heigit: 1.1rem;
             background: rgba(255, 255, 255, 0.1);
             border-top: 1px solid #fff;
             text-align: center;
             line-height: 1.1rem;
         }
-        .validate-msg{
+
+        .validate-msg {
             height: 0.6rem;
             line-height: 0.6rem;
             text-align: center;
         }
-        .login h2{
+
+        .login h2 {
             color: #fff;
             font-size: 0.5rem;
             text-align: center;
@@ -318,6 +320,7 @@
 
         <div class="login">
             <h2>手机号注册</h2>
+
             <div class="br">
                 <input id="phone" type="tel" placeholder="手机号"/>
             </div>
@@ -331,6 +334,7 @@
     </div>
     <div class="hasuser">
         <p>注册即表明你同意 桃微 的条款和 <a href="">隐私权政策</a></p>
+
         <div class="back">已经有账户了？登录。</div>
     </div>
 </div>
@@ -372,22 +376,22 @@
         })(window);
     </script>
     <script>
-        var selfW='';
-        var dis=true;
-        var registerW='';
-        $('#phone').on('keyup',function(){
-            if($(this).val()){
-                dis=false;
+        var selfW = '';
+        var dis = true;
+        var registerW = '';
+        $('#phone').on('keyup', function () {
+            if ($(this).val()) {
+                dis = false;
                 $('#login').removeClass('disable');
 
-            }else{
-                dis=true;
+            } else {
+                dis = true;
                 $('#login').addClass('disable');
             }
         })
 
         $('#login').tap(function () {
-            if($(this).hasClass('disable')){
+            if ($(this).hasClass('disable')) {
                 return;
             }
             var that = $('.login');
@@ -408,37 +412,45 @@
             if (pass) {
                 $('#login').html('');
                 $('.circle').css('display', 'block');
-                $.post('{{static}}m/register', {phone: phone_val,type: 'register_validate'}, function (data) {
-                    if (data.ok == 1) {
-                        $('.circle').css('display', 'none');
-                        $('#login').html('可以注册');
-                        $('.validate-msg').html('');
-
-                        if (registerW) {
-                            plus.webview.show(loginW, "slide-in-right");
-                        } else {
-                            waiting=plus.nativeUI.showWaiting();
-                            registerW = plus.webview.create("{{static}}m/register?type=register_validate&phone="+phone_val, "{{static}}m/register", {
-                                        zindex: 2,
-                                        top: '0',
-                                        bottom: '0',
-                                        background:'#1da1f2',
-                                        'popGesture':'hide'
-                                    },
-                                    "slide-in-right");
-                            registerW.onloaded=function(){
+                $.ajax({
+                    type: 'POST',
+                    url: '{{static}}m/register',
+                    data: {phone: phone_val, type: 'register_validate'},
+                    timeout: 300,
+                    cache: false,
+                    success: function (data) {
+                        if (data.ok == 1) {
+                            $('.circle').css('display', 'none');
+                            $('#login').html('继续');
+                            $('.validate-msg').html('');
+                                if (registerW) {
                                 plus.webview.show(registerW, "slide-in-right");
-                                waiting&&waiting.close();
-                                waiting=null;
+                            } else {
+                                waiting = plus.nativeUI.showWaiting();
+                                registerW = plus.webview.create("{{static}}m/register?type=register_validate&phone=" + phone_val, "{{static}}m/register", {
+                                            zindex: 2,
+                                            top: '0',
+                                            bottom: '0',
+                                            background: '#1da1f2',
+                                            'popGesture': 'hide'
+                                        },
+                                        "slide-in-right");
+                                registerW.onloaded = function () {
+                                    plus.webview.show(registerW, "slide-in-right");
+                                    waiting && waiting.close();
+                                    waiting = null;
+                                }
                             }
+
+
+                        } else {
+                            $('#login').html('继续');
+                            $('.circle').css('display', 'none');
+                            $('.validate-msg').html(data.msg);
                         }
-
-
-
-                    } else {
-                        $('#login').html('继续');
-                        $('.circle').css('display', 'none');
-                        $('.validate-msg').html(data.msg);
+                    },
+                    error: function (xhr, type) {
+                        alert('Ajax error!')
                     }
                 })
             }
@@ -456,7 +468,7 @@
 
         function plusReady() {
             selfW = plus.webview.currentWebview();
-            selfW.setStyle({background:'#1da1f2'});
+            selfW.setStyle({background: '#1da1f2'});
             $('.back').tap(function () {
                 $('input').trigger('blur');
                 selfW.hide('auto');

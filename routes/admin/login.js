@@ -13,6 +13,7 @@ function index(req, res, next) {
 
 
 function post(req, res, next) {
+
     var phone=req.body.phone;
     var password=req.body.password;
 
@@ -37,6 +38,7 @@ function post(req, res, next) {
         });
     } else {//登录
         Taove.findOne({phone: phone}, function (err, doc) {
+
             if (err) {
                 res.json({ok: 0, msg: err});
             }

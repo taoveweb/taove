@@ -308,8 +308,14 @@
             color: #fff;
             font-size: 0.5rem;
             text-align: center;
-            line-height: 2rem;
+            line-height: 1rem;
             font-weight: normal;
+        }
+        .p,.p a{
+            text-align: center;
+            color: #fff;
+            padding-bottom: 0.5rem;
+            font-size: 0.35rem;
         }
     </style>
 {{/extend}}
@@ -318,9 +324,9 @@
 
         <div class="login">
             <h2>输入验证码</h2>
-            <p>输入我们发送到发以联系方式的6位数字验证码：<br>
+            <div class="p">输入我们发送到发以联系方式的6位数字验证码:<br>
                 +86{{phone}},<a href="">重发验证码</a>
-            </p>
+            </div>
             <div class="br">
                 <input id="phone_validate" type="number" placeholder="输入验证码"/>
             </div>

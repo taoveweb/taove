@@ -322,8 +322,6 @@
 
 
 </script>
-
-<script src="{{static}}common/js/zepto.min.js"></script>
 <script src="{{static}}mobile/js/swiper.min.js"></script>
 
 {{#extend "mScripts"}}
@@ -607,7 +605,7 @@
 
         function plusReady(){
 
-            var subpages = ['http://www.taove.com/m/albums', 'http://www.taove.com/m/explorer', 'http://www.taove.com/m/sk', 'http://www.taove.com/m/message','http://www.taove.com/m/login'];
+            var subpages = ['{{static}}m/albums', '{{static}}m/explorer', '{{static}}m/sk', '{{static}}m/message','{{static}}m/login'];
             var subpage_style = {
                 top: '0',
                 bottom:$('.menu').height()/window.devicePixelRatio+'px'

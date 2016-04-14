@@ -416,7 +416,7 @@
                     type: 'POST',
                     url: '{{static}}m/register',
                     data: {phone: phone_val, type: 'register_validate'},
-                    timeout: 300,
+                    timeout: 3000,
                     cache: false,
                     success: function (data) {
                         if (data.ok == 1) {

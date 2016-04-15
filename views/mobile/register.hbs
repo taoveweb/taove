@@ -327,14 +327,14 @@
                     type: 'POST',
                     url: '{{static}}m/register',
                     data: {phone: phone_val, type: 'register_validate'},
-                    timeout: 300,
+                    timeout: 3000,
                     cache: false,
                     success: function (data) {
                         if (data.ok == 1) {
                             $('.circle').css('display', 'none');
                             $('#login').html('继续');
                             $('.validate-msg').html('');
-                                if (registerW) {
+                            if (registerW) {
                                 plus.webview.show(registerW, "slide-in-right");
                             } else {
                                 waiting = plus.nativeUI.showWaiting();
@@ -361,7 +361,7 @@
                         }
                     },
                     error: function (xhr, type) {
-                        alert('Ajax error!')
+                        $('.validate-msg').html(xhr + type)
                     }
                 })
             }

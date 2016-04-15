@@ -359,7 +359,7 @@
                 activeV.container.find('.refresh span').html('正在加载中');
                 window.setTimeout(function () {
                     var updateCreatedOn = activeV.container.find('.item').eq(0).attr('createdOn') || 0;
-                    var url = '/m?q=update&createdOn=' + updateCreatedOn+"&devicePixelRatio="+window.devicePixelRatio;
+                    var url = '/m?q=update&createdOn=' + updateCreatedOn+"&devicePixelRatio="+window.devicePixelRatio+"&srwidth="+srwidth;
                     getajax(url, activeV, pullDistance)
                 }, 300);
             },
@@ -409,7 +409,7 @@
                     //刷新
                     swipper.container.find('.refresh-icon').addClass('anim');
                     var updateCreatedOn = swipper.container.find('.item').eq(0).attr('createdOn') || 0;
-                    var url = '/m?q=update&createdOn=' + updateCreatedOn+"&devicePixelRatio="+window.devicePixelRatio;
+                    var url = '/m?q=update&createdOn=' + updateCreatedOn+"&devicePixelRatio="+window.devicePixelRatio+"&srwidth="+srwidth;
                     getajax(url, swipper, pullDistance)
                 } else {
                     swipper.container.find('.refresh').css({
@@ -467,7 +467,7 @@
 
                 if (progess >= 1 && diff < 0 && ajax == 'true' && loaded) {
                     swipper.wrapper.attr('ajax', 'false');
-                    var url = '/m?q=more&createdOn=' + moreCreatedOn+"&devicePixelRatio="+window.devicePixelRatio;
+                    var url = '/m?q=more&createdOn=' + moreCreatedOn+"&devicePixelRatio="+window.devicePixelRatio+"&srwidth="+srwidth;
                     getajax(url, swipper, diff)
                 }
 

@@ -1,3 +1,4 @@
+
 {{#each taove}}
     <div class="item grid-item" createdOn="{{this.createdOn}}">
         <div class="br userinfo">
@@ -5,8 +6,9 @@
             <span class="time" createdOn="{{this.createdOn}}">{{timeago this.createdOn}}</span>
         </div>
         <a  img-name="{{coverImg.name}}" class="box" >
+
             {{#with this.coverImg}}
-                {{{getImgM width height sizeLevel path name ../devicePixelRatio }}}
+                {{{getImgM width height sizeLevel path name ../../devicePixelRatio ../../srwidth}}}
             {{/with}}
             <div class="swiper-lazy-preloader"></div>
         </a>

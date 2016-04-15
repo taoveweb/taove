@@ -54,11 +54,11 @@ module.exports=function(hbs){
         return img;
     });
 
-    hbs.registerHelper('getImgM', function (width,height,sizeLevel,imgPath,imgName,devicePixelRatio,options) {
+    hbs.registerHelper('getImgM', function (width,height,sizeLevel,imgPath,imgName,devicePixelRatio,srwidth,options) {
         if(!imgName) return false;
         var val = imgName.split('.');
-        var w=width*devicePixelRatio;
-        var h=height*devicePixelRatio;
+        var w=width;
+        var h=height*srwidth/width;
         var src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyAQMAAAAk8RryAAAAA1BMVEX///+nxBvIAAAAAXRSTlMD2e+J3AAAAA1JREFUGNNjGAWDCgAAAZAAAXtlmk8AAAAASUVORK5CYII=";
         var original=imgPath+imgName;
         var setWidth='';
@@ -72,7 +72,7 @@ module.exports=function(hbs){
         }
         original=imgPath+val[0]+setWidth+'.'+val[1];
        // var img= '<img style="width:'+w+'px; height:'+h+'px;" src="'+src+'" data-src="/'+original+'"   class="swiper-lazy" />'
-        var img= `<img style="width:${w}px; height:${h}px"  src="${src}" data-src="/${original}"   class="lazy" />`;
+        var img= `<img style="height:${h}px"  src="${src}" data-src="/${original}"   class="lazy" />`;
         return img;
     });
 

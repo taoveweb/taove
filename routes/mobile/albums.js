@@ -19,6 +19,7 @@ function indexGet(req, res, next) {
             res.render('mobile/ajax_albums_box', {
                     taove: docs,
                     devicePixelRatio:req.query.devicePixelRatio,
+                    srwidth:req.query.srwidth,
                     layout: null
                 },
                 function (err, html) {
@@ -33,6 +34,7 @@ function indexGet(req, res, next) {
             res.render('mobile/ajax_albums_box', {
                     taove: docs,
                     devicePixelRatio:req.query.devicePixelRatio,
+                    srwidth:req.query.srwidth,
                     layout: null
                 },
                 function (err, html) {

@@ -10,6 +10,7 @@ var AlbumsImg = db.AlbumsImg;
 var co = require('co');
 //相册性能需更改
 function indexGet(req, res, next) {
+    console.log("aaa",req.query.devicePixelRatio)
     co(function *() {
         //加载更多图片
         if (req.query.q && req.query.q == 'more') {

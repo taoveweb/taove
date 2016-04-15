@@ -6,7 +6,7 @@
         </div>
         <a  img-name="{{coverImg.name}}" class="box" >
             {{#with this.coverImg}}
-                {{{getImgM width height sizeLevel path name }}}
+                {{{getImgM width height sizeLevel path name ../devicePixelRatio }}}
             {{/with}}
             <div class="swiper-lazy-preloader"></div>
         </a>

@@ -17,6 +17,7 @@ function indexGet(req, res, next) {
             //res.json({taove: docs})
             res.render('mobile/ajax_albums_box', {
                     taove: docs,
+                    devicePixelRatio:req.query.devicePixelRatio,
                     layout: null
                 },
                 function (err, html) {
@@ -30,6 +31,7 @@ function indexGet(req, res, next) {
             // res.json({taove: docs, count: count})
             res.render('mobile/ajax_albums_box', {
                     taove: docs,
+                    devicePixelRatio:req.query.devicePixelRatio,
                     layout: null
                 },
                 function (err, html) {

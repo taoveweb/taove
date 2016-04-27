@@ -1,16 +1,164 @@
-<!DOCTYPE html>
-<html>
+<html data-dpr="3" style="font-size: 124.2px;">
 <head>
-    <meta charset="UTF-8">
     <meta content="yes" name="apple-mobile-web-app-capable">
     <meta content="yes" name="apple-touch-fullscreen">
     <meta content="telephone=no,email=no" name="format-detection">
     <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
-    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">
-    <title>模板</title>
-    <link href="css/base.css" rel="stylesheet">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>个人信息</title>
+    <style>
+        html {
+        color: #000;
+        background: #fff;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%
+    }
+
+    html * {
+        outline: 0;
+        -webkit-text-size-adjust: none;
+        -webkit-tap-highlight-color: transparent
+    }
+
+    body, html {
+        font-family: sans-serif
+    }
+
+    article, aside, blockquote, body, button, code, dd, details, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, input, legend, li, menu, nav, ol, p, pre, section, td, textarea, th, ul {
+        margin: 0;
+        padding: 0
+    }
+
+    input, select, textarea {
+        font-size: 100%
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0
+    }
+
+    fieldset, img {
+        border: 0
+    }
+
+    abbr, acronym {
+        border: 0;
+        font-variant: normal
+    }
+
+    del {
+        text-decoration: line-through
+    }
+
+    address, caption, cite, code, dfn, em, th, var {
+        font-style: normal;
+        font-weight: 500
+    }
+
+    ol, ul {
+        list-style: none
+    }
+
+    caption, th {
+        text-align: left
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 100%;
+        font-weight: 500
+    }
+
+    q:after, q:before {
+        content: ''
+    }
+
+    sub, sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline
+    }
+
+    sup {
+        top: -.5em
+    }
+
+    sub {
+        bottom: -.25em
+    }
+
+    a:hover {
+        text-decoration: underline
+    }
+
+    a, ins {
+        text-decoration: none
+    }</style>
+    <link href="css/my.css" rel="stylesheet">
+    <style>
+        body {
+        font-size: .3rem
+    }
+
+    .tc {
+        font-size: 1rem
+    }</style>
+    <script>!function (e, t) {
+        function i() {
+            var t = n.getBoundingClientRect().width;
+            t / m > 540 && (t = 540 * m);
+            var i = t / 10;
+            n.style.fontSize = i + "px", s.rem = e.rem = i
+        }
+
+        var a, r = e.document, n = r.documentElement, o = r.querySelector('meta[name="viewport"]'), l = r.querySelector('meta[name="flexible"]'), m = 0, d = 0, s = t.flexible || (t.flexible = {});
+        if (o) {
+            console.warn("将根据已有的meta标签来设置缩放比例");
+            var c = o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+            c && (d = parseFloat(c[1]), m = parseInt(1 / d))
+        } else if (l) {
+            var p = l.getAttribute("content");
+            if (p) {
+                var u = p.match(/initial\-dpr=([\d\.]+)/), f = p.match(/maximum\-dpr=([\d\.]+)/);
+                u && (m = parseFloat(u[1]), d = parseFloat((1 / m).toFixed(2))), f && (m = parseFloat(f[1]), d = parseFloat((1 / m).toFixed(2)))
+            }
+        }
+        if (!m && !d) {
+            var h = e.navigator.userAgent, v = (!!h.match(/android/gi), !!h.match(/iphone/gi)), x = v && !!h.match(/OS 9_3/), b = e.devicePixelRatio;
+            m = v && !x ? b >= 3 && (!m || m >= 3) ? 3 : b >= 2 && (!m || m >= 2) ? 2 : 1 : 1, d = 1 / m
+        }
+        if (n.setAttribute("data-dpr", m), !o)if (o = r.createElement("meta"), o.setAttribute("name", "viewport"), o.setAttribute("content", "initial-scale=" + d + ", maximum-scale=" + d + ", minimum-scale=" + d + ", user-scalable=no"), n.firstElementChild)n.firstElementChild.appendChild(o); else {
+            var w = r.createElement("div");
+            w.appendChild(o), r.write(w.innerHTML)
+        }
+        e.addEventListener("resize", function () {
+            clearTimeout(a), a = setTimeout(i, 10)
+        }, !1), e.addEventListener("pageshow", function (e) {
+            e.persisted && (clearTimeout(a), a = setTimeout(i, 10))
+        }, !1), "complete" === r.readyState ? r.body.style.fontSize = 12 * m + "px" : r.addEventListener("DOMContentLoaded", function () {
+            r.body.style.fontSize = 12 * m + "px"
+        }, !1), i(), s.dpr = e.dpr = m, s.refreshRem = i, s.rem2px = function (e) {
+            var t = parseFloat(e) * this.rem;
+            return "string" == typeof e && e.match(/rem$/) && (t += "px"), t
+        }, s.px2rem = function (e) {
+            var t = parseFloat(e) / this.rem;
+            return "string" == typeof e && e.match(/px$/) && (t += "rem"), t
+        }
+    }(window, window.lib || (window.lib = {}))</script>
+    <meta name="viewport"
+          content="initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no">
 </head>
-<body>
+<body style="font-size: 36px;">
+<div class="wrap">
+    <div class="header">个人信息<span>设置</span></div>
+    <div class="info"><img src="" alt="">
+        <h2>子一</h2></div>
+    <div class="tab"><span>照片</span><span>粉丝</span><span>关注</span></div>
+    <div class="tc">退出</div>
+</div>
 
 </body>
 </html>

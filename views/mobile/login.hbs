@@ -661,10 +661,19 @@
 
 
         }
-        .validate-msg{
+        .validate-msg {
             height: 0.6rem;
             line-height: 0.6rem;
             text-align: center;
+            padding-top: 0;
+            background: rgba(255, 255, 255, 0.2);
+            position: fixed;
+            top: 0;
+            left:0;
+            width:100%;
+            z-index:10;
+            color: #ff2222;
+            display:none;
         }
     </style>
 {{/extend}}
@@ -945,36 +954,41 @@
         });
 
         function postLogin(that, s) {
+            $('.validate-msg').css('display','none');
             var parent = that;
             var phone_val = parent.find('#phone').val();
             var password_val = parent.find('#password').val();
             var pass = true;
             if (!validate.phone(phone_val)) {
-                parent.find('.validate-msg').html('手机格试不正确');
+                $('.validate-msg').html('手机格试不正确').css('display','block');
                 pass = false;
             }
             if (!validate.password(password_val)) {
                 pass = false;
-                parent.find('.validate-msg').html('密码格式由6到8位字母和数字组成');
+                $('.validate-msg').html('密码格式由6到8位字母和数字组成').css('display','block');
             }
 
             if (pass) {
                 $('#login').html('');
                 $('.circle').css('display', 'block');
                 $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
+                    $('.circle').css('display', 'none');
+                    $('#login').html('登录');
                     if (data.ok == 1) {
                         if (s == "l") {
-                            $('.circle').css('display', 'none');
-                            $('#login').html('登录');
                             store.set('username', data.sesstion['phone']);
                             if(window.plus){
                                 var topW=plus.webview.getLaunchWebview();
                                 topW.evalJS('$(".my").trigger("tap")');
                                 selfW.hide('auto');
+                            }else{
+                                console.log(window.location.host+'/m');
+                                window.location.href=`http://${window.location.host}/m`;
                             }
                         }
                     } else {
-                        parent.find('.responsemsg').html(data.msg);
+
+                        parent.find('.validate-msg').html(data.msg).css('display','block');
                     }
                 })
             }

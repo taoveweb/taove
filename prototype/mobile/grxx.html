@@ -1,0 +1,286 @@
+<html>
+<head>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transition=yes">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>个人信息</title>
+    <style>
+        /*rest*/
+        html {
+            color: #000;
+            background: #fff;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%
+        }
+
+        html * {
+            outline: 0;
+            -webkit-text-size-adjust: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        html, body {
+            font-family: sans-serif
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            margin: 0;
+            padding: 0
+        }
+
+        input, select, textarea {
+            font-size: 100%
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        fieldset, img {
+            border: 0
+        }
+
+        abbr, acronym {
+            border: 0;
+            font-variant: normal
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        address, caption, cite, code, dfn, em, th, var {
+            font-style: normal;
+            font-weight: 500
+        }
+
+        ol, ul {
+            list-style: none
+        }
+
+        caption, th {
+            text-align: left
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-size: 100%;
+            font-weight: 500
+        }
+
+        q:before, q:after {
+            content: ''
+        }
+
+        sub, sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        a:hover {
+            text-decoration: underline
+        }
+
+        ins, a {
+            text-decoration: none
+        }
+
+        /* 子元素-平均分栏 */
+        .flex1 {
+            -webkit-box-flex: 1;	  /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-flex: 1;		 /* OLD - Firefox 19- */
+            width: 20%;			   /* For old syntax, otherwise collapses. */
+            -webkit-flex: 1;		  /* Chrome */
+            -ms-flex: 1;			  /* IE 10 */
+            flex: 1;				  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        }
+        .flex-h {
+            display: box;			  /* OLD - Android 4.4- */
+            display: -webkit-box;	  /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;		 /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;	  /* TWEENER - IE 10 */
+            display: -webkit-flex;	 /* NEW - Chrome */
+            display: flex;			 /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            -webkit-box-orient: horizontal;
+            -webkit-flex-direction: row;
+            -moz-flex-direction: row;
+            -ms-flex-direction: row;
+            -o-flex-direction: row;
+            flex-direction: row;
+        }
+        /* 父元素-横向换行 */
+        .flex-hw {
+            /* 09版 */
+            /*-webkit-box-lines: multiple;*/
+            /* 12版 */
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        /* 父元素-水平居中（主轴是横向才生效） */
+        .flex-hc {
+            /* 09版 */
+            -webkit-box-pack: center;
+            /* 12版 */
+            -webkit-justify-content: center;
+            -moz-justify-content: center;
+            -ms-justify-content: center;
+            -o-justify-content: center;
+            justify-content: center;
+            /* 其它取值如下：
+              align-items	 主轴原点方向对齐
+              flex-end		主轴延伸方向对齐
+              space-between   等间距排列，首尾不留白
+              space-around	等间距排列，首尾留白
+             */
+        }
+        /* 父元素-纵向排列（主轴） */
+        .flex-v {
+            display: box;			  /* OLD - Android 4.4- */
+            display: -webkit-box;	  /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;		 /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;	  /* TWEENER - IE 10 */
+            display: -webkit-flex;	 /* NEW - Chrome */
+            display: flex;			 /* NEW, Spec - Opera 12.1, Firefox 20+ */
+            /* 09版 */
+            -webkit-box-orient: vertical;
+            /* 12版 */
+            -webkit-flex-direction: column;
+            -moz-flex-direction: column;
+            -ms-flex-direction: column;
+            -o-flex-direction: column;
+            flex-direction: column;
+        }
+        /* 父元素-纵向换行 */
+        .flex-vw {
+            /* 09版 */
+            /*-webkit-box-lines: multiple;*/
+            /* 12版 */
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        /* 父元素-竖直居中（主轴是横向才生效） */
+        .flex-vc {
+            /* 09版 */
+            -webkit-box-align: center;
+            /* 12版 */
+            -webkit-align-items: center;
+            -moz-align-items: center;
+            -ms-align-items: center;
+            -o-align-items: center;
+            align-items: center;
+        }
+        /* 子元素-显示在从左向右（从上向下）第1个位置，用于改变源文档顺序显示 */
+        .flex-1 {
+            -webkit-box-ordinal-group: 1;   /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-ordinal-group: 1;	  /* OLD - Firefox 19- */
+            -ms-flex-order: 1;			  /* TWEENER - IE 10 */
+            -webkit-order: 1;			   /* NEW - Chrome */
+            order: 1;					   /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        }
+        /* 子元素-显示在从左向右（从上向下）第2个位置，用于改变源文档顺序显示 */
+        .flex-2 {
+            -webkit-box-ordinal-group: 2;   /* OLD - iOS 6-, Safari 3.1-6 */
+            -moz-box-ordinal-group: 2;	  /* OLD - Firefox 19- */
+            -ms-flex-order: 2;			  /* TWEENER - IE 10 */
+            -webkit-order: 2;			   /* NEW - Chrome */
+            order: 2;					   /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        }
+        /* 父元素-flex容器 */
+        .flex {
+            display: box;			  /* OLD - Android 4.4- */
+            display: -webkit-box;	  /* OLD - iOS 6-, Safari 3.1-6 */
+            display: -moz-box;		 /* OLD - Firefox 19- (buggy but mostly works) */
+            display: -ms-flexbox;	  /* TWEENER - IE 10 */
+            display: -webkit-flex;	 /* NEW - Chrome */
+            display: flex;			 /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        }
+
+    </style>
+    <link href="css/my.css" rel="stylesheet">
+    <style>
+        body {
+        font-size: .3rem
+    }
+
+    .tc {
+        font-size: 1rem
+    }</style>
+    <script>!function (e, t) {
+        function i() {
+            var t = n.getBoundingClientRect().width;
+            t / m > 540 && (t = 540 * m);
+            var i = t / 10;
+            n.style.fontSize = i + "px", s.rem = e.rem = i
+        }
+
+        var a, r = e.document, n = r.documentElement, o = r.querySelector('meta[name="viewport"]'), l = r.querySelector('meta[name="flexible"]'), m = 0, d = 0, s = t.flexible || (t.flexible = {});
+        if (o) {
+            console.warn("将根据已有的meta标签来设置缩放比例");
+            var c = o.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+            c && (d = parseFloat(c[1]), m = parseInt(1 / d))
+        } else if (l) {
+            var p = l.getAttribute("content");
+            if (p) {
+                var u = p.match(/initial\-dpr=([\d\.]+)/), f = p.match(/maximum\-dpr=([\d\.]+)/);
+                u && (m = parseFloat(u[1]), d = parseFloat((1 / m).toFixed(2))), f && (m = parseFloat(f[1]), d = parseFloat((1 / m).toFixed(2)))
+            }
+        }
+        if (!m && !d) {
+            var h = e.navigator.userAgent, v = (!!h.match(/android/gi), !!h.match(/iphone/gi)), x = v && !!h.match(/OS 9_3/), b = e.devicePixelRatio;
+            m = v && !x ? b >= 3 && (!m || m >= 3) ? 3 : b >= 2 && (!m || m >= 2) ? 2 : 1 : 1, d = 1 / m
+        }
+        if (n.setAttribute("data-dpr", m), !o)if (o = r.createElement("meta"), o.setAttribute("name", "viewport"), o.setAttribute("content", "initial-scale=" + d + ", maximum-scale=" + d + ", minimum-scale=" + d + ", user-scalable=no"), n.firstElementChild)n.firstElementChild.appendChild(o); else {
+            var w = r.createElement("div");
+            w.appendChild(o), r.write(w.innerHTML)
+        }
+        e.addEventListener("resize", function () {
+            clearTimeout(a), a = setTimeout(i, 10)
+        }, !1), e.addEventListener("pageshow", function (e) {
+            e.persisted && (clearTimeout(a), a = setTimeout(i, 10))
+        }, !1), "complete" === r.readyState ? r.body.style.fontSize = 12 * m + "px" : r.addEventListener("DOMContentLoaded", function () {
+            r.body.style.fontSize = 12 * m + "px"
+        }, !1), i(), s.dpr = e.dpr = m, s.refreshRem = i, s.rem2px = function (e) {
+            var t = parseFloat(e) * this.rem;
+            return "string" == typeof e && e.match(/rem$/) && (t += "px"), t
+        }, s.px2rem = function (e) {
+            var t = parseFloat(e) / this.rem;
+            return "string" == typeof e && e.match(/px$/) && (t += "rem"), t
+        }
+    }(window, window.lib || (window.lib = {}))</script>
+</head>
+<body style="font-size: 36px;">
+<div class="wrap">
+    <div class="header">个人信息<span>设置</span></div>
+    <div class="info"><img src="" alt="">
+        <h2>子一</h2></div>
+    <div class="flex-h link"><a>照片</a><a>粉丝</a><a>关注</a></div>
+    <div class="saicai">
+        <span class="sangkai"></span>
+        <span class="liu"></span>
+        <span class="mylike"></span>
+    </div>
+    <div class="tc">退出</div>
+</div>
+
+</body>
+</html>

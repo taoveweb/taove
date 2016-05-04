@@ -55,9 +55,9 @@ function post(req, res, next) {
                         req.session.userId['approved']=doc.approved;
                         req.session.userId['city']=doc.city;
                         req.session.userId['_id']=doc._id;
-                        res.json({ok: 1, msg: "登录成功",sesstion:req.session.userId});
+                        res.json({ok: 1, msg:"登录成功",sesstion:req.session.userId});
                     }else{
-                        res.json({ok: 0, msg: "密码不正确"});
+                        res.json({ok: 0,msg: "密码不正确"});
                     }
 
                 });

@@ -1,475 +1,16 @@
 {{#extend "mStyle"}}
-    <style>/*animate*/
-    html {
-        height: 100%;
-    }
-
-    body {
-        padding: 0;
-        margin: 0;
-        overflow-x: hidden;
-        background-color: #1da1f2;
-        height: 100%;
-    }
-
-    .base div {
-        position: absolute;
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        -o-transform-style: preserve-3d;
-        -ms-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-    }
-
-    svg {
-        position: absolute;
-    }
-
-    #wrapper {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        left: 0rem;
-        top: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .centering {
-        width: 192px;
-        height: 192px;
-        margin-top: 1rem;
-
-    }
-
-    .base {
-        position: absolute;
-        width: inherit;
-        height: inherit;
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        -o-transform-style: preserve-3d;
-        -ms-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-        -webkit-transform: translate3d(0.00px, 0.00px, 0.00px);
-        -moz-transform: translate3d(0.00px, 0.00px, 0.00px);
-        -o-transform: translate3d(0.00px, 0.00px, 0.00px);
-        -ms-transform: translate3d(0.00px, 0.00px, 0.00px);
-        transform: translate3d(0.00px, 0.00px, 0.00px);
-        background-image: -webkit-radial-gradient(rgba(255, 255, 255, 0.67), rgba(4, 41, 81, 0.00) 63%);
-        background-image: -moz-radial-gradient(rgba(255, 255, 255, 0.67), rgba(4, 41, 81, 0.00) 63%);
-        background-image: -o-radial-gradient(rgba(255, 255, 255, 0.67), rgba(4, 41, 81, 0.00) 63%);
-        background-image: -ms-radial-gradient(rgba(255, 255, 255, 0.67), rgba(4, 41, 81, 0.00) 63%);
-        background-image: radial-gradient(, rgba(255, 255, 255, 0.67), rgba(4, 41, 81, 0.00) 63%);
-    }
-
-    /*--Basic Setting--*/
-    #top {
-        -webkit-transform: translate3d(0.00px, 0.00px, 141.00px);
-        -moz-transform: translate3d(0.00px, 0.00px, 141.00px);
-        -o-transform: translate3d(0.00px, 0.00px, 141.00px);
-        -ms-transform: translate3d(0.00px, 0.00px, 141.00px);
-        transform: translate3d(0.00px, 0.00px, 141.00px);
-    }
-
-    .m {
-        -webkit-transform: translate3d(0.00px, 0.00px, 85px) rotate(0.00deg) rotateY(-45.00deg);
-        -moz-transform: translate3d(0.00px, 0.00px, 85px) rotate(0.00deg) rotateY(-45.00deg);
-        -o-transform: translate3d(0.00px, 0.00px, 85px) rotate(0.00deg) rotateY(-45.00deg);
-        -ms-transform: translate3d(0.00px, 0.00px, 85px) rotate(0.00deg) rotateY(-45.00deg);
-        transform: translate3d(0.00px, 0.00px, 85px) rotate(0.00deg) rotateY(-45.00deg);
-    }
-
-    .b {
-        -webkit-transform: translate3d(-17px, 0px, 16px) rotate(0.00deg) rotateY(-132deg);
-        -moz-transform: translate3d(-17px, 0px, 16px) rotate(0.00deg) rotateY(-132deg);
-        -o-transform: translate3d(-17px, 0px, 16px) rotate(0.00deg) rotateY(-132deg);
-        -ms-transform: translate3d(-17px, 0px, 16px) rotate(0.00deg) rotateY(-132deg);
-        transform: translate3d(-17px, 0px, 16px) rotate(0.00deg) rotateY(-132deg);
-    }
-
-    .s {
-        -webkit-transform: translate3d(84.00px, 0.00px, -39.00px) rotate(0.00deg) rotateY(0.00deg) skew(90.00deg, 1.00deg);
-        -moz-transform: translate3d(84.00px, 0.00px, -39.00px) rotate(0.00deg) rotateY(0.00deg) skew(90.00deg, 1.00deg);
-        -o-transform: translate3d(84.00px, 0.00px, -39.00px) rotate(0.00deg) rotateY(0.00deg) skew(90.00deg, 1.00deg);
-        -ms-transform: translate3d(84.00px, 0.00px, -39.00px) rotate(0.00deg) rotateY(0.00deg) skew(90.00deg, 1.00deg);
-        transform: translate3d(84.00px, 0.00px, -39.00px) rotate(0.00deg) rotateY(0.00deg) skew(90.00deg, 1.00deg);
-        -webkit-animation-name: shine;
-        -moz-animation-name: shine;
-        -o-animation-name: shine;
-        -ms-animation-name: shine;
-        animation-name: shine;
-        -webkit-animation-duration: 14s;
-        -moz-animation-duration: 14s;
-        -o-animation-duration: 14s;
-        -ms-animation-duration: 14s;
-        animation-duration: 14s;
-        -webkit-animation-iteration-count: infinite;
-        -moz-animation-iteration-count: infinite;
-        -o-animation-iteration-count: infinite;
-        -ms-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-fill-mode: forwards;
-        -o-animation-fill-mode: forwards;
-        -ms-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-        opacity: 0.6;
-    }
-
-    .faces {
-        -webkit-transform: translate3d(-6.00px, 67.00px, 40.00px) rotate(0.00deg);
-        -moz-transform: translate3d(-6.00px, 67.00px, 40.00px) rotate(0.00deg);
-        -o-transform: translate3d(-6.00px, 67.00px, 40.00px) rotate(0.00deg);
-        -ms-transform: translate3d(-6.00px, 67.00px, 40.00px) rotate(0.00deg);
-        transform: translate3d(-6.00px, 67.00px, 40.00px) rotate(0.00deg);
-    }
-
-    .face2 {
-        -webkit-transform: translate3d(204px, 58px, 0px) rotate(180.00deg);
-        -moz-transform: translate3d(204px, 58px, 0px) rotate(180.00deg);
-        -o-transform: translate3d(204px, 58px, 0px) rotate(180.00deg);
-        -ms-transform: translate3d(204px, 58px, 0px) rotate(180.00deg);
-        transform: translate3d(204px, 58px, 0px) rotate(180.00deg);
-    }
-
-    #a1,
-    #a2,
-    #a3,
-    #a4,
-    #a5,
-    #a6 {
-        width: 204px;
-        height: 58px;
-    }
-
-    #a2 {
-        -webkit-transform: translate3d(0px, 0px, 0.00px) rotate(30.00deg);
-        -moz-transform: translate3d(0px, 0px, 0.00px) rotate(30.00deg);
-        -o-transform: translate3d(0px, 0px, 0.00px) rotate(30.00deg);
-        -ms-transform: translate3d(0px, 0px, 0.00px) rotate(30.00deg);
-        transform: translate3d(0px, 0px, 0.00px) rotate(30.00deg);
-        -webkit-animation-delay: 0.5s;
-        -moz-animation-delay: 0.5s;
-        -o-animation-delay: 0.5s;
-        -ms-animation-delay: 0.5s;
-        animation-delay: 0.5s;
-    }
-
-    #a3 {
-        -webkit-transform: translate3d(0px, 0px, 0px) rotate(60.00deg);
-        -moz-transform: translate3d(0px, 0px, 0px) rotate(60.00deg);
-        -o-transform: translate3d(0px, 0px, 0px) rotate(60.00deg);
-        -ms-transform: translate3d(0px, 0px, 0px) rotate(60.00deg);
-        transform: translate3d(0px, 0px, 0px) rotate(60.00deg);
-        -webkit-animation-delay: 1s;
-        -moz-animation-delay: 1s;
-        -o-animation-delay: 1s;
-        -ms-animation-delay: 1s;
-        animation-delay: 1s;
-    }
-
-    #a4 {
-        -webkit-transform: rotate(90.00deg);
-        -moz-transform: rotate(90.00deg);
-        -o-transform: rotate(90.00deg);
-        -ms-transform: rotate(90.00deg);
-        transform: rotate(90.00deg);
-        -webkit-animation-delay: 1.5s;
-        -moz-animation-delay: 1.5s;
-        -o-animation-delay: 1.5s;
-        -ms-animation-delay: 1.5s;
-        animation-delay: 1.5s;
-    }
-
-    #a5 {
-        -webkit-transform: rotate(120.00deg);
-        -moz-transform: rotate(120.00deg);
-        -o-transform: rotate(120.00deg);
-        -ms-transform: rotate(120.00deg);
-        transform: rotate(120.00deg);
-        -webkit-animation-delay: 2s;
-        -moz-animation-delay: 2s;
-        -o-animation-delay: 2s;
-        -ms-animation-delay: 2s;
-        animation-delay: 2s;
-    }
-
-    #a6 {
-        -webkit-transform: rotate(150.00deg);
-        -moz-transform: rotate(150.00deg);
-        -o-transform: rotate(150.00deg);
-        -ms-transform: rotate(150.00deg);
-        transform: rotate(150.00deg);
-        -webkit-animation-delay: 2.5s;
-        -moz-animation-delay: 2.5s;
-        -o-animation-delay: 2.5s;
-        -ms-animation-delay: 2.5s;
-        animation-delay: 2.5s;
-    }
-
-    .grad_top_1 {
-        stop-color: #ffffff;
-        stop-opacity: 0.8;
-    }
-
-    .grad_top_2 {
-        stop-color: #ffffff;
-        stop-opacity: 0.2;
-    }
-
-    .grad_b1 {
-        stop-color: #B3C0D2;
-    }
-
-    .grad_b2 {
-        stop-color: white;
-        stop-opacity: 0;
-    }
-
-    .grad_b3 {
-        stop-color: #B3C0D2;
-    }
-
-    .grad_s1 {
-        stop-color: rgba(0, 0, 0, 1.00);
-        stop-opacity: 0;
-    }
-
-    .grad_s2 {
-        stop-color: #ffffff;
-        stop-opacity: 0.15;
-    }
-
-    .grad_s3 {
-        stop-color: rgba(255, 255, 255, 0.20);
-        stop-opacity: 0;
-    }
-
-    .anim {
-        -webkit-animation-name: anim;
-        -moz-animation-name: anim;
-        -o-animation-name: anim;
-        -ms-animation-name: anim;
-        animation-name: anim;
-        -webkit-animation-duration: 2s;
-        -moz-animation-duration: 2s;
-        -o-animation-duration: 2s;
-        -ms-animation-duration: 2s;
-        animation-duration: 2s;
-        -webkit-animation-iteration-count: infinite;
-        -moz-animation-iteration-count: infinite;
-        -o-animation-iteration-count: infinite;
-        -ms-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-animation-fill-mode: forwards;
-        -moz-animation-fill-mode: forwards;
-        -o-animation-fill-mode: forwards;
-        -ms-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-        -webkit-animation-timing-function: linear;
-        -moz-animation-timing-function: linear;
-        -o-animation-timing-function: linear;
-        -ms-animation-timing-function: linear;
-        animation-timing-function: linear;
-    }
-
-    @-webkit-keyframes anim {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @-moz-keyframes anim {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @-o-keyframes anim {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @-ms-keyframes anim {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    @keyframes anim {
-        0% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-
-    #outline {
-        -webkit-animation-name: outline;
-        -moz-animation-name: outline;
-        -o-animation-name: outline;
-        -ms-animation-name: outline;
-        animation-name: outline;
-        -webkit-animation-duration: 14s;
-        -moz-animation-duration: 14s;
-        -o-animation-duration: 14s;
-        -ms-animation-duration: 14s;
-        animation-duration: 14s;
-        -webkit-animation-iteration-count: infinite;
-        -moz-animation-iteration-count: infinite;
-        -o-animation-iteration-count: infinite;
-        -ms-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-        -webkit-transform-style: preserve-3d;
-        -moz-transform-style: preserve-3d;
-        -o-transform-style: preserve-3d;
-        -ms-transform-style: preserve-3d;
-        transform-style: preserve-3d;
-        -webkit-transition-timing-function: linear;
-        -moz-transition-timing-function: linear;
-        -o-transition-timing-function: linear;
-        -ms-transition-timing-function: linear;
-        transition-timing-function: linear;
-    }
-
-    @-webkit-keyframes outline {
-        0% {
-            -webkit-transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(-359deg) scale3d(1.5, 1.5, 1.5);
-        }
-        100% {
-            -webkit-transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(0deg) scale3d(1.5, 1.5, 1.5);
-        }
-    }
-
-    @-moz-keyframes outline {
-        0% {
-            -moz-transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(-359deg) scale3d(1.5, 1.5, 1.5);
-        }
-        100% {
-            -moz-transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(0deg) scale3d(1.5, 1.5, 1.5);
-        }
-    }
-
-    @-o-keyframes outline {
-        0% {
-            -o-transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(-359deg) scale3d(1.5, 1.5, 1.5);
-        }
-        100% {
-            -o-transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(0deg) scale3d(1.5, 1.5, 1.5);
-        }
-    }
-
-    @-ms-keyframes outline {
-        0% {
-            -ms-transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(-359deg) scale3d(1.5, 1.5, 1.5);
-        }
-        100% {
-            -ms-transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(0deg) scale3d(1.5, 1.5, 1.5);
-        }
-    }
-
-    @keyframes outline {
-        0% {
-            transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(-359deg) scale3d(1.5, 1.5, 1.5);
-        }
-        100% {
-            transform: perspective(0px) translate3d(0px, 91px, 0px) rotate(0deg) rotateX(70deg) rotateZ(0deg) scale3d(1.5, 1.5, 1.5);
-        }
-    }
-
-    @-webkit-keyframes shine {
-        0% {
-            -webkit-transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(10deg, 1deg);
-        }
-        50% {
-            -webkit-transform: perspective(1000px) translate3d(84px, 0px, -39px) rotate(0deg) skew(89deg, 0deg);
-        }
-        100% {
-            -webkit-transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(11deg, 1deg);
-        }
-    }
-
-    @-moz-keyframes shine {
-        0% {
-            -moz-transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(10deg, 1deg);
-        }
-        50% {
-            -moz-transform: perspective(1000px) translate3d(84px, 0px, -39px) rotate(0deg) skew(89deg, 0deg);
-        }
-        100% {
-            -moz-transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(11deg, 1deg);
-        }
-    }
-
-    @-o-keyframes shine {
-        0% {
-            -o-transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(10deg, 1deg);
-        }
-        50% {
-            -o-transform: perspective(1000px) translate3d(84px, 0px, -39px) rotate(0deg) skew(89deg, 0deg);
-        }
-        100% {
-            -o-transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(11deg, 1deg);
-        }
-    }
-
-    @-ms-keyframes shine {
-        0% {
-            -ms-transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(10deg, 1deg);
-        }
-        50% {
-            -ms-transform: perspective(1000px) translate3d(84px, 0px, -39px) rotate(0deg) skew(89deg, 0deg);
-        }
-        100% {
-            -ms-transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(11deg, 1deg);
-        }
-    }
-
-    @keyframes shine {
-        0% {
-            transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(10deg, 1deg);
-        }
-        50% {
-            transform: perspective(1000px) translate3d(84px, 0px, -39px) rotate(0deg) skew(89deg, 0deg);
-        }
-        100% {
-            transform: translate3d(84px, 0px, -39px) rotate(0deg) skew(11deg, 1deg);
-        }
-    }
-    </style>
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
             font-size: 0.3rem;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #1da1f2;
+            height: 100%;
         }
 
         .wrap {
@@ -604,7 +145,6 @@
             opacity: 0.8;
         }
 
-
         .f-link {
             position: absolute;
             right: 0;
@@ -652,15 +192,15 @@
             position: fixed;
             left: 0rem;
             top: 0;
-            margin:0.2rem;
+            margin: 0.2rem;
             border: none;
             background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAJFBMVEUAAAD///////////////////////////////////////////+0CY3pAAAAC3RSTlMAPimt6hDIZYpS985VSwcAAAD9SURBVGje7dUtDsJAEIbhAcKfq8fgMfVoFAbBAfCYegxHqK/jBlBCKXM5kk0lhn1JOmzm9W2edr+m4nlfNs6ENWuEtdZCSCPVBgJUCwYIBARQLQkgEAgglDGAtn0BJt3111jA0QFWAEsIuElc4y0E7B3wI8CLAjYSmZU34AAMuEDAfdfTCIcKASsHWAEcIOAhkS0gYOAAK4A6FlB1NzjTJ8gFzrgWwR8S/pI4AS+JTwlvKYEtGCAY2EL+x1swQDAwR99CcoToX+28u8EzmlAlQJhiwikBgoGDMEAwcBBJEOxsoRH4FkphB9GKEEIAAEIAEEIAIEIAEEIhnve5N4voWJhDhz/BAAAAAElFTkSuQmCC");
             width: 0.8rem;
             height: 0.8rem;
             background-size: contain;
 
-
         }
+
         .validate-msg {
             height: 0.6rem;
             line-height: 0.6rem;
@@ -669,11 +209,11 @@
             background: rgba(255, 255, 255, 0.2);
             position: fixed;
             top: 0;
-            left:0;
-            width:100%;
-            z-index:10;
+            left: 0;
+            width: 100%;
+            z-index: 10;
             color: #ff2222;
-            display:none;
+            display: none;
         }
     </style>
 {{/extend}}
@@ -689,8 +229,6 @@
             </div>
             <div class="br">
                 <button id="login">登录</button>
-                <p class="validate-msg"></p>
-
                 <div class="circle"></div>
             </div>
             <div class="br rf-btn">
@@ -706,209 +244,9 @@
             </div>
         </div>
     </div>
-    <div id="wrapper">
-        <div id="outline" class="centering">
-            <div id="diamond" class="base">
-                <svg id="defs">
-                    <defs>
-                        <polygon
-                                points="32.5,79 48.5,49 79,32 114,32 143,50 159.5,79 159.5,113.5 142,143 112.5,159.5 79,159.5 50,143 32.5,112.5 "
-                                id="t" fill="url(#grad_top)"></polygon>
-                        <polygon points="0,54 0,3 45,12" id="m2" fill="url(#grad_a)"></polygon>
-                        <polygon points="45,12 46,46 0,54" id="m1" fill="url(#grad_a2)"></polygon>
-                        <polygon points="144,54 0.5,29 144,3" id="b" fill="url(#grad_b)"></polygon>
-                        <polygon points="144,54 0.5,29 144,3" id="s" fill="url(#grad_s)"></polygon>
-                        <lineargradient id="grad_top" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="192" y2="192">
-                            <stop offset="0" class="grad_top_1"></stop>
-                            <stop offset="1" class="grad_top_2"></stop>
-                        </lineargradient>
-                        <lineargradient id="grad_a" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
-                            <stop offset="0.1" style="stop-color:#FFFFFF; stop-opacity:0.5"></stop>
-                            <stop offset="1" style="stop-color:#27344C"></stop>
-                            <stop offset="0" style="stop-color:#B3C0D2"></stop>
-                        </lineargradient>
-                        <lineargradient id="grad_a2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="100">
-                            <stop offset="0" style="stop-color:#B3C0D2"></stop>
-                            <stop offset="0.5" style="stop-color:#FFFFFF;stop-opacity:0.1"></stop>
-                            <stop offset="1" style="stop-color:#27344C"></stop>
-                        </lineargradient>
-                        <lineargradient id="grad_b" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="50" y2="90">
-                            <stop offset="0" class="grad_b1"></stop>
-                            <stop offset="0.5" class="grad_b2"></stop>
-                            <stop offset="1" class="grad_b3"></stop>
-                        </lineargradient>
-                        <lineargradient id="grad_s" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" class="grad_s1"></stop>
-                            <stop offset="0.5" class="grad_s2"></stop>
-                            <stop offset="1" class="grad_s3"></stop>
-                        </lineargradient>
-                    </defs>
-                </svg>
-                <svg id="top" width="192px" height="192px">
-                    <use xlink:href="#t"></use>
-                </svg>
-                <div class="faces">
-                    <div id="a1">
-                        <div class="face1">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                        <div class="face2">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div id="a2" class="anim">
-                        <div class="face1">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                        <div class="face2">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div id="a3" class="anim">
-                        <div class="face1">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                        <div class="face2">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div id="a4" class="anim">
-                        <div class="face1">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                        <div class="face2">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div id="a5" class="anim">
-                        <div class="face1">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                        <div class="face2">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div id="a6" class="anim">
-                        <div class="face1">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                        <div class="face2">
-                            <svg class="m" width="45px" height="57px">
-                                <use xlink:href="#m1"></use>
-                                <use xlink:href="#m2"></use>
-                            </svg>
-                            <svg class="b" width="144px" height="54px">
-                                <use xlink:href="#b"></use>
-                            </svg>
-                            <svg class="s" width="144px" height="54px">
-                                <use xlink:href="#s"></use>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </div>
+<div class="validate-msg"></div>
 {{#extend "mScripts"}}
     <script>
         (function (w) {
@@ -946,58 +284,66 @@
         })(window);
     </script>
     <script>
-        var selfW='';
+        $(function () {
 
-        $('#login').tap(function () {
-            var that = $('.login');
-            postLogin(that, 'l')
-        });
+            var selfW = '';
 
-        function postLogin(that, s) {
-            $('.validate-msg').css('display','none');
-            var parent = that;
-            var phone_val = parent.find('#phone').val();
-            var password_val = parent.find('#password').val();
-            var pass = true;
-            if (!validate.phone(phone_val)) {
-                $('.validate-msg').html('手机格试不正确').css('display','block');
-                pass = false;
-            }
-            if (!validate.password(password_val)) {
-                pass = false;
-                $('.validate-msg').html('密码格式由6到8位字母和数字组成').css('display','block');
-            }
+            $('#login').tap(function () {
+                var that = $('.login');
+                postLogin(that, 'l')
+            });
 
-            if (pass) {
-                $('#login').html('');
-                $('.circle').css('display', 'block');
-                $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
-                    $('.circle').css('display', 'none');
-                    $('#login').html('登录');
-                    if (data.ok == 1) {
-                        if (s == "l") {
-                            store.set('username', data.sesstion['phone']);
-                            if(window.plus){
-                                var topW=plus.webview.getLaunchWebview();
-                                topW.evalJS('$(".my").trigger("tap")');
-                                selfW.hide('auto');
-                            }else{
-                                console.log(window.location.host+'/m');
-                                window.location.href=`http://${window.location.host}/m`;
-                            }
+            function postLogin(that, s) {
+                $('.validate-msg').css('display', 'none');
+                var parent = that;
+                var phone_val = parent.find('#phone').val();
+                var password_val = parent.find('#password').val();
+                var pass = true;
+                if (!validate.phone(phone_val)) {
+                    $('.validate-msg').html('手机格试不正确').css('display', 'block');
+                    pass = false;
+                }
+                if (!validate.password(password_val)) {
+                    pass = false;
+                    $('.validate-msg').html('密码格式由6到8位字母和数字组成').css('display', 'block');
+                }
+
+                if (pass) {
+                    $('#login').html('');
+                    $('.circle').css('display', 'block');
+                    $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
+                        console.log(typeof data)
+                        if(typeof data=="string"){
+                            var data=JSON.parse(data);
                         }
-                    } else {
+                        $('.circle').css('display', 'none');
+                        $('#login').html('登录');
+                        if (data.ok == 1) {
+                            if (s == "l") {
+                                store.set('username', data.sesstion['phone']);
+                                if (window.plus) {
+                                    var topW = plus.webview.getLaunchWebview();
+                                    topW.evalJS('$(".my").trigger("tap")');
+                                    selfW.hide('auto');
+                                } else {
 
-                        parent.find('.validate-msg').html(data.msg).css('display','block');
-                    }
-                })
+                                    window.location.href = `http://${window.location.host}/m`;
+                                    console.log(window.location.href)
+                                }
+                            }
+                        } else {
+                            $('.validate-msg').html(data.msg).css('display', 'block');;
+                        }
+                    })
+                }
             }
-        }
+
+        })
     </script>
     <script>
         //用到dcloud--------------------------------------
-        var loginW="";
-        var waiting=null;
+        var loginW = "";
+        var waiting = null;
         if (window.plus) {
             plusReady();
         } else {
@@ -1008,25 +354,24 @@
         function plusReady() {
 
 
-
-            $('.r-link').tap(function(){
+            $('.r-link').tap(function () {
 
                 if (loginW) {
                     plus.webview.show(loginW, "slide-in-right");
                 } else {
-                    waiting=plus.nativeUI.showWaiting();
+                    waiting = plus.nativeUI.showWaiting();
                     loginW = plus.webview.create("{{static}}m/register", "{{static}}m/register", {
                                 zindex: 2,
                                 top: '0',
                                 bottom: '0',
-                                background:'#1da1f2',
-                                'popGesture':'hide'
+                                background: '#1da1f2',
+                                'popGesture': 'hide'
                             },
                             "slide-in-right");
-                    loginW.onloaded=function(){
+                    loginW.onloaded = function () {
                         plus.webview.show(loginW, "slide-in-right");
-                        waiting&&waiting.close();
-                        waiting=null;
+                        waiting && waiting.close();
+                        waiting = null;
                     }
                 }
             });
@@ -1034,12 +379,12 @@
 
             selfW = plus.webview.currentWebview();
             plus.navigator.setStatusBarBackground("#1da1f2");
-            selfW.addEventListener( "hide", function(e){
+            selfW.addEventListener("hide", function (e) {
                 plus.navigator.setStatusBarBackground("#ffffff");
-                }, false );
-            selfW.addEventListener( "show", function(e){
+            }, false);
+            selfW.addEventListener("show", function (e) {
                 plus.navigator.setStatusBarBackground("#1da1f2");
-                }, false );
+            }, false);
             $('.back').tap(function () {
                 $('input').trigger('blur');
                 selfW.hide('auto');

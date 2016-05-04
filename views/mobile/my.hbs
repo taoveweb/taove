@@ -1,5 +1,5 @@
 {{#extend "mStyle"}}
-   <link href="/mobile/css/my.css" rel="stylesheet">
+   <link href="/mobile/css/my.css?v=0.222" rel="stylesheet">
 {{/extend}}
 <div class="wrap flex-v">
     <div class="header">个人信息<span class="setting-btn">设置</span></div>
@@ -55,21 +55,7 @@
     </div>
 </div>
 
-<script>
-    $('.btn').on('touchstart', function () {
-        $(this).addClass('hover');
-    })
-    $('.btn').on('touchend', function () {
-        $(this).removeClass('hover');
-    })
 
-    $('.setting-btn').on('tap', function () {
-        $('.setting').addClass('show');
-    })
-    $('.back ').on('tap', function () {
-        $('.setting').toggleClass('show');
-    })
-</script>
 
 {{#extend "mScripts"}}
     <script>
@@ -81,6 +67,23 @@
                     topW.evalJS('$(".home").trigger("tap")');
                 }
             });
+        })
+    </script>
+
+
+    <script>
+        $('.btn').on('touchstart', function () {
+            $(this).addClass('hover');
+        })
+        $('.btn').on('touchend', function () {
+            $(this).removeClass('hover');
+        })
+
+        $('.setting-btn').on('tap', function () {
+            $('.setting').addClass('show');
+        })
+        $('.back ').on('tap', function () {
+            $('.setting').toggleClass('show');
         })
     </script>
 {{/extend}}

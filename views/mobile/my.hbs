@@ -1,114 +1,10 @@
 {{#extend "mStyle"}}
-    <style>
-        .header{
-            text-align: center;
-            height:1rem;
-            line-height: 1rem;;
-            border-bottom:2px solid #e0e0e0;
-            font-size: 0.4rem;
-            position: relative;
-            font-weight: bold;
-        }
-        .saicai{
-            background: #ededed;
-            padding: 0.26rem 0;
-        }
-        .saicai span{
-            display: inline-block;
-            width:33.3%;
-            height: 0.515rem;
-            -webkit-background-size: contain;
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            float: left;
-        }
-        .sangkai{
-            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAAQMAAAD58POIAAAABlBMVEUAAABxcXHhcrK1AAAAAXRSTlMAQObYZgAAAChJREFUSMdj+P+fAQgQ1EgXGAWjYCiAwZJfBovAKBgFQwEMlvwySAQAh+0e8EafIGQAAAAASUVORK5CYII=");
-        }
-        .liu{
-            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACAAgMAAAC+UIlYAAAADFBMVEUAAABwcHBwcHBxcXFYqPMQAAAAA3RSTlMAxn+nbNi7AAAAN0lEQVRYw+3VsQ0AIAzAMJ6EI/kRwQd06FJV9pw94/6dJgEAtLEDJc6bD+bfGgDQRnS9EmtOBw9q2YgbzsRGVgAAAABJRU5ErkJggg==");
-
-        }
-        .mylike{
-
-            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAJFBMVEUAAABwcHBwcHBwcHBwcHBxcXFwcHBwcHBwcHBwcHBxcXFxcXG8Q/slAAAAC3RSTlMAOlkQe5vZxuwgs2WaU/sAAAPiSURBVGje7Vkxb9NAFLbjtiSw1AhRpC5eEIUuASlFahZXBQHKEtQJZWlUJIS8gAqTl6KOWTIx0KUCFpSFpknj5P05cufenZ3n89UvmVC+IU38nHfvfe97r5eztcR/Cdd19canrtu18mC/6sAUk71sIzB8fWxp8RAEJh4yPpLG95oonNegEL1JGystUBhmenAakMJBythK2UbrFsYWN33Zc+++CIEhmQV3Hv3ec92XAXs7qKLv7/Lsrj3fC9PLbDDjzzhwhzP1DVHM6H+bTrkvPpVginfS+Kwj41PYVrcoRppWDObNTxhLUw9D8UGt0U7THgKM4kxrAPBHGsSV5mwAAwv7POLBBCIbhU0ZgroZVeY7wBUL4db0b9IonDbTDj9iYfQADmMGjpGxlgrZ5mshrPI4V9grRitZiDWAUyv7Jp/Rc44s/DuXSZ1hbcbZX1R4dBhOByYyA8kypip6jqJTvHlqIc4oRh0g0ETHuDmRIohEkFgLgm2MUFo6IgOMHvBS6nKoimU+6RzUkwrDVfZFQdQ9OIeBzlYRJGzCyNIiFExlyqSf+KtN1NfbrpUgy5GtJVUgLEZutBkXWtiMAj1BXkxm19Ljl97kxAIsQ2TloJpjC+Dv9PUMhhYRDbjgQu5THWxCn7sZUx3c4cGHLBEaylyCHdYJNNwG4DryqQ5WFuCgyoToUR2UWB/b7IUIe+lgIQ68hUTgzeXAmUeJPHqA5hwO5u7G+ebBGoz4RLqcYyLNOxMHi5jKZbiyKJD0rbKxQkO8fyuRpViKNegwPwSo/6o9GFOrGLO3zYpBgPxiHSJqEcYiFY/YzOfiDamd1MLhVFAEnLHU5T6PgJYkv0waixWAS6WoQxIFvqpHn9LLUE2+J6hgkJxtTcJAPUnwUbyQ9ZT8GhAVzaEHk/S2uVl4FozTsu4XlKEooswBugVrMJr9iXlUUEXj2Z37sNgsAQ/pyi80CoYopiI07mRkHBRpyTDj5h2DGo3hop/5CPjwAdF4dGMVDrMu3zQEcaaBr5tCwCuZDaaFsIUYgDJ1SQEom1kLKygAdCJm1MBpTnjGjqgBROt5BBlmmxMgBpAcJ3mlfCAOGRXwyWibFKFqyrztRsM8uJxezsHPLvdu7nU41ufXv4HUtWJo8LNRI+xAJooTQEcyuhvbWQlgdvRcg4+votRykxjNtuV9RG6u4FG0K+iSsRLtdFCoiYxygv0ZAg4K7h8g8hI9hCVkrqUisgaoSc3Y4g9CBIGEDb0jn3HYHU5AYdhh/CilEiJlFiASPldaWAFF9ASBeDBFwQ9gYD1MxQYIPVCxJRqTjCcf9q0lljDiHzdtZJsVw0j9AAAAAElFTkSuQmCC");
-
-        }
-        .saicai .mylike{
-            height: 0.6rem;
-
-        }
-        .header span {
-            position: absolute;
-            right: 0rem;
-            height: 1rem;
-            width: 1.5rem;
-            top: 0;
-            text-align: center;
-            line-height: 1rem;;
-            display: block;
-            -webkit-border-radius:50%;
-            -moz-border-radius:50%;
-            border-radius:50%;
-            overflow: hidden;
-        }
-        .info img{
-            display: block;
-            margin: 0.24rem auto;
-            width: 1.7rem;
-            height: 1.7rem;
-        }
-        .info  h2{
-            text-align: center;
-            font-size: 0.36rem;
-            line-height:0.36rem;
-        }
-        .link{
-            margin: 0.411rem 0;
-        }
-        .link a {
-            display: block;
-            -webkit-box-flex: 1;
-            -moz-box-flex: 1;
-            width: 20%;
-            -webkit-flex: 1;
-            -ms-flex: 1;
-            flex: 1;
-            text-align: center;
-            font-size: 0.36rem;
-            height: 0.48rem;
-            line-height:0.48rem;
-            color: #6c6c6c;
-        }
-        .link a:nth-child(2) {
-            border-left: 1px solid #d9d9d9;
-            border-right: 1px solid #d9d9d9;
-
-
-        }
-        .show-sort a{
-            display: block;
-            width: 33.33%;
-            border-bottom: 0.072rem solid #fff;
-            overflow: hidden;
-            padding-bottom: 33.33%;
-            float: left;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-            height: 0;
-            background: #f4f4f4;
-        }
-        .show-sort a:nth-child(3n+2){
-            border-left: 0.072rem solid #fff;
-            border-right: 0.072rem solid #fff;
-        }
-    </style>
+   <link href="/mobile/css/my.css" rel="stylesheet">
 {{/extend}}
-<div class="wrap">
-    <div class="header">个人信息<span>设置</span></div>
+<div class="wrap flex-v">
+    <div class="header">个人信息<span class="setting-btn">设置</span></div>
     <div class="info"><img src="" alt="">
+
         <h2>子一</h2></div>
     <div class="flex-h link"><a>照片</a><a>粉丝</a><a>关注</a></div>
     <div class="saicai clearfix">
@@ -116,21 +12,64 @@
         <span class="liu"></span>
         <span class="mylike"></span>
     </div>
-    <div class="show-sort clearfix">
-        <a href=""><img src="" alt=""/></a>
-        <a href=""><img src="" alt=""/></a>
-        <a href=""><img src="" alt=""/></a>
-        <a href=""><img src="" alt=""/></a>
-        <a href=""><img src="" alt=""/></a>
-        <a href=""><img src="" alt=""/></a>
-        <a href=""><img src="" alt=""/></a>
-        <a href=""><img src="" alt=""/></a>
-        <a href=""><img src="" alt=""/></a>
-        <a href=""><img src="" alt=""/></a>
+    <div class="show-sort clearfix"> <!--shan-->
+        <a href="" style=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
+        <a href=""></a>
     </div>
-    <div class="tc">退出</div>
+
+</div>
+<div class="setting">
+    <div class="header"><em class="back"></em>设置</div>
+    <div class="content">
+        <div class="box">
+            <a class="br btn">意见反馈 <span></span></a>
+            <a class="br btn">用户协议<span></span></a>
+            <a class="br btn">去评分<span></span></a>
+            <a class="br btn">关于<span></span></a>
+        </div>
+        <div class="box">
+            <a class="br btn"> 分享给微信朋友<span></span></a>
+            <a class="br btn"> 达人申请<span></span></a>
+            <a class="br btn"> 黑名单<span></span></a>
+        </div>
+        <div class="box">
+            <a class="br btn"> 允许他人保存图片<span></span></a>
+        </div>
+        <div class="box">
+            <a class="br btn"> 推送消息<span></span></a>
+        </div>
+        <div class="box">
+            <a class="br btn clearcatch"> 清理缓存<em>2.9MB</em></a>
+        </div>
+        <div class="box">
+            <div class="br btn tc"> 退出当前账号</div>
+        </div>
+    </div>
 </div>
 
+<script>
+    $('.btn').on('touchstart', function () {
+        $(this).addClass('hover');
+    })
+    $('.btn').on('touchend', function () {
+        $(this).removeClass('hover');
+    })
+
+    $('.setting-btn').on('tap', function () {
+        $('.setting').addClass('show');
+    })
+    $('.back ').on('tap', function () {
+        $('.setting').toggleClass('show');
+    })
+</script>
 
 {{#extend "mScripts"}}
     <script>

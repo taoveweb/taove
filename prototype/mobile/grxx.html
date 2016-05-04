@@ -214,7 +214,23 @@
             display: -webkit-flex;	 /* NEW - Chrome */
             display: flex;			 /* NEW, Spec - Opera 12.1, Firefox 20+ */
         }
+        .clearfix:after, .clearfix:before, .br:after, .br:before {
+            content: "\0020";
+            display: block;
+            height: 0;
+            visibility: hidden;
+            position: relative;
+            z-index: -1;
+            line-height: 0
+        }
 
+        .clearfix:after, .br:after {
+            clear: both
+        }
+
+        .clearfix, .br {
+            *zoom: 1
+        }
     </style>
     <link href="css/my.css" rel="stylesheet">
     <style>
@@ -274,10 +290,22 @@
     <div class="info"><img src="" alt="">
         <h2>子一</h2></div>
     <div class="flex-h link"><a>照片</a><a>粉丝</a><a>关注</a></div>
-    <div class="saicai">
+    <div class="saicai clearfix">
         <span class="sangkai"></span>
         <span class="liu"></span>
         <span class="mylike"></span>
+    </div>
+    <div class="show-sort clearfix">
+        <a href=""><img src="" alt=""/></a>
+        <a href=""><img src="" alt=""/></a>
+        <a href=""><img src="" alt=""/></a>
+        <a href=""><img src="" alt=""/></a>
+        <a href=""><img src="" alt=""/></a>
+        <a href=""><img src="" alt=""/></a>
+        <a href=""><img src="" alt=""/></a>
+        <a href=""><img src="" alt=""/></a>
+        <a href=""><img src="" alt=""/></a>
+        <a href=""><img src="" alt=""/></a>
     </div>
     <div class="tc">退出</div>
 </div>

@@ -18,8 +18,8 @@ $(function(){
     var drag=document.querySelector('.drag');
     var wrap=document.querySelector('.wrap');
     $('.setting-btn').on('tap', function () {
-        drag.style.webkitTransition = '200ms';
-        wrap.style.webkitTransition = '200ms';
+        drag.style.webkitTransition = '300ms';
+        wrap.style.webkitTransition = '300ms';
         drag.style.webkitTransform = `translateX(0px)`;
         wrap.style.webkitTransform = `translateX(-100%)`;
         $('.drag').addClass('show');
@@ -33,7 +33,7 @@ $(function(){
 
 
     $(document).on('touchstart', function (e) {
-        e.preventDefault();
+       // e.preventDefault();
         startTime = e.timeStamp;
         startX = e.touches[0].clientX;
         $(document).on('touchmove', function (e) {
@@ -43,6 +43,7 @@ $(function(){
                 if(moveX<0) return;
                 drag.style.webkitTransition = 0;
                 wrap.style.webkitTransition = 0;
+                console.log('yes')
                 drag.style.webkitTransform = `translateX(${moveX}px)`;
                 wrap.style.webkitTransform = `translateX(${moveX-$(document).width()}px)`;
             }
@@ -50,10 +51,12 @@ $(function(){
 
     });
     $(document).on('touchend', function (e) {
-        if ($('.drag').hasClass('show')) {
-            drag.style.webkitTransition = '200ms';
-            wrap.style.webkitTransition = '200ms';
-            if (moveX > $(document).width() / 2) {
+
+        if ($('.drag').hasClass('show') ) {
+            var bl=moveX/(e.timeStamp-startTime);
+            drag.style.webkitTransition = '300ms';
+            wrap.style.webkitTransition = '300ms';
+            if (moveX > $(document).width() / 2 || bl>1) {
                 drag.style.webkitTransform = `translateX(100%)`;
                 wrap.style.webkitTransform = `translateX(0%)`;
                 $('.drag').removeClass('show');

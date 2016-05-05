@@ -243,3 +243,8 @@ html,body, .wrap{
     top: 0rem;
 }
 
+.drag{
+    -webkit-box-shadow: 0 0 5px 5px #6c6c6c;
+    -moz-box-shadow: 0 0 5px 5px #6c6c6c;
+    box-shadow: 0 0 5px 5px #6c6c6c;
+}

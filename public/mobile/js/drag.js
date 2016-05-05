@@ -41,8 +41,8 @@ $(function(){
                 e.preventDefault();
                 moveX = e.touches[0].clientX - startX;
                 if(moveX<0) return;
-                document.querySelector('.drag').style.cssText = '';
-                document.querySelector('.wrap').style.cssText = ''
+                drag.style.cssText = '';
+                wrap.style.cssText = '';
                 console.log('yes')
                 drag.style.webkitTransform = `translateX(${moveX}px)`;
                 wrap.style.webkitTransform = `translateX(${moveX-$(document).width()}px)`;

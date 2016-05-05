@@ -312,7 +312,7 @@
     </div>
 
 </div>
-<div class="setting">
+<div class="setting drag">
     <div class="header"><em class="back"></em>设置</div>
     <div class="content">
         <div class="box">
@@ -341,20 +341,6 @@
     </div>
 </div>
 <script src="js/zepto.min.js"></script>
-<script>
-    $('.btn').on('touchstart', function () {
-        $(this).addClass('hover');
-    })
-    $('.btn').on('touchend', function () {
-        $(this).removeClass('hover');
-    })
-
-    $('.setting-btn').on('tap', function () {
-        $('.setting').addClass('show');
-    })
-    $('.back ').on('tap', function () {
-        $('.setting').toggleClass('show');
-    })
-</script>
+<script src="js/drag.js"></script>
 </body>
 </html>

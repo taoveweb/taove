@@ -60,10 +60,10 @@
 {{#extend "mScripts"}}
     <script>
         $('.tc').on('tap', function () {
-            $('.setting').toggleClass('show');
             store.clear();
             $.post('{{static}}m/loginOut', function (data) {
                 if (data.ok) {
+                    $('.setting').toggleClass('show');
                     var topW=plus.webview.currentWebview().parent();
                     topW.evalJS('$(".home").trigger("tap")');
                 }

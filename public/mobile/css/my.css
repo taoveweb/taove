@@ -244,7 +244,7 @@ html,body, .wrap{
 }
 
 .drag{
-    -webkit-box-shadow: 0 0 5px 5px #6c6c6c;
-    -moz-box-shadow: 0 0 5px 5px #6c6c6c;
-    box-shadow: 0 0 5px 5px #6c6c6c;
+    -webkit-box-shadow: 0 0 10px 3px #6c6c6c;
+    -moz-box-shadow: 0 0 10px 3px #6c6c6c;
+    box-shadow: 0 0 10px 3px #6c6c6c;
 }

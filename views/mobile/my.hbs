@@ -69,7 +69,8 @@
             store.clear();
             $.post('{{static}}m/loginOut', function (data) {
                 if (data.ok) {
-                    $('.setting').toggleClass('show');
+                   // $('.setting').toggleClass('show');
+                    $('.back ').trigger('tap');
                     var topW=plus.webview.currentWebview().parent();
                     topW.evalJS('$(".home").trigger("tap")');
                 }

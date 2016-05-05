@@ -33,7 +33,7 @@ $(function(){
 
 
     $(document).on('touchstart', function (e) {
-        e.preventDefault();
+       // e.preventDefault();
         startTime = e.timeStamp;
         startX = e.touches[0].clientX;
         $(document).on('touchmove', function (e) {

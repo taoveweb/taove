@@ -284,61 +284,56 @@
         })(window);
     </script>
     <script>
-        $(function () {
 
-            var selfW = '';
 
-            $('#login').tap(function () {
-                var that = $('.login');
-                postLogin(that, 'l')
-            });
+        var selfW = '';
 
-            function postLogin(that, s) {
-                $('.validate-msg').css('display', 'none');
-                var parent = that;
-                var phone_val = parent.find('#phone').val();
-                var password_val = parent.find('#password').val();
-                var pass = true;
-                if (!validate.phone(phone_val)) {
-                    $('.validate-msg').html('手机格试不正确').css('display', 'block');
-                    pass = false;
-                }
-                if (!validate.password(password_val)) {
-                    pass = false;
-                    $('.validate-msg').html('密码格式由6到8位字母和数字组成').css('display', 'block');
-                }
+        $('#login').tap(function () {
+            var that = $('.login');
+            postLogin(that, 'l')
+        });
 
-                if (pass) {
-                    $('#login').html('');
-                    $('.circle').css('display', 'block');
-                    $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
-                        console.log(typeof data)
-                        if(typeof data=="string"){
-                            var data=JSON.parse(data);
-                        }
-                        $('.circle').css('display', 'none');
-                        $('#login').html('登录');
-                        if (data.ok == 1) {
-                            if (s == "l") {
-                                store.set('username', data.sesstion['phone']);
-                                if (window.plus) {
-                                    var topW = plus.webview.getLaunchWebview();
-                                    topW.evalJS('$(".my").trigger("tap")');
-                                    selfW.hide('auto');
-                                } else {
-
-                                    window.location.href = `http://${window.location.host}/m`;
-                                    console.log(window.location.href)
-                                }
-                            }
-                        } else {
-                            $('.validate-msg').html(data.msg).css('display', 'block');;
-                        }
-                    })
-                }
+        function postLogin(that, s) {
+            $('.validate-msg').css('display', 'none');
+            var parent = that;
+            var phone_val = parent.find('#phone').val();
+            var password_val = parent.find('#password').val();
+            var pass = true;
+            if (!validate.phone(phone_val)) {
+                $('.validate-msg').html('手机格试不正确').css('display', 'block');
+                pass = false;
+            }
+            if (!validate.password(password_val)) {
+                pass = false;
+                $('.validate-msg').html('密码格式由6到8位字母和数字组成').css('display', 'block');
             }
 
-        })
+            if (pass) {
+                $('#login').html('');
+                $('.circle').css('display', 'block');
+                $.post('/login', {phone: phone_val, password: password_val, type: s}, function (data) {
+                    $('.circle').css('display', 'none');
+                    $('#login').html('登录');
+                    if (data.ok == 1) {
+                        if (s == "l") {
+                            store.set('username', data.sesstion['phone']);
+                            if (window.plus) {
+                                var topW = plus.webview.getLaunchWebview();
+                                topW.evalJS('$(".my").trigger("tap")');
+                                selfW.hide('auto');
+                            } else {
+                                window.location.href = `http://${window.location.host}/m`;
+                            }
+                        }
+                    } else {
+                        $('.validate-msg').html(data.msg).css('display', 'block');
+                        ;
+                    }
+                })
+            }
+        }
+
+
     </script>
     <script>
         //用到dcloud--------------------------------------

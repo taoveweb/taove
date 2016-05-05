@@ -132,11 +132,11 @@ html,body, .wrap{
     height: 100%;
     z-index: 10;
     background: #ebebec;
-    -webkit-transition: left 300ms;
-    -moz-transition: left 300ms;
-    -ms-transition: left 300ms;
-    -o-transition: left 300ms;
-    transition: left 300ms;
+    -webkit-transition:  200ms;
+    -moz-transition:  200ms;
+    -ms-transition:  200ms;
+    -o-transition:  200ms;
+    transition:  200ms;
     -webkit-transition-timing-function: ease-in-out;
     -moz-transition-timing-function: ease-in-out;
     -ms-transition-timing-function: ease-in-out;
@@ -145,7 +145,12 @@ html,body, .wrap{
 
 }
 .setting.show{
-    left: 0;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+    /*left: 0;*/
 }
 .setting .header{
     background: #fff;
@@ -172,8 +177,6 @@ html,body, .wrap{
     font-size: 0.41rem ;
     padding-left: 0.48rem;
     text-decoration: none;
-
-
     moz-user-select: -moz-none;
     -moz-user-select: none;
     -o-user-select:none;
@@ -193,6 +196,8 @@ html,body, .wrap{
     overflow: hidden;
     content:"";
     text-decoration: none;
+    visibility: visible;
+    z-index:5;
 }
 
 .btn:hover,
@@ -224,7 +229,6 @@ html,body, .wrap{
     height: 1rem;
     width: 1rem;
     top: 0;
-
     background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACABAMAAAAxEHz4AAAAElBMVEUAAAAlJTUlJTUgIDAnJjYmJTUhdzRZAAAABHRSTlMAMGAQ77L4yQAAAJBJREFUaN7t2bEJgDAQQFFFB0hjn1nCZYAQ95/FFLqAPwjCT5/jcd3xl2/fRgccmf1fzwIBEZkBIgoEDAIDDAIEDAIDRHQIqAkCmgABAgQIECBAgAABAgQIeAvY4zkOsQDvQIIECRIkSJAgQYKE/xAyJRRKCAkSphE6JNQEi2cjzfUGIEKj3Tnx8s0IeX79vwBslvrJCcRtOAAAAABJRU5ErkJggg==") no-repeat center;
     -webkit-background-size: 0.45rem;
     background-size: 0.45rem;

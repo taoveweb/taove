@@ -1,0 +1,38 @@
+.header{
+    text-align: center;
+    height:1rem;
+    line-height: 1rem;;
+    border-bottom:2px solid #e0e0e0;
+    font-size: 0.4rem;
+    position: relative;
+    font-weight: bold;
+}
+.tab {
+    position: relative;
+
+    height: 0.94rem;
+    line-height: 0.94rem;
+    border-bottom:1px solid #f1f1f1;
+}
+.flex-h span {
+    flex: 1;
+    -webkit-flex: 1%;
+    text-align: center;
+    color: #636568;
+}
+.flex-h span.current{
+    color: #000;
+}
+.flex-h:after {
+    content: '';
+    height: 4px;
+    background: #3c8dd9;
+    width: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+
+}
+
+

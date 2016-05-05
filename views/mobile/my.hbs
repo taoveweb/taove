@@ -60,6 +60,7 @@
 {{#extend "mScripts"}}
     <script>
         $('.tc').on('tap', function () {
+            $('.setting').toggleClass('show');
             store.clear();
             $.post('{{static}}m/loginOut', function (data) {
                 if (data.ok) {

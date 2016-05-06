@@ -176,3 +176,16 @@ body,html,.wrap{
 .swiper-containerV .swiper-slide{
     height: auto;
 }
+
+.pull {
+    text-align: center;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    margin-top: -0.4rem;
+    margin-bottom: 0.1rem;
+}
+.push{
+    text-align: center;
+    height: 0.4rem;
+    line-height: 0.4rem;
+}

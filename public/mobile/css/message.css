@@ -16,7 +16,7 @@ body{
     -webkit-flex-shrink: 0;
     height: 0.94rem;
     line-height: 0.94rem;
-    border-bottom: 0.0241rem solid #f1f1f1;
+
 }
 .flex-h span {
     flex: 1;
@@ -145,9 +145,10 @@ body{
 }
 .swiper-scrollbarH{
     background: none;
+    border-bottom: 0.0241rem solid #f1f1f1;
 }
 .swiper-container-horizontal>.swiper-scrollbarH {
-    top: -5px;
+    top: 0;
     bottom: auto;
 }
 body,html,.wrap{

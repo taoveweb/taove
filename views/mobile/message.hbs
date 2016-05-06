@@ -481,9 +481,12 @@
                 }
                 if (pulldistance > stand) {
                     //刷新位置
-
-                    $('.pull').html('正在刷新');
+                    $('.pull').addClass('refresh');
+                    $('.pull').html('加载中...');
                     // location.href = '';
+                    window.setTimeout(function(){
+                        $('.pull').removeClass('refresh');
+                    },3000)
                 }
                 if (pulldistance < 0 && Math.abs(pulldistance) + height - swiperWrapper > stand) {
                     $('.push').html('正在加载中。。。');
@@ -516,10 +519,10 @@
 
 
                     $('.push').html('上拉加载。');
-                    $('.pull').html('下拉刷新');
+                    $('.pull').html('下拉即可刷新');
 
                     if (pulldistance >= stand) {
-                        $('.pull').html('松开刷新');
+                        $('.pull').html('释放即可刷新');
                     }
                     if (pulldistance < 0 && Math.abs(pulldistance) + height - swiperWrapper > stand) {
                         $('.push').html('松开加载');

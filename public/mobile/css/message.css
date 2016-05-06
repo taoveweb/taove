@@ -143,6 +143,9 @@ body{
 .swiper-scrollbarH .swiper-scrollbar-drag{
     background: #3c8dd9;
 }
+.swiper-scrollbarH{
+    background: none;
+}
 .swiper-container-horizontal>.swiper-scrollbarH {
     top: 0;
     bottom: auto;

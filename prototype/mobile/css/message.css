@@ -9,6 +9,7 @@ body{
     font-size: 0.4rem;
     position: relative;
     font-weight: bold;
+    background: #fff;
 }
 .tab {
     position: relative;
@@ -16,6 +17,7 @@ body{
     -webkit-flex-shrink: 0;
     height: 0.94rem;
     line-height: 0.94rem;
+    background: #fff;
 
 }
 .flex-h span {
@@ -172,20 +174,47 @@ body,html,.wrap{
     background: none;
 
 }
+.item{
+    background: #fff;
+}
 
 .swiper-containerV .swiper-slide{
     height: auto;
 }
 
 .pull {
+    height: 1.4rem;
+    line-height: 1.4rem;
+    margin-top: -1.4rem;
     text-align: center;
-    height: 0.4rem;
-    line-height: 0.4rem;
-    margin-top: -0.4rem;
-    margin-bottom: 0.1rem;
+    flex-shrink: 0;
+    -webkit-transition: 300ms;
+    -moz-transition: 300ms;
+    -ms-transition: 300ms;
+    -o-transition: 300ms;
+    transition: 300ms;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -ms-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+}
+.pull.refresh {
+    height: 1.4rem;
+    line-height: 1.4rem;
+    margin-top: 0;
+    -webkit-transition:  0ms;
+    -moz-transition: 0ms;
+    -ms-transition:  0ms;
+    -o-transition: 0ms;
+     transition: 0ms;
 }
 .push{
     text-align: center;
     height: 0.4rem;
     line-height: 0.4rem;
+}
+
+body{
+    background: #efefef;
 }

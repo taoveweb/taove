@@ -473,15 +473,15 @@
 
     <!-- Initialize Swiper -->
     <script>
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('.swiper-containerH', {
             scrollbar: '.swiper-scrollbar',
             slidesPerView: 'auto',
             mousewheelControl: true,
             onSlideNextStart: function (swiper) {
-                $('.tab').find('span').eq(swiper.activeIndex).addClass('current').siblings().removeClass('current');
+                $('.tab').find('span').eq( swiper.activeIndex).addClass('current').siblings().removeClass('current');
             },
             onSlidePrevStart: function (swiper) {
-                $('.tab').find('span').eq(swiper.activeIndex).addClass('current').siblings().removeClass('current');
+                $('.tab').find('span').eq( swiper.activeIndex).addClass('current').siblings().removeClass('current');
             },
             pagination: '.swiper-pagination',
             paginationClickable: true/*,
@@ -489,6 +489,17 @@
                 return '<span class="' + className + '">' + (index + 1) + '</span>';
             }*/
 
+        });
+
+
+
+
+        new Swiper('.swiper-containerV', {
+            scrollbar: '.swiper-scrollbar',
+            direction: 'vertical',
+            slidesPerView: 'auto',
+            mousewheelControl: true,
+            freeMode: true
         });
     </script>
 {{/extend}}

@@ -147,7 +147,7 @@ body{
     background: none;
 }
 .swiper-container-horizontal>.swiper-scrollbarH {
-    top: 0;
+    top: -5px;
     bottom: auto;
 }
 body,html,.wrap{

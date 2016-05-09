@@ -17,6 +17,7 @@ $(function(){
     var startX = 0;
     var drag=document.querySelector('.drag');
     var wrap=document.querySelector('.wrap');
+    var winW=$(document).width();
     $('.setting-btn').on('tap', function () {
         drag.style.webkitTransition = '300ms';
         wrap.style.webkitTransition = '300ms';
@@ -43,9 +44,8 @@ $(function(){
                 if(moveX<0) return;
                 drag.style.cssText = '';
                 wrap.style.cssText = '';
-                console.log('yes')
                 drag.style.webkitTransform = `translateX(${moveX}px)`;
-                wrap.style.webkitTransform = `translateX(${moveX-$(document).width()}px)`;
+                wrap.style.webkitTransform = `translateX(${moveX-winW}px)`;
             }
         })
 

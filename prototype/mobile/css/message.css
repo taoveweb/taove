@@ -12,13 +12,16 @@ body{
     background: #fff;
 }
 .tab {
-    position: relative;
+    position: absolute;
     flex-shrink: 0;
     -webkit-flex-shrink: 0;
-    height: 0.94rem;
-    line-height: 0.94rem;
+    height: 1.2rem;
+    line-height: 1.2rem;
     background: #fff;
-
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index:10;
 }
 .flex-h span {
     flex: 1;
@@ -139,9 +142,7 @@ body{
     overflow: auto;
     -webkit-overflow-scrolling:touch;
 }*/
-.swiper-container-horizontal>.swiper-scrollbarH{
-    opacity: 1 !important;
-}
+
 .swiper-scrollbarH .swiper-scrollbar-drag{
     background: #3c8dd9;
 }
@@ -150,8 +151,9 @@ body{
     border-bottom: 0.0241rem solid #f1f1f1;
 }
 .swiper-container-horizontal>.swiper-scrollbarH {
-    top: 0;
     bottom: auto;
+    opacity: 1 !important;
+    top:1.2rem;
 }
 body,html,.wrap{
     height: 100%;
@@ -162,9 +164,10 @@ body,html,.wrap{
 }
 .swiper-pagination{
     width: 100%;
-    height: 0.94rem;
+    height: 1.2rem;
     top: 0;
     bottom:auto ;
+    z-index:11;
 }
 .swiper-pagination-bullet{
     -webkit-border-radius: 0;
@@ -183,9 +186,8 @@ body,html,.wrap{
 }
 
 .pull {
-    height: 1.4rem;
-    line-height: 1.4rem;
-    margin-top: -1.4rem;
+    height: 1.2rem;
+    line-height:1.2rem;
     text-align: center;
     flex-shrink: 0;
     -webkit-transition: 300ms;
@@ -199,15 +201,17 @@ body,html,.wrap{
     -o-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
 }
-.pull.refresh {
-    height: 1.4rem;
-    line-height: 1.4rem;
-    margin-top: 0;
-    -webkit-transition:  0ms;
-    -moz-transition: 0ms;
-    -ms-transition:  0ms;
-    -o-transition: 0ms;
-     transition: 0ms;
+.swiper-wrapper-v{
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: -webkit-transform 400ms;
+    transition: transform 400ms;
+}
+.refreshing {
+    -webkit-transform: translate3d(0, 1.2rem, 0) !important;
+    transform: translate3d(0, 1.2rem, 0)!important;
+    -webkit-transition: -webkit-transform 400ms;
+    transition: transform 400ms;
 }
 .push{
     text-align: center;

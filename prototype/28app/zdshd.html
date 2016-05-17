@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=320, user-scalable=no"/>-->
+    <title>整点送黄豆</title>
+    <link href="http://192.168.1.127/mobile/luck28/css/index.css?v=20161" rel="stylesheet">
+    <style>
+        .wrap{
+            border-bottom: none;
+        }
+        body{
+            background: url("img/zdshdbg.png") no-repeat center 40px #710998;
+            -webkit-background-size: 100%;
+            background-size: 100%;
+        }
+        html{
+            background: #710998;
+        }
+        .rw{
+
+            width: 80%;
+           margin:40% auto 0;
+        }
+        .rw img{
+            width: 100%;
+        }
+        .rw{
+            position: relative;
+        }
+        .hdgz{
+            text-align: center;
+            padding-bottom: 40px;
+        }
+        .hdgz img{
+            width: 90%;
+            margin: 0 auto;
+        }
+        .wdzj {
+            position: absolute;
+            right: 10px;
+            top: 55px;
+            width: 33%;
+            height: 40px;
+            background: url("img/wdzjbtn.png") no-repeat;
+            -webkit-background-size: contain;
+            background-size: contain;
+        }
+        .msqhb {
+            position: absolute;
+            left: 50%;
+            bottom: 20%;
+            width: 40%;
+            margin-left: -20%;
+            text-align: center;
+            background: #fff000;
+            height: 40px;
+            line-height: 40px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            border-bottom: 4px solid #cdc100;
+            color: #ff0000;
+        }
+        .djstime{
+            position: absolute;
+            left: 50%;
+            bottom: 20%;
+            width: 70%;
+            margin-left: -35%;
+            color: #ffea00;
+            font-size: 14px;
+            text-align: center;
+            line-height: 25px;
+        }
+        .djstime em {
+            color: #fff;
+            display: inline-block;
+            padding: 3px;
+            line-height: 16px;
+            background: #000;
+
+        }
+        .wdzj-pop .content{
+            height: 80%;
+            top: 10%;
+            margin-top: 0;
+        }
+        .wdzj-pop .content .con{
+            overflow: auto;
+            height: 80%;
+        }
+        .wdzj-pop .content .con table{
+            width: 95%;
+            margin: 10px;
+        }
+        .wdzj-pop .content .con table td {
+            padding: 8px 0;
+            text-align: center;
+            border-bottom: 1px dashed #eaeaea;
+            color: #878787;
+        }
+        .wdzj-pop .content .con tbody td:nth-child(odd){
+            color: #ff6600;
+        }
+        .wdzj-pop .content .con table thead td{
+            background: #efefef;
+        }
+        .nav{
+            background: #5c087b;
+            color: #fff;
+            border: none;
+        }
+        .nav .arrow{
+            background-image: url(img/yqhyhdarrow.png);
+        }
+    </style>
+    <script src="http://192.168.1.127/mobile/luck28/js/zepto.min.js"></script>
+    <script src="http://192.168.1.127/mobile/luck28/js/common.js"></script>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="nav">
+        <a class="arrow"></a>
+        <span>整点送黄豆</span>
+    </div>
+    <span class="wdzj"></span>
+    <div class="rw">
+        <img src="img/zdshd.png" alt=""/>
+        <div class="msqhb" style="display: none;">
+            马上抢红包
+        </div>
+        <div class="djstime ykdjs" seconds="10">
+            距离下次开抢<br>
+            <em class="s">00</em> 时 <em class="f">00</em > 分 <em class="m">00</em> 秒
+        </div>
+
+    </div>
+    <div class="hdgz">
+        <img src="img/hdgz.png" alt=""/>
+    </div>
+</div>
+
+
+<div class="tz-pop " >
+    <div class="mask"></div>
+    <div class="content">
+        <h3 class="showmsg-title">中奖信息 <span></span></h3>
+        <p class="showmsg-content">恭喜你抢了 15780 黄豆</p>
+        <div class="br btn-box">
+            <a class="sure showmsg-sure">确定</a>
+        </div>
+    </div>
+</div>
+
+<div class="tz-pop wdzj-pop" >
+    <div class="mask"></div>
+    <div class="content">
+        <h3 class="showmsg-title">我的战绩 <span></span></h3>
+        <div class="con">
+            <table>
+                <thead>
+                <tr>
+                    <td>抢到黄豆</td>
+                    <td>抢到黄豆</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr><tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                <tr>
+                    <td>58421</td>
+                    <td>2016-05-12</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script>
+    $('.wdzj').tap(function(){
+        $('.wdzj-pop').css('display','block')
+    });
+
+
+
+    $(function () {
+
+        if ($('.ykdjs').length != 0) {
+            var intervalid = window.setInterval(function () {
+                $('.ykdjs').each(function () {
+                    var milliseconds = $(this).attr('seconds') * 1000;
+                    milliseconds = milliseconds - 1000;
+                    $(this).attr('seconds', milliseconds / 1000);
+                    ShowCountDown(milliseconds, this);
+                });
+            }, 1000);
+        }
+
+        //某一天的
+        function ShowCountDown(milliseconds, obj) {
+
+            var leftsecond = parseInt(milliseconds / 1000);
+            var day1 = Math.floor(leftsecond / (60 * 60 * 24));
+            var hour = Math.floor((leftsecond - day1 * 24 * 60 * 60) / 3600);
+            var minute = Math.floor((leftsecond - day1 * 24 * 60 * 60 - hour * 3600) / 60);
+            var second = Math.floor(leftsecond - day1 * 24 * 60 * 60 - hour * 3600 - minute * 60);
+            var temp = 0;
+            day1 = day1 + '';
+            hour = hour + '';
+            minute = minute + '';
+            second = second + '';
+
+            if (day1.length > 2) {
+                temp = 3;
+                day1 = day1;
+            } else {
+                day1 = day1.length === 2 ? day1 : '0' + day1;
+            }
+
+            hour = hour.length === 2 ? hour : '0' + hour;
+            minute = minute.length === 2 ? minute : '0' + minute;
+            second = second.length === 2 ? second : '0' + second;
+
+            if (leftsecond <= 0) {
+                //倒计时结束-------------
+                $('.ykdjs').css('display','none');
+                $('.msqhb').css('display','block');
+                clearInterval(intervalid);
+                return;
+            }
+            if ($('.ykdjs').length == 0) {
+                clearInterval(intervalid);
+            }
+            $('.s').html(hour);
+            $('.f').html(minute);
+            $('.m').html(second);
+        }
+
+    });
+
+</script>
+
+
+</body>
+</html>

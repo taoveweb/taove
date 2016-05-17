@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>我的信息</title>
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <style>
+        .dhjl table {
+            width: 90%;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            overflow: hidden;
+            margin: 5px auto 0;
+        }
+
+        .dhjl table td {
+            text-align: center;
+            padding: 8px 0;
+        }
+
+        .dhjl thead td {
+            background: #efefef;
+        }
+
+        .dhjl table td.c-gray {
+            color: #8d8d8d;
+        }
+
+        .dhjl table  .c-green {
+            color: #298d01;
+        }
+
+        .dhjl table  .c-red {
+            color: #f36161;
+        }
+
+        .dhjl .hdszms td {
+            color: #8d8d8d;
+            text-align: left;
+            padding: 8px 15px;
+        }
+
+        .hdszms td.c-green {
+            color: #298d01;
+        }
+        .hdszms  td.c-orange{
+            color: #ff6600;
+        }
+        .hdszms tr td:nth-child(3){
+            text-align: right;
+        }
+        .wdmx-item.active{
+            height: auto;
+        }
+        .wdmx-item{
+            background: #fff;
+            border-top: 1px solid #dcdddf;
+            border-bottom: 1px solid #dcdddf;
+            margin-bottom: 10px;
+            height: 34px;
+            overflow: hidden;
+        }
+        .wdmx-item h3{
+            position: relative;
+            padding: 10px;
+            border-bottom: 1px solid #dcdddf;
+            font-weight: normal;
+
+        }
+        .wdmx-item h3 span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url("img/rightarrwo.png") no-repeat center;
+            right: 10px;
+            top: 7px;
+        }
+        .wdmx-item>div {
+            position: relative;
+            padding: 10px;
+            color: #005992;
+        }
+        .wdmx-item>div a{
+            position: absolute;
+            right: 10px;
+            top: 8px;
+            border: 1px solid #ff6600;
+            color: #ff6600;
+            background: #fff;
+
+        }
+        .wdxx-pop .con{
+            margin: 5px 5px;
+            padding: 5px 0;
+            line-height:20px;
+            border-bottom: 1px solid #a9a9a9;
+        }
+        .wdxx-pop .con em,
+        .wdxx-pop .explain em{
+            color:#ff6600
+        }
+        .wdxx-pop .explain{
+            text-align: center;
+            font-size: 16px;
+            padding: 5px 0;
+        }
+        .wdxx-pop .link{
+            display: block;
+            margin: 5px auto;
+            text-align: center;
+        }
+        .wdxx-pop .content .btn-box a{
+            width: 90%;
+        }
+        .wdxx-pop .content .btn-box a.dis,
+        .wdxx-pop .content .btn-box a.dis:active{
+            background: #e3e3e3;
+            color:#8a8a8a;
+            border: none;
+        }
+
+
+
+        .jlrw h3{
+            position: relative;
+        }
+        .jlrw .content{
+            height: 563px;
+            top: 50%;
+            margin-top: -281px;
+        }
+
+        .jlrw .con{
+            padding: 15px;
+            height: 462px;
+            overflow: auto;
+        }
+        .jlrw .con p{
+            color: #494949;
+        }
+        .jlrw .con p .c-green{
+            color: #058526;
+        }
+        .jlrw .con p .c-gray{
+            color: #989898;
+        }
+        .jlrw .con h4{
+            position: relative;
+            padding-bottom: 12px;
+        }
+        .jlrw .con h4 span{
+            position: absolute;
+            right: 0;
+        }
+        i{font-style: normal}
+        .jlrw h4{
+            font-size: 15px;
+            color: #ec0000;
+            font-weight: normal;
+        }
+        .jlrw .con .br {
+            background: #f2f2f2 url("img/jrrwbg.png") repeat-y center;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #e9e9e9;
+            font-size: 15px;
+            position: relative;
+            padding: 5px;
+
+        }
+        .jlrw .con .br a{
+            display: block;
+            position: absolute;
+            height: 29px;
+            width: 65px;
+            background: #ff6600;
+
+            color: #fff;
+            text-align: center;
+            line-height: 29px;
+            top: 50%;
+            margin-top: -15px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            right: 10px;
+            padding: 0;
+        }
+        .jlrw .con .br em{
+            display: inline-block;
+            color: #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    <div class="nav">
+        <a class="arrow"></a>
+        <span>我的信息</span>
+    </div>
+
+    <div class="wdxx ">
+        <div class="br wdxx-top">
+            <img src="" alt=""/>
+            <div><label>昵称：</label><em>大傻逼宋奕菲</em></div>
+            <div><label>ID：</label><span>54871241</span></div>
+            <a href="">安全退出</a>
+        </div>
+        <div class="br">
+            <label>我的黄钻：</label><em>75,000</em><span class="hz-icon"></span> <a href="">兑换黄豆</a>
+        </div>
+        <div class="br">
+            <label>我的黄豆：</label><em>75,000</em><span class="hd-icon"></span> <a href="">买福利卡</a>
+        </div>
+        <div class="br">
+            <label> 我的VIP：</label><span class="vip"></span> <a class="dis" href="">领取工资</a>
+        </div>
+    </div>
+
+
+    <div class="wdmx-item dhjl">
+        <h3>邀请好友明细<span></span></h3>
+        <div>最新邀请好友明细 <a href="">更多</a></div>
+        <table class="hdszms ">
+            <thead>
+            <tr>
+                <td>昵称</td>
+                <td>奖励行为</td>
+                <td>奖励黄豆</td>
+            </tr>
+            </thead>
+            <tbody class="btops1 ">
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="wdmx-item dhjl">
+        <h3>邀请好友明细<span></span></h3>
+        <table class="hdszms ">
+            <thead>
+            <tr>
+                <td>昵称</td>
+                <td>奖励行为</td>
+                <td>奖励黄豆</td>
+            </tr>
+            </thead>
+            <tbody class="btops1 ">
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="wdmx-item dhjl jlrw">
+        <h3>我的任务<span></span></h3>
+        <div class="con">
+            <h4>每日0点准时重置任务 <span>2/7</span></h4>
+
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次</em></p>
+                <a href="">前往</a>
+            </div>
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次</em></p>
+                <a href="">前往</a>
+            </div>
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次</em></p>
+                <a href="">前往</a>
+            </div>
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次 <i class="c-gray">未完成</i></em></p>
+                <a href="">前往</a>
+            </div>
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次 <i class="c-green">已完成</i></em></p>
+                <a href="">前往</a>
+            </div>
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次</em></p>
+                <a href="">前往</a>
+            </div>
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次</em></p>
+                <a href="">前往</a>
+            </div>
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次</em></p>
+                <a href="">前往</a>
+            </div>
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次</em></p>
+                <a href="">前往</a>
+            </div>
+            <div class="item br">
+                <p>参与益智竞猜投注 10 局 <em>奖励抽奖机会 1 次</em></p>
+                <a href="">前往</a>
+            </div>
+        </div>
+    </div>
+    <div class="wdmx-item dhjl">
+        <h3>邀请好友明细<span></span></h3>
+        <table class="hdszms ">
+            <thead>
+            <tr>
+                <td>昵称</td>
+                <td>奖励行为</td>
+                <td>奖励黄豆</td>
+            </tr>
+            </thead>
+            <tbody class="btops1 ">
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="wdmx-item dhjl">
+        <h3>邀请好友明细<span></span></h3>
+        <table class="hdszms ">
+            <thead>
+            <tr>
+                <td>昵称</td>
+                <td>奖励行为</td>
+                <td>奖励黄豆</td>
+            </tr>
+            </thead>
+            <tbody class="btops1 ">
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            <tr>
+                <td class="c-gray">郑大钱先生</td>
+                <td class="c-green">VIP开卡奖励</td>
+                <td class="c-orange">12万 <span class="hd-icon"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tz-pop wdxx-pop">
+        <div class="mask"></div>
+        <div class="content">
+            <h3 class="showmsg-title">竞猜工资 <span></span></h3>
+            <div class="con">
+                昨日输盈工资：<em>152871727</em>  * 5% = <em>7643586</em><br>
+                昨日投注工资：<em>517501284</em>  / 20000 = <em>754121</em><br>
+                您当前是 VIP1 享受 <em>10%</em> 加成 <em>5421872</em><br>
+
+
+            </div>
+            <div class="explain"> 总计可领取：<em>84581215</em> 黄豆</div>
+            <a class="link" href="">了解竞猜工资 >></a>
+            <div class="br btn-box">
+                <a class="">领取竞猜工资</a>
+                <a class="dis">已领取</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="gzxx">
+        <div class="br">
+            <label>昨日盈利工资：</label><em>300,000</em><span class="hd-icon"></span><em>× 5% = 15,000</em><span class="hd-icon"></span>
+        </div>
+        <div class="br">
+            <label>昨日投注工资：</label><em>300,000</em><span class="hd-icon"></span><em>× 5% = 15,000</em><span class="hd-icon"></span>
+        </div>
+        <div class="br">
+            <label>VIP额外加成：</label><em>300,000</em><span class="hd-icon"></span>
+        </div>
+        <div class="br all">
+            <p>总计可领取:<em>300,000</em><span class="hd-icon"></span></p>
+            <a class="link" href="jcgzjs.html">了解竞猜工资>></a>
+            <a href="">领取竞猜工资</a>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/swiper.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/common.js"></script>
+<script>
+    $('body').on('tap','.wdmx-item h3',function(){
+        $(this).parents('.wdmx-item').toggleClass('active')
+    });
+</script>
+</body>
+</html>

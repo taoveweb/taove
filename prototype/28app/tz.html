@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>hello world</title>
+    <link href="css/swiper.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<script>
+
+    var staPath='http://modoupi.b0.upaiyun.com/';
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    var g28 = getQueryString('g28');//js used
+    g28 = g28?g28:'btc';
+
+    var config_mdp_total = '500000000'?'500000000':100000000;
+    var config_btc_total = '200000000'?'200000000':100000000;
+    var config_try_total = '500000000'?'500000000':100000000;
+
+    //var isgain     = "1";
+    var autoopen   = "0"; //是否自动投注
+    var userid     = "373054";
+    var my_gain_coins    = "105262";//我的比特币数
+
+    var last_odds       = "998.97,327.64,166.14,99.29,66.6,47.39,35.49,27.58,22.14,18.06,15.85,14.43,13.68,13.27,13.33,13.65,14.5,15.82,18.15,22.1,27.73,35.56,47.39,66.39,99.54,165.96,333.26,995.74";//上期赔率
+    var last_odds_ary   = last_odds.split(",");
+    var this_odds       = "997.83,329.89,166.29,99.59,66.53,47.56,35.42,27.64,22.14,18.12,15.81,14.44,13.65,13.29,13.3,13.66,14.46,15.82,18.14,22.17,27.71,35.63,47.4,66.64,99.49,166.48,333.11,999.05";//本期赔率
+    var this_odds_ary   = this_odds.split(",");
+
+    var lottery_id      = "411143"//本期ID
+    var all_lottery_num         = "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0".split(",");//投注比特币
+    var issue            = "411143";//当期期号
+
+
+    var is_clear_mdp     = my_gain_coins<5000?1:0;//是否可以清理获取
+    var left_time_out    = "0" //是否已截止投注
+    var last_issue_id    = "";
+
+</script>
+<input id="open_prize_time" name="open_prize_time" type="hidden" value="1458182970">
+<input type="hidden" id="depend_parent" name="depend_parent" value="0">
+<input name="str_mdp_coin" id="str_mdp_coin" type="hidden" value="0">
+<input type="hidden" id="lastgain" name="lastgain" value="">
+<input type="hidden" id="_issue" name="_issue" value="411143">
+<input type="hidden" id="now_total" name="now_total" value="">
+<input type="hidden" id="formhash" name="formhash" value="">
+<input type="hidden" id="totalvalue" value="">
+<input type="hidden" id="totalvalue2" value="">
+<input type="hidden" id="check_key" name="check_key" value="">
+<input type="hidden" id="check_address" name="check_address" value="">
+<input type="hidden" name="used_leave_modou_num" id="used_leave_modou_num" value="" />
+<input type="hidden" name="old_leave_modou_num" id="old_leave_modou_num" value="" />
+<input type="hidden" class="base_box_sh_txt" id="use_leave_modou_num" name="use_leave_modou_num" value=""
+       onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
+       maxlength="11"/>
+<div class="wrap">
+    <div class="nav">
+        <a class="arrow"></a>
+        <span>投注</span>
+    </div>
+
+    <div class="djstz">
+        第<em>1785</em>期，离投注截止时间还有<em class="sections">60</em>秒<br>
+    </div>
+
+    <div class="info">
+        <p>
+            黄豆余额：<em id="leave_modou_num">105,260</em><br>
+            投注黄豆：<em id="total_md_lottery">0</em>
+        </p>
+        <a class="tzbtn">投注</a>
+    </div>
+    <div class="rule">
+        <span class="double_insert" val="0.1">0.1倍</span>
+        <span class="double_insert" val="0.5">0.5倍</span>
+        <span class="double_insert" val="0.8">0.8倍</span>
+        <span class="double_insert" val="1.2">1.2倍</span>
+        <span class="qingchu">清空</span>
+        <span class="qingchu">上期投注</span>
+        <span class="double_insert" val="1.5">1.5倍</span>
+        <span class="double_insert" val="2">2倍</span>
+        <span class="double_insert" val="10">10倍</span>
+        <span class="double_insert" val="50">50倍</span>
+        <span class=" fanxian">反选</span>
+        <span class="double_insert">梭哈</span>
+        <span class="b-b mode_lottery" attr="0">全包</span>
+        <span class="b-b mode_lottery" attr="3">大</span>
+        <span class="b-b mode_lottery" attr="4">小</span>
+        <span class="b-b mode_lottery" attr="1">单</span>
+        <span class="b-b mode_lottery"  attr="5">中</span>
+        <span class="b-b  mode_lottery"  attr="6">边</span>
+        <span class="b-b-b"></span>
+    </div>
+    <div class="select-box">
+        <table class="table-select">
+           <!-- <tr>
+                <td><span class="num">01</span></td>
+                <td><input type="number"/></td>
+                <td>1001.15</td>
+                <td class="pei"><span val="0.5">×0.5</span><span val="2">×2</span><span val="10">×10</span></td>
+            </tr>-->
+
+        </table>
+    </div>
+</div>
+<div class="more-pop active">
+    <div class="self-mode clearfix">
+        <span class="active1">自定义模式</span>
+        <span>标准模式</span>
+    </div>
+    <div class="more-pop-box panel active1" >
+        <span class="mode_lottery" attr="0">全包</span>
+        <span class="mode_lottery" attr="1">单</span>
+        <span class="mode_lottery" attr="2">双</span>
+        <span class="mode_lottery" attr="3">大</span>
+        <span class="mode_lottery" attr="4">小</span>
+        <span class="mode_lottery" attr="5">中</span>
+        <span class="mode_lottery" attr="6">边</span>
+        <span class="mode_lottery" attr="7">大单</span>
+        <span class="mode_lottery" attr="8">小单</span>
+        <span class="mode_lottery" attr="9">大双</span>
+        <span class="mode_lottery" attr="10">小双</span>
+        <span class="mode_lottery" attr="11">大边</span>
+        <span class="mode_lottery" attr="12">小边</span>
+        <span class="mode_lottery" attr="13">单边</span>
+        <span class="mode_lottery" attr="14">双边</span>
+        <span class="mode_lottery" >清零</span>
+    </div>
+
+    <div class="self-set-pop panel">
+        <div class="br zdymd">
+            <span>自定义一</span>
+            <span>自定义二</span>
+            <span>自定义三</span>
+        </div>
+        <a href="tz_edit.html" class="self-mode tj">添加模式</a>
+    </div>
+
+    <span class="closemode">
+    </span>
+</div>
+
+<script src="js/swiper.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/common.js"></script>
+<script src="tz.js"></script>
+<script>
+    $('.more-pop').on('tap','span',function(){
+        var index=$(this).index();
+        $(this).addClass('active1').siblings().removeClass('active1')
+        $('.panel').eq(index).addClass('active1').siblings().removeClass('active1');
+    })
+</script>
+</body>
+</html>

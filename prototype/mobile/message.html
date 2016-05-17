@@ -366,7 +366,7 @@
         <div class="swiper-wrapper swiper-wrapperH">
             <div class="swiper-slide flex-v">
                 <div class="swiper-container swiper-containerV">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper swiper-wrapper-v">
                         <div class="pull">下拉刷新</div>
                         <div class="swiper-slide">
                             <div class="item">
@@ -574,7 +574,7 @@
             </div>
             <div class="swiper-slide flex-v">
                 <div class="swiper-container swiper-containerV">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper swiper-wrapper-v">
                         <div class="pull">下拉刷新</div>
                         <div class="swiper-slide">
 
@@ -816,14 +816,21 @@
 
     var moveing = false;
     var stand = 40 * window.devicePixelRatio;
+    var freshing=false;
     new Swiper('.swiper-containerV', {
         scrollbar: '.swiper-scrollbar',
         direction: 'vertical',
         slidesPerView: 'auto',
         mousewheelControl: true,
         freeMode: true,
-        onTouchMove: function () {
+        onTouchMove: function (swiper) {
             moveing = true;
+            if( $(swiper.wrapper[0]).hasClass("refreshing")){
+                $(swiper.wrapper[0]).removeClass('refreshing');
+                swiper.wrapper[0].style.webkitTransform = `translate3d(0, 1.2rem, 0)`;
+                swiper.wrapper[0].style.webkitTransition = '0ms';
+            }
+
         },
         onTouchEnd: function (swiper, event) {
             moveing = false;
@@ -832,17 +839,20 @@
             var swiperWrapper = swiper.wrapper[0].scrollHeight;//总高度
 
             if (pulldistance < stand && pulldistance > -stand) {
+
                 $('.pull').html('下拉刷新');
                 $('.push').html('上拉加载');
             }
             if (pulldistance > stand) {
+
                 //刷新位置
-                $('.pull').addClass('refresh');
                 $('.pull').html('加载中...');
+                $(swiper.wrapper[0]).addClass('refreshing');
                 // location.href = '';
                 window.setTimeout(function(){
-                    $('.pull').removeClass('refresh');
-                },3000)
+                    swiper.wrapper[0].style.webkitTransition = '300ms';
+                    $(swiper.wrapper[0]).removeClass('refreshing');
+                },5000)
             }
             if (pulldistance < 0 && Math.abs(pulldistance) + height - swiperWrapper > stand) {
                 $('.push').html('正在加载中。。。');

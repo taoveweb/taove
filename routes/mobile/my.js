@@ -11,10 +11,11 @@ var co = require('co');
 
 
 function indexGet(req, res, next) {
-    res.render('mobile/my', {
+    res.jsonp({ user: 'tobi' })
+   /* res.render('mobile/my', {
         title: '个人信息',
         layout: 'layout_m'
-    });
+    });*/
 }
 
 

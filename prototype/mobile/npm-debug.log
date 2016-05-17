@@ -1,0 +1,147 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i',
+1 verbose cli   '-g',
+1 verbose cli   'nativescript' ]
+2 info using npm@3.9.0
+3 info using node@v6.0.0
+4 silly loadCurrentTree Starting
+5 silly install loadCurrentTree
+6 silly install readGlobalPackageData
+7 silly fetchPackageMetaData nativescript
+8 silly fetchNamedPackageData nativescript
+9 silly mapToRegistry name nativescript
+10 silly mapToRegistry using default registry
+11 silly mapToRegistry registry https://registry.npmjs.org/
+12 silly mapToRegistry data Result {
+12 silly mapToRegistry   raw: 'nativescript',
+12 silly mapToRegistry   scope: null,
+12 silly mapToRegistry   name: 'nativescript',
+12 silly mapToRegistry   rawSpec: '',
+12 silly mapToRegistry   spec: 'latest',
+12 silly mapToRegistry   type: 'tag' }
+13 silly mapToRegistry uri https://registry.npmjs.org/nativescript
+14 verbose request uri https://registry.npmjs.org/nativescript
+15 verbose request no auth needed
+16 info attempt registry request try #1 at 11:28:35
+17 verbose request id e9857c48d2cc7253
+18 verbose etag "5HWTMQTLFMSBMQ2U711Y9M3HB"
+19 http request GET https://registry.npmjs.org/nativescript
+20 http 304 https://registry.npmjs.org/nativescript
+21 verbose headers { date: 'Sun, 15 May 2016 03:24:32 GMT',
+21 verbose headers   via: '1.1 varnish',
+21 verbose headers   'cache-control': 'max-age=300',
+21 verbose headers   etag: '"5HWTMQTLFMSBMQ2U711Y9M3HB"',
+21 verbose headers   age: '0',
+21 verbose headers   connection: 'keep-alive',
+21 verbose headers   'x-served-by': 'cache-lax1432-LAX',
+21 verbose headers   'x-cache': 'MISS',
+21 verbose headers   'x-cache-hits': '0',
+21 verbose headers   'x-timer': 'S1463282672.741199,VS0,VE316',
+21 verbose headers   vary: 'Accept-Encoding' }
+22 silly get cb [ 304,
+22 silly get   { date: 'Sun, 15 May 2016 03:24:32 GMT',
+22 silly get     via: '1.1 varnish',
+22 silly get     'cache-control': 'max-age=300',
+22 silly get     etag: '"5HWTMQTLFMSBMQ2U711Y9M3HB"',
+22 silly get     age: '0',
+22 silly get     connection: 'keep-alive',
+22 silly get     'x-served-by': 'cache-lax1432-LAX',
+22 silly get     'x-cache': 'MISS',
+22 silly get     'x-cache-hits': '0',
+22 silly get     'x-timer': 'S1463282672.741199,VS0,VE316',
+22 silly get     vary: 'Accept-Encoding' } ]
+23 verbose etag https://registry.npmjs.org/nativescript from cache
+24 verbose get saving nativescript to C:\Users\Administrator\AppData\Roaming\npm-cache\registry.npmjs.org\nativescript\.cache.json
+25 verbose correctMkdir C:\Users\Administrator\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+26 silly install normalizeTree
+27 silly loadCurrentTree Finishing
+28 silly loadIdealTree Starting
+29 silly install loadIdealTree
+30 silly cloneCurrentTree Starting
+31 silly install cloneCurrentTreeToIdealTree
+32 silly cloneCurrentTree Finishing
+33 silly loadShrinkwrap Starting
+34 silly install loadShrinkwrap
+35 silly loadShrinkwrap Finishing
+36 silly loadAllDepsIntoIdealTree Starting
+37 silly install loadAllDepsIntoIdealTree
+38 silly resolveWithNewModule nativescript@2.0.0 checking installable status
+39 silly cache add args [ 'nativescript', null ]
+40 verbose cache add spec nativescript
+41 silly cache add parsed spec Result {
+41 silly cache add   raw: 'nativescript',
+41 silly cache add   scope: null,
+41 silly cache add   name: 'nativescript',
+41 silly cache add   rawSpec: '',
+41 silly cache add   spec: 'latest',
+41 silly cache add   type: 'tag' }
+42 silly addNamed nativescript@latest
+43 verbose addNamed "latest" is being treated as a dist-tag for nativescript
+44 info addNameTag [ 'nativescript', 'latest' ]
+45 silly mapToRegistry name nativescript
+46 silly mapToRegistry using default registry
+47 silly mapToRegistry registry https://registry.npmjs.org/
+48 silly mapToRegistry data Result {
+48 silly mapToRegistry   raw: 'nativescript',
+48 silly mapToRegistry   scope: null,
+48 silly mapToRegistry   name: 'nativescript',
+48 silly mapToRegistry   rawSpec: '',
+48 silly mapToRegistry   spec: 'latest',
+48 silly mapToRegistry   type: 'tag' }
+49 silly mapToRegistry uri https://registry.npmjs.org/nativescript
+50 verbose addNameTag registry:https://registry.npmjs.org/nativescript not in flight; fetching
+51 verbose get https://registry.npmjs.org/nativescript not expired, no request
+52 silly addNameTag next cb for nativescript with tag latest
+53 silly addNamed nativescript@2.0.0
+54 verbose addNamed "2.0.0" is a plain semver version for nativescript
+55 silly mapToRegistry name nativescript
+56 silly mapToRegistry using default registry
+57 silly mapToRegistry registry https://registry.npmjs.org/
+58 silly mapToRegistry data Result {
+58 silly mapToRegistry   raw: 'nativescript',
+58 silly mapToRegistry   scope: null,
+58 silly mapToRegistry   name: 'nativescript',
+58 silly mapToRegistry   rawSpec: '',
+58 silly mapToRegistry   spec: 'latest',
+58 silly mapToRegistry   type: 'tag' }
+59 silly mapToRegistry uri https://registry.npmjs.org/nativescript
+60 verbose addRemoteTarball https://registry.npmjs.org/nativescript/-/nativescript-2.0.0.tgz not in flight; adding
+61 verbose addRemoteTarball [ 'https://registry.npmjs.org/nativescript/-/nativescript-2.0.0.tgz',
+61 verbose addRemoteTarball   '410d673088606ce3991ba94fc12f93cdb7dba46c' ]
+62 info retry fetch attempt 1 at 11:28:40
+63 info attempt registry request try #1 at 11:28:40
+64 http fetch GET https://registry.npmjs.org/nativescript/-/nativescript-2.0.0.tgz
+65 http fetch 200 https://registry.npmjs.org/nativescript/-/nativescript-2.0.0.tgz
+66 info retry will retry, error on last attempt: Error: read ECONNRESET
+67 info retry will retry, error on last attempt: Error: read ECONNRESET
+68 silly fetchAndShaCheck shasum 410d673088606ce3991ba94fc12f93cdb7dba46c
+69 silly rollbackFailedOptional Starting
+70 silly rollbackFailedOptional Finishing
+71 silly runTopLevelLifecycles Starting
+72 silly runTopLevelLifecycles Finishing
+73 silly install printInstalled
+74 verbose stack Error: shasum check failed for C:\Users\ADMINI~1\AppData\Local\Temp\npm-1408-6953c793\registry.npmjs.org\nativescript\-\nativescript-2.0.0.tgz
+74 verbose stack Expected: 410d673088606ce3991ba94fc12f93cdb7dba46c
+74 verbose stack Actual:   77aae7ae68081ce633653f292ef0bf14fd6ecd84
+74 verbose stack From:     https://registry.npmjs.org/nativescript/-/nativescript-2.0.0.tgz
+74 verbose stack     at C:\Users\Administrator\AppData\Roaming\npm\node_modules\npm\node_modules\sha\index.js:25:8
+74 verbose stack     at ReadStream.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\npm\node_modules\sha\index.js:72:7)
+74 verbose stack     at emitNone (events.js:91:20)
+74 verbose stack     at ReadStream.emit (events.js:185:7)
+74 verbose stack     at endReadableNT (_stream_readable.js:926:12)
+74 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:74:11)
+74 verbose stack     at process._tickCallback (internal/process/next_tick.js:98:9)
+75 verbose cwd G:\taove\prototype\mobile
+76 error Windows_NT 6.1.7601
+77 error argv "D:\\nodejs\\node.exe" "C:\\Users\\Administrator\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "i" "-g" "nativescript"
+78 error node v6.0.0
+79 error npm  v3.9.0
+80 error shasum check failed for C:\Users\ADMINI~1\AppData\Local\Temp\npm-1408-6953c793\registry.npmjs.org\nativescript\-\nativescript-2.0.0.tgz
+80 error Expected: 410d673088606ce3991ba94fc12f93cdb7dba46c
+80 error Actual:   77aae7ae68081ce633653f292ef0bf14fd6ecd84
+80 error From:     https://registry.npmjs.org/nativescript/-/nativescript-2.0.0.tgz
+81 error If you need help, you may report this error at:
+81 error     <https://github.com/npm/npm/issues>
+82 verbose exit [ 1, true ]

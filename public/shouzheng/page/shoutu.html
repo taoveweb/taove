@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://5lm.com/shoutu?u=31297&wxid=&wecha_id= -->
+<html lang="zh"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="./shoutu_files/hm.js"></script><script>
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+        if(isAndroid){
+            location.href="/shoutu/android";
+		}
+    </script>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>柚子众测向导</title>
+    <link rel="stylesheet" href="./shoutu_files/weui.min.css">
+    <link href="./shoutu_files/sweetalert.min.css" rel="stylesheet">
+    <style type="text/css" media="screen">
+        img{
+            max-width:100%;
+        }
+        body{
+            background:#F5F5F5;
+        }
+        a{
+            display: block;
+            width: 180px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?536d9b26c629f35f2c7e649f95bdeeb4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body ontouchstart="">
+    <div class="container" style="text-align:center;margin-top:15px">
+        <div>
+            <img src="./shoutu_files/download.png" alt="" style="width:280px;">
+        </div>
+        <div>
+            <div>
+            <a href="https://itunes.apple.com/cn/app/you-zi-yin-le-qing-song-chao/id1102764916?mt=8"><img src="./shoutu_files/download_xz.png" alt="" width="180"></a>
+            <a href="comyouzizhongce://"><img src="./shoutu_files/download_dk.png" alt="" width="180"></a>
+            </div>
+        </div>
+    </div>
+    <div class="container body">
+    </div>
+<script src="./shoutu_files/helper.js"></script>
+<script src="./shoutu_files/zepto.min.js"></script>
+<script src="./shoutu_files/sweetalert.min.js"></script>
+<script>
+    var master_id = '31297';
+    // 存储师傅id
+    if(!localStorage){
+        alert('您的浏览器不支持localStorage');
+    }else{
+		var _master_id = localStorage.getItem('yz-biz-master_id');
+		if(master_id>0 && !_master_id){
+    	var res = localStorage.setItem('yz-biz-master_id',master_id);
+		localStorage.getItem('yz-biz-master_id');
+		}
+    }
+
+    // 判断是否存在不同来源
+var $_GET = (function(){
+ var url = window.document.location.href.toString();
+ var u = url.split("?");
+ if(typeof(u[1]) == "string"){
+     u = u[1].split("&");
+     var get = {};
+     for(var i in u){
+         var j = u[i].split("=");
+         get[j[0]] = j[1];
+     }
+     return get;
+ } else {
+     return {};
+ }
+ })();
+
+	setTimeout(function(){
+		callAide('',function(){
+        // 如果已经打开小助手，跳回首页
+        location.href='/';
+		},function(){});
+
+        callAide('',
+            function(res) {
+                // 如果助手在线
+                if (res.code > 0) {
+                    alert(res.message);
+                    return false;
+                }
+
+                if(res.version){
+                    location.href='/';
+                }else{
+                    // 只提示一次
+                    var had_alert = sessionStorage.getItem('had_alert');
+                    if(!had_alert){
+                        sessionStorage.setItem('had_alert',1);
+                        // 提示安装新小助手
+                        swal({
+                            title: "新版小助手上线了！",
+                            text: "新增任务上线推送通知，启动体验更好，界面更美观",
+                            showCancelButton: true,
+                            confirmButtonColor: '#00d8ca',
+                            confirmButtonText: '前往升级',
+                            imageUrl: '/static/img/update_icon.png',
+                            cancelButtonText: "关闭",
+                            closeOnConfirm: false
+                        },
+                        function(isConfirm){
+                            if (isConfirm) {
+                                location.href='https://itunes.apple.com/cn/app/you-zi-yin-le-qing-song-chao/id1102764916?mt=8';
+                            } else {
+                                location.href='/';
+                            }
+                        });
+                    }
+                }
+            },
+            function() {
+                // 判断是否在safari中，不在safari提示从safari打开该网页
+                var ua = window.navigator.userAgent.toLowerCase();
+				
+                /*if ((!ua.match(/safari/i) || ua.match(/qq/i))&& master_id) {
+                        swal({
+                            title: "<h5>从safari中体验更棒！</h5>",
+                            text: "1.长按下面链接并点击拷贝<br/><br/>http://5lm.com/shoutu?u="+master_id+"&source=ad1<br/><br/>2.打开safari浏览器,长按地址框粘贴链接",
+                            showCancelButton: false,
+                            confirmButtonColor: '#00d8ca',
+                            confirmButtonText: '已复制并前往safari',
+                            imageUrl: '/static/img/safari.png',
+                            closeOnConfirm: true,
+							html:true
+                        },
+                        function(){
+                        });
+						return false;
+			}*/
+    if($_GET['source'] == 'ad'){
+		if(ua.match(/safari/i)){
+			ajax('http://rwskv2.adyouzi.com/user/static_tuiguang?ua='+ua+'&shifu_uid='+master_id,{},function(){});
+		}
+
+        location.href="https://itunes.apple.com/us/app/you-zimusic/id1104646309?mt=8";
+    }
+            });
+	},100);
+</script>
+
+
+</body></html>

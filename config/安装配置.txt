@@ -28,7 +28,7 @@ iptables -A OUTPUT -p tcp --sport 8081 -j ACCEPT
 安装nginx
 yum 安装
 配置oldku.conf
-
+测试配置文件能否通过nginx -t -c nginx.conf
 
 upstream app_yourdomain {
     server 127.0.0.1:8081;

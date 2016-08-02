@@ -25,4 +25,32 @@ iptables -A INPUT -p tcp --dport 8081 -j ACCEPT
 iptables -A OUTPUT -p tcp --sport 8081 -j ACCEPT
 
 
+安装nginx
+yum 安装
+配置oldku.conf
+
+
+upstream app_yourdomain {
+    server 127.0.0.1:8081;
+    keepalive 8;
+}
+
+# the nginx server instance
+server {
+    listen 0.0.0.0:80;
+    server_name 120.27.101.243 www.oldku.com oldku.com taove.com www.taove.com;
+    access_log /var/log/nginx/yourdomain.log;
+
+    # pass the request to the node.js server with the correct headers
+    # and much more can be added, see nginx config options
+    location / {
+      proxy_set_header X-Real-IP $remote_addr;
+      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header Host $http_host;
+      proxy_set_header X-NginX-Proxy true;
+
+      proxy_pass http://app_yourdomain/;
+      proxy_redirect off;
+    }
+ }
 

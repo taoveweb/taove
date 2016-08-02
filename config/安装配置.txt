@@ -1,0 +1,28 @@
+//阿里云
+管理终端连接密码： 205670
+用户名：root 密码:
+
+安装git 
+$ sudo yum install git
+
+下载 taove
+cd /var 
+mkdier www
+cd www
+git clone  源
+
+安装node 
+yum -y install nodejs npm --enablerepo=epel
+升级node
+安装n模块 sudo npm install -g n   
+安装node版本  sudo n 6.3.1
+
+安装mongodb
+
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 8081 -j ACCEPT
+iptables -A OUTPUT -p tcp --sport 8081 -j ACCEPT
+
+
+
